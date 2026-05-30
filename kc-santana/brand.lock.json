@@ -1,7 +1,7 @@
 {
   "brand": "kc-santana",
   "version": "0.1.0",
-  "approved_at": "2026-05-30T00:00:44+00:00",
+  "approved_at": "2026-05-30T20:56:28+00:00",
   "approved_by": "Florian",
   "source_hashes": {
     "STRATEGY.md": "sha256:bd3bd89e8c951ad1c8f982e0052e23e225d6dca037965f7b649dde4b500ac143",
@@ -12,12 +12,12 @@
   },
   "bundle_hash": "sha256:48c9a90366031f5e7cbb1c1dccd0b05e582e0d0ef3417e17c162d8bca79aab25",
   "outputs": {
-    "ai_context_emitted_at": "2026-05-30T00:00:44+00:00",
-    "ai_context_json_emitted_at": "2026-05-30T00:00:44+00:00",
-    "ai_context_git_sha": "b3d1dd4c13629a347573c77f4fe4c9b43e7b6d43",
-    "strategy_html_emitted_at": "2026-05-30T00:00:44+00:00",
-    "identity_html_emitted_at": "2026-05-30T00:00:44+00:00",
-    "focus_star_json_emitted_at": "2026-05-30T00:00:44+00:00"
+    "ai_context_emitted_at": "2026-05-30T20:56:28+00:00",
+    "ai_context_json_emitted_at": "2026-05-30T20:56:28+00:00",
+    "ai_context_git_sha": "0b3e94774d6395e0824f25d9fc3beeef4f51345c",
+    "strategy_html_emitted_at": "2026-05-30T20:56:28+00:00",
+    "identity_html_emitted_at": "2026-05-30T20:56:28+00:00",
+    "focus_star_json_emitted_at": "2026-05-30T20:56:28+00:00"
   },
   "validator_rules": {
     "must_match_at_build": [
