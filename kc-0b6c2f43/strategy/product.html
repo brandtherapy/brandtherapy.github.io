@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, viewfinder treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Product · KC Brand OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #5A5CF9;
+    --accent-glow: rgba(90, 92, 249, 0.35);
+    --accent-soft: rgba(90, 92, 249, 0.06);
+    --text: #1A1A2E;
+    --muted: #8888A0;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #E5E7EB;
+    --light: #F5F5F7;
+    --white: #FFFFFF;
+    --dark: #18181B;
+    --dark-surface: #1D1D1D;
+    --ff-h: "Bricolage Grotesque", system-ui, sans-serif;
+    --ff-b: "Poppins", system-ui, sans-serif;
+    --ff-accent: "Bricolage Grotesque", system-ui, sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">KC<span class="dot">.</span></div>
+    <div class="meta">Brand OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="index.html">Focus Star</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="../identity/index.html">Direction One</a>
+<a href="../identity/sun-grown-athlete.html">Direction Two</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
+<a href="../application/index.html">Brand Application</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Strategy</strong></div>
+    <div class="row"><span>Use</span><strong>AI + creative</strong></div>
+    <div class="row"><span>Center</span><strong>No Excuses</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+
+  <section class="p-hero">
+    <div class="p-hero-copy">
+      <div class="p-kicker">Section A · P1 · Brand Strategy</div>
+      <h1>Product<span class="dot">.</span></h1>
+      <p>KC's current product is thought leadership delivered through wellness events, mastermind dinners, podcasting, content, and emerging speaking. She is a mentor and thought leader, not a coach and not an educator.</p>
+      <div class="p-tags"><span>Thought leadership as proof</span></div>
+    </div>
+
+    <figure class="p-hero-media">
+      <img src="../images/persona.png" alt="">
+      <figcaption class="p-caption">Follow the woman who lives the standard. Events, podcast, content, and speaking all point to one discipline-first life.</figcaption>
+    </figure>
+  </section>
+  <div class="p-thesis">The product is not a program yet. The product is KC's visible standard: a daily proof system that makes high-earning women stop outsourcing discipline.</div>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">01</div>
+      <div>
+        <div class="p-kicker">Strategic position</div>
+        <h2>What is being claimed<span class="dot">.</span></h2>
+        <p class="p-section-desc">The brand's position on this edge, in one plain sentence.</p>
+      </div>
+    </div>
+    <div class="p-grid">
+      <article class="p-card dark">
+        <div class="p-card-label">Position</div>
+        <h3>Product</h3>
+        <p>KC's current product is thought leadership delivered through wellness events, mastermind dinners, podcasting, content, and emerging speaking. She is a mentor and thought leader, not a coach and not an educator.</p>
+      </article>
+      <article class="p-card">
+        <div class="p-card-label">Compass summary</div>
+        <h3>Thought leadership as proof</h3>
+        <p>Follow the woman who lives the standard. Events, podcast, content, and speaking all point to one discipline-first life.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">02</div>
+      <div>
+        <div class="p-kicker">Offer boundaries</div>
+        <h2>What belongs and what does not<span class="dot">.</span></h2>
+        <p class="p-section-desc">The filters that keep this strategic choice operational.</p>
+      </div>
+    </div>
+    <div class="p-grid two">
+      <article class="p-card">
+        <div class="p-card-label">Rules in</div>
+        <h3>Belongs</h3>
+        <ul><li>Wellness events and mastermind dinners anchored in SoCal.</li><li>Intimate rooms of women who need the standard more than another self-care idea.</li><li>Podcast and content that make discipline visible.</li><li>Speaking as the natural extension of mentor and thought-leader authority.</li><li>Cannabis as one functional tool in the discipline stack.</li><li>Future products named only as future products.</li></ul>
+      </article>
+      <article class="p-card dark">
+        <div class="p-card-label">Rules out</div>
+        <h3>Does not belong</h3>
+        <ul><li>Coaching package positioning.</li><li>Educator-first positioning.</li><li>Generic wellness content.</li><li>Cannabis SKU as the current center.</li><li>GLP-1 or shortcut framing.</li><li>Passive lifestyle inspiration.</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">03</div>
+      <div>
+        <div class="p-kicker">Tradeoffs</div>
+        <h2>What this choice costs<span class="dot">.</span></h2>
+        <p class="p-section-desc">Real strategy costs something. If this section is empty, the strategy is performative.</p>
+      </div>
+    </div>
+    <div class="p-row-list">
+      <div class="p-row"><h3>Cost</h3><p>More authority through lived proof, less scalable coaching language.</p></div><div class="p-row"><h3>Cost</h3><p>More demand on KC's visibility, less ability to hide behind a curriculum.</p></div><div class="p-row"><h3>Cost</h3><p>More directness and standard-setting, less comfort-first nurturing.</p></div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">04</div>
+      <div>
+        <div class="p-kicker">Application</div>
+        <h2>How this changes behavior<span class="dot">.</span></h2>
+        <p class="p-section-desc">Strategic choices that don't change behavior are descriptions, not strategy.</p>
+      </div>
+    </div>
+    <div class="p-row-list">
+      <div class="p-row"><h3>Strategy</h3><p>lead with thought leadership and lived proof before naming future products.</p></div><div class="p-row"><h3>Copy</h3><p>use command, standard, and proof language. Do not over-explain.</p></div><div class="p-row"><h3>Visuals</h3><p>show strength, discipline, event authority, and performance ritual.</p></div><div class="p-row"><h3>Sales</h3><p>invite women into rooms and conversations that raise the standard.</p></div><div class="p-row"><h3>Content</h3><p>make daily discipline, training, functional cannabis, and no-shortcut beliefs visible.</p></div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">05</div>
+      <div>
+        <div class="p-kicker">Proof required</div>
+        <h2>What evidence supports this<span class="dot">.</span></h2>
+        <p class="p-section-desc">Every public claim traces to verifiable evidence.</p>
+      </div>
+    </div>
+    <ul><li>Source line: wellness events are the way KC makes an impact and holds authority.</li><li>Source line: role is mentor / thought leader, not coach or educator.</li><li>Existing podcast proof.</li><li>Event history, event photos, or event plans if available.</li><li>Speaking proof when available.</li></ul>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">06</div>
+      <div>
+        <div class="p-kicker">Output control</div>
+        <h2>Rules for AI<span class="dot">.</span></h2>
+        <p class="p-section-desc">Directives any LLM must follow when producing content for this brand.</p>
+      </div>
+    </div>
+    <ul><li>Do not sell a coaching program unless source changes.</li><li>Do not invent event outcomes, audience size, podcast metrics, or product claims.</li><li>Keep future products clearly marked as future.</li><li>Position cannabis as part of the discipline stack, not the offer itself.</li></ul>
+  </section>
+
+
+  <div class="footer-nav">
+    <span>Section A · P1 · Brand Strategy</span>
+    <span><a href="people.html">People →</a></span>
+  </div>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        KC Santana (kc-santana)
+  Version:      0.1.0
+  Built at:     2026-05-30T00:00:44+00:00
+  Git SHA:      b3d1dd4c13629a347573c77f4fe4c9b43e7b6d43
+  Bundle hash:  sha256:48c9a90366031f5e7cbb1c1dccd0b05e582e0d0ef3417e17c162d8bca79aab25
+  Source:       brand-os/brands/kc-santana/STRATEGY.md + IDENTITY.md
+-->
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, viewfinder treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Personality · KC Brand OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #5A5CF9;
+    --accent-glow: rgba(90, 92, 249, 0.35);
+    --accent-soft: rgba(90, 92, 249, 0.06);
+    --text: #1A1A2E;
+    --muted: #8888A0;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #E5E7EB;
+    --light: #F5F5F7;
+    --white: #FFFFFF;
+    --dark: #18181B;
+    --dark-surface: #1D1D1D;
+    --ff-h: "Bricolage Grotesque", system-ui, sans-serif;
+    --ff-b: "Poppins", system-ui, sans-serif;
+    --ff-accent: "Bricolage Grotesque", system-ui, sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">KC<span class="dot">.</span></div>
+    <div class="meta">Brand OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="index.html">Focus Star</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="../identity/index.html">Direction One</a>
+<a href="../identity/sun-grown-athlete.html">Direction Two</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
+<a href="../application/index.html">Brand Application</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Strategy</strong></div>
+    <div class="row"><span>Use</span><strong>AI + creative</strong></div>
+    <div class="row"><span>Center</span><strong>No Excuses</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+
+  <section class="p-hero">
+    <div class="p-hero-copy">
+      <div class="p-kicker">Section A · P5 · Brand Strategy</div>
+      <h1>Personality<span class="dot">.</span></h1>
+      <p>KC's personality is Hero and Ruler tied for primary, Magician as transformation, and Cannabis Outlaw as the category edge. She is rough-edged, plainspoken, unsentimental, tough-love, and demanding.</p>
+      <div class="p-tags"><span>Hero, Ruler, Magician, Cannabis Outlaw</span></div>
+    </div>
+
+    <figure class="p-hero-media">
+      <img src="../images/persona.png" alt="">
+      <figcaption class="p-caption">Jocko-energy with a SoCal mom's voice. Beautiful, sexy, strong, and present without becoming girly.</figcaption>
+    </figure>
+  </section>
+  <div class="p-thesis">KC's difference is not that she talks about cannabis or fitness. It is that she makes both answer to a standard most wellness brands avoid.</div>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">01</div>
+      <div>
+        <div class="p-kicker">Strategic position</div>
+        <h2>What is being claimed<span class="dot">.</span></h2>
+        <p class="p-section-desc">The brand's position on this edge, in one plain sentence.</p>
+      </div>
+    </div>
+    <div class="p-grid">
+      <article class="p-card dark">
+        <div class="p-card-label">Position</div>
+        <h3>Personality</h3>
+        <p>KC's personality is Hero and Ruler tied for primary, Magician as transformation, and Cannabis Outlaw as the category edge. She is rough-edged, plainspoken, unsentimental, tough-love, and demanding.</p>
+      </article>
+      <article class="p-card">
+        <div class="p-card-label">Compass summary</div>
+        <h3>Hero, Ruler, Magician, Cannabis Outlaw</h3>
+        <p>Jocko-energy with a SoCal mom's voice. Beautiful, sexy, strong, and present without becoming girly.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">02</div>
+      <div>
+        <div class="p-kicker">Offer boundaries</div>
+        <h2>What belongs and what does not<span class="dot">.</span></h2>
+        <p class="p-section-desc">The filters that keep this strategic choice operational.</p>
+      </div>
+    </div>
+    <div class="p-grid two">
+      <article class="p-card">
+        <div class="p-card-label">Rules in</div>
+        <h3>Belongs</h3>
+        <ul><li>Authoritative, bold, brave, determined, disruptive, empowering, fearless, honest.</li><li>Inspiring, knowledgeable, loyal, powerful, resilient, transformative, unconventional.</li><li>Serious, literal, geometric, rational, transparent.</li><li>Feminine through form, strength, and presence.</li><li>Healthy functional fitness cannabis: sun-grown, athlete-grade, pre-workout or post-recovery ritual.</li></ul>
+      </article>
+      <article class="p-card dark">
+        <div class="p-card-label">Rules out</div>
+        <h3>Does not belong</h3>
+        <ul><li>Cheeky, enchanting, entertaining, magical.</li><li>Pink-Barbie feminine.</li><li>Stoner, party, couch-potato, tie-dye, peace-sign, munchies, basement lighting.</li><li>Pharma-glossy wellness.</li><li>Therapy-soft femininity.</li><li>Abstract, emotional, playful, mysterious, organic as dominant signals.</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">03</div>
+      <div>
+        <div class="p-kicker">Tradeoffs</div>
+        <h2>What this choice costs<span class="dot">.</span></h2>
+        <p class="p-section-desc">Real strategy costs something. If this section is empty, the strategy is performative.</p>
+      </div>
+    </div>
+    <div class="p-row-list">
+      <div class="p-row"><h3>Cost</h3><p>More commanding presence, less easy likeability.</p></div><div class="p-row"><h3>Cost</h3><p>More rational and literal direction, less dreamy wellness imagery.</p></div><div class="p-row"><h3>Cost</h3><p>More cannabis edge, higher need to avoid stoner and medical-victim tropes.</p></div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">04</div>
+      <div>
+        <div class="p-kicker">Application</div>
+        <h2>How this changes behavior<span class="dot">.</span></h2>
+        <p class="p-section-desc">Strategic choices that don't change behavior are descriptions, not strategy.</p>
+      </div>
+    </div>
+    <div class="p-row-list">
+      <div class="p-row"><h3>Strategy</h3><p>use cannabis to separate the category, not to lead the whole brand.</p></div><div class="p-row"><h3>Copy</h3><p>plainspoken, unsentimental, no fluff.</p></div><div class="p-row"><h3>Visuals</h3><p>geometry, hard contrast, real body discipline, event authority, controlled luxury.</p></div><div class="p-row"><h3>Sales</h3><p>make the room feel high-standard, not cute or mystical.</p></div><div class="p-row"><h3>Content</h3><p>let KC be the example before she becomes the explainer.</p></div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">05</div>
+      <div>
+        <div class="p-kicker">Proof required</div>
+        <h2>What evidence supports this<span class="dot">.</span></h2>
+        <p class="p-section-desc">Every public claim traces to verifiable evidence.</p>
+      </div>
+    </div>
+    <ul><li>Approved archetype mix.</li><li>Locked attribute list.</li><li>Slider source and anti-trope source.</li><li>Any likeness-based image use needs explicit reference review and approval.</li></ul>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">06</div>
+      <div>
+        <div class="p-kicker">Output control</div>
+        <h2>Rules for AI<span class="dot">.</span></h2>
+        <p class="p-section-desc">Directives any LLM must follow when producing content for this brand.</p>
+      </div>
+    </div>
+    <ul><li>Never make KC cute, mystical, soft, or stoner-coded.</li><li>Keep cannabis functional and athletic.</li><li>Express femininity through strength, form, body presence, and command.</li><li>Avoid generic wellness, generic gym, and generic cannabis imagery.</li></ul>
+  </section>
+
+
+  <div class="footer-nav">
+    <span>Section A · P5 · Brand Strategy</span>
+    <span><a href="../identity/index.html">Brand Identity →</a></span>
+  </div>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        KC Santana (kc-santana)
+  Version:      0.1.0
+  Built at:     2026-05-30T00:00:44+00:00
+  Git SHA:      b3d1dd4c13629a347573c77f4fe4c9b43e7b6d43
+  Bundle hash:  sha256:48c9a90366031f5e7cbb1c1dccd0b05e582e0d0ef3417e17c162d8bca79aab25
+  Source:       brand-os/brands/kc-santana/STRATEGY.md + IDENTITY.md
+-->
+</body>
+</html>

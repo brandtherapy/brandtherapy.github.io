@@ -1,0 +1,353 @@
+window.FOCUS_STAR_CONFIG = {
+  "brand": {
+    "name": "KC Santana",
+    "shortName": "KC",
+    "tagline": "Discipline-first women's health, fitness, and thought leadership",
+    "description": "Discipline-first women's health, fitness, and thought leadership",
+    "accentColor": "#5A5CF9",
+    "inkColor": "#1A1A2E"
+  },
+  "visual": {
+    "darkMode": false,
+    "fonts": {
+      "heading": "Bricolage Grotesque",
+      "body": "Poppins"
+    },
+    "background": "#FFFFFF",
+    "dialBackground": "#FFFFFF",
+    "bgMode": "unified",
+    "hideTitleDot": false,
+    "titleTransform": "uppercase",
+    "titleWeight": 800
+  },
+  "center": "No Excuses",
+  "pillars": [
+    {
+      "id": "product",
+      "code": "P1",
+      "title": "Product",
+      "eyebrow": "Your offering",
+      "guide": {
+        "desc": "<strong>Product.</strong> What you actually sell, and the standard the offer has to hold.",
+        "impacts": [
+          "Offering architecture",
+          "Pricing",
+          "Deliverables",
+          "Sales conversation",
+          "Client experience",
+          "Proof"
+        ]
+      },
+      "case": {
+        "desc": "<strong>Thought leadership as proof.</strong> KC's current product is thought leadership delivered through wellness events, mastermind dinners, podcasting, content, and emerging speaking. She is a mentor and thought leader, not a coach and not an educator.",
+        "apply": "The product is not a program yet. The product is KC's visible standard: a daily proof system that makes high-earning women stop outsourcing discipline.",
+        "impacts": [
+          "Offering architecture",
+          "Pricing",
+          "Deliverables",
+          "Sales conversation",
+          "Client experience",
+          "Proof"
+        ],
+        "details": {
+          "Strategic position": [
+            "KC's current product is thought leadership delivered through wellness events, mastermind dinners, podcasting, content, and emerging speaking. She is a mentor and thought leader, not a coach and not an educator."
+          ],
+          "Compass": [
+            "Follow the woman who lives the standard. Events, podcast, content, and speaking all point to one discipline-first life."
+          ],
+          "Rules in": [
+            "Wellness events and mastermind dinners anchored in SoCal.",
+            "Intimate rooms of women who need the standard more than another self-care idea.",
+            "Podcast and content that make discipline visible.",
+            "Speaking as the natural extension of mentor and thought-leader authority.",
+            "Cannabis as one functional tool in the discipline stack.",
+            "Future products named only as future products."
+          ],
+          "Rules out": [
+            "Coaching package positioning.",
+            "Educator-first positioning.",
+            "Generic wellness content.",
+            "Cannabis SKU as the current center.",
+            "GLP-1 or shortcut framing.",
+            "Passive lifestyle inspiration."
+          ],
+          "Proof required": [
+            "Source line: wellness events are the way KC makes an impact and holds authority.",
+            "Source line: role is mentor / thought leader, not coach or educator.",
+            "Existing podcast proof.",
+            "Event history, event photos, or event plans if available.",
+            "Speaking proof when available."
+          ],
+          "AI rule": [
+            "Do not sell a coaching program unless source changes.",
+            "Do not invent event outcomes, audience size, podcast metrics, or product claims.",
+            "Keep future products clearly marked as future.",
+            "Position cannabis as part of the discipline stack, not the offer itself."
+          ],
+          "Image signal": []
+        }
+      }
+    },
+    {
+      "id": "people",
+      "code": "P2",
+      "title": "People",
+      "eyebrow": "Your tribe",
+      "guide": {
+        "desc": "<strong>People.</strong> The specific people the brand is built to serve. Not everyone.",
+        "impacts": [
+          "Positioning",
+          "Language",
+          "Visibility",
+          "Offer fit",
+          "Content themes",
+          "Sales filtering"
+        ]
+      },
+      "case": {
+        "desc": "<strong>High-earning women who need the standard.</strong> KC serves high-earning, health-curious, undisciplined women in SoCal who know something has to change but do not know where to start. The primary persona is Alina.",
+        "apply": "KC is not speaking to women who need more information. She is speaking to women who need a standard they cannot negotiate with.",
+        "impacts": [
+          "Positioning",
+          "Language",
+          "Visibility",
+          "Offer fit",
+          "Content themes",
+          "Sales filtering"
+        ],
+        "details": {
+          "Strategic position": [
+            "KC serves high-earning, health-curious, undisciplined women in SoCal who know something has to change but do not know where to start. The primary persona is Alina."
+          ],
+          "Compass": [
+            "Alina: 35, SoCal, good salary, health-conscious but undisciplined, holistic-leaning, and awkward around cannabis."
+          ],
+          "Rules in": [
+            "High-earning SoCal women.",
+            "Corporate, banking, Cedars-Sinai-nurse, and similar high-functioning archetypes.",
+            "Women who are health-curious and holistic-leaning.",
+            "Women who consume cannabis awkwardly or without a disciplined frame.",
+            "Special-needs moms as an identity layer, not the primary segment.",
+            "One bio line for mother of three when relevant."
+          ],
+          "Rules out": [
+            "Lazy stoner stereotypes.",
+            "GLP-1 or shortcut seekers.",
+            "Pink-Barbie feminine wellness.",
+            "Infantilized mom content.",
+            "Public use of her son's face.",
+            "Treating autism moms as the front of the brand."
+          ],
+          "Proof required": [
+            "Persona notes for Alina.",
+            "Geographic note: SoCal, not Inland Empire and not LA-only.",
+            "Source statement that special-needs moms are an identity layer only.",
+            "Approved bio direction before public use."
+          ],
+          "AI rule": [
+            "Keep Alina capable. The issue is undisciplined health behavior, not incompetence.",
+            "Do not make the brand mommy-first.",
+            "Do not use her son's image or turn autism into a selling story.",
+            "Avoid pink, princess, cutesy, or therapy-soft femininity."
+          ],
+          "Image signal": []
+        }
+      }
+    },
+    {
+      "id": "purpose",
+      "code": "P3",
+      "title": "Purpose",
+      "eyebrow": "Your why",
+      "guide": {
+        "desc": "<strong>Purpose.</strong> The reason the brand exists beyond activity and attention.",
+        "impacts": [
+          "Vision",
+          "Story",
+          "Partnerships",
+          "Recruitment",
+          "Saying no",
+          "Editorial choices"
+        ]
+      },
+      "case": {
+        "desc": "<strong>Women's health through discipline.</strong> KC exists to help women reclaim cognitive longevity, hormonal health, physical health, and mental health through lifestyle discipline, weighted heavily toward fitness and discipline.",
+        "apply": "KC's purpose is personal before it is public: she watched women in her own family ignore the advice and arrive at diagnoses that might have been delayed or avoided.",
+        "impacts": [
+          "Vision",
+          "Story",
+          "Partnerships",
+          "Recruitment",
+          "Saying no",
+          "Editorial choices"
+        ],
+        "details": {
+          "Strategic position": [
+            "KC exists to help women reclaim cognitive longevity, hormonal health, physical health, and mental health through lifestyle discipline, weighted heavily toward fitness and discipline."
+          ],
+          "Compass": [
+            "The point is not to change every woman. The point is to make the better way visible enough that excuses get harder to defend."
+          ],
+          "Rules in": [
+            "Cognitive longevity.",
+            "Hormonal and physical health.",
+            "Mental health as part of the discipline frame.",
+            "Fitness and lifestyle discipline as the dominant levers.",
+            "Personal-family why, used carefully and without medical overclaiming.",
+            "Awareness that there is a better way."
+          ],
+          "Rules out": [
+            "Medical claims.",
+            "Diagnosis prevention claims.",
+            "Weight-loss-before-after framing.",
+            "Soft wellness inspiration without discipline.",
+            "Fear tactics without behavior.",
+            "Clinical therapy or pharma imagery."
+          ],
+          "Proof required": [
+            "KC source quote: \"If I can do it, anybody else can. No more excuses.\"",
+            "KC source quote about making women aware there is a better way.",
+            "Any future medical, longevity, or hormonal-health claims need source evidence."
+          ],
+          "AI rule": [
+            "Do not make medical promises.",
+            "Do not claim KC prevents disease.",
+            "Do not use GLP-1 imagery, scales, before-after bodies, white coats, or pill bottles.",
+            "Keep the purpose practical and behavioral."
+          ],
+          "Image signal": []
+        }
+      }
+    },
+    {
+      "id": "promise",
+      "code": "P4",
+      "title": "Promise",
+      "eyebrow": "Your non-negotiable",
+      "guide": {
+        "desc": "<strong>Promise.</strong> The one standard that should hold across every touchpoint.",
+        "impacts": [
+          "Writing",
+          "Visual metaphor",
+          "Discovery",
+          "Decision filter",
+          "Content topics",
+          "Client process"
+        ]
+      },
+      "case": {
+        "desc": "<strong>No Excuses.</strong> The brand promise is No Excuses. KC will not sell the shortcut. She will be the voice that makes Alina do the work.",
+        "apply": "No Excuses is a refusal and an invitation. It says the body, the brain, the hormones, the training, the cannabis ritual, and the room all answer to the same standard.",
+        "impacts": [
+          "Writing",
+          "Visual metaphor",
+          "Discovery",
+          "Decision filter",
+          "Content topics",
+          "Client process"
+        ],
+        "details": {
+          "Strategic position": [
+            "The brand promise is No Excuses. KC will not sell the shortcut. She will be the voice that makes Alina do the work."
+          ],
+          "Compass": [
+            "No shortcuts. No GLP-1 identity. No passive wellness. No excuses."
+          ],
+          "Rules in": [
+            "Primary tagline: No Excuses.",
+            "Alternate lines: Earn it. Effort is the answer. Discipline doesn't lie. Show up. No exceptions.",
+            "Anti-GLP-1 and anti-shortcut as bright-line proof.",
+            "Anti-passive health.",
+            "Tough-love mentor voice."
+          ],
+          "Rules out": [
+            "Weight-loss promises.",
+            "Shaming bodies.",
+            "Generic hustle slogans.",
+            "Cute motivational posters.",
+            "Wellness-guru calm.",
+            "Any language that makes discipline sound optional."
+          ],
+          "Proof required": [
+            "KC source quote about refusing fat-loss drugs and putting in the work.",
+            "Approved tagline list.",
+            "Approved anti-persona list."
+          ],
+          "AI rule": [
+            "Do not soften No Excuses into generic empowerment.",
+            "Do not moralize medical choices beyond the approved anti-shortcut position.",
+            "Do not use body-shaming imagery or copy.",
+            "Keep the promise pointed at behavior and standards."
+          ],
+          "Image signal": []
+        }
+      }
+    },
+    {
+      "id": "personality",
+      "code": "P5",
+      "title": "Personality",
+      "eyebrow": "How you show up",
+      "guide": {
+        "desc": "<strong>Personality.</strong> How the brand sounds, looks, behaves, and is recognized.",
+        "impacts": [
+          "Voice",
+          "Visual language",
+          "Social behavior",
+          "Website tone",
+          "Decks",
+          "Email rhythm"
+        ]
+      },
+      "case": {
+        "desc": "<strong>Hero, Ruler, Magician, Cannabis Outlaw.</strong> KC's personality is Hero and Ruler tied for primary, Magician as transformation, and Cannabis Outlaw as the category edge. She is rough-edged, plainspoken, unsentimental, tough-love, and demanding.",
+        "apply": "KC's difference is not that she talks about cannabis or fitness. It is that she makes both answer to a standard most wellness brands avoid.",
+        "impacts": [
+          "Voice",
+          "Visual language",
+          "Social behavior",
+          "Website tone",
+          "Decks",
+          "Email rhythm"
+        ],
+        "details": {
+          "Strategic position": [
+            "KC's personality is Hero and Ruler tied for primary, Magician as transformation, and Cannabis Outlaw as the category edge. She is rough-edged, plainspoken, unsentimental, tough-love, and demanding."
+          ],
+          "Compass": [
+            "Jocko-energy with a SoCal mom's voice. Beautiful, sexy, strong, and present without becoming girly."
+          ],
+          "Rules in": [
+            "Authoritative, bold, brave, determined, disruptive, empowering, fearless, honest.",
+            "Inspiring, knowledgeable, loyal, powerful, resilient, transformative, unconventional.",
+            "Serious, literal, geometric, rational, transparent.",
+            "Feminine through form, strength, and presence.",
+            "Healthy functional fitness cannabis: sun-grown, athlete-grade, pre-workout or post-recovery ritual."
+          ],
+          "Rules out": [
+            "Cheeky, enchanting, entertaining, magical.",
+            "Pink-Barbie feminine.",
+            "Stoner, party, couch-potato, tie-dye, peace-sign, munchies, basement lighting.",
+            "Pharma-glossy wellness.",
+            "Therapy-soft femininity.",
+            "Abstract, emotional, playful, mysterious, organic as dominant signals."
+          ],
+          "Proof required": [
+            "Approved archetype mix.",
+            "Locked attribute list.",
+            "Slider source and anti-trope source.",
+            "Any likeness-based image use needs explicit reference review and approval."
+          ],
+          "AI rule": [
+            "Never make KC cute, mystical, soft, or stoner-coded.",
+            "Keep cannabis functional and athletic.",
+            "Express femininity through strength, form, body presence, and command.",
+            "Avoid generic wellness, generic gym, and generic cannabis imagery."
+          ],
+          "Image signal": []
+        }
+      }
+    }
+  ]
+};

@@ -1,0 +1,56 @@
+{
+  "brand": "kc-santana",
+  "name": "KC Santana",
+  "center": {
+    "word": "No Excuses",
+    "definition": ""
+  },
+  "edges": [
+    {
+      "id": "product",
+      "code": "P1",
+      "title": "Product",
+      "offer_name": "Thought leadership as proof",
+      "position": "KC's current product is thought leadership delivered through wellness events, mastermind dinners, podcasting, content, and emerging speaking. She is a mentor and thought leader, not a coach and not an educator.",
+      "compass": "Follow the woman who lives the standard. Events, podcast, content, and speaking all point to one discipline-first life.",
+      "image": null
+    },
+    {
+      "id": "people",
+      "code": "P2",
+      "title": "People",
+      "offer_name": "High-earning women who need the standard",
+      "position": "KC serves high-earning, health-curious, undisciplined women in SoCal who know something has to change but do not know where to start. The primary persona is Alina.",
+      "compass": "Alina: 35, SoCal, good salary, health-conscious but undisciplined, holistic-leaning, and awkward around cannabis.",
+      "image": null
+    },
+    {
+      "id": "purpose",
+      "code": "P3",
+      "title": "Purpose",
+      "offer_name": "Women's health through discipline",
+      "position": "KC exists to help women reclaim cognitive longevity, hormonal health, physical health, and mental health through lifestyle discipline, weighted heavily toward fitness and discipline.",
+      "compass": "The point is not to change every woman. The point is to make the better way visible enough that excuses get harder to defend.",
+      "image": null
+    },
+    {
+      "id": "promise",
+      "code": "P4",
+      "title": "Promise",
+      "offer_name": "No Excuses",
+      "position": "The brand promise is No Excuses. KC will not sell the shortcut. She will be the voice that makes Alina do the work.",
+      "compass": "No shortcuts. No GLP-1 identity. No passive wellness. No excuses.",
+      "image": null
+    },
+    {
+      "id": "personality",
+      "code": "P5",
+      "title": "Personality",
+      "offer_name": "Hero, Ruler, Magician, Cannabis Outlaw",
+      "position": "KC's personality is Hero and Ruler tied for primary, Magician as transformation, and Cannabis Outlaw as the category edge. She is rough-edged, plainspoken, unsentimental, tough-love, and demanding.",
+      "compass": "Jocko-energy with a SoCal mom's voice. Beautiful, sexy, strong, and present without becoming girly.",
+      "image": null
+    }
+  ],
+  "schema_version": "1.0.0"
+}
