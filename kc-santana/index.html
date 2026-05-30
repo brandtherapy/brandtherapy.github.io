@@ -1,8 +1,217 @@
-<!doctype html>
-<html><head>
-<meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta http-equiv="refresh" content="0; url=strategy/">
-<link rel="canonical" href="strategy/">
-<title>KC Santana Brand OS</title>
-</head><body><p><a href="strategy/">Continue to your Brand OS &rarr;</a></p></body></html>
+<title>Focus Star · KC Santana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200;400;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#5A5CF9;
+  --accent-soft:rgba(90,92,249,0.06);
+  --accent-line:rgba(90,92,249,0.22);
+  --ink:#1A1A2E;
+  --muted:#6B6B82;
+  --hair:#E6E6EC;
+  --paper:#FFFFFF;
+  --paper-2:#F6F6F9;
+  --ff-h:"Bricolage Grotesque",system-ui,sans-serif;
+  --ff-b:"Poppins",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--ff-b);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,72px);}
+
+/* Top bar */
+.topbar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:clamp(20px,3vw,30px) 0;border-bottom:1px solid var(--hair);
+  font-family:var(--ff-b);font-size:11px;font-weight:600;
+  letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);
+}
+.topbar strong{color:var(--ink);font-weight:700;}
+.topbar .tag{color:var(--accent);}
+
+/* Hero */
+.hero{padding:clamp(48px,8vw,96px) 0 clamp(40px,6vw,64px);
+  display:grid;grid-template-columns:1fr;gap:clamp(36px,6vw,56px);align-items:center;}
+.kicker{font-family:var(--ff-b);font-size:12px;font-weight:600;
+  letter-spacing:0.24em;text-transform:uppercase;color:var(--accent);
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;}
+.kicker::before{content:"";width:26px;height:10px;border-top:2px solid var(--accent);border-left:2px solid var(--accent);display:inline-block;}
+.hero h1{font-family:var(--ff-h);font-weight:800;
+  font-size:clamp(56px,15vw,128px);line-height:0.9;letter-spacing:-0.03em;}
+.hero h1 .dot{color:var(--accent);}
+.hero .lead{font-size:clamp(16px,2.2vw,20px);line-height:1.55;
+  color:var(--muted);max-width:30ch;margin-top:24px;}
+.hero .lead b{color:var(--ink);font-weight:500;}
+
+/* Compass */
+.compass{width:100%;max-width:420px;margin:0 auto;justify-self:center;}
+.compass svg{width:100%;height:auto;display:block;}
+.star-edge{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-linejoin:miter;}
+.ring{fill:none;stroke:var(--accent-line);stroke-width:1;stroke-dasharray:1 7;stroke-linecap:round;}
+.node{fill:var(--accent);}
+.node-ring{fill:none;stroke:var(--accent);stroke-width:1.4;}
+.c-center{font-family:var(--ff-h);font-weight:800;fill:var(--ink);font-size:16px;letter-spacing:-0.01em;}
+.p-label{font-family:var(--ff-b);font-weight:600;fill:var(--ink);font-size:12.5px;letter-spacing:0.04em;}
+.p-num{font-family:var(--ff-b);font-weight:600;fill:var(--muted);font-size:9px;letter-spacing:0.12em;}
+
+/* Index of five */
+.five{padding:clamp(20px,4vw,40px) 0 clamp(56px,9vw,120px);}
+.section-rule{display:flex;align-items:baseline;justify-content:space-between;
+  border-top:2px solid var(--ink);padding-top:16px;margin-bottom:clamp(28px,5vw,52px);}
+.section-rule h2{font-family:var(--ff-h);font-weight:700;font-size:clamp(20px,3vw,28px);letter-spacing:-0.01em;}
+.section-rule span{font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);}
+
+.p{display:grid;grid-template-columns:1fr;gap:18px;
+  padding:clamp(28px,4vw,40px) 0;border-top:1px solid var(--hair);}
+.p:first-of-type{border-top:0;padding-top:0;}
+.p-head{display:flex;align-items:baseline;gap:16px;}
+.p-index{font-family:var(--ff-h);font-weight:800;font-size:clamp(34px,7vw,54px);
+  line-height:0.8;color:var(--paper);-webkit-text-stroke:1.5px var(--accent);letter-spacing:-0.02em;}
+.p-name{font-family:var(--ff-b);font-size:12px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);padding-top:6px;}
+.p-body{}
+.p-offer{font-family:var(--ff-h);font-weight:700;font-size:clamp(24px,3.4vw,34px);
+  line-height:1.05;letter-spacing:-0.02em;margin-bottom:14px;}
+.p-pos{font-size:clamp(15px,1.6vw,16px);line-height:1.65;color:#3a3a4d;max-width:64ch;}
+.compass-note{position:relative;margin-top:20px;background:var(--accent-soft);
+  padding:18px 20px 18px 22px;max-width:60ch;}
+.compass-note::before{content:"";position:absolute;top:0;left:0;width:18px;height:18px;
+  border-top:2px solid var(--accent);border-left:2px solid var(--accent);}
+.compass-note .l{font-family:var(--ff-b);font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px;}
+.compass-note p{font-size:14.5px;line-height:1.55;color:var(--ink);}
+
+/* Close */
+.close{border-top:2px solid var(--ink);padding:clamp(32px,5vw,48px) 0 clamp(48px,8vw,96px);
+  display:grid;grid-template-columns:1fr;gap:14px;}
+.close h3{font-family:var(--ff-h);font-weight:700;font-size:clamp(22px,3vw,32px);line-height:1.1;letter-spacing:-0.02em;max-width:24ch;}
+.close p{color:var(--muted);max-width:54ch;}
+.close .pending{display:inline-flex;align-items:center;gap:9px;margin-top:8px;
+  font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);}
+.close .pending::before{content:"";width:8px;height:8px;background:var(--accent);}
+
+@media(max-width:680px){
+  .section-rule{flex-direction:column;align-items:flex-start;gap:6px;}
+  .section-rule span{font-size:10px;letter-spacing:0.14em;}
+}
+@media(min-width:880px){
+  .hero{grid-template-columns:1.05fr 0.95fr;}
+  .hero-copy{order:1;}
+  .compass{order:2;max-width:460px;}
+  .p{grid-template-columns:200px 1fr;gap:36px;align-items:start;}
+  .p-head{flex-direction:column;gap:14px;position:sticky;top:32px;}
+  .p-index{font-size:64px;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="topbar">
+    <strong>KC Santana</strong>
+    <span class="tag">Focus Star</span>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="kicker">The center</span>
+      <h1>No Excuses<span class="dot">.</span></h1>
+      <p class="lead">One standard runs the whole brand. <b>Every event, post, product, and decision answers to it.</b></p>
+    </div>
+    <div class="compass" aria-label="Focus Star compass">
+      <svg viewBox="-50 -34 500 478" role="img">
+        <circle class="ring" cx="200" cy="200" r="188"></circle>
+        <!-- star -->
+        <path class="star-edge" d="M200,80 L227,162.8 L314.1,162.9 L243.7,214.2 L270.5,297.1 L200,246 L129.5,297.1 L156.3,214.2 L85.9,162.9 L172.9,162.8 Z"></path>
+        <!-- center label chip masks the star lines behind it -->
+        <rect x="140" y="186" width="120" height="28" fill="#FFFFFF"></rect>
+        <text class="c-center" x="200" y="205" text-anchor="middle">No Excuses</text>
+        <rect x="171" y="218" width="58" height="2" fill="#5A5CF9"></rect>
+        <!-- point labels -->
+        <text class="p-num" x="200" y="30" text-anchor="middle">01</text>
+        <text class="p-label" x="200" y="43" text-anchor="middle">Product</text>
+        <text class="p-num" x="372" y="150" text-anchor="middle">02</text>
+        <text class="p-label" x="372" y="163" text-anchor="middle">People</text>
+        <text class="p-num" x="300" y="350" text-anchor="middle">03</text>
+        <text class="p-label" x="300" y="363" text-anchor="middle">Purpose</text>
+        <text class="p-num" x="100" y="350" text-anchor="middle">04</text>
+        <text class="p-label" x="100" y="363" text-anchor="middle">Promise</text>
+        <text class="p-num" x="28" y="150" text-anchor="middle">05</text>
+        <text class="p-label" x="28" y="163" text-anchor="middle">Personality</text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="five">
+    <div class="section-rule">
+      <h2>The five points</h2>
+      <span>Product / People / Purpose / Promise / Personality</span>
+    </div>
+
+    <article class="p">
+      <div class="p-head"><div class="p-index">01</div><div class="p-name">Product</div></div>
+      <div class="p-body">
+        <h3 class="p-offer">Thought leadership as proof</h3>
+        <p class="p-pos">KC's current product is thought leadership delivered through wellness events, mastermind dinners, podcasting, content, and emerging speaking. She is a mentor and thought leader, not a coach and not an educator.</p>
+        <div class="compass-note"><span class="l">Compass</span><p>Follow the woman who lives the standard. Events, podcast, content, and speaking all point to one discipline-first life.</p></div>
+      </div>
+    </article>
+
+    <article class="p">
+      <div class="p-head"><div class="p-index">02</div><div class="p-name">People</div></div>
+      <div class="p-body">
+        <h3 class="p-offer">High-earning women who need the standard</h3>
+        <p class="p-pos">KC serves high-earning, health-curious, undisciplined women in SoCal who know something has to change but do not know where to start. The primary persona is Alina.</p>
+        <div class="compass-note"><span class="l">Compass</span><p>Alina: 35, SoCal, good salary, health-conscious but undisciplined, holistic-leaning, and awkward around cannabis.</p></div>
+      </div>
+    </article>
+
+    <article class="p">
+      <div class="p-head"><div class="p-index">03</div><div class="p-name">Purpose</div></div>
+      <div class="p-body">
+        <h3 class="p-offer">Women's health through discipline</h3>
+        <p class="p-pos">KC exists to help women reclaim cognitive longevity, hormonal health, physical health, and mental health through lifestyle discipline, weighted heavily toward fitness and discipline.</p>
+        <div class="compass-note"><span class="l">Compass</span><p>The point is not to change every woman. The point is to make the better way visible enough that excuses get harder to defend.</p></div>
+      </div>
+    </article>
+
+    <article class="p">
+      <div class="p-head"><div class="p-index">04</div><div class="p-name">Promise</div></div>
+      <div class="p-body">
+        <h3 class="p-offer">No Excuses</h3>
+        <p class="p-pos">The brand promise is No Excuses. KC will not sell the shortcut. She will be the voice that makes Alina do the work.</p>
+        <div class="compass-note"><span class="l">Compass</span><p>No shortcuts. No GLP-1 identity. No passive wellness. No excuses.</p></div>
+      </div>
+    </article>
+
+    <article class="p">
+      <div class="p-head"><div class="p-index">05</div><div class="p-name">Personality</div></div>
+      <div class="p-body">
+        <h3 class="p-offer">Hero, Ruler, Magician, Cannabis Outlaw</h3>
+        <p class="p-pos">KC's personality is Hero and Ruler tied for primary, Magician as transformation, and Cannabis Outlaw as the category edge. She is rough-edged, plainspoken, unsentimental, tough-love, and demanding.</p>
+        <div class="compass-note"><span class="l">Compass</span><p>Jocko-energy with a SoCal mom's voice. Beautiful, strong, and present without becoming girly.</p></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="close">
+    <h3>This is the foundation. The visual directions come next.</h3>
+    <p>The look has to answer to the strategy, not the other way around. Once this Focus Star is confirmed, the creative directions open.</p>
+    <span class="pending">Creative directions pending approval</span>
+  </section>
+
+</div>
+</body>
+</html>
