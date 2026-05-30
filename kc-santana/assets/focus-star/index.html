@@ -808,6 +808,18 @@
     .stage[data-mode="case"] .pillar-title { font-size: clamp(40px,11vw,58px); }
     .impacts { grid-template-columns: 1fr 1fr; }
   }
+
+  /* Light design polish: brand-name primary tab, readability, FP sharp corners. */
+  #btn-case { order: 0; }
+  #btn-guide { order: 1; }
+  .case-logo { display: none !important; }
+  .mode-toggle, .mode-btn { border-radius: 0 !important; }
+  .pillar-desc { color: #39394C !important; line-height: 1.72 !important; }
+  .insight-card p { font-size: 12.5px !important; line-height: 1.52 !important; }
+  .stage[data-mode="case"] .insight-card p { font-size: clamp(13.5px, .95vw, 15.5px) !important; }
+  .apply-block { border-left: 0 !important; border-top: 1px solid var(--border) !important; padding-left: 0 !important; padding-top: 14px !important; }
+  .stage[data-mode="case"] .apply-block.visible { border-top: 2px solid var(--acc) !important; padding-top: 14px !important; }
+  .apply-label { color: var(--acc) !important; }
 </style>
 </head>
 <body>
@@ -995,6 +1007,8 @@ function applyTheme(config){
   if(visual.background) root.style.setProperty('--bg', visual.background);
   if(visual.dialBackground) root.style.setProperty('--bg-dial', visual.dialBackground);
   document.getElementById('case-brand-name').textContent = brand.name || brand.shortName || 'Brand';
+  const _btnCase = document.getElementById('btn-case');
+  if(_btnCase) _btnCase.textContent = brand.name || brand.shortName || 'Case Study';
   document.title = `${brand.shortName || brand.name || 'Brand'} Focus Star`;
 }
 
