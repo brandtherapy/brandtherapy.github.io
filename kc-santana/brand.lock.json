@@ -1,23 +1,23 @@
 {
   "brand": "kc-santana",
   "version": "0.1.0",
-  "approved_at": "2026-05-31T21:34:21+00:00",
+  "approved_at": "2026-05-31T23:46:51+00:00",
   "approved_by": "Florian",
   "source_hashes": {
-    "STRATEGY.md": "sha256:e03571dadbf6aeca804d8126b214b556e97c3ddab7a71e7c5130140b70a47087",
+    "STRATEGY.md": "sha256:2f38d4c73e8e0b06fbd5a1597f9f55084fa320bd170b195f9e662b289ddac5d5",
     "IDENTITY.md": "sha256:9cb0ecc1fcbb685025bf3ea9a420af0ec2c91ccf704a581e720eb3fca8814384",
     "DIRECTIONS.md": "sha256:90c079f80136d73ccb0e7210a9ab77496895e39ba45aedcb6964d6a09a2c72f6",
     "references/source-map.md": "sha256:aa409f8ca56549806bf9117348ca51bd1e80773c1c1a95781de134fea2c4ee11",
-    "images_manifest": "sha256:9e91af923588d337b13fb748bfd2b737dbcdad40c7c4b47951a60685368997c0"
+    "images_manifest": "sha256:06ab088f7f8d2d4a9b68782ee9eca93d774508b2c31d0de6cd9a1cea3c36a7f5"
   },
-  "bundle_hash": "sha256:d1997680db8c157811923841dac67bfd48dd47bb21ef7155b45bcb18a09eb9c9",
+  "bundle_hash": "sha256:a26c4383c9f7a9f2329d8bd6afc00932dabfd574b877e3c26f6a3a58442e1ede",
   "outputs": {
-    "ai_context_emitted_at": "2026-05-31T21:34:21+00:00",
-    "ai_context_json_emitted_at": "2026-05-31T21:34:21+00:00",
-    "ai_context_git_sha": "0b3e94774d6395e0824f25d9fc3beeef4f51345c",
-    "strategy_html_emitted_at": "2026-05-31T21:34:21+00:00",
-    "identity_html_emitted_at": "2026-05-31T21:34:21+00:00",
-    "focus_star_json_emitted_at": "2026-05-31T21:34:21+00:00"
+    "ai_context_emitted_at": "2026-05-31T23:46:51+00:00",
+    "ai_context_json_emitted_at": "2026-05-31T23:46:51+00:00",
+    "ai_context_git_sha": "5520387931396e1840e5e0f9a6340fd528458da7",
+    "strategy_html_emitted_at": "2026-05-31T23:46:51+00:00",
+    "identity_html_emitted_at": "2026-05-31T23:46:51+00:00",
+    "focus_star_json_emitted_at": "2026-05-31T23:46:51+00:00"
   },
   "validator_rules": {
     "must_match_at_build": [

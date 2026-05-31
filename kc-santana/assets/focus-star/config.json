@@ -87,6 +87,10 @@
           ],
           "Image signal": []
         }
+      },
+      "image": {
+        "path": "../../images/product.png",
+        "alt": "Product"
       }
     },
     {
@@ -239,6 +243,10 @@
           ],
           "Image signal": []
         }
+      },
+      "image": {
+        "path": "../../images/purpose.png",
+        "alt": "Purpose"
       }
     },
     {
@@ -303,6 +311,10 @@
           ],
           "Image signal": []
         }
+      },
+      "image": {
+        "path": "../../images/promise.png",
+        "alt": "Promise"
       }
     },
     {
