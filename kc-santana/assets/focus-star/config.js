@@ -152,6 +152,27 @@ window.FOCUS_STAR_CONFIG = {
             "Avoid pink, princess, cutesy, or therapy-soft femininity."
           ],
           "Image signal": []
+        },
+        "persona": {
+          "role": "High-earning SoCal professional",
+          "context": "She can afford wellness but has not built discipline, and she knows something has to change.",
+          "quote": "She can afford wellness but has not built discipline, and she knows something has to change.",
+          "need": "She does not need more information. She needs a standard she cannot negotiate with.",
+          "tags": [
+            "SoCal",
+            "Age 35",
+            "High earner",
+            "Health-curious",
+            "Holistic-leaning",
+            "Undisciplined"
+          ],
+          "rationalMotivation": "Cognitive longevity, hormonal and physical health, without outsourcing the work.",
+          "painPoint": "Health-conscious but undisciplined. Awkward around cannabis. Stuck at the starting line.",
+          "decisionTrigger": "A room and a voice that make excuses harder to defend.",
+          "image": {
+            "path": "../../images/persona-alina.png",
+            "alt": "High-earning SoCal professional"
+          }
         }
       }
     },
