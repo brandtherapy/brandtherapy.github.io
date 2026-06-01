@@ -50,6 +50,7 @@
     background: var(--bg);
     height: 100%;
     overflow: hidden;
+    overscroll-behavior: contain;
   }
   .reader-fit {
     width: 100%;
@@ -67,6 +68,14 @@
   .stage[data-mode="case"] .reader {
     padding-top: clamp(34px,3.4vw,54px);
     padding-bottom: clamp(28px,2.8vw,44px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+
+  .stage[data-mode="case"] .detail-fit {
+    transform: none !important;
+    width: 100% !important;
   }
 
   .stage[data-mode="case"] .navigation-panel {
@@ -377,6 +386,73 @@
   }
 
 
+  .case-focus-block {
+    display: none;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+    margin-bottom: 18px;
+  }
+
+  .case-focus-block.visible {
+    display: grid;
+    grid-template-columns: minmax(110px, 148px) minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+  }
+
+  .case-focus-label {
+    font-family: var(--ff-b);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .22em;
+    line-height: 1.35;
+    text-transform: uppercase;
+    color: var(--acc);
+  }
+
+  .case-focus-copy {
+    min-width: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .case-focus-headline {
+    max-width: 900px;
+    font-family: var(--ff-h);
+    font-size: clamp(28px,2.45vw,44px);
+    font-weight: 800;
+    letter-spacing: -.018em;
+    line-height: 1.02;
+    color: var(--ink);
+  }
+
+  .case-focus-support {
+    max-width: 860px;
+    font-family: var(--ff-b);
+    font-size: clamp(14px,.98vw,17px);
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--acc);
+  }
+
+  .case-focus-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .case-focus-chips span {
+    border: 1px solid var(--border);
+    padding: 5px 8px;
+    font-family: var(--ff-b);
+    font-size: 10px;
+    line-height: 1;
+    color: var(--muted);
+    background: var(--bg);
+  }
+
+
   .archetype-block { display: none; margin-bottom: 20px; }
   .archetype-block.visible { display: grid; grid-template-columns: minmax(140px, 190px) 1fr; gap: 18px; align-items: start; }
   .archetype-icons {
@@ -505,6 +581,30 @@
   .stage[data-mode="case"] .insight-card p {
     font-size: clamp(13px,.92vw,15px);
     line-height: 1.5;
+  }
+  .case-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+  .case-list li {
+    position: relative;
+    padding-left: 14px;
+    font-family: var(--ff-b);
+    font-size: clamp(13px,.92vw,15px);
+    line-height: 1.45;
+    color: var(--ink);
+  }
+  .case-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: .64em;
+    width: 5px;
+    height: 5px;
+    background: var(--acc);
   }
   .tag-row {
     display: flex;
@@ -722,6 +822,7 @@
     }
     .persona-block.visible,
     .archetype-block.visible,
+    .case-focus-block.visible,
     .stage[data-mode="case"] .persona-block.visible,
     .stage[data-mode="case"] .archetype-block.visible {
       grid-template-columns: 1fr;
@@ -869,6 +970,14 @@
       <h1 class="pillar-title"><span id="p-title">Purpose</span><span class="dot">.</span></h1>
       <div class="detail-fit" id="detail-fit">
       <p class="pillar-desc" id="p-desc"></p>
+      <div class="case-focus-block" id="case-focus-block">
+        <div class="case-focus-label" id="case-focus-label">Compass</div>
+        <div class="case-focus-copy">
+          <div class="case-focus-headline" id="case-focus-headline"></div>
+          <div class="case-focus-support" id="case-focus-support"></div>
+          <div class="case-focus-chips" id="case-focus-chips"></div>
+        </div>
+      </div>
       <div class="pillar-hero-image" id="pillar-hero"><img id="pillar-hero-img" alt=""></div>
 
 
@@ -965,6 +1074,8 @@ function normalizePanel(panel={}){
     desc: panel.desc || '',
     apply: panel.apply || '',
     impacts: Array.isArray(panel.impacts) ? panel.impacts : [],
+    focus: panel.focus || null,
+    cards: Array.isArray(panel.cards) ? panel.cards : [],
     persona: panel.persona || null,
     archetype: panel.archetype || null,
     archetypeAssets: panel.archetypeAssets || null,
@@ -985,6 +1096,20 @@ function escapeHTML(value=''){
 function truncate(value='', max=150){
   const clean = String(value).trim();
   return clean.length > max ? `${clean.slice(0, max - 1).trim()}...` : clean;
+}
+
+function renderCaseCard(card={}){
+  const label = card.label || 'Detail';
+  const items = Array.isArray(card.items) ? card.items.filter(Boolean).slice(0,3) : [];
+  const body = items.length
+    ? `<ul class="case-list">${items.map(item=>`<li>${escapeHTML(truncate(item, 190))}</li>`).join('')}</ul>`
+    : `<p>${escapeHTML(truncate(card.value || '', 260))}</p>`;
+  return `
+    <article class="insight-card" data-tone="${escapeHTML(card.tone || '')}">
+      <div class="label">${escapeHTML(label)}</div>
+      ${body}
+    </article>
+  `;
 }
 
 function resolveAssetPath(path=''){
@@ -1208,7 +1333,7 @@ function handleWheel(e){
     leanOffset = 0;
   }, 180);
 }
-stage.addEventListener('wheel',handleWheel,{passive:false});
+dialWrap.addEventListener('wheel',handleWheel,{passive:false});
 
 
 window.addEventListener('keydown',e=>{
@@ -1315,13 +1440,32 @@ function setActivePillar(i, options={}){
   const insightGrid=document.getElementById('insight-grid');
   const moodboardBlock=document.getElementById('moodboard-block');
   const personaTags=document.getElementById('persona-tags');
+  const focusBlock=document.getElementById('case-focus-block');
+  const focusLabel=document.getElementById('case-focus-label');
+  const focusHeadline=document.getElementById('case-focus-headline');
+  const focusSupport=document.getElementById('case-focus-support');
+  const focusChips=document.getElementById('case-focus-chips');
   insightGrid.classList.remove('visible');
   insightGrid.innerHTML='';
   moodboardBlock.classList.remove('visible');
   moodboardBlock.innerHTML='';
   personaTags.innerHTML='';
+  focusBlock.classList.remove('visible');
+  focusHeadline.textContent='';
+  focusSupport.textContent='';
+  focusChips.innerHTML='';
 
-  if(mode==='case'&&p.id==='people'&&p.case.persona){
+  const hasPersonaCard = mode==='case'&&p.id==='people'&&p.case.persona;
+  if(mode==='case' && !hasPersonaCard && data.focus && (data.focus.headline || data.focus.support)){
+    focusLabel.textContent = data.focus.label || 'Compass';
+    focusHeadline.textContent = data.focus.headline || '';
+    focusSupport.textContent = data.focus.support || '';
+    const chips = Array.isArray(data.focus.chips) ? data.focus.chips.filter(Boolean).slice(0,5) : [];
+    focusChips.innerHTML = chips.map(chip=>`<span>${escapeHTML(chip)}</span>`).join('');
+    focusBlock.classList.add('visible');
+  }
+
+  if(hasPersonaCard){
     const pe=p.case.persona;
     document.getElementById('persona-role').textContent=pe.role;
     document.getElementById('persona-context').textContent=pe.quote || pe.tagline || pe.context;
@@ -1408,8 +1552,20 @@ function setActivePillar(i, options={}){
     ab.classList.add('visible');
   } else { ab.classList.remove('visible'); }
 
+  if(mode==='case' && !insightGrid.classList.contains('visible')){
+    const mappedCards = (Array.isArray(data.cards) ? data.cards : [])
+      .filter(card=>Array.isArray(card.items) && card.items.length)
+      .slice(0,3);
+    if(mappedCards.length){
+      insightGrid.innerHTML = mappedCards.map(renderCaseCard).join('');
+      insightGrid.classList.add('visible');
+    }
+  }
+
   if(mode==='case' && !insightGrid.classList.contains('visible') && data.details){
-    const detailCards = Object.entries(data.details)
+    const preferred = ['Rules in', 'Rules out', 'Proof required', 'AI rule', 'Compass', 'Strategic position'];
+    const detailCards = preferred
+      .map(label=>[label, data.details[label]])
       .filter(([,value])=>Array.isArray(value) ? value.length : value)
       .slice(0,3)
       .map(([label,value])=>[
@@ -1417,19 +1573,14 @@ function setActivePillar(i, options={}){
         Array.isArray(value) ? value.join(' · ') : value
       ]);
     if(detailCards.length){
-      insightGrid.innerHTML = detailCards.map(([label,value])=>`
-        <article class="insight-card">
-          <div class="label">${escapeHTML(label)}</div>
-          <p>${escapeHTML(truncate(value, 260))}</p>
-        </article>
-      `).join('');
+      insightGrid.innerHTML = detailCards.map(([label,value])=>renderCaseCard({ label, value })).join('');
       insightGrid.classList.add('visible');
     }
   }
 
   // apply
   const apb=document.getElementById('apply-block');
-  if(mode==='case'&&data.apply){
+  if(mode==='case'&&data.apply&&!focusBlock.classList.contains('visible')){
     const applyLabel = document.querySelector('#apply-block .apply-label');
     if(applyLabel) {
       applyLabel.textContent = p.id === 'people' ? 'Audience fit' : p.id === 'personality' ? 'Operating rule' : 'How to use';
@@ -1472,9 +1623,10 @@ function updateSectionNav(i){
 let fittingReader = false;
 function fitReader(){
   if(fittingReader || !reader || !readerFit || !detailFit) return;
-  if(window.innerWidth <= 820){
+  if(window.innerWidth <= 820 || mode === 'case'){
     detailFit.style.transform = 'none';
     detailFit.style.width = '100%';
+    reader.dataset.fitScale = '1.000';
     return;
   }
   fittingReader = true;

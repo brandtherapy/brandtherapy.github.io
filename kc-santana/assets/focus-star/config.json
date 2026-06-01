@@ -49,6 +49,47 @@
           "Client experience",
           "Proof"
         ],
+        "focus": {
+          "label": "Compass",
+          "headline": "Follow the woman who lives the standard. Events, podcast, content, and speaking all point to one discipline-first life.",
+          "support": "The product is not a program yet. The product is KC's visible standard: a daily proof system that makes high-earning women stop outsourcing discipline.",
+          "chips": [
+            "Strategy",
+            "Copy",
+            "Visuals",
+            "Sales",
+            "Content"
+          ]
+        },
+        "cards": [
+          {
+            "label": "Rules in",
+            "items": [
+              "Wellness events and mastermind dinners anchored in SoCal.",
+              "Intimate rooms of women who need the standard more than another self-care idea.",
+              "Podcast and content that make discipline visible."
+            ],
+            "tone": "in"
+          },
+          {
+            "label": "Rules out",
+            "items": [
+              "Coaching package positioning.",
+              "Educator-first positioning.",
+              "Generic wellness content."
+            ],
+            "tone": "out"
+          },
+          {
+            "label": "Proof required",
+            "items": [
+              "Source line: wellness events are the way KC makes an impact and holds authority.",
+              "Source line: role is mentor / thought leader, not coach or educator.",
+              "Existing podcast proof."
+            ],
+            "tone": "proof"
+          }
+        ],
         "details": {
           "Strategic position": [
             "KC's current product is thought leadership delivered through wellness events, mastermind dinners, podcasting, content, and emerging speaking. She is a mentor and thought leader, not a coach and not an educator."
@@ -115,6 +156,47 @@
           "Offer fit",
           "Content themes",
           "Sales filtering"
+        ],
+        "focus": {
+          "label": "Compass",
+          "headline": "Alina: 35, SoCal, good salary, health-conscious but undisciplined, holistic-leaning, and awkward around cannabis.",
+          "support": "KC is not speaking to women who need more information. She is speaking to women who need a standard they cannot negotiate with.",
+          "chips": [
+            "Strategy",
+            "Copy",
+            "Visuals",
+            "Sales",
+            "Content"
+          ]
+        },
+        "cards": [
+          {
+            "label": "Rules in",
+            "items": [
+              "High-earning SoCal women.",
+              "Corporate, banking, Cedars-Sinai-nurse, and similar high-functioning archetypes.",
+              "Women who are health-curious and holistic-leaning."
+            ],
+            "tone": "in"
+          },
+          {
+            "label": "Rules out",
+            "items": [
+              "Lazy stoner stereotypes.",
+              "GLP-1 or shortcut seekers.",
+              "Pink-Barbie feminine wellness."
+            ],
+            "tone": "out"
+          },
+          {
+            "label": "Proof required",
+            "items": [
+              "Persona notes for Alina.",
+              "Geographic note: SoCal, not Inland Empire and not LA-only.",
+              "Source statement that special-needs moms are an identity layer only."
+            ],
+            "tone": "proof"
+          }
         ],
         "details": {
           "Strategic position": [
@@ -203,6 +285,47 @@
           "Saying no",
           "Editorial choices"
         ],
+        "focus": {
+          "label": "Compass",
+          "headline": "The point is not to change every woman. The point is to make the better way visible enough that excuses get harder to defend.",
+          "support": "KC's purpose is personal before it is public: she watched women in her own family ignore the advice and arrive at diagnoses that might have been delayed or avoided.",
+          "chips": [
+            "Strategy",
+            "Copy",
+            "Visuals",
+            "Sales",
+            "Content"
+          ]
+        },
+        "cards": [
+          {
+            "label": "Rules in",
+            "items": [
+              "Cognitive longevity.",
+              "Hormonal and physical health.",
+              "Mental health as part of the discipline frame."
+            ],
+            "tone": "in"
+          },
+          {
+            "label": "Rules out",
+            "items": [
+              "Medical claims.",
+              "Diagnosis prevention claims.",
+              "Weight-loss-before-after framing."
+            ],
+            "tone": "out"
+          },
+          {
+            "label": "Proof required",
+            "items": [
+              "KC source quote: \"If I can do it, anybody else can. No more excuses.\"",
+              "KC source quote about making women aware there is a better way.",
+              "Any future medical, longevity, or hormonal-health claims need source evidence."
+            ],
+            "tone": "proof"
+          }
+        ],
         "details": {
           "Strategic position": [
             "KC exists to help women reclaim cognitive longevity, hormonal health, physical health, and mental health through lifestyle discipline, weighted heavily toward fitness and discipline."
@@ -268,6 +391,47 @@
           "Content topics",
           "Client process"
         ],
+        "focus": {
+          "label": "Compass",
+          "headline": "No shortcuts. No GLP-1 identity. No passive wellness. No excuses.",
+          "support": "No Excuses is a refusal and an invitation. It says the body, the brain, the hormones, the training, the cannabis ritual, and the room all answer to the same standard.",
+          "chips": [
+            "Strategy",
+            "Copy",
+            "Visuals",
+            "Sales",
+            "Content"
+          ]
+        },
+        "cards": [
+          {
+            "label": "Rules in",
+            "items": [
+              "Primary tagline: No Excuses.",
+              "Alternate lines: Earn it. Effort is the answer. Discipline doesn't lie. Show up. No exceptions.",
+              "Anti-GLP-1 and anti-shortcut as bright-line proof."
+            ],
+            "tone": "in"
+          },
+          {
+            "label": "Rules out",
+            "items": [
+              "Weight-loss promises.",
+              "Shaming bodies.",
+              "Generic hustle slogans."
+            ],
+            "tone": "out"
+          },
+          {
+            "label": "Proof required",
+            "items": [
+              "KC source quote about refusing fat-loss drugs and putting in the work.",
+              "Approved tagline list.",
+              "Approved anti-persona list."
+            ],
+            "tone": "proof"
+          }
+        ],
         "details": {
           "Strategic position": [
             "The brand promise is No Excuses. KC will not sell the shortcut. She will be the voice that makes Alina do the work."
@@ -331,6 +495,47 @@
           "Website tone",
           "Decks",
           "Email rhythm"
+        ],
+        "focus": {
+          "label": "Compass",
+          "headline": "Jocko-energy with a SoCal mom's voice. Beautiful, sexy, strong, and present without becoming girly.",
+          "support": "KC's difference is not that she talks about cannabis or fitness. It is that she makes both answer to a standard most wellness brands avoid.",
+          "chips": [
+            "Strategy",
+            "Copy",
+            "Visuals",
+            "Sales",
+            "Content"
+          ]
+        },
+        "cards": [
+          {
+            "label": "Rules in",
+            "items": [
+              "Authoritative, bold, brave, determined, disruptive, empowering, fearless, honest.",
+              "Inspiring, knowledgeable, loyal, powerful, resilient, transformative, unconventional.",
+              "Serious, literal, geometric, rational, transparent."
+            ],
+            "tone": "in"
+          },
+          {
+            "label": "Rules out",
+            "items": [
+              "Cheeky, enchanting, entertaining, magical.",
+              "Pink-Barbie feminine.",
+              "Stoner, party, couch-potato, tie-dye, peace-sign, munchies, basement lighting."
+            ],
+            "tone": "out"
+          },
+          {
+            "label": "Proof required",
+            "items": [
+              "Approved archetype mix.",
+              "Locked attribute list.",
+              "Slider source and anti-trope source."
+            ],
+            "tone": "proof"
+          }
         ],
         "details": {
           "Strategic position": [
