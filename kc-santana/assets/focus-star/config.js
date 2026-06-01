@@ -53,13 +53,7 @@ window.FOCUS_STAR_CONFIG = {
           "label": "Compass",
           "headline": "Follow the woman who lives the standard. Events, podcast, content, and speaking all point to one discipline-first life.",
           "support": "The product is not a program yet. The product is KC's visible standard: a daily proof system that makes high-earning women stop outsourcing discipline.",
-          "chips": [
-            "Strategy",
-            "Copy",
-            "Visuals",
-            "Sales",
-            "Content"
-          ]
+          "chips": []
         },
         "cards": [
           {
@@ -161,13 +155,7 @@ window.FOCUS_STAR_CONFIG = {
           "label": "Compass",
           "headline": "Alina: 35, SoCal, good salary, health-conscious but undisciplined, holistic-leaning, and awkward around cannabis.",
           "support": "KC is not speaking to women who need more information. She is speaking to women who need a standard they cannot negotiate with.",
-          "chips": [
-            "Strategy",
-            "Copy",
-            "Visuals",
-            "Sales",
-            "Content"
-          ]
+          "chips": []
         },
         "cards": [
           {
@@ -289,13 +277,7 @@ window.FOCUS_STAR_CONFIG = {
           "label": "Compass",
           "headline": "The point is not to change every woman. The point is to make the better way visible enough that excuses get harder to defend.",
           "support": "KC's purpose is personal before it is public: she watched women in her own family ignore the advice and arrive at diagnoses that might have been delayed or avoided.",
-          "chips": [
-            "Strategy",
-            "Copy",
-            "Visuals",
-            "Sales",
-            "Content"
-          ]
+          "chips": []
         },
         "cards": [
           {
@@ -395,13 +377,7 @@ window.FOCUS_STAR_CONFIG = {
           "label": "Compass",
           "headline": "No shortcuts. No GLP-1 identity. No passive wellness. No excuses.",
           "support": "No Excuses is a refusal and an invitation. It says the body, the brain, the hormones, the training, the cannabis ritual, and the room all answer to the same standard.",
-          "chips": [
-            "Strategy",
-            "Copy",
-            "Visuals",
-            "Sales",
-            "Content"
-          ]
+          "chips": []
         },
         "cards": [
           {
@@ -500,13 +476,7 @@ window.FOCUS_STAR_CONFIG = {
           "label": "Compass",
           "headline": "Jocko-energy with a SoCal mom's voice. Beautiful, sexy, strong, and present without becoming girly.",
           "support": "KC's difference is not that she talks about cannabis or fitness. It is that she makes both answer to a standard most wellness brands avoid.",
-          "chips": [
-            "Strategy",
-            "Copy",
-            "Visuals",
-            "Sales",
-            "Content"
-          ]
+          "chips": []
         },
         "cards": [
           {

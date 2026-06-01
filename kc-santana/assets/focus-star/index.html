@@ -442,6 +442,10 @@
     gap: 6px;
   }
 
+  .case-focus-chips:empty {
+    display: none;
+  }
+
   .case-focus-chips span {
     border: 1px solid var(--border);
     padding: 5px 8px;
@@ -1442,6 +1446,7 @@ function setActivePillar(i, options={}){
   focusHeadline.textContent='';
   focusSupport.textContent='';
   focusChips.innerHTML='';
+  focusChips.hidden=false;
 
   const hasPersonaCard = mode==='case'&&p.id==='people'&&p.case.persona;
   if(mode==='case' && !hasPersonaCard && data.focus && (data.focus.headline || data.focus.support)){
@@ -1450,6 +1455,7 @@ function setActivePillar(i, options={}){
     focusSupport.textContent = data.focus.support || '';
     const chips = Array.isArray(data.focus.chips) ? data.focus.chips.filter(Boolean).slice(0,5) : [];
     focusChips.innerHTML = chips.map(chip=>`<span>${escapeHTML(chip)}</span>`).join('');
+    focusChips.hidden = chips.length === 0;
     focusBlock.classList.add('visible');
   }
 
