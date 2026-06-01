@@ -891,7 +891,11 @@
       width: 100%;
       height: auto;
       aspect-ratio: 1 / 1;
-      max-height: 58svh;
+      /* Fixed px, not svh: real phones (<=480px wide) stay full-width and
+         unchanged, but the cap no longer depends on the iframe's own height, so
+         an embed that auto-sizes its iframe to content converges in one pass
+         instead of chasing a circular svh dependency. */
+      max-height: 460px;
       min-height: 0;
       flex: 0 0 auto;
       border-bottom: 1px solid var(--border);
