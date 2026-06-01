@@ -39,7 +39,7 @@ window.FOCUS_STAR_CONFIG = {
         ]
       },
       "case": {
-        "desc": "<strong>Thought leadership as proof.</strong> KC's current product is thought leadership delivered through wellness events, mastermind dinners, podcasting, content, and emerging speaking. She is a mentor and thought leader, not a coach and not an educator.",
+        "desc": "KC's current product is proof-led thought leadership delivered through wellness events, mastermind dinners, podcasting, content, and emerging speaking. She is a mentor and thought leader, not a coach and not an educator.",
         "apply": "The product is not a program yet. The product is KC's visible standard: a daily proof system that makes high-earning women stop outsourcing discipline.",
         "impacts": [
           "Offering architecture",
@@ -50,9 +50,9 @@ window.FOCUS_STAR_CONFIG = {
           "Proof"
         ],
         "focus": {
-          "label": "Compass",
-          "headline": "Follow the woman who lives the standard. Events, podcast, content, and speaking all point to one discipline-first life.",
-          "support": "The product is not a program yet. The product is KC's visible standard: a daily proof system that makes high-earning women stop outsourcing discipline.",
+          "label": "Decision",
+          "headline": "Thought leadership with proof",
+          "support": "Follow the woman who lives the standard. Events, podcast, content, and speaking all point to one discipline-first life.",
           "chips": []
         },
         "cards": [
@@ -86,7 +86,7 @@ window.FOCUS_STAR_CONFIG = {
         ],
         "details": {
           "Strategic position": [
-            "KC's current product is thought leadership delivered through wellness events, mastermind dinners, podcasting, content, and emerging speaking. She is a mentor and thought leader, not a coach and not an educator."
+            "KC's current product is proof-led thought leadership delivered through wellness events, mastermind dinners, podcasting, content, and emerging speaking. She is a mentor and thought leader, not a coach and not an educator."
           ],
           "Compass": [
             "Follow the woman who lives the standard. Events, podcast, content, and speaking all point to one discipline-first life."
@@ -141,7 +141,7 @@ window.FOCUS_STAR_CONFIG = {
         ]
       },
       "case": {
-        "desc": "<strong>High-earning women who need the standard.</strong> KC serves high-earning, health-curious, undisciplined women in SoCal who know something has to change but do not know where to start. The primary persona is Alina.",
+        "desc": "KC serves high-earning, health-curious, undisciplined women in SoCal who know something has to change but do not know where to start. The primary persona is Alina.",
         "apply": "KC is not speaking to women who need more information. She is speaking to women who need a standard they cannot negotiate with.",
         "impacts": [
           "Positioning",
@@ -152,9 +152,9 @@ window.FOCUS_STAR_CONFIG = {
           "Sales filtering"
         ],
         "focus": {
-          "label": "Compass",
-          "headline": "Alina: 35, SoCal, good salary, health-conscious but undisciplined, holistic-leaning, and awkward around cannabis.",
-          "support": "KC is not speaking to women who need more information. She is speaking to women who need a standard they cannot negotiate with.",
+          "label": "Decision",
+          "headline": "High-earning women who need the standard",
+          "support": "Alina: 35, SoCal, good salary, health-conscious but undisciplined, holistic-leaning, and awkward around cannabis.",
           "chips": []
         },
         "cards": [
@@ -263,7 +263,7 @@ window.FOCUS_STAR_CONFIG = {
         ]
       },
       "case": {
-        "desc": "<strong>Women's health through discipline.</strong> KC exists to help women reclaim cognitive longevity, hormonal health, physical health, and mental health through lifestyle discipline, weighted heavily toward fitness and discipline.",
+        "desc": "KC exists to help women reclaim cognitive longevity, hormonal health, physical health, and mental health through lifestyle discipline, weighted heavily toward fitness and discipline.",
         "apply": "KC's purpose is personal before it is public: she watched women in her own family ignore the advice and arrive at diagnoses that might have been delayed or avoided.",
         "impacts": [
           "Vision",
@@ -274,9 +274,9 @@ window.FOCUS_STAR_CONFIG = {
           "Editorial choices"
         ],
         "focus": {
-          "label": "Compass",
-          "headline": "The point is not to change every woman. The point is to make the better way visible enough that excuses get harder to defend.",
-          "support": "KC's purpose is personal before it is public: she watched women in her own family ignore the advice and arrive at diagnoses that might have been delayed or avoided.",
+          "label": "Decision",
+          "headline": "Women's health through discipline",
+          "support": "The point is not to change every woman. The point is to make the better way visible enough that excuses get harder to defend.",
           "chips": []
         },
         "cards": [
@@ -363,8 +363,8 @@ window.FOCUS_STAR_CONFIG = {
         ]
       },
       "case": {
-        "desc": "<strong>No Excuses.</strong> The brand promise is No Excuses. KC will not sell the shortcut. She will be the voice that makes Alina do the work.",
-        "apply": "No Excuses is a refusal and an invitation. It says the body, the brain, the hormones, the training, the cannabis ritual, and the room all answer to the same standard.",
+        "desc": "The brand promise is No Excuses. KC will not sell the shortcut. She will be the voice that makes Alina do the work.",
+        "apply": "No Excuses is a refusal and an invitation. It says the body, the brain, the hormones, the training, the work, and the room all answer to the same standard.",
         "impacts": [
           "Writing",
           "Visual metaphor",
@@ -374,9 +374,9 @@ window.FOCUS_STAR_CONFIG = {
           "Client process"
         ],
         "focus": {
-          "label": "Compass",
-          "headline": "No shortcuts. No GLP-1 identity. No passive wellness. No excuses.",
-          "support": "No Excuses is a refusal and an invitation. It says the body, the brain, the hormones, the training, the cannabis ritual, and the room all answer to the same standard.",
+          "label": "Decision",
+          "headline": "No Excuses",
+          "support": "No shortcuts. No GLP-1 identity. No passive wellness. No excuses.",
           "chips": []
         },
         "cards": [
@@ -462,8 +462,8 @@ window.FOCUS_STAR_CONFIG = {
         ]
       },
       "case": {
-        "desc": "<strong>Hero, Ruler, Magician, Cannabis Outlaw.</strong> KC's personality is Hero and Ruler tied for primary, Magician as transformation, and Cannabis Outlaw as the category edge. She is rough-edged, plainspoken, unsentimental, tough-love, and demanding.",
-        "apply": "KC's difference is not that she talks about cannabis or fitness. It is that she makes both answer to a standard most wellness brands avoid.",
+        "desc": "KC's personality is disciplined badassness: Hero and Ruler tied for primary, Magician as transformation, and Cannabis Outlaw as the category edge. She is the special-needs mom of three, corporate woman, and cannabis wellness voice who still gives 100% when excuses would be understandable.",
+        "apply": "KC's difference is not that she talks about cannabis, fitness, motherhood, or corporate grit. It is that every layer proves the same thing: she has the willpower to do the work anyway.",
         "impacts": [
           "Voice",
           "Visual language",
@@ -473,18 +473,18 @@ window.FOCUS_STAR_CONFIG = {
           "Email rhythm"
         ],
         "focus": {
-          "label": "Compass",
-          "headline": "Jocko-energy with a SoCal mom's voice. Beautiful, sexy, strong, and present without becoming girly.",
-          "support": "KC's difference is not that she talks about cannabis or fitness. It is that she makes both answer to a standard most wellness brands avoid.",
+          "label": "Decision",
+          "headline": "Disciplined badassness",
+          "support": "Badass willpower in a SoCal mom's voice: corporate-trained, cannabis-literate, mother of three, and still all-in.",
           "chips": []
         },
         "cards": [
           {
             "label": "Rules in",
             "items": [
+              "Badass discipline, willpower, and 100% effort when excuses would be understandable.",
               "Authoritative, bold, brave, determined, disruptive, empowering, fearless, honest.",
-              "Inspiring, knowledgeable, loyal, powerful, resilient, transformative, unconventional.",
-              "Serious, literal, geometric, rational, transparent."
+              "Inspiring, knowledgeable, loyal, powerful, resilient, transformative, unconventional."
             ],
             "tone": "in"
           },
@@ -509,16 +509,17 @@ window.FOCUS_STAR_CONFIG = {
         ],
         "details": {
           "Strategic position": [
-            "KC's personality is Hero and Ruler tied for primary, Magician as transformation, and Cannabis Outlaw as the category edge. She is rough-edged, plainspoken, unsentimental, tough-love, and demanding."
+            "KC's personality is disciplined badassness: Hero and Ruler tied for primary, Magician as transformation, and Cannabis Outlaw as the category edge. She is the special-needs mom of three, corporate woman, and cannabis wellness voice who still gives 100% when excuses would be understandable."
           ],
           "Compass": [
-            "Jocko-energy with a SoCal mom's voice. Beautiful, sexy, strong, and present without becoming girly."
+            "Badass willpower in a SoCal mom's voice: corporate-trained, cannabis-literate, mother of three, and still all-in."
           ],
           "Rules in": [
+            "Badass discipline, willpower, and 100% effort when excuses would be understandable.",
             "Authoritative, bold, brave, determined, disruptive, empowering, fearless, honest.",
             "Inspiring, knowledgeable, loyal, powerful, resilient, transformative, unconventional.",
             "Serious, literal, geometric, rational, transparent.",
-            "Feminine through form, strength, and presence.",
+            "Feminine through form, strength, command, and presence.",
             "Healthy functional fitness cannabis: sun-grown, athlete-grade, pre-workout or post-recovery ritual."
           ],
           "Rules out": [
