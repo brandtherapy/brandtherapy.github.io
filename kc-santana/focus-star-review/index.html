@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KC Santana · Focus Star</title>
+<meta name="description" content="The KC Santana brand Focus Star: one standard, five points. For review.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2F2F7;
+    --surface:#FFFFFF;
+    --ink:#14141D;
+    --ink-2:#33333F;
+    --ink-3:#4A4A59;
+    --muted:#6C6C80;
+    --faint:#9A9AAE;
+    --line:#E5E5EC;
+    --line-2:#ECECF2;
+    --accent:#5A5CF9;
+    --accent-ink:#3D3FC9;
+    --accent-soft:rgba(90,92,249,0.08);
+    --accent-tint:rgba(90,92,249,0.05);
+    --shadow:0 1px 2px rgba(20,20,40,.04), 0 18px 50px -28px rgba(20,20,60,.22);
+    --ease:cubic-bezier(.16,1,.3,1);
+    --display:'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
+    --body:'Poppins', system-ui, -apple-system, sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:var(--body);
+    background:var(--paper);
+    color:var(--ink-2);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow:hidden;
+    display:grid;
+    grid-template-rows:auto auto 1fr auto;
+    height:100dvh;
+  }
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:max(12px, env(safe-area-inset-top)) 18px 11px;
+    gap:12px;
+  }
+  .brandmark{
+    font-family:var(--display);font-weight:800;font-size:.82rem;
+    letter-spacing:.16em;color:var(--ink);text-transform:uppercase;
+    display:flex;align-items:center;gap:9px;white-space:nowrap;
+  }
+  .brandmark .tick{width:13px;height:13px;flex:none}
+  .counter{
+    font-size:.7rem;letter-spacing:.12em;color:var(--faint);
+    font-variant-numeric:tabular-nums;font-weight:500;white-space:nowrap;
+  }
+  .progress{height:2px;background:var(--line);position:relative;overflow:hidden}
+  .progress__bar{
+    position:absolute;inset:0 auto 0 0;width:14.2%;
+    background:var(--accent);
+    transition:width .55s var(--ease);
+  }
+
+  /* ---------- stage ---------- */
+  .stage{position:relative;overflow:hidden}
+  .brackets span{
+    position:absolute;width:20px;height:20px;pointer-events:none;z-index:5;
+    border:0 solid var(--accent);opacity:.5;
+  }
+  .brackets .tl{top:14px;left:14px;border-top-width:1.5px;border-left-width:1.5px}
+  .brackets .tr{top:14px;right:14px;border-top-width:1.5px;border-right-width:1.5px}
+  .brackets .bl{bottom:14px;left:14px;border-bottom-width:1.5px;border-left-width:1.5px}
+  .brackets .br{bottom:14px;right:14px;border-bottom-width:1.5px;border-right-width:1.5px}
+
+  .slide{
+    position:absolute;inset:0;
+    overflow-y:auto;overflow-x:hidden;
+    -webkit-overflow-scrolling:touch;
+    display:grid;
+    padding:26px 26px 30px;
+    opacity:0;visibility:hidden;
+    transform:translateX(28px);
+    transition:opacity .5s var(--ease), transform .6s var(--ease), visibility 0s linear .6s;
+    pointer-events:none;
+  }
+  .slide.is-active{
+    opacity:1;visibility:visible;transform:none;pointer-events:auto;
+    transition:opacity .55s var(--ease) .04s, transform .65s var(--ease) .04s, visibility 0s;
+  }
+  .slide.exit-left{transform:translateX(-28px)}
+  .slide__inner{width:100%;max-width:600px;margin:auto}
+  .slide__inner.point{max-width:min(1160px, calc(100vw - 64px));margin:clamp(20px,4vh,42px) auto auto}
+
+  /* staged reveal of inner blocks */
+  .slide.is-active .r{animation:rise .6s var(--ease) backwards}
+  .slide.is-active .r1{animation-delay:.06s}
+  .slide.is-active .r2{animation-delay:.13s}
+  .slide.is-active .r3{animation-delay:.2s}
+  .slide.is-active .r4{animation-delay:.27s}
+  .slide.is-active .r5{animation-delay:.34s}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .slide{transition:opacity .25s ease}
+    .slide,.slide.is-active .r{transform:none!important;animation:none!important}
+  }
+
+  /* ---------- shared type ---------- */
+  .eyebrow{
+    font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--accent-ink);display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow .num{color:var(--faint);font-variant-numeric:tabular-nums}
+  .eyebrow .dot{width:4px;height:4px;background:var(--accent);border-radius:50%}
+
+  .display{
+    font-family:var(--display);font-weight:800;color:var(--ink);
+    letter-spacing:-.022em;line-height:1.02;
+  }
+  .thesis{
+    font-family:var(--display);font-weight:500;color:var(--ink);
+    letter-spacing:-.012em;line-height:1.22;
+    font-size:clamp(1.22rem,5.3vw,1.62rem);
+  }
+  .body{
+    color:var(--ink-3);line-height:1.66;font-weight:400;
+    font-size:clamp(.95rem,3.7vw,1.02rem);max-width:38ch;
+  }
+
+  /* ---------- P slide ---------- */
+  .point-kicker{
+    position:relative;
+    font-size:clamp(.78rem,1.6vw,1.05rem);
+    font-weight:700;
+    letter-spacing:.36em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:14px;
+    padding-left:64px;
+  }
+  .point-kicker::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.12em;
+    width:42px;
+    height:22px;
+    border-top:3px solid var(--accent);
+    border-left:3px solid var(--accent);
+  }
+  .point-kicker .num{letter-spacing:.12em;color:var(--faint)}
+  .p-name{
+    font-size:clamp(3.35rem,8.4vw,5.55rem);
+    margin-top:0;
+    text-transform:uppercase;
+    letter-spacing:-.035em;
+    line-height:.9;
+  }
+  .p-name .dot{color:var(--accent)}
+  .point-desc{
+    margin-top:clamp(24px,3vw,36px);
+    color:var(--ink-2);
+    font-size:clamp(1.32rem,2.2vw,2.18rem);
+    line-height:1.55;
+    font-weight:400;
+    max-width:76ch;
+  }
+  .decision{
+    margin-top:clamp(28px,3.5vw,46px);
+    padding-top:clamp(22px,2.4vw,36px);
+    border-top:1px solid var(--line);
+    display:grid;
+    grid-template-columns:minmax(150px,240px) minmax(0,1fr);
+    gap:clamp(20px,4vw,72px);
+    align-items:start;
+  }
+  .decision__label{
+    font-family:var(--display);
+    font-size:clamp(.86rem,1.5vw,1.05rem);
+    font-weight:800;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  .decision__headline{
+    margin:0;
+    font-family:var(--display);
+    font-size:clamp(2.1rem,4.4vw,3.7rem);
+    line-height:.96;
+    letter-spacing:-.035em;
+    color:var(--ink);
+  }
+  .decision__support{
+    margin-top:20px;
+    color:var(--accent);
+    font-family:var(--display);
+    font-size:clamp(1.12rem,2vw,1.9rem);
+    line-height:1.34;
+    font-weight:800;
+    max-width:34ch;
+  }
+  .source-details{
+    margin-top:clamp(24px,3vw,36px);
+    border-top:1px solid var(--line);
+    color:var(--muted);
+  }
+  .compass{
+    margin-top:18px;padding-top:15px;border-top:1px solid var(--line);
+    display:flex;flex-direction:column;gap:5px;
+  }
+  .compass .lab{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);font-weight:600}
+  .compass .val{font-family:var(--display);font-weight:500;color:var(--ink-2);line-height:1.35;font-size:clamp(.98rem,3.9vw,1.08rem)}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+  @media (max-width:430px){ .split{grid-template-columns:1fr;gap:11px} }
+  .col h4{
+    font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;
+    margin-bottom:9px;
+  }
+  .col.in h4{color:var(--accent-ink)}
+  .col.out h4{color:var(--muted)}
+  .col ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+  .col li{
+    font-size:.85rem;line-height:1.4;color:var(--ink-3);
+    display:flex;gap:8px;align-items:baseline;
+  }
+  .col li .mk{flex:none;font-weight:700;font-size:.78rem;line-height:1.5;width:.9em;text-align:center}
+  .col.in li .mk{color:var(--accent)}
+  .col.out li{color:var(--muted)}
+  .col.out li .mk{color:var(--faint)}
+  .col.in{background:var(--accent-tint);border:1px solid var(--line-2);padding:14px 15px}
+  .col.out{border:1px solid var(--line);padding:14px 15px}
+
+  /* labeled content blocks: richer source content, same visual system */
+  .blocks{margin-top:2px}
+  .block{margin-top:20px;padding-top:15px;border-top:1px solid var(--line)}
+  .block .lab{display:flex;align-items:center;gap:9px;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);font-weight:700;margin-bottom:11px}
+  .block .lab::before{content:"";flex:none;width:16px;height:2px;background:var(--accent)}
+  .block>p{color:var(--ink-3);line-height:1.6;font-size:clamp(.95rem,3.7vw,1.02rem)}
+  .block>p+p{margin-top:8px}
+  .block strong{color:var(--ink);font-weight:600}
+  .block ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .block li{font-size:.9rem;line-height:1.45;color:var(--ink-3);display:flex;gap:9px;align-items:baseline}
+  .block li .mk{flex:none;color:var(--accent);font-weight:700;font-size:.82rem;width:.8em;text-align:center}
+  .block ul.is-muted li{color:var(--muted)}
+  .block ul.is-muted li .mk{color:var(--faint)}
+  .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .tag{font-size:.76rem;font-weight:500;color:var(--ink-3);border:1px solid var(--line);background:var(--surface);padding:5px 9px;line-height:1.2}
+  .tags.muted .tag{color:var(--muted);border-style:dashed}
+  .quote{margin-top:12px;padding:13px 15px;background:var(--accent-tint);border:1px solid var(--line-2)}
+  .quote+.quote{margin-top:8px}
+  .quote p{font-family:var(--display);font-weight:500;color:var(--ink);line-height:1.34;font-size:clamp(1rem,4vw,1.16rem)}
+  .quote .cite{display:block;margin-top:8px;font-family:var(--body);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+  /* ---------- cover / center ---------- */
+  .cover{text-align:center;align-items:center}
+  .cover .eyebrow{justify-content:center}
+  .starwrap{margin:2px auto 4px;width:min(56vw,236px)}
+  .starwrap svg{width:100%;height:auto;display:block;overflow:visible}
+  .center-word{font-size:clamp(2.5rem,11vw,3.6rem);margin-top:4px}
+  .center-tag{font-family:var(--display);font-weight:500;color:var(--accent-ink);font-size:clamp(1.02rem,4.3vw,1.18rem);margin-top:8px;letter-spacing:-.01em}
+  .center-def{margin:16px auto 0;text-align:left}
+
+  .legend{margin-top:22px;border-top:1px solid var(--line);width:100%}
+  .legend button{
+    width:100%;background:none;border:0;border-bottom:1px solid var(--line);
+    display:flex;align-items:center;gap:13px;padding:12px 4px;cursor:pointer;
+    text-align:left;color:inherit;font-family:inherit;transition:background .2s ease;
+  }
+  .legend button:hover,.legend button:focus-visible{background:var(--accent-soft);outline:none}
+  .legend .ix{font-family:var(--display);font-weight:700;font-size:.82rem;color:var(--accent);width:1.6em;font-variant-numeric:tabular-nums}
+  .legend .lw{font-family:var(--display);font-weight:700;font-size:1.02rem;color:var(--ink);letter-spacing:-.01em;flex:none;min-width:7.2em}
+  .legend .ld{font-size:.8rem;color:var(--muted);line-height:1.3}
+  .legend .ar{margin-left:auto;color:var(--faint);transition:transform .25s var(--ease),color .2s}
+  .legend button:hover .ar{transform:translateX(3px);color:var(--accent)}
+
+  .hint{
+    margin-top:20px;font-size:.74rem;letter-spacing:.06em;color:var(--faint);
+    display:flex;align-items:center;justify-content:center;gap:8px;
+  }
+  .hint .pulse{display:inline-flex;animation:nudge 1.8s var(--ease) infinite}
+  @keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+
+  /* ---------- close ---------- */
+  .close{text-align:center;align-items:center}
+  .close .eyebrow{justify-content:center}
+  .close-h{font-size:clamp(2rem,8.5vw,3rem);margin-top:8px}
+  .recap{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin-top:20px}
+  .recap span{
+    font-family:var(--display);font-weight:600;font-size:.8rem;letter-spacing:.02em;
+    color:var(--ink-2);border:1px solid var(--line);padding:6px 11px;background:var(--surface);
+  }
+  .recap span.center{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .ask{margin:22px auto 0;max-width:34ch;color:var(--ink-3);line-height:1.6;font-size:.98rem}
+  .ask strong{color:var(--ink);font-weight:600}
+  .reply{
+    display:inline-block;margin-top:18px;font-family:var(--display);font-weight:600;
+    font-size:.92rem;color:#fff;background:var(--accent);padding:13px 22px;letter-spacing:.01em;
+    text-decoration:none;transition:background .2s ease,transform .2s var(--ease);
+  }
+  .reply:hover{background:var(--accent-ink);transform:translateY(-1px)}
+  .credit{margin-top:24px;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  .cover .credit{margin-top:18px}
+
+  /* ---------- dock ---------- */
+  .dock{
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+    padding:12px 20px max(12px, env(safe-area-inset-bottom));
+    border-top:1px solid var(--line);background:var(--surface);
+  }
+  .navbtn{
+    width:44px;height:44px;flex:none;border:1px solid var(--line);background:var(--surface);
+    cursor:pointer;display:grid;place-items:center;color:var(--ink-2);
+    transition:border-color .2s,color .2s,background .2s,opacity .2s;
+  }
+  .navbtn:hover:not(:disabled){border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+  .navbtn:disabled{opacity:.28;cursor:default}
+  .navbtn svg{width:17px;height:17px}
+  .dockstar{flex:none;line-height:0}
+  .dockstar svg{width:50px;height:50px;overflow:visible;cursor:default}
+  .dockstar .hit{cursor:pointer}
+  @media (max-width:720px){
+    .slide__inner.point{max-width:none;margin:8px auto auto}
+    .point-kicker{font-size:.78rem;letter-spacing:.28em;padding-left:42px;gap:8px}
+    .point-kicker::before{width:28px;height:18px;border-top-width:2px;border-left-width:2px}
+    .p-name{font-size:clamp(2.5rem,13vw,3.35rem)}
+    .point-desc{font-size:clamp(1.12rem,5.4vw,1.44rem);line-height:1.35;margin-top:20px}
+    .decision{grid-template-columns:1fr;gap:12px;margin-top:24px;padding-top:20px}
+    .decision__headline{font-size:clamp(2rem,10vw,2.8rem)}
+    .decision__support{font-size:clamp(1.05rem,5vw,1.45rem);margin-top:12px}
+  }
+</style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brandmark">
+      <svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M3 8V3h5M21 8V3h-5M3 16v5h5M21 16v5h-5" stroke="#5A5CF9" stroke-width="2.2" stroke-linecap="square"/>
+      </svg>
+      KC Santana
+    </div>
+    <div class="counter" id="counter">01 / 07</div>
+  </header>
+  <div class="progress"><div class="progress__bar" id="bar"></div></div>
+
+  <main class="stage" id="stage">
+    <div class="brackets"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+    <!-- slides injected here -->
+  </main>
+
+  <nav class="dock">
+    <button class="navbtn" id="prev" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+    </button>
+    <div class="dockstar" id="dockstar" aria-hidden="false"></div>
+    <button class="navbtn" id="next" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+    </button>
+  </nav>
+
+<script>
+(function(){
+  "use strict";
+
+  // Canonical Brand OS Focus Star: a solid 5-point star (no scaffolding lines).
+  // Geometry mirrors brand-os buildStar(): tips at i*72deg (rad=a-90),
+  // inner verts at i*72 +/- 36, innerR = R*0.38. Active node = the filled arm.
+  var STAR = (function(){
+    var CX=60, CY=60, R=42, INNER=R*0.38, STEP=72;
+    function pt(aDeg, r){ var rad=(aDeg-90)*Math.PI/180; return { x:CX+Math.cos(rad)*r, y:CY+Math.sin(rad)*r }; }
+    function f(n){ return Math.round(n*100)/100; }
+    var arms=[], edge=[];
+    for(var i=0;i<5;i++){
+      var li=pt(i*STEP-36, INNER), tip=pt(i*STEP, R), ri=pt(i*STEP+36, INNER);
+      arms.push(CX+','+CY+' '+f(li.x)+','+f(li.y)+' '+f(tip.x)+','+f(tip.y)+' '+f(ri.x)+','+f(ri.y));
+    }
+    for(var j=0;j<5;j++){ var t=pt(j*STEP,R), n=pt(j*STEP+36,INNER); edge.push(f(t.x)+','+f(t.y), f(n.x)+','+f(n.y)); }
+    return { arms:arms, edge:edge.join(' ') };
+  })();
+
+  // Minimal compass bezel: thin radial bearing ticks aligned to the star.
+  // Majors sit on the 5 point bearings; minors on the valleys between.
+  function compassMarks(majColor){
+    var maj=[0,72,144,216,288], min=[36,108,180,252,324];
+    function tk(a,r1,r2){ var d=(a-90)*Math.PI/180,c=Math.cos(d),s=Math.sin(d),f=function(n){return Math.round(n*100)/100;};
+      return '<line x1="'+f(60+c*r1)+'" y1="'+f(60+s*r1)+'" x2="'+f(60+c*r2)+'" y2="'+f(60+s*r2)+'"/>'; }
+    return '<g stroke="'+majColor+'" stroke-width="1.2" stroke-linecap="round">'+maj.map(function(a){return tk(a,46,53);}).join('')+'</g>'+
+           '<g stroke="var(--line)" stroke-width="0.9" stroke-linecap="round">'+min.map(function(a){return tk(a,47.5,50.5);}).join('')+'</g>';
+  }
+
+  // active: -1 = overview, 0..4 = P
+  function bigStar(active){
+    var s='<svg viewBox="0 0 120 120" role="img" aria-label="The Focus Star, five points around one standard">';
+    s+=compassMarks('var(--accent)');
+    s+='<polygon points="'+STAR.edge+'" fill="none" stroke="var(--line)" stroke-width="1" stroke-linejoin="round"/>';
+    for(var i=0;i<5;i++){
+      var on=active===i;
+      s+='<polygon class="hit" data-go="'+(i+1)+'" points="'+STAR.arms[i]+'" fill="'+(on?'var(--accent)':'var(--accent-tint)')+'" stroke="'+(on?'var(--accent)':'var(--faint)')+'" stroke-width="'+(on?1.4:1)+'" stroke-linejoin="round"/>';
+    }
+    return s+'</svg>';
+  }
+
+  function miniStar(active){
+    var s='<svg viewBox="0 0 120 120" role="img" aria-label="Jump to a focus point"><title>Focus Star navigator</title>';
+    s+=compassMarks('var(--faint)');
+    s+='<polygon points="'+STAR.edge+'" fill="none" stroke="var(--line)" stroke-width="1.4" stroke-linejoin="round"/>';
+    for(var i=0;i<5;i++){
+      var on=active===i;
+      s+='<polygon class="hit" data-go="'+(i+1)+'" points="'+STAR.arms[i]+'" fill="'+(on?'var(--accent)':'var(--surface)')+'" stroke="'+(on?'var(--accent)':'var(--faint)')+'" stroke-width="'+(on?1.6:1.4)+'" stroke-linejoin="round"><title>Point '+(i+1)+'</title></polygon>';
+    }
+    s+='<circle class="hit" data-go="0" cx="60" cy="60" r="9" fill="transparent"><title>Overview</title></circle>';
+    return s+'</svg>';
+  }
+
+  // ---------- content ----------
+  var PS = [
+    {
+      n:"P1", key:"Product", word:"Product", eyebrow:"Your offering", role:"Thought leadership with proof",
+      lead:"KC's current product is proof-led thought leadership delivered through wellness events, mastermind dinners, podcasting, content, and emerging speaking. She is a mentor and thought leader, not a coach and not an educator.",
+      decision:"Thought leadership with proof",
+      support:"Follow the woman who lives the standard. Events, podcast, content, and speaking all point to one discipline-first life.",
+      blocks:[
+        {t:"note", label:"Compass", text:"Follow the woman who lives the standard. Events, podcast, content, and speaking all point to one discipline-first life."},
+        {t:"note", label:"Page thesis", text:"The product is not a program yet. The product is KC's visible standard: a daily proof system that makes high-earning women stop outsourcing discipline."},
+        {t:"list", label:"Rules in", items:[
+          "Wellness events and mastermind dinners anchored in SoCal.",
+          "Intimate rooms of women who need the standard more than another self-care idea.",
+          "Podcast and content that make discipline visible.",
+          "Speaking as the natural extension of mentor and thought-leader authority.",
+          "Cannabis as one functional tool in the discipline stack.",
+          "Future products named only as future products."
+        ]},
+        {t:"list", muted:true, label:"Rules out", items:[
+          "Coaching package positioning.",
+          "Educator-first positioning.",
+          "Generic wellness content.",
+          "Cannabis SKU as the current center.",
+          "GLP-1 or shortcut framing.",
+          "Passive lifestyle inspiration."
+        ]},
+        {t:"list", label:"Proof required", items:[
+          "Source line: wellness events are the way KC makes an impact and holds authority.",
+          "Source line: role is mentor / thought leader, not coach or educator.",
+          "Existing podcast proof.",
+          "Event history, event photos, or event plans if available.",
+          "Speaking proof when available."
+        ]},
+        {t:"list", muted:true, label:"AI rule", items:[
+          "Do not sell a coaching program unless source changes.",
+          "Do not invent event outcomes, audience size, podcast metrics, or product claims.",
+          "Keep future products clearly marked as future.",
+          "Position cannabis as part of the discipline stack, not the offer itself."
+        ]}
+      ]
+    },
+    {
+      n:"P2", key:"People", word:"People", eyebrow:"Your tribe", role:"High-earning women who need the standard",
+      lead:"KC serves high-earning, health-curious, undisciplined women in SoCal who know something has to change but do not know where to start. The primary persona is Alina.",
+      decision:"High-earning women who need the standard",
+      support:"Alina: 35, SoCal, good salary, health-conscious but undisciplined, holistic-leaning, and awkward around cannabis.",
+      blocks:[
+        {t:"note", label:"Compass", text:"Alina: 35, SoCal, good salary, health-conscious but undisciplined, holistic-leaning, and awkward around cannabis."},
+        {t:"note", label:"Page thesis", text:"KC is not speaking to women who need more information. She is speaking to women who need a standard they cannot negotiate with."},
+        {t:"tags", label:"Persona signals", items:["SoCal","Age 35","High earner","Health-curious","Holistic-leaning","Undisciplined"]},
+        {t:"list", label:"Rules in", items:[
+          "High-earning SoCal women.",
+          "Corporate, banking, Cedars-Sinai-nurse, and similar high-functioning archetypes.",
+          "Women who are health-curious and holistic-leaning.",
+          "Women who consume cannabis awkwardly or without a disciplined frame.",
+          "Special-needs moms as an identity layer, not the primary segment.",
+          "One bio line for mother of three when relevant."
+        ]},
+        {t:"list", muted:true, label:"Rules out", items:[
+          "Lazy stoner stereotypes.",
+          "GLP-1 or shortcut seekers.",
+          "Pink-Barbie feminine wellness.",
+          "Infantilized mom content.",
+          "Public use of her son's face.",
+          "Treating special-needs moms as the front of the brand."
+        ]},
+        {t:"list", label:"Proof required", items:[
+          "Persona notes for Alina.",
+          "Geographic note: SoCal, not Inland Empire and not LA-only.",
+          "Source statement that special-needs moms are an identity layer only.",
+          "Approved bio direction before public use."
+        ]},
+        {t:"list", muted:true, label:"AI rule", items:[
+          "Keep Alina capable. The issue is undisciplined health behavior, not incompetence.",
+          "Do not make the brand mommy-first.",
+          "Do not use her son's image or turn special-needs motherhood into a selling story.",
+          "Avoid pink, princess, cutesy, or therapy-soft femininity."
+        ]}
+      ]
+    },
+    {
+      n:"P3", key:"Purpose", word:"Purpose", eyebrow:"Your why", role:"Women's health through discipline",
+      lead:"KC exists to help women reclaim cognitive longevity, hormonal health, physical health, and mental health through lifestyle discipline, weighted heavily toward fitness and discipline.",
+      decision:"Women's health through discipline",
+      support:"The point is not to change every woman. The point is to make the better way visible enough that excuses get harder to defend.",
+      blocks:[
+        {t:"note", label:"Compass", text:"The point is not to change every woman. The point is to make the better way visible enough that excuses get harder to defend."},
+        {t:"note", label:"Page thesis", text:"KC's purpose is personal before it is public: she watched women close to her ignore the advice and arrive at diagnoses that might have been delayed or avoided. Her authority comes from living the standard herself: as a special-needs mother, she has to treat strength, longevity, and discipline as non-optional."},
+        {t:"list", label:"Rules in", items:[
+          "Cognitive longevity.",
+          "Hormonal and physical health.",
+          "Mental health as part of the discipline frame.",
+          "Fitness and lifestyle discipline as the dominant levers.",
+          "Close-to-home health wake-up calls, used carefully and without medical overclaiming.",
+          "Special-needs motherhood as the lived stake behind the standard, not the public selling story.",
+          "Awareness that there is a better way."
+        ]},
+        {t:"list", muted:true, label:"Rules out", items:[
+          "Medical claims.",
+          "Diagnosis prevention claims.",
+          "Weight-loss-before-after framing.",
+          "Soft wellness inspiration without discipline.",
+          "Fear tactics without behavior.",
+          "Clinical therapy or pharma imagery."
+        ]},
+        {t:"list", label:"Proof required", items:[
+          'KC source quote: "If I can do it, anybody else can. No more excuses."',
+          "KC source quote about making women aware there is a better way.",
+          "Any future medical, longevity, or hormonal-health claims need source evidence."
+        ]},
+        {t:"list", muted:true, label:"AI rule", items:[
+          "Do not make medical promises.",
+          "Do not claim KC prevents disease.",
+          "Do not use GLP-1 imagery, scales, before-after bodies, white coats, or pill bottles.",
+          "Keep the purpose practical and behavioral."
+        ]}
+      ]
+    },
+    {
+      n:"P4", key:"Promise", word:"No Excuses", eyebrow:"Your non-negotiable", role:"The non-negotiable",
+      lead:"The brand promise is No Excuses. KC will not sell the shortcut. She will be the voice that makes Alina do the work.",
+      decision:"No Excuses",
+      support:"No shortcuts. No GLP-1 identity. No passive wellness. No excuses.",
+      blocks:[
+        {t:"note", label:"Compass", text:"No shortcuts. No GLP-1 identity. No passive wellness. No excuses."},
+        {t:"note", label:"Page thesis", text:"No Excuses is a refusal and an invitation. It says the body, the brain, the hormones, the training, the work, and the room all answer to the same standard."},
+        {t:"list", label:"Rules in", items:[
+          "Primary tagline: No Excuses.",
+          "Alternate lines: Earn it. Effort is the answer. Discipline doesn't lie. Show up. No exceptions.",
+          "Anti-GLP-1 and anti-shortcut as bright-line proof.",
+          "Anti-passive health.",
+          "Tough-love mentor voice."
+        ]},
+        {t:"list", muted:true, label:"Rules out", items:[
+          "Weight-loss promises.",
+          "Shaming bodies.",
+          "Generic hustle slogans.",
+          "Cute motivational posters.",
+          "Wellness-guru calm.",
+          "Any language that makes discipline sound optional."
+        ]},
+        {t:"list", label:"Proof required", items:[
+          "KC source quote about refusing fat-loss drugs and putting in the work.",
+          "Approved tagline list.",
+          "Approved anti-persona list."
+        ]},
+        {t:"list", muted:true, label:"AI rule", items:[
+          "Do not soften No Excuses into generic empowerment.",
+          "Do not moralize medical choices beyond the approved anti-shortcut position.",
+          "Do not use body-shaming imagery or copy.",
+          "Keep the promise pointed at behavior and standards."
+        ]}
+      ]
+    },
+    {
+      n:"P5", key:"Personality", word:"Personality", eyebrow:"How you show up", role:"Disciplined badassness",
+      lead:"KC's personality is disciplined badassness: Hero and Ruler tied for primary, Magician as transformation, and Cannabis Outlaw as the category edge. She is the special-needs mom of three, corporate woman, and cannabis wellness voice who still gives 100% when excuses would be understandable.",
+      decision:"Disciplined badassness",
+      support:"Badass willpower in a SoCal mom's voice: corporate-trained, cannabis-literate, mother of three, and still all-in.",
+      blocks:[
+        {t:"note", label:"Compass", text:"Badass willpower in a SoCal mom's voice: corporate-trained, cannabis-literate, mother of three, and still all-in."},
+        {t:"note", label:"Page thesis", text:"KC's difference is not that she talks about cannabis, fitness, motherhood, or corporate grit. It is that every layer proves the same thing: she has the willpower to do the work anyway."},
+        {t:"list", label:"Rules in", items:[
+          "Badass discipline, willpower, and 100% effort when excuses would be understandable.",
+          "Authoritative, bold, brave, determined, disruptive, empowering, fearless, honest.",
+          "Inspiring, knowledgeable, loyal, powerful, resilient, transformative, unconventional.",
+          "Serious, literal, geometric, rational, transparent.",
+          "Feminine through form, strength, command, and presence.",
+          "Healthy functional fitness cannabis: sun-grown, athlete-grade, pre-workout or post-recovery ritual."
+        ]},
+        {t:"list", muted:true, label:"Rules out", items:[
+          "Cheeky, enchanting, entertaining, magical.",
+          "Pink-Barbie feminine.",
+          "Stoner, party, couch-potato, tie-dye, peace-sign, munchies, basement lighting.",
+          "Pharma-glossy wellness.",
+          "Therapy-soft femininity.",
+          "Abstract, emotional, playful, mysterious, organic as dominant signals."
+        ]},
+        {t:"list", label:"Proof required", items:[
+          "Approved archetype mix.",
+          "Locked attribute list.",
+          "Slider source and anti-trope source.",
+          "Any likeness-based image use needs explicit reference review and approval."
+        ]},
+        {t:"list", muted:true, label:"AI rule", items:[
+          "Never make KC cute, mystical, soft, or stoner-coded.",
+          "Keep cannabis functional and athletic.",
+          "Express femininity through strength, form, body presence, and command.",
+          "Avoid generic wellness, generic gym, and generic cannabis imagery."
+        ]}
+      ]
+    }
+  ];
+
+  function blockHTML(b){
+    if(b.t==="note") return '<div class="block"><span class="lab">'+b.label+'</span><p>'+b.text+'</p></div>';
+    if(b.t==="list"){
+      var muted=b.muted?' class="is-muted"':'';
+      var marker=b.muted?'-':'+';
+      return '<div class="block"><span class="lab">'+b.label+'</span><ul'+muted+'>'+b.items.map(function(i){return '<li><span class="mk">'+marker+'</span><span>'+i+'</span></li>';}).join("")+'</ul></div>';
+    }
+    if(b.t==="tags") return '<div class="block"><span class="lab">'+b.label+'</span><div class="tags'+(b.muted?" muted":"")+'">'+b.items.map(function(i){return '<span class="tag">'+i+'</span>';}).join("")+'</div></div>';
+    if(b.t==="quotes") return '<div class="block"><span class="lab">'+b.label+'</span>'+b.items.map(function(q){return '<div class="quote"><p>'+q+'</p></div>';}).join("")+'</div>';
+    if(b.t==="quote"){
+      var box='<div class="quote"><p>'+b.text+'</p>'+(b.cite?'<span class="cite">'+b.cite+'</span>':"")+'</div>';
+      return b.label ? '<div class="block"><span class="lab">'+b.label+'</span>'+box+'</div>' : box;
+    }
+    return "";
+  }
+
+  function coverHTML(){
+    return '<div class="slide__inner cover">'+
+      '<p class="eyebrow r r1" style="margin-bottom:10px"><span class="dot"></span>Brand Focus Star</p>'+
+      '<div class="starwrap r r2" id="bigstarwrap">'+bigStar(-1)+'</div>'+
+      '<h1 class="display center-word r r2">No Excuses</h1>'+
+      '<p class="center-tag r r3">The standard at the center of everything.</p>'+
+      '<p class="body center-def r r3">KC Santana is the mentor for high-earning, undisciplined women who shows them, by living it, that fitness discipline is the answer. No shortcuts. No GLP-1s. No excuses.</p>'+
+      '<p class="body center-def r r3" style="margin-top:12px">Cannabis sits inside that life as a tool she uses, not a flag she waves. The special needs mother layer is unspoken fuel: the reason she cannot afford to skip a day, not a story she sells.</p>'+
+      '<div class="legend r r4">'+ PS.map(function(p,i){
+        return '<button data-go="'+(i+1)+'"><span class="ix">'+p.n+'</span><span class="lw">'+p.key+'</span><span class="ld">'+p.role+'</span>'+
+          '<span class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span></button>';
+      }).join("") +'</div>'+
+      '<p class="hint r r5">Swipe, tap a point, or use the arrows <span class="pulse"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span></p>'+
+      '<p class="credit r r5">Brand Therapy &middot; Focus Star deliverable</p>'+
+    '</div>';
+  }
+
+  function pHTML(p){
+    return '<div class="slide__inner point">'+
+      '<p class="point-kicker r r1"><span class="num">'+p.n+'</span>'+p.eyebrow+'</p>'+
+      '<h2 class="display p-name r r1">'+p.word+'<span class="dot">.</span></h2>'+
+      '<p class="point-desc r r2">'+p.lead+'</p>'+
+      '<section class="decision r r3">'+
+        '<div class="decision__label">Decision</div>'+
+        '<div><h3 class="decision__headline">'+p.decision+'</h3><p class="decision__support">'+p.support+'</p></div>'+
+      '</section>'+
+      '<div class="source-details r r4"><div class="blocks">'+ p.blocks.map(blockHTML).join("") +'</div></div>'+
+    '</div>';
+  }
+
+  function closeHTML(){
+    var chips='<span class="center">No Excuses</span>'+PS.map(function(p){return '<span>'+p.key+'</span>';}).join("");
+    return '<div class="slide__inner close">'+
+      '<p class="eyebrow r r1"><span class="dot"></span>The whole star</p>'+
+      '<h2 class="display close-h r r1">KC\'s Focus Star.</h2>'+
+      '<p class="thesis r r2" style="margin-top:14px">Five points. One standard.</p>'+
+      '<div class="recap r r3">'+chips+'</div>'+
+      '<p class="ask r r4">If this captures KC, it becomes the filter every event, post, and decision passes through. If something is off, <strong>the one thing</strong> to change is the most useful note back.</p>'+
+      '<a class="reply r r4" href="mailto:connect@florianp.com?subject=KC%20Santana%20Focus%20Star%20review">Approve, or send the one note</a>'+
+      '<p class="credit r r5">Brand Therapy &middot; Prepared for KC Santana &middot; May 2026</p>'+
+    '</div>';
+  }
+
+  // ---------- build slides ----------
+  var stage = document.getElementById('stage');
+  var slidesHTML = [coverHTML()].concat(PS.map(pHTML)).concat([closeHTML()]);
+  var nodes = slidesHTML.map(function(html){
+    var d=document.createElement('section');
+    d.className='slide';
+    d.innerHTML=html;
+    stage.appendChild(d);
+    return d;
+  });
+  var TOTAL = nodes.length;          // 7
+  var idx = 0;
+
+  var bar = document.getElementById('bar');
+  var counter = document.getElementById('counter');
+  var prevBtn = document.getElementById('prev');
+  var nextBtn = document.getElementById('next');
+  var dockstar = document.getElementById('dockstar');
+
+  function activeStarIndex(i){
+    if(i===0) return -1;           // cover/center
+    if(i===TOTAL-1) return -1;     // close recaps center
+    return i-1;                    // P index
+  }
+  function pad(n){return (n<10?'0':'')+n;}
+
+  function render(prevIdx){
+    nodes.forEach(function(node,i){
+      node.classList.remove('is-active','exit-left');
+      if(i===idx){ node.scrollTop=0; node.classList.add('is-active'); }
+      else if(prevIdx!==undefined && i===prevIdx && i<idx){ node.classList.add('exit-left'); }
+    });
+    bar.style.width = (idx/(TOTAL-1)*100).toFixed(2)+'%';
+    counter.textContent = pad(idx+1)+' / '+pad(TOTAL);
+    prevBtn.disabled = idx===0;
+    nextBtn.disabled = idx===TOTAL-1;
+    dockstar.innerHTML = miniStar(activeStarIndex(idx));
+    bindHits(dockstar);
+    var bw=document.getElementById('bigstarwrap');
+    if(bw){ bw.innerHTML = bigStar(activeStarIndex(idx)); bindHits(bw); }
+  }
+
+  function go(i){
+    i=Math.max(0,Math.min(TOTAL-1,i));
+    if(i===idx) return;
+    var p=idx; idx=i; render(p);
+  }
+  function next(){ go(idx+1); }
+  function prev(){ go(idx-1); }
+
+  function bindHits(root){
+    root.querySelectorAll('.hit').forEach(function(el){
+      el.addEventListener('click', function(e){
+        e.stopPropagation();
+        go(parseInt(el.getAttribute('data-go'),10));
+      });
+    });
+  }
+
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+
+  // legend + any data-go inside slides (delegated)
+  stage.addEventListener('click', function(e){
+    var t=e.target.closest('[data-go]');
+    if(t){ go(parseInt(t.getAttribute('data-go'),10)); }
+  });
+
+  // keyboard
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ next(); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ prev(); }
+    else if(e.key==='Home'){ go(0); }
+    else if(e.key==='End'){ go(TOTAL-1); }
+  });
+
+  // swipe (horizontal), let vertical scroll pass through
+  var sx=0, sy=0, tracking=false;
+  stage.addEventListener('touchstart', function(e){
+    var t=e.changedTouches[0]; sx=t.clientX; sy=t.clientY; tracking=true;
+  }, {passive:true});
+  stage.addEventListener('touchend', function(e){
+    if(!tracking) return; tracking=false;
+    var t=e.changedTouches[0], dx=t.clientX-sx, dy=t.clientY-sy;
+    if(Math.abs(dx)>55 && Math.abs(dx)>Math.abs(dy)*1.6){ dx<0 ? next() : prev(); }
+  }, {passive:true});
+
+  render();
+})();
+</script>
+</body>
+</html>
