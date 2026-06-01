@@ -820,6 +820,9 @@
   .apply-block { border-left: 0 !important; border-top: 1px solid var(--border) !important; padding-left: 0 !important; padding-top: 14px !important; }
   .stage[data-mode="case"] .apply-block.visible { border-top: 2px solid var(--acc) !important; padding-top: 14px !important; }
   .apply-label { color: var(--acc) !important; }
+  .pillar-icon { display: inline-flex; margin: 0 0 14px; color: var(--acc); }
+  .pillar-icon svg { width: 26px; height: 26px; display: block; }
+  .pillar-icon:empty { display: none; }
   .pillar-hero-image { position: relative; margin: 0 0 22px; display: none; }
   .pillar-hero-image.visible { display: block; }
   .pillar-hero-image img { display: block; width: 100%; height: clamp(170px, 26vh, 300px); object-fit: cover; background: #F0F0F5; }
@@ -861,6 +864,7 @@
     </div>
 
       <div class="hero">
+      <div class="pillar-icon" id="p-icon" aria-hidden="true"></div>
       <div class="pillar-eyebrow" id="p-eyebrow">Your why</div>
       <h1 class="pillar-title"><span id="p-title">Purpose</span><span class="dot">.</span></h1>
       <div class="detail-fit" id="detail-fit">
@@ -1287,6 +1291,14 @@ function setActivePillar(i, options={}){
 
   document.getElementById('p-eyebrow').textContent=p.eyebrow.toUpperCase();
   document.getElementById('p-title').textContent=p.title;
+  const PILLAR_ICONS={
+    product:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="6" width="16" height="13"/><line x1="4" y1="10" x2="20" y2="10"/></svg>',
+    people:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="10" r="3.5"/><circle cx="16" cy="10" r="3.5"/></svg>',
+    purpose:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/></svg>',
+    promise:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="12" r="8"/><path d="M8.4 12 l2.4 2.4 l4.8 -5.2"/></svg>',
+    personality:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 L20 8 V16 L12 21 L4 16 V8 Z"/></svg>'
+  };
+  document.getElementById('p-icon').innerHTML=PILLAR_ICONS[p.id]||'';
   document.getElementById('p-desc').innerHTML=data.desc || '';
 
   const heroWrap=document.getElementById('pillar-hero');

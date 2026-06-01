@@ -87,10 +87,6 @@ window.FOCUS_STAR_CONFIG = {
           ],
           "Image signal": []
         }
-      },
-      "image": {
-        "path": "../../images/product.png",
-        "alt": "Product"
       }
     },
     {
@@ -243,10 +239,6 @@ window.FOCUS_STAR_CONFIG = {
           ],
           "Image signal": []
         }
-      },
-      "image": {
-        "path": "../../images/purpose.png",
-        "alt": "Purpose"
       }
     },
     {
@@ -311,10 +303,6 @@ window.FOCUS_STAR_CONFIG = {
           ],
           "Image signal": []
         }
-      },
-      "image": {
-        "path": "../../images/promise.png",
-        "alt": "Promise"
       }
     },
     {
