@@ -238,7 +238,7 @@ window.FOCUS_STAR_CONFIG = {
           ],
           "rationalMotivation": "Cognitive longevity, hormonal and physical health, without outsourcing the work.",
           "painPoint": "Health-conscious but undisciplined. Awkward around cannabis. Stuck at the starting line.",
-          "decisionTrigger": "A room and a voice that make excuses harder to defend.",
+          "decisionTrigger": "KC becomes the example Alina can relate to and admire, someone who has been through more and still lives the standard, leaving Alina with fewer excuses.",
           "image": {
             "path": "../../images/persona-alina.png",
             "alt": "High-earning SoCal professional"
