@@ -792,10 +792,14 @@ code {
   }
 }
 @media (max-width: 960px) {
-  body.strategy-page main.content {
+  /* Content-first on phones for every Brand OS page: the desktop left-rail nav
+     would otherwise become a full-height wall above the content. Put the page
+     content first and move the sidebar nav below it. Desktop layout (the grid at
+     the top of this file) is untouched. */
+  main.content {
     order: 1;
   }
-  body.strategy-page aside.sidebar {
+  aside.sidebar {
     order: 2;
     border-top: 1px solid var(--border);
     border-bottom: none;
