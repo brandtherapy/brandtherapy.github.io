@@ -947,8 +947,8 @@
     <div class="reader-fit" id="reader-fit">
       <div class="mode-bar">
       <div class="mode-toggle">
-        <button class="mode-btn active" id="btn-guide" onclick="setMode('guide')">Guide</button>
-        <button class="mode-btn" id="btn-case" onclick="setMode('case')">Case Study</button>
+        <button class="mode-btn" id="btn-guide" onclick="setMode('guide')">Guide</button>
+        <button class="mode-btn active" id="btn-case" onclick="setMode('case')">Case Study</button>
       </div>
 
       <div class="case-logo" id="case-logo">
@@ -1160,7 +1160,7 @@ const STAR_R = 278, STAR_INNER = STAR_R * 0.38;
 const RING_INNER = 338, RING_TICK_R = 360, PILLAR_TEXT_R = 480;
 
 
-let mode = 'guide';
+let mode = 'case';
 let activeIdx = 0;
 let rotation = 0, target = 0;
 let dragging = false, lastPointerAng = 0, dragVelocity = 0, lastDragTime = 0;
