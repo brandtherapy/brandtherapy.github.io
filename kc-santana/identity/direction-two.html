@@ -176,7 +176,24 @@
     .kc-dir-b .direction-hero { min-height: 440px; padding: 36px 24px; }
     .kc-dir-b .photo-reference-card img { height: auto; max-height: none; }
   }
+</style><style>
+.fp-gate-wrap { position: relative; }
+.fp-gate-blur { filter: blur(6px) saturate(0.85); opacity: 0.5; pointer-events: none; user-select: none; }
+.fp-gate { position: absolute; inset: 0; z-index: 50; display: flex; justify-content: center; align-items: flex-start; }
+.fp-gate::before { content: ""; position: absolute; inset: 0; background: color-mix(in srgb, var(--light) 80%, transparent); }
+.fp-gate__card { position: sticky; top: 88px; margin-top: 12vh; z-index: 1; width: min(520px, 90%); background: var(--white); border: 1px solid var(--text); border-top: 4px solid var(--accent); padding: clamp(32px, 5vw, 52px); text-align: center; box-shadow: 0 30px 80px rgba(26, 26, 46, 0.16); }
+.fp-gate__lock { display: inline-flex; margin: 0 0 22px; }
+.fp-gate__lock svg { width: 34px; height: 34px; }
+.fp-gate__eyebrow { font-family: var(--ff-b); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.fp-gate__title { font-family: var(--ff-h); font-weight: 800; font-size: clamp(28px, 3.6vw, 40px); line-height: 1.04; letter-spacing: -0.02em; color: var(--text); margin: 0 0 14px; }
+.fp-gate__title .dot { color: var(--accent); }
+.fp-gate__body { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); margin: 0 auto 26px; max-width: 40ch; }
+.fp-gate__cta { display: inline-flex; align-items: center; min-height: 46px; padding: 12px 22px; background: var(--text); color: var(--white); text-decoration: none; font-family: var(--ff-b); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.fp-gate__cta:hover { background: var(--accent); }
+.fp-gate__meta { margin-top: 20px; font-family: var(--ff-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
 </style>
+<div class="fp-gate-wrap">
+  <div class="fp-gate-blur">
 <div class="kc-dir-b">
     <header class="direction-hero run-hero">
       <p class="eyebrow">Direction Two / Athletic community</p>
@@ -353,7 +370,19 @@
         </article>
       </div>
     </section>
-  
+
+</div>
+  </div>
+  <div class="fp-gate" role="note" aria-label="Pending strategy approval">
+    <div class="fp-gate__card">
+      <span class="fp-gate__lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="square"><rect x="4" y="10" width="16" height="11"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></span>
+      <div class="fp-gate__eyebrow">Creative Direction</div>
+      <h2 class="fp-gate__title">Pending strategy approval<span class="dot">.</span></h2>
+      <p class="fp-gate__body">Your creative directions are built and waiting. They unlock the moment we confirm your Focus Star together.</p>
+      <a class="fp-gate__cta" href="../strategy/index.html">Review the strategy first &rarr;</a>
+      <div class="fp-gate__meta">Locked preview</div>
+    </div>
+  </div>
 </div>
 
 
