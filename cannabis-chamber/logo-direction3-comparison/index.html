@@ -1,0 +1,928 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cannabis Chamber Logo Direction 3 Comparison Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #153923;
+      --muted: #667269;
+      --soft: #eef1ea;
+      --line: #d9dfd5;
+      --paper: #fbfaf4;
+      --white: #ffffff;
+      --green: #16482e;
+      --teal: #176a68;
+      --coral: #c96d4d;
+      --gold: #bd9638;
+      --risk: #9a5a35;
+      font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+    }
+
+    main {
+      width: min(1680px, calc(100vw - 36px));
+      margin: 0 auto;
+      padding: 40px 0 80px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: end;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 24px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Sora", system-ui, sans-serif;
+      letter-spacing: 0;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 76px);
+      line-height: .95;
+      max-width: 1080px;
+    }
+
+    h2 {
+      font-size: clamp(24px, 3vw, 42px);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .meta {
+      display: grid;
+      justify-items: end;
+      gap: 6px;
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: right;
+      letter-spacing: 0;
+    }
+
+    .meta strong {
+      color: var(--green);
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0 0 34px;
+    }
+
+    .summary-item {
+      min-height: 118px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 16px;
+    }
+
+    .summary-item b {
+      display: block;
+      color: var(--gold);
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      letter-spacing: 0;
+    }
+
+    .matrix {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .matrix th,
+    .matrix td {
+      border-top: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .matrix th {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      background: var(--green);
+      color: var(--white);
+      padding: 12px;
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .matrix td {
+      padding: 14px;
+    }
+
+    .matrix td:nth-child(1) {
+      width: 96px;
+      background: color-mix(in srgb, var(--soft) 70%, var(--white));
+    }
+
+    .matrix td:nth-child(2) {
+      width: min(38vw, 560px);
+      padding: 10px;
+    }
+
+    .id {
+      display: grid;
+      gap: 8px;
+    }
+
+    .id strong {
+      display: block;
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 22px;
+      line-height: 1;
+      color: var(--green);
+      letter-spacing: 0;
+    }
+
+    .id span {
+      display: inline-flex;
+      width: fit-content;
+      border: 1px solid color-mix(in srgb, var(--gold) 50%, var(--line));
+      color: var(--gold);
+      padding: 4px 6px;
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .thumb {
+      display: block;
+      overflow: hidden;
+      background: var(--soft);
+      border: 1px solid var(--line);
+    }
+
+    .thumb img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      background: var(--soft);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--green);
+      padding: 5px 7px;
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .chip.best {
+      color: var(--white);
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .chip.ref {
+      color: var(--white);
+      background: var(--teal);
+      border-color: var(--teal);
+    }
+
+    .chip.watch {
+      color: var(--risk);
+      border-color: color-mix(in srgb, var(--coral) 40%, var(--line));
+    }
+
+    .chip.no {
+      color: #6d3325;
+      border-color: color-mix(in srgb, var(--coral) 50%, var(--line));
+      background: color-mix(in srgb, var(--coral) 10%, var(--white));
+    }
+
+    .field {
+      display: grid;
+      gap: 5px;
+      margin-bottom: 12px;
+    }
+
+    .field b {
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--gold);
+      letter-spacing: 0;
+    }
+
+    .field:last-child {
+      margin-bottom: 0;
+    }
+
+    .section {
+      margin-top: 42px;
+    }
+
+    .section-note {
+      max-width: 920px;
+      margin-bottom: 14px;
+    }
+
+    .context-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .context-item {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 10px;
+    }
+
+    .context-item img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      margin-bottom: 10px;
+    }
+
+    .context-item p {
+      font-size: 13px;
+    }
+
+    @media (max-width: 1100px) {
+      header,
+      .summary,
+      .context-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .meta {
+        justify-items: start;
+        text-align: left;
+      }
+
+      .matrix,
+      .matrix thead,
+      .matrix tbody,
+      .matrix tr,
+      .matrix th,
+      .matrix td {
+        display: block;
+      }
+
+      .matrix thead {
+        display: none;
+      }
+
+      .matrix tr {
+        border-top: 1px solid var(--line);
+      }
+
+      .matrix td {
+        width: 100% !important;
+        border-right: 0;
+      }
+
+      .matrix td::before {
+        display: block;
+        content: attr(data-label);
+        font-family: "Sora", system-ui, sans-serif;
+        font-size: 10px;
+        font-weight: 800;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        letter-spacing: 0;
+      }
+
+      .matrix td:first-child::before,
+      .matrix td:nth-child(2)::before {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Direction 3 Logo Comparison Board</h1>
+      <div class="meta">
+        <span><strong>Brand</strong> Cannabis Chamber</span>
+        <span><strong>Route</strong> The Tribe / Common Ground</span>
+        <span><strong>Status</strong> Approval Review</span>
+      </div>
+    </header>
+
+    <div class="summary" aria-label="Board summary">
+      <div class="summary-item">
+        <b>Approval Rule</b>
+        <p>Approve the logo idea, not final vector geometry. The chosen route still needs one master C duplicated and rotated.</p>
+      </div>
+      <div class="summary-item">
+        <b>Current Lead</b>
+        <p>D1 is the strongest outside-box route. C1 remains the cleanest center-convergence reference.</p>
+      </div>
+      <div class="summary-item">
+        <b>Best Physical Read</b>
+        <p>D2 is the best pin and object test. It shows the mark can carry value as a member artifact.</p>
+      </div>
+      <div class="summary-item">
+        <b>Watch Items</b>
+        <p>Generated text, imperfect C equality, and any leaf cue that becomes the first read should not be approved as final.</p>
+      </div>
+    </div>
+
+    <table class="matrix" aria-label="Direction 3 logo comparison table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Board</th>
+          <th>What It Tests</th>
+          <th>Approval Read</th>
+          <th>Risk</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>A1</strong>
+              <span>V3</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v3-logo-exploration.png">
+              <img src="../images/generated-boards/tribe-v3-logo-exploration.png" alt="V3 logo exploration board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>Original Three-C Idea</h3>
+            <p>The first broad logo study that started proving the three-C center-dot route.</p>
+            <div class="chips">
+              <span class="chip ref">Origin</span>
+              <span class="chip">Exploration</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Use For</b>
+              <p>Remembering the original energy and why the route worked.</p>
+            </div>
+            <div class="field">
+              <b>Do Not Use For</b>
+              <p>Final geometry or mark selection.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>Too broad for approval. It mixes multiple ideas and does not isolate one final candidate.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>A2</strong>
+              <span>V4</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v4-logo-refined-current.png">
+              <img src="../images/generated-boards/tribe-v4-logo-refined-current.png" alt="V4 refined current logo board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>Refined Current Route</h3>
+            <p>A tighter version of the early selected idea before the center-dot geometry was fully locked.</p>
+            <div class="chips">
+              <span class="chip ref">Reference</span>
+              <span class="chip">Selected Path</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Use For</b>
+              <p>Comparing the original feel against later, cleaner mockups.</p>
+            </div>
+            <div class="field">
+              <b>Do Not Use For</b>
+              <p>Approving a final mark.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>The C shapes are not controlled enough, and the route still feels like a study rather than a decision.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>A3</strong>
+              <span>V4</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v4-logo-subtle-leaf-hints.png">
+              <img src="../images/generated-boards/tribe-v4-logo-subtle-leaf-hints.png" alt="V4 subtle leaf hints logo board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>Subtle Leaf Hint</h3>
+            <p>Whether a plant cue can be hidden in the negative space without becoming the brand's first read.</p>
+            <div class="chips">
+              <span class="chip watch">Leaf Test</span>
+              <span class="chip">Secondary Cue</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Use For</b>
+              <p>Checking if a secondary cannabis cue is worth keeping alive.</p>
+            </div>
+            <div class="field">
+              <b>Approve Only If</b>
+              <p>The leaf remains nearly invisible and the three Cs stay dominant.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>High risk of becoming cannabis-literal and weakening the chamber-level authority.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>A4</strong>
+              <span>V4</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v4-logo-new-routes.png">
+              <img src="../images/generated-boards/tribe-v4-logo-new-routes.png" alt="V4 new logo routes board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>Alternate New Routes</h3>
+            <p>A wider exploration set that helped confirm the common-center route was stronger than unrelated marks.</p>
+            <div class="chips">
+              <span class="chip no">Do Not Lead</span>
+              <span class="chip">Range Check</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Use For</b>
+              <p>Rejecting ideas that drift away from the selected three-C center concept.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>Most routes are less ownable and less connected to the central-dot idea.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>B1</strong>
+              <span>V5</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v5-logo-common-center-refinement.png">
+              <img src="../images/generated-boards/tribe-v5-logo-common-center-refinement.png" alt="V5 common center refinement board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>Common Center Refinement</h3>
+            <p>The first serious narrowing toward three Cs pointing toward one shared dot.</p>
+            <div class="chips">
+              <span class="chip ref">Important Reference</span>
+              <span class="chip">Center Dot</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Use For</b>
+              <p>Keeping the center-dot relationship visible in the next production step.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>Still feels exploratory and less physically premium than later boards.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>B2</strong>
+              <span>V5</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v5-logo-common-center-connectors.png">
+              <img src="../images/generated-boards/tribe-v5-logo-common-center-connectors.png" alt="V5 common center connectors board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>Connector Logic</h3>
+            <p>How much connection language can be implied before the mark starts feeling over-explained.</p>
+            <div class="chips">
+              <span class="chip watch">Connector Test</span>
+              <span class="chip">Access</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Use For</b>
+              <p>Understanding how direct the connection metaphor can be.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>Connectors can make the mark feel less premium and less timeless.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>B3</strong>
+              <span>V6</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v6-logo-mockup-refinement.png">
+              <img src="../images/generated-boards/tribe-v6-logo-mockup-refinement.png" alt="V6 logo mockup refinement board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>First Strong Mockup Route</h3>
+            <p>The pass that made the idea feel like a real member brand instead of a sketch.</p>
+            <div class="chips">
+              <span class="chip best">Original Favorite</span>
+              <span class="chip ref">Must Preserve</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Use For</b>
+              <p>Protecting the premium feel, color balance, and central-dot idea.</p>
+            </div>
+            <div class="field">
+              <b>Do Not Use For</b>
+              <p>Exact final geometry because one C angle still needs correction.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>Strong feel, imperfect construction.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>B4</strong>
+              <span>V6</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v6-logo-mockup-card-detail.png">
+              <img src="../images/generated-boards/tribe-v6-logo-mockup-card-detail.png" alt="V6 logo card detail board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>Card Detail And Material</h3>
+            <p>How the mark behaves on card-scale collateral and close physical touchpoints.</p>
+            <div class="chips">
+              <span class="chip ref">Material Reference</span>
+              <span class="chip">Card Scale</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Use For</b>
+              <p>Business card and stationery tone after the mark is constructed.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>Context is stronger than the standalone mark discipline.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>C1</strong>
+              <span>V7</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v7-logo-geometry-lock-mockups.png">
+              <img src="../images/generated-boards/tribe-v7-logo-geometry-lock-mockups.png" alt="V7 geometry lock mockups board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>Geometry-Lock Attempt</h3>
+            <p>A stricter pass toward equal C modules after the construction rule was documented.</p>
+            <div class="chips">
+              <span class="chip ref">Geometry Step</span>
+              <span class="chip">Equal C</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Use For</b>
+              <p>Remembering that the three Cs must be the same master shape.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>Better discipline, but less emotional and premium than the mockup-led passes.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>C2</strong>
+              <span>V8</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v8-logo-center-convergence-mockup.png">
+              <img src="../images/generated-boards/tribe-v8-logo-center-convergence-mockup.png" alt="V8 center convergence mockup board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>Center Convergence</h3>
+            <p>The cleanest pre-v9 version of the center-dot relationship.</p>
+            <div class="chips">
+              <span class="chip best">Carry Forward</span>
+              <span class="chip">Center Dot</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Use For</b>
+              <p>The best reference for how the three Cs should converge around the center.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>Still needs final construction to prove identical C geometry.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>C3</strong>
+              <span>V8</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v8-logo-equal-c-mockup.png">
+              <img src="../images/generated-boards/tribe-v8-logo-equal-c-mockup.png" alt="V8 equal C mockup board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>Equal-C Tone Test</h3>
+            <p>A mature material pass with more restrained system behavior.</p>
+            <div class="chips">
+              <span class="chip ref">Tone Only</span>
+              <span class="chip">Material</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Use For</b>
+              <p>Paper, emboss, and member-material tone.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>The equal-C premise is still not proven enough.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>D1</strong>
+              <span>V9</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v9-logo-market-access-map.png">
+              <img src="../images/generated-boards/tribe-v9-logo-market-access-map.png" alt="V9 market access map logo board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>Market Access Map</h3>
+            <p>A more original metaphor where the mark becomes access, regional power, and industry infrastructure.</p>
+            <div class="chips">
+              <span class="chip best">Strongest V9</span>
+              <span class="chip">Outside Box</span>
+              <span class="chip">Infrastructure</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Approve If</b>
+              <p>We want the mark to feel like a trade network and market-access system.</p>
+            </div>
+            <div class="field">
+              <b>Pair With</b>
+              <p>C2 for the clean center-convergence reference.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>The map texture is application language, not the core mark. Do not bake the map into the logo.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>D2</strong>
+              <span>V9</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v9-logo-ignition-pin-system.png">
+              <img src="../images/generated-boards/tribe-v9-logo-ignition-pin-system.png" alt="V9 ignition pin logo board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>Ignition Pin System</h3>
+            <p>The center dot as catalyst, with the strongest member-object and pin potential.</p>
+            <div class="chips">
+              <span class="chip best">Best Object</span>
+              <span class="chip">Pin Ready</span>
+              <span class="chip">Momentum</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Approve If</b>
+              <p>We want the selected logo to feel ceremonial, wearable, and high-value as a membership symbol.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>The pin styling can over-influence the mark. Final geometry must stay clean in flat use.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>D3</strong>
+              <span>V9</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v9-logo-council-table.png">
+              <img src="../images/generated-boards/tribe-v9-logo-council-table.png" alt="V9 council table logo board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>Council Table</h3>
+            <p>Three equal leaders around a shared decision point, tied to access and influence.</p>
+            <div class="chips">
+              <span class="chip ref">Context Reference</span>
+              <span class="chip">Leadership</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Use For</b>
+              <p>Explaining the mark concept, especially the shared center.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>The board is more strategic context than final logo direction.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td data-label="ID">
+            <div class="id">
+              <strong>D4</strong>
+              <span>V9</span>
+            </div>
+          </td>
+          <td data-label="Board">
+            <a class="thumb" href="../images/generated-boards/tribe-v9-logo-civic-seal-watchitem.png">
+              <img src="../images/generated-boards/tribe-v9-logo-civic-seal-watchitem.png" alt="V9 civic seal logo board">
+            </a>
+          </td>
+          <td data-label="What It Tests">
+            <h3>Civic Seal Behavior</h3>
+            <p>Whether the mark can become chamber-coded without feeling old, local, or bureaucratic.</p>
+            <div class="chips">
+              <span class="chip watch">Watch Item</span>
+              <span class="chip">Seal</span>
+            </div>
+          </td>
+          <td data-label="Approval Read">
+            <div class="field">
+              <b>Use For</b>
+              <p>Seal behavior and ceremonial applications only.</p>
+            </div>
+          </td>
+          <td data-label="Risk">
+            <p>Generated ring text is unreliable and cannot be treated as source artwork.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section class="section" aria-label="Application context">
+      <h2>Application Context Only</h2>
+      <p class="section-note">These are not logo approval candidates. They show how the selected mark could behave across membership, cards, stationery, and event collateral once the final geometry is built.</p>
+      <div class="context-grid">
+        <a class="context-item" href="../images/generated-boards/tribe-v3-business-cards.png">
+          <img src="../images/generated-boards/tribe-v3-business-cards.png" alt="V3 business card application context">
+          <h3>Context 1. Cards</h3>
+          <p>Business card scale and material feel.</p>
+        </a>
+        <a class="context-item" href="../images/generated-boards/tribe-v3-stationery-system.png">
+          <img src="../images/generated-boards/tribe-v3-stationery-system.png" alt="V3 stationery application context">
+          <h3>Context 2. Stationery</h3>
+          <p>Letterhead, paper, and formal system behavior.</p>
+        </a>
+        <a class="context-item" href="../images/generated-boards/tribe-v3-membership-artifacts.png">
+          <img src="../images/generated-boards/tribe-v3-membership-artifacts.png" alt="V3 membership artifacts application context">
+          <h3>Context 3. Membership</h3>
+          <p>Credential, pin, and artifact logic.</p>
+        </a>
+        <a class="context-item" href="../images/generated-boards/tribe-v3-event-sponsor-kit.png">
+          <img src="../images/generated-boards/tribe-v3-event-sponsor-kit.png" alt="V3 event sponsor kit application context">
+          <h3>Context 4. Events</h3>
+          <p>Event and sponsorship environment behavior.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cannabis Chamber Alternative Logo Exploration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #153923;
+      --muted: #657268;
+      --paper: #fbfaf4;
+      --white: #ffffff;
+      --line: #d9dfd5;
+      --soft: #eef1ea;
+      --green: #16482e;
+      --teal: #176a68;
+      --coral: #c96d4d;
+      --gold: #bd9638;
+      font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+    }
+
+    main {
+      width: min(1560px, calc(100vw - 36px));
+      margin: 0 auto;
+      padding: 42px 0 84px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: end;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 28px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Sora", system-ui, sans-serif;
+      letter-spacing: 0;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 76px);
+      line-height: .95;
+      max-width: 980px;
+    }
+
+    h2 {
+      font-size: clamp(24px, 3vw, 42px);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .meta {
+      display: grid;
+      justify-items: end;
+      gap: 6px;
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: right;
+      letter-spacing: 0;
+    }
+
+    .meta strong {
+      color: var(--green);
+    }
+
+    .notice {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 34px;
+    }
+
+    .notice-item,
+    .concept,
+    .prompt {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 16px;
+    }
+
+    .notice-item b,
+    .concept b,
+    .prompt b {
+      display: block;
+      color: var(--gold);
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      letter-spacing: 0;
+    }
+
+    .section {
+      margin-top: 42px;
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .concept {
+      min-height: 224px;
+      display: grid;
+      align-content: start;
+      gap: 10px;
+    }
+
+    .concept .rank {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 8px;
+      background: var(--green);
+      color: var(--white);
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 2px;
+    }
+
+    .chip {
+      display: inline-flex;
+      min-height: 24px;
+      align-items: center;
+      padding: 4px 7px;
+      border: 1px solid var(--line);
+      color: var(--green);
+      background: var(--paper);
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .prompt-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .prompt {
+      min-height: 230px;
+    }
+
+    .prompt p {
+      color: var(--ink);
+    }
+
+    .d2-ref {
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+      gap: 16px;
+      align-items: center;
+      background: var(--green);
+      color: var(--white);
+      padding: 14px;
+      margin-top: 18px;
+    }
+
+    .d2-ref img {
+      display: block;
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, .22);
+    }
+
+    .d2-ref p,
+    .d2-ref h3 {
+      color: var(--white);
+    }
+
+    @media (max-width: 1040px) {
+      header,
+      .notice,
+      .concept-grid,
+      .prompt-grid,
+      .d2-ref {
+        grid-template-columns: 1fr;
+      }
+
+      .meta {
+        justify-items: start;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Alternative Logo Exploration</h1>
+      <div class="meta">
+        <span><strong>Status</strong> Historical</span>
+        <span><strong>Inputs</strong> 6 Agents</span>
+        <span><strong>Approved</strong> None</span>
+      </div>
+    </header>
+
+    <div class="notice">
+      <div class="notice-item">
+        <b>D2 Boundary</b>
+        <p>D2 remains the only approved route. This page does not replace, edit, or reinterpret D2.</p>
+      </div>
+      <div class="notice-item">
+        <b>Review Status</b>
+        <p>No concept on this page is carrying forward from the current review. Keep as historical evidence only.</p>
+      </div>
+      <div class="notice-item">
+        <b>Next Branch</b>
+        <p>Use the separate minimal badge exploration for the same-direction nested C idea.</p>
+      </div>
+    </div>
+
+    <section class="section" aria-label="Top challengers">
+      <h2>Top Challengers</h2>
+      <div class="concept-grid">
+        <article class="concept">
+          <span class="rank">01</span>
+          <h3>Clearinghouse Gate</h3>
+          <b>Capital Markets</b>
+          <p>A threshold built from vertical blocks and a crossing settlement bar. It carries business access, trust, and serious commerce.</p>
+          <div class="chips">
+            <span class="chip">Gate</span>
+            <span class="chip">Infrastructure</span>
+            <span class="chip">Member Badge</span>
+          </div>
+        </article>
+        <article class="concept">
+          <span class="rank">02</span>
+          <h3>Charter Key</h3>
+          <b>Membership Object</b>
+          <p>A contemporary ceremonial key that turns membership into access without using D2's radial C structure.</p>
+          <div class="chips">
+            <span class="chip">Access</span>
+            <span class="chip">Pin</span>
+            <span class="chip">Credential</span>
+          </div>
+        </article>
+        <article class="concept">
+          <span class="rank">03</span>
+          <h3>Quorum Standard</h3>
+          <b>Civic Authority</b>
+          <p>A compact civic standard built from upright bars around a decision field. It can feel official without becoming old chamber clip art.</p>
+          <div class="chips">
+            <span class="chip">Authority</span>
+            <span class="chip">Standard</span>
+            <span class="chip">Seal Alternative</span>
+          </div>
+        </article>
+        <article class="concept">
+          <span class="rank">04</span>
+          <h3>Trade Switchyard</h3>
+          <b>Market Infrastructure</b>
+          <p>Angular route-selection lanes that frame the Chamber as the system for finding the right market path.</p>
+          <div class="chips">
+            <span class="chip">Routes</span>
+            <span class="chip">Market Access</span>
+            <span class="chip">Event System</span>
+          </div>
+        </article>
+        <article class="concept">
+          <span class="rank">05</span>
+          <h3>Stem Aperture</h3>
+          <b>Botanical Without Leaf</b>
+          <p>A premium stem cross-section abstraction. It gives a cannabis-adjacent source without turning into a leaf.</p>
+          <div class="chips">
+            <span class="chip">Botanical</span>
+            <span class="chip">Subtle</span>
+            <span class="chip">Etched Glass</span>
+          </div>
+        </article>
+        <article class="concept">
+          <span class="rank">06</span>
+          <h3>Quorum Line</h3>
+          <b>Policy Voice</b>
+          <p>A linear representation mark where distinct voices become one organized industry signal.</p>
+          <div class="chips">
+            <span class="chip">Representation</span>
+            <span class="chip">Policy</span>
+            <span class="chip">Role System</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-label="First alternative raster batch">
+      <h2>First Raster Batch</h2>
+      <div class="d2-ref">
+        <img src="../images/generated-boards/alt-exploration/alt-batch-01-object-infrastructure-2026-06-05.png" alt="Alternative logo raster batch one">
+        <div>
+          <h3>Object And Infrastructure Test</h3>
+          <p>This batch tests Clearinghouse Gate, Charter Key, Quorum Standard, and Trade Switchyard as separate challengers. None are approved. They are intentionally outside the D2 three-C-to-dot structure.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Prompt batches">
+      <h2>Next Visual Batches</h2>
+      <div class="prompt-grid">
+        <article class="prompt">
+          <b>Batch 1</b>
+          <h3>Object Competitors</h3>
+          <p>Charter Key, Proof Tab, Member Rivet, and Standards Mint as isolated marks plus enamel pin, credential, stationery, and certificate stamp applications.</p>
+        </article>
+        <article class="prompt">
+          <b>Batch 2</b>
+          <h3>Infrastructure Competitors</h3>
+          <p>Clearinghouse Gate, Trade Switchyard, Access Keyway, and Exchange Rail as serious market-access and economic-infrastructure marks.</p>
+        </article>
+        <article class="prompt">
+          <b>Batch 3</b>
+          <h3>Authority And Policy</h3>
+          <p>Quorum Standard, Market Charter Seal, Quorum Line, and Docket Tab as modern civic authority routes without legal or lobbying cliches.</p>
+        </article>
+        <article class="prompt">
+          <b>Batch 4</b>
+          <h3>Botanical Without Leaf</h3>
+          <p>Stem Aperture, Seed Ledger, Bast Fiber Standard, and Caliper Seed as subtle cannabis-adjacent systems without leaf symbolism.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-label="D2 quality benchmark">
+      <h2>D2 Quality Benchmark</h2>
+      <div class="d2-ref">
+        <img src="../images/generated-boards/tribe-v9-logo-ignition-pin-system.png" alt="Approved D2 benchmark">
+        <div>
+          <h3>What Alternatives Must Beat</h3>
+          <p>D2 is still the approved route because it already feels premium, physical, member-worthy, and specific. Any challenger must prove comparable pin, credential, and stationery quality without borrowing the three-C-to-dot structure.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

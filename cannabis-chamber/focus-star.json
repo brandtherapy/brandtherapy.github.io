@@ -3,7 +3,7 @@
   "name": "The Cannabis Chamber of Commerce",
   "center": {
     "word": "Standards",
-    "definition": "The Promise word is **Elevating Business Standards**, often shortened to **Standards** as the operating compass word. The Chamber raises the standard of what cannabis business leadership looks like. Standards are not a gate built to keep people out. They are the shared business language that makes access, advocacy, education, partnerships, and market opportunity credible.\n\nEvery event, partnership, member relationship, educational resource, advocacy initiative, directory, sponsor opportunity, and regional program passes through the same filter: does it create real business value, strengthen trust, and help serious cannabis and hemp professionals move business forward?"
+    "definition": "The operating center is **Standards**. The Chamber raises the standard of what cannabis business leadership looks like. Standards are not a gate built to keep people out. They are the shared business language that makes access, advocacy, education, partnerships, collaboration, and market opportunity credible.\n\nEvery event, partnership, member relationship, educational resource, advocacy initiative, directory, sponsor opportunity, and regional program passes through the same filter: does it create real business value, strengthen trust, connect the right people, and help serious cannabis and hemp professionals move business forward together?"
   },
   "edges": [
     {
@@ -11,8 +11,8 @@
       "code": "P1",
       "title": "Product",
       "offer_name": "Chamber business infrastructure",
-      "position": "The Cannabis Chamber of Commerce is a global nonprofit trade association and active business network for the cannabis and hemp industry. It serves as business infrastructure for industry growth by bringing together operators, entrepreneurs, service providers, investors, sponsors, policymakers, and industry leaders through executive networking, strategic partnerships, education, advocacy and policy insight, regional and global industry access, and leadership development.",
-      "compass": "Where cannabis business connects. Strategic connection, education, advocacy, market access, leadership, and trusted relationships for people building the business future of cannabis and hemp.",
+      "position": "The Cannabis Chamber of Commerce is a global nonprofit trade association and active business network for the cannabis and hemp industry. It serves as business infrastructure for industry growth by bringing together operators, entrepreneurs, service providers, investors, sponsors, policymakers, and industry leaders through executive networking, strategic partnerships, education, advocacy and policy insight, regional and global industry access, collaboration, and leadership development.",
+      "compass": "Where cannabis business connects. Strategic connection, collaboration, education, advocacy, market access, leadership, and trusted relationships for people building the business future of cannabis and hemp.",
       "image": "images/p1-product.png"
     },
     {
@@ -20,8 +20,8 @@
       "code": "P2",
       "title": "People",
       "offer_name": "Serious leaders building cannabis business",
-      "position": "The Chamber serves serious cannabis and hemp leaders: operators, executives, entrepreneurs, investors, policymakers, sponsors, regional leaders, ancillary partners, innovators, professional organizations, and qualified businesses looking to participate in, grow within, and help shape the future of the industry.",
-      "compass": "Leaders and organizations who need credible access to cannabis business: decision-makers, policy insight, partnerships, peer benchmarks, market access, leadership development, and the rooms where serious opportunities form.",
+      "position": "The Chamber serves serious cannabis and hemp leaders: operators, executives, entrepreneurs, investors, policymakers, sponsors, regional leaders, ancillary partners, innovators, professional organizations, and qualified businesses looking to participate in, grow within, collaborate across, and help shape the future of the industry.",
+      "compass": "Leaders and organizations who need credible access to cannabis business: decision-makers, policy insight, partnerships, peer benchmarks, market access, leadership development, and the rooms where useful collaboration and serious opportunities form.",
       "image": "images/p2-people.png"
     },
     {
@@ -29,17 +29,17 @@
       "code": "P3",
       "title": "Purpose",
       "offer_name": "Accelerate profitable cannabis growth",
-      "position": "The Chamber exists to accelerate profitable growth for cannabis and hemp businesses by expanding access to markets, leadership, partnerships, policy insight, regional and global networks, and trusted industry relationships.",
-      "compass": "The measure is not attention. The measure is business movement: access, collaboration, leadership, economic opportunity, and long-term industry progress.",
+      "position": "The Chamber exists to accelerate profitable growth for cannabis and hemp businesses by expanding access to markets, leadership, partnerships, policy insight, regional and global networks, collaboration, and trusted industry relationships.",
+      "compass": "The measure is not attention. The measure is business movement: access, collaboration, leadership, economic opportunity, practical synergies, and long-term industry progress.",
       "image": "images/p3-purpose.png"
     },
     {
       "id": "promise",
       "code": "P4",
       "title": "Promise",
-      "offer_name": "Elevating Business Standards",
-      "position": "Elevating Business Standards. The Chamber exists to raise the standard of what cannabis business leadership looks like. It helps cannabis and hemp professionals show up credibly, connect constructively, learn the market, advocate responsibly, build strategic partnerships, and create business value through trusted relationships.",
-      "compass": "Standards turn access into trust. Trust turns relationships into opportunity. Opportunity creates the economic momentum the Chamber is here to build.",
+      "offer_name": "Connections",
+      "position": "Connections. The Chamber's promise is to turn serious cannabis business relationships into useful access, collaboration, and opportunity. It helps cannabis and hemp professionals show up credibly, connect constructively, learn the market, advocate responsibly, build strategic partnerships, collaborate with purpose, and create business value through trusted relationships.",
+      "compass": "Standards make connections credible. Credible connections create collaboration. Collaboration creates the business lift the Chamber is here to build.",
       "image": "images/p4-promise.png"
     },
     {
@@ -47,8 +47,8 @@
       "code": "P5",
       "title": "Personality",
       "offer_name": "Operator-led institution",
-      "position": "Professional, confident, credible, and direct. Operator-led, standards-driven, rational, transparent, business-first, and welcoming to serious operators, leaders, partners, and organizations focused on outcomes and long-term industry progress.",
-      "compass": "Business-first, standards-led, authoritative, useful, and transparent. The Chamber sounds like an institution that helps serious people access the room, understand the market, and move business forward.",
+      "position": "Professional, confident, credible, and direct. Operator-led, standards-driven, rational, transparent, business-first, and welcoming to serious operators, leaders, partners, and organizations focused on outcomes, collaboration, and long-term industry progress.",
+      "compass": "Business-first, standards-led, authoritative, useful, and transparent. The Chamber sounds like an institution that helps serious people access the room, understand the market, collaborate with purpose, and move business forward.",
       "image": "images/p5-personality.png"
     }
   ],
