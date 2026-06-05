@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, viewfinder treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Direction Two · KC Brand OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #5A5CF9;
+    --accent-glow: rgba(90, 92, 249, 0.35);
+    --accent-soft: rgba(90, 92, 249, 0.06);
+    --text: #1A1A2E;
+    --muted: #8888A0;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #E5E7EB;
+    --light: #F5F5F7;
+    --white: #FFFFFF;
+    --dark: #18181B;
+    --dark-surface: #1D1D1D;
+    --ff-h: "Bricolage Grotesque", system-ui, sans-serif;
+    --ff-b: "Poppins", system-ui, sans-serif;
+    --ff-accent: "Bricolage Grotesque", system-ui, sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">KC<span class="dot">.</span></div>
+    <div class="meta">Brand OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="../strategy/index.html">Focus Star</a>
+<a href="../strategy/product.html">Product</a>
+<a href="../strategy/people.html">People</a>
+<a href="../strategy/purpose.html">Purpose</a>
+<a href="../strategy/promise.html">Promise</a>
+<a href="../strategy/personality.html">Personality</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="direction-one.html">Direction One</a>
+<a class="active" href="direction-two.html">Direction Two</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
+<a href="../application/index.html">Brand Application</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Identity</strong></div>
+    <div class="row"><span>Use</span><strong>Visual + voice</strong></div>
+    <div class="row"><span>Center</span><strong>No Excuses</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+<style>
+  /* Scoped Section B creative-direction content styles.
+     Sourced from the Section B content stylesheet, every selector prefixed under
+     .kc-dir-b so it cannot collide with the Brand OS shell (assets/style.css owns .shell,
+     .sidebar, .content, body, .brand-mark, .nav-*, .footer-nav, the grain layer).
+     The bundle's bespoke layout/reset rules and its own .footer-nav are intentionally
+     excluded. Bundle :root tokens are remapped onto the container as locals. */
+  .kc-dir-b {
+    --fp-accent: #4F51E8;
+    --fp-text: #1A1A2E;
+    --fp-muted: #5D5E75;
+    --fp-light: #F5F5F7;
+    --fp-border: #E3E4EA;
+    --fp-white: #FFFFFF;
+    --fp-dark: #18181B;
+    --std: #8E1518;
+    --std-dark: #0D0D10;
+    --run: #B94C28;
+    --run-dark: #111111;
+    --ff-h: "Bricolage Grotesque", system-ui, sans-serif;
+    --ff-b: "Poppins", system-ui, sans-serif;
+    color: var(--fp-text);
+    font-family: var(--ff-b);
+    line-height: 1.65;
+  }
+  .kc-dir-b *,
+  .kc-dir-b *::before,
+  .kc-dir-b *::after { box-sizing: border-box; }
+  .kc-dir-b img { display: block; max-width: 100%; height: auto; }
+  .kc-dir-b h1,
+  .kc-dir-b h2,
+  .kc-dir-b h3,
+  .kc-dir-b h4 { margin: 0; font-family: var(--ff-h); font-weight: 800; letter-spacing: 0; line-height: 0.98; }
+  .kc-dir-b p { margin: 0; }
+  .kc-dir-b .dot,
+  .kc-dir-b .accent { color: var(--fp-accent); }
+  .kc-dir-b .eyebrow,
+  .kc-dir-b .section-kicker,
+  .kc-dir-b .board-note,
+  .kc-dir-b .step { color: var(--fp-accent); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+  .kc-dir-b .palette-grid { display: grid; border-top: 1px solid var(--fp-border); border-left: 1px solid var(--fp-border); grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); }
+  .kc-dir-b .section { margin-bottom: 92px; }
+  .kc-dir-b .section-head { display: grid; grid-template-columns: 68px minmax(0, 1fr); gap: 24px; border-top: 1px solid var(--fp-text); padding-top: 24px; margin-bottom: 30px; }
+  .kc-dir-b .section-head h2 { max-width: 900px; margin: 8px 0 12px; font-size: clamp(34px, 5vw, 64px); }
+  .kc-dir-b .section-head p:not(.section-kicker) { max-width: 850px; color: var(--fp-muted); font-size: 15px; }
+  .kc-dir-b .direction-hero { position: relative; isolation: isolate; min-height: 520px; display: flex; flex-direction: column; justify-content: flex-end; margin-bottom: 78px; padding: clamp(44px, 6vw, 82px); overflow: hidden; background-color: var(--fp-dark); background-position: center; background-size: cover; color: var(--fp-white); }
+  .kc-dir-b .direction-hero.standard-hero { background-image: linear-gradient(90deg, rgba(8,8,10,0.9), rgba(8,8,10,0.62) 46%, rgba(8,8,10,0.18)), url("../images/standard-setter-applications-v2.png"); border-bottom: 10px solid var(--std); }
+  .kc-dir-b .direction-hero.run-hero { background-image: linear-gradient(90deg, rgba(8,8,10,0.9), rgba(8,8,10,0.58) 48%, rgba(8,8,10,0.16)), url("../images/run-the-standard-applications-v2.png"); border-bottom: 10px solid var(--run); }
+  .kc-dir-b .direction-hero .eyebrow,
+  .kc-dir-b .direction-hero .dot { color: rgba(255,255,255,0.9); }
+  .kc-dir-b .direction-hero h1 { max-width: 860px; margin: 12px 0 18px; font-size: clamp(58px, 8vw, 116px); color: var(--fp-white); }
+  .kc-dir-b .direction-hero p { max-width: 610px; color: rgba(255,255,255,0.72); font-size: clamp(16px, 1.6vw, 21px); }
+  .kc-dir-b .swatch { min-height: 185px; display: flex; flex-direction: column; justify-content: flex-end; border-right: 1px solid var(--fp-border); border-bottom: 1px solid var(--fp-border); padding: 16px; }
+  .kc-dir-b .swatch.light-text { color: #FFFFFF; }
+  .kc-dir-b .swatch.dark-text { color: #111111; }
+  .kc-dir-b .swatch strong { display: block; font-size: 13px; }
+  .kc-dir-b .swatch span { display: block; margin-top: 4px; font-size: 12px; font-weight: 700; }
+  .kc-dir-b .swatch p { margin-top: 8px; font-size: 12px; line-height: 1.35; }
+  .kc-dir-b .board-shell { border: 1px solid var(--fp-border); background: var(--fp-white); padding: clamp(10px, 1.2vw, 18px); }
+  .kc-dir-b .hero-board { margin-bottom: 18px; }
+  .kc-dir-b .board-shell img { width: 100%; border: 1px solid var(--fp-border); }
+  .kc-dir-b .board-note { margin-top: 14px; }
+  .kc-dir-b .photo-reference-grid { display: grid; border-top: 1px solid var(--fp-border); border-left: 1px solid var(--fp-border); grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 26px; }
+  .kc-dir-b .photo-reference-card { border-right: 1px solid var(--fp-border); border-bottom: 1px solid var(--fp-border); background: var(--fp-white); padding: 24px; }
+  .kc-dir-b .photo-reference-card h3 { margin-bottom: 10px; font-size: 25px; line-height: 1.02; }
+  .kc-dir-b .photo-reference-card p { color: #55566B; font-size: 14px; }
+  .kc-dir-b .photo-reference-card.wide { grid-column: span 2; }
+  .kc-dir-b .photo-reference-card img { width: 100%; height: 245px; border: 1px solid var(--fp-border); background: #F7F4EF; object-fit: cover; margin-bottom: 16px; }
+  .kc-dir-b .photo-reference-card.wide img { height: 245px; }
+  .kc-dir-b .mockup-spread { border: 1px solid var(--fp-border); background: var(--fp-white); padding: clamp(10px, 1.2vw, 18px); margin-bottom: 24px; }
+  .kc-dir-b .mockup-spread img { width: 100%; border: 1px solid var(--fp-border); aspect-ratio: 16 / 9; object-fit: cover; }
+  .kc-dir-b .mockup-proof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--fp-border); border-left: 1px solid var(--fp-border); margin-bottom: 24px; }
+  .kc-dir-b .creative-summary-grid { margin-bottom: 0; }
+  .kc-dir-b .mockup-proof { border-right: 1px solid var(--fp-border); border-bottom: 1px solid var(--fp-border); background: var(--fp-white); padding: 20px; }
+  .kc-dir-b .mockup-proof strong { display: block; margin-bottom: 8px; color: var(--fp-muted); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+  .kc-dir-b .mockup-proof p { color: #55566B; font-size: 14px; }
+  @media (max-width: 1120px) {
+    .kc-dir-b .palette-grid,
+    .kc-dir-b .photo-reference-grid,
+    .kc-dir-b .mockup-proof-grid { grid-template-columns: 1fr; }
+    .kc-dir-b .photo-reference-card.wide { grid-column: span 1; }
+  }
+  @media (max-width: 640px) {
+    .kc-dir-b .section-head { grid-template-columns: 1fr; }
+    .kc-dir-b .direction-hero { min-height: 440px; padding: 36px 24px; }
+    .kc-dir-b .photo-reference-card img { height: auto; max-height: none; }
+  }
+</style>
+<div class="kc-dir-b">
+    <header class="direction-hero run-hero">
+      <p class="eyebrow">Direction Two / Athletic community</p>
+      <h1>Run the Standard<span class="dot">.</span></h1>
+      <p>SoCal running, sport sunglasses, terracotta heat, fedora warmth, body proof, and disciplined recovery.</p>
+    </header>
+
+    <section class="section" id="stylescape">
+      <div class="section-head">
+        <span class="step">01</span>
+        <div>
+          <p class="section-kicker">Stylescape</p>
+          <h2>Athletic heat with grown femininity<span class="dot">.</span></h2>
+          <p>Running routes, sport lenses, terracotta, fedora warmth, body proof, and recovery rituals.</p>
+        </div>
+      </div>
+      <div class="board-shell hero-board">
+        <img src="../images/run-the-standard-stylescape-v1.png" alt="Run the Standard creative direction stylescape for KC Santana">
+      </div>
+      <div class="mockup-proof-grid creative-summary-grid">
+        <article class="mockup-proof">
+          <strong>Look</strong>
+          <p>Sport-led, warm, sharp.</p>
+        </article>
+        <article class="mockup-proof">
+          <strong>Signature</strong>
+          <p>Route line, lens flash, body phrase.</p>
+        </article>
+        <article class="mockup-proof">
+          <strong>Energy</strong>
+          <p>Badass, feminine, SoCal.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="signature-images">
+      <div class="section-head">
+        <span class="step">02</span>
+        <div>
+          <p class="section-kicker">Brand signature</p>
+          <h2>Route, lens, body proof<span class="dot">.</span></h2>
+          <p>A movement-led signature family built around effort, focus, and repetition.</p>
+        </div>
+      </div>
+      <div class="photo-reference-grid signature-image-grid">
+        <article class="photo-reference-card wide">
+          <img src="../images/run-the-standard-applications-v2.png" alt="Direction Two raster application and signature evidence sheet">
+          <h3>Application sheet</h3>
+          <p>Run posts, sport lenses, fedora, recovery, stories, and community material.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d2-signature-route.png" alt="Direction Two route signature raster reference">
+          <h3>Route trace</h3>
+          <p>The movement cue.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d2-signature-lens.png" alt="Direction Two sport sunglasses raster reference">
+          <h3>Sport lens</h3>
+          <p>Fast athletic recognition.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d2-signature-tattoo.png" alt="Direction Two tattoo phrase raster reference">
+          <h3>Body proof</h3>
+          <p>Discipline made personal.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section run-palette" id="color-type">
+      <div class="section-head">
+        <span class="step">03</span>
+        <div>
+          <p class="section-kicker">Color and type</p>
+          <h2>Warm athletic, not neon<span class="dot">.</span></h2>
+          <p>Terracotta and tobacco over asphalt black, with heavy type and ruby sport accents.</p>
+        </div>
+      </div>
+      <div class="palette-grid">
+        <div class="swatch light-text" style="background:#111111"><strong>Asphalt Black</strong><span>#111111</span></div>
+        <div class="swatch dark-text" style="background:#E6DED2"><strong>Bone Chalk</strong><span>#E6DED2</span></div>
+        <div class="swatch light-text" style="background:#B94C28"><strong>Terracotta Line</strong><span>#B94C28</span></div>
+        <div class="swatch light-text" style="background:#6F4423"><strong>Tobacco Felt</strong><span>#6F4423</span></div>
+        <div class="swatch light-text" style="background:#5E6645"><strong>Olive Shade</strong><span>#5E6645</span></div>
+        <div class="swatch light-text" style="background:#8E2426"><strong>Sunglass Ruby</strong><span>#8E2426</span></div>
+      </div>
+      <div class="photo-reference-grid evidence-image-grid">
+        <article class="photo-reference-card">
+          <img src="../images/validation/d2-palette-material.png" alt="Direction Two raster material palette reference">
+          <h3>Material palette</h3>
+          <p>Asphalt kit, bone paper, terracotta heat, tobacco felt, olive, ruby lens.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d2-social-template.png" alt="Direction Two raster social application reference">
+          <h3>Type and social</h3>
+          <p>Bold, fast, legible in motion.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d2-signature-lens.png" alt="Direction Two raster sunglasses color and signature reference">
+          <h3>Ruby lens</h3>
+          <p>The sharp accent that keeps it badass.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="photography">
+      <div class="section-head">
+        <span class="step">04</span>
+        <div>
+          <p class="section-kicker">Photography and wardrobe</p>
+          <h2>Run first, warmth after<span class="dot">.</span></h2>
+          <p>Sport sunglasses, palms, sweat, strength, fedora, denim, and recovery.</p>
+        </div>
+      </div>
+      <div class="photo-reference-grid">
+        <article class="photo-reference-card wide">
+          <img src="../images/validation/d2-photography-runclub.png" alt="Direction Two SoCal running group photography reference">
+          <h3>SoCal run</h3>
+          <p>Palms, pace, effort, sport lenses.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d2-photography-fedora.png" alt="Direction Two fedora and warm feminine portrait photography reference">
+          <h3>Fedora warmth</h3>
+          <p>Feminine, warm, earned.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d2-recovery-ritual.png" alt="Direction Two recovery ritual image reference">
+          <h3>Recovery ritual</h3>
+          <p>Hydration, towel, journal, controlled recovery.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="applications">
+      <div class="section-head">
+        <span class="step">05</span>
+        <div>
+          <p class="section-kicker">Applications</p>
+          <h2>How the brand shows up<span class="dot">.</span></h2>
+          <p>Run recaps, phone stories, event cards, lens details, fedora portraits, and recovery rituals.</p>
+        </div>
+      </div>
+      <div class="mockup-spread">
+        <img src="../images/run-the-standard-applications-v2.png" alt="Run the Standard image-led application mockup sheet with route posts, sport sunglasses, fedora, recovery, and run club materials">
+      </div>
+      <div class="mockup-proof-grid">
+        <article class="mockup-proof">
+          <strong>Application evidence</strong>
+          <p>Route recaps, stories, events, lens, fedora, recovery.</p>
+        </article>
+        <article class="mockup-proof">
+          <strong>Signature evidence</strong>
+          <p>Route trace and terracotta line.</p>
+        </article>
+        <article class="mockup-proof">
+          <strong>Energy</strong>
+          <p>Athletic, warm, social, direct.</p>
+        </article>
+      </div>
+      <div class="photo-reference-grid evidence-image-grid">
+        <article class="photo-reference-card">
+          <img src="../images/validation/d2-social-template.png" alt="Direction Two raster social template reference">
+          <h3>Run post</h3>
+          <p>Route, time, proof statement.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d2-signature-tattoo.png" alt="Direction Two raster tattoo phrase application reference">
+          <h3>Daily proof</h3>
+          <p>Story anchor and body detail.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d2-recovery-ritual.png" alt="Direction Two raster recovery application reference">
+          <h3>Ritual system</h3>
+          <p>Grown, practical, controlled.</p>
+        </article>
+      </div>
+    </section>
+  
+</div>
+
+
+
+  <div class="footer-nav">
+    <span>Section B · Direction Two · Creative Direction</span>
+    <span><a href="direction-one.html">← Direction One</a></span>
+  </div>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        KC Santana (kc-santana)
+  Version:      0.1.0
+  Built at:     2026-06-04T23:08:18+00:00
+  Git SHA:      703f84e6243fa4c409966b57542bd387d3d33e78
+  Bundle hash:  sha256:d610ea165aa44589f6641b471b15365bc27c35d7787c42df78f43a5963289abd
+  Source:       brand-os/brands/kc-santana/DIRECTIONS.md + STRATEGY.md + IDENTITY.md
+-->
+</body>
+</html>

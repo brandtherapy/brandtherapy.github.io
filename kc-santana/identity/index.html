@@ -24,7 +24,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Direction One · KC Brand OS</title>
+<title>Brand Identity · KC Brand OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -51,7 +51,7 @@
     --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
     --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
   }
-  
+
 </style>
 </head>
 <body class="grain">
@@ -74,8 +74,8 @@
 <a href="../strategy/promise.html">Promise</a>
 <a href="../strategy/personality.html">Personality</a>
 </div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
-<a class="active" href="index.html">Direction One</a>
-<a href="sun-grown-athlete.html">Direction Two</a>
+<a href="direction-one.html">Direction One</a>
+<a href="direction-two.html">Direction Two</a>
 </div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
 <a href="../application/index.html">Brand Application</a>
 </div></details>
@@ -90,273 +90,41 @@
 <main class="content">
 
 <style>
-  /* Scoped Section B creative-direction content styles.
-     Sourced from the Section B content stylesheet, every selector prefixed under
-     .kc-dir-b so it cannot collide with the Brand OS shell (assets/style.css owns .shell,
-     .sidebar, .content, body, .brand-mark, .nav-*, .footer-nav, the grain layer).
-     The bundle's bespoke layout/reset rules and its own .footer-nav are intentionally
-     excluded. Bundle :root tokens are remapped onto the container as locals. */
-  .kc-dir-b {
-    --fp-accent: #4F51E8;
-    --fp-text: #1A1A2E;
-    --fp-muted: #5D5E75;
-    --fp-light: #F5F5F7;
-    --fp-border: #E3E4EA;
-    --fp-white: #FFFFFF;
-    --fp-dark: #18181B;
-    --std: #8E1518;
-    --std-dark: #0D0D10;
-    --run: #B94C28;
-    --run-dark: #111111;
-    --ff-h: "Bricolage Grotesque", system-ui, sans-serif;
-    --ff-b: "Poppins", system-ui, sans-serif;
-    color: var(--fp-text);
-    font-family: var(--ff-b);
-    line-height: 1.65;
-  }
-  .kc-dir-b *,
-  .kc-dir-b *::before,
-  .kc-dir-b *::after { box-sizing: border-box; }
-  .kc-dir-b img { display: block; max-width: 100%; height: auto; }
-  .kc-dir-b h1,
-  .kc-dir-b h2,
-  .kc-dir-b h3,
-  .kc-dir-b h4 { margin: 0; font-family: var(--ff-h); font-weight: 800; letter-spacing: 0; line-height: 0.98; }
-  .kc-dir-b p { margin: 0; }
-  .kc-dir-b .dot,
-  .kc-dir-b .accent { color: var(--fp-accent); }
-  .kc-dir-b .eyebrow,
-  .kc-dir-b .section-kicker,
-  .kc-dir-b .board-note,
-  .kc-dir-b .step { color: var(--fp-accent); font-size: 12px; font-weight: 800; text-transform: uppercase; }
-  .kc-dir-b .palette-grid { display: grid; border-top: 1px solid var(--fp-border); border-left: 1px solid var(--fp-border); grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); }
-  .kc-dir-b .section { margin-bottom: 92px; }
-  .kc-dir-b .section-head { display: grid; grid-template-columns: 68px minmax(0, 1fr); gap: 24px; border-top: 1px solid var(--fp-text); padding-top: 24px; margin-bottom: 30px; }
-  .kc-dir-b .section-head h2 { max-width: 900px; margin: 8px 0 12px; font-size: clamp(34px, 5vw, 64px); }
-  .kc-dir-b .section-head p:not(.section-kicker) { max-width: 850px; color: var(--fp-muted); font-size: 15px; }
-  .kc-dir-b .direction-hero { position: relative; isolation: isolate; min-height: 520px; display: flex; flex-direction: column; justify-content: flex-end; margin-bottom: 78px; padding: clamp(44px, 6vw, 82px); overflow: hidden; background-color: var(--fp-dark); background-position: center; background-size: cover; color: var(--fp-white); }
-  .kc-dir-b .direction-hero.standard-hero { background-image: linear-gradient(90deg, rgba(8,8,10,0.9), rgba(8,8,10,0.62) 46%, rgba(8,8,10,0.18)), url("../images/standard-setter-applications-v2.png"); border-bottom: 10px solid var(--std); }
-  .kc-dir-b .direction-hero.run-hero { background-image: linear-gradient(90deg, rgba(8,8,10,0.9), rgba(8,8,10,0.58) 48%, rgba(8,8,10,0.16)), url("../images/run-the-standard-applications-v2.png"); border-bottom: 10px solid var(--run); }
-  .kc-dir-b .direction-hero .eyebrow,
-  .kc-dir-b .direction-hero .dot { color: rgba(255,255,255,0.9); }
-  .kc-dir-b .direction-hero h1 { max-width: 860px; margin: 12px 0 18px; font-size: clamp(58px, 8vw, 116px); color: var(--fp-white); }
-  .kc-dir-b .direction-hero p { max-width: 610px; color: rgba(255,255,255,0.72); font-size: clamp(16px, 1.6vw, 21px); }
-  .kc-dir-b .swatch { min-height: 185px; display: flex; flex-direction: column; justify-content: flex-end; border-right: 1px solid var(--fp-border); border-bottom: 1px solid var(--fp-border); padding: 16px; }
-  .kc-dir-b .swatch.light-text { color: #FFFFFF; }
-  .kc-dir-b .swatch.dark-text { color: #111111; }
-  .kc-dir-b .swatch strong { display: block; font-size: 13px; }
-  .kc-dir-b .swatch span { display: block; margin-top: 4px; font-size: 12px; font-weight: 700; }
-  .kc-dir-b .swatch p { margin-top: 8px; font-size: 12px; line-height: 1.35; }
-  .kc-dir-b .board-shell { border: 1px solid var(--fp-border); background: var(--fp-white); padding: clamp(10px, 1.2vw, 18px); }
-  .kc-dir-b .hero-board { margin-bottom: 18px; }
-  .kc-dir-b .board-shell img { width: 100%; border: 1px solid var(--fp-border); }
-  .kc-dir-b .board-note { margin-top: 14px; }
-  .kc-dir-b .photo-reference-grid { display: grid; border-top: 1px solid var(--fp-border); border-left: 1px solid var(--fp-border); grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 26px; }
-  .kc-dir-b .photo-reference-card { border-right: 1px solid var(--fp-border); border-bottom: 1px solid var(--fp-border); background: var(--fp-white); padding: 24px; }
-  .kc-dir-b .photo-reference-card h3 { margin-bottom: 10px; font-size: 25px; line-height: 1.02; }
-  .kc-dir-b .photo-reference-card p { color: #55566B; font-size: 14px; }
-  .kc-dir-b .photo-reference-card.wide { grid-column: span 2; }
-  .kc-dir-b .photo-reference-card img { width: 100%; height: 245px; border: 1px solid var(--fp-border); background: #F7F4EF; object-fit: cover; margin-bottom: 16px; }
-  .kc-dir-b .photo-reference-card.wide img { height: 245px; }
-  .kc-dir-b .mockup-spread { border: 1px solid var(--fp-border); background: var(--fp-white); padding: clamp(10px, 1.2vw, 18px); margin-bottom: 24px; }
-  .kc-dir-b .mockup-spread img { width: 100%; border: 1px solid var(--fp-border); aspect-ratio: 16 / 9; object-fit: cover; }
-  .kc-dir-b .mockup-proof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--fp-border); border-left: 1px solid var(--fp-border); margin-bottom: 24px; }
-  .kc-dir-b .creative-summary-grid { margin-bottom: 0; }
-  .kc-dir-b .mockup-proof { border-right: 1px solid var(--fp-border); border-bottom: 1px solid var(--fp-border); background: var(--fp-white); padding: 20px; }
-  .kc-dir-b .mockup-proof strong { display: block; margin-bottom: 8px; color: var(--fp-muted); font-size: 11px; font-weight: 800; text-transform: uppercase; }
-  .kc-dir-b .mockup-proof p { color: #55566B; font-size: 14px; }
+  /* Scoped Brand Identity index styles. Prefixed under .kc-identity-index so they
+     cannot collide with the Brand OS shell (assets/style.css owns .shell, .sidebar,
+     .content, body, .brand-mark, .nav-*, .footer-nav, the grain layer). */
+  .kc-identity-index { color: var(--text); font-family: var(--ff-b); }
+  .kc-identity-index .index-head { border-top: 1px solid var(--text); padding-top: 24px; margin-bottom: 40px; }
+  .kc-identity-index .index-kicker { color: var(--accent); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
+  .kc-identity-index h1 { margin: 10px 0 0; font-family: var(--ff-h); font-weight: 800; line-height: 0.98; font-size: clamp(40px, 6vw, 72px); }
+  .kc-identity-index .direction-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+  .kc-identity-index .direction-card { display: block; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--white); padding: 36px; text-decoration: none; color: var(--text); transition: background 0.2s var(--ease-out-quart); }
+  .kc-identity-index .direction-card:hover { background: var(--light); }
+  .kc-identity-index .direction-card .card-step { color: var(--accent); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
+  .kc-identity-index .direction-card h2 { margin: 10px 0 0; font-family: var(--ff-h); font-weight: 800; line-height: 1.0; font-size: clamp(26px, 3vw, 38px); }
+  .kc-identity-index .direction-card .card-go { display: inline-block; margin-top: 16px; color: var(--accent); font-weight: 700; font-size: 14px; }
   @media (max-width: 1120px) {
-    .kc-dir-b .palette-grid,
-    .kc-dir-b .photo-reference-grid,
-    .kc-dir-b .mockup-proof-grid { grid-template-columns: 1fr; }
-    .kc-dir-b .photo-reference-card.wide { grid-column: span 1; }
-  }
-  @media (max-width: 640px) {
-    .kc-dir-b .section-head { grid-template-columns: 1fr; }
-    .kc-dir-b .direction-hero { min-height: 440px; padding: 36px 24px; }
-    .kc-dir-b .photo-reference-card img { height: auto; max-height: none; }
+    .kc-identity-index .direction-cards { grid-template-columns: 1fr; }
   }
 </style>
-<div class="kc-dir-b">
-    <header class="direction-hero standard-hero">
-      <p class="eyebrow">Direction One / Business authority</p>
-      <h1>The Standard Setter<span class="dot">.</span></h1>
-      <p>Tailored black, oxblood proof lines, boardroom presence, athletic evidence, and disciplined recovery.</p>
-    </header>
-
-    <section class="section" id="stylescape">
-      <div class="section-head">
-        <span class="step">01</span>
-        <div>
-          <p class="section-kicker">Stylescape</p>
-          <h2>Executive discipline with a visible edge<span class="dot">.</span></h2>
-          <p>Black tailoring, direct type, oxblood marks, city light, training proof, and controlled recovery.</p>
-        </div>
-      </div>
-      <div class="board-shell hero-board">
-        <img src="../images/standard-setter-stylescape-v1.png" alt="The Standard Setter creative direction stylescape for KC Santana">
-      </div>
-      <div class="mockup-proof-grid creative-summary-grid">
-        <article class="mockup-proof">
-          <strong>Look</strong>
-          <p>Tailored, premium, direct.</p>
-        </article>
-        <article class="mockup-proof">
-          <strong>Signature</strong>
-          <p>Oxblood proof line.</p>
-        </article>
-        <article class="mockup-proof">
-          <strong>Energy</strong>
-          <p>Business authority with physical discipline.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="signature-images">
-      <div class="section-head">
-        <span class="step">02</span>
-        <div>
-          <p class="section-kicker">Brand signature</p>
-          <h2>Oxblood line as proof mark<span class="dot">.</span></h2>
-          <p>A decisive line across claims, agendas, wardrobe details, and room materials.</p>
-        </div>
-      </div>
-      <div class="photo-reference-grid signature-image-grid">
-        <article class="photo-reference-card wide">
-          <img src="../images/standard-setter-applications-v2.png" alt="Direction One raster application and signature evidence sheet">
-          <h3>Application sheet</h3>
-          <p>One visual language across podcast, agenda, social, recovery, and wardrobe.</p>
-        </article>
-        <article class="photo-reference-card">
-          <img src="../images/validation/d1-signature-red-line.png" alt="Direction One red line signature raster reference">
-          <h3>Standard line</h3>
-          <p>Reserved for the strongest statements.</p>
-        </article>
-        <article class="photo-reference-card">
-          <img src="../images/validation/d1-wardrobe-proof.png" alt="Direction One blazer and athletic wardrobe raster reference">
-          <h3>Wardrobe proof</h3>
-          <p>Tailored first, athletic underneath.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="color-type">
-      <div class="section-head">
-        <span class="step">03</span>
-        <div>
-          <p class="section-kicker">Color and type</p>
-          <h2>Black authority, controlled heat<span class="dot">.</span></h2>
-          <p>Heavy display type, restrained neutrals, and oxblood used with discipline.</p>
-        </div>
-      </div>
-      <div class="palette-grid">
-        <div class="swatch light-text" style="background:#0D0D10"><strong>Asphalt</strong><span>#0D0D10</span></div>
-        <div class="swatch dark-text" style="background:#E7E3DA"><strong>Bone</strong><span>#E7E3DA</span></div>
-        <div class="swatch light-text" style="background:#242629"><strong>Charcoal</strong><span>#242629</span></div>
-        <div class="swatch light-text" style="background:#8E1518"><strong>Oxblood</strong><span>#8E1518</span></div>
-        <div class="swatch dark-text" style="background:#C9B08A"><strong>Warm Chrome</strong><span>#C9B08A</span></div>
-        <div class="swatch light-text" style="background:#6B7A6E"><strong>Sage</strong><span>#6B7A6E</span></div>
-      </div>
-      <div class="photo-reference-grid evidence-image-grid">
-        <article class="photo-reference-card">
-          <img src="../images/validation/d1-palette-material.png" alt="Direction One raster material palette reference">
-          <h3>Material palette</h3>
-          <p>Blazer black, bone paper, oxblood detail, chrome, sage.</p>
-        </article>
-        <article class="photo-reference-card">
-          <img src="../images/validation/d1-type-energy.png" alt="Direction One raster typography energy reference">
-          <h3>Type energy</h3>
-          <p>Command-led, compressed, readable.</p>
-        </article>
-        <article class="photo-reference-card">
-          <img src="../images/validation/d1-social-application.png" alt="Direction One raster social application reference">
-          <h3>Social proof</h3>
-          <p>Strong enough for feed, stage, and room material.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="photography">
-      <div class="section-head">
-        <span class="step">04</span>
-        <div>
-          <p class="section-kicker">Photography and wardrobe</p>
-          <h2>Boardroom, training, recovery<span class="dot">.</span></h2>
-          <p>Business presence with the work still visible.</p>
-        </div>
-      </div>
-      <div class="photo-reference-grid">
-        <article class="photo-reference-card wide">
-          <img src="../images/validation/d1-photography-strip.png" alt="Direction One founder, training, city, and recovery photography reference strip">
-          <h3>Founder strip</h3>
-          <p>Authority, movement, city light, recovery.</p>
-        </article>
-        <article class="photo-reference-card">
-          <img src="../images/validation/d1-wardrobe-proof.png" alt="Direction One blazer, running shoe, and red seam wardrobe reference">
-          <h3>Blazer to training</h3>
-          <p>Black blazer, performance tank, running shoe.</p>
-        </article>
-        <article class="photo-reference-card">
-          <img src="../images/validation/d1-palette-material.png" alt="Direction One material color palette reference">
-          <h3>Material palette</h3>
-          <p>Polished, warm, and tactile.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="applications">
-      <div class="section-head">
-        <span class="step">05</span>
-        <div>
-          <p class="section-kicker">Applications</p>
-          <h2>How the brand shows up<span class="dot">.</span></h2>
-          <p>Social, agenda, podcast, room material, phone, and recovery details.</p>
-        </div>
-      </div>
-      <div class="mockup-spread">
-        <img src="../images/standard-setter-applications-v2.png" alt="The Standard Setter image-led application mockup sheet with social cards, agenda, podcast, recovery, and wardrobe details">
-      </div>
-      <div class="mockup-proof-grid">
-        <article class="mockup-proof">
-          <strong>Application evidence</strong>
-          <p>Agenda, social, podcast, wardrobe, phone, recovery.</p>
-        </article>
-        <article class="mockup-proof">
-          <strong>Photo direction</strong>
-          <p>Blazer-led with training proof in frame.</p>
-        </article>
-        <article class="mockup-proof">
-          <strong>Signature</strong>
-          <p>Oxblood line ties the system together.</p>
-        </article>
-      </div>
-      <div class="photo-reference-grid evidence-image-grid">
-        <article class="photo-reference-card">
-          <img src="../images/validation/d1-social-application.png" alt="Direction One raster social media application reference">
-          <h3>Proof post</h3>
-          <p>Short command, strong crop.</p>
-        </article>
-        <article class="photo-reference-card">
-          <img src="../images/validation/d1-signature-red-line.png" alt="Direction One raster red line application detail">
-          <h3>Signature behavior</h3>
-          <p>Confident, minimal, ownable.</p>
-        </article>
-        <article class="photo-reference-card">
-          <img src="../images/validation/d1-photography-strip.png" alt="Direction One raster photography application reference">
-          <h3>Photography proof</h3>
-          <p>Business and athletic in one world.</p>
-        </article>
-      </div>
-    </section>
-  
-</div>
-
-
-
-  <div class="footer-nav">
-    <span>Section B · Direction One · Creative Direction</span>
-    <span><a href="sun-grown-athlete.html">Direction Two →</a></span>
+<div class="kc-identity-index">
+  <header class="index-head">
+    <p class="index-kicker">Creative directions</p>
+    <h1>Brand Identity<span class="dot">.</span></h1>
+  </header>
+  <div class="direction-cards">
+    <a class="direction-card" href="direction-one.html">
+      <span class="card-step">Direction One</span>
+      <h2>The Standard Setter<span class="dot">.</span></h2>
+      <span class="card-go">View direction &rarr;</span>
+    </a>
+    <a class="direction-card" href="direction-two.html">
+      <span class="card-step">Direction Two</span>
+      <h2>Run the Standard<span class="dot">.</span></h2>
+      <span class="card-go">View direction &rarr;</span>
+    </a>
   </div>
+</div>
 </main>
 </div>
 
