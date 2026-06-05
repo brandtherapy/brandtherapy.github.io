@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, viewfinder treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personality · Cannabis Chamber Of Commerce Brand OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700;800&family=Atkinson+Hyperlegible:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #505A66;
+    --accent-glow: rgba(80, 90, 102, 0.24);
+    --accent-soft: rgba(80, 90, 102, 0.07);
+    --text: #171A1F;
+    --muted: #6E7580;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #D9DEE5;
+    --light: #F3F5F7;
+    --white: #FFFFFF;
+    --dark: #121417;
+    --dark-surface: #1B2026;
+    --ff-h: "Sora", system-ui, sans-serif;
+    --ff-b: "Atkinson Hyperlegible", system-ui, sans-serif;
+    --ff-accent: "Sora", system-ui, sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">Cannabis Chamber Of Commerce<span class="dot">.</span></div>
+    <div class="meta">Brand OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="index.html">Focus Star</a>
+<a href="product.html">Product</a>
+<a href="people.html">People</a>
+<a href="purpose.html">Purpose</a>
+<a href="promise.html">Promise</a>
+<a class="active" href="personality.html">Personality</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="../identity/index.html">Direction Three</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Strategy</strong></div>
+    <div class="row"><span>Use</span><strong>AI + creative</strong></div>
+    <div class="row"><span>Center</span><strong>Standards</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+
+  <section class="p-hero no-media">
+    <div class="p-hero-copy">
+      <div class="p-kicker">Section A · P5 · Brand Strategy</div>
+      <h1>Personality<span class="dot">.</span></h1>
+      <p>Professional, confident, credible, and direct. Operator-led, standards-driven, rational, transparent, business-first, and welcoming to serious operators, leaders, partners, and organizations focused on outcomes and long-term industry progress.</p>
+      <div class="p-tags"><span>Operator-led institution</span></div>
+    </div>
+
+  </section>
+  <div class="p-thesis">The Chamber's voice is the public signal that cannabis business can be serious, accessible, credible, economically useful, and leadership-driven at the same time.</div>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">01</div>
+      <div>
+        <div class="p-kicker">Strategic position</div>
+        <h2>What is being claimed<span class="dot">.</span></h2>
+        <p class="p-section-desc">The brand's position on this edge, in one plain sentence.</p>
+      </div>
+    </div>
+    <div class="p-grid">
+      <article class="p-card dark">
+        <div class="p-card-label">Position</div>
+        <h3>Personality</h3>
+        <p>Professional, confident, credible, and direct. Operator-led, standards-driven, rational, transparent, business-first, and welcoming to serious operators, leaders, partners, and organizations focused on outcomes and long-term industry progress.</p>
+      </article>
+      <article class="p-card">
+        <div class="p-card-label">Compass summary</div>
+        <h3>Operator-led institution</h3>
+        <p>Business-first, standards-led, authoritative, useful, and transparent. The Chamber sounds like an institution that helps serious people access the room, understand the market, and move business forward.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">02</div>
+      <div>
+        <div class="p-kicker">Offer boundaries</div>
+        <h2>What belongs and what does not<span class="dot">.</span></h2>
+        <p class="p-section-desc">The filters that keep this strategic choice operational.</p>
+      </div>
+    </div>
+    <div class="p-grid two">
+      <article class="p-card">
+        <div class="p-card-label">Rules in</div>
+        <h3>Belongs</h3>
+        <ul><li>Professional, confident, credible, and direct</li><li>Clear over clever</li><li>Authoritative over performative</li><li>Strategic over promotional</li><li>Useful over inspirational</li><li>Welcoming to serious operators, leaders, partners, and qualified professionals</li><li>Plain business language</li><li>Transparent distinctions: operator, executive, investor, policymaker, ancillary partner, sponsor, regional leader, member, qualified entrant</li><li>Practical optimism grounded in real business value</li><li>Preferred vocabulary: authority, momentum, access, influence, connection, credibility, advocacy, growth, leadership, infrastructure, opportunity, economic power, collective strength, stewardship, progress, commerce, enterprise, trade, industry, capital, partnership, policy, regional power, market access, representation, economic development, collective voice</li></ul>
+      </article>
+      <article class="p-card dark">
+        <div class="p-card-label">Rules out</div>
+        <h3>Does not belong</h3>
+        <ul><li>Consumer cannabis culture</li><li>Hype-driven or trend-chasing language</li><li>Lifestyle-first framing</li><li>Visibility-first promises</li><li>Generic networking cliches</li><li>Corporate theater</li><li>Stoner culture cues, weed puns, smoke, 420 references, and leaf cliches</li><li>Unsupported lobbying claims</li><li>"Family" or vague community language without a concrete business meaning</li><li>Exclusivity for the sake of exclusivity</li><li>Startup jargon, vague inspiration, or cannabis novelty</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">03</div>
+      <div>
+        <div class="p-kicker">Tradeoffs</div>
+        <h2>What this choice costs<span class="dot">.</span></h2>
+        <p class="p-section-desc">Real strategy costs something. If this section is empty, the strategy is performative.</p>
+      </div>
+    </div>
+    <div class="p-row-list">
+      <div class="p-row"><h3>Cost</h3><p>More accessible language must not dilute the executive-level and decision-maker signal.</p></div><div class="p-row"><h3>Cost</h3><p>More energetic creative directions must still preserve business seriousness.</p></div><div class="p-row"><h3>Cost</h3><p>Organic or community-led creative directions must not become soft, wellness-coded, or vague.</p></div><div class="p-row"><h3>Cost</h3><p>Formal creative directions must not make the Chamber feel closed to newcomers.</p></div><div class="p-row"><h3>Cost</h3><p>Advocacy and influence language must stay credible and not imply legal or political outcomes the Chamber has not proven.</p></div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">04</div>
+      <div>
+        <div class="p-kicker">Application</div>
+        <h2>How this changes behavior<span class="dot">.</span></h2>
+        <p class="p-section-desc">Strategic choices that don't change behavior are descriptions, not strategy.</p>
+      </div>
+    </div>
+    <div class="p-row-list">
+      <div class="p-row"><h3>Strategy</h3><p>voice should help the right person understand how to participate.</p></div><div class="p-row"><h3>Copy</h3><p>direct, useful, and business-specific. Lead with standards, opportunity, leadership, business value, industry advancement, and economic impact.</p></div><div class="p-row"><h3>Visuals</h3><p>three direction territories may explore different emotional registers, but all must preserve professional credibility.</p></div><div class="p-row"><h3>Sales</h3><p>show the next action clearly: become a member, join the network, view events, explore leadership programs, get involved, sponsor, learn, or contact.</p></div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">05</div>
+      <div>
+        <div class="p-kicker">Proof required</div>
+        <h2>What evidence supports this<span class="dot">.</span></h2>
+        <p class="p-section-desc">Every public claim traces to verifiable evidence.</p>
+      </div>
+    </div>
+    <ul><li>Published Chamber copy demonstrating professional welcome without hype</li><li>Event and membership language that avoids vendor spam</li><li>Member proof across plant-touching and ancillary categories</li><li>Voice exemplars maintained in references/voice-exemplars.md as the canonical bank</li><li>Page copy for Membership, Networking, Events, Mentorship, and Advocacy that proves the stronger Google Doc positioning without overclaiming benefits</li></ul>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">06</div>
+      <div>
+        <div class="p-kicker">Output control</div>
+        <h2>Rules for AI<span class="dot">.</span></h2>
+        <p class="p-section-desc">Directives any LLM must follow when producing content for this brand.</p>
+      </div>
+    </div>
+    <ul><li>Address serious cannabis and hemp professionals, leaders, operators, executives, investors, policymakers, sponsors, regional leaders, and ancillary partners</li><li>Use preferred vocabulary: standards, access, professionals, operators, decision-makers, sponsors, regional leaders, events, education, advocacy, policy insight, market access, business value, trusted relationships, opportunity, leadership, economic growth, collective voice, enterprise, and commerce</li><li>Avoid banned language: unsupported lobbying, stoner cues, weed puns, hype, disruption, vague community, visibility-first copy, cheap exclusivity, generic networking, and consumer cannabis lifestyle</li><li>Apply linguistic rules: concise declarative sentences, plain business language, and specific business value</li><li>When in doubt, make the Chamber useful before making it impressive</li></ul>
+  </section>
+
+
+  <div class="footer-nav">
+    <span>Section A · P5 · Brand Strategy</span>
+    <span><a href="../identity/index.html">Brand Identity →</a></span>
+  </div>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        The Cannabis Chamber of Commerce (ccc)
+  Version:      1.2.1
+  Built at:     2026-06-05T01:40:15+00:00
+  Git SHA:      2ac1275ecb15eb4f8055b61cced8800c1a53d8a4
+  Bundle hash:  sha256:0bee186e134e3b44794998a44804282f58617908f88b0e29cc30fe1741a23d60
+  Source:       brand-os/brands/cannabis-chamber/STRATEGY.md + IDENTITY.md
+-->
+</body>
+</html>

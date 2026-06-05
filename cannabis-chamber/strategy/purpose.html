@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, viewfinder treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Purpose · Cannabis Chamber Of Commerce Brand OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700;800&family=Atkinson+Hyperlegible:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #505A66;
+    --accent-glow: rgba(80, 90, 102, 0.24);
+    --accent-soft: rgba(80, 90, 102, 0.07);
+    --text: #171A1F;
+    --muted: #6E7580;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #D9DEE5;
+    --light: #F3F5F7;
+    --white: #FFFFFF;
+    --dark: #121417;
+    --dark-surface: #1B2026;
+    --ff-h: "Sora", system-ui, sans-serif;
+    --ff-b: "Atkinson Hyperlegible", system-ui, sans-serif;
+    --ff-accent: "Sora", system-ui, sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">Cannabis Chamber Of Commerce<span class="dot">.</span></div>
+    <div class="meta">Brand OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="index.html">Focus Star</a>
+<a href="product.html">Product</a>
+<a href="people.html">People</a>
+<a class="active" href="purpose.html">Purpose</a>
+<a href="promise.html">Promise</a>
+<a href="personality.html">Personality</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="../identity/index.html">Direction Three</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Strategy</strong></div>
+    <div class="row"><span>Use</span><strong>AI + creative</strong></div>
+    <div class="row"><span>Center</span><strong>Standards</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+
+  <section class="p-hero no-media">
+    <div class="p-hero-copy">
+      <div class="p-kicker">Section A · P3 · Brand Strategy</div>
+      <h1>Purpose<span class="dot">.</span></h1>
+      <p>The Chamber exists to accelerate profitable growth for cannabis and hemp businesses by expanding access to markets, leadership, partnerships, policy insight, regional and global networks, and trusted industry relationships.</p>
+      <div class="p-tags"><span>Accelerate profitable cannabis growth</span></div>
+    </div>
+
+  </section>
+  <div class="p-thesis">Cannabis earns lasting legitimacy when professionals organize around higher standards, useful education, trusted relationships, advocacy, leadership development, local activity, and measurable business opportunity.</div>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">01</div>
+      <div>
+        <div class="p-kicker">Strategic position</div>
+        <h2>What is being claimed<span class="dot">.</span></h2>
+        <p class="p-section-desc">The brand's position on this edge, in one plain sentence.</p>
+      </div>
+    </div>
+    <div class="p-grid">
+      <article class="p-card dark">
+        <div class="p-card-label">Position</div>
+        <h3>Purpose</h3>
+        <p>The Chamber exists to accelerate profitable growth for cannabis and hemp businesses by expanding access to markets, leadership, partnerships, policy insight, regional and global networks, and trusted industry relationships.</p>
+      </article>
+      <article class="p-card">
+        <div class="p-card-label">Compass summary</div>
+        <h3>Accelerate profitable cannabis growth</h3>
+        <p>The measure is not attention. The measure is business movement: access, collaboration, leadership, economic opportunity, and long-term industry progress.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">02</div>
+      <div>
+        <div class="p-kicker">Offer boundaries</div>
+        <h2>What belongs and what does not<span class="dot">.</span></h2>
+        <p class="p-section-desc">The filters that keep this strategic choice operational.</p>
+      </div>
+    </div>
+    <div class="p-grid two">
+      <article class="p-card">
+        <div class="p-card-label">Rules in</div>
+        <h3>Belongs</h3>
+        <ul><li>Create measurable business opportunity through strategic connection, education, advocacy, market access, and events</li><li>Help serious professionals and businesses navigate the industry credibly</li><li>Support regional networking, local business ecosystems, and globally connected industry networks</li><li>Create exposure and practical value for sponsors and participating businesses without guaranteeing outcomes</li><li>Provide advocacy, policy insight, regulatory awareness, and representation without claiming lobbying as the core activity</li><li>Build trust between plant-touching operators and ancillary partners</li><li>Build stronger executives, operators, and future industry leaders through mentorship and peer collaboration when program proof exists</li><li>Use roadmap ideas to guide strategy, not current promises</li></ul>
+      </article>
+      <article class="p-card dark">
+        <div class="p-card-label">Rules out</div>
+        <h3>Does not belong</h3>
+        <ul><li>Lobbying claims unless explicitly approved and source-backed</li><li>Visibility-first campaigns that do not create useful participation</li><li>Activity for activity's sake</li><li>Consumer activism, lifestyle advocacy, or culture-first cannabis messaging</li><li>Overstating market reports, directories, mentorship, badges, or sponsorship perks before they exist</li><li>Guaranteed revenue, guaranteed introductions, guaranteed leads, guaranteed sponsor outcomes, or guaranteed capital access</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">03</div>
+      <div>
+        <div class="p-kicker">Tradeoffs</div>
+        <h2>What this choice costs<span class="dot">.</span></h2>
+        <p class="p-section-desc">Real strategy costs something. If this section is empty, the strategy is performative.</p>
+      </div>
+    </div>
+    <div class="p-row-list">
+      <div class="p-row"><h3>Cost</h3><p>Regional events create local value, but require operational consistency.</p></div><div class="p-row"><h3>Cost</h3><p>Sponsor exposure can create revenue, but must not make members feel sold to.</p></div><div class="p-row"><h3>Cost</h3><p>Advocacy and representation matter, but the Chamber must stay precise about policy engagement versus lobbying.</p></div><div class="p-row"><h3>Cost</h3><p>The free membership strategy, tier differences, and portal value are growth opportunities, not finished promises unless current product proof supports them.</p></div><div class="p-row"><h3>Cost</h3><p>Economic-growth language is stronger and more useful, but it must not sound like guaranteed financial performance.</p></div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">04</div>
+      <div>
+        <div class="p-kicker">Application</div>
+        <h2>How this changes behavior<span class="dot">.</span></h2>
+        <p class="p-section-desc">Strategic choices that don't change behavior are descriptions, not strategy.</p>
+      </div>
+    </div>
+    <div class="p-row-list">
+      <div class="p-row"><h3>Strategy</h3><p>build value around membership, networking, events, mentorship and leadership development, advocacy, regional leaders, sponsorship exposure, education, and market access.</p></div><div class="p-row"><h3>Copy</h3><p>frame impact as access, opportunity, leadership, economic growth, credibility, and movement. Avoid vague community claims.</p></div><div class="p-row"><h3>Visuals</h3><p>show the Chamber as active business infrastructure: events, rooms, local markets, facilities, service providers, leadership settings, sponsor moments, and regional business ecosystems.</p></div><div class="p-row"><h3>Sales</h3><p>explain the specific value of membership, events, exposure, education, advocacy insight, sponsorship, and leadership development before selling the larger vision.</p></div><div class="p-row"><h3>Content</h3><p>publish event proof, practical guides, sponsor/member stories, regional updates, policy insight, leadership content, and economic-opportunity stories.</p></div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">05</div>
+      <div>
+        <div class="p-kicker">Proof required</div>
+        <h2>What evidence supports this<span class="dot">.</span></h2>
+        <p class="p-section-desc">Every public claim traces to verifiable evidence.</p>
+      </div>
+    </div>
+    <ul><li>Events hosted, regional participation, and sponsor outcomes</li><li>Member stories tied to access, learning, or opportunity</li><li>Clear differentiation between advocacy, policy insight, representation, and lobbying</li><li>Education resources that help newcomers and professionals navigate the industry</li><li>Signals that local value comes from local networking and events</li><li>Proof of leadership development, mentorship participation, or program mechanics before presenting them as current benefits</li></ul>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">06</div>
+      <div>
+        <div class="p-kicker">Output control</div>
+        <h2>Rules for AI<span class="dot">.</span></h2>
+        <p class="p-section-desc">Directives any LLM must follow when producing content for this brand.</p>
+      </div>
+    </div>
+    <ul><li>Use "movement" to mean business progress, market access, leadership, and economic opportunity, not vague inspiration</li><li>Do not claim lobbying unless the source explicitly changes</li><li>Do not imply future products are live</li><li>Treat regional networking, events, education, advocacy insight, and organized representation as current value</li><li>Tie purpose back to profitable growth, access, leadership, standards, opportunity, and trust</li></ul>
+  </section>
+
+
+  <div class="footer-nav">
+    <span>Section A · P3 · Brand Strategy</span>
+    <span><a href="promise.html">Promise →</a></span>
+  </div>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        The Cannabis Chamber of Commerce (ccc)
+  Version:      1.2.1
+  Built at:     2026-06-05T01:40:15+00:00
+  Git SHA:      2ac1275ecb15eb4f8055b61cced8800c1a53d8a4
+  Bundle hash:  sha256:0bee186e134e3b44794998a44804282f58617908f88b0e29cc30fe1741a23d60
+  Source:       brand-os/brands/cannabis-chamber/STRATEGY.md + IDENTITY.md
+-->
+</body>
+</html>

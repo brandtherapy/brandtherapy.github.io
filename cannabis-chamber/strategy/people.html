@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, viewfinder treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>People · Cannabis Chamber Of Commerce Brand OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700;800&family=Atkinson+Hyperlegible:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #505A66;
+    --accent-glow: rgba(80, 90, 102, 0.24);
+    --accent-soft: rgba(80, 90, 102, 0.07);
+    --text: #171A1F;
+    --muted: #6E7580;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #D9DEE5;
+    --light: #F3F5F7;
+    --white: #FFFFFF;
+    --dark: #121417;
+    --dark-surface: #1B2026;
+    --ff-h: "Sora", system-ui, sans-serif;
+    --ff-b: "Atkinson Hyperlegible", system-ui, sans-serif;
+    --ff-accent: "Sora", system-ui, sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">Cannabis Chamber Of Commerce<span class="dot">.</span></div>
+    <div class="meta">Brand OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="index.html">Focus Star</a>
+<a href="product.html">Product</a>
+<a class="active" href="people.html">People</a>
+<a href="purpose.html">Purpose</a>
+<a href="promise.html">Promise</a>
+<a href="personality.html">Personality</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="../identity/index.html">Direction Three</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Strategy</strong></div>
+    <div class="row"><span>Use</span><strong>AI + creative</strong></div>
+    <div class="row"><span>Center</span><strong>Standards</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+
+  <section class="p-hero no-media">
+    <div class="p-hero-copy">
+      <div class="p-kicker">Section A · P2 · Brand Strategy</div>
+      <h1>People<span class="dot">.</span></h1>
+      <p>The Chamber serves serious cannabis and hemp leaders: operators, executives, entrepreneurs, investors, policymakers, sponsors, regional leaders, ancillary partners, innovators, professional organizations, and qualified businesses looking to participate in, grow within, and help shape the future of the industry.</p>
+      <div class="p-tags"><span>Serious leaders building cannabis business</span></div>
+    </div>
+
+  </section>
+  <div class="p-thesis">The Chamber is for people with a real business reason to be in the room, whether they operate plant-touching businesses, invest in the market, shape policy, sponsor growth, or support the companies that do the work.</div>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">01</div>
+      <div>
+        <div class="p-kicker">Strategic position</div>
+        <h2>What is being claimed<span class="dot">.</span></h2>
+        <p class="p-section-desc">The brand's position on this edge, in one plain sentence.</p>
+      </div>
+    </div>
+    <div class="p-grid">
+      <article class="p-card dark">
+        <div class="p-card-label">Position</div>
+        <h3>People</h3>
+        <p>The Chamber serves serious cannabis and hemp leaders: operators, executives, entrepreneurs, investors, policymakers, sponsors, regional leaders, ancillary partners, innovators, professional organizations, and qualified businesses looking to participate in, grow within, and help shape the future of the industry.</p>
+      </article>
+      <article class="p-card">
+        <div class="p-card-label">Compass summary</div>
+        <h3>Serious leaders building cannabis business</h3>
+        <p>Leaders and organizations who need credible access to cannabis business: decision-makers, policy insight, partnerships, peer benchmarks, market access, leadership development, and the rooms where serious opportunities form.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">02</div>
+      <div>
+        <div class="p-kicker">Offer boundaries</div>
+        <h2>What belongs and what does not<span class="dot">.</span></h2>
+        <p class="p-section-desc">The filters that keep this strategic choice operational.</p>
+      </div>
+    </div>
+    <div class="p-grid two">
+      <article class="p-card">
+        <div class="p-card-label">Rules in</div>
+        <h3>Belongs</h3>
+        <ul><li>Plant-touching operators: cultivators, retailers, manufacturers, processors, distributors, and lab testers</li><li>Ancillary service providers: accounting, security, IT, operations, marketing, finance, insurance, real estate, staffing, and related business services</li><li>Founders, C-suite, senior executives, growing regional brands, multi-state operators, investors, policymakers, sponsors, and professional organizations</li><li>Qualified entrants and businesses with serious intent to participate professionally</li><li>Regional leaders building local events, local networks, and regional business ecosystems</li><li>People who want to network, sell services, learn, sponsor, partner, advocate, mentor, or participate with clear contribution</li></ul>
+      </article>
+      <article class="p-card dark">
+        <div class="p-card-label">Rules out</div>
+        <h3>Does not belong</h3>
+        <ul><li>Consumer cannabis fans with no business intent</li><li>People looking only for visibility without participation</li><li>Vendors who treat the Chamber as a cold lead list</li><li>Stoner culture, lifestyle-first brands, and casual hype seekers</li><li>Anyone expecting networking to replace credibility, follow-through, or contribution</li><li>Directory browsers, optics-first participants, and beginners expecting the Chamber to be basic cannabis education without business contribution</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">03</div>
+      <div>
+        <div class="p-kicker">Tradeoffs</div>
+        <h2>What this choice costs<span class="dot">.</span></h2>
+        <p class="p-section-desc">Real strategy costs something. If this section is empty, the strategy is performative.</p>
+      </div>
+    </div>
+    <div class="p-row-list">
+      <div class="p-row"><h3>Cost</h3><p>Executive-level positioning increases credibility but can sound closed if the Chamber does not explain who qualifies and how to participate.</p></div><div class="p-row"><h3>Cost</h3><p>Some qualified entrants need education before they can contribute; the Chamber should support them without diluting the room.</p></div><div class="p-row"><h3>Cost</h3><p>Ancillary providers create real value but can overwhelm operators if the experience becomes vendor-heavy.</p></div><div class="p-row"><h3>Cost</h3><p>A Chamber built for leaders must stay welcoming to serious professionals without becoming generic or exclusionary for its own sake.</p></div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">04</div>
+      <div>
+        <div class="p-kicker">Application</div>
+        <h2>How this changes behavior<span class="dot">.</span></h2>
+        <p class="p-section-desc">Strategic choices that don't change behavior are descriptions, not strategy.</p>
+      </div>
+    </div>
+    <div class="p-row-list">
+      <div class="p-row"><h3>Strategy</h3><p>segment audiences by relationship to cannabis business: operator, executive, ancillary partner, investor, policymaker, sponsor, regional leader, professional organization, and member.</p></div><div class="p-row"><h3>Copy</h3><p>use "serious cannabis and hemp leaders" or "cannabis and hemp professionals" depending on the surface. Use "operators" when speaking to plant-touching or business-leading audiences.</p></div><div class="p-row"><h3>Visuals</h3><p>balance operators, investors, service providers, policymakers, events, sponsors, and regional business environments.</p></div><div class="p-row"><h3>Sales</h3><p>qualify by intent, contribution, business fit, and value fit, not title alone.</p></div><div class="p-row"><h3>Content</h3><p>create onboarding and educational pathways for qualified entrants while maintaining standards for member behavior.</p></div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">05</div>
+      <div>
+        <div class="p-kicker">Proof required</div>
+        <h2>What evidence supports this<span class="dot">.</span></h2>
+        <p class="p-section-desc">Every public claim traces to verifiable evidence.</p>
+      </div>
+    </div>
+    <ul><li>Member examples across plant-touching and ancillary categories</li><li>Regional event participation and sponsor participation</li><li>Testimonials from operators and service providers</li><li>Evidence that newcomers can learn and enter professionally</li><li>Clear rules of conduct that prevent vendor spam</li><li>Proof of executive, investor, policymaker, sponsor, regional leader, and leadership-development participation before over-indexing those claims</li></ul>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section-head">
+      <div class="p-section-num">06</div>
+      <div>
+        <div class="p-kicker">Output control</div>
+        <h2>Rules for AI<span class="dot">.</span></h2>
+        <p class="p-section-desc">Directives any LLM must follow when producing content for this brand.</p>
+      </div>
+    </div>
+    <ul><li>Prioritize leaders, operators, executives, investors, policymakers, sponsors, and decision-makers without excluding serious professionals and organizations with business intent</li><li>Explain plant-touching versus ancillary when it clarifies membership value</li><li>Keep the room professional, but do not make it feel locked or elitist</li><li>Never use "everyone in cannabis" without a business-intent qualifier</li><li>Avoid "badge energy" unless discussing a negative anti-persona</li></ul>
+  </section>
+
+
+  <div class="footer-nav">
+    <span>Section A · P2 · Brand Strategy</span>
+    <span><a href="purpose.html">Purpose →</a></span>
+  </div>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        The Cannabis Chamber of Commerce (ccc)
+  Version:      1.2.1
+  Built at:     2026-06-05T01:40:15+00:00
+  Git SHA:      2ac1275ecb15eb4f8055b61cced8800c1a53d8a4
+  Bundle hash:  sha256:0bee186e134e3b44794998a44804282f58617908f88b0e29cc30fe1741a23d60
+  Source:       brand-os/brands/cannabis-chamber/STRATEGY.md + IDENTITY.md
+-->
+</body>
+</html>

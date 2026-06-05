@@ -1,0 +1,33 @@
+category,new_name,original_name,note
+01-core-identity,florian-core-01-front-neutral-home.jpeg,IMG_3012.jpeg,"front neutral, natural home light"
+01-core-identity,florian-core-02-front-neutral-window.jpeg,IMG_1059.jpeg,"front neutral, sharp daylight"
+01-core-identity,florian-core-03-professional-headshot.jpg,IMG_0098.JPG,front professional headshot
+01-core-identity,florian-core-04-formal-city-front.jpeg,IMG_1497.jpeg,"front formal, city-window lighting"
+01-core-identity,florian-core-05-clean-front-neutral.heic,IMG_3691.heic,"clean front neutral, dark background"
+01-core-identity,florian-core-06-clean-three-quarter.heic,IMG_3692.heic,"clean 3/4 angle, dark background"
+01-core-identity,florian-core-07-clean-profile-left.heic,IMG_3701.heic,clean side profile
+01-core-identity,florian-core-08-clean-profile-right.heic,IMG_3702.heic,clean opposite profile/3/4
+01-core-identity,florian-core-09-front-smile.heic,IMG_3696.heic,front smile
+01-core-identity,florian-core-10-home-side-profile.jpeg,IMG_3020.jpeg,"side profile, home setting"
+01-core-identity,florian-core-11-outdoor-snow-front.jpg,IMG_2348.JPG,outdoor daylight face reference
+01-core-identity,florian-core-12-car-front-leather.jpg,FB651470-A817-4A8D-BC26-6E07C54BD53C.jpg,"front close-up, leather jacket"
+02-secondary-context,florian-secondary-01-conference-full-body.jpg,ff3cffa3e041e066bb5f521b209b717a.jpg,conference full body
+02-secondary-context,florian-secondary-02-presentation-action.jpg,IMG_0403.JPG,speaking/presentation context
+02-secondary-context,florian-secondary-03-business-selfie.jpg,F134349B-C42D-47FD-9C16-09E774C148A2.JPG,"business selfie, strong face"
+02-secondary-context,florian-secondary-04-car-outfit.jpg,899170B4-C914-4AE2-AF5C-64C4166D42FF.jpg,"car, outfit reference"
+02-secondary-context,florian-secondary-05-formal-vest-front.jpeg,IMG_1757.jpeg,"formal vest, direct face"
+02-secondary-context,florian-secondary-06-office-mug-formal.jpeg,IMG_2712.jpeg,formal office/mug context
+02-secondary-context,florian-secondary-07-wine-formal.jpeg,IMG_1971.jpeg,formal casual expression
+02-secondary-context,florian-secondary-08-outdoor-candid.jpg,C5131CCA-AA33-4E9A-8B35-22A681309919.jpg,outdoor candid
+02-secondary-context,florian-secondary-09-night-smile.jpg,9A75A03D-EDC8-45A9-802D-EB00557B0E08.jpg,night smile expression
+02-secondary-context,florian-secondary-10-cafe-cup.jpg,2A8AABCC-C84C-42FB-9989-0780DA0DF591.jpg,cafe/cup style
+02-secondary-context,florian-secondary-11-jersey-front.jpeg,IMG_6538.jpeg,front casual jersey
+02-secondary-context,florian-secondary-12-home-side-smile.jpeg,IMG_3029.jpeg,side smile at home
+03-optional-style,florian-style-01-stage-guitar.jpg,PulsarJams-60.jpg,stage/guitar full-body style
+03-optional-style,florian-style-02-webinar.jpg,IMG_4083.JPG,webinar/speaking style
+03-optional-style,florian-style-03-event-candid.jpeg,photo-2532_singular_display_fullPicture.jpeg,event candid
+03-optional-style,florian-style-04-party-small-face.jpeg,IMG_7062.jpeg,"party/event context, small face"
+03-optional-style,florian-style-05-holiday-hat.jpeg,IMG_4136.jpeg,playful expression
+03-optional-style,florian-style-06-headphones-screenshot.png,Screenshot 2025-07-07 at 3.32.46 PM.png,headphones screenshot; optional only
+03-optional-style,florian-style-07-airport-story.jpg,C683D1BD-A36C-45C9-83F6-1D810B648056.jpg,airport story overlay; optional only
+03-optional-style,florian-style-08-group-selfie.jpeg,IMG_0659.jpeg,group context; not identity anchor
