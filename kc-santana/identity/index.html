@@ -90,196 +90,268 @@
 <main class="content">
 
 <style>
-.fp-gate-wrap { position: relative; }
-.fp-gate-blur { filter: blur(6px) saturate(0.85); opacity: 0.5; pointer-events: none; user-select: none; }
-.fp-gate { position: absolute; inset: 0; z-index: 50; display: flex; justify-content: center; align-items: flex-start; }
-.fp-gate::before { content: ""; position: absolute; inset: 0; background: color-mix(in srgb, var(--light) 80%, transparent); }
-.fp-gate__card { position: sticky; top: 88px; margin-top: 12vh; z-index: 1; width: min(520px, 90%); background: var(--white); border: 1px solid var(--text); border-top: 4px solid var(--accent); padding: clamp(32px, 5vw, 52px); text-align: center; box-shadow: 0 30px 80px rgba(26, 26, 46, 0.16); }
-.fp-gate__lock { display: inline-flex; margin: 0 0 22px; }
-.fp-gate__lock svg { width: 34px; height: 34px; }
-.fp-gate__eyebrow { font-family: var(--ff-b); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-.fp-gate__title { font-family: var(--ff-h); font-weight: 800; font-size: clamp(28px, 3.6vw, 40px); line-height: 1.04; letter-spacing: -0.02em; color: var(--text); margin: 0 0 14px; }
-.fp-gate__title .dot { color: var(--accent); }
-.fp-gate__body { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); margin: 0 auto 26px; max-width: 40ch; }
-.fp-gate__cta { display: inline-flex; align-items: center; min-height: 46px; padding: 12px 22px; background: var(--text); color: var(--white); text-decoration: none; font-family: var(--ff-b); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
-.fp-gate__cta:hover { background: var(--accent); }
-.fp-gate__meta { margin-top: 20px; font-family: var(--ff-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-</style><div class="fp-gate-wrap"><div class="fp-gate-blur"><style>
-/* Section B direction review. Direction color and type ideas are proposal data; the Brand OS shell keeps the active review identity until approval. */
-.dir-review { --dir-primary: var(--accent); --dir-secondary: var(--text); --dir-signal: var(--accent); --dir-paper: var(--white); --dir-ink: var(--text); font-family: var(--dir-font-body, var(--ff-b)); }
-.dir-hero { margin: 0 0 72px; padding: 64px clamp(28px,5vw,64px); background: radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--dir-signal) 42%, transparent), transparent 28%), linear-gradient(135deg, var(--dir-secondary), color-mix(in srgb, var(--dir-secondary) 82%, #000 18%)); color: var(--white); position: relative; overflow: hidden; min-height: 460px; display: flex; flex-direction: column; justify-content: flex-end; }
-.dir-hero::before { content: ""; position: absolute; inset: 22px; border: 1px solid rgba(255,255,255,0.15); pointer-events: none; }
-.dir-hero::after { content: ""; position: absolute; inset: auto 0 0; height: 10px; background: linear-gradient(90deg, var(--dir-primary), var(--dir-signal), var(--dir-paper)); }
-.dir-kicker, .dir-status, .dir-label { font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dir-signal); }
-.dir-hero h1 { font-family: var(--dir-font-display, var(--ff-h)); font-weight: 800; font-size: clamp(58px,9vw,122px); line-height: 0.9; letter-spacing: 0; margin: 16px 0 12px; color: var(--white); max-width: 900px; }
-.dir-hero h1 .dot { color: var(--dir-signal); }
-.dir-working { font-family: var(--dir-font-display, var(--ff-h)); font-weight: 800; font-size: clamp(24px,3vw,42px); line-height: 1; letter-spacing: 0; color: rgba(255,255,255,0.9); margin: 0 0 22px; }
-.dir-thesis { font-family: var(--dir-font-body, var(--ff-b)); font-size: clamp(15px,1.6vw,20px); line-height: 1.65; color: rgba(255,255,255,0.74); max-width: 850px; margin: 0; }
-.dir-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
-.dir-meta span { border: 1px solid rgba(255,255,255,0.16); padding: 9px 12px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
-.dir-meta strong { color: rgba(255,255,255,0.9); margin-left: 5px; }
-.dir-section { margin: 0 0 92px; }
-.dir-section-head { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; padding-top: 22px; border-top: 1px solid var(--text); margin-bottom: 32px; }
-.dir-num { font-family: var(--dir-font-body, var(--ff-b)); font-size: 11px; font-weight: 800; letter-spacing: 0.14em; color: var(--dir-primary); padding-top: 12px; }
-.dir-section h2 { font-family: var(--dir-font-display, var(--ff-h)); font-weight: 800; font-size: clamp(32px,4.5vw,58px); line-height: 1; letter-spacing: 0; color: var(--text); margin: 0 0 10px; }
-.dir-section h2 .dot { color: var(--dir-signal); }
-.dir-section-desc { font-family: var(--dir-font-body, var(--ff-b)); font-size: 15px; line-height: 1.75; color: var(--text); max-width: 820px; margin: 0; }
-.dir-panel { border: 1px solid var(--border); background: var(--white); padding: 30px; }
-.dir-board-shell { border: 1px solid var(--border); background: var(--white); padding: clamp(10px,1.5vw,18px); box-shadow: 0 22px 60px rgba(16,24,40,0.12); }
-.dir-board-shell img { display: block; width: 100%; height: auto; border: 1px solid var(--border); background: var(--dir-paper); }
-.dir-board-note { margin-top: 14px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dir-primary); }
-.dir-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
-.dir-card { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--white); padding: 28px 24px; }
-.dir-card h3 { font-family: var(--dir-font-display, var(--ff-h)); font-weight: 800; font-size: 23px; line-height: 1.08; letter-spacing: 0; color: var(--text); margin: 0 0 10px; }
-.dir-card p, .dir-card li, .dir-panel p, .dir-panel li { font-family: var(--dir-font-body, var(--ff-b)); font-size: 13px; line-height: 1.68; color: var(--muted); }
-.dir-card p, .dir-panel p { margin: 0; }
-.dir-card ul, .dir-panel ul { margin: 0; padding-left: 18px; }
-.dir-slider-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
-.dir-slider { display: grid; grid-template-columns: 96px 1fr 96px; gap: 12px; align-items: center; padding: 14px 18px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--white); }
-.dir-slider span { font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-.dir-slider span:last-child { text-align: right; }
-.dir-track { height: 3px; background: var(--border); position: relative; }
-.dir-dot { width: 13px; height: 13px; background: var(--dir-primary); position: absolute; top: 50%; transform: translate(-50%,-50%); box-shadow: 0 0 0 4px color-mix(in srgb, var(--dir-primary) 12%, transparent); }
-.slider-signal-block { margin-top: 22px; }
-.keyword-cloud { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 18px; padding-top: 18px; border-top: 1px solid var(--border); }
-.keyword-cloud-label { width: 100%; font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
-.keyword { font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 12px; border: 1px solid var(--border); color: var(--muted); background: var(--white); }
-.keyword.active { border-color: var(--dir-primary); color: #fff; background: var(--dir-primary); }
-.dir-palette { display: grid; grid-template-columns: repeat(auto-fit,minmax(130px,1fr)); gap: 0; border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
-.dir-swatch { min-height: 160px; padding: 16px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; flex-direction: column; justify-content: flex-end; }
-.dir-swatch-name { font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
-.dir-swatch-hex { font-family: var(--dir-font-body, var(--ff-b)); font-size: 12px; font-weight: 700; }
-.dir-swatch-role { font-family: var(--dir-font-body, var(--ff-b)); font-size: 11px; line-height: 1.45; margin-top: 8px; max-width: 190px; }
-.dir-mood { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
-.dir-mood-item { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--white); }
-.dir-mood-item img { width: 100%; aspect-ratio: 1.05; object-fit: cover; display: block; filter: saturate(1.02) contrast(1.04); }
-.dir-mood-label { padding: 12px 14px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); }
-.dir-logo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
-.dir-logo-grid:has(.dir-logo-cell:only-child) { grid-template-columns: 1fr; }
-.dir-logo-cell { min-height: 230px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); display: grid; place-items: center; padding: 26px; background: var(--white); position: relative; }
-.dir-logo-cell.dark { background: var(--dir-secondary); }
-.dir-logo-cell img { max-width: 84%; max-height: 160px; display: block; }
-.dir-logo-cell:only-child { min-height: 520px; }
-.dir-logo-cell:only-child img { width: 100%; max-width: 100%; max-height: none; height: auto; }
-.dir-logo-cell span { position: absolute; left: 14px; bottom: 12px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 9px; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); }
-.dir-logo-cell.dark span { color: rgba(255,255,255,0.62); }
-.dir-signature-demo { min-height: 290px; background: var(--dir-paper); color: var(--dir-ink); border: 1px solid var(--border); display: grid; place-items: center; padding: 36px; position: relative; overflow: hidden; }
-.dir-signature-demo .sig-lines { width: min(460px,80%); display: grid; gap: 8px; margin: 0 auto; }
-.dir-signature-demo .sig-line { height: 7px; background: var(--dir-primary); }
-.dir-signature-demo .sig-line:nth-child(2) { background: var(--dir-secondary); }
-.dir-signature-demo .sig-line:nth-child(3) { background: var(--dir-signal); }
-.dir-signature-demo .sig-word { font-family: var(--dir-font-display, var(--ff-h)); font-weight: 800; font-size: clamp(42px,7vw,82px); line-height: 0.92; letter-spacing: 0; margin-bottom: 30px; text-align: center; }
-.dir-copy-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
-.dir-copy-list .dir-card { min-height: 180px; }
-.dir-application-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.dir-app { border: 1px solid var(--border); background: var(--white); padding: 22px; display: grid; gap: 18px; min-width: 0; overflow: hidden; }
-.dir-app-head { display: flex; justify-content: space-between; gap: 18px; align-items: start; border-bottom: 1px solid var(--border); padding-bottom: 14px; }
-.dir-app-head h3 { font-family: var(--dir-font-display, var(--ff-h)); font-size: 24px; line-height: 1.05; letter-spacing: 0; margin: 0; color: var(--text); }
-.dir-app-head span, .dir-app-format { font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dir-primary); white-space: nowrap; }
-.dir-app-role { font-family: var(--dir-font-body, var(--ff-b)); font-size: 13px; line-height: 1.6; color: var(--muted); margin: 0; }
-.dir-app-image { width: 100%; height: auto; display: block; border: 1px solid var(--border); background: var(--dir-paper); box-shadow: 0 12px 32px rgba(16,24,40,0.1); }
-.dir-mock { width: 100%; max-width: 100%; min-width: 0; min-height: 330px; border: 1px solid var(--border); background: var(--dir-paper); color: var(--dir-ink); position: relative; overflow: hidden; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
-.mock-mark { font-family: var(--dir-font-display, var(--ff-h)); font-weight: 800; font-size: 24px; letter-spacing: 0; color: var(--dir-secondary); }
-.mock-kicker { font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dir-primary); }
-.mock-headline { font-family: var(--dir-font-display, var(--ff-h)); font-weight: 800; font-size: clamp(34px,5vw,62px); line-height: 0.96; letter-spacing: 0; max-width: 560px; color: var(--dir-secondary); }
-.mock-sub { font-family: var(--dir-font-body, var(--ff-b)); font-size: 14px; line-height: 1.5; max-width: 460px; color: color-mix(in srgb, var(--dir-secondary) 74%, transparent); }
-.mock-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.mock-pill { border: 1px solid currentColor; padding: 6px 10px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dir-secondary); background: color-mix(in srgb, var(--dir-paper) 78%, transparent); }
-.dir-mock.flyer { aspect-ratio: 4 / 5; min-height: 520px; background: linear-gradient(160deg, var(--dir-paper) 0 48%, color-mix(in srgb, var(--dir-primary) 18%, var(--dir-paper)) 48% 100%); }
-.dir-mock.flyer::after { content: ""; position: absolute; width: 34%; height: 18%; right: 0; bottom: 0; background: var(--dir-signal); mix-blend-mode: multiply; opacity: 0.9; }
-.dir-mock.badge { aspect-ratio: 3 / 4.5; max-width: 390px; margin: 0 auto; min-height: 500px; background: var(--white); border-color: var(--dir-secondary); }
-.badge-band { height: 18px; background: linear-gradient(90deg, var(--dir-primary), var(--dir-signal)); margin: -24px -24px 24px; }
-.badge-name { font-family: var(--dir-font-display, var(--ff-h)); font-size: 46px; line-height: 0.95; font-weight: 800; color: var(--dir-secondary); }
-.badge-company { font-family: var(--dir-font-body, var(--ff-b)); font-size: 15px; color: var(--muted); margin-top: 8px; }
-.badge-role { margin-top: 24px; display: inline-flex; align-self: flex-start; padding: 8px 12px; background: var(--dir-secondary); color: var(--white); font-family: var(--dir-font-body, var(--ff-b)); font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
-.badge-qr { width: 72px; height: 72px; margin-top: auto; background: repeating-linear-gradient(45deg, var(--dir-secondary) 0 6px, transparent 6px 12px), var(--white); border: 8px solid var(--white); box-shadow: 0 0 0 1px var(--border); }
-.dir-mock.backdrop { aspect-ratio: 16 / 9; min-height: 0; background: var(--dir-secondary); color: var(--white); display: grid; place-items: center; text-align: center; }
-.dir-mock.backdrop::before { content: ""; position: absolute; inset: 28px; border: 1px solid color-mix(in srgb, var(--dir-signal) 70%, transparent); }
-.backdrop-repeat { position: absolute; inset: 0; opacity: 0.17; background-image: linear-gradient(90deg, transparent 47%, var(--dir-paper) 47% 53%, transparent 53%), linear-gradient(0deg, transparent 47%, var(--dir-paper) 47% 53%, transparent 53%); background-size: 150px 120px; }
-.backdrop-title { font-family: var(--dir-font-display, var(--ff-h)); font-size: clamp(34px,4.2vw,62px); line-height: 0.92; font-weight: 800; letter-spacing: 0; position: relative; z-index: 1; max-width: 92%; overflow-wrap: break-word; margin: 0 auto; }
-.backdrop-sponsor { position: relative; z-index: 1; margin-top: 22px; color: rgba(255,255,255,0.7); font-family: var(--dir-font-body, var(--ff-b)); font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
-.dir-mock.cardset { min-height: 360px; background: color-mix(in srgb, var(--dir-paper) 84%, var(--dir-primary) 16%); display: grid; place-items: center; }
-.card-pair { width: min(440px, 92%); display: grid; gap: 14px; transform: rotate(-3deg); }
-.card-face { min-height: 132px; padding: 20px; background: var(--white); border: 1px solid var(--dir-secondary); box-shadow: 10px 10px 0 color-mix(in srgb, var(--dir-signal) 42%, transparent); display: flex; flex-direction: column; justify-content: space-between; }
-.card-face.dark { background: var(--dir-secondary); color: var(--white); transform: translateX(24px) rotate(4deg); }
-.card-name { font-family: var(--dir-font-display, var(--ff-h)); font-size: 28px; line-height: 1; font-weight: 800; letter-spacing: 0; }
-.card-detail { font-family: var(--dir-font-body, var(--ff-b)); font-size: 11px; line-height: 1.5; letter-spacing: 0.06em; text-transform: uppercase; color: inherit; opacity: 0.78; }
-.dir-reference-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
-.dir-ref { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 24px; background: var(--white); }
-.dir-ref h3 { font-family: var(--dir-font-display, var(--ff-h)); font-size: 22px; line-height: 1.1; margin: 0 0 12px; letter-spacing: 0; }
-.dir-ref p { font-family: var(--dir-font-body, var(--ff-b)); font-size: 13px; line-height: 1.62; color: var(--muted); margin: 0; }
-.dir-review.clarity-review { --dir-font-display: var(--ff-h); --dir-font-body: var(--ff-b); }
-.dir-review.clarity-review .dir-hero { min-height: 0; margin: 0 0 72px; padding: 44px 0 36px; background: var(--white); color: var(--text); border-top: 1px solid var(--text); border-bottom: 1px solid var(--border); display: block; }
-.dir-review.clarity-review .dir-hero::before, .dir-review.clarity-review .dir-hero::after { display: none; }
-.dir-review.clarity-review .dir-kicker, .dir-review.clarity-review .dir-status, .dir-review.clarity-review .dir-label, .dir-review.clarity-review .dir-num, .dir-review.clarity-review .dir-app-head span, .dir-review.clarity-review .dir-app-format { color: var(--accent); }
-.dir-review.clarity-review .dir-hero h1 { color: var(--text); max-width: 900px; font-size: clamp(46px,7vw,86px); line-height: 0.96; letter-spacing: -0.02em; }
-.dir-review.clarity-review .dir-hero h1 .dot, .dir-review.clarity-review .dir-section h2 .dot { color: var(--accent); }
-.dir-review.clarity-review .dir-working { color: var(--text); font-size: clamp(20px,2.2vw,30px); }
-.dir-review.clarity-review .dir-thesis { color: var(--text); max-width: 760px; }
-.dir-review.clarity-review .dir-meta span { border-color: var(--border); color: var(--muted); }
-.dir-review.clarity-review .dir-meta strong { color: var(--text); }
-.dir-review.clarity-review .dir-section { margin-bottom: 76px; }
-.dir-review.clarity-review .dir-section-desc { max-width: 760px; }
-.dir-review.clarity-review .dir-board-shell { box-shadow: 0 16px 48px rgba(16,24,40,0.1); }
-.dir-review.clarity-review .dir-slider .dir-dot, .dir-review.clarity-review .keyword.active { background: var(--accent); border-color: var(--accent); }
-@media (max-width: 980px) { .dir-grid, .dir-mood, .dir-logo-grid, .dir-slider-grid, .dir-copy-list, .dir-application-grid, .dir-reference-grid { grid-template-columns: 1fr; } .dir-slider { grid-template-columns: 84px 1fr 84px; } .dir-section-head { grid-template-columns: 1fr; gap: 10px; } }
+  /* Scoped Section B creative-direction content styles.
+     Sourced from the Section B content stylesheet, every selector prefixed under
+     .kc-dir-b so it cannot collide with the Brand OS shell (assets/style.css owns .shell,
+     .sidebar, .content, body, .brand-mark, .nav-*, .footer-nav, the grain layer).
+     The bundle's bespoke layout/reset rules and its own .footer-nav are intentionally
+     excluded. Bundle :root tokens are remapped onto the container as locals. */
+  .kc-dir-b {
+    --fp-accent: #4F51E8;
+    --fp-text: #1A1A2E;
+    --fp-muted: #5D5E75;
+    --fp-light: #F5F5F7;
+    --fp-border: #E3E4EA;
+    --fp-white: #FFFFFF;
+    --fp-dark: #18181B;
+    --std: #8E1518;
+    --std-dark: #0D0D10;
+    --run: #B94C28;
+    --run-dark: #111111;
+    --ff-h: "Bricolage Grotesque", system-ui, sans-serif;
+    --ff-b: "Poppins", system-ui, sans-serif;
+    color: var(--fp-text);
+    font-family: var(--ff-b);
+    line-height: 1.65;
+  }
+  .kc-dir-b *,
+  .kc-dir-b *::before,
+  .kc-dir-b *::after { box-sizing: border-box; }
+  .kc-dir-b img { display: block; max-width: 100%; height: auto; }
+  .kc-dir-b h1,
+  .kc-dir-b h2,
+  .kc-dir-b h3,
+  .kc-dir-b h4 { margin: 0; font-family: var(--ff-h); font-weight: 800; letter-spacing: 0; line-height: 0.98; }
+  .kc-dir-b p { margin: 0; }
+  .kc-dir-b .dot,
+  .kc-dir-b .accent { color: var(--fp-accent); }
+  .kc-dir-b .eyebrow,
+  .kc-dir-b .section-kicker,
+  .kc-dir-b .board-note,
+  .kc-dir-b .step { color: var(--fp-accent); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+  .kc-dir-b .palette-grid { display: grid; border-top: 1px solid var(--fp-border); border-left: 1px solid var(--fp-border); grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); }
+  .kc-dir-b .section { margin-bottom: 92px; }
+  .kc-dir-b .section-head { display: grid; grid-template-columns: 68px minmax(0, 1fr); gap: 24px; border-top: 1px solid var(--fp-text); padding-top: 24px; margin-bottom: 30px; }
+  .kc-dir-b .section-head h2 { max-width: 900px; margin: 8px 0 12px; font-size: clamp(34px, 5vw, 64px); }
+  .kc-dir-b .section-head p:not(.section-kicker) { max-width: 850px; color: var(--fp-muted); font-size: 15px; }
+  .kc-dir-b .direction-hero { position: relative; isolation: isolate; min-height: 520px; display: flex; flex-direction: column; justify-content: flex-end; margin-bottom: 78px; padding: clamp(44px, 6vw, 82px); overflow: hidden; background-color: var(--fp-dark); background-position: center; background-size: cover; color: var(--fp-white); }
+  .kc-dir-b .direction-hero.standard-hero { background-image: linear-gradient(90deg, rgba(8,8,10,0.9), rgba(8,8,10,0.62) 46%, rgba(8,8,10,0.18)), url("../images/standard-setter-applications-v2.png"); border-bottom: 10px solid var(--std); }
+  .kc-dir-b .direction-hero.run-hero { background-image: linear-gradient(90deg, rgba(8,8,10,0.9), rgba(8,8,10,0.58) 48%, rgba(8,8,10,0.16)), url("../images/run-the-standard-applications-v2.png"); border-bottom: 10px solid var(--run); }
+  .kc-dir-b .direction-hero .eyebrow,
+  .kc-dir-b .direction-hero .dot { color: rgba(255,255,255,0.9); }
+  .kc-dir-b .direction-hero h1 { max-width: 860px; margin: 12px 0 18px; font-size: clamp(58px, 8vw, 116px); color: var(--fp-white); }
+  .kc-dir-b .direction-hero p { max-width: 610px; color: rgba(255,255,255,0.72); font-size: clamp(16px, 1.6vw, 21px); }
+  .kc-dir-b .swatch { min-height: 185px; display: flex; flex-direction: column; justify-content: flex-end; border-right: 1px solid var(--fp-border); border-bottom: 1px solid var(--fp-border); padding: 16px; }
+  .kc-dir-b .swatch.light-text { color: #FFFFFF; }
+  .kc-dir-b .swatch.dark-text { color: #111111; }
+  .kc-dir-b .swatch strong { display: block; font-size: 13px; }
+  .kc-dir-b .swatch span { display: block; margin-top: 4px; font-size: 12px; font-weight: 700; }
+  .kc-dir-b .swatch p { margin-top: 8px; font-size: 12px; line-height: 1.35; }
+  .kc-dir-b .board-shell { border: 1px solid var(--fp-border); background: var(--fp-white); padding: clamp(10px, 1.2vw, 18px); }
+  .kc-dir-b .hero-board { margin-bottom: 18px; }
+  .kc-dir-b .board-shell img { width: 100%; border: 1px solid var(--fp-border); }
+  .kc-dir-b .board-note { margin-top: 14px; }
+  .kc-dir-b .photo-reference-grid { display: grid; border-top: 1px solid var(--fp-border); border-left: 1px solid var(--fp-border); grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 26px; }
+  .kc-dir-b .photo-reference-card { border-right: 1px solid var(--fp-border); border-bottom: 1px solid var(--fp-border); background: var(--fp-white); padding: 24px; }
+  .kc-dir-b .photo-reference-card h3 { margin-bottom: 10px; font-size: 25px; line-height: 1.02; }
+  .kc-dir-b .photo-reference-card p { color: #55566B; font-size: 14px; }
+  .kc-dir-b .photo-reference-card.wide { grid-column: span 2; }
+  .kc-dir-b .photo-reference-card img { width: 100%; height: 245px; border: 1px solid var(--fp-border); background: #F7F4EF; object-fit: cover; margin-bottom: 16px; }
+  .kc-dir-b .photo-reference-card.wide img { height: 245px; }
+  .kc-dir-b .mockup-spread { border: 1px solid var(--fp-border); background: var(--fp-white); padding: clamp(10px, 1.2vw, 18px); margin-bottom: 24px; }
+  .kc-dir-b .mockup-spread img { width: 100%; border: 1px solid var(--fp-border); aspect-ratio: 16 / 9; object-fit: cover; }
+  .kc-dir-b .mockup-proof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--fp-border); border-left: 1px solid var(--fp-border); margin-bottom: 24px; }
+  .kc-dir-b .creative-summary-grid { margin-bottom: 0; }
+  .kc-dir-b .mockup-proof { border-right: 1px solid var(--fp-border); border-bottom: 1px solid var(--fp-border); background: var(--fp-white); padding: 20px; }
+  .kc-dir-b .mockup-proof strong { display: block; margin-bottom: 8px; color: var(--fp-muted); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+  .kc-dir-b .mockup-proof p { color: #55566B; font-size: 14px; }
+  @media (max-width: 1120px) {
+    .kc-dir-b .palette-grid,
+    .kc-dir-b .photo-reference-grid,
+    .kc-dir-b .mockup-proof-grid { grid-template-columns: 1fr; }
+    .kc-dir-b .photo-reference-card.wide { grid-column: span 1; }
+  }
+  @media (max-width: 640px) {
+    .kc-dir-b .section-head { grid-template-columns: 1fr; }
+    .kc-dir-b .direction-hero { min-height: 440px; padding: 36px 24px; }
+    .kc-dir-b .photo-reference-card img { height: auto; max-height: none; }
+  }
 </style>
-<div class="dir-review clarity-review" style="--dir-primary:#161311; --dir-secondary:#F4EDE4; --dir-signal:#8D1F1B; --dir-paper:#A69C90; --dir-ink:#F4EDE4; --dir-font-display:var(--ff-h); --dir-font-body:var(--ff-b);">
-  <section class="dir-hero">
-    <div class="dir-kicker">Section B · Creative direction proposal</div>
-    <h1>Direction One<span class="dot">.</span></h1>
-    <div class="dir-working">Discipline Standard</div>
-    <p class="dir-thesis">A severe, luxurious, geometric authority system for KC as the living proof that discipline beats shortcuts.</p>
-    <div class="dir-meta">
-      <span>Status<strong>proposal</strong></span>
-      <span>Source<strong>Built from approved Focus Star and slider data. No logo exploration. Proposal material only; do not apply this palette or type energy to the Brand OS shell.</strong></span>
-      <span>Center<strong>No Excuses</strong></span>
-    </div>
-  </section>
+<div class="kc-dir-b">
+    <header class="direction-hero standard-hero">
+      <p class="eyebrow">Direction One / Business authority</p>
+      <h1>The Standard Setter<span class="dot">.</span></h1>
+      <p>Tailored black, oxblood proof lines, boardroom presence, athletic evidence, and disciplined recovery.</p>
+    </header>
 
+    <section class="section" id="stylescape">
+      <div class="section-head">
+        <span class="step">01</span>
+        <div>
+          <p class="section-kicker">Stylescape</p>
+          <h2>Executive discipline with a visible edge<span class="dot">.</span></h2>
+          <p>Black tailoring, direct type, oxblood marks, city light, training proof, and controlled recovery.</p>
+        </div>
+      </div>
+      <div class="board-shell hero-board">
+        <img src="../images/standard-setter-stylescape-v1.png" alt="The Standard Setter creative direction stylescape for KC Santana">
+      </div>
+      <div class="mockup-proof-grid creative-summary-grid">
+        <article class="mockup-proof">
+          <strong>Look</strong>
+          <p>Tailored, premium, direct.</p>
+        </article>
+        <article class="mockup-proof">
+          <strong>Signature</strong>
+          <p>Oxblood proof line.</p>
+        </article>
+        <article class="mockup-proof">
+          <strong>Energy</strong>
+          <p>Business authority with physical discipline.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="signature-images">
+      <div class="section-head">
+        <span class="step">02</span>
+        <div>
+          <p class="section-kicker">Brand signature</p>
+          <h2>Oxblood line as proof mark<span class="dot">.</span></h2>
+          <p>A decisive line across claims, agendas, wardrobe details, and room materials.</p>
+        </div>
+      </div>
+      <div class="photo-reference-grid signature-image-grid">
+        <article class="photo-reference-card wide">
+          <img src="../images/standard-setter-applications-v2.png" alt="Direction One raster application and signature evidence sheet">
+          <h3>Application sheet</h3>
+          <p>One visual language across podcast, agenda, social, recovery, and wardrobe.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d1-signature-red-line.png" alt="Direction One red line signature raster reference">
+          <h3>Standard line</h3>
+          <p>Reserved for the strongest statements.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d1-wardrobe-proof.png" alt="Direction One blazer and athletic wardrobe raster reference">
+          <h3>Wardrobe proof</h3>
+          <p>Tailored first, athletic underneath.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="color-type">
+      <div class="section-head">
+        <span class="step">03</span>
+        <div>
+          <p class="section-kicker">Color and type</p>
+          <h2>Black authority, controlled heat<span class="dot">.</span></h2>
+          <p>Heavy display type, restrained neutrals, and oxblood used with discipline.</p>
+        </div>
+      </div>
+      <div class="palette-grid">
+        <div class="swatch light-text" style="background:#0D0D10"><strong>Asphalt</strong><span>#0D0D10</span></div>
+        <div class="swatch dark-text" style="background:#E7E3DA"><strong>Bone</strong><span>#E7E3DA</span></div>
+        <div class="swatch light-text" style="background:#242629"><strong>Charcoal</strong><span>#242629</span></div>
+        <div class="swatch light-text" style="background:#8E1518"><strong>Oxblood</strong><span>#8E1518</span></div>
+        <div class="swatch dark-text" style="background:#C9B08A"><strong>Warm Chrome</strong><span>#C9B08A</span></div>
+        <div class="swatch light-text" style="background:#6B7A6E"><strong>Sage</strong><span>#6B7A6E</span></div>
+      </div>
+      <div class="photo-reference-grid evidence-image-grid">
+        <article class="photo-reference-card">
+          <img src="../images/validation/d1-palette-material.png" alt="Direction One raster material palette reference">
+          <h3>Material palette</h3>
+          <p>Blazer black, bone paper, oxblood detail, chrome, sage.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d1-type-energy.png" alt="Direction One raster typography energy reference">
+          <h3>Type energy</h3>
+          <p>Command-led, compressed, readable.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d1-social-application.png" alt="Direction One raster social application reference">
+          <h3>Social proof</h3>
+          <p>Strong enough for feed, stage, and room material.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="photography">
+      <div class="section-head">
+        <span class="step">04</span>
+        <div>
+          <p class="section-kicker">Photography and wardrobe</p>
+          <h2>Boardroom, training, recovery<span class="dot">.</span></h2>
+          <p>Business presence with the work still visible.</p>
+        </div>
+      </div>
+      <div class="photo-reference-grid">
+        <article class="photo-reference-card wide">
+          <img src="../images/validation/d1-photography-strip.png" alt="Direction One founder, training, city, and recovery photography reference strip">
+          <h3>Founder strip</h3>
+          <p>Authority, movement, city light, recovery.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d1-wardrobe-proof.png" alt="Direction One blazer, running shoe, and red seam wardrobe reference">
+          <h3>Blazer to training</h3>
+          <p>Black blazer, performance tank, running shoe.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d1-palette-material.png" alt="Direction One material color palette reference">
+          <h3>Material palette</h3>
+          <p>Polished, warm, and tactile.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="applications">
+      <div class="section-head">
+        <span class="step">05</span>
+        <div>
+          <p class="section-kicker">Applications</p>
+          <h2>How the brand shows up<span class="dot">.</span></h2>
+          <p>Social, agenda, podcast, room material, phone, and recovery details.</p>
+        </div>
+      </div>
+      <div class="mockup-spread">
+        <img src="../images/standard-setter-applications-v2.png" alt="The Standard Setter image-led application mockup sheet with social cards, agenda, podcast, recovery, and wardrobe details">
+      </div>
+      <div class="mockup-proof-grid">
+        <article class="mockup-proof">
+          <strong>Application evidence</strong>
+          <p>Agenda, social, podcast, wardrobe, phone, recovery.</p>
+        </article>
+        <article class="mockup-proof">
+          <strong>Photo direction</strong>
+          <p>Blazer-led with training proof in frame.</p>
+        </article>
+        <article class="mockup-proof">
+          <strong>Signature</strong>
+          <p>Oxblood line ties the system together.</p>
+        </article>
+      </div>
+      <div class="photo-reference-grid evidence-image-grid">
+        <article class="photo-reference-card">
+          <img src="../images/validation/d1-social-application.png" alt="Direction One raster social media application reference">
+          <h3>Proof post</h3>
+          <p>Short command, strong crop.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d1-signature-red-line.png" alt="Direction One raster red line application detail">
+          <h3>Signature behavior</h3>
+          <p>Confident, minimal, ownable.</p>
+        </article>
+        <article class="photo-reference-card">
+          <img src="../images/validation/d1-photography-strip.png" alt="Direction One raster photography application reference">
+          <h3>Photography proof</h3>
+          <p>Business and athletic in one world.</p>
+        </article>
+      </div>
+    </section>
   
-  <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">01</div><div><div class="dir-label">Generated creative board</div><h2>Direction board<span class="dot">.</span></h2><p class="dir-section-desc">This raster board is the lead proposal artifact for the direction. Treat it as discussion material, not logo approval, not final public imagery, and not identity canon.</p></div></div>
-    <div class="dir-board-shell"><img src="../images/generated-boards/discipline-standard-board.png" alt="Generated board: Discipline Standard"><div class="dir-board-note">Generated board: Discipline Standard</div></div>
-  </section>
-        
-
-  <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">02</div><div><div class="dir-label">Strategy translation</div><h2>What this direction is saying<span class="dot">.</span></h2><p class="dir-section-desc">This direction makes KC feel like the standard itself. It is the most literal reading of No Excuses: hard structure, adult femininity, black-bone-oxblood contrast, event authority, and visible training discipline.</p></div></div>
-    <div class="dir-grid">
-      <div class="dir-card"><h3>Best Fit</h3><p>Speaking, strong social statements, event positioning, high-standard mentorship, and anti-shortcut point-of-view content.</p></div>
-      <div class="dir-card"><h3>Watchout</h3><p>If pushed too hard, it can become punishing fitness or body-shaming. The copy must keep the target on behavior, not bodies.</p></div>
-      <div class="dir-card"><h3>Operating Idea</h3><p></p></div>
-    </div>
-  </section>
-
-  <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">03</div><div><div class="dir-label">Slider coordinates</div><h2>Why it feels different<span class="dot">.</span></h2><p class="dir-section-desc">These slider positions explain the strategic difference between options. They are a clarity tool, not a command to redesign the Brand OS page chrome.</p></div></div>
-    <div class="dir-slider-grid"><div class="dir-slider" role="img" aria-label="Classic to Modern: 50 percent"><span>Classic</span><div class="dir-track"><div class="dir-dot" style="left:50%"></div></div><span>Modern</span></div><div class="dir-slider" role="img" aria-label="Mature to Youthful: 58 percent"><span>Mature</span><div class="dir-track"><div class="dir-dot" style="left:58%"></div></div><span>Youthful</span></div><div class="dir-slider" role="img" aria-label="Feminine to Masculine: 22 percent"><span>Feminine</span><div class="dir-track"><div class="dir-dot" style="left:22%"></div></div><span>Masculine</span></div><div class="dir-slider" role="img" aria-label="Playful to Serious: 96 percent"><span>Playful</span><div class="dir-track"><div class="dir-dot" style="left:96%"></div></div><span>Serious</span></div><div class="dir-slider" role="img" aria-label="Economical to Luxurious: 82 percent"><span>Economical</span><div class="dir-track"><div class="dir-dot" style="left:82%"></div></div><span>Luxurious</span></div><div class="dir-slider" role="img" aria-label="Abstract to Literal: 94 percent"><span>Abstract</span><div class="dir-track"><div class="dir-dot" style="left:94%"></div></div><span>Literal</span></div><div class="dir-slider" role="img" aria-label="Geometric to Organic: 8 percent"><span>Geometric</span><div class="dir-track"><div class="dir-dot" style="left:8%"></div></div><span>Organic</span></div><div class="dir-slider" role="img" aria-label="Calm to Energetic: 76 percent"><span>Calm</span><div class="dir-track"><div class="dir-dot" style="left:76%"></div></div><span>Energetic</span></div><div class="dir-slider" role="img" aria-label="Rational to Emotional: 4 percent"><span>Rational</span><div class="dir-track"><div class="dir-dot" style="left:4%"></div></div><span>Emotional</span></div><div class="dir-slider" role="img" aria-label="Mysterious to Transparent: 92 percent"><span>Mysterious</span><div class="dir-track"><div class="dir-dot" style="left:92%"></div></div><span>Transparent</span></div><div class="dir-slider" role="img" aria-label="Quiet to Talkative: 64 percent"><span>Quiet</span><div class="dir-track"><div class="dir-dot" style="left:64%"></div></div><span>Talkative</span></div></div>
-    <div class="slider-signal-block"><div class="keyword-cloud"><div class="keyword-cloud-label">AI signal: be this</div><span class="keyword active" title="axis Playful|Serious p=96">Serious +46</span><span class="keyword active" title="axis Abstract|Literal p=94">Literal +44</span><span class="keyword active" title="axis Geometric|Organic p=8">Geometric +42</span><span class="keyword active" title="axis Rational|Emotional p=4">Rational +46</span><span class="keyword active" title="axis Mysterious|Transparent p=92">Transparent +42</span><span class="keyword active" title="axis Economical|Luxurious p=82">Luxurious +32</span><span class="keyword active" title="axis Feminine|Masculine p=22">Feminine +28</span><span class="keyword active" title="axis Calm|Energetic p=76">Energetic +26</span><span class="keyword active" title="axis Quiet|Talkative p=64">Talkative +14</span><span class="keyword active" title="axis Mature|Youthful p=58">Youthful +8</span></div><div class="keyword-cloud"><div class="keyword-cloud-label">AI signal: dont be this</div><span class="keyword " title="axis Rational|Emotional p=4">Emotional -46</span><span class="keyword " title="axis Playful|Serious p=96">Playful -46</span><span class="keyword " title="axis Abstract|Literal p=94">Abstract -44</span><span class="keyword " title="axis Mysterious|Transparent p=92">Mysterious -42</span><span class="keyword " title="axis Geometric|Organic p=8">Organic -42</span><span class="keyword " title="axis Economical|Luxurious p=82">Economical -32</span><span class="keyword " title="axis Feminine|Masculine p=22">Masculine -28</span><span class="keyword " title="axis Calm|Energetic p=76">Calm -26</span><span class="keyword " title="axis Quiet|Talkative p=64">Quiet -14</span><span class="keyword " title="axis Mature|Youthful p=58">Mature -8</span></div><div class="keyword-cloud"><div class="keyword-cloud-label">Ignore axes</div><span class="keyword">Classic|Modern</span></div><div class="keyword-cloud"><div class="keyword-cloud-label">Anti-tropes</div><span class="keyword">pink Barbie</span><span class="keyword">stoner aesthetic</span><span class="keyword">GLP-1 imagery</span><span class="keyword">therapy-soft femininity</span></div><div class="keyword-cloud"><div class="keyword-cloud-label">Headline keywords</div><span class="keyword active">Serious</span><span class="keyword active">Literal</span><span class="keyword active">Geometric</span><span class="keyword active">Rational</span><span class="keyword active">Transparent</span></div></div>
-  </section>
-
-  <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">04</div><div><div class="dir-label">Proposal ingredients</div><h2>Palette notes<span class="dot">.</span></h2><p class="dir-section-desc">These colors belong to this option only. They are shown so Florian can evaluate the territory; they do not become the client Brand OS shell unless the identity is later selected and built.</p></div></div>
-    <div class="dir-palette"><div class="dir-swatch" style="background:#161311; color:#fff"><div class="dir-swatch-name">Discipline Black</div><div class="dir-swatch-hex">#161311</div><div class="dir-swatch-role">Authority, type, hard frame.</div></div><div class="dir-swatch" style="background:#F4EDE4; color:var(--text)"><div class="dir-swatch-name">Bone Field</div><div class="dir-swatch-hex">#F4EDE4</div><div class="dir-swatch-role">Primary canvas and skin-safe neutral.</div></div><div class="dir-swatch" style="background:#8D1F1B; color:#fff"><div class="dir-swatch-name">Oxblood Command</div><div class="dir-swatch-hex">#8D1F1B</div><div class="dir-swatch-role">No Excuses accent and refusal moments.</div></div><div class="dir-swatch" style="background:#C6A35B; color:var(--text)"><div class="dir-swatch-name">Brass Standard</div><div class="dir-swatch-hex">#C6A35B</div><div class="dir-swatch-role">Luxury, earned status, event accents.</div></div><div class="dir-swatch" style="background:#A69C90; color:#fff"><div class="dir-swatch-name">Concrete Line</div><div class="dir-swatch-hex">#A69C90</div><div class="dir-swatch-role">Grids, labels, measurement marks.</div></div></div>
-  </section>
-
-  
-  <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">05</div><div><div class="dir-label">Application cues</div><h2>Where this could show up<span class="dot">.</span></h2><p class="dir-section-desc">These examples describe where the direction might be useful if selected. They are not production designs and do not change the FP review shell.</p></div></div>
-    <div class="dir-application-grid"><article class="dir-app"><div class="dir-app-head"><div><h3>No Excuses statement post</h3><p class="dir-app-role">One hard belief, one image, one action.</p></div><span></span></div><img class="dir-app-image social-post" src="../images/generated-boards/discipline-standard-board.png" alt="No Excuses statement post"><div class="dir-app-format"></div></article><article class="dir-app"><div class="dir-app-head"><div><h3>Standard-setting dinner</h3><p class="dir-app-role">Invitation system for women stepping into the room.</p></div><span></span></div><img class="dir-app-image event-mastermind" src="../images/generated-boards/discipline-standard-board.png" alt="Standard-setting dinner"><div class="dir-app-format"></div></article><article class="dir-app"><div class="dir-app-head"><div><h3>Speaking authority visual</h3><p class="dir-app-role">KC as proof, not a motivational host.</p></div><span></span></div><img class="dir-app-image speaking-podcast" src="../images/generated-boards/discipline-standard-board.png" alt="Speaking authority visual"><div class="dir-app-format"></div></article><article class="dir-app"><div class="dir-app-head"><div><h3>Recovery stack image</h3><p class="dir-app-role">Cannabis shown like magnesium or creatine, not a lifestyle flag.</p></div><span></span></div><img class="dir-app-image cannabis-tool" src="../images/generated-boards/discipline-standard-board.png" alt="Recovery stack image"><div class="dir-app-format"></div></article></div>
-  </section>
-            
-
-  <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">06</div><div><div class="dir-label">Review boundaries</div><h2>What not to overbuild<span class="dot">.</span></h2><p class="dir-section-desc">Brand Therapy is about strategic clarity before design. Keep the option useful enough to choose a direction, then stop.</p></div></div>
-    <div class="dir-copy-list">
-      <div class="dir-card"><h3>Use This For</h3><p>Speaking, strong social statements, event positioning, high-standard mentorship, and anti-shortcut point-of-view content.</p></div>
-      <div class="dir-card"><h3>Avoid</h3><ul><li>No logos.</li><li>No cute empowerment.</li><li>No military costume.</li><li>No body-shaming.</li></ul></div>
-    </div>
-  </section>
 </div>
-</div><div class="fp-gate" role="note" aria-label="Pending strategy approval"><div class="fp-gate__card"><span class="fp-gate__lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="square"><rect x="4" y="10" width="16" height="11"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></span><div class="fp-gate__eyebrow">Creative Direction</div><h2 class="fp-gate__title">Pending strategy approval<span class="dot">.</span></h2><p class="fp-gate__body">Your creative directions are built and waiting. They unlock the moment we confirm your Focus Star together.</p><a class="fp-gate__cta" href="../strategy/index.html">Review the strategy first &rarr;</a><div class="fp-gate__meta">Locked preview</div></div></div></div>
+
+
 
   <div class="footer-nav">
     <span>Section B · Direction One · Creative Direction</span>
@@ -292,8 +364,8 @@
 <!--
   Brand:        KC Santana (kc-santana)
   Version:      0.1.0
-  Built at:     2026-06-02T16:53:25+00:00
-  Git SHA:      cf1a880d37f619815c6afb719e1105d7810621a6
+  Built at:     2026-06-04T23:08:18+00:00
+  Git SHA:      703f84e6243fa4c409966b57542bd387d3d33e78
   Bundle hash:  sha256:d610ea165aa44589f6641b471b15365bc27c35d7787c42df78f43a5963289abd
   Source:       brand-os/brands/kc-santana/DIRECTIONS.md + STRATEGY.md + IDENTITY.md
 -->
