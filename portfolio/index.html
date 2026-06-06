@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brand OS — Client Constellations</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#5A5CF9; --accent-soft:rgba(90,92,249,.07);
+    --text:#1A1A2E; --muted:#8888A0; --border:#E5E7EB; --light:#F5F5F7; --white:#FFFFFF;
+    --ff-h:'Bricolage Grotesque',system-ui,sans-serif; --ff-b:'Poppins',system-ui,sans-serif;
+    --exo:cubic-bezier(0.16,1,0.3,1); --dur:.25s;
+    --shadow:0 1px 2px rgba(26,26,46,.04),0 8px 30px rgba(26,26,46,.06);
+    --shadow-lg:0 10px 50px rgba(26,26,46,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--white);color:var(--text);font-family:var(--ff-b);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:56px 32px 80px}
+  header{margin-bottom:40px}
+  .wm{font-family:var(--ff-h);font-weight:800;font-size:30px;letter-spacing:-.015em;color:var(--text)}
+  .wm b{color:var(--accent)}
+  .sub{font-family:var(--ff-b);font-size:13px;color:var(--muted);margin-top:8px;max-width:560px;line-height:1.6}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:36px}
+  .tile{position:relative;display:block;text-decoration:none;color:inherit;background:var(--white);border:1px solid var(--border);padding:26px 24px 22px;transition:transform var(--dur) var(--exo),box-shadow var(--dur) var(--exo),border-color var(--dur) var(--exo)}
+  .tile:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:var(--shadow-lg)}
+  .tile::before,.tile::after{content:"";position:absolute;width:13px;height:13px;opacity:0;transition:opacity var(--dur) var(--exo)}
+  .tile::before{left:9px;top:9px;border-top:2px solid var(--accent);border-left:2px solid var(--accent)}
+  .tile::after{right:9px;bottom:9px;border-bottom:2px solid var(--accent);border-right:2px solid var(--accent)}
+  .tile:hover::before,.tile:hover::after{opacity:1}
+  .ministar{width:100%;aspect-ratio:1/.82;display:block;margin-bottom:10px}
+  .nm{font-family:var(--ff-h);font-weight:800;font-size:19px;letter-spacing:-.01em;line-height:1.12}
+  .nm b{color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:11px 0 14px}
+  .chip{font-family:var(--ff-b);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border:1px solid var(--border);color:var(--muted);white-space:nowrap}
+  .go{font-family:var(--ff-b);font-size:11.5px;letter-spacing:.03em;color:var(--accent);border-top:1px solid var(--border);padding-top:13px;display:flex;justify-content:space-between;align-items:center}
+  .go .arr{transition:transform var(--dur) var(--exo)}
+  .tile:hover .go .arr{transform:translateX(4px)}
+  footer{margin-top:56px;font-family:var(--ff-b);font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding-top:18px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="wm">Brand OS<b>.</b></div>
+      <div class="sub">Each client's strategy as a Focus Star. Open one to read its full Brand OS.</div>
+    </header>
+    <div class="tiles" id="tiles"></div>
+    <footer>Brand Therapy</footer>
+  </div>
+<script>
+/* Published brands only. Public facts (name, center word, spectrum); each links to its public Brand OS.
+   Links are root-relative, so they resolve on whatever domain serves this page. */
+const BRANDS=[
+  {slug:"fp", name:"Florian P. Consulting", center:"Curiosity", spectrum:5},
+  {slug:"cannabis-chamber", name:"The Cannabis Chamber of Commerce", center:"Standards", spectrum:5},
+  {slug:"kc-santana", name:"KC Santana", center:"No Excuses", spectrum:5},
+];
+const STEP=72, STAR_R=278, STAR_INNER=278*0.38, NODE_R=300;
+const pt=(a,r)=>{const rad=(a-90)*Math.PI/180;return{x:Math.cos(rad)*r,y:Math.sin(rad)*r};};
+function miniStar(){
+  const W=240,H=W*0.82,cx=W/2,cy=H/2+2,scale=(Math.min(cx,cy)*0.60)/STAR_R;
+  let poly=[];
+  for(let i=0;i<5;i++){const o=pt(i*STEP,STAR_R*scale),v=pt(i*STEP+36,STAR_INNER*scale);poly.push(`${(cx+o.x).toFixed(1)},${(cy+o.y).toFixed(1)}`,`${(cx+v.x).toFixed(1)},${(cy+v.y).toFixed(1)}`);}
+  let s=`<svg class="ministar" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">`;
+  s+=`<polygon points="${poly.join(' ')}" fill="none" stroke="var(--border)" stroke-width="1"/>`;
+  s+=`<circle cx="${cx}" cy="${cy}" r="${(STAR_R*scale*0.14).toFixed(1)}" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.5"/>`;
+  for(let i=0;i<5;i++){const N=pt(i*STEP,NODE_R*scale*0.92),nx=cx+N.x,ny=cy+N.y;
+    s+=`<circle cx="${nx.toFixed(1)}" cy="${ny.toFixed(1)}" r="11" fill="none" stroke="var(--accent)" stroke-width="2.5"/>`;
+    s+=`<circle cx="${nx.toFixed(1)}" cy="${ny.toFixed(1)}" r="4.5" fill="var(--white)" stroke="var(--accent)" stroke-width="1.2"/>`;}
+  s+=`</svg>`;return s;
+}
+document.getElementById('tiles').innerHTML=BRANDS.map(b=>{
+  const period=b.name.endsWith('.')?'':'<b>.</b>';
+  return `<a class="tile" href="/${b.slug}/">
+    ${miniStar()}
+    <div class="nm">${b.name}${period}</div>
+    <div class="chips"><span class="chip">${b.center}</span><span class="chip">Spectrum ${b.spectrum}</span></div>
+    <div class="go"><span>Open Brand OS</span><span class="arr">&#8594;</span></div>
+  </a>`;
+}).join('');
+</script>
+</body>
+</html>
