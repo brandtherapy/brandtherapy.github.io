@@ -12,8 +12,8 @@
   --muted: #8888A0;
   --border: #E5E7EB;
   --border-soft: #F0F0F5;
-  --ff-h: 'Bricolage Grotesque', system-ui, sans-serif;
-  --ff-b: 'Poppins', system-ui, sans-serif;
+  --ff-h: system-ui, sans-serif;
+  --ff-b: system-ui, sans-serif;
 
   --section-pad: clamp(80px, 10vw, 140px);
   --container: 1200px;

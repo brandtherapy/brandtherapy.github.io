@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Route day-to-day brand tasks to the smallest useful context pack.",
+  "operating_principle": "The user should not choose Brand OS pages. The agent classifies the request, loads the compact core, adds only matching Section C/D slices, generates, then runs review gates.",
+  "context_budget": {
+    "max_application_pages": 2,
+    "max_channels": 2,
+    "max_training_examples": 5,
+    "ask_clarifying_question_only_if": "The output channel or audience materially changes the answer and cannot be inferred from the request."
+  },
+  "always_load": [
+    "brand",
+    "source.bundle_hash",
+    "guardrails",
+    "ai_first_generation_thread",
+    "identity.colors",
+    "identity.typography",
+    "identity.creative_direction.slider_signals",
+    "directions.options[].slider_signals",
+    "identity.voice"
+  ],
+  "conditional_load": [
+    "strategy.edges filtered by matched channel source_anchors",
+    "application.pages matched by requested medium",
+    "channel_rules.channels matched by requested distribution surface",
+    "personal_branding when the request touches founder role, leadership presence, bio/about copy, portraits, speaker profile, or Founder Spectrum",
+    "3-5 most relevant training_examples from matched application pages"
+  ],
+  "never_load_by_default": [
+    "unmatched application pages",
+    "all examples at once",
+    "stale generated HTML as source of truth",
+    "personal-branding material unless the request explicitly belongs to that section"
+  ],
+  "route_order": [
+    "match composed route when a campaign/task pattern is explicit",
+    "match personal-branding route when the request concerns founder or leadership presence",
+    "match medium route from requested artifact type",
+    "match channel route from distribution surface",
+    "merge context loads and remove duplicates",
+    "generate from rules and examples",
+    "run review gates before presenting output"
+  ],
+  "routes": {
+    "composed": [],
+    "mediums": [],
+    "channels": [],
+    "personal_branding": []
+  },
+  "review_gates": [
+    "strategy fit: output serves the matched Focus Star anchors",
+    "voice fit: output follows identity voice and channel voice dial",
+    "medium fit: output follows visual_recipe, copy_recipe, and ai_rules",
+    "rules-out check: remove anything forbidden by matched channel rules_out",
+    "proof check: claims use approved proof only or are marked for human review",
+    "founder-role check: use the selected Founder Spectrum position before writing any personal-branding guidance",
+    "source hierarchy check: do not let the generated output rewrite Section A or B"
+  ]
+}

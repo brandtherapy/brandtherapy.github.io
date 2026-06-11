@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Likeness · KC Brand OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #4E6B46;
+    --accent-glow: rgba(78, 107, 70, 0.30);
+    --accent-soft: rgba(78, 107, 70, 0.10);
+    --text: #1B1712;
+    --muted: #6F6354;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #DCC9A4;
+    --light: #E8D5AE;
+    --white: #F1E2C7;
+    --dark: #1B1712;
+    --dark-surface: #241E16;
+    --ff-h: "Barlow Condensed", system-ui, sans-serif;
+    --ff-b: "Barlow", system-ui, sans-serif;
+    --ff-accent: "IBM Plex Mono", ui-monospace, monospace;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">KC</div>
+    <div class="meta">Brand OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="../strategy/index.html">Focus Star</a>
+<a href="../strategy/product.html">Product</a>
+<a href="../strategy/people.html">People</a>
+<a href="../strategy/purpose.html">Purpose</a>
+<a href="../strategy/promise.html">Promise</a>
+<a href="../strategy/personality.html">Personality</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="index.html">Run the Standard</a>
+<a href="look-and-feel.html">Look &amp; Feel</a>
+<a href="voice.html">Voice</a>
+<a href="signature.html">Signature</a>
+<a class="active" href="likeness.html">Likeness</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Identity</strong></div>
+    <div class="row"><span>Use</span><strong>Visual + voice</strong></div>
+    <div class="row"><span>Center</span><strong>No Excuses</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+<style>
+.lk-section { margin: 0 0 88px; }
+.lk-section-head { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; padding-top: 20px; border-top: 1px solid var(--text); margin-bottom: 36px; }
+.lk-section-num { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--accent); padding-top: 12px; }
+.lk-section-sub { font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.lk-section h2 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.02; letter-spacing: -0.025em; color: var(--text); margin: 0 0 10px; }
+.lk-section h2 .dot { color: var(--accent); }
+.lk-section-desc { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 680px; margin: 0; }
+.lk-board { margin: 0; border: 1px solid var(--border); background: var(--white); }
+.lk-board img { display: block; width: 100%; height: auto; }
+.lk-board figcaption { font-family: var(--ff-b); font-size: 12px; line-height: 1.6; color: var(--muted); padding: 14px 18px; border-top: 1px solid var(--border); }
+.lk-desc { font-family: var(--ff-b); font-size: 15px; line-height: 1.75; color: var(--text); max-width: 760px; margin: 28px 0 0; }
+.lk-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+.lk-agent-block { border: 1px solid var(--text); background: var(--white); padding: 28px 24px; }
+.lk-agent-block h3 { font-family: var(--ff-h); font-weight: 800; font-size: 20px; color: var(--text); margin: 0 0 12px; }
+.lk-agent-block p, .lk-agent-block li { font-family: var(--ff-b); font-size: 14px; line-height: 1.7; color: var(--text); }
+.lk-agent-block ol, .lk-agent-block ul { margin: 0 0 18px; padding-left: 20px; }
+.lk-prompt { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.7; color: var(--text); background: var(--light); border: 1px solid var(--border); padding: 18px 20px; white-space: pre-wrap; word-break: break-word; margin: 0 0 18px; }
+.lk-url-list { list-style: none; padding: 0; margin: 0 0 18px; }
+.lk-url-list li { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; line-height: 1.5; padding: 10px 12px; border: 1px solid var(--border); border-bottom: 0; word-break: break-all; }
+.lk-url-list li:last-child { border-bottom: 1px solid var(--border); }
+.lk-url-list a { color: var(--text); text-decoration: none; }
+.lk-url-list a:hover { color: var(--accent); }
+.lk-url-role { display: inline-block; font-family: var(--ff-b); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-right: 10px; }
+.lk-rules { border: 1px solid var(--border); background: var(--white); padding: 24px; }
+.lk-rules li { font-family: var(--ff-b); font-size: 14px; line-height: 1.7; color: var(--text); }
+</style>
+
+  <span class="eyebrow" style="font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);">Section B · Brand Identity · Likeness</span>
+  <h1 style="font-family:var(--ff-h);font-weight:800;font-size:clamp(56px,8vw,112px);line-height:0.92;letter-spacing:-0.04em;color:var(--text);margin:16px 0 24px;">KC Santana likeness</h1>
+  <p style="font-family:var(--ff-b);font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:var(--text);max-width:640px;margin:0 0 64px;">Canonical face references for image generation. Any model, any tool: load these references first, then generate.</p>
+
+  <section class="lk-section" aria-labelledby="lk-1">
+    <div class="lk-section-head">
+      <div class="lk-section-num">01</div>
+      <div>
+        <div class="lk-section-sub">Face anchor</div>
+        <h2 id="lk-1">Canonical face</h2>
+        <p class="lk-section-desc">The identity sheet is the source of truth for KC Santana's face. Every generated image is checked against it before it ships.</p>
+      </div>
+    </div>
+    <figure class="lk-board"><img src="../images/likeness/face-sheet.png" alt="Canonical face identity sheet: eight studies of the same woman covering front, three quarter, profile, smile, and ponytail views." loading="lazy"><figcaption>Canonical face identity sheet: eight studies of the same woman covering front, three quarter, profile, smile, and ponytail views. · KC has a long narrow oval face with a high forehead, prominent high cheekbones over lean cheeks, a defined narrow jawline and a softly pointed chin. Slim nose, almond shaped deep brown eyes, thick dark arched brows with heavy dark eyeliner. Wide bright smile with prominent straight upper teeth. Warm olive tan skin. Very long center parted dark brown hair with caramel blonde balayage in loose waves.</figcaption></figure><p class="lk-desc">KC has a long narrow oval face with a high forehead, prominent high cheekbones over lean cheeks, a defined narrow jawline and a softly pointed chin. Slim nose, almond shaped deep brown eyes, thick dark arched brows with heavy dark eyeliner. Wide bright smile with prominent straight upper teeth. Warm olive tan skin. Very long center parted dark brown hair with caramel blonde balayage in loose waves.</p>
+  </section>
+  
+  <section class="lk-section" aria-labelledby="lk-2">
+    <div class="lk-section-head">
+      <div class="lk-section-num">02</div>
+      <div>
+        <div class="lk-section-sub">Outfit turnarounds</div>
+        <h2 id="lk-2">One outfit, four angles</h2>
+        <p class="lk-section-desc">Each sheet holds a single outfit rotated through front, three quarter, profile, and back views. Use one sheet per scene for outfit and full-body consistency, or as rotation frames for animation.</p>
+      </div>
+    </div>
+    <div class="lk-grid"><figure class="lk-board"><img src="../images/likeness/turnaround-training.png" alt="Training set" loading="lazy"><figcaption>Training set · Black training set with high ponytail. Front, three quarter, profile, and back views of one outfit for rotation and animation frames.</figcaption></figure><figure class="lk-board"><img src="../images/likeness/turnaround-trail.png" alt="Trail run" loading="lazy"><figcaption>Trail run · Olive trail tank, black shorts, trail shoes. Front, three quarter, profile, and back views of one outfit.</figcaption></figure><figure class="lk-board"><img src="../images/likeness/turnaround-lifting.png" alt="Lifting" loading="lazy"><figcaption>Lifting · Black cropped tee, grey joggers, high bun. Front, three quarter, profile, and back views of one outfit.</figcaption></figure><figure class="lk-board"><img src="../images/likeness/turnaround-street.png" alt="Street" loading="lazy"><figcaption>Street · White tee, blue jeans, white sneakers, hair down. Front, three quarter, profile, and back views of one outfit.</figcaption></figure></div>
+  </section>
+  <section class="lk-section" aria-labelledby="lk-3">
+    <div class="lk-section-head">
+      <div class="lk-section-num">03</div>
+      <div>
+        <div class="lk-section-sub">For AI agents</div>
+        <h2 id="lk-3">Generate with this face</h2>
+        <p class="lk-section-desc">Instructions for any LLM or image model asked to put KC Santana in a new scene.</p>
+      </div>
+    </div>
+    <div class="lk-agent-block">
+      <h3>How to use these references</h3>
+      <ol>
+        <li>Download the face anchor sheet below and attach it to the image generation request as a reference image.</li>
+        <li>If the scene needs a specific outfit or a full-body pose, attach the matching turnaround sheet as a second reference.</li>
+        <li>Start the image prompt with the likeness preamble, then describe the scene.</li>
+        <li>Compare the generated face against the anchor sheet before using the result.</li>
+      </ol>
+      <h3>Likeness preamble</h3>
+      <pre class="lk-prompt">The attached images are reference photos of the real woman KC Santana. Generate the requested scene with this exact woman. Copy her facial identity precisely from the references: face shape, eyes, brows, eyeliner, nose, lips, smile, skin tone, and her very long dark brown hair with caramel blonde balayage. Do not invent a different woman and do not beautify, slim, or otherwise change her features.</pre>
+      <h3>Reference files</h3>
+      <ul class="lk-url-list">
+        <li><span class="lk-url-role">face-anchor</span><a href="https://brandtherapy.florianp.com/kc-santana/images/likeness/face-sheet.png">https://brandtherapy.florianp.com/kc-santana/images/likeness/face-sheet.png</a></li><li><span class="lk-url-role">turnaround</span><a href="https://brandtherapy.florianp.com/kc-santana/images/likeness/turnaround-training.png">https://brandtherapy.florianp.com/kc-santana/images/likeness/turnaround-training.png</a></li><li><span class="lk-url-role">turnaround</span><a href="https://brandtherapy.florianp.com/kc-santana/images/likeness/turnaround-trail.png">https://brandtherapy.florianp.com/kc-santana/images/likeness/turnaround-trail.png</a></li><li><span class="lk-url-role">turnaround</span><a href="https://brandtherapy.florianp.com/kc-santana/images/likeness/turnaround-lifting.png">https://brandtherapy.florianp.com/kc-santana/images/likeness/turnaround-lifting.png</a></li><li><span class="lk-url-role">turnaround</span><a href="https://brandtherapy.florianp.com/kc-santana/images/likeness/turnaround-street.png">https://brandtherapy.florianp.com/kc-santana/images/likeness/turnaround-street.png</a></li><li><span class="lk-url-role">manifest</span><a href="https://brandtherapy.florianp.com/kc-santana/likeness.json">https://brandtherapy.florianp.com/kc-santana/likeness.json</a></li>
+      </ul>
+    </div>
+    <div class="lk-rules"><ul><li>Always attach the face sheet as a reference image before generating. Text descriptions alone drift.</li><li>Add the matching outfit turnaround as a second reference when the scene needs a specific outfit or a full body pose.</li><li>Check the generated face against the face sheet before using the result. A rounder or fuller face than the sheet is a fail.</li><li>Likeness references are for KC Santana brand work. Identity rules from this Brand OS still govern styling, color, and context.</li></ul></div>
+  </section>
+
+
+  <div class="footer-nav">
+    <span>Section B · Likeness · Brand Identity</span>
+    <span><a href="../strategy/index.html">Brand Strategy →</a></span>
+  </div>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        KC Santana (kc-santana)
+  Version:      1.0.0
+  Built at:     2026-06-11T20:15:38+00:00
+  Git SHA:      84f399357abf87128f6a478b5c0563234b913e59
+  Bundle hash:  sha256:2f33af850bbfa578eb2216f5d131da4b7c9f7b969c887072d7a4dd4d22cec834
+  Source:       brand-os/brands/kc-santana/DIRECTIONS.md + STRATEGY.md + IDENTITY.md
+-->
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Look & Feel · KC Brand OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #4E6B46;
+    --accent-glow: rgba(78, 107, 70, 0.30);
+    --accent-soft: rgba(78, 107, 70, 0.10);
+    --text: #1B1712;
+    --muted: #6F6354;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #DCC9A4;
+    --light: #E8D5AE;
+    --white: #F1E2C7;
+    --dark: #1B1712;
+    --dark-surface: #241E16;
+    --ff-h: "Barlow Condensed", system-ui, sans-serif;
+    --ff-b: "Barlow", system-ui, sans-serif;
+    --ff-accent: "IBM Plex Mono", ui-monospace, monospace;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">KC</div>
+    <div class="meta">Brand OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="../strategy/index.html">Focus Star</a>
+<a href="../strategy/product.html">Product</a>
+<a href="../strategy/people.html">People</a>
+<a href="../strategy/purpose.html">Purpose</a>
+<a href="../strategy/promise.html">Promise</a>
+<a href="../strategy/personality.html">Personality</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="index.html">Run the Standard</a>
+<a class="active" href="look-and-feel.html">Look &amp; Feel</a>
+<a href="voice.html">Voice</a>
+<a href="signature.html">Signature</a>
+<a href="likeness.html">Likeness</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Identity</strong></div>
+    <div class="row"><span>Use</span><strong>Visual + voice</strong></div>
+    <div class="row"><span>Center</span><strong>No Excuses</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+<style>
+.lf-section { margin: 0 0 96px; }
+.lf-section-head { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; padding-top: 20px; border-top: 1px solid var(--text); margin-bottom: 40px; }
+.lf-section-num { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--accent); padding-top: 12px; }
+.lf-section-head h2 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.02; letter-spacing: -0.025em; color: var(--text); margin: 0 0 8px; }
+.lf-section-head h2 .dot { color: var(--accent); }
+.lf-section-sub { font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.lf-section-desc { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 640px; margin: 0; }
+.lf-palette-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 0; border: 1px solid var(--border); margin: 32px 0 0; }
+@media (max-width: 700px) { .lf-palette-grid { grid-template-columns: repeat(4, 1fr); } }
+.lf-swatch { aspect-ratio: 1; position: relative; display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; border-right: 1px solid var(--border); }
+.lf-swatch:last-child { border-right: none; }
+.lf-swatch-label { font-family: var(--ff-b); font-size: 9px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 4px; }
+.lf-swatch-hex { font-family: var(--ff-b); font-size: 11px; font-weight: 500; letter-spacing: 0.04em; }
+.lf-swatch.dark-text .lf-swatch-label, .lf-swatch.dark-text .lf-swatch-hex { color: var(--text); }
+.lf-swatch.light-text .lf-swatch-label, .lf-swatch.light-text .lf-swatch-hex { color: var(--white); }
+.lf-rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--border); border-left: 1px solid var(--border); margin: 32px 0 48px; }
+.lf-rule-cell { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 32px 28px; background: var(--white); }
+.lf-rule-cell.dont { background: var(--light); }
+.lf-rule-cell .lf-rule-kind { font-family: var(--ff-b); font-size: 10px; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 12px; }
+.lf-rule-cell.dont .lf-rule-kind { color: var(--text); }
+.lf-rule-cell p { font-family: var(--ff-b); font-size: 14px; color: var(--text); line-height: 1.6; margin: 0; }
+@media (max-width: 720px) { .lf-rules-grid { grid-template-columns: 1fr; } }
+.lf-photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 32px 0 48px; }
+@media (max-width: 720px) { .lf-photo-grid { grid-template-columns: 1fr; } }
+.lf-photo-card { background: var(--white); border: 1px solid var(--border); padding: 24px; }
+.lf-photo-card h3 { font-family: var(--ff-h); font-weight: 800; font-size: 20px; letter-spacing: -0.01em; color: var(--text); margin: 0 0 12px; }
+.lf-photo-card p { font-family: var(--ff-b); font-size: 14px; line-height: 1.6; color: var(--text); margin: 0 0 12px; }
+.lf-anti-list { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--border); }
+.lf-anti-item { padding: 20px 0; border-bottom: 1px solid var(--border); }
+.lf-anti-item h3 { font-family: var(--ff-h); font-weight: 800; font-size: 18px; letter-spacing: -0.01em; color: var(--text); margin: 0 0 6px; }
+.lf-anti-item p { font-family: var(--ff-b); font-size: 14px; line-height: 1.6; color: var(--muted); margin: 0; }
+</style>
+  <span class="eyebrow" style="font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);">Section B · Brand Identity · Look &amp; Feel</span>
+  <h1 style="font-family:var(--ff-h);font-weight:800;font-size:clamp(56px,8vw,112px);line-height:0.92;letter-spacing:-0.04em;color:var(--text);margin:16px 0 24px;">Look &amp; Feel</h1>
+  <p style="font-family:var(--ff-b);font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:var(--text);max-width:640px;margin:0 0 64px;">The operational layer of the visual identity. Color, typography, layout, photography, and the categories the brand refuses to look like.</p>
+
+  
+  <section class="lf-section" aria-labelledby="lf-1">
+    <div class="lf-section-head">
+      <div class="lf-section-num">01</div>
+      <div>
+        <div class="lf-section-sub">Color system</div>
+        <h2 id="lf-1">Palette</h2>
+        <p class="lf-section-desc">The Run the Standard palette. Sun Bone is the daylight field and default canvas. Trail Black carries type and authority. Performance Green marks functional cannabis and recovery. Heat Clay marks effort and SoCal terrain. Water Steel carries rational overlays and recovery cues.</p>
+      </div>
+    </div>
+    <div class="lf-palette-grid"><div class="lf-swatch dark-text" style="background:#F1E2C7;" role="img" aria-label="Sun Bone color, hex #F1E2C7"><div class="lf-swatch-label">Sun Bone</div><div class="lf-swatch-hex">#F1E2C7</div></div><div class="lf-swatch light-text" style="background:#1B1712;" role="img" aria-label="Trail Black color, hex #1B1712"><div class="lf-swatch-label">Trail Black</div><div class="lf-swatch-hex">#1B1712</div></div><div class="lf-swatch light-text" style="background:#4E6B46;" role="img" aria-label="Performance Green color, hex #4E6B46"><div class="lf-swatch-label">Performance Green</div><div class="lf-swatch-hex">#4E6B46</div></div><div class="lf-swatch light-text" style="background:#B55336;" role="img" aria-label="Heat Clay color, hex #B55336"><div class="lf-swatch-label">Heat Clay</div><div class="lf-swatch-hex">#B55336</div></div><div class="lf-swatch light-text" style="background:#405C73;" role="img" aria-label="Water Steel color, hex #405C73"><div class="lf-swatch-label">Water Steel</div><div class="lf-swatch-hex">#405C73</div></div></div>
+  </section>
+
+  
+  <section class="lf-section" aria-labelledby="lf-2">
+    <div class="lf-section-head">
+      <div class="lf-section-num">02</div>
+      <div>
+        <div class="lf-section-sub">Type system</div>
+        <h2 id="lf-2">Typography</h2>
+        <p class="lf-section-desc">Cachet type system: Barlow Condensed carries editorial warmth and major brand headlines; Barlow carries navigation, body text, labels, forms, and practical service detail. The renderer must not fall back to FP typography.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border:1px solid var(--border);background:var(--white);">
+      <div style="padding:32px 36px;border-right:1px solid var(--border);">
+        <div style="font-family:var(--ff-b);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Editorial display</div>
+        <div style="font-family:var(--ff-h);font-weight:400;font-size:38px;letter-spacing:0;color:var(--text);margin-bottom:16px;line-height:1;">Barlow Condensed</div>
+        <p style="font-family:var(--ff-b);font-size:13px;color:var(--muted);line-height:1.6;margin:0;">Use: brand headlines, expressive lines, source-board phrases, footer promise, and warm high-touch moments.</p>
+      </div>
+      <div style="padding:32px 36px;border-right:1px solid var(--border);">
+        <div style="font-family:var(--ff-b);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Editorial echo</div>
+        <div style="font-family:var(--ff-accent);font-weight:400;font-size:32px;letter-spacing:0;color:var(--text);margin-bottom:16px;">IBM Plex Mono</div>
+        <p style="font-family:var(--ff-b);font-size:13px;color:var(--muted);line-height:1.6;margin:0;">Use: mixed-headline emphasis and large pull moments. Keep it elegant and spacious, not ornate.</p>
+      </div>
+      <div style="padding:32px 36px;">
+        <div style="font-family:var(--ff-b);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Functional sans</div>
+        <div style="font-family:var(--ff-b);font-weight:400;font-size:32px;letter-spacing:-0.01em;color:var(--text);margin-bottom:16px;">Barlow</div>
+        <p style="font-family:var(--ff-b);font-size:13px;color:var(--muted);line-height:1.6;margin:0;">Use: body text, form fields, small proof lines, and practical advisory copy. Keep it plain, legible, and human.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="lf-section" aria-labelledby="lf-3">
+    <div class="lf-section-head">
+      <div class="lf-section-num">03</div>
+      <div>
+        <div class="lf-section-sub">System · Rules</div>
+        <h2 id="lf-3">Do &amp; Don't</h2>
+        <p class="lf-section-desc">Non-negotiable. These rules exist to maintain visual coherence across every touchpoint.</p>
+      </div>
+    </div>
+    <div class="lf-rules-grid"><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Show training, recovery, and the functional stack in real SoCal daylight.</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Treat cannabis like equipment: measured, labeled, controlled.</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Use command language and proof: schedules, receipts, visible routine.</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Keep femininity strong: form, presence, capability.</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Weave the special-needs-mom layer through lifestyle content as lived proof.</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Keep surfaces warm-bone, sharp-edged, and rationally annotated.</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>No weed leaves as a primary mark, no smoke glamour, no 420 cues.</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>No beach-influencer softness, no spa wellness, no pastel therapy.</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>No pink Barbie, no cutesy empowerment, no sparkle.</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>No GLP-1 or weight-loss shortcut imagery, no scales, no before-after bodies.</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>No medical clinic language, no white coats, no pill bottles.</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>No sobby special-needs-mom lead stories, and never her son's face.</p></div></div>
+  </section>
+
+  
+  <section class="lf-section" aria-labelledby="lf-4">
+    <div class="lf-section-head">
+      <div class="lf-section-num">04</div>
+      <div>
+        <div class="lf-section-sub">Imagery · Photography</div>
+        <h2 id="lf-4">Photography</h2>
+        <p class="lf-section-desc">How real photos and AI-generated imagery should look.</p>
+      </div>
+    </div>
+    <div style="font-family:var(--ff-b);font-size:15px;line-height:1.7;color:var(--text);max-width:760px;"><p><strong>Image modes:</strong></p>
+<ul>
+<li><strong>KC as the standard:</strong> strong, present, unsentimental, camera-aware but never influencer-cute. She is the proof, photographed like an athlete, not a host.</li>
+<li><strong>Performance ritual:</strong> outdoor SoCal training: track, hills, trails, weights, sweat, water, grip, hard daylight.</li>
+<li><strong>Recovery ritual:</strong> the controlled stack: recovery table, magnesium, mushrooms, sun-grown cannabis as a measured object, stretching, breath.</li>
+<li><strong>High-standard room:</strong> wellness events, mastermind dinners, speaking and podcast tables: serious women, serious conversation, KC at the head of the room.</li>
+<li><strong>Evidence surfaces:</strong> checklists, schedules, weights, labeled jars, water, hard shadows: the receipts of discipline.</li>
+</ul>
+<p><strong>Treatment:</strong> hard light, true color, sharp focus, honest sweat. Crops are tight and geometric. Overlays come from the data-strip system, not from filters.</p>
+<p><strong>Forbidden imagery:</strong> weed leaves as the main mark, smoke clouds, joints as personality, tie-dye, peace signs, munchies; pill bottles, white coats, clinical pharmacy; scales, before-after bodies, miracle weight-loss cues; hearts, sparkles, princess pastels, glitter; soft pastel therapy wellness; her son's face.</p></div>
+  </section>
+
+  
+  <section class="lf-section" aria-labelledby="lf-5">
+    <div class="lf-section-head">
+      <div class="lf-section-num">05</div>
+      <div>
+        <div class="lf-section-sub">Categories the brand refuses</div>
+        <h2 id="lf-5">Anti-references</h2>
+        <p class="lf-section-desc">What this brand is visually and categorically NOT, framed as anti-targets for AI image generation, layout work, and brand positioning.</p>
+      </div>
+    </div>
+    <div class="lf-anti-list"><div class="lf-anti-item"><h3>Stoner lifestyle brand</h3><p>Couch, smoke, munchies, basement light. KC's cannabis is sun-grown, measured, and athletic. The aesthetic of laziness is the opposite of the promise.</p></div><div class="lf-anti-item"><h3>Beach influencer</h3><p>Golden-hour softness, bikini-lifestyle ease, effortless living. KC's SoCal is terrain and training, not vibes.</p></div><div class="lf-anti-item"><h3>Spa wellness retreat</h3><p>Calm, candles, eucalyptus, whispered self-care. This brand demands effort; it does not soothe people out of it.</p></div><div class="lf-anti-item"><h3>Pharma-glossy wellness</h3><p>Clinical white, pill-bottle promises, medicalized shortcuts. KC sells behavior, not prescriptions.</p></div><div class="lf-anti-item"><h3>Pink empowerment brand</h3><p>Barbie pink, glitter, yass-queen energy. Femininity here is strength and command, not cuteness.</p></div><div class="lf-anti-item"><h3>GLP-1 era marketing</h3><p>Shortcut bodies, before-after panels, effortless transformation. The entire brand exists to refuse this.</p></div></div>
+  </section>
+
+
+
+  <div class="footer-nav">
+    <span>Section B · Look & Feel · Brand Identity</span>
+    <span><a href="voice.html">Voice →</a></span>
+  </div>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        KC Santana (kc-santana)
+  Version:      1.0.0
+  Built at:     2026-06-11T20:15:38+00:00
+  Git SHA:      84f399357abf87128f6a478b5c0563234b913e59
+  Bundle hash:  sha256:2f33af850bbfa578eb2216f5d131da4b7c9f7b969c887072d7a4dd4d22cec834
+  Source:       brand-os/brands/kc-santana/DIRECTIONS.md + STRATEGY.md + IDENTITY.md
+-->
+</body>
+</html>

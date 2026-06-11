@@ -4,19 +4,19 @@
     "shortName": "KC",
     "tagline": "Discipline-first women's health, fitness, and thought leadership",
     "description": "Discipline-first women's health, fitness, and thought leadership",
-    "accentColor": "#5A5CF9",
-    "inkColor": "#1A1A2E"
+    "accentColor": "#4E6B46",
+    "inkColor": "#1B1712"
   },
   "visual": {
     "darkMode": false,
     "fonts": {
-      "heading": "Bricolage Grotesque",
-      "body": "Poppins"
+      "heading": "Barlow Condensed",
+      "body": "Barlow"
     },
-    "background": "#FFFFFF",
-    "dialBackground": "#FFFFFF",
+    "background": "#F1E2C7",
+    "dialBackground": "#F1E2C7",
     "bgMode": "unified",
-    "hideTitleDot": false,
+    "hideTitleDot": true,
     "titleTransform": "uppercase",
     "titleWeight": 800
   },
@@ -547,5 +547,6 @@
         }
       }
     }
-  ]
+  ],
+  "defaultTab": "case"
 }

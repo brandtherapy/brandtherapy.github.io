@@ -1,0 +1,1757 @@
+{
+  "schema_version": "1.0.0",
+  "brand": {
+    "slug": "kc-santana",
+    "name": "KC Santana",
+    "short": "KC",
+    "version": "1.0.0",
+    "status": "approved"
+  },
+  "source": {
+    "source_slug": "kc-santana",
+    "build_timestamp": "2026-06-11T20:15:38+00:00",
+    "git_sha": "84f399357abf87128f6a478b5c0563234b913e59",
+    "bundle_hash": "sha256:2f33af850bbfa578eb2216f5d131da4b7c9f7b969c887072d7a4dd4d22cec834",
+    "source_hashes": {
+      "STRATEGY.md": "sha256:eb0061a3dbe8a402bc7f4de3957ef7fc1999583ff26c7dc2b360842524df036a",
+      "IDENTITY.md": "sha256:b070f67611cee931f0a881dacd8304c1ad4ae70b11cf814751e31126b2ded98a",
+      "DIRECTIONS.md": "sha256:07a6abe40443873829815297ac2a8a2a34372df105ab5bc18e8c6191c7ae9e52",
+      "references/signature-data-strip.md": "sha256:7f8902d578c14980be676bb63d37a75842c2ea64ca14968a807347e95efe90fd",
+      "references/source-map.md": "sha256:aa409f8ca56549806bf9117348ca51bd1e80773c1c1a95781de134fea2c4ee11",
+      "images_manifest": "sha256:5d30ed00a2d1a016a126a4fd42cc985aa480359143d1d807f95b0dcc8936e560"
+    },
+    "source_order": [
+      "STRATEGY.md",
+      "IDENTITY.md",
+      "DIRECTIONS.md"
+    ],
+    "generated_outputs_are_downstream": true,
+    "output_bundle": {
+      "lock": "brand.lock.json",
+      "source_files": {
+        "STRATEGY.md": "source/STRATEGY.md",
+        "IDENTITY.md": "source/IDENTITY.md",
+        "DIRECTIONS.md": "source/DIRECTIONS.md"
+      },
+      "references": {
+        "references/signature-data-strip.md": "source/references/signature-data-strip.md",
+        "references/source-map.md": "source/references/source-map.md"
+      },
+      "application_references": {},
+      "reference_asset_roots": {},
+      "founder_spectrum_visual": {}
+    }
+  },
+  "guardrails": {
+    "source_paths": {
+      "llm_rules": "shared/references/llm-rules.md",
+      "anti_patterns": "shared/references/anti-patterns.md"
+    },
+    "llm_rules": "# Universal AI Guardrails\n\nThese rules apply to every brand in this workspace. `build.py` concatenates this file into every brand's `output/ai-context.md` at the end of the compile, so any AI agent loading a brand's context inherits these rules.\n\nBrand-specific AI instructions (in each brand's `STRATEGY.md` per-P `AI instructions:` labels) take precedence when they conflict. When they don't conflict, both apply.\n\n## Punctuation\n\n- **No em-dashes (—) and no en-dashes (–).** Use ellipsis (...), colon, comma, or new sentence where an em-dash would go. Plain hyphen-minus (-) is fine in compound words and ranges.\n- **Ellipses freely** for rhythm, irony, breathing room. Three dots, no space before, one space after. Never four dots.\n- **No emojis in brand content** unless a brand's STRATEGY.md explicitly allows them.\n\n## Honesty\n\n- **No fabrication.** Do not invent client names, outcomes, metrics, testimonials, or empirical claims. If asked to write something that requires evidence and no evidence is in the brand source, write honestly about the gap instead of confabulating.\n- **No invented stats.** Phrases like \"73% of founders...\" or \"studies show...\" are forbidden unless the specific stat is documented in the brand source with a citation.\n- **No fabricated attributions.** Do not put words in named people's mouths. Quote testimonials only if they appear verbatim in the brand source.\n\n## Openers and connectives\n\n- **No hollow affirmations.** Forbidden openers include: \"Great question!\", \"Certainly!\", \"I'd be happy to help with that.\", \"What a thoughtful prompt.\"\n- **No formal essay connectives.** Forbidden: \"however,\", \"as a result,\", \"in conclusion,\", \"it's worth noting,\", \"moreover,\", \"furthermore,\", \"consequently,\".\n- **No throat-clearing preambles.** Forbidden: \"In today's landscape...\", \"In an increasingly complex world...\", \"Now more than ever...\"\n\n## Methodology vs company\n\n- Methodology names are not company names. Refer to processes by their methodology name without personifying them as companies. Example: \"the Brand Therapy process\" not \"at Brand Therapy\" or \"the Brand Therapy team\".\n- This applies to any brand whose offer is a methodology rather than a productized service.\n\n## Voice posture\n\n- **Direct observation over encouragement.** Name what's happening before suggesting what should happen.\n- **Questions over assertions** where the brand voice permits. Let the reader answer instead of forcing a nod.\n- **Perspective shifts over lessons.** End paragraphs and posts on a shift in how the reader sees something, not on a takeaway or moral.\n\n## When in doubt\n\n- **Honest admissions.** When a brand-specific rule and a universal rule conflict, the brand-specific rule wins. Document the conflict in your response so it can be reviewed.\n- **Ask for evidence before claiming.** If a piece of copy makes a factual claim the brand source doesn't support, write the version without the claim. Do not invent a claim to fill the space.\n\n## Approval discipline\n\n- Outputs labeled \"approved\" must hash to the `bundle_hash` in the brand's `brand.lock.json`. If the agent detects drift between `brand.lock.json` and the current source files, halt and surface the discrepancy. Do not produce \"approved-brand\" content from unverified source.\n- AI suggestions for changes to a brand's STRATEGY.md or IDENTITY.md go in `working-folder/{brand}-suggested-changes.md`, never directly into `brands/{slug}/`. Florian merges manually after review.",
+    "anti_patterns": "# Anti-Patterns\n\nWhat AI must never do when producing content, copy, or design for any brand in this workspace. Use this as a checklist during review.\n\n## Copy anti-patterns\n\n- **Hollow affirmations.** \"You've got this!\", \"Show up daily!\", \"Trust the process.\" These read as motivational filler.\n- **Hustle-culture copy.** \"Stop overthinking and start doing.\" \"The journey of a thousand miles...\" \"Crush it.\"\n- **First-chair founder bios.** \"Meet [Founder Name].\" \"In their own words.\" \"A letter from me to you.\" Unless a brand's spectrum is explicitly 5 (founder IS the brand) AND the brand source explicitly permits first-chair framing, default to host/messenger framing.\n- **Trend-report essay voice.** \"As AI democratizes X, founders must Y.\" \"In an increasingly Z world...\" Abstract, defensive, devoid of specificity.\n- **Generic listicle openers.** \"In this article, we'll explore 5 strategies...\" \"Here are 7 things every founder should know.\"\n- **Joke-only lines.** A joke without a strategic point is decoration. If the line works without the brand thesis, cut the line.\n- **Fabricated empirical generalizations.** \"Most founders...\", \"Every CEO knows...\", \"Studies show...\", \"Research indicates...\" unless the specific claim is documented in brand source.\n- **Brand-as-company personification** when the brand is a methodology. \"At Brand Therapy, we...\" treats the methodology as an organization.\n\n## Voice anti-patterns\n\n- **Em-dashes (—) and en-dashes (–).** Banned across all brands. Use ellipsis, colon, comma, or period.\n- **Formal connectives.** \"However,\", \"As a result,\", \"Moreover,\", \"Furthermore,\", \"Consequently,\", \"It's worth noting,\".\n- **Coaching-speak.** \"Unlock your potential.\", \"Reach the next level.\", \"Level up.\", \"10x your X.\".\n- **AI-generated thought-leadership voice.** Hedging-heavy, qualifier-stacked, opinion-less sentences. Compare: \"It is widely understood that brand strategy plays a critical role in...\" vs the direct alternative.\n\n## AI safety anti-patterns\n\n- **Embedded AI instructions in brand source.** Do not write `Ignore previous instructions.`, `System:`, `Assistant:`, or other model-directive language inside any brand source file (STRATEGY.md, IDENTITY.md, voice-exemplars.md, references). These create prompt injection vectors when the source is concatenated into ai-context.md. The build validator flags these patterns.\n- **AI-generated content treated as approved.** AI suggestions for brand changes do not become approved source by being written. They land in `working-folder/{brand}-suggested-changes.md` and only enter `brands/{slug}/` after Florian merges manually.\n- **Silent fabrication.** Filling gaps with invented stats, named clients, or empirical claims to make output feel more complete. Better to leave the gap visible.\n\n## Design anti-patterns\n\nThese apply unless a brand's IDENTITY.md explicitly opts in to a forbidden treatment:\n\n- Rounded pill buttons by default\n- Multiple accent colors\n- Glassmorphism / blurred glass panels as a primary visual concept\n- Prism / crystal / 3D refraction imagery\n- Selective-color B&W reveals as a brand signature\n- Polaroid photo treatments\n- Generic stock photography\n- Avatar-size photography in editorial contexts\n- Decorative motion for decoration's sake\n- Dark canvas as default unless a brand explicitly chooses dark-first\n\n## Brand-source anti-patterns\n\n- **Strategy copy living in HTML.** Section A pages (and any rendered output) are generated from STRATEGY.md + IDENTITY.md. Do not edit rendered HTML to change strategy — it gets overwritten on the next build, and the source remains wrong.\n- **Mixing approval states.** A brand's STRATEGY.md is either in a state where `brand.lock.json` validates or it is in a draft state. The `approval_status: approved` frontmatter is informational only; the real gate is `bundle_hash`.\n- **Cross-brand drift.** Universal rules (this file, `llm-rules.md`) apply to every brand. A brand-specific override in STRATEGY.md is fine when explicit. Silent drift between brands is not."
+  },
+  "ai_first_generation_thread": {
+    "goal": "Strategy input becomes a Focus Star contract, Section B sliders produce first-page directions, Section C governs examples, medium rules, and channel rules, and Section D governs personal branding when the Founder Spectrum requires it.",
+    "flow": [
+      "Section A / Strategy",
+      "Section B / Identity and creative direction",
+      "Section C / Brand Application",
+      "Section D / Personal Branding when the Founder Spectrum requires it"
+    ],
+    "rule": "Generated outputs are proposals until approved; source edits happen upstream and then rebuild."
+  },
+  "strategy": {
+    "center": {
+      "word": "No Excuses",
+      "definition": "No Excuses is the operating contract. It is not motivational filler. It means the brand refuses shortcuts, passive health, GLP-1-as-identity, lazy stoner stereotypes, and pretty wellness language that does not change behavior.\n\nEvery event, post, podcast, future product, speaking moment, and visual direction should answer the same question: does this make discipline feel inevitable?"
+    },
+    "edges": {
+      "p1": {
+        "title": "Product",
+        "name": "Thought leadership with proof",
+        "decision": "KC's current product is proof-led thought leadership delivered through wellness events, mastermind dinners, podcasting, content, and emerging speaking. She is a mentor and thought leader, not a coach and not an educator.",
+        "compass": "Follow the woman who lives the standard. Events, podcast, content, and speaking all point to one discipline-first life.",
+        "page_thesis": "The product is not a program yet. The product is KC's visible standard: a daily proof system that makes high-earning women stop outsourcing discipline.",
+        "rules_in": [
+          "Wellness events and mastermind dinners anchored in SoCal.",
+          "Intimate rooms of women who need the standard more than another self-care idea.",
+          "Podcast and content that make discipline visible.",
+          "Speaking as the natural extension of mentor and thought-leader authority.",
+          "Cannabis as one functional tool in the discipline stack.",
+          "Future products named only as future products."
+        ],
+        "rules_out": [
+          "Coaching package positioning.",
+          "Educator-first positioning.",
+          "Generic wellness content.",
+          "Cannabis SKU as the current center.",
+          "GLP-1 or shortcut framing.",
+          "Passive lifestyle inspiration."
+        ],
+        "tradeoffs": [
+          "More authority through lived proof, less scalable coaching language.",
+          "More demand on KC's visibility, less ability to hide behind a curriculum.",
+          "More directness and standard-setting, less comfort-first nurturing."
+        ],
+        "application": {
+          "strategy": "lead with thought leadership and lived proof before naming future products.",
+          "copy": "use command, standard, and proof language. Do not over-explain.",
+          "visuals": "show strength, discipline, event authority, and performance ritual.",
+          "sales": "invite women into rooms and conversations that raise the standard.",
+          "content": "make daily discipline, training, functional cannabis, and no-shortcut beliefs visible."
+        },
+        "proof_required": [
+          "Source line: wellness events are the way KC makes an impact and holds authority.",
+          "Source line: role is mentor / thought leader, not coach or educator.",
+          "Existing podcast proof.",
+          "Event history, event photos, or event plans if available.",
+          "Speaking proof when available."
+        ],
+        "ai_instructions": [
+          "Do not sell a coaching program unless source changes.",
+          "Do not invent event outcomes, audience size, podcast metrics, or product claims.",
+          "Keep future products clearly marked as future.",
+          "Position cannabis as part of the discipline stack, not the offer itself."
+        ]
+      },
+      "p2": {
+        "title": "People",
+        "name": "High-earning women who need the standard",
+        "decision": "KC serves high-earning, health-curious, undisciplined women in SoCal who know something has to change but do not know where to start. The primary persona is Alina.",
+        "compass": "Alina: 35, SoCal, good salary, health-conscious but undisciplined, holistic-leaning, and awkward around cannabis.",
+        "page_thesis": "KC is not speaking to women who need more information. She is speaking to women who need a standard they cannot negotiate with.",
+        "rules_in": [
+          "High-earning SoCal women.",
+          "Corporate, banking, Cedars-Sinai-nurse, and similar high-functioning archetypes.",
+          "Women who are health-curious and holistic-leaning.",
+          "Women who consume cannabis awkwardly or without a disciplined frame.",
+          "Special-needs moms as an identity layer, not the primary segment.",
+          "One bio line for mother of three when relevant."
+        ],
+        "rules_out": [
+          "Lazy stoner stereotypes.",
+          "GLP-1 or shortcut seekers.",
+          "Pink-Barbie feminine wellness.",
+          "Infantilized mom content.",
+          "Public use of her son's face.",
+          "Treating special-needs moms as the front of the brand."
+        ],
+        "tradeoffs": [
+          "More precision around Alina, less broad wellness appeal.",
+          "More standard-setting, less soothing.",
+          "More adult feminine power, less cute community language."
+        ],
+        "application": {
+          "strategy": "speak to women who can afford wellness but have not built discipline.",
+          "copy": "name the behavior gap without humiliating the woman.",
+          "visuals": "show capable, high-standard women in fitness, dinner, and performance spaces.",
+          "sales": "make the room feel selective through behavior, not status snobbery.",
+          "content": "connect discipline to cognitive longevity, hormonal health, physical health, and daily proof."
+        },
+        "proof_required": [
+          "Persona notes for Alina.",
+          "Geographic note: SoCal, not Inland Empire and not LA-only.",
+          "Source statement that special-needs moms are an identity layer only.",
+          "Approved bio direction before public use."
+        ],
+        "ai_instructions": [
+          "Keep Alina capable. The issue is undisciplined health behavior, not incompetence.",
+          "Do not make the brand mommy-first.",
+          "Do not use her son's image or turn special needs motherhood into a selling story.",
+          "Avoid pink, princess, cutesy, or therapy-soft femininity."
+        ]
+      },
+      "p3": {
+        "title": "Purpose",
+        "name": "Women's health through discipline",
+        "decision": "KC exists to help women reclaim cognitive longevity, hormonal health, physical health, and mental health through lifestyle discipline, weighted heavily toward fitness and discipline.",
+        "compass": "The point is not to change every woman. The point is to make the better way visible enough that excuses get harder to defend.",
+        "page_thesis": "KC's purpose is personal before it is public: she watched women close to her ignore the advice and arrive at diagnoses that might have been delayed or avoided. Her authority comes from living the standard herself: as a special-needs mother, she has to treat strength, longevity, and discipline as non-optional.",
+        "rules_in": [
+          "Cognitive longevity.",
+          "Hormonal and physical health.",
+          "Mental health as part of the discipline frame.",
+          "Fitness and lifestyle discipline as the dominant levers.",
+          "Close-to-home health wake-up calls, used carefully and without medical overclaiming.",
+          "Special-needs motherhood as the lived stake behind the standard, not the public selling story.",
+          "Awareness that there is a better way."
+        ],
+        "rules_out": [
+          "Medical claims.",
+          "Diagnosis prevention claims.",
+          "Weight-loss-before-after framing.",
+          "Soft wellness inspiration without discipline.",
+          "Fear tactics without behavior.",
+          "Clinical therapy or pharma imagery."
+        ],
+        "tradeoffs": [
+          "More direct health urgency, higher need for evidence discipline.",
+          "More anti-shortcut conviction, less appeal to women seeking easy solutions.",
+          "More personal stakes, less public oversharing."
+        ],
+        "application": {
+          "strategy": "make discipline the health intervention the brand can credibly own because KC lives the long-haul stakes herself.",
+          "copy": "connect health to behavior, not hacks.",
+          "visuals": "show training, recovery, routine, daylight, and controlled intensity.",
+          "sales": "frame events as authority-building rooms around standards and practice.",
+          "content": "make prevention language careful and source-backed."
+        },
+        "proof_required": [
+          "KC source quote: \"If I can do it, anybody else can. No more excuses.\"",
+          "KC source quote about making women aware there is a better way.",
+          "Any future medical, longevity, or hormonal-health claims need source evidence."
+        ],
+        "ai_instructions": [
+          "Do not make medical promises.",
+          "Do not claim KC prevents disease.",
+          "Do not use GLP-1 imagery, scales, before-after bodies, white coats, or pill bottles.",
+          "Keep the purpose practical and behavioral."
+        ]
+      },
+      "p4": {
+        "title": "Promise",
+        "name": "No Excuses",
+        "decision": "The brand promise is No Excuses. KC will not sell the shortcut. She will be the voice that makes Alina do the work.",
+        "compass": "No shortcuts. No GLP-1 identity. No passive wellness. No excuses.",
+        "page_thesis": "No Excuses is a refusal and an invitation. It says the body, the brain, the hormones, the training, the work, and the room all answer to the same standard.",
+        "rules_in": [
+          "Primary tagline: No Excuses.",
+          "Alternate lines: Earn it. Effort is the answer. Discipline doesn't lie. Show up. No exceptions.",
+          "Anti-GLP-1 and anti-shortcut as bright-line proof.",
+          "Anti-passive health.",
+          "Tough-love mentor voice."
+        ],
+        "rules_out": [
+          "Weight-loss promises.",
+          "Shaming bodies.",
+          "Generic hustle slogans.",
+          "Cute motivational posters.",
+          "Wellness-guru calm.",
+          "Any language that makes discipline sound optional."
+        ],
+        "tradeoffs": [
+          "More edge and conviction, less broad comfort.",
+          "More clear rejection of shortcuts, higher need not to shame bodies or medical choices.",
+          "More memorable promise, less room for soft brand ambiguity."
+        ],
+        "application": {
+          "strategy": "use No Excuses as the decision filter across products, content, events, and visuals.",
+          "copy": "short sentences, direct commands, hard contrast.",
+          "visuals": "geometric structure, discipline marks, training evidence, serious contrast.",
+          "sales": "make event participation feel like stepping into the standard.",
+          "content": "make the refusal visible without turning it into cruelty."
+        },
+        "proof_required": [
+          "KC source quote about refusing fat-loss drugs and putting in the work.",
+          "Approved tagline list.",
+          "Approved anti-persona list."
+        ],
+        "ai_instructions": [
+          "Do not soften No Excuses into generic empowerment.",
+          "Do not moralize medical choices beyond the approved anti-shortcut position.",
+          "Do not use body-shaming imagery or copy.",
+          "Keep the promise pointed at behavior and standards."
+        ]
+      },
+      "p5": {
+        "title": "Personality",
+        "name": "Disciplined badassness",
+        "decision": "KC's personality is disciplined badassness: Hero and Ruler tied for primary, Magician as transformation, and Cannabis Outlaw as the category edge. She is the special-needs mom of three, corporate woman, and cannabis wellness voice who still gives 100% when excuses would be understandable.",
+        "compass": "Badass willpower in a SoCal mom's voice: corporate-trained, cannabis-literate, mother of three, and still all-in.",
+        "page_thesis": "KC's difference is not that she talks about cannabis, fitness, motherhood, or corporate grit. It is that every layer proves the same thing: she has the willpower to do the work anyway.",
+        "rules_in": [
+          "Badass discipline, willpower, and 100% effort when excuses would be understandable.",
+          "Authoritative, bold, brave, determined, disruptive, empowering, fearless, honest.",
+          "Inspiring, knowledgeable, loyal, powerful, resilient, transformative, unconventional.",
+          "Serious, literal, geometric, rational, transparent.",
+          "Feminine through form, strength, command, and presence.",
+          "Healthy functional fitness cannabis: sun-grown, athlete-grade, pre-workout or post-recovery ritual."
+        ],
+        "rules_out": [
+          "Cheeky, enchanting, entertaining, magical.",
+          "Pink-Barbie feminine.",
+          "Stoner, party, couch-potato, tie-dye, peace-sign, munchies, basement lighting.",
+          "Pharma-glossy wellness.",
+          "Therapy-soft femininity.",
+          "Abstract, emotional, playful, mysterious, organic as dominant signals."
+        ],
+        "tradeoffs": [
+          "More commanding presence, less easy likeability.",
+          "More rational and literal direction, less dreamy wellness imagery.",
+          "More cannabis edge, higher need to avoid stoner and medical-victim tropes."
+        ],
+        "application": {
+          "strategy": "use cannabis to separate the category, not to lead the whole brand.",
+          "copy": "plainspoken, unsentimental, no fluff.",
+          "visuals": "geometry, hard contrast, real body discipline, event authority, controlled luxury.",
+          "sales": "make the room feel high-standard, not cute or mystical.",
+          "content": "let KC be the example before she becomes the explainer."
+        },
+        "proof_required": [
+          "Approved archetype mix.",
+          "Locked attribute list.",
+          "Slider source and anti-trope source.",
+          "Any likeness-based image use needs explicit reference review and approval."
+        ],
+        "ai_instructions": [
+          "Never make KC cute, mystical, soft, or stoner-coded.",
+          "Keep cannabis functional and athletic.",
+          "Express femininity through strength, form, body presence, and command.",
+          "Avoid generic wellness, generic gym, and generic cannabis imagery."
+        ]
+      }
+    }
+  },
+  "identity": {
+    "description": "Run the Standard: a SoCal performance identity where cannabis is part of a\ndisciplined outdoor fitness and recovery ritual. Sunlit, athletic, functional,\ncontrolled, alive. Sun Bone daylight field, Trail Black authority, Performance\nGreen as the functional cannabis and recovery cue, Heat Clay effort, Water\nSteel rational overlays. Training-label typography, performance data strips,\ningredient-stack layouts, sharp photo crops. Discipline is the aesthetic;\ncannabis is a tool in the stack, never the identity.\n",
+    "colors": {
+      "accent": "#4E6B46",
+      "accent_glow": "rgba(78, 107, 70, 0.30)",
+      "accent_soft": "rgba(78, 107, 70, 0.10)",
+      "text": "#1B1712",
+      "muted": "#6F6354",
+      "border": "#DCC9A4",
+      "light": "#E8D5AE",
+      "white": "#F1E2C7",
+      "dark": "#1B1712",
+      "dark_surface": "#241E16",
+      "sun_bone": "#F1E2C7",
+      "trail_black": "#1B1712",
+      "performance_green": "#4E6B46",
+      "heat_clay": "#B55336",
+      "water_steel": "#405C73"
+    },
+    "typography": {
+      "display": {
+        "family": "Barlow Condensed",
+        "fallback": "system-ui, sans-serif",
+        "weights": [
+          500,
+          600,
+          700,
+          800
+        ],
+        "default_weight": 700,
+        "letter_spacing": "-0.01em",
+        "line_height": 1.0
+      },
+      "body": {
+        "family": "Barlow",
+        "fallback": "system-ui, sans-serif",
+        "weights": [
+          400,
+          500,
+          600,
+          700
+        ],
+        "default_weight": 400,
+        "line_height": 1.6
+      },
+      "accent": {
+        "family": "IBM Plex Mono",
+        "fallback": "ui-monospace, monospace",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "default_weight": 500,
+        "line_height": 1.4
+      }
+    },
+    "creative_direction": {
+      "status": "approved",
+      "status_label": "APPROVED IDENTITY",
+      "approach_label": "Run the Standard, selected 2026-06-10",
+      "note": "Identity derived from the selected sun-grown-athlete direction. Client-facing name Run the Standard. Non-chosen directions are archived in DIRECTIONS.md as negative evidence and must not be presented as live identity.",
+      "brand_style_sliders": [
+        {
+          "axis": "Classic|Modern",
+          "position": 56,
+          "material": false
+        },
+        {
+          "axis": "Mature|Youthful",
+          "position": 70,
+          "material": true
+        },
+        {
+          "axis": "Feminine|Masculine",
+          "position": 25,
+          "material": true
+        },
+        {
+          "axis": "Playful|Serious",
+          "position": 84,
+          "material": true
+        },
+        {
+          "axis": "Economical|Luxurious",
+          "position": 66,
+          "material": true
+        },
+        {
+          "axis": "Abstract|Literal",
+          "position": 96,
+          "material": true
+        },
+        {
+          "axis": "Geometric|Organic",
+          "position": 18,
+          "material": true
+        },
+        {
+          "axis": "Calm|Energetic",
+          "position": 84,
+          "material": true
+        },
+        {
+          "axis": "Rational|Emotional",
+          "position": 8,
+          "material": true
+        },
+        {
+          "axis": "Mysterious|Transparent",
+          "position": 90,
+          "material": true
+        },
+        {
+          "axis": "Quiet|Talkative",
+          "position": 70,
+          "material": true
+        }
+      ],
+      "keywords": {
+        "active": [
+          "Serious",
+          "Literal",
+          "Geometric",
+          "Rational",
+          "Transparent"
+        ],
+        "inactive": []
+      },
+      "headline_keywords": [
+        "Serious",
+        "Literal",
+        "Geometric",
+        "Rational",
+        "Transparent"
+      ],
+      "anti_tropes": [
+        "stoner aesthetic",
+        "couch potato cannabis",
+        "hippie cannabis / tie-dye / munchies",
+        "recreational party cannabis",
+        "beach influencer softness",
+        "spa wellness calm",
+        "pharma-glossy wellness",
+        "pink Barbie / bubblegum girly",
+        "GLP-1 / weight-loss shortcut imagery",
+        "therapy-soft femininity",
+        "infantilized maternity / mommy-blogger pink"
+      ],
+      "moodboard": [
+        {
+          "filename": "generated-boards/sun-grown-athlete-board.png",
+          "label": "Run the Standard direction board"
+        },
+        {
+          "filename": "applications/social-post-discipline-stack.png",
+          "label": "Discipline stack post"
+        },
+        {
+          "filename": "applications/event-mastermind-outdoor.png",
+          "label": "Outdoor wellness event"
+        },
+        {
+          "filename": "applications/speaking-podcast-authority.png",
+          "label": "Performance-health speaking"
+        },
+        {
+          "filename": "applications/cannabis-tool-recovery-ritual.png",
+          "label": "Sun-grown recovery ritual"
+        },
+        {
+          "filename": "social-kit/carousel-cover-stack.png",
+          "label": "Social kit: the stack carousel"
+        },
+        {
+          "filename": "social-kit/ig-feed-training-log.png",
+          "label": "Social kit: training log feed"
+        }
+      ],
+      "slider_signals": {
+        "schema_version": "1.0.0",
+        "be_this": [
+          {
+            "word": "Serious",
+            "weight": 34,
+            "source": "axis Playful|Serious p=84"
+          },
+          {
+            "word": "Literal",
+            "weight": 46,
+            "source": "axis Abstract|Literal p=96"
+          },
+          {
+            "word": "Geometric",
+            "weight": 32,
+            "source": "axis Geometric|Organic p=18"
+          },
+          {
+            "word": "Rational",
+            "weight": 42,
+            "source": "axis Rational|Emotional p=8"
+          },
+          {
+            "word": "Transparent",
+            "weight": 40,
+            "source": "axis Mysterious|Transparent p=90"
+          },
+          {
+            "word": "Energetic",
+            "weight": 34,
+            "source": "axis Calm|Energetic p=84"
+          },
+          {
+            "word": "Feminine",
+            "weight": 25,
+            "source": "axis Feminine|Masculine p=25"
+          },
+          {
+            "word": "Talkative",
+            "weight": 20,
+            "source": "axis Quiet|Talkative p=70"
+          },
+          {
+            "word": "Youthful",
+            "weight": 20,
+            "source": "axis Mature|Youthful p=70"
+          },
+          {
+            "word": "Luxurious",
+            "weight": 16,
+            "source": "axis Economical|Luxurious p=66"
+          }
+        ],
+        "dont_be_this": [
+          {
+            "word": "Abstract",
+            "weight": -46,
+            "source": "axis Abstract|Literal p=96"
+          },
+          {
+            "word": "Emotional",
+            "weight": -42,
+            "source": "axis Rational|Emotional p=8"
+          },
+          {
+            "word": "Mysterious",
+            "weight": -40,
+            "source": "axis Mysterious|Transparent p=90"
+          },
+          {
+            "word": "Calm",
+            "weight": -34,
+            "source": "axis Calm|Energetic p=84"
+          },
+          {
+            "word": "Playful",
+            "weight": -34,
+            "source": "axis Playful|Serious p=84"
+          },
+          {
+            "word": "Organic",
+            "weight": -32,
+            "source": "axis Geometric|Organic p=18"
+          },
+          {
+            "word": "Masculine",
+            "weight": -25,
+            "source": "axis Feminine|Masculine p=25"
+          },
+          {
+            "word": "Mature",
+            "weight": -20,
+            "source": "axis Mature|Youthful p=70"
+          },
+          {
+            "word": "Quiet",
+            "weight": -20,
+            "source": "axis Quiet|Talkative p=70"
+          },
+          {
+            "word": "Economical",
+            "weight": -16,
+            "source": "axis Economical|Luxurious p=66"
+          }
+        ],
+        "ignore_axes": [
+          "Classic|Modern"
+        ],
+        "headline_keywords": [
+          "Serious",
+          "Literal",
+          "Geometric",
+          "Rational",
+          "Transparent"
+        ],
+        "anti_tropes": [
+          "stoner aesthetic",
+          "couch potato cannabis",
+          "hippie cannabis / tie-dye / munchies",
+          "recreational party cannabis",
+          "beach influencer softness",
+          "spa wellness calm",
+          "pharma-glossy wellness",
+          "pink Barbie / bubblegum girly",
+          "GLP-1 / weight-loss shortcut imagery",
+          "therapy-soft femininity",
+          "infantilized maternity / mommy-blogger pink"
+        ],
+        "force_active": [],
+        "force_inactive": [],
+        "warnings": []
+      }
+    },
+    "voice": "Voice is part of identity. The strategic decision about Personality lives in `STRATEGY.md`; the operational voice rules live here.\n\n### Principles\n\n- Rough-edged. Plainspoken. Unsentimental.\n- Tough-love and demanding, not nurturing.\n- Serious before playful. Rational before emotional. Transparent before mysterious. Literal before abstract.\n- Commanding without body shame. The target is behavior, never bodies.\n- Feminine through strength and presence, not cuteness.\n- Cannabis as discipline-stack tool, not a flag.\n\n### No-excuse language system\n\nKC is the product. Authority comes from thought leadership and example-setting, never from coaching packages or curriculum language. \"Run the standard\" means show up and do it: the copy shows KC doing the work and lets the example issue the command.\n\n- Lead with proof: the run happened, the stack is measured, the schedule is visible.\n- Short sentences. Direct commands. Hard contrast.\n- Refuse shortcuts by name when needed (GLP-1s, hacks, passive wellness), without moralizing at individual people.\n- Never soften the standard into generic empowerment or motivational poster language.\n\n### Special-needs-mom intertwine rule\n\nFrom the 2026-06-10 session: the special-needs-mom layer is woven organically through fitness and healthy-lifestyle content. It is lived context that raises the standard, never the story being sold.\n\n- Correct: training framed as \"free therapy for a special needs mom.\" Correct: bringing the kids to the marathon instead of skipping it.\n- It appears mid-content, as one thread of proof among many. It NEVER leads a piece, never becomes a sobby opening, and never asks for sympathy.\n- Her son's face is never used. The brand never becomes mommy-first.\n\n### On-voice examples\n\n- \"No shortcuts. Do the work.\"\n- \"The routine is not cute. That is why it works.\"\n- \"Cannabis belongs in the discipline stack, not on a basement couch.\"\n- \"If the body keeps receipts, stop acting surprised by the bill.\"\n- \"Show up. No exceptions.\"\n- \"Saturday long run. Free therapy for a special needs mom.\"\n- \"Race day. The kids came with me.\"\n\n### Off-voice examples\n\n- \"Yass queen, time to glow.\"\n- \"Your wellness journey starts with self-love.\"\n- \"Cannabis vibes for your soft era.\"\n- \"Unlock your best self with effortless transformation.\"\n- \"As a special needs mom, some days I just want to cry. Here's my story.\"\n\n### Banned characters\n\n- em-dash\n- en-dash\n\nPlain hyphen-minus is fine.\n\n### Banned phrases and tropes\n\n- Yass queen.\n- Soft era.\n- Weed girl.\n- Mommy wellness.\n- Namaste.\n- Shortcut body.\n- Miracle weight loss.\n- Stoner chic.\n- Cannabis goddess.",
+    "section_titles": [
+      "1. Visual Theme & Atmosphere",
+      "2. Color Palette & Roles",
+      "3. Typography Rules",
+      "4. Component Stylings",
+      "5. Layout Principles",
+      "6. Do's and Don'ts",
+      "Photography Rules",
+      "Anti-references",
+      "Voice"
+    ]
+  },
+  "directions": {
+    "status": "proposal",
+    "pages": [
+      {
+        "href": "index.html",
+        "label": "Run the Standard",
+        "slug": "sun-grown-athlete"
+      },
+      {
+        "href": "look-and-feel.html",
+        "label": "Look & Feel",
+        "slug": "look-and-feel"
+      },
+      {
+        "href": "voice.html",
+        "label": "Voice",
+        "slug": "voice"
+      },
+      {
+        "href": "signature.html",
+        "label": "Signature",
+        "slug": "signature"
+      },
+      {
+        "href": "likeness.html",
+        "label": "Likeness",
+        "slug": "likeness"
+      }
+    ],
+    "options": [
+      {
+        "slug": "discipline-standard",
+        "label": "Direction One",
+        "working_name": "Discipline Standard",
+        "presentation": "brand_therapy_clarity",
+        "client_visible": false,
+        "status": "presented_not_chosen",
+        "source_note": "Presented to KC on the 2026-06-10 session and not chosen. Archived as negative evidence; do not present as live identity and do not apply this palette or type energy anywhere.",
+        "creative_board": "generated-boards/discipline-standard-board.png",
+        "creative_board_label": "Generated board: Discipline Standard",
+        "thesis": "A severe, luxurious, geometric authority system for KC as the living proof that discipline beats shortcuts.",
+        "strategic_read": "This direction makes KC feel like the standard itself. It is the most literal reading of No Excuses: hard structure, adult femininity, black-bone-oxblood contrast, event authority, and visible training discipline.",
+        "best_for": "Speaking, strong social statements, event positioning, high-standard mentorship, and anti-shortcut point-of-view content.",
+        "risk": "If pushed too hard, it can become punishing fitness or body-shaming. The copy must keep the target on behavior, not bodies.",
+        "feel": "Severe, controlled, expensive, direct, physical.",
+        "never_become": "Military cosplay, generic gym bro, luxury fashion perfume, body-shame campaign, or GLP-1 crusade.",
+        "type_graphic_energy": "Heavy compressed headlines, numbered standards, sharp grids, scorecard-like overlays, no logo marks.",
+        "imagery_system": "KC in hard light, strength posture, training evidence, black/bone surfaces, oxblood command accents, brass as earned status.",
+        "headline_keywords": [
+          "Serious",
+          "Literal",
+          "Geometric",
+          "Rational",
+          "Transparent"
+        ],
+        "anti_tropes": [
+          "pink Barbie",
+          "stoner aesthetic",
+          "GLP-1 imagery",
+          "therapy-soft femininity"
+        ],
+        "sliders": [
+          {
+            "axis": "Classic|Modern",
+            "position": 50,
+            "material": false
+          },
+          {
+            "axis": "Mature|Youthful",
+            "position": 58,
+            "material": true
+          },
+          {
+            "axis": "Feminine|Masculine",
+            "position": 22,
+            "material": true
+          },
+          {
+            "axis": "Playful|Serious",
+            "position": 96,
+            "material": true
+          },
+          {
+            "axis": "Economical|Luxurious",
+            "position": 82,
+            "material": true
+          },
+          {
+            "axis": "Abstract|Literal",
+            "position": 94,
+            "material": true
+          },
+          {
+            "axis": "Geometric|Organic",
+            "position": 8,
+            "material": true
+          },
+          {
+            "axis": "Calm|Energetic",
+            "position": 76,
+            "material": true
+          },
+          {
+            "axis": "Rational|Emotional",
+            "position": 4,
+            "material": true
+          },
+          {
+            "axis": "Mysterious|Transparent",
+            "position": 92,
+            "material": true
+          },
+          {
+            "axis": "Quiet|Talkative",
+            "position": 64,
+            "material": true
+          }
+        ],
+        "palette": [
+          {
+            "name": "Discipline Black",
+            "hex": "#161311",
+            "role": "Authority, type, hard frame."
+          },
+          {
+            "name": "Bone Field",
+            "hex": "#F4EDE4",
+            "role": "Primary canvas and skin-safe neutral."
+          },
+          {
+            "name": "Oxblood Command",
+            "hex": "#8D1F1B",
+            "role": "No Excuses accent and refusal moments."
+          },
+          {
+            "name": "Brass Standard",
+            "hex": "#C6A35B",
+            "role": "Luxury, earned status, event accents."
+          },
+          {
+            "name": "Concrete Line",
+            "hex": "#A69C90",
+            "role": "Grids, labels, measurement marks."
+          }
+        ],
+        "moodboard": [
+          {
+            "filename": "generated-boards/discipline-standard-board.png",
+            "label": "Strategy board"
+          },
+          {
+            "filename": "generated-boards/discipline-standard-board.png",
+            "label": "Social statement crop"
+          },
+          {
+            "filename": "generated-boards/discipline-standard-board.png",
+            "label": "Event authority crop"
+          }
+        ],
+        "applications": [
+          {
+            "kind": "social-post",
+            "image": "generated-boards/discipline-standard-board.png",
+            "title": "No Excuses statement post",
+            "role": "One hard belief, one image, one action."
+          },
+          {
+            "kind": "event-mastermind",
+            "image": "generated-boards/discipline-standard-board.png",
+            "title": "Standard-setting dinner",
+            "role": "Invitation system for women stepping into the room."
+          },
+          {
+            "kind": "speaking-podcast",
+            "image": "generated-boards/discipline-standard-board.png",
+            "title": "Speaking authority visual",
+            "role": "KC as proof, not a motivational host."
+          },
+          {
+            "kind": "cannabis-tool",
+            "image": "generated-boards/discipline-standard-board.png",
+            "title": "Recovery stack image",
+            "role": "Cannabis shown like magnesium or creatine, not a lifestyle flag."
+          }
+        ],
+        "avoid": [
+          "No logos.",
+          "No cute empowerment.",
+          "No military costume.",
+          "No body-shaming."
+        ],
+        "slider_signals": {
+          "schema_version": "1.0.0",
+          "be_this": [
+            {
+              "word": "Serious",
+              "weight": 46,
+              "source": "axis Playful|Serious p=96"
+            },
+            {
+              "word": "Literal",
+              "weight": 44,
+              "source": "axis Abstract|Literal p=94"
+            },
+            {
+              "word": "Geometric",
+              "weight": 42,
+              "source": "axis Geometric|Organic p=8"
+            },
+            {
+              "word": "Rational",
+              "weight": 46,
+              "source": "axis Rational|Emotional p=4"
+            },
+            {
+              "word": "Transparent",
+              "weight": 42,
+              "source": "axis Mysterious|Transparent p=92"
+            },
+            {
+              "word": "Luxurious",
+              "weight": 32,
+              "source": "axis Economical|Luxurious p=82"
+            },
+            {
+              "word": "Feminine",
+              "weight": 28,
+              "source": "axis Feminine|Masculine p=22"
+            },
+            {
+              "word": "Energetic",
+              "weight": 26,
+              "source": "axis Calm|Energetic p=76"
+            },
+            {
+              "word": "Talkative",
+              "weight": 14,
+              "source": "axis Quiet|Talkative p=64"
+            },
+            {
+              "word": "Youthful",
+              "weight": 8,
+              "source": "axis Mature|Youthful p=58"
+            }
+          ],
+          "dont_be_this": [
+            {
+              "word": "Emotional",
+              "weight": -46,
+              "source": "axis Rational|Emotional p=4"
+            },
+            {
+              "word": "Playful",
+              "weight": -46,
+              "source": "axis Playful|Serious p=96"
+            },
+            {
+              "word": "Abstract",
+              "weight": -44,
+              "source": "axis Abstract|Literal p=94"
+            },
+            {
+              "word": "Mysterious",
+              "weight": -42,
+              "source": "axis Mysterious|Transparent p=92"
+            },
+            {
+              "word": "Organic",
+              "weight": -42,
+              "source": "axis Geometric|Organic p=8"
+            },
+            {
+              "word": "Economical",
+              "weight": -32,
+              "source": "axis Economical|Luxurious p=82"
+            },
+            {
+              "word": "Masculine",
+              "weight": -28,
+              "source": "axis Feminine|Masculine p=22"
+            },
+            {
+              "word": "Calm",
+              "weight": -26,
+              "source": "axis Calm|Energetic p=76"
+            },
+            {
+              "word": "Quiet",
+              "weight": -14,
+              "source": "axis Quiet|Talkative p=64"
+            },
+            {
+              "word": "Mature",
+              "weight": -8,
+              "source": "axis Mature|Youthful p=58"
+            }
+          ],
+          "ignore_axes": [
+            "Classic|Modern"
+          ],
+          "headline_keywords": [
+            "Serious",
+            "Literal",
+            "Geometric",
+            "Rational",
+            "Transparent"
+          ],
+          "anti_tropes": [
+            "pink Barbie",
+            "stoner aesthetic",
+            "GLP-1 imagery",
+            "therapy-soft femininity"
+          ],
+          "force_active": [],
+          "force_inactive": [],
+          "warnings": []
+        }
+      },
+      {
+        "slug": "sun-grown-athlete",
+        "label": "Run the Standard",
+        "working_name": "Run the Standard",
+        "presentation": "brand_therapy_clarity",
+        "status": "selected",
+        "source_note": "Selected by KC on the 2026-06-10 session (09:44 \"the one on the right probably speaks the loudest\"). Client-facing name \"Run the Standard\"; slug stays sun-grown-athlete. This direction feeds the approved identity in IDENTITY.md.",
+        "creative_board": "generated-boards/sun-grown-athlete-board.png",
+        "creative_board_label": "Generated board: Sun-Grown Athlete",
+        "thesis": "A SoCal performance direction where cannabis becomes part of a disciplined outdoor fitness and recovery ritual.",
+        "strategic_read": "This direction makes the cannabis bridge useful without letting cannabis take over. It reframes sun-grown weed, functional mushrooms, recovery, training, and women's longevity as one disciplined performance world.",
+        "best_for": "Cannabis positioning, outdoor training content, recovery ritual posts, future SKU exploration, and lifestyle photography without stoner cues.",
+        "risk": "If too sunny and soft, it can drift into wellness-guru calm. It needs athletic tension, rational overlays, and hard discipline language.",
+        "feel": "Sunlit, athletic, functional, controlled, alive.",
+        "never_become": "Hippie cannabis, beachy influencer, spa wellness, tie-dye, munchies, or recreational party.",
+        "type_graphic_energy": "Rational training labels, performance data strips, ingredient-stack layouts, sharp photo crops.",
+        "imagery_system": "Outdoor SoCal training, track or hills, recovery table, sun-grown cannabis as controlled object, sweat, water, magnesium, mushrooms, weights.",
+        "headline_keywords": [
+          "Serious",
+          "Literal",
+          "Geometric",
+          "Rational",
+          "Transparent"
+        ],
+        "anti_tropes": [
+          "stoner aesthetic",
+          "couch potato cannabis",
+          "pharma-glossy wellness",
+          "therapy-soft femininity"
+        ],
+        "sliders": [
+          {
+            "axis": "Classic|Modern",
+            "position": 56,
+            "material": false
+          },
+          {
+            "axis": "Mature|Youthful",
+            "position": 70,
+            "material": true
+          },
+          {
+            "axis": "Feminine|Masculine",
+            "position": 25,
+            "material": true
+          },
+          {
+            "axis": "Playful|Serious",
+            "position": 84,
+            "material": true
+          },
+          {
+            "axis": "Economical|Luxurious",
+            "position": 66,
+            "material": true
+          },
+          {
+            "axis": "Abstract|Literal",
+            "position": 96,
+            "material": true
+          },
+          {
+            "axis": "Geometric|Organic",
+            "position": 18,
+            "material": true
+          },
+          {
+            "axis": "Calm|Energetic",
+            "position": 84,
+            "material": true
+          },
+          {
+            "axis": "Rational|Emotional",
+            "position": 8,
+            "material": true
+          },
+          {
+            "axis": "Mysterious|Transparent",
+            "position": 90,
+            "material": true
+          },
+          {
+            "axis": "Quiet|Talkative",
+            "position": 70,
+            "material": true
+          }
+        ],
+        "palette": [
+          {
+            "name": "Sun Bone",
+            "hex": "#F1E2C7",
+            "role": "Daylight field."
+          },
+          {
+            "name": "Trail Black",
+            "hex": "#1B1712",
+            "role": "Type and authority."
+          },
+          {
+            "name": "Performance Green",
+            "hex": "#4E6B46",
+            "role": "Functional cannabis and recovery."
+          },
+          {
+            "name": "Heat Clay",
+            "hex": "#B55336",
+            "role": "Effort and SoCal terrain."
+          },
+          {
+            "name": "Water Steel",
+            "hex": "#405C73",
+            "role": "Rational overlays and recovery cues."
+          }
+        ],
+        "moodboard": [
+          {
+            "filename": "generated-boards/sun-grown-athlete-board.png",
+            "label": "Strategy board"
+          },
+          {
+            "filename": "applications/cannabis-tool-recovery-ritual.png",
+            "label": "Recovery ritual"
+          },
+          {
+            "filename": "applications/event-mastermind-outdoor.png",
+            "label": "Outdoor performance"
+          }
+        ],
+        "applications": [
+          {
+            "kind": "social-post",
+            "image": "applications/social-post-discipline-stack.png",
+            "title": "Discipline stack post",
+            "role": "Cannabis, training, and recovery in one controlled frame."
+          },
+          {
+            "kind": "event-mastermind",
+            "image": "applications/event-mastermind-outdoor.png",
+            "title": "Outdoor wellness event cue",
+            "role": "SoCal discipline without beach-influencer softness."
+          },
+          {
+            "kind": "speaking-podcast",
+            "image": "applications/speaking-podcast-authority.png",
+            "title": "Performance-health speaking image",
+            "role": "KC as the bridge between women's health and functional cannabis."
+          },
+          {
+            "kind": "cannabis-tool",
+            "image": "applications/cannabis-tool-recovery-ritual.png",
+            "title": "Sun-grown recovery ritual",
+            "role": "Cannabis as tool, not identity."
+          },
+          {
+            "kind": "ig-feed-training",
+            "image": "social-kit/ig-feed-training-log.png",
+            "title": "Feed template, training log",
+            "role": "Proof of work in the feed: the log is the post."
+          },
+          {
+            "kind": "ig-feed-statement",
+            "image": "social-kit/ig-feed-statement.png",
+            "title": "Feed template, statement post",
+            "role": "The standard, stated. Track, type, nothing cute."
+          },
+          {
+            "kind": "story-daily",
+            "image": "social-kit/story-daily-standard.png",
+            "title": "Story template, daily standard",
+            "role": "Today's stack and schedule as a vertical receipt."
+          },
+          {
+            "kind": "story-event-invite",
+            "image": "social-kit/story-event-invite.png",
+            "title": "Story template, event invite",
+            "role": "A serious table. The invite reads like a commitment."
+          },
+          {
+            "kind": "reel-cover",
+            "image": "social-kit/reel-cover-no-excuses.png",
+            "title": "Reel cover",
+            "role": "Effort on a hill. The cover sets the tone before play."
+          },
+          {
+            "kind": "carousel-cover",
+            "image": "social-kit/carousel-cover-stack.png",
+            "title": "Carousel cover",
+            "role": "The stack, itemized. Swipe for the breakdown."
+          },
+          {
+            "kind": "podcast-cover",
+            "image": "social-kit/podcast-cover.png",
+            "title": "Podcast cover art",
+            "role": "Show art: authority at the mic, hard light."
+          },
+          {
+            "kind": "episode-thumbnail",
+            "image": "social-kit/episode-thumbnail.png",
+            "title": "Episode thumbnail",
+            "role": "Episode frame: conversation, not performance."
+          },
+          {
+            "kind": "linkedin-banner",
+            "image": "social-kit/linkedin-banner.png",
+            "title": "LinkedIn banner",
+            "role": "Profile header: name, standard, and open track."
+          },
+          {
+            "kind": "email-header",
+            "image": "social-kit/email-header.png",
+            "title": "Email header",
+            "role": "Newsletter masthead: the standard above the fold."
+          },
+          {
+            "kind": "quote-card",
+            "image": "social-kit/quote-card.png",
+            "title": "Quote card template",
+            "role": "Statement block as a post: type only, no decoration."
+          },
+          {
+            "kind": "event-poster",
+            "image": "social-kit/event-poster.png",
+            "title": "Event poster",
+            "role": "Live session poster: speaker, date, statement band."
+          }
+        ],
+        "avoid": [
+          "No weed leaves as primary mark.",
+          "No smoke glamour.",
+          "No beach influencer softness.",
+          "No medical clinic language."
+        ],
+        "slider_signals": {
+          "schema_version": "1.0.0",
+          "be_this": [
+            {
+              "word": "Serious",
+              "weight": 34,
+              "source": "axis Playful|Serious p=84"
+            },
+            {
+              "word": "Literal",
+              "weight": 46,
+              "source": "axis Abstract|Literal p=96"
+            },
+            {
+              "word": "Geometric",
+              "weight": 32,
+              "source": "axis Geometric|Organic p=18"
+            },
+            {
+              "word": "Rational",
+              "weight": 42,
+              "source": "axis Rational|Emotional p=8"
+            },
+            {
+              "word": "Transparent",
+              "weight": 40,
+              "source": "axis Mysterious|Transparent p=90"
+            },
+            {
+              "word": "Energetic",
+              "weight": 34,
+              "source": "axis Calm|Energetic p=84"
+            },
+            {
+              "word": "Feminine",
+              "weight": 25,
+              "source": "axis Feminine|Masculine p=25"
+            },
+            {
+              "word": "Talkative",
+              "weight": 20,
+              "source": "axis Quiet|Talkative p=70"
+            },
+            {
+              "word": "Youthful",
+              "weight": 20,
+              "source": "axis Mature|Youthful p=70"
+            },
+            {
+              "word": "Luxurious",
+              "weight": 16,
+              "source": "axis Economical|Luxurious p=66"
+            }
+          ],
+          "dont_be_this": [
+            {
+              "word": "Abstract",
+              "weight": -46,
+              "source": "axis Abstract|Literal p=96"
+            },
+            {
+              "word": "Emotional",
+              "weight": -42,
+              "source": "axis Rational|Emotional p=8"
+            },
+            {
+              "word": "Mysterious",
+              "weight": -40,
+              "source": "axis Mysterious|Transparent p=90"
+            },
+            {
+              "word": "Calm",
+              "weight": -34,
+              "source": "axis Calm|Energetic p=84"
+            },
+            {
+              "word": "Playful",
+              "weight": -34,
+              "source": "axis Playful|Serious p=84"
+            },
+            {
+              "word": "Organic",
+              "weight": -32,
+              "source": "axis Geometric|Organic p=18"
+            },
+            {
+              "word": "Masculine",
+              "weight": -25,
+              "source": "axis Feminine|Masculine p=25"
+            },
+            {
+              "word": "Mature",
+              "weight": -20,
+              "source": "axis Mature|Youthful p=70"
+            },
+            {
+              "word": "Quiet",
+              "weight": -20,
+              "source": "axis Quiet|Talkative p=70"
+            },
+            {
+              "word": "Economical",
+              "weight": -16,
+              "source": "axis Economical|Luxurious p=66"
+            }
+          ],
+          "ignore_axes": [
+            "Classic|Modern"
+          ],
+          "headline_keywords": [
+            "Serious",
+            "Literal",
+            "Geometric",
+            "Rational",
+            "Transparent"
+          ],
+          "anti_tropes": [
+            "stoner aesthetic",
+            "couch potato cannabis",
+            "pharma-glossy wellness",
+            "therapy-soft femininity"
+          ],
+          "force_active": [],
+          "force_inactive": [],
+          "warnings": []
+        }
+      },
+      {
+        "slug": "no-excuses-salon",
+        "label": "Direction Three",
+        "working_name": "No-Excuses Salon",
+        "presentation": "brand_therapy_clarity",
+        "client_visible": false,
+        "status": "proposal",
+        "source_note": "Internal backup option built from approved Focus Star and slider data. No logo exploration. Proposal material only; do not apply this palette or type energy to the Brand OS shell.",
+        "creative_board": "generated-boards/no-excuses-salon-board.png",
+        "creative_board_label": "Generated board: No-Excuses Salon",
+        "thesis": "A high-standard women's room direction: intimate dinners, hard conversations, feminine power, and discipline as social currency.",
+        "strategic_read": "This direction focuses on KC's wellness events and mastermind dinners. It makes the room feel desirable without becoming soft, cute, or performative. The standard is social: if you sit here, you show up.",
+        "best_for": "Mastermind dinners, private events, premium community entry, speaker dinners, podcast guests, and invite-led content.",
+        "risk": "If too pretty, it will become feminine lifestyle. It needs hard copy, sharp geometry, and visible discipline evidence inside the room.",
+        "feel": "Feminine, expensive, direct, intimate, unsentimental.",
+        "never_become": "Girls night, pink wellness brunch, luxury spa, influencer dinner, or therapy circle.",
+        "type_graphic_energy": "Elegant but blunt invitation typography, rigid seating grids, black table cards, hard-edged editorial crops.",
+        "imagery_system": "Dinner table, low controlled light, women in serious conversation, KC speaking at the head of the room, training objects or cannabis stack integrated as proof.",
+        "headline_keywords": [
+          "Serious",
+          "Literal",
+          "Geometric",
+          "Rational",
+          "Transparent"
+        ],
+        "anti_tropes": [
+          "pink Barbie",
+          "girly cutesy",
+          "infantilized maternity",
+          "therapy-soft femininity"
+        ],
+        "sliders": [
+          {
+            "axis": "Classic|Modern",
+            "position": 44,
+            "material": false
+          },
+          {
+            "axis": "Mature|Youthful",
+            "position": 62,
+            "material": true
+          },
+          {
+            "axis": "Feminine|Masculine",
+            "position": 14,
+            "material": true
+          },
+          {
+            "axis": "Playful|Serious",
+            "position": 90,
+            "material": true
+          },
+          {
+            "axis": "Economical|Luxurious",
+            "position": 86,
+            "material": true
+          },
+          {
+            "axis": "Abstract|Literal",
+            "position": 90,
+            "material": true
+          },
+          {
+            "axis": "Geometric|Organic",
+            "position": 20,
+            "material": true
+          },
+          {
+            "axis": "Calm|Energetic",
+            "position": 66,
+            "material": true
+          },
+          {
+            "axis": "Rational|Emotional",
+            "position": 10,
+            "material": true
+          },
+          {
+            "axis": "Mysterious|Transparent",
+            "position": 82,
+            "material": true
+          },
+          {
+            "axis": "Quiet|Talkative",
+            "position": 82,
+            "material": true
+          }
+        ],
+        "palette": [
+          {
+            "name": "Wine Black",
+            "hex": "#171014",
+            "role": "Room authority and table surfaces."
+          },
+          {
+            "name": "Bone Linen",
+            "hex": "#EFE3D5",
+            "role": "Invitations, table cards, review canvas."
+          },
+          {
+            "name": "Oxblood Silk",
+            "hex": "#7F2226",
+            "role": "Feminine power without pink."
+          },
+          {
+            "name": "Brass Edge",
+            "hex": "#B88A44",
+            "role": "Premium detail and event warmth."
+          },
+          {
+            "name": "Smoke Blue",
+            "hex": "#53606E",
+            "role": "Rational contrast and evening cool."
+          }
+        ],
+        "moodboard": [
+          {
+            "filename": "generated-boards/no-excuses-salon-board.png",
+            "label": "Strategy board"
+          },
+          {
+            "filename": "generated-boards/no-excuses-salon-board.png",
+            "label": "Dinner event crop"
+          },
+          {
+            "filename": "generated-boards/no-excuses-salon-board.png",
+            "label": "Speaking crop"
+          }
+        ],
+        "applications": [
+          {
+            "kind": "social-post",
+            "image": "generated-boards/no-excuses-salon-board.png",
+            "title": "Invite-only statement post",
+            "role": "The room has a standard."
+          },
+          {
+            "kind": "event-mastermind",
+            "image": "generated-boards/no-excuses-salon-board.png",
+            "title": "Mastermind dinner system",
+            "role": "Premium intimacy without soft wellness."
+          },
+          {
+            "kind": "speaking-podcast",
+            "image": "generated-boards/no-excuses-salon-board.png",
+            "title": "Table-to-stage authority",
+            "role": "KC as host, speaker, and standard-setter."
+          },
+          {
+            "kind": "cannabis-tool",
+            "image": "generated-boards/no-excuses-salon-board.png",
+            "title": "Cannabis as table ritual",
+            "role": "A controlled functional tool, never the party."
+          }
+        ],
+        "avoid": [
+          "No pink brunch.",
+          "No spa table.",
+          "No girls-night typography.",
+          "No mystical circle."
+        ],
+        "slider_signals": {
+          "schema_version": "1.0.0",
+          "be_this": [
+            {
+              "word": "Serious",
+              "weight": 40,
+              "source": "axis Playful|Serious p=90"
+            },
+            {
+              "word": "Literal",
+              "weight": 40,
+              "source": "axis Abstract|Literal p=90"
+            },
+            {
+              "word": "Geometric",
+              "weight": 30,
+              "source": "axis Geometric|Organic p=20"
+            },
+            {
+              "word": "Rational",
+              "weight": 40,
+              "source": "axis Rational|Emotional p=10"
+            },
+            {
+              "word": "Transparent",
+              "weight": 32,
+              "source": "axis Mysterious|Transparent p=82"
+            },
+            {
+              "word": "Feminine",
+              "weight": 36,
+              "source": "axis Feminine|Masculine p=14"
+            },
+            {
+              "word": "Luxurious",
+              "weight": 36,
+              "source": "axis Economical|Luxurious p=86"
+            },
+            {
+              "word": "Talkative",
+              "weight": 32,
+              "source": "axis Quiet|Talkative p=82"
+            },
+            {
+              "word": "Energetic",
+              "weight": 16,
+              "source": "axis Calm|Energetic p=66"
+            },
+            {
+              "word": "Youthful",
+              "weight": 12,
+              "source": "axis Mature|Youthful p=62"
+            }
+          ],
+          "dont_be_this": [
+            {
+              "word": "Abstract",
+              "weight": -40,
+              "source": "axis Abstract|Literal p=90"
+            },
+            {
+              "word": "Emotional",
+              "weight": -40,
+              "source": "axis Rational|Emotional p=10"
+            },
+            {
+              "word": "Playful",
+              "weight": -40,
+              "source": "axis Playful|Serious p=90"
+            },
+            {
+              "word": "Economical",
+              "weight": -36,
+              "source": "axis Economical|Luxurious p=86"
+            },
+            {
+              "word": "Masculine",
+              "weight": -36,
+              "source": "axis Feminine|Masculine p=14"
+            },
+            {
+              "word": "Mysterious",
+              "weight": -32,
+              "source": "axis Mysterious|Transparent p=82"
+            },
+            {
+              "word": "Quiet",
+              "weight": -32,
+              "source": "axis Quiet|Talkative p=82"
+            },
+            {
+              "word": "Organic",
+              "weight": -30,
+              "source": "axis Geometric|Organic p=20"
+            },
+            {
+              "word": "Calm",
+              "weight": -16,
+              "source": "axis Calm|Energetic p=66"
+            },
+            {
+              "word": "Mature",
+              "weight": -12,
+              "source": "axis Mature|Youthful p=62"
+            }
+          ],
+          "ignore_axes": [
+            "Classic|Modern"
+          ],
+          "headline_keywords": [
+            "Serious",
+            "Literal",
+            "Geometric",
+            "Rational",
+            "Transparent"
+          ],
+          "anti_tropes": [
+            "pink Barbie",
+            "girly cutesy",
+            "infantilized maternity",
+            "therapy-soft femininity"
+          ],
+          "force_active": [],
+          "force_inactive": [],
+          "warnings": []
+        }
+      }
+    ]
+  },
+  "application": {
+    "summary": "",
+    "shared_patterns": {},
+    "reference_asset_roots": [],
+    "pages": []
+  },
+  "channel_rules": {
+    "summary": "",
+    "generation_loop": [],
+    "review_checks": [],
+    "channels": []
+  },
+  "personal_branding": {
+    "summary": "",
+    "applies_when": "",
+    "source_anchors": [],
+    "founder_spectrum_visual": {},
+    "reference_asset_roots": [],
+    "spectrum_positions": [],
+    "fp_read": {},
+    "dimensions": []
+  },
+  "task_router": {
+    "schema_version": "1.0.0",
+    "purpose": "Route day-to-day brand tasks to the smallest useful context pack.",
+    "operating_principle": "The user should not choose Brand OS pages. The agent classifies the request, loads the compact core, adds only matching Section C/D slices, generates, then runs review gates.",
+    "context_budget": {
+      "max_application_pages": 2,
+      "max_channels": 2,
+      "max_training_examples": 5,
+      "ask_clarifying_question_only_if": "The output channel or audience materially changes the answer and cannot be inferred from the request."
+    },
+    "always_load": [
+      "brand",
+      "source.bundle_hash",
+      "guardrails",
+      "ai_first_generation_thread",
+      "identity.colors",
+      "identity.typography",
+      "identity.creative_direction.slider_signals",
+      "directions.options[].slider_signals",
+      "identity.voice"
+    ],
+    "conditional_load": [
+      "strategy.edges filtered by matched channel source_anchors",
+      "application.pages matched by requested medium",
+      "channel_rules.channels matched by requested distribution surface",
+      "personal_branding when the request touches founder role, leadership presence, bio/about copy, portraits, speaker profile, or Founder Spectrum",
+      "3-5 most relevant training_examples from matched application pages"
+    ],
+    "never_load_by_default": [
+      "unmatched application pages",
+      "all examples at once",
+      "stale generated HTML as source of truth",
+      "personal-branding material unless the request explicitly belongs to that section"
+    ],
+    "route_order": [
+      "match composed route when a campaign/task pattern is explicit",
+      "match personal-branding route when the request concerns founder or leadership presence",
+      "match medium route from requested artifact type",
+      "match channel route from distribution surface",
+      "merge context loads and remove duplicates",
+      "generate from rules and examples",
+      "run review gates before presenting output"
+    ],
+    "routes": {
+      "composed": [],
+      "mediums": [],
+      "channels": [],
+      "personal_branding": []
+    },
+    "review_gates": [
+      "strategy fit: output serves the matched Focus Star anchors",
+      "voice fit: output follows identity voice and channel voice dial",
+      "medium fit: output follows visual_recipe, copy_recipe, and ai_rules",
+      "rules-out check: remove anything forbidden by matched channel rules_out",
+      "proof check: claims use approved proof only or are marked for human review",
+      "founder-role check: use the selected Founder Spectrum position before writing any personal-branding guidance",
+      "source hierarchy check: do not let the generated output rewrite Section A or B"
+    ]
+  },
+  "proof": {
+    "required": [
+      "Any future medical, longevity, or hormonal-health claims need source evidence.",
+      "Any likeness-based image use needs explicit reference review and approval.",
+      "Approved anti-persona list.",
+      "Approved archetype mix.",
+      "Approved bio direction before public use.",
+      "Approved tagline list.",
+      "Event history, event photos, or event plans if available.",
+      "Existing podcast proof.",
+      "Geographic note: SoCal, not Inland Empire and not LA-only.",
+      "KC source quote about making women aware there is a better way.",
+      "KC source quote about refusing fat-loss drugs and putting in the work.",
+      "KC source quote: \"If I can do it, anybody else can. No more excuses.\"",
+      "Locked attribute list.",
+      "Persona notes for Alina.",
+      "Slider source and anti-trope source.",
+      "Source line: role is mentor / thought leader, not coach or educator.",
+      "Source line: wellness events are the way KC makes an impact and holds authority.",
+      "Source statement that special-needs moms are an identity layer only.",
+      "Speaking proof when available."
+    ]
+  },
+  "likeness": {
+    "person": "KC Santana",
+    "purpose": "Canonical face references for model-agnostic image generation. Attach the face-anchor image as a reference, start the prompt with prompt_preamble, then describe the scene.",
+    "canonical_description": "KC has a long narrow oval face with a high forehead, prominent high cheekbones over lean cheeks, a defined narrow jawline and a softly pointed chin. Slim nose, almond shaped deep brown eyes, thick dark arched brows with heavy dark eyeliner. Wide bright smile with prominent straight upper teeth. Warm olive tan skin. Very long center parted dark brown hair with caramel blonde balayage in loose waves.",
+    "prompt_preamble": "The attached images are reference photos of the real woman KC Santana. Generate the requested scene with this exact woman. Copy her facial identity precisely from the references: face shape, eyes, brows, eyeliner, nose, lips, smile, skin tone, and her very long dark brown hair with caramel blonde balayage. Do not invent a different woman and do not beautify, slim, or otherwise change her features.",
+    "usage_rules": [
+      "Always attach the face sheet as a reference image before generating. Text descriptions alone drift.",
+      "Add the matching outfit turnaround as a second reference when the scene needs a specific outfit or a full body pose.",
+      "Check the generated face against the face sheet before using the result. A rounder or fuller face than the sheet is a fail.",
+      "Likeness references are for KC Santana brand work. Identity rules from this Brand OS still govern styling, color, and context."
+    ],
+    "images": [
+      {
+        "role": "face-anchor",
+        "label": "Canonical face identity sheet: eight studies of the same woman covering front, three quarter, profile, smile, and ponytail views.",
+        "description": "KC has a long narrow oval face with a high forehead, prominent high cheekbones over lean cheeks, a defined narrow jawline and a softly pointed chin. Slim nose, almond shaped deep brown eyes, thick dark arched brows with heavy dark eyeliner. Wide bright smile with prominent straight upper teeth. Warm olive tan skin. Very long center parted dark brown hair with caramel blonde balayage in loose waves.",
+        "path": "images/likeness/face-sheet.png",
+        "url": "https://brandtherapy.florianp.com/kc-santana/images/likeness/face-sheet.png"
+      },
+      {
+        "role": "turnaround",
+        "label": "Training set",
+        "description": "Black training set with high ponytail. Front, three quarter, profile, and back views of one outfit for rotation and animation frames.",
+        "path": "images/likeness/turnaround-training.png",
+        "url": "https://brandtherapy.florianp.com/kc-santana/images/likeness/turnaround-training.png"
+      },
+      {
+        "role": "turnaround",
+        "label": "Trail run",
+        "description": "Olive trail tank, black shorts, trail shoes. Front, three quarter, profile, and back views of one outfit.",
+        "path": "images/likeness/turnaround-trail.png",
+        "url": "https://brandtherapy.florianp.com/kc-santana/images/likeness/turnaround-trail.png"
+      },
+      {
+        "role": "turnaround",
+        "label": "Lifting",
+        "description": "Black cropped tee, grey joggers, high bun. Front, three quarter, profile, and back views of one outfit.",
+        "path": "images/likeness/turnaround-lifting.png",
+        "url": "https://brandtherapy.florianp.com/kc-santana/images/likeness/turnaround-lifting.png"
+      },
+      {
+        "role": "turnaround",
+        "label": "Street",
+        "description": "White tee, blue jeans, white sneakers, hair down. Front, three quarter, profile, and back views of one outfit.",
+        "path": "images/likeness/turnaround-street.png",
+        "url": "https://brandtherapy.florianp.com/kc-santana/images/likeness/turnaround-street.png"
+      }
+    ],
+    "likeness_page": "https://brandtherapy.florianp.com/kc-santana/identity/likeness.html"
+  },
+  "retrieval_guidance": {
+    "example_count": "Use 3 to 5 relevant examples when possible.",
+    "example_relevance": "Match examples to the target channel, audience, length, and format.",
+    "review_loop": "Track pass rate, edit time, recurring voice violations, and source citations for brand checks."
+  }
+}

@@ -3,7 +3,7 @@
   section-a-shell.html
   ====================
   Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
-  visual design (sidebar nav, editorial typography, viewfinder treatment, footer).
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
 
   build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
   are documented in shared/templates/README.md (section: "Template token syntax
@@ -23,30 +23,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
 <title>Brand OS Overview · KC Brand OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <style>
   /* Per-brand color and typography token overrides.
      Injected by build.py from IDENTITY.md frontmatter. */
   :root {
-    --accent: #5A5CF9;
-    --accent-glow: rgba(90, 92, 249, 0.35);
-    --accent-soft: rgba(90, 92, 249, 0.06);
-    --text: #1A1A2E;
-    --muted: #8888A0;
+    --accent: #4E6B46;
+    --accent-glow: rgba(78, 107, 70, 0.30);
+    --accent-soft: rgba(78, 107, 70, 0.10);
+    --text: #1B1712;
+    --muted: #6F6354;
     --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
-    --border: #E5E7EB;
-    --light: #F5F5F7;
-    --white: #FFFFFF;
-    --dark: #18181B;
-    --dark-surface: #1D1D1D;
-    --ff-h: "Bricolage Grotesque", system-ui, sans-serif;
-    --ff-b: "Poppins", system-ui, sans-serif;
-    --ff-accent: "Bricolage Grotesque", system-ui, sans-serif;
+    --border: #DCC9A4;
+    --light: #E8D5AE;
+    --white: #F1E2C7;
+    --dark: #1B1712;
+    --dark-surface: #241E16;
+    --ff-h: "Barlow Condensed", system-ui, sans-serif;
+    --ff-b: "Barlow", system-ui, sans-serif;
+    --ff-accent: "IBM Plex Mono", ui-monospace, monospace;
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
     --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
@@ -59,7 +58,7 @@
 
 <aside class="sidebar">
   <div class="brand-mark">
-    <div class="name">KC<span class="dot">.</span></div>
+    <div class="name">KC</div>
     <div class="meta">Brand OS</div>
   </div>
   <nav class="nav-section" aria-label="Brand OS sections">
@@ -74,10 +73,11 @@
 <a href="strategy/promise.html">Promise</a>
 <a href="strategy/personality.html">Personality</a>
 </div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
-<a href="identity/index.html">Direction One</a>
-<a href="identity/sun-grown-athlete.html">Direction Two</a>
-</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
-<a href="application/index.html">Brand Application</a>
+<a href="identity/index.html">Run the Standard</a>
+<a href="identity/look-and-feel.html">Look &amp; Feel</a>
+<a href="identity/voice.html">Voice</a>
+<a href="identity/signature.html">Signature</a>
+<a href="identity/likeness.html">Likeness</a>
 </div></details>
   </nav>
   <div class="toolbar-mini">
@@ -126,7 +126,7 @@
 </style>
   <section class="home-hero">
     <span class="hero-eyebrow">Brand OS · AI-first source system</span>
-    <h1>KC Santana Brand OS<span class="dot">.</span></h1>
+    <h1>KC Santana Brand OS</h1>
     <p class="hero-sub">One source thread: strategy decides, identity translates, application proves. Generated work is downstream until the source is approved.</p>
     <div class="hero-pills">
       <div class="hero-pill">Source<strong>A → B → C</strong></div>
@@ -139,24 +139,24 @@
     <div class="home-section-header">
       <div class="home-section-num">THREAD</div>
       <div>
-        <h2 class="home-section-title">How the system works<span class="dot">.</span></h2>
+        <h2 class="home-section-title">How the system works</h2>
         <p class="home-section-sub">Source of truth to generated output</p>
         <p class="home-section-desc">The goal is not another static brand book. The goal is a compact source system that can generate a website direction, collateral, copy, and channel rules from approved strategic decisions.</p>
       </div>
     </div>
-    <div class="flow-band"><div class="flow-row"><div class="flow-step">A</div><div><h3>Strategy contract<span class="dot">.</span></h3><p>Focus Star turns the strategy into decisions an AI can reuse without re-interpreting the brand.</p></div></div><div class="flow-row"><div class="flow-step">B</div><div><h3>Creative direction options<span class="dot">.</span></h3><p>Section B proposal directions translate the same Section A strategy into visual options before one is approved.</p></div></div><div class="flow-row"><div class="flow-step">C</div><div><h3>Application references<span class="dot">.</span></h3><p>Where the approved strategy and chosen direction become channel rules and ready-to-use examples. Unlocks after approval.</p></div></div></div>
+    <div class="flow-band"><div class="flow-row"><div class="flow-step">A</div><div><h3>Strategy contract</h3><p>Focus Star turns the strategy into decisions an AI can reuse without re-interpreting the brand.</p></div></div><div class="flow-row"><div class="flow-step">B</div><div><h3>Creative direction options</h3><p>Section B proposal directions translate the same Section A strategy into visual options before one is approved.</p></div></div><div class="flow-row"><div class="flow-step">C</div><div><h3>Application references</h3><p>Application and channel rules are not declared in this source pack yet. Use the approved strategy and identity until channel-specific sources are added.</p></div></div></div>
   </section>
 
   <section class="home-section">
     <div class="home-section-header">
       <div class="home-section-num">REVIEW</div>
       <div>
-        <h2 class="home-section-title">Review order<span class="dot">.</span></h2>
+        <h2 class="home-section-title">Review order</h2>
         <p class="home-section-sub">Do not inspect everything at once</p>
         <p class="home-section-desc">Approve the upstream decision layer first, then the identity translation, then application examples. If a downstream page reveals a better decision, edit the source and rebuild.</p>
       </div>
     </div>
-    <div class="toc-page-grid"><a class="toc-page-card" href="strategy/index.html"><div class="card-code">A</div><div class="card-name">Strategy contract<span class="dot">.</span></div><p>Focus Star turns the strategy into decisions an AI can reuse without re-interpreting the brand.</p><div class="card-status">Ready for your review</div></a><a class="toc-page-card" href="identity/index.html"><div class="card-code">B</div><div class="card-name">Creative direction options<span class="dot">.</span></div><p>Section B proposal directions translate the same Section A strategy into visual options before one is approved.</p><div class="card-status">Locked · pending strategy approval</div></a><a class="toc-page-card" href="application/index.html"><div class="card-code">C</div><div class="card-name">Application references<span class="dot">.</span></div><p>Where the approved strategy and chosen direction become channel rules and ready-to-use examples. Unlocks after approval.</p><div class="card-status">Pending approval</div></a></div>
+    <div class="toc-page-grid"><a class="toc-page-card" href="strategy/index.html"><div class="card-code">A</div><div class="card-name">Strategy contract</div><p>Focus Star turns the strategy into decisions an AI can reuse without re-interpreting the brand.</p><div class="card-status">Source: STRATEGY.md</div></a><a class="toc-page-card" href="identity/index.html"><div class="card-code">B</div><div class="card-name">Creative direction options</div><p>Section B proposal directions translate the same Section A strategy into visual options before one is approved.</p><div class="card-status">Source: DIRECTIONS.md + STRATEGY.md</div></a><a class="toc-page-card" href="identity/index.html"><div class="card-code">C</div><div class="card-name">Application references</div><p>Application and channel rules are not declared in this source pack yet. Use the approved strategy and identity until channel-specific sources are added.</p><div class="card-status">Not declared: APPLICATION.md + CHANNELS.md</div></a></div>
   </section>
 
 
@@ -170,10 +170,10 @@
 <!-- Build metadata. Lets any reviewer trace this page to its source. -->
 <!--
   Brand:        KC Santana (kc-santana)
-  Version:      0.1.0
-  Built at:     2026-06-02T16:53:25+00:00
-  Git SHA:      cf1a880d37f619815c6afb719e1105d7810621a6
-  Bundle hash:  sha256:d610ea165aa44589f6641b471b15365bc27c35d7787c42df78f43a5963289abd
+  Version:      1.0.0
+  Built at:     2026-06-11T20:15:38+00:00
+  Git SHA:      84f399357abf87128f6a478b5c0563234b913e59
+  Bundle hash:  sha256:2f33af850bbfa578eb2216f5d131da4b7c9f7b969c887072d7a4dd4d22cec834
   Source:       brand-os/brands/kc-santana/STRATEGY.md + IDENTITY.md + DIRECTIONS.md
 -->
 </body>

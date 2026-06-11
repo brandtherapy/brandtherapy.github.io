@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voice · KC Brand OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #4E6B46;
+    --accent-glow: rgba(78, 107, 70, 0.30);
+    --accent-soft: rgba(78, 107, 70, 0.10);
+    --text: #1B1712;
+    --muted: #6F6354;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #DCC9A4;
+    --light: #E8D5AE;
+    --white: #F1E2C7;
+    --dark: #1B1712;
+    --dark-surface: #241E16;
+    --ff-h: "Barlow Condensed", system-ui, sans-serif;
+    --ff-b: "Barlow", system-ui, sans-serif;
+    --ff-accent: "IBM Plex Mono", ui-monospace, monospace;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">KC</div>
+    <div class="meta">Brand OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="../strategy/index.html">Focus Star</a>
+<a href="../strategy/product.html">Product</a>
+<a href="../strategy/people.html">People</a>
+<a href="../strategy/purpose.html">Purpose</a>
+<a href="../strategy/promise.html">Promise</a>
+<a href="../strategy/personality.html">Personality</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="index.html">Run the Standard</a>
+<a href="look-and-feel.html">Look &amp; Feel</a>
+<a class="active" href="voice.html">Voice</a>
+<a href="signature.html">Signature</a>
+<a href="likeness.html">Likeness</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Identity</strong></div>
+    <div class="row"><span>Use</span><strong>Visual + voice</strong></div>
+    <div class="row"><span>Center</span><strong>No Excuses</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+<style>
+.voice-section { margin: 0 0 96px; }
+.voice-section-head { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; padding-top: 20px; border-top: 1px solid var(--text); margin-bottom: 40px; }
+.voice-section-num { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--accent); padding-top: 12px; }
+.voice-section-head h2 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.02; letter-spacing: -0.025em; color: var(--text); margin: 0 0 8px; }
+.voice-section-head h2 .dot { color: var(--accent); }
+.voice-section-sub { font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.voice-section-desc { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 640px; margin: 0; }
+.voice-body { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 800px; }
+.voice-body h2 { font-family: var(--ff-h); font-weight: 800; font-size: 28px; letter-spacing: -0.02em; color: var(--text); margin: 48px 0 16px; }
+.voice-body h3 { font-family: var(--ff-h); font-weight: 800; font-size: 20px; letter-spacing: -0.01em; color: var(--text); margin: 32px 0 12px; }
+.voice-body h4 { font-family: var(--ff-b); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin: 24px 0 8px; }
+.voice-body p { margin: 0 0 16px; }
+.voice-body ul, .voice-body ol { padding-left: 24px; margin: 0 0 16px; }
+.voice-body li { margin: 4px 0; }
+.voice-body code { background: var(--accent-soft); padding: 2px 6px; font-family: ui-monospace, monospace; font-size: 13px; }
+.voice-body blockquote { border: 1px solid var(--border); padding: 16px 18px; margin: 16px 0; color: var(--muted); font-style: normal; background: color-mix(in srgb, var(--light) 34%, var(--white)); }
+.voice-body strong { font-weight: 700; color: var(--text); }
+.voice-body table { border-collapse: collapse; width: 100%; margin: 24px 0; font-size: 14px; }
+.voice-body th, .voice-body td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; vertical-align: top; }
+.voice-body th { font-family: var(--ff-b); font-weight: 700; letter-spacing: 0.04em; background: var(--light); color: var(--text); }
+.voice-body td { color: var(--text); }
+</style>
+  <span class="eyebrow" style="font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);">Section B · Brand Identity · Voice</span>
+  <h1 style="font-family:var(--ff-h);font-weight:800;font-size:clamp(56px,8vw,112px);line-height:0.92;letter-spacing:-0.04em;color:var(--text);margin:16px 0 24px;">Voice</h1>
+  <p style="font-family:var(--ff-b);font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:var(--text);max-width:640px;margin:0 0 64px;">How the brand speaks. Principles first, then what's banned, then exemplars.</p>
+
+  <section class="voice-section" aria-labelledby="voice-1">
+    <div class="voice-section-head">
+      <div class="voice-section-num">01</div>
+      <div>
+        <div class="voice-section-sub">Operating rules</div>
+        <h2 id="voice-1">Voice principles</h2>
+      </div>
+    </div>
+    <div class="voice-body"><p>Voice is part of identity. The strategic decision about Personality lives in <code>STRATEGY.md</code>; the operational voice rules live here.</p>
+<h3>Principles</h3>
+<ul>
+<li>Rough-edged. Plainspoken. Unsentimental.</li>
+<li>Tough-love and demanding, not nurturing.</li>
+<li>Serious before playful. Rational before emotional. Transparent before mysterious. Literal before abstract.</li>
+<li>Commanding without body shame. The target is behavior, never bodies.</li>
+<li>Feminine through strength and presence, not cuteness.</li>
+<li>Cannabis as discipline-stack tool, not a flag.</li>
+</ul>
+<h3>No-excuse language system</h3>
+<p>KC is the product. Authority comes from thought leadership and example-setting, never from coaching packages or curriculum language. "Run the standard" means show up and do it: the copy shows KC doing the work and lets the example issue the command.</p>
+<ul>
+<li>Lead with proof: the run happened, the stack is measured, the schedule is visible.</li>
+<li>Short sentences. Direct commands. Hard contrast.</li>
+<li>Refuse shortcuts by name when needed (GLP-1s, hacks, passive wellness), without moralizing at individual people.</li>
+<li>Never soften the standard into generic empowerment or motivational poster language.</li>
+</ul>
+<h3>Special-needs-mom intertwine rule</h3>
+<p>From the 2026-06-10 session: the special-needs-mom layer is woven organically through fitness and healthy-lifestyle content. It is lived context that raises the standard, never the story being sold.</p>
+<ul>
+<li>Correct: training framed as "free therapy for a special needs mom." Correct: bringing the kids to the marathon instead of skipping it.</li>
+<li>It appears mid-content, as one thread of proof among many. It NEVER leads a piece, never becomes a sobby opening, and never asks for sympathy.</li>
+<li>Her son's face is never used. The brand never becomes mommy-first.</li>
+</ul>
+<h3>On-voice examples</h3>
+<ul>
+<li>"No shortcuts. Do the work."</li>
+<li>"The routine is not cute. That is why it works."</li>
+<li>"Cannabis belongs in the discipline stack, not on a basement couch."</li>
+<li>"If the body keeps receipts, stop acting surprised by the bill."</li>
+<li>"Show up. No exceptions."</li>
+<li>"Saturday long run. Free therapy for a special needs mom."</li>
+<li>"Race day. The kids came with me."</li>
+</ul>
+<h3>Off-voice examples</h3>
+<ul>
+<li>"Yass queen, time to glow."</li>
+<li>"Your wellness journey starts with self-love."</li>
+<li>"Cannabis vibes for your soft era."</li>
+<li>"Unlock your best self with effortless transformation."</li>
+<li>"As a special needs mom, some days I just want to cry. Here's my story."</li>
+</ul>
+<h3>Banned characters</h3>
+<ul>
+<li>em-dash</li>
+<li>en-dash</li>
+</ul>
+<p>Plain hyphen-minus is fine.</p>
+<h3>Banned phrases and tropes</h3>
+<ul>
+<li>Yass queen.</li>
+<li>Soft era.</li>
+<li>Weed girl.</li>
+<li>Mommy wellness.</li>
+<li>Namaste.</li>
+<li>Shortcut body.</li>
+<li>Miracle weight loss.</li>
+<li>Stoner chic.</li>
+<li>Cannabis goddess.</li>
+</ul></div>
+  </section>
+
+  <section class="voice-section" aria-labelledby="voice-2">
+    <div class="voice-section-head">
+      <div class="voice-section-num">02</div>
+      <div>
+        <div class="voice-section-sub">Exemplar bank</div>
+        <h2 id="voice-2">Paired exemplars</h2>
+        <p class="voice-section-desc">On-voice examples and off-voice traps, verbatim from references/voice-exemplars.md. The exemplar bank is the calibration test for any new copy.</p>
+      </div>
+    </div>
+    <div class="voice-body"><p>No voice exemplars found.</p></div>
+  </section>
+
+
+  <div class="footer-nav">
+    <span>Section B · Voice · Brand Identity</span>
+    <span><a href="signature.html">Signature →</a></span>
+  </div>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        KC Santana (kc-santana)
+  Version:      1.0.0
+  Built at:     2026-06-11T20:15:38+00:00
+  Git SHA:      84f399357abf87128f6a478b5c0563234b913e59
+  Bundle hash:  sha256:2f33af850bbfa578eb2216f5d131da4b7c9f7b969c887072d7a4dd4d22cec834
+  Source:       brand-os/brands/kc-santana/DIRECTIONS.md + STRATEGY.md + IDENTITY.md
+-->
+</body>
+</html>

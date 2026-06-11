@@ -3,7 +3,7 @@
   section-a-shell.html
   ====================
   Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
-  visual design (sidebar nav, editorial typography, viewfinder treatment, footer).
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
 
   build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
   are documented in shared/templates/README.md (section: "Template token syntax
@@ -23,30 +23,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
 <title>Purpose · KC Brand OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
   /* Per-brand color and typography token overrides.
      Injected by build.py from IDENTITY.md frontmatter. */
   :root {
-    --accent: #5A5CF9;
-    --accent-glow: rgba(90, 92, 249, 0.35);
-    --accent-soft: rgba(90, 92, 249, 0.06);
-    --text: #1A1A2E;
-    --muted: #8888A0;
+    --accent: #4E6B46;
+    --accent-glow: rgba(78, 107, 70, 0.30);
+    --accent-soft: rgba(78, 107, 70, 0.10);
+    --text: #1B1712;
+    --muted: #6F6354;
     --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
-    --border: #E5E7EB;
-    --light: #F5F5F7;
-    --white: #FFFFFF;
-    --dark: #18181B;
-    --dark-surface: #1D1D1D;
-    --ff-h: "Bricolage Grotesque", system-ui, sans-serif;
-    --ff-b: "Poppins", system-ui, sans-serif;
-    --ff-accent: "Bricolage Grotesque", system-ui, sans-serif;
+    --border: #DCC9A4;
+    --light: #E8D5AE;
+    --white: #F1E2C7;
+    --dark: #1B1712;
+    --dark-surface: #241E16;
+    --ff-h: "Barlow Condensed", system-ui, sans-serif;
+    --ff-b: "Barlow", system-ui, sans-serif;
+    --ff-accent: "IBM Plex Mono", ui-monospace, monospace;
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
     --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
@@ -59,7 +58,7 @@
 
 <aside class="sidebar">
   <div class="brand-mark">
-    <div class="name">KC<span class="dot">.</span></div>
+    <div class="name">KC</div>
     <div class="meta">Brand OS</div>
   </div>
   <nav class="nav-section" aria-label="Brand OS sections">
@@ -74,10 +73,11 @@
 <a href="promise.html">Promise</a>
 <a href="personality.html">Personality</a>
 </div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
-<a href="../identity/index.html">Direction One</a>
-<a href="../identity/sun-grown-athlete.html">Direction Two</a>
-</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
-<a href="../application/index.html">Brand Application</a>
+<a href="../identity/index.html">Run the Standard</a>
+<a href="../identity/look-and-feel.html">Look &amp; Feel</a>
+<a href="../identity/voice.html">Voice</a>
+<a href="../identity/signature.html">Signature</a>
+<a href="../identity/likeness.html">Likeness</a>
 </div></details>
   </nav>
   <div class="toolbar-mini">
@@ -93,7 +93,7 @@
   <section class="p-hero no-media">
     <div class="p-hero-copy">
       <div class="p-kicker">Section A · P3 · Brand Strategy</div>
-      <h1>Purpose<span class="dot">.</span></h1>
+      <h1>Purpose</h1>
       <p>KC exists to help women reclaim cognitive longevity, hormonal health, physical health, and mental health through lifestyle discipline, weighted heavily toward fitness and discipline.</p>
       <div class="p-tags"><span>Women's health through discipline</span></div>
     </div>
@@ -106,7 +106,7 @@
       <div class="p-section-num">01</div>
       <div>
         <div class="p-kicker">Strategic position</div>
-        <h2>What is being claimed<span class="dot">.</span></h2>
+        <h2>What is being claimed</h2>
         <p class="p-section-desc">The brand's position on this edge, in one plain sentence.</p>
       </div>
     </div>
@@ -129,7 +129,7 @@
       <div class="p-section-num">02</div>
       <div>
         <div class="p-kicker">Offer boundaries</div>
-        <h2>What belongs and what does not<span class="dot">.</span></h2>
+        <h2>What belongs and what does not</h2>
         <p class="p-section-desc">The filters that keep this strategic choice operational.</p>
       </div>
     </div>
@@ -152,7 +152,7 @@
       <div class="p-section-num">03</div>
       <div>
         <div class="p-kicker">Tradeoffs</div>
-        <h2>What this choice costs<span class="dot">.</span></h2>
+        <h2>What this choice costs</h2>
         <p class="p-section-desc">Real strategy costs something. If this section is empty, the strategy is performative.</p>
       </div>
     </div>
@@ -166,7 +166,7 @@
       <div class="p-section-num">04</div>
       <div>
         <div class="p-kicker">Application</div>
-        <h2>How this changes behavior<span class="dot">.</span></h2>
+        <h2>How this changes behavior</h2>
         <p class="p-section-desc">Strategic choices that don't change behavior are descriptions, not strategy.</p>
       </div>
     </div>
@@ -180,7 +180,7 @@
       <div class="p-section-num">05</div>
       <div>
         <div class="p-kicker">Proof required</div>
-        <h2>What evidence supports this<span class="dot">.</span></h2>
+        <h2>What evidence supports this</h2>
         <p class="p-section-desc">Every public claim traces to verifiable evidence.</p>
       </div>
     </div>
@@ -192,7 +192,7 @@
       <div class="p-section-num">06</div>
       <div>
         <div class="p-kicker">Output control</div>
-        <h2>Rules for AI<span class="dot">.</span></h2>
+        <h2>Rules for AI</h2>
         <p class="p-section-desc">Directives any LLM must follow when producing content for this brand.</p>
       </div>
     </div>
@@ -210,10 +210,10 @@
 <!-- Build metadata. Lets any reviewer trace this page to its source. -->
 <!--
   Brand:        KC Santana (kc-santana)
-  Version:      0.1.0
-  Built at:     2026-06-02T16:53:25+00:00
-  Git SHA:      cf1a880d37f619815c6afb719e1105d7810621a6
-  Bundle hash:  sha256:d610ea165aa44589f6641b471b15365bc27c35d7787c42df78f43a5963289abd
+  Version:      1.0.0
+  Built at:     2026-06-11T20:15:38+00:00
+  Git SHA:      84f399357abf87128f6a478b5c0563234b913e59
+  Bundle hash:  sha256:2f33af850bbfa578eb2216f5d131da4b7c9f7b969c887072d7a4dd4d22cec834
   Source:       brand-os/brands/kc-santana/STRATEGY.md + IDENTITY.md
 -->
 </body>

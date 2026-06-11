@@ -1,23 +1,24 @@
 {
   "brand": "kc-santana",
-  "version": "0.1.0",
-  "approved_at": "2026-06-02T16:40:45+00:00",
+  "version": "1.0.0",
+  "approved_at": "2026-06-11T20:15:38+00:00",
   "approved_by": "Florian",
   "source_hashes": {
-    "STRATEGY.md": "sha256:e69991db8bfdcda8003d0a01a702689dd59937aff8a5267a9c02e2eb3303e12e",
-    "IDENTITY.md": "sha256:9cb0ecc1fcbb685025bf3ea9a420af0ec2c91ccf704a581e720eb3fca8814384",
-    "DIRECTIONS.md": "sha256:90c079f80136d73ccb0e7210a9ab77496895e39ba45aedcb6964d6a09a2c72f6",
+    "STRATEGY.md": "sha256:eb0061a3dbe8a402bc7f4de3957ef7fc1999583ff26c7dc2b360842524df036a",
+    "IDENTITY.md": "sha256:b070f67611cee931f0a881dacd8304c1ad4ae70b11cf814751e31126b2ded98a",
+    "DIRECTIONS.md": "sha256:07a6abe40443873829815297ac2a8a2a34372df105ab5bc18e8c6191c7ae9e52",
+    "references/signature-data-strip.md": "sha256:7f8902d578c14980be676bb63d37a75842c2ea64ca14968a807347e95efe90fd",
     "references/source-map.md": "sha256:aa409f8ca56549806bf9117348ca51bd1e80773c1c1a95781de134fea2c4ee11",
-    "images_manifest": "sha256:9e91af923588d337b13fb748bfd2b737dbcdad40c7c4b47951a60685368997c0"
+    "images_manifest": "sha256:5d30ed00a2d1a016a126a4fd42cc985aa480359143d1d807f95b0dcc8936e560"
   },
-  "bundle_hash": "sha256:d610ea165aa44589f6641b471b15365bc27c35d7787c42df78f43a5963289abd",
+  "bundle_hash": "sha256:2f33af850bbfa578eb2216f5d131da4b7c9f7b969c887072d7a4dd4d22cec834",
   "outputs": {
-    "ai_context_emitted_at": "2026-06-02T16:40:45+00:00",
-    "ai_context_json_emitted_at": "2026-06-02T16:40:45+00:00",
-    "ai_context_git_sha": "cf1a880d37f619815c6afb719e1105d7810621a6",
-    "strategy_html_emitted_at": "2026-06-02T16:40:45+00:00",
-    "identity_html_emitted_at": "2026-06-02T16:40:45+00:00",
-    "focus_star_json_emitted_at": "2026-06-02T16:40:45+00:00"
+    "ai_context_emitted_at": "2026-06-11T20:15:38+00:00",
+    "ai_context_json_emitted_at": "2026-06-11T20:15:38+00:00",
+    "ai_context_git_sha": "84f399357abf87128f6a478b5c0563234b913e59",
+    "strategy_html_emitted_at": "2026-06-11T20:15:38+00:00",
+    "identity_html_emitted_at": "2026-06-11T20:15:38+00:00",
+    "focus_star_json_emitted_at": "2026-06-11T20:15:38+00:00"
   },
   "validator_rules": {
     "must_match_at_build": [
