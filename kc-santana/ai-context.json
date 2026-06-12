@@ -9,9 +9,9 @@
   },
   "source": {
     "source_slug": "kc-santana",
-    "build_timestamp": "2026-06-12T17:39:59+00:00",
-    "git_sha": "452a42eb98d76ff8f3b9278d7a0629c4a2aeda4f",
-    "bundle_hash": "sha256:aee5cc4a4c7c8a660f620c9ad38575ba42e044758ab2ca017d83609b46230212",
+    "build_timestamp": "2026-06-12T21:19:11+00:00",
+    "git_sha": "26a6e3d2a8a85373fbf0eb88cf396cb8d150af36",
+    "bundle_hash": "sha256:1b624b8bf95022300280a112ec76841e7d6e8c617089c68ea6d327bbcfac6772",
     "source_hashes": {
       "STRATEGY.md": "sha256:ff6dce219c91e020cde53abf9e7339707faba1397b05b0ee52d3d5685edefde7",
       "IDENTITY.md": "sha256:f50967ec6c972e5a04ca06d96f9f6695f83c1732700feedb97ff272eba98def5",
@@ -19,6 +19,7 @@
       "CHANNELS.md": "sha256:4ffb3d582e04d47ba5c8a1bff6bd9c925a49abfa4ddd63dc7abca79dea999761",
       "DIRECTIONS.md": "sha256:07a6abe40443873829815297ac2a8a2a34372df105ab5bc18e8c6191c7ae9e52",
       "QUICKSTART.md": "sha256:00d0284cd8022dd55b33599365ca25e3c6c67f21d814871deb7f3e01a3848ab7",
+      "DIFFERENTIATION.md": "sha256:559dd496d84f4cc05aebe7a066e6cc0952fae6f746d02baf5c3aee57b00dba77",
       "references/signature-data-strip.md": "sha256:7f8902d578c14980be676bb63d37a75842c2ea64ca14968a807347e95efe90fd",
       "references/source-map.md": "sha256:aa409f8ca56549806bf9117348ca51bd1e80773c1c1a95781de134fea2c4ee11",
       "images_manifest": "sha256:bc987aab1f30a2b0db75c7eb7fa697cc24684c7c5b7b3d10b717c72cc9f654f6",
@@ -26,6 +27,7 @@
     },
     "source_order": [
       "STRATEGY.md",
+      "DIFFERENTIATION.md",
       "IDENTITY.md",
       "DIRECTIONS.md",
       "APPLICATION.md",
@@ -40,7 +42,8 @@
         "APPLICATION.md": "source/APPLICATION.md",
         "CHANNELS.md": "source/CHANNELS.md",
         "DIRECTIONS.md": "source/DIRECTIONS.md",
-        "QUICKSTART.md": "source/QUICKSTART.md"
+        "QUICKSTART.md": "source/QUICKSTART.md",
+        "DIFFERENTIATION.md": "source/DIFFERENTIATION.md"
       },
       "references": {
         "references/signature-data-strip.md": "source/references/signature-data-strip.md",
@@ -328,6 +331,104 @@
           "Avoid generic wellness, generic gym, and generic cannabis imagery."
         ]
       }
+    }
+  },
+  "differentiation": {
+    "positioning_statement": "For high-earning women who know something has to change but do not know where to start, KC Santana is proof-led thought leadership. A mentor who lives the standard instead of selling another program. No shortcuts, no GLP-1 identity, no passive wellness. No excuses.",
+    "positioning_note": "Assembled from locked decisions, not written fresh. P1 product, P2 people, P4 promise. To change it, change STRATEGY.md and rebuild.",
+    "differentiators": [
+      {
+        "label": "The proof is the product",
+        "statement": "KC is a mentor and thought leader, not a coach and not an educator. The offer is her visible standard, events, mastermind dinners, podcast, and content that make daily discipline impossible to ignore. Future products stay named as future products.",
+        "anchor": "P1 Product",
+        "proof": "Source line: wellness events are how KC makes an impact and holds authority. Existing podcast. SoCal event history."
+      },
+      {
+        "label": "Built for Alina, not for everyone",
+        "statement": "One persona, not a demographic. The high-earning, health-curious, undisciplined SoCal woman who does not need more information, she needs a standard she cannot negotiate with. Special-needs motherhood stays an identity layer, never the front of the brand.",
+        "anchor": "P2 People",
+        "proof": "Persona notes for Alina. Geographic note, SoCal, not Inland Empire and not LA-only."
+      },
+      {
+        "label": "Discipline as the health intervention",
+        "statement": "Cognitive longevity, hormonal health, physical health, and mental health, reclaimed through lifestyle discipline weighted toward fitness. No medical claims, no before-after bodies. The better way made visible enough that excuses get harder to defend.",
+        "anchor": "P3 Purpose",
+        "proof": "KC source quotes: \"If I can do it, anybody else can. No more excuses.\" and making women aware there is a better way."
+      },
+      {
+        "label": "No Excuses is a refusal, not a slogan",
+        "statement": "The promise rules out the entire shortcut economy, GLP-1 identity, passive wellness, cute motivational posters. It is a refusal and an invitation, the body, the brain, the hormones, the training, and the room all answer to the same standard.",
+        "anchor": "P4 Promise",
+        "proof": "KC source quote about refusing fat-loss drugs and putting in the work. Approved tagline list."
+      },
+      {
+        "label": "Disciplined badassness with a cannabis edge",
+        "statement": "Hero and Ruler archetypes with Cannabis Outlaw as the category edge. Cannabis sits inside the discipline stack, sun-grown, athlete-grade, pre-workout or post-recovery ritual, an edge no generic wellness voice can copy and no stoner trope can claim.",
+        "anchor": "P5 Personality",
+        "proof": "Approved archetype mix, locked attribute list, slider and anti-trope sources."
+      }
+    ],
+    "errc": {
+      "eliminate": [
+        {
+          "move": "Coaching packages and educator-first positioning",
+          "source": "P1 rules out"
+        },
+        {
+          "move": "GLP-1 framing, shortcut selling, and passive wellness",
+          "source": "P4 compass"
+        },
+        {
+          "move": "Medical claims and weight-loss before-after framing",
+          "source": "P3 rules out"
+        },
+        {
+          "move": "Stoner stereotypes and pink-Barbie feminine wellness",
+          "source": "P5 rules out"
+        }
+      ],
+      "reduce": [
+        {
+          "move": "Broad wellness appeal, in favor of precision around Alina",
+          "source": "P2 tradeoffs"
+        },
+        {
+          "move": "Comfort-first nurturing, the voice sets standards before it soothes",
+          "source": "P1 tradeoffs"
+        },
+        {
+          "move": "Easy likeability, in favor of commanding presence",
+          "source": "P5 tradeoffs"
+        }
+      ],
+      "raise": [
+        {
+          "move": "Lived proof, the founder is the proof and the daily standard stays visible",
+          "source": "P1 compass"
+        },
+        {
+          "move": "The standard of the room, events selective through behavior, not status",
+          "source": "P2 application"
+        },
+        {
+          "move": "Evidence discipline behind every health claim the brand makes",
+          "source": "P3 tradeoffs"
+        }
+      ],
+      "create": [
+        {
+          "move": "No Excuses as an operating contract that filters every product, post, event, and visual",
+          "source": "Focus Star center"
+        },
+        {
+          "move": "The healthy functional cannabis frame, sun-grown, athlete-grade, ritual not escape",
+          "source": "P5 rules in"
+        },
+        {
+          "move": "A proof-led mentor category where the visible standard is the offer until products earn their place",
+          "source": "P1 decision"
+        }
+      ]
     }
   },
   "identity": {
