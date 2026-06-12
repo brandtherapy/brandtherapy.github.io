@@ -77,7 +77,7 @@ window.FOCUS_STAR_CONFIG = {
           {
             "label": "Proof required",
             "items": [
-              "Service structure (Founders rate: $700; Brands rate: $5K-15K+)",
+              "Service structure (Founders rate: $2,000; Brands rate: $5K-15K+)",
               "Process steps (Discovery → Blueprint → Build → Launch)",
               "Case evidence (Verdant Strategies, Cachet, Adam Freed / Freed Solutions)"
             ],
@@ -107,7 +107,7 @@ window.FOCUS_STAR_CONFIG = {
             "Done-for-you execution without strategic ownership"
           ],
           "Proof required": [
-            "Service structure (Founders rate: $700; Brands rate: $5K-15K+)",
+            "Service structure (Founders rate: $2,000; Brands rate: $5K-15K+)",
             "Process steps (Discovery → Blueprint → Build → Launch)",
             "Case evidence (Verdant Strategies, Cachet, Adam Freed / Freed Solutions)",
             "Visible testimonials (Jon Tull of Cachet, Kevin Meredith of 4th Sector Innovations, Sam Goldman)",

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Differentiation · FP Brand OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #5A5CF9;
+    --accent-glow: rgba(90, 92, 249, 0.35);
+    --accent-soft: rgba(90, 92, 249, 0.06);
+    --text: #1A1A2E;
+    --muted: #8888A0;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #E5E7EB;
+    --light: #F5F5F7;
+    --white: #FFFFFF;
+    --dark: #18181B;
+    --dark-surface: #1D1D1D;
+    --ff-h: "Bricolage Grotesque", system-ui, sans-serif;
+    --ff-b: "Poppins", system-ui, sans-serif;
+    --ff-accent: "Bricolage Grotesque", system-ui, sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">FP<span class="dot">.</span></div>
+    <div class="meta">Brand OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="index.html">Focus Star</a>
+<a href="product.html">Product</a>
+<a href="people.html">People</a>
+<a href="purpose.html">Purpose</a>
+<a href="promise.html">Promise</a>
+<a href="personality.html">Personality</a>
+<a class="active" href="differentiation.html">Differentiation</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="../identity/index.html">Creative Direction</a>
+<a href="../identity/look-and-feel.html">Look &amp; Feel</a>
+<a href="../identity/voice.html">Voice</a>
+<a href="../identity/signature.html">Signature</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
+<a href="../application/index.html">Application Overview</a>
+<a href="../application/references.html">Reference Gallery</a>
+<a href="../application/channel-rules.html">Channel Rules</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">D</span><span class="group-label">Personal Branding</span></summary><div class="nav-list">
+<a href="../personal-branding/index.html">Position &amp; Role</a>
+<a href="../personal-branding/character-sheet.html">Character Sheet</a>
+<a href="../personal-branding/outputs.html">Personal-Mode Outputs</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Strategy</strong></div>
+    <div class="row"><span>Use</span><strong>AI + creative</strong></div>
+    <div class="row"><span>Center</span><strong>Curiosity</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+<style>
+.diff-hero { padding: 56px 0 40px; max-width: 72ch; }
+.diff-kicker { font-family: var(--ff-b); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+.diff-hero h1 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(40px, 5.5vw, 64px); line-height: 1.02; letter-spacing: -0.02em; color: var(--text); margin: 0 0 18px; text-wrap: balance; }
+.diff-intro { font-family: var(--ff-b); font-size: 16px; line-height: 1.7; color: var(--muted-readable); margin: 0; max-width: 62ch; }
+.diff-positioning { position: relative; margin: 24px 0 72px; padding: 44px clamp(28px, 4vw, 56px) 40px; background: var(--white); border: 1px solid var(--border); }
+.diff-positioning::before { content: ""; position: absolute; top: -1px; left: -1px; width: 34px; height: 34px; border-top: 4px solid var(--accent); border-left: 4px solid var(--accent); }
+.diff-positioning::after { content: ""; position: absolute; bottom: -1px; right: -1px; width: 34px; height: 34px; border-bottom: 4px solid var(--accent); border-right: 4px solid var(--accent); }
+.diff-pos-label { font-family: var(--ff-b); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted-readable); margin-bottom: 18px; }
+.diff-pos-statement { font-family: var(--ff-h); font-weight: 700; font-size: clamp(22px, 2.8vw, 32px); line-height: 1.3; letter-spacing: -0.01em; color: var(--text); margin: 0; text-wrap: balance; }
+.diff-pos-statement strong { color: var(--accent); font-weight: 800; }
+.diff-pos-note { font-family: var(--ff-b); font-size: 13px; line-height: 1.6; color: var(--muted-readable); margin: 20px 0 0; max-width: 58ch; }
+.diff-section { margin: 0 0 76px; }
+.diff-section-head { margin-bottom: 36px; max-width: 72ch; }
+.diff-section-head h2 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(26px, 3.4vw, 38px); line-height: 1.06; letter-spacing: -0.015em; color: var(--text); margin: 6px 0 12px; }
+.diff-section-desc { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--muted-readable); margin: 0; max-width: 62ch; }
+.diff-list { list-style: none; margin: 0; padding: 0; counter-reset: none; }
+.diff-item { display: grid; grid-template-columns: 84px 1fr; gap: 0 28px; padding: 32px 0 36px; border-top: 1px solid var(--border); }
+.diff-item:last-child { border-bottom: 1px solid var(--border); }
+.diff-num { font-family: var(--ff-h); font-weight: 800; font-size: 38px; line-height: 1; color: var(--accent); letter-spacing: -0.02em; padding-top: 2px; }
+.diff-item-body h3 { font-family: var(--ff-h); font-weight: 700; font-size: clamp(19px, 2.2vw, 24px); line-height: 1.2; color: var(--text); margin: 0 0 10px; }
+.diff-item-body > p { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); margin: 0 0 16px; max-width: 68ch; }
+.diff-item-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 16px; }
+.diff-anchor { font-family: var(--ff-b); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 38%, transparent); padding: 5px 10px; white-space: nowrap; }
+.diff-proof { font-family: var(--ff-b); font-size: 13px; line-height: 1.6; color: var(--muted-readable); max-width: 56ch; }
+.diff-errc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.diff-quad { border: 1px solid var(--border); background: var(--white); padding: 28px 28px 24px; }
+.diff-quad-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.diff-quad-verb { font-family: var(--ff-h); font-weight: 800; font-size: 21px; letter-spacing: -0.01em; color: var(--text); }
+.diff-quad-count { font-family: var(--ff-b); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--muted-readable); }
+.diff-quad ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.diff-quad li { display: grid; gap: 3px; }
+.diff-move { font-family: var(--ff-b); font-size: 14px; line-height: 1.55; color: var(--text); }
+.diff-move-src { font-family: var(--ff-b); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-readable); }
+.diff-quad[data-quad="create"] { position: relative; border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); background: color-mix(in srgb, var(--accent) 4%, var(--white)); }
+.diff-quad[data-quad="create"]::before { content: ""; position: absolute; top: -1px; left: -1px; width: 26px; height: 26px; border-top: 4px solid var(--accent); border-left: 4px solid var(--accent); }
+.diff-quad[data-quad="create"] .diff-quad-verb { color: var(--accent); }
+.diff-footnote { font-family: var(--ff-b); font-size: 13px; line-height: 1.7; color: var(--muted-readable); border-top: 1px solid var(--border); padding-top: 22px; margin: 0 0 8px; max-width: 68ch; }
+@media (max-width: 640px) {
+  .diff-item { grid-template-columns: 1fr; gap: 10px; }
+  .diff-num { font-size: 28px; }
+}
+</style>
+  <section class="diff-hero">
+    <div class="diff-kicker">Section A · Differentiation</div>
+    <h1>Differentiation<span class="dot">.</span></h1>
+    <p class="diff-intro">One page for the only competitive question that matters, why this practice and not the next strategist with a deck. Every line consolidates a decision already locked in Section A.</p>
+  </section>
+
+  <section class="diff-positioning" aria-label="Positioning statement">
+    <div class="diff-pos-label">Positioning statement</div>
+    <blockquote class="diff-pos-statement">For founders, brands, and companies whose work is stronger than the way it is explained, <strong>Brand Therapy</strong> is brand strategy with psychology built in. A diagnostic practice that turns hidden expertise into a working blueprint the client owns, built on looking closely instead of performing certainty.</blockquote>
+    <p class="diff-pos-note">Assembled from locked decisions, not written fresh. P1 position, P2 persona, P4 method. To change it, change STRATEGY.md and rebuild.</p>
+  </section>
+
+  <section class="diff-section">
+    <div class="diff-section-head">
+      <div class="diff-kicker">What only this brand claims</div>
+      <h2>Differentiators<span class="dot">.</span></h2>
+    </div>
+    <ol class="diff-list">
+    <li class="diff-item">
+      <div class="diff-num" aria-hidden="true">01</div>
+      <div class="diff-item-body">
+        <h3>Psychology built into the strategy work</h3>
+        <p>Brand Therapy is a diagnostic practice, not a deliverable bundle. Discovery feels therapeutic without implying clinical therapy, and the output is a decision system the client can read, execute from, and return to.</p>
+        <div class="diff-item-meta"><span class="diff-anchor">P1 Product</span><span class="diff-proof">Process structure: Discovery, Blueprint, Build, Launch Ready. Case evidence: Verdant Strategies, Cachet, Freed Solutions.</span></div>
+      </div>
+    </li>
+    <li class="diff-item">
+      <div class="diff-num" aria-hidden="true">02</div>
+      <div class="diff-item-body">
+        <h3>Built for the Invisible Expert</h3>
+        <p>One persona, not a demographic. People and companies whose work is stronger than the way it is explained. The pain is translation, not talent, and the work makes them easier to understand without becoming louder, flatter, or fake.</p>
+        <div class="diff-item-meta"><span class="diff-anchor">P2 People</span><span class="diff-proof">Testimonials that mention feeling understood, clearer, more specific, or less stuck.</span></div>
+      </div>
+    </li>
+    <li class="diff-item">
+      <div class="diff-num" aria-hidden="true">03</div>
+      <div class="diff-item-body">
+        <h3>Perfect matches, not more matches</h3>
+        <p>Every engagement scales marketing down by sharpening what makes the brand specific. The purpose is selection, make each brand strong enough to say no, including to the wrong client.</p>
+        <div class="diff-item-meta"><span class="diff-anchor">P3 Purpose</span><span class="diff-proof">Cachet Advisory: a well-differentiated brand in an industry that does not assume differentiation is possible.</span></div>
+      </div>
+    </li>
+    <li class="diff-item">
+      <div class="diff-num" aria-hidden="true">04</div>
+      <div class="diff-item-body">
+        <h3>Curiosity as method, not personality</h3>
+        <p>Look before deciding, ask before asserting, trace every choice back to what is actually there. A deliverable that does not show the work was curious first does not fit the brand.</p>
+        <div class="diff-item-meta"><span class="diff-anchor">P4 Promise</span><span class="diff-proof">Observation-first Discovery Calls and strategic recommendations traced back to specific noticed patterns.</span></div>
+      </div>
+    </li>
+    <li class="diff-item">
+      <div class="diff-num" aria-hidden="true">05</div>
+      <div class="diff-item-body">
+        <h3>Funny first, dry diagnosis</h3>
+        <p>The voice finds the absurdity inside the truth. Humor is how the insight arrives, not decoration after it. If the joke works without the strategy point, it gets cut.</p>
+        <div class="diff-item-meta"><span class="diff-anchor">P5 Personality</span><span class="diff-proof">Live voice exemplars per channel, with off-voice counterexamples showing where funny-first slides into joke-only.</span></div>
+      </div>
+    </li>
+    </ol>
+  </section>
+
+  <section class="diff-section">
+    <div class="diff-section-head">
+      <div class="diff-kicker">Blue Ocean moves</div>
+      <h2>The ERRC grid<span class="dot">.</span></h2>
+      <p class="diff-section-desc">Blue Ocean discipline applied to the Focus Star. What this practice eliminates, reduces, raises, and creates relative to the standard brand-consulting playbook. Sources cited per move.</p>
+    </div>
+    <div class="diff-errc-grid">
+      <div class="diff-quad" data-quad="eliminate">
+        <div class="diff-quad-head"><h3 class="diff-quad-verb">Eliminate</h3><span class="diff-quad-count">04</span></div>
+        <ul><li><span class="diff-move">Logo design, aesthetic refreshes, and template solutions</span><span class="diff-move-src">P1 rules out</span></li><li><span class="diff-move">Hustle-culture personal branding and attention-first content</span><span class="diff-move-src">P2 rules out</span></li><li><span class="diff-move">Performance of certainty, faux-expert authority and polished-but-empty answers</span><span class="diff-move-src">P4 rules out</span></li><li><span class="diff-move">Joke-only copy, motivational posts, and self-help chapter energy</span><span class="diff-move-src">P5 rules out</span></li></ul>
+      </div>
+      <div class="diff-quad" data-quad="reduce">
+        <div class="diff-quad-head"><h3 class="diff-quad-verb">Reduce</h3><span class="diff-quad-count">03</span></div>
+        <ul><li><span class="diff-move">Templated speed and immediate output, in favor of upfront diagnosis</span><span class="diff-move-src">P1 tradeoffs</span></li><li><span class="diff-move">Broad-market appeal, fewer better-fitting clients over volume</span><span class="diff-move-src">P3 tradeoffs</span></li><li><span class="diff-move">Reassurance-by-credentials posture in recommendations, investigation comes first</span><span class="diff-move-src">P4 tradeoffs</span></li></ul>
+      </div>
+      <div class="diff-quad" data-quad="raise">
+        <div class="diff-quad-head"><h3 class="diff-quad-verb">Raise</h3><span class="diff-quad-count">03</span></div>
+        <ul><li><span class="diff-move">Strategic specificity, every claim traces to a pattern actually noticed in the client's reality</span><span class="diff-move-src">P4 rules in</span></li><li><span class="diff-move">Client ownership, a blueprint the client can read, execute from, and return to</span><span class="diff-move-src">P1 rules in</span></li><li><span class="diff-move">Confidence to say no, positioning strong enough to refuse the wrong match</span><span class="diff-move-src">P3 compass</span></li></ul>
+      </div>
+      <div class="diff-quad" data-quad="create">
+        <div class="diff-quad-head"><h3 class="diff-quad-verb">Create</h3><span class="diff-quad-count">03</span></div>
+        <ul><li><span class="diff-move">Brand Therapy, a named diagnostic method where brand strategy and psychology are one practice</span><span class="diff-move-src">P1 position</span></li><li><span class="diff-move">The Focus Star, five decided edges plus a center promise as the working strategy contract</span><span class="diff-move-src">Focus Star framework</span></li><li><span class="diff-move">A persona-first qualification filter, the Invisible Expert test replaces demographic segmentation</span><span class="diff-move-src">P2 compass</span></li></ul>
+      </div>
+    </div>
+  </section>
+  <p class="diff-footnote">Presentation layer only. Every differentiator and ERRC move cites its source decision in the locked STRATEGY.md. To change a claim, change the strategy and rebuild. Do not edit this page.</p>
+
+
+  <div class="footer-nav">
+    <span>Section A · Differentiation · Brand Strategy</span>
+    <span><a href="../identity/index.html">Brand Identity →</a></span>
+  </div>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        Florian P. Consulting (fp)
+  Version:      4.0.0
+  Built at:     2026-06-12T21:19:10+00:00
+  Git SHA:      26a6e3d2a8a85373fbf0eb88cf396cb8d150af36
+  Bundle hash:  sha256:cf525c22b87a8f1d91649022b5baffddcea9c846594462a5cd01d6f9556848dd
+  Source:       brand-os/brands/fp/DIFFERENTIATION.md + STRATEGY.md
+-->
+</body>
+</html>

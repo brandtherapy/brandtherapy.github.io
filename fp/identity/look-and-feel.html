@@ -3,7 +3,7 @@
   section-a-shell.html
   ====================
   Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
-  visual design (sidebar nav, editorial typography, viewfinder treatment, footer).
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
 
   build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
   are documented in shared/templates/README.md (section: "Template token syntax
@@ -72,6 +72,7 @@
 <a href="../strategy/purpose.html">Purpose</a>
 <a href="../strategy/promise.html">Promise</a>
 <a href="../strategy/personality.html">Personality</a>
+<a href="../strategy/differentiation.html">Differentiation</a>
 </div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
 <a href="index.html">Creative Direction</a>
 <a class="active" href="look-and-feel.html">Look &amp; Feel</a>
@@ -185,7 +186,7 @@
         <p class="lf-section-desc">Non-negotiable. These rules exist to maintain visual coherence across every touchpoint.</p>
       </div>
     </div>
-    <div class="lf-rules-grid"><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Use the purple period at the end of every brand headline</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Frame photos with the viewfinder bracket (2-corner on photos: top-right + bottom-left)</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Lead with whitespace</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Bold the load-bearing phrases (2-4 per long-form section)</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Use sharp 90-degree corners on every element</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use em-dashes (U+2014) or en-dashes (U+2013) in public paragraph copy (headlines, hero sentences, body prose, hooks). OK in lists, quotes, parentheticals, file comments, and background context.</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Round any corners</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Introduce a third typeface</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use warm colors anywhere</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use polaroid treatments or stock photography</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use light font weights for display</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use italic emphasis on display type</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use dark canvas as default</p></div></div>
+    <div class="lf-rules-grid"><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Use the purple period at the end of every brand headline</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Frame photos with the viewfinder bracket (2-corner on photos: top-right + bottom-left)</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Lead with whitespace</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Keep the canvas white or light, with visible lines limited to intentional dividers, component borders, and real table cell borders</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Do not use full-page square backgrounds, graph-paper patterns, visible background grids, blueprint textures, ruled-paper textures, or decorative grid overlays.</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Bold the load-bearing phrases (2-4 per long-form section)</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Use sharp 90-degree corners on every element</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use em-dashes (U+2014) or en-dashes (U+2013) in public paragraph copy (headlines, hero sentences, body prose, hooks). OK in lists, quotes, parentheticals, file comments, and background context.</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Round any corners</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Introduce a third typeface</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use warm colors anywhere</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use polaroid treatments or stock photography</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use light font weights for display</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use italic emphasis on display type</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use dark canvas as default</p></div></div>
   </section>
 
   
@@ -246,7 +247,7 @@
         <p class="lf-section-desc">What this brand is visually and categorically NOT, framed as anti-targets for AI image generation, layout work, and brand positioning.</p>
       </div>
     </div>
-    <div class="lf-anti-list"><div class="lf-anti-item"><h3>Consultancy template aesthetics</h3><p>Heavy gradient hero blocks, stock-photo people in front of glass walls, "trusted by" carousels of bland logos. FP's editorial restraint is the opposite.</p></div><div class="lf-anti-item"><h3>Personal-brand influencer aesthetics</h3><p>Cluttered LinkedIn graphics, neon accents, motivational quote overlays, branded talking-head selfies. FP is observed, not performed.</p></div><div class="lf-anti-item"><h3>Spa, therapy, or wellness aesthetics</h3><p>Soft warm gradients, sans-serif feminine type, leaf icons, "healing journey" language. The "therapy" in Brand Therapy is psychology of branding, not healing.</p></div><div class="lf-anti-item"><h3>SaaS-dashboard aesthetics</h3><p>Utility-first density, neutral grays, data-table layouts, "feature" grids with checkmarks. FP is editorial, not utility.</p></div><div class="lf-anti-item"><h3>Logo-portfolio studio aesthetics</h3><p>Lead with mark, big mark grids, monogram-as-hero, "brand systems" portfolio pages. FP leads with strategy, not the mark.</p></div><div class="lf-anti-item"><h3>AI-content-mill aesthetics</h3><p>Generic centered hero, three feature columns, listicle-style content blocks, "AI-powered" claims. FP shows precision, not output volume.</p></div></div>
+    <div class="lf-anti-list"><div class="lf-anti-item"><h3>Consultancy template aesthetics</h3><p>Heavy gradient hero blocks, stock-photo people in front of glass walls, "trusted by" carousels of bland logos. FP's editorial restraint is the opposite.</p></div><div class="lf-anti-item"><h3>Personal-brand influencer aesthetics</h3><p>Cluttered LinkedIn graphics, neon accents, motivational quote overlays, branded talking-head selfies. FP is observed, not performed.</p></div><div class="lf-anti-item"><h3>Spa, therapy, or wellness aesthetics</h3><p>Soft warm gradients, sans-serif feminine type, leaf icons, "healing journey" language. The "therapy" in Brand Therapy is psychology of branding, not healing.</p></div><div class="lf-anti-item"><h3>SaaS-dashboard aesthetics</h3><p>Utility-first density, neutral grays, data-table layouts, "feature" card arrays with checkmarks. FP is editorial, not utility.</p></div><div class="lf-anti-item"><h3>Logo-portfolio studio aesthetics</h3><p>Lead with mark, big mark walls, monogram-as-hero, "brand systems" portfolio pages. FP leads with strategy, not the mark.</p></div><div class="lf-anti-item"><h3>AI-content-mill aesthetics</h3><p>Generic centered hero, three feature columns, listicle-style content blocks, "AI-powered" claims. FP shows precision, not output volume.</p></div></div>
   </section>
 
 
@@ -262,9 +263,9 @@
 <!--
   Brand:        Florian P. Consulting (fp)
   Version:      4.0.0
-  Built at:     2026-06-04T23:08:17+00:00
-  Git SHA:      703f84e6243fa4c409966b57542bd387d3d33e78
-  Bundle hash:  sha256:93bf4b82169391cb7fc0c71072ba21e83f388c67395c6a174f985ead0cd075cd
+  Built at:     2026-06-12T21:19:10+00:00
+  Git SHA:      26a6e3d2a8a85373fbf0eb88cf396cb8d150af36
+  Bundle hash:  sha256:cf525c22b87a8f1d91649022b5baffddcea9c846594462a5cd01d6f9556848dd
   Source:       brand-os/brands/fp/IDENTITY.md + STRATEGY.md
 -->
 </body>
