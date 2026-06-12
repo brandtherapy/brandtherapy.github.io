@@ -1,24 +1,30 @@
 {
   "brand": "kc-santana",
   "version": "1.0.0",
-  "approved_at": "2026-06-11T21:32:07+00:00",
+  "approved_at": "2026-06-12T17:39:59+00:00",
   "approved_by": "Florian",
   "source_hashes": {
-    "STRATEGY.md": "sha256:eb0061a3dbe8a402bc7f4de3957ef7fc1999583ff26c7dc2b360842524df036a",
+    "STRATEGY.md": "sha256:ff6dce219c91e020cde53abf9e7339707faba1397b05b0ee52d3d5685edefde7",
     "IDENTITY.md": "sha256:f50967ec6c972e5a04ca06d96f9f6695f83c1732700feedb97ff272eba98def5",
+    "APPLICATION.md": "sha256:e96c266ec132f5965810023ae186d7c69fa9f0996fb820d9648d24187ffab552",
+    "CHANNELS.md": "sha256:4ffb3d582e04d47ba5c8a1bff6bd9c925a49abfa4ddd63dc7abca79dea999761",
     "DIRECTIONS.md": "sha256:07a6abe40443873829815297ac2a8a2a34372df105ab5bc18e8c6191c7ae9e52",
+    "QUICKSTART.md": "sha256:00d0284cd8022dd55b33599365ca25e3c6c67f21d814871deb7f3e01a3848ab7",
     "references/signature-data-strip.md": "sha256:7f8902d578c14980be676bb63d37a75842c2ea64ca14968a807347e95efe90fd",
     "references/source-map.md": "sha256:aa409f8ca56549806bf9117348ca51bd1e80773c1c1a95781de134fea2c4ee11",
-    "images_manifest": "sha256:bc987aab1f30a2b0db75c7eb7fa697cc24684c7c5b7b3d10b717c72cc9f654f6"
+    "images_manifest": "sha256:bc987aab1f30a2b0db75c7eb7fa697cc24684c7c5b7b3d10b717c72cc9f654f6",
+    "application_references_manifest": "sha256:b4174296e8bc72ebb44d0c453d1ea38bef2cd3ebaa193ccaaff1abfa51f56277"
   },
-  "bundle_hash": "sha256:dc742f0f61197b75bf9265a285172255e9d2f47a681fda53bde52276c6cab75f",
+  "bundle_hash": "sha256:aee5cc4a4c7c8a660f620c9ad38575ba42e044758ab2ca017d83609b46230212",
   "outputs": {
-    "ai_context_emitted_at": "2026-06-11T21:32:07+00:00",
-    "ai_context_json_emitted_at": "2026-06-11T21:32:07+00:00",
-    "ai_context_git_sha": "862ad8b69ec664ed3df5ecdf262c2de6513245dc",
-    "strategy_html_emitted_at": "2026-06-11T21:32:07+00:00",
-    "identity_html_emitted_at": "2026-06-11T21:32:07+00:00",
-    "focus_star_json_emitted_at": "2026-06-11T21:32:07+00:00"
+    "ai_context_emitted_at": "2026-06-12T17:39:59+00:00",
+    "ai_context_json_emitted_at": "2026-06-12T17:39:59+00:00",
+    "ai_context_git_sha": "452a42eb98d76ff8f3b9278d7a0629c4a2aeda4f",
+    "strategy_html_emitted_at": "2026-06-12T17:39:59+00:00",
+    "identity_html_emitted_at": "2026-06-12T17:39:59+00:00",
+    "focus_star_json_emitted_at": "2026-06-12T17:39:59+00:00",
+    "application_html_emitted_at": "2026-06-12T17:39:59+00:00",
+    "channel_rules_html_emitted_at": "2026-06-12T17:39:59+00:00"
   },
   "validator_rules": {
     "must_match_at_build": [
