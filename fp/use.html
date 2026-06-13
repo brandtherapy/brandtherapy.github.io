@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noai, noimageai">
+<title>Use this OS with AI · FP Brand OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #5A5CF9;
+    --accent-glow: rgba(90, 92, 249, 0.35);
+    --accent-soft: rgba(90, 92, 249, 0.06);
+    --text: #1A1A2E;
+    --muted: #8888A0;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #E5E7EB;
+    --light: #F5F5F7;
+    --white: #FFFFFF;
+    --dark: #18181B;
+    --dark-surface: #1D1D1D;
+    --ff-h: "Bricolage Grotesque", system-ui, sans-serif;
+    --ff-b: "Poppins", system-ui, sans-serif;
+    --ff-accent: "Bricolage Grotesque", system-ui, sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">FP<span class="dot">.</span></div>
+    <div class="meta">Brand OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="index.html">System Overview</a>
+<a class="active" href="use.html">Use with AI</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="strategy/index.html">Focus Star</a>
+<a href="strategy/product.html">Product</a>
+<a href="strategy/people.html">People</a>
+<a href="strategy/purpose.html">Purpose</a>
+<a href="strategy/promise.html">Promise</a>
+<a href="strategy/personality.html">Personality</a>
+<a href="strategy/differentiation.html">Differentiation</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="identity/index.html">Creative Direction</a>
+<a href="identity/look-and-feel.html">Look &amp; Feel</a>
+<a href="identity/voice.html">Voice</a>
+<a href="identity/signature.html">Signature</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
+<a href="application/index.html">Application Overview</a>
+<a href="application/references.html">Reference Gallery</a>
+<a href="application/channel-rules.html">Channel Rules</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">D</span><span class="group-label">Personal Branding</span></summary><div class="nav-list">
+<a href="personal-branding/index.html">Position &amp; Role</a>
+<a href="personal-branding/character-sheet.html">Character Sheet</a>
+<a href="personal-branding/outputs.html">Personal-Mode Outputs</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Use with AI</strong></div>
+    <div class="row"><span>Use</span><strong>Operator guide</strong></div>
+    <div class="row"><span>Center</span><strong>Curiosity</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+<style>
+.qs-hero { margin: 40px 0 64px; background: var(--dark); color: var(--white); }
+.qs-hero-inner { padding: clamp(40px, 6vw, 72px) clamp(28px, 5vw, 64px) clamp(36px, 5vw, 56px); }
+.qs-eyebrow { font-family: var(--ff-accent); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+.qs-hero h1 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(42px, 6vw, 72px); line-height: 0.98; letter-spacing: -0.01em; text-transform: uppercase; color: var(--white); margin: 0 0 20px; text-wrap: balance; }
+.qs-intro { font-family: var(--ff-b); font-size: 16px; line-height: 1.65; color: color-mix(in srgb, var(--white) 82%, var(--dark)); margin: 0 0 32px; max-width: 56ch; }
+.qs-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.qs-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 26px; font-family: var(--ff-accent); font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: background-color 0.15s var(--ease-out-quart), color 0.15s var(--ease-out-quart), border-color 0.15s var(--ease-out-quart); }
+.qs-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.qs-btn-primary { background: var(--accent); color: var(--white); }
+.qs-btn-primary:hover { background: color-mix(in srgb, var(--accent) 82%, var(--dark)); }
+.qs-btn-ghost { background: transparent; color: var(--white); border-color: color-mix(in srgb, var(--white) 45%, transparent); }
+.qs-btn-ghost:hover { border-color: var(--white); }
+.qs-btn.is-done { background: var(--white); color: var(--dark); border-color: var(--white); }
+.qs-btn.is-fail { background: transparent; color: var(--white); border-color: var(--white); }
+.qs-strip { display: flex; flex-wrap: wrap; gap: 6px 0; padding: 13px clamp(28px, 5vw, 64px); background: var(--accent); color: var(--white); font-family: var(--ff-accent); font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; font-variant-numeric: tabular-nums; }
+.qs-strip span { white-space: nowrap; }
+.qs-strip span:not(:last-child)::after { content: "·"; margin: 0 14px; opacity: 0.65; }
+.qs-section-head { margin-bottom: 32px; max-width: 72ch; }
+.qs-section-head h2 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(28px, 3.6vw, 42px); line-height: 1.02; letter-spacing: -0.005em; text-transform: uppercase; color: var(--text); margin: 0 0 10px; }
+.qs-section-sub { font-family: var(--ff-b); font-size: 15px; line-height: 1.65; color: var(--muted-readable); margin: 0; max-width: 60ch; }
+.qs-loop { margin: 0 0 72px; }
+.qs-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border: 1px solid var(--border); background: var(--white); }
+.qs-step { padding: 28px 26px 30px; border-left: 1px solid var(--border); }
+.qs-step:first-child { border-left: none; }
+.qs-step-num { font-family: var(--ff-h); font-weight: 800; font-size: 52px; line-height: 1; color: var(--accent); margin-bottom: 14px; }
+.qs-step h3 { font-family: var(--ff-h); font-weight: 700; font-size: 22px; line-height: 1.1; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin: 0 0 10px; }
+.qs-step p { font-family: var(--ff-b); font-size: 14px; line-height: 1.65; color: var(--text); margin: 0; }
+@media (max-width: 740px) { .qs-step { border-left: none; border-top: 1px solid var(--border); } .qs-step:first-child { border-top: none; } }
+.qs-prompts { margin: 0 0 72px; display: grid; gap: 24px; }
+.qs-prompt { border: 1px solid var(--text); background: var(--white); }
+.qs-prompt-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; padding: 18px 24px; border-bottom: 1px solid var(--border); }
+.qs-prompt-channel { font-family: var(--ff-accent); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); background: var(--text); padding: 6px 10px; }
+.qs-prompt-head h3 { font-family: var(--ff-h); font-weight: 700; font-size: 20px; line-height: 1.1; text-transform: uppercase; color: var(--text); margin: 0; flex: 1 1 auto; }
+.qs-prompt .qs-copy { background: transparent; color: var(--text); border-color: var(--text); min-height: 40px; padding: 8px 18px; font-size: 11px; }
+.qs-prompt .qs-copy:hover { background: var(--text); color: var(--white); }
+.qs-prompt .qs-copy.is-done { background: var(--accent); color: var(--white); border-color: var(--accent); }
+.qs-prompt-text { font-family: var(--ff-accent); font-size: 13px; line-height: 1.7; color: var(--text); background: color-mix(in srgb, var(--light) 55%, var(--white)); margin: 0; padding: 22px 24px 26px; white-space: pre-wrap; overflow-wrap: break-word; }
+.qs-rules { margin: 0 0 56px; padding: 36px clamp(28px, 4vw, 48px) 38px; background: var(--white); border: 1px solid var(--border); border-top: 4px solid var(--accent); }
+.qs-rules h2 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(24px, 3vw, 34px); line-height: 1.04; text-transform: uppercase; color: var(--text); margin: 0 0 20px; }
+.qs-rules-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; max-width: 68ch; }
+.qs-rules-list li { font-family: var(--ff-b); font-size: 15px; line-height: 1.6; color: var(--text); padding-left: 26px; position: relative; }
+.qs-rules-list li::before { content: ""; position: absolute; left: 0; top: 0.52em; width: 12px; height: 3px; background: var(--accent); }
+@media (prefers-reduced-motion: reduce) { .qs-btn { transition: none; } }
+</style>
+  <section class="qs-hero">
+    <div class="qs-hero-inner">
+      <div class="qs-eyebrow">Use this OS with AI</div>
+      <h1>The whole practice runs on one file<span class="dot">.</span></h1>
+      <p class="qs-intro">Everything in this OS compiles into one file, ai-context.md. I paste it into ChatGPT or Claude and the AI writes on strategy, in my voice, under my channel rules. No file, no standard.</p>
+      <div class="qs-actions">
+        <button type="button" class="qs-btn qs-btn-primary" id="qs-copy-context" data-context-href="ai-context.md" data-done="Copied">Copy the brain</button>
+        <a class="qs-btn qs-btn-ghost" href="ai-context.md" download>Open the file</a>
+      </div>
+    </div>
+    <div class="qs-strip"><span>AI-CONTEXT.MD</span><span>10,403 WORDS</span><span>~19K TOKENS</span><span>ONE PASTE</span><span>EVERY CHANNEL</span></div>
+  </section>
+
+  <section class="qs-loop">
+    <div class="qs-section-head">
+      <h2>The loop<span class="dot">.</span></h2>
+      <p class="qs-section-sub">Ten minutes from sitting down to a draft I can actually look at. Same loop every time.</p>
+    </div>
+    <div class="qs-steps">
+      <div class="qs-step">
+        <div class="qs-step-num" aria-hidden="true">01</div>
+        <h3>Open</h3>
+        <p>Open ChatGPT or Claude. Start a fresh chat. One chat per task. Long chats drift off voice and quietly forget the rules.</p>
+      </div>
+      <div class="qs-step">
+        <div class="qs-step-num" aria-hidden="true">02</div>
+        <h3>Paste</h3>
+        <p>Hit Copy the brain above and send it as the first message, before I ask for anything. That one paste carries the strategy, the voice, and every channel rule.</p>
+      </div>
+      <div class="qs-step">
+        <div class="qs-step-num" aria-hidden="true">03</div>
+        <h3>Ask</h3>
+        <p>Say what I need in one line. Channel, topic, goal. Or grab a starter prompt below and fill in the brackets.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="qs-prompts">
+    <div class="qs-section-head">
+      <h2>Starter prompts<span class="dot">.</span></h2>
+      <p class="qs-section-sub">Copy one, replace the brackets, send. Each prompt names its channel so the right rules load.</p>
+    </div>
+    <article class="qs-prompt" id="prompt-linkedin-post">
+      <header class="qs-prompt-head">
+        <span class="qs-prompt-channel">Social</span>
+        <h3>LinkedIn observation</h3>
+        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-linkedin-post" data-done="Copied">Copy prompt</button>
+      </header>
+      <pre class="qs-prompt-text" id="qs-prompt-text-linkedin-post">Write a LinkedIn post.
+
+What I noticed this week: [one specific thing about a founder, a brand, or the market. The smaller and more concrete, the better.]
+The reframe: [the brand point it leads to]
+
+Follow the social channel rules in this context. Hook under 100 characters, one idea, end on a reframe and not a lesson. First person, dry, no hustle-culture lines. This is a draft for my review, not a final post.</pre>
+    </article>
+    <article class="qs-prompt" id="prompt-weekly-email">
+      <header class="qs-prompt-head">
+        <span class="qs-prompt-channel">Email</span>
+        <h3>Brand Therapy Weekly</h3>
+        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-weekly-email" data-done="Copied">Copy prompt</button>
+      </header>
+      <pre class="qs-prompt-text" id="qs-prompt-text-weekly-email">Draft this week&#x27;s Brand Therapy Weekly email.
+
+This week&#x27;s idea: [one line]
+The proof or example: [a real situation, mine or a client&#x27;s, that earns the idea]
+
+Follow the email channel rules in this context. Lowercase short subject line, open on the scene or the dry diagnosis, one idea per send, one clear next step for the reader. Draft only. I approve before anything sends.</pre>
+    </article>
+    <article class="qs-prompt" id="prompt-discovery-follow-up">
+      <header class="qs-prompt-head">
+        <span class="qs-prompt-channel">Sales Deck</span>
+        <h3>Discovery follow-up</h3>
+        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-discovery-follow-up" data-done="Copied">Copy prompt</button>
+      </header>
+      <pre class="qs-prompt-text" id="qs-prompt-text-discovery-follow-up">Write a follow-up note after a discovery call.
+
+Who I spoke with: [name, what they do]
+What they actually said the problem is: [their words, not mine]
+The next decision in front of them: [one thing]
+
+Follow the sales-deck channel rules in this context. Restate their situation in their language before I recommend anything, keep it short, name one next step. Draft only, and never name pricing or a claim the source does not support without flagging it for me.</pre>
+    </article>
+  </section>
+
+  <section class="qs-rules">
+    <h2>The standard still applies<span class="dot">.</span></h2>
+    <ul class="qs-rules-list"><li>The AI drafts. I approve. Nothing publishes or sends straight from a chat.</li><li>Names, numbers, dates, pricing, and client details get checked against reality before anything goes out.</li><li>If it reads like a generic brand consultant, the file was not pasted. Back to step one.</li><li>Brand Therapy is a method, not a company. First person, "I", never "we", and never lead with "personal brand".</li><li>When the source changes, recopy the file. Old paste, old brand.</li></ul>
+  </section>
+<script>
+(function () {
+  function flash(btn, ok) {
+    var prev = btn.textContent;
+    btn.textContent = ok ? (btn.getAttribute("data-done") || "Copied") : "Copy failed";
+    btn.classList.add(ok ? "is-done" : "is-fail");
+    btn.setAttribute("aria-live", "polite");
+    window.setTimeout(function () {
+      btn.textContent = prev;
+      btn.classList.remove("is-done", "is-fail");
+    }, 1600);
+  }
+  document.querySelectorAll(".qs-copy[data-copy]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var el = document.querySelector(btn.getAttribute("data-copy"));
+      if (!el || !navigator.clipboard) { flash(btn, false); return; }
+      navigator.clipboard.writeText(el.textContent).then(
+        function () { flash(btn, true); },
+        function () { flash(btn, false); }
+      );
+    });
+  });
+  var ctx = document.getElementById("qs-copy-context");
+  if (ctx) {
+    ctx.addEventListener("click", function () {
+      fetch(ctx.getAttribute("data-context-href"))
+        .then(function (r) { if (!r.ok) { throw new Error("fetch failed"); } return r.text(); })
+        .then(function (t) {
+          if (!navigator.clipboard) { throw new Error("no clipboard"); }
+          return navigator.clipboard.writeText(t);
+        })
+        .then(function () { flash(ctx, true); }, function () { flash(ctx, false); });
+    });
+  }
+})();
+</script>
+
+
+  <div class="footer-nav">
+    <span>Brand OS · Use with AI</span>
+    <span><a href="index.html">System Overview →</a></span>
+  </div>
+  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        Florian P. Consulting (fp)
+  Version:      4.0.0
+  Built at:     2026-06-13T22:05:56+00:00
+  Git SHA:      e15d302c59ac839543108e69718c9f3448a7f09e
+  Bundle hash:  sha256:d55d0839c59fdfd9a4d9efc17ad9c9f53044e72cf93bff19c41ee42a9a330c51
+  Source:       brand-os/brands/fp/QUICKSTART.md + output/ai-context.md
+-->
+</body>
+</html>

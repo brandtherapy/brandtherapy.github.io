@@ -1,0 +1,960 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Route day-to-day brand tasks to the smallest useful context pack.",
+  "operating_principle": "The user should not choose Brand OS pages. The agent classifies the request, loads the compact core, adds only matching Section C/D slices, generates, then runs review gates.",
+  "context_budget": {
+    "max_application_pages": 2,
+    "max_channels": 2,
+    "max_training_examples": 5,
+    "ask_clarifying_question_only_if": "The output channel or audience materially changes the answer and cannot be inferred from the request."
+  },
+  "always_load": [
+    "brand",
+    "source.bundle_hash",
+    "guardrails",
+    "ai_first_generation_thread",
+    "identity.colors",
+    "identity.typography",
+    "identity.creative_direction.slider_signals",
+    "directions.options[].slider_signals",
+    "identity.voice"
+  ],
+  "conditional_load": [
+    "strategy.edges filtered by matched channel source_anchors",
+    "application.pages matched by requested medium",
+    "channel_rules.channels matched by requested distribution surface",
+    "personal_branding when the request touches founder role, leadership presence, bio/about copy, portraits, speaker profile, or Founder Spectrum",
+    "3-5 most relevant training_examples from matched application pages"
+  ],
+  "never_load_by_default": [
+    "unmatched application pages",
+    "all examples at once",
+    "stale generated HTML as source of truth",
+    "personal-branding material unless the request explicitly belongs to that section"
+  ],
+  "route_order": [
+    "match composed route when a campaign/task pattern is explicit",
+    "match personal-branding route when the request concerns founder or leadership presence",
+    "match medium route from requested artifact type",
+    "match channel route from distribution surface",
+    "merge context loads and remove duplicates",
+    "generate from rules and examples",
+    "run review gates before presenting output"
+  ],
+  "routes": {
+    "composed": [
+      {
+        "id": "speaker-campaign-ads",
+        "kind": "composed",
+        "match_terms": [
+          "speaker campaign",
+          "speaking campaign",
+          "keynote ads",
+          "workshop ads",
+          "event ads"
+        ],
+        "context_load": {
+          "application_pages": [
+            "ads",
+            "events"
+          ],
+          "channels": [
+            "social",
+            "website"
+          ],
+          "max_examples_total": 5,
+          "strategy_anchor_policy": "Use source_anchors from matched channels; include P2 People, P4 Promise, and P5 Personality when available."
+        },
+        "review_focus": [
+          "event specificity",
+          "ad compression",
+          "approved proof",
+          "no founder-guru posture"
+        ]
+      },
+      {
+        "id": "brand-therapy-weekly-gate-one",
+        "kind": "composed",
+        "match_terms": [
+          "brand therapy weekly",
+          "btw",
+          "btw issue",
+          "btw gate one",
+          "newsletter gate one",
+          "newsletter image",
+          "newsletter header",
+          "weekly observation"
+        ],
+        "context_load": {
+          "application_pages": [
+            "email-newsletter",
+            "social"
+          ],
+          "channels": [
+            "email",
+            "social"
+          ],
+          "fields": [
+            "purpose",
+            "visual_recipe",
+            "copy_recipe",
+            "ai_rules",
+            "training_examples"
+          ],
+          "reference_paths": [
+            "brands/fp/references/voice-exemplars.md",
+            "brands/fp/references/viewfinder.md",
+            "source/source.yaml#visual.viewfinder.spec",
+            "source/btw_image_treatment.py"
+          ],
+          "image_constraints": [
+            "Subject-mode BTW images must use source/source.yaml visual.viewfinder.spec or generated viewfinder tokens; do not retype bracket weight, arm length, blur, brightness, or color.",
+            "Use the existing FP mark asset or an approved reference crop; do not redraw FP. and then add a second purple dot."
+          ],
+          "max_examples_total": 5,
+          "strategy_anchor_policy": "Use Email P3/P4/P5 anchors first; add Social P2/P5 only for related post or card output."
+        },
+        "review_focus": [
+          "one idea",
+          "BTW voice",
+          "subject-mode image constraints",
+          "approval gate",
+          "no therapy-as-clinical implication"
+        ]
+      }
+    ],
+    "mediums": [
+      {
+        "id": "medium.social",
+        "kind": "medium",
+        "match_terms": [
+          "1200x627",
+          "body",
+          "c01",
+          "c01-ig-carousel",
+          "c02",
+          "c02-social-quotes",
+          "c03",
+          "c03-linkedin-story",
+          "card",
+          "cards",
+          "carousel",
+          "cta",
+          "emphasis",
+          "eyebrow",
+          "fp mark",
+          "framework",
+          "hook",
+          "ig carousel 4:5",
+          "ig story 9:16",
+          "instagram",
+          "instagram carousel",
+          "linkedin",
+          "linkedin 1200x627",
+          "linkedin and stories",
+          "mark",
+          "organic",
+          "organic social",
+          "post",
+          "proof",
+          "quote",
+          "quote card 1:1",
+          "quotes",
+          "reframe",
+          "short",
+          "short body",
+          "short statement",
+          "single",
+          "single emphasis",
+          "social",
+          "social quote cards",
+          "statement",
+          "stories",
+          "story",
+          "symptoms",
+          "visual",
+          "visual hook"
+        ],
+        "context_load": {
+          "application_pages": [
+            "social"
+          ],
+          "fields": [
+            "purpose",
+            "formats",
+            "visual_recipe",
+            "copy_recipe",
+            "ai_rules",
+            "training_examples"
+          ],
+          "example_ids": [
+            "c01-ig-carousel",
+            "c02-social-quotes",
+            "c03-linkedin-story"
+          ],
+          "max_examples": 3
+        },
+        "review_focus": [
+          "medium fit",
+          "visual recipe",
+          "copy recipe",
+          "AI rules"
+        ]
+      },
+      {
+        "id": "medium.ads",
+        "kind": "medium",
+        "match_terms": [
+          "ad",
+          "ads",
+          "advertising",
+          "airport",
+          "airport banner",
+          "banner",
+          "billboard",
+          "brand cue",
+          "bus",
+          "bus shelter",
+          "c04",
+          "c04-display-ads",
+          "c06",
+          "c06-outdoor-print",
+          "campaign",
+          "cta",
+          "cue",
+          "diagnosis",
+          "display",
+          "display and outdoor",
+          "hook",
+          "iab",
+          "iab display set",
+          "leaderboard",
+          "magazine",
+          "medium",
+          "medium rectangle",
+          "method",
+          "method cue",
+          "minimal",
+          "minimal url or cta",
+          "outdoor",
+          "outdoor and print ads",
+          "paid",
+          "print",
+          "rectangle",
+          "set",
+          "shelter",
+          "skyscraper",
+          "speaker campaign",
+          "url"
+        ],
+        "context_load": {
+          "application_pages": [
+            "ads"
+          ],
+          "fields": [
+            "purpose",
+            "formats",
+            "visual_recipe",
+            "copy_recipe",
+            "ai_rules",
+            "training_examples"
+          ],
+          "example_ids": [
+            "c04-display-ads",
+            "c06-outdoor-print"
+          ],
+          "max_examples": 2
+        },
+        "review_focus": [
+          "medium fit",
+          "visual recipe",
+          "copy recipe",
+          "AI rules"
+        ]
+      },
+      {
+        "id": "medium.video-audio",
+        "kind": "medium",
+        "match_terms": [
+          "30 second storyboard",
+          "6 second bumper",
+          "action",
+          "audio",
+          "bumper",
+          "c05",
+          "c05-yt-podcast",
+          "c10",
+          "c10-storyboard",
+          "camera",
+          "cover",
+          "frame",
+          "identity",
+          "podcast",
+          "podcast cover 1:1",
+          "second",
+          "series",
+          "series identity",
+          "storyboard",
+          "tension",
+          "thumbnail",
+          "timing",
+          "title",
+          "video",
+          "video + audio",
+          "video storyboard",
+          "video-audio",
+          "visual",
+          "visual tension",
+          "vo",
+          "youtube",
+          "youtube and podcast",
+          "youtube thumbnail 16:9",
+          "youtube, podcast, storyboard"
+        ],
+        "context_load": {
+          "application_pages": [
+            "video-audio"
+          ],
+          "fields": [
+            "purpose",
+            "formats",
+            "visual_recipe",
+            "copy_recipe",
+            "ai_rules",
+            "training_examples"
+          ],
+          "example_ids": [
+            "c05-yt-podcast",
+            "c10-storyboard"
+          ],
+          "max_examples": 2
+        },
+        "review_focus": [
+          "medium fit",
+          "visual recipe",
+          "copy recipe",
+          "AI rules"
+        ]
+      },
+      {
+        "id": "medium.email-newsletter",
+        "kind": "medium",
+        "match_terms": [
+          "article",
+          "article header",
+          "body",
+          "brand therapy weekly",
+          "c08",
+          "c08-email-newsletter",
+          "cta",
+          "diagnosis",
+          "email",
+          "email + newsletter",
+          "email and brand therapy weekly",
+          "email and newsletter",
+          "email header",
+          "email-newsletter",
+          "full",
+          "full newsletter",
+          "header",
+          "inbox",
+          "newsletter",
+          "promo",
+          "subject",
+          "takeaway",
+          "therapy",
+          "weekly"
+        ],
+        "context_load": {
+          "application_pages": [
+            "email-newsletter"
+          ],
+          "fields": [
+            "purpose",
+            "formats",
+            "visual_recipe",
+            "copy_recipe",
+            "ai_rules",
+            "training_examples"
+          ],
+          "example_ids": [
+            "c08-email-newsletter"
+          ],
+          "max_examples": 1
+        },
+        "review_focus": [
+          "medium fit",
+          "visual recipe",
+          "copy recipe",
+          "AI rules"
+        ]
+      },
+      {
+        "id": "medium.slides",
+        "kind": "medium",
+        "match_terms": [
+          "agenda",
+          "c07",
+          "c07-slides",
+          "close",
+          "content",
+          "cta",
+          "deck",
+          "decks",
+          "framework",
+          "pitch",
+          "presentation",
+          "presentation deck",
+          "presentation decks",
+          "problem",
+          "proof",
+          "proposal",
+          "quote",
+          "slides",
+          "title"
+        ],
+        "context_load": {
+          "application_pages": [
+            "slides"
+          ],
+          "fields": [
+            "purpose",
+            "formats",
+            "visual_recipe",
+            "copy_recipe",
+            "ai_rules",
+            "training_examples"
+          ],
+          "example_ids": [
+            "c07-slides"
+          ],
+          "max_examples": 1
+        },
+        "review_focus": [
+          "medium fit",
+          "visual recipe",
+          "copy recipe",
+          "AI rules"
+        ]
+      },
+      {
+        "id": "medium.events",
+        "kind": "medium",
+        "match_terms": [
+          "banner",
+          "c09",
+          "c09-events",
+          "conference",
+          "cta",
+          "date",
+          "event",
+          "event posters",
+          "event social",
+          "events",
+          "keynote",
+          "keynote poster",
+          "poster",
+          "posters",
+          "promo",
+          "promo banner",
+          "social",
+          "speaker",
+          "speaking",
+          "speaking and workshops",
+          "title",
+          "venue",
+          "workshop",
+          "workshop poster",
+          "workshops"
+        ],
+        "context_load": {
+          "application_pages": [
+            "events"
+          ],
+          "fields": [
+            "purpose",
+            "formats",
+            "visual_recipe",
+            "copy_recipe",
+            "ai_rules",
+            "training_examples"
+          ],
+          "example_ids": [
+            "c09-events"
+          ],
+          "max_examples": 1
+        },
+        "review_focus": [
+          "medium fit",
+          "visual recipe",
+          "copy recipe",
+          "AI rules"
+        ]
+      },
+      {
+        "id": "medium.print",
+        "kind": "medium",
+        "match_terms": [
+          "badge",
+          "business",
+          "business card",
+          "business card, badge, letterhead",
+          "c11",
+          "c11-print-collateral",
+          "card",
+          "collateral",
+          "contact",
+          "descriptor",
+          "event",
+          "event badge",
+          "header",
+          "identity",
+          "invoice",
+          "invoice header",
+          "letterhead",
+          "mark",
+          "minimal",
+          "minimal descriptor",
+          "print",
+          "print collateral"
+        ],
+        "context_load": {
+          "application_pages": [
+            "print"
+          ],
+          "fields": [
+            "purpose",
+            "formats",
+            "visual_recipe",
+            "copy_recipe",
+            "ai_rules",
+            "training_examples"
+          ],
+          "example_ids": [
+            "c11-print-collateral"
+          ],
+          "max_examples": 1
+        },
+        "review_focus": [
+          "medium fit",
+          "visual recipe",
+          "copy recipe",
+          "AI rules"
+        ]
+      }
+    ],
+    "channels": [
+      {
+        "id": "channel.website",
+        "kind": "channel",
+        "match_terms": [
+          "check",
+          "conversion",
+          "conversion issue",
+          "copy",
+          "fact",
+          "fact-check list",
+          "hierarchy",
+          "home page",
+          "issue",
+          "landing page",
+          "list",
+          "new",
+          "new page",
+          "notes",
+          "offer",
+          "offer update",
+          "page",
+          "page copy",
+          "proof",
+          "proof update",
+          "section",
+          "section hierarchy",
+          "site",
+          "update",
+          "visual",
+          "visual notes",
+          "web",
+          "website"
+        ],
+        "context_load": {
+          "channels": [
+            "website"
+          ],
+          "source_anchors": [
+            "P1 Product",
+            "P2 People",
+            "P4 Promise",
+            "P5 Personality"
+          ],
+          "fields": [
+            "strategic_role",
+            "voice_dial",
+            "visual_dial",
+            "rules_in",
+            "rules_out",
+            "activation_pattern",
+            "ai_instructions"
+          ],
+          "approval_gate": [
+            "proof claims",
+            "pricing",
+            "therapy clarification",
+            "public screenshots"
+          ]
+        },
+        "review_focus": [
+          "source anchors",
+          "voice dial",
+          "visual dial",
+          "rules in/out",
+          "approval gate"
+        ]
+      },
+      {
+        "id": "channel.social",
+        "kind": "channel",
+        "match_terms": [
+          "brand therapy weekly idea",
+          "card",
+          "card copy",
+          "carousel",
+          "carousel outline",
+          "client",
+          "client pattern",
+          "copy",
+          "format",
+          "format test",
+          "idea",
+          "instagram",
+          "linkedin",
+          "observation",
+          "organic",
+          "outline",
+          "paid social",
+          "pattern",
+          "post",
+          "recipe",
+          "social",
+          "test",
+          "therapy",
+          "visual",
+          "visual recipe",
+          "weekly",
+          "weekly observation"
+        ],
+        "context_load": {
+          "channels": [
+            "social"
+          ],
+          "source_anchors": [
+            "P2 People",
+            "P4 Promise",
+            "P5 Personality"
+          ],
+          "fields": [
+            "strategic_role",
+            "voice_dial",
+            "visual_dial",
+            "rules_in",
+            "rules_out",
+            "activation_pattern",
+            "ai_instructions"
+          ],
+          "approval_gate": [
+            "voice check",
+            "claim check",
+            "format fit"
+          ]
+        },
+        "review_focus": [
+          "source anchors",
+          "voice dial",
+          "visual dial",
+          "rules in/out",
+          "approval gate"
+        ]
+      },
+      {
+        "id": "channel.email",
+        "kind": "channel",
+        "match_terms": [
+          "body",
+          "btw",
+          "btw issue",
+          "client",
+          "client follow-up",
+          "copy",
+          "cta",
+          "email",
+          "email body",
+          "follow",
+          "follow-up",
+          "header",
+          "header copy",
+          "issue",
+          "launch",
+          "launch note",
+          "lines",
+          "newsletter",
+          "note",
+          "nurture",
+          "nurture email",
+          "subject",
+          "subject lines"
+        ],
+        "context_load": {
+          "channels": [
+            "email"
+          ],
+          "source_anchors": [
+            "P3 Purpose",
+            "P4 Promise",
+            "P5 Personality"
+          ],
+          "fields": [
+            "strategic_role",
+            "voice_dial",
+            "visual_dial",
+            "rules_in",
+            "rules_out",
+            "activation_pattern",
+            "ai_instructions"
+          ],
+          "approval_gate": [
+            "voice check",
+            "fact check",
+            "CTA clarity"
+          ]
+        },
+        "review_focus": [
+          "source anchors",
+          "voice dial",
+          "visual dial",
+          "rules in/out",
+          "approval gate"
+        ]
+      },
+      {
+        "id": "channel.sales-deck",
+        "kind": "channel",
+        "match_terms": [
+          "client",
+          "client review",
+          "client strategy review",
+          "copy",
+          "deck",
+          "deck outline",
+          "discovery",
+          "discovery follow-up",
+          "follow",
+          "narrative",
+          "outline",
+          "proposal",
+          "proposal narrative",
+          "review",
+          "sales",
+          "sales deck",
+          "sales-deck",
+          "slide",
+          "slide copy",
+          "strategy",
+          "talk",
+          "talk track",
+          "track",
+          "workshop"
+        ],
+        "context_load": {
+          "channels": [
+            "sales-deck"
+          ],
+          "source_anchors": [
+            "P1 Product",
+            "P2 People",
+            "P4 Promise"
+          ],
+          "fields": [
+            "strategic_role",
+            "voice_dial",
+            "visual_dial",
+            "rules_in",
+            "rules_out",
+            "activation_pattern",
+            "ai_instructions"
+          ],
+          "approval_gate": [
+            "scope accuracy",
+            "pricing",
+            "proof",
+            "client confidentiality"
+          ]
+        },
+        "review_focus": [
+          "source anchors",
+          "voice dial",
+          "visual dial",
+          "rules in/out",
+          "approval gate"
+        ]
+      }
+    ],
+    "personal_branding": [
+      {
+        "id": "personal-branding.position-role",
+        "kind": "personal-branding",
+        "match_terms": [
+          "personal branding",
+          "personal brand",
+          "founder brand",
+          "founder spectrum",
+          "spectrum position",
+          "founder role",
+          "founder identity",
+          "founder presence",
+          "about page",
+          "bio",
+          "speaker profile",
+          "human layer"
+        ],
+        "context_load": {
+          "personal_branding": [
+            "summary",
+            "spectrum_positions",
+            "fp_read",
+            "founder_spectrum_visual"
+          ],
+          "strategy_edges": [
+            "p2",
+            "p5"
+          ],
+          "identity_sections": [
+            "Voice"
+          ]
+        },
+        "review_focus": [
+          "position 5 read",
+          "person versus practice",
+          "visibility tension",
+          "generic personal-brand tropes"
+        ]
+      },
+      {
+        "id": "personal-branding.character-sheet",
+        "kind": "personal-branding",
+        "match_terms": [
+          "character sheet",
+          "wardrobe",
+          "outfit",
+          "presence",
+          "portrait mode",
+          "speaker photo",
+          "strategist",
+          "thinker",
+          "founder portrait"
+        ],
+        "context_load": {
+          "personal_branding_dimensions": [
+            "presence",
+            "wardrobe",
+            "behavior",
+            "aesthetic"
+          ],
+          "reference_asset_roots": [
+            {
+              "source_dir": "marketing/brand-system/references/personal-branding/finished",
+              "output_dir": "pb-finished",
+              "label": "Finished personal-branding posts",
+              "role": "Gold-standard composition references for personal mode."
+            },
+            {
+              "source_dir": "marketing/brand-system/references/personal-branding/portraits",
+              "output_dir": "pb-portraits",
+              "label": "Portrait references",
+              "role": "Look, lighting, outfit, and context references for personal-mode imagery."
+            }
+          ],
+          "fields": [
+            "summary",
+            "rules_in",
+            "rules_out",
+            "ai_rules"
+          ],
+          "strategy_edges": [
+            "p2",
+            "p5"
+          ],
+          "identity_sections": [
+            "Photography Rules"
+          ]
+        },
+        "review_focus": [
+          "mode fit",
+          "image angle and wardrobe",
+          "recognizable but not staged",
+          "AI repeatability"
+        ]
+      },
+      {
+        "id": "personal-branding.outputs",
+        "kind": "personal-branding",
+        "match_terms": [
+          "personal mode",
+          "personal-mode output",
+          "personal post",
+          "social card",
+          "viewfinder",
+          "headshot",
+          "imagery",
+          "reference",
+          "photo",
+          "visual reference",
+          "founder image"
+        ],
+        "context_load": {
+          "reference_asset_roots": [
+            {
+              "source_dir": "marketing/brand-system/references/personal-branding/finished",
+              "output_dir": "pb-finished",
+              "label": "Finished personal-branding posts",
+              "role": "Gold-standard composition references for personal mode."
+            },
+            {
+              "source_dir": "marketing/brand-system/references/personal-branding/portraits",
+              "output_dir": "pb-portraits",
+              "label": "Portrait references",
+              "role": "Look, lighting, outfit, and context references for personal-mode imagery."
+            }
+          ],
+          "personal_branding_dimensions": [
+            "aesthetic",
+            "presentation"
+          ],
+          "fields": [
+            "summary",
+            "rules_in",
+            "rules_out",
+            "ai_rules"
+          ],
+          "identity_sections": [
+            "Photography Rules"
+          ]
+        },
+        "review_focus": [
+          "reference fit",
+          "portrait rules",
+          "viewfinder treatment",
+          "forbidden imagery"
+        ]
+      }
+    ]
+  },
+  "review_gates": [
+    "strategy fit: output serves the matched Focus Star anchors",
+    "voice fit: output follows identity voice and channel voice dial",
+    "medium fit: output follows visual_recipe, copy_recipe, and ai_rules",
+    "rules-out check: remove anything forbidden by matched channel rules_out",
+    "proof check: claims use approved proof only or are marked for human review",
+    "founder-role check: use the selected Founder Spectrum position before writing any personal-branding guidance",
+    "source hierarchy check: do not let the generated output rewrite Section A or B"
+  ]
+}
