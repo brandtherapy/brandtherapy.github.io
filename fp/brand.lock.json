@@ -1,10 +1,10 @@
 {
   "brand": "fp",
   "version": "4.0.0",
-  "approved_at": "2026-06-13T22:05:56+00:00",
+  "approved_at": "2026-06-15T21:57:32+00:00",
   "approved_by": "Florian",
   "source_hashes": {
-    "STRATEGY.md": "sha256:f5b7dfc5613e095d3500b031ed5cf860644ccd5616531204d1e5a2750ec00765",
+    "STRATEGY.md": "sha256:800c222653331ab4c44a3175c3bb218bfc27121a8349e3c6599c68cbfaac5752",
     "IDENTITY.md": "sha256:504720428958a9762430a62f95b54f6852fa496aec1eed9326f3e122e84bf314",
     "SKILL.md": "sha256:be6d4104dc20ee62d1e02765ce9246a3d375682bebfb42fe3156660d5f791007",
     "APPLICATION.md": "sha256:be07da2b587aba2515f4e1bfbe0dca57b5f8d818fd47fc1f8e87b3ca9a8d37ce",
@@ -15,21 +15,21 @@
     "references/methodology.md": "sha256:a78b3041530a33181897518135c9034708744d8d9d41c5b77fcf49c63c01c590",
     "references/viewfinder.md": "sha256:b6fc802e8b9db94f18d589daaa96d565f026a3f3c32e02cd77f8565ab6b9b54a",
     "references/voice-exemplars.md": "sha256:62edce5e4e74e55931da4d2152d2c593ce1cb388c1210f9f09c0c57ce13af649",
-    "images_manifest": "sha256:012188dfa9dc7cfdeb3ddef28c692cfe2592d70788bb869780a6078137acdf82",
+    "images_manifest": "sha256:36eda64dadea98a37046e74705a911a1367201126caeadbe2d69dc0885f141ab",
     "application_references_manifest": "sha256:84f2f4fddd3f0ef98c398a9d5c7e231eb7647da5e9a2f2f5cbb1a5e28173494d",
     "personal_branding_references_manifest": "sha256:71d1867a0763c763d26848140ddb6b7c05b311c6803d259305f39bb0867ea27c"
   },
-  "bundle_hash": "sha256:d55d0839c59fdfd9a4d9efc17ad9c9f53044e72cf93bff19c41ee42a9a330c51",
+  "bundle_hash": "sha256:a1d4f85b136916e3abd50ad83e3a294d598fd6a572dd2fadfca1ed74bc5f1350",
   "outputs": {
-    "ai_context_emitted_at": "2026-06-13T22:05:56+00:00",
-    "ai_context_json_emitted_at": "2026-06-13T22:05:56+00:00",
-    "ai_context_git_sha": "e15d302c59ac839543108e69718c9f3448a7f09e",
-    "strategy_html_emitted_at": "2026-06-13T22:05:56+00:00",
-    "identity_html_emitted_at": "2026-06-13T22:05:56+00:00",
-    "focus_star_json_emitted_at": "2026-06-13T22:05:56+00:00",
-    "application_html_emitted_at": "2026-06-13T22:05:56+00:00",
-    "channel_rules_html_emitted_at": "2026-06-13T22:05:56+00:00",
-    "personal_branding_html_emitted_at": "2026-06-13T22:05:56+00:00"
+    "ai_context_emitted_at": "2026-06-15T21:57:32+00:00",
+    "ai_context_json_emitted_at": "2026-06-15T21:57:32+00:00",
+    "ai_context_git_sha": "e6d3530bcf3cfa0a25e936d542eac6b6c4425695",
+    "strategy_html_emitted_at": "2026-06-15T21:57:32+00:00",
+    "identity_html_emitted_at": "2026-06-15T21:57:32+00:00",
+    "focus_star_json_emitted_at": "2026-06-15T21:57:32+00:00",
+    "application_html_emitted_at": "2026-06-15T21:57:32+00:00",
+    "channel_rules_html_emitted_at": "2026-06-15T21:57:32+00:00",
+    "personal_branding_html_emitted_at": "2026-06-15T21:57:32+00:00"
   },
   "validator_rules": {
     "must_match_at_build": [

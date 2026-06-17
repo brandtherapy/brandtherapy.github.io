@@ -24,7 +24,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noai, noimageai">
-<title>Brand Application · FP Brand OS</title>
+<title>Overview · FP Brand OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -64,10 +64,10 @@
   </div>
   <nav class="nav-section" aria-label="Brand OS sections">
     <div class="label">Sections</div>
-    <div class="nav-list">
+    <style>.nav-list a .nav-badge{display:inline-block;margin-left:7px;padding:1px 6px;border-radius:999px;font-family:var(--ff-b);font-size:9px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;vertical-align:middle;border:1px solid var(--border);color:var(--muted);}.nav-list a .nav-badge--add_on{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent);}.nav-list a .nav-badge--in_review,.nav-list a .nav-badge--in_development{color:var(--accent);}</style><div class="nav-list">
 <a class="" href="../index.html">System Overview</a>
 <a href="../use.html">Use with AI</a>
-</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+</div><details class="nav-group"><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
 <a href="../strategy/index.html">Focus Star</a>
 <a href="../strategy/product.html">Product</a>
 <a href="../strategy/people.html">People</a>
@@ -75,19 +75,20 @@
 <a href="../strategy/promise.html">Promise</a>
 <a href="../strategy/personality.html">Personality</a>
 <a href="../strategy/differentiation.html">Differentiation</a>
-</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+</div></details><details class="nav-group"><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
 <a href="../identity/index.html">Creative Direction</a>
-<a href="../identity/look-and-feel.html">Look &amp; Feel</a>
-<a href="../identity/voice.html">Voice</a>
+<a href="../identity/visual-rules.html">Visual Rules</a>
+<a href="../identity/logo.html">Logo<span class="nav-badge nav-badge--add_on">Add-on</span></a>
 <a href="../identity/signature.html">Signature</a>
+<a href="../identity/voice.html">Voice Rules</a>
+<a href="../identity/personal-branding.html">Personal Branding</a>
 </div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
-<a class="active" href="index.html">Application Overview</a>
-<a href="references.html">Reference Gallery</a>
-<a href="channel-rules.html">Channel Rules</a>
-</div></details><details class="nav-group" open><summary><span class="group-letter">D</span><span class="group-label">Personal Branding</span></summary><div class="nav-list">
-<a href="../personal-branding/index.html">Position &amp; Role</a>
-<a href="../personal-branding/character-sheet.html">Character Sheet</a>
-<a href="../personal-branding/outputs.html">Personal-Mode Outputs</a>
+<a class="active" href="index.html">Overview</a>
+<a href="images.html">Images</a>
+<a href="social.html">Social</a>
+<a href="slides.html">Slides &amp; Deck</a>
+<a href="email.html">Email &amp; Newsletter</a>
+<a href="stationery.html">Stationery</a>
 </div></details>
   </nav>
   <div class="toolbar-mini">
@@ -179,53 +180,56 @@
 .pb-asset-card img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: var(--light); }
 .pb-asset-card span { display: block; padding: 10px 12px; font-family: var(--ff-b); font-size: 10px; line-height: 1.4; color: var(--muted); overflow-wrap: anywhere; }
 @media (max-width: 980px) { .pb-spectrum-grid, .pb-callout, .pb-spectrum-active-content, .pb-mode-grid { grid-template-columns: 1fr; } .pb-spectrum-active-header, .pb-spectrum-row { grid-template-columns: 44px minmax(0,1fr); } .pb-spectrum-tag, .pb-spectrum-badge { grid-column: 2; text-align: left; justify-self: start; } .pb-spectrum-rail { display: none; } .pb-spectrum-logo { width: 88px; height: 88px; right: 24px; } }
+</style><style>
+.app-ref-preview.image.multi { border: 0; height: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.app-ref-preview.image.multi img { border: 1px solid var(--border); max-height: 420px; background: var(--light); }
 </style>
   <section class="app-hero">
-    <div class="eyebrow">Section C · Brand Application</div>
-    <h1>Brand Application<span class="dot">.</span></h1>
-    <p>Section C is one category: how approved strategy and identity become usable outputs across media, channels, and examples.</p>
+    <div class="eyebrow">Section C · Templates</div>
+    <h1>Overview<span class="dot">.</span></h1>
+    <p>Every output surface the brand system covers, with live status and the reference set in one place. 100% of the core brand system is live.</p>
   </section>
   
   <section class="app-section" aria-labelledby="app-section-1">
     <div class="app-section-head">
       <div class="app-section-num">01</div>
       <div>
-        <div class="app-section-kicker">How it works</div>
-        <h2 id="app-section-1">One category, three layers<span class="dot">.</span></h2>
-        <p class="app-section-desc">The review path is examples first, then rules. The examples show the target behavior; the medium and channel pages explain how to recreate it.</p>
+        <div class="app-section-kicker">Coverage</div>
+        <h2 id="app-section-1">Where the system reaches<span class="dot">.</span></h2>
+        <p class="app-section-desc">Each shelf is a medium the brand system produces. Status shows what is live, in development, planned, or available as an add-on.</p>
       </div>
     </div>
-    <div class="app-grid"><a class="app-card" href="references.html"><div class="code">01</div><h3>Reference Gallery<span class="dot">.</span></h3><p>The visual example set. Start here when judging whether the brand system actually stretches across outputs.</p><div class="app-chip-row"><span class="app-chip">11 visual refs</span><span class="app-chip">11 examples</span><span class="app-chip">AI-ready</span></div></a><a class="app-card" href="social.html"><div class="code">02</div><h3>Medium Rules<span class="dot">.</span></h3><p>The production recipes by format: what changes when FP becomes social, ads, web pages, email, proof, collateral, or print.</p><div class="app-chip-row"><span class="app-chip">7 media</span><span class="app-chip">visual recipe</span><span class="app-chip">copy recipe</span></div></a><a class="app-card" href="channel-rules.html"><div class="code">03</div><h3>Channel Rules<span class="dot">.</span></h3><p>The behavior dials by operating surface: website, social, email, and sales deck each use the same source differently.</p><div class="app-chip-row"><span class="app-chip">channels</span><span class="app-chip">examples</span><span class="app-chip">AI rules</span></div></a></div>
+    <style>.dam-matrix{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:4px;overflow:hidden;}.dam-row{display:grid;grid-template-columns:1fr auto auto;gap:18px;align-items:center;padding:14px 20px;border-bottom:1px solid var(--border-soft);}.dam-row:last-child{border-bottom:0;}.dam-row__label{font-family:var(--ff-b);font-size:15px;font-weight:600;color:var(--text);}.dam-row__date{font-family:var(--ff-b);font-size:12px;color:var(--muted);min-width:88px;text-align:right;}.dam-pill{display:inline-block;padding:3px 10px;border-radius:999px;font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:0.04em;border:1px solid var(--border);color:var(--muted);}.dam-pill--live{color:#fff;background:var(--accent);border-color:var(--accent);}.dam-pill--add_on{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent);}.dam-pill--in_review,.dam-pill--in_development{color:var(--accent);}</style><div class="dam-matrix"><div class="dam-row"><span class="dam-row__label">Images</span><span class="dam-pill dam-pill--live">Live</span><span class="dam-row__date">2026-06-16</span></div><div class="dam-row"><span class="dam-row__label">Social</span><span class="dam-pill dam-pill--live">Live</span><span class="dam-row__date">2026-06-16</span></div><div class="dam-row"><span class="dam-row__label">Slides &amp; Deck</span><span class="dam-pill dam-pill--live">Live</span><span class="dam-row__date">2026-06-16</span></div><div class="dam-row"><span class="dam-row__label">Email &amp; Newsletter</span><span class="dam-pill dam-pill--live">Live</span><span class="dam-row__date">2026-06-16</span></div><div class="dam-row"><span class="dam-row__label">Stationery</span><span class="dam-pill dam-pill--live">Live</span><span class="dam-row__date">2026-06-16</span></div></div>
   </section>
   
   <section class="app-section" aria-labelledby="app-section-2">
     <div class="app-section-head">
       <div class="app-section-num">02</div>
       <div>
-        <div class="app-section-kicker">Medium rules</div>
-        <h2 id="app-section-2">Format-specific recipes<span class="dot">.</span></h2>
-        <p class="app-section-desc">These pages are appendices for generation and QA. They should not compete with the reference gallery as the main review surface.</p>
+        <div class="app-section-kicker">Reference set</div>
+        <h2 id="app-section-2">The example library<span class="dot">.</span></h2>
+        <p class="app-section-desc">Open the full artifact when visual inspection matters. Each shelf's rules page explains how to recreate or adapt the medium.</p>
       </div>
     </div>
-    <div class="app-grid"><a class="app-card" href="social.html"><div class="code">Medium rules</div><h3>Social<span class="dot">.</span></h3><p>Reusable rules for Instagram carousel, quote cards, LinkedIn cards, and stories.</p><div class="app-chip-row"><span class="app-chip">IG carousel 4:5</span><span class="app-chip">quote card 1:1</span><span class="app-chip">LinkedIn 1200x627</span></div></a><a class="app-card" href="ads.html"><div class="code">Medium rules</div><h3>Ads<span class="dot">.</span></h3><p>High-compression FP rules for paid placements, outdoor, magazine, and airport formats.</p><div class="app-chip-row"><span class="app-chip">leaderboard</span><span class="app-chip">medium rectangle</span><span class="app-chip">skyscraper</span></div></a><a class="app-card" href="video-audio.html"><div class="code">Medium rules</div><h3>Video + Audio<span class="dot">.</span></h3><p>Rules for thumbnails, podcast covers, long-form video hooks, and short spot storyboards.</p><div class="app-chip-row"><span class="app-chip">YouTube thumbnail 16:9</span><span class="app-chip">podcast cover 1:1</span><span class="app-chip">30 second storyboard</span></div></a><a class="app-card" href="email-newsletter.html"><div class="code">Medium rules</div><h3>Email + Newsletter<span class="dot">.</span></h3><p>How FP behaves in inboxes, from headers to full newsletter rhythm.</p><div class="app-chip-row"><span class="app-chip">email header</span><span class="app-chip">article header</span><span class="app-chip">promo</span></div></a><a class="app-card" href="slides.html"><div class="code">Medium rules</div><h3>Slides<span class="dot">.</span></h3><p>Rules for sparse, high-whitespace decks that explain without becoming a generic pitch template.</p><div class="app-chip-row"><span class="app-chip">title</span><span class="app-chip">agenda</span><span class="app-chip">problem</span></div></a><a class="app-card" href="events.html"><div class="code">Medium rules</div><h3>Events<span class="dot">.</span></h3><p>Rules for keynotes, workshops, posters, banners, and event social assets.</p><div class="app-chip-row"><span class="app-chip">keynote poster</span><span class="app-chip">workshop poster</span><span class="app-chip">promo banner</span></div></a><a class="app-card" href="print.html"><div class="code">Medium rules</div><h3>Print<span class="dot">.</span></h3><p>Rules for tactile collateral where recognition has to survive without animation or long copy.</p><div class="app-chip-row"><span class="app-chip">business card</span><span class="app-chip">event badge</span><span class="app-chip">letterhead</span></div></a></div>
+    <div class="app-example-grid"><article class="app-example"><div class="code">Social · c01-ig-carousel</div><h3>Instagram carousel<span class="dot">.</span></h3><p>Educational hook to problem to framework to proof to CTA.</p><div class="app-chip-row"><span class="app-chip">hook</span><span class="app-chip">symptoms</span><span class="app-chip">framework</span><span class="app-chip">proof</span><span class="app-chip">CTA</span></div><div class="app-example-meta"><a class="app-ref-link" href="../references/collateral/c01-ig-carousel.html">Open full reference</a><a class="app-ref-link" href="social.html">Rules page</a><span class="app-ref-source">c01-ig-carousel.html</span></div><div class="app-ref-preview image multi"><img loading="lazy" decoding="async" src="../references/collateral/exports/c01-ig-carousel-1.png" alt="Instagram carousel plate 1"><img loading="lazy" decoding="async" src="../references/collateral/exports/c01-ig-carousel-2.png" alt="Instagram carousel plate 2"><img loading="lazy" decoding="async" src="../references/collateral/exports/c01-ig-carousel-3.png" alt="Instagram carousel plate 3"><img loading="lazy" decoding="async" src="../references/collateral/exports/c01-ig-carousel-4.png" alt="Instagram carousel plate 4"><img loading="lazy" decoding="async" src="../references/collateral/exports/c01-ig-carousel-5.png" alt="Instagram carousel plate 5"></div></article><article class="app-example"><div class="code">Social · c02-social-quotes</div><h3>Social quote cards<span class="dot">.</span></h3><p>Light, dark, stat, question, and photo-strip quote formats.</p><div class="app-chip-row"><span class="app-chip">short statement</span><span class="app-chip">single emphasis</span><span class="app-chip">FP mark</span></div><div class="app-example-meta"><a class="app-ref-link" href="../references/collateral/c02-social-quotes.html">Open full reference</a><a class="app-ref-link" href="social.html">Rules page</a><span class="app-ref-source">c02-social-quotes.html</span></div><div class="app-ref-preview image multi"><img loading="lazy" decoding="async" src="../references/collateral/exports/c02-social-quotes-1.png" alt="Social quote cards plate 1"><img loading="lazy" decoding="async" src="../references/collateral/exports/c02-social-quotes-2.png" alt="Social quote cards plate 2"><img loading="lazy" decoding="async" src="../references/collateral/exports/c02-social-quotes-3.png" alt="Social quote cards plate 3"><img loading="lazy" decoding="async" src="../references/collateral/exports/c02-social-quotes-4.png" alt="Social quote cards plate 4"><img loading="lazy" decoding="async" src="../references/collateral/exports/c02-social-quotes-5.png" alt="Social quote cards plate 5"><img loading="lazy" decoding="async" src="../references/collateral/exports/c02-social-quotes-6.png" alt="Social quote cards plate 6"></div></article><article class="app-example"><div class="code">Social · c03-linkedin-story</div><h3>LinkedIn and stories<span class="dot">.</span></h3><p>Landscape article cards plus vertical story prompts.</p><div class="app-chip-row"><span class="app-chip">eyebrow</span><span class="app-chip">reframe</span><span class="app-chip">short body</span><span class="app-chip">visual hook</span></div><div class="app-example-meta"><a class="app-ref-link" href="../references/collateral/c03-linkedin-story.html">Open full reference</a><a class="app-ref-link" href="social.html">Rules page</a><span class="app-ref-source">c03-linkedin-story.html</span></div><div class="app-ref-preview image multi"><img loading="lazy" decoding="async" src="../references/collateral/exports/c03-ig-story-a.png" alt="LinkedIn and stories plate 1"><img loading="lazy" decoding="async" src="../references/collateral/exports/c03-ig-story-b.png" alt="LinkedIn and stories plate 2"><img loading="lazy" decoding="async" src="../references/collateral/exports/c03-ig-story-c.png" alt="LinkedIn and stories plate 3"><img loading="lazy" decoding="async" src="../references/collateral/exports/c03-ig-story-d.png" alt="LinkedIn and stories plate 4"><img loading="lazy" decoding="async" src="../references/collateral/exports/c03-linkedin-li-a.png" alt="LinkedIn and stories plate 5"><img loading="lazy" decoding="async" src="../references/collateral/exports/c03-linkedin-li-b.png" alt="LinkedIn and stories plate 6"><img loading="lazy" decoding="async" src="../references/collateral/exports/c03-linkedin-li-c.png" alt="LinkedIn and stories plate 7"></div></article><article class="app-example"><div class="code">Email + Newsletter · c08-email-newsletter</div><h3>Email and newsletter<span class="dot">.</span></h3><p>Header, promo, and full BTW layout references.</p><div class="app-chip-row"><span class="app-chip">subject</span><span class="app-chip">diagnosis</span><span class="app-chip">body</span><span class="app-chip">takeaway</span><span class="app-chip">CTA</span></div><div class="app-example-meta"><a class="app-ref-link" href="../references/collateral/c08-email-newsletter.html">Open full reference</a><a class="app-ref-link" href="email.html">Rules page</a><span class="app-ref-source">c08-email-newsletter.html</span></div><div class="app-ref-preview image multi"><img loading="lazy" decoding="async" src="../references/collateral/exports/c08-email-header-article.png" alt="Email and newsletter plate 1"><img loading="lazy" decoding="async" src="../references/collateral/exports/c08-email-header-btw.png" alt="Email and newsletter plate 2"><img loading="lazy" decoding="async" src="../references/collateral/exports/c08-email-header-promo.png" alt="Email and newsletter plate 3"><img loading="lazy" decoding="async" src="../references/collateral/exports/c08-email-newsletter.png" alt="Email and newsletter plate 4"></div></article><article class="app-example"><div class="code">Slides · c07-slides</div><h3>Presentation deck<span class="dot">.</span></h3><p>Eight-slide deck structure and visual rhythm.</p><div class="app-chip-row"><span class="app-chip">title</span><span class="app-chip">agenda</span><span class="app-chip">problem</span><span class="app-chip">framework</span><span class="app-chip">proof</span><span class="app-chip">close</span></div><div class="app-example-meta"><a class="app-ref-link" href="../references/collateral/c07-slides.html">Open full reference</a><a class="app-ref-link" href="slides.html">Rules page</a><span class="app-ref-source">c07-slides.html</span></div><div class="app-ref-preview image multi"><img loading="lazy" decoding="async" src="../references/collateral/exports/c07-slides-1.png" alt="Presentation deck plate 1"><img loading="lazy" decoding="async" src="../references/collateral/exports/c07-slides-2.png" alt="Presentation deck plate 2"><img loading="lazy" decoding="async" src="../references/collateral/exports/c07-slides-3.png" alt="Presentation deck plate 3"><img loading="lazy" decoding="async" src="../references/collateral/exports/c07-slides-4.png" alt="Presentation deck plate 4"><img loading="lazy" decoding="async" src="../references/collateral/exports/c07-slides-5.png" alt="Presentation deck plate 5"><img loading="lazy" decoding="async" src="../references/collateral/exports/c07-slides-6.png" alt="Presentation deck plate 6"><img loading="lazy" decoding="async" src="../references/collateral/exports/c07-slides-7.png" alt="Presentation deck plate 7"><img loading="lazy" decoding="async" src="../references/collateral/exports/c07-slides-8.png" alt="Presentation deck plate 8"></div></article><article class="app-example"><div class="code">Print · c11-print-collateral</div><h3>Print collateral<span class="dot">.</span></h3><p>Business card, badge, and letterhead patterns.</p><div class="app-chip-row"><span class="app-chip">mark</span><span class="app-chip">identity</span><span class="app-chip">contact</span><span class="app-chip">minimal descriptor</span></div><div class="app-example-meta"><a class="app-ref-link" href="../references/collateral/c11-print-collateral.html">Open full reference</a><a class="app-ref-link" href="stationery.html">Rules page</a><span class="app-ref-source">c11-print-collateral.html</span></div><div class="app-ref-preview image multi"><img loading="lazy" decoding="async" src="../references/collateral/exports/c11-badge-attendee.png" alt="Print collateral plate 1"><img loading="lazy" decoding="async" src="../references/collateral/exports/c11-badge-speaker.png" alt="Print collateral plate 2"><img loading="lazy" decoding="async" src="../references/collateral/exports/c11-business-card-dark-back.png" alt="Print collateral plate 3"><img loading="lazy" decoding="async" src="../references/collateral/exports/c11-business-card-dark-front.png" alt="Print collateral plate 4"><img loading="lazy" decoding="async" src="../references/collateral/exports/c11-business-card-white-back.png" alt="Print collateral plate 5"><img loading="lazy" decoding="async" src="../references/collateral/exports/c11-business-card-white-front.png" alt="Print collateral plate 6"><img loading="lazy" decoding="async" src="../references/collateral/exports/c11-letterhead.png" alt="Print collateral plate 7"></div></article></div>
   </section>
   
   <section class="app-section" aria-labelledby="app-section-3">
     <div class="app-section-head">
       <div class="app-section-num">03</div>
       <div>
-        <div class="app-section-kicker">Shared patterns</div>
-        <h2 id="app-section-3">The repeatable system<span class="dot">.</span></h2>
-        <p class="app-section-desc">These patterns should survive every medium unless a page says otherwise.</p>
+        <div class="app-section-kicker">Available as an add-on</div>
+        <h2 id="app-section-3">Extend the system when a project needs it<span class="dot">.</span></h2>
+        <p class="app-section-desc">These surfaces are not part of the core template set, but the brand system already covers them. Add any of them to a brand engagement when the work calls for it.</p>
       </div>
     </div>
-    <div class="app-rule-list"><div class="app-rule"><h3>Visual system<span class="dot">.</span></h3><div class="app-chip-row"><span class="app-chip">Purple period on every headline</span><span class="app-chip">33 percent viewfinder arm length</span><span class="app-chip">Top-left heading lockup</span><span class="app-chip">Photo strip as accent</span><span class="app-chip">Sharp edges</span><span class="app-chip">Light canvas by default</span></div></div><div class="app-rule"><h3>Copy system<span class="dot">.</span></h3><div class="app-chip-row"><span class="app-chip">Two-beat rhythm: Not X. Y.</span><span class="app-chip">Concrete over abstract</span><span class="app-chip">No we-help opener</span><span class="app-chip">Maximum 12 words per statement</span><span class="app-chip">Bold the load-bearing phrases</span><span class="app-chip">Dry diagnosis before lesson</span></div></div></div>
+    <div class="app-chip-row"><span class="app-chip">Website &amp; landing pages</span><span class="app-chip">Speaking &amp; events</span><span class="app-chip">Proof &amp; case studies</span><span class="app-chip">Ads &amp; outdoor</span><span class="app-chip">Video &amp; audio</span></div>
   </section>
 
 
   <div class="footer-nav">
-    <span>Section C · Brand Application</span>
-    <span><a href="references.html">Reference Gallery →</a></span>
+    <span>Section C · Overview</span><span class="footer-stamp" style="font-family:var(--ff-b);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:3px 9px;border-radius:2px;white-space:nowrap;">Section B layout v2</span>
+    <span><a href="images.html">Images →</a></span>
   </div>
   <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
@@ -235,9 +239,9 @@
 <!--
   Brand:        Florian P. Consulting (fp)
   Version:      4.0.0
-  Built at:     2026-06-13T22:05:56+00:00
-  Git SHA:      e15d302c59ac839543108e69718c9f3448a7f09e
-  Bundle hash:  sha256:d55d0839c59fdfd9a4d9efc17ad9c9f53044e72cf93bff19c41ee42a9a330c51
+  Built at:     2026-06-17T01:25:52+00:00
+  Git SHA:      2ab3d8d0927dc5ca4c06fcaee61722d552f9088a
+  Bundle hash:  sha256:a1d4f85b136916e3abd50ad83e3a294d598fd6a572dd2fadfca1ed74bc5f1350
   Source:       brand-os/brands/fp/APPLICATION.md + CHANNELS.md + STRATEGY.md + IDENTITY.md
 -->
 </body>

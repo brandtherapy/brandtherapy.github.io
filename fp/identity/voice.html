@@ -24,7 +24,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noai, noimageai">
-<title>Voice · FP Brand OS</title>
+<title>Voice Rules · FP Brand OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -64,10 +64,10 @@
   </div>
   <nav class="nav-section" aria-label="Brand OS sections">
     <div class="label">Sections</div>
-    <div class="nav-list">
+    <style>.nav-list a .nav-badge{display:inline-block;margin-left:7px;padding:1px 6px;border-radius:999px;font-family:var(--ff-b);font-size:9px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;vertical-align:middle;border:1px solid var(--border);color:var(--muted);}.nav-list a .nav-badge--add_on{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent);}.nav-list a .nav-badge--in_review,.nav-list a .nav-badge--in_development{color:var(--accent);}</style><div class="nav-list">
 <a class="" href="../index.html">System Overview</a>
 <a href="../use.html">Use with AI</a>
-</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+</div><details class="nav-group"><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
 <a href="../strategy/index.html">Focus Star</a>
 <a href="../strategy/product.html">Product</a>
 <a href="../strategy/people.html">People</a>
@@ -77,17 +77,18 @@
 <a href="../strategy/differentiation.html">Differentiation</a>
 </div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
 <a href="index.html">Creative Direction</a>
-<a href="look-and-feel.html">Look &amp; Feel</a>
-<a class="active" href="voice.html">Voice</a>
+<a href="visual-rules.html">Visual Rules</a>
+<a href="logo.html">Logo<span class="nav-badge nav-badge--add_on">Add-on</span></a>
 <a href="signature.html">Signature</a>
-</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
-<a href="../application/index.html">Application Overview</a>
-<a href="../application/references.html">Reference Gallery</a>
-<a href="../application/channel-rules.html">Channel Rules</a>
-</div></details><details class="nav-group" open><summary><span class="group-letter">D</span><span class="group-label">Personal Branding</span></summary><div class="nav-list">
-<a href="../personal-branding/index.html">Position &amp; Role</a>
-<a href="../personal-branding/character-sheet.html">Character Sheet</a>
-<a href="../personal-branding/outputs.html">Personal-Mode Outputs</a>
+<a class="active" href="voice.html">Voice Rules</a>
+<a href="personal-branding.html">Personal Branding</a>
+</div></details><details class="nav-group"><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
+<a href="../application/index.html">Overview</a>
+<a href="../application/images.html">Images</a>
+<a href="../application/social.html">Social</a>
+<a href="../application/slides.html">Slides &amp; Deck</a>
+<a href="../application/email.html">Email &amp; Newsletter</a>
+<a href="../application/stationery.html">Stationery</a>
 </div></details>
   </nav>
   <div class="toolbar-mini">
@@ -121,10 +122,36 @@
 .voice-body th, .voice-body td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; vertical-align: top; }
 .voice-body th { font-family: var(--ff-b); font-weight: 700; letter-spacing: 0.04em; background: var(--light); color: var(--text); }
 .voice-body td { color: var(--text); }
+</style><style>
+.ac-block { margin: 0 0 96px; }
+.ac-head { padding-top: 20px; border-top: 1px solid var(--text); margin-bottom: 12px; }
+.ac-head h2 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.02; letter-spacing: -0.025em; color: var(--text); margin: 0 0 8px; }
+.ac-head h2 .dot { color: var(--accent); }
+.ac-head p { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 680px; margin: 0; }
+.ac-grid { display: grid; gap: 16px; margin-top: 32px; }
+.ac-slot { border: 1px solid var(--border); background: var(--white); padding: 22px 24px; }
+.ac-slot-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
+.ac-slot-label { font-family: var(--ff-b); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+.ac-badge { font-family: var(--ff-b); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 9px; border-radius: 2px; white-space: nowrap; }
+.ac-badge.draft { background: color-mix(in srgb, #b8860b 16%, var(--white)); color: #7a5a00; border: 1px solid color-mix(in srgb, #b8860b 40%, var(--white)); }
+.ac-badge.pending { background: var(--light); color: var(--muted); border: 1px solid var(--border); }
+.ac-body { font-family: var(--ff-b); font-size: 15px; line-height: 1.65; color: var(--text); }
+.ac-body p { margin: 0 0 10px; }
+.ac-body p:last-child { margin-bottom: 0; }
+.ac-empty { font-family: var(--ff-b); font-size: 14px; line-height: 1.6; color: var(--muted); font-style: normal; }
+.ac-slot.is-empty { background: color-mix(in srgb, var(--light) 40%, var(--white)); border-style: dashed; }
 </style>
-  <span class="eyebrow" style="font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);">Section B · Brand Identity · Voice</span>
-  <h1 style="font-family:var(--ff-h);font-weight:800;font-size:clamp(56px,8vw,112px);line-height:0.92;letter-spacing:-0.04em;color:var(--text);margin:16px 0 24px;">Voice<span class="dot">.</span></h1>
-  <p style="font-family:var(--ff-b);font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:var(--text);max-width:640px;margin:0 0 64px;">How the brand speaks. Principles first, then what's banned, then exemplars.</p>
+  <span class="eyebrow" style="font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);">Section B · Brand Identity · Voice Rules</span>
+  <h1 style="font-family:var(--ff-h);font-weight:800;font-size:clamp(56px,8vw,112px);line-height:0.92;letter-spacing:-0.04em;color:var(--text);margin:16px 0 24px;">Voice Rules<span class="dot">.</span></h1>
+  <p style="font-family:var(--ff-b);font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:var(--text);max-width:640px;margin:0 0 64px;">How the brand speaks. Approved copy first, then principles, then what's banned, then exemplars.</p>
+
+  <section class="ac-block" aria-labelledby="ac-approved-copy">
+    <div class="ac-head">
+      <h2 id="ac-approved-copy">Approved Copy<span class="dot">.</span></h2>
+      <p>The locked-copy library: the lines anyone can reuse without rewriting. Approved entries are safe to ship as-is. Draft and empty slots are not. They show what is still waiting on your sign-off.</p>
+    </div>
+    <div class="ac-grid"><div class="ac-slot is-empty"><div class="ac-slot-head"><span class="ac-slot-label">Tagline</span><span class="ac-badge pending">Awaiting approval</span></div><p class="ac-empty">No approved tagline yet. This slot stays empty until you approve one, so nothing reads as locked before it is.</p></div><div class="ac-slot"><div class="ac-slot-head"><span class="ac-slot-label">Short bio</span><span class="ac-badge draft">Draft · pending approval</span></div><div class="ac-body"><p>Florian Philippe is a brand strategist who helps founders, leaders, and businesses clarify what makes them different and express it in a way people can understand. His work blends strategy, design, creative, messaging, identity, and execution, shaped by a career built across France, Shanghai, Hanoi, Taiwan, and Southern California.</p></div></div><div class="ac-slot"><div class="ac-slot-head"><span class="ac-slot-label">Long bio</span><span class="ac-badge draft">Draft · pending approval</span></div><div class="ac-body"><p>Florian Philippe is a brand strategist who works with founders, leaders, and businesses that have outgrown the way they explain themselves.</p><p>His work sits where strategy, design, creative, messaging, identity, and execution keep pretending they are separate problems. He helps clients find what is actually true, decide what is meaningfully different, and turn that into a brand people can understand, trust, and remember.</p><p>Florian grew up in France, studied business and entrepreneurship in Le Mans, and built his career across Shanghai, Hanoi, Taiwan, and Southern California. Along the way, he worked as a freelancer, musician, designer, consultant, founder, strategist, and Chief Marketing Officer.</p><p>In Taiwan, he founded 3ANGLES, his first official brand strategy consultancy, working with clients across Asia and the U.S. After moving to Southern California, he expanded from brand strategy into creative direction, websites, UX, CRM, automation, SEO, funnel design, team structure, and executive marketing leadership.</p><p>Today, Florian's work is built around Brand Therapy: a strategy process that starts before logos, campaigns, content, or websites. It asks better questions first. What is true? What is different? What is confusing? What needs to come into focus before the outside world sees the brand?</p><p>He is not interested in branding as decoration. He is interested in the moment when a founder can finally explain what they do without sanding off the part that made it worth building.</p><p>As AI makes average output easier to create, Florian believes taste, clarity, and difference become harder to fake. The tools can make more things. They cannot decide what should matter.</p></div></div><div class="ac-slot is-empty"><div class="ac-slot-head"><span class="ac-slot-label">Approved lines</span><span class="ac-badge pending">Awaiting approval</span></div><p class="ac-empty">No approved approved lines yet. This slot stays empty until you approve one, so nothing reads as locked before it is.</p></div><div class="ac-slot is-empty"><div class="ac-slot-head"><span class="ac-slot-label">One-liner</span><span class="ac-badge pending">Awaiting approval</span></div><p class="ac-empty">No approved one-liner yet. This slot stays empty until you approve one, so nothing reads as locked before it is.</p></div><div class="ac-slot is-empty"><div class="ac-slot-head"><span class="ac-slot-label">Descriptors</span><span class="ac-badge pending">Awaiting approval</span></div><p class="ac-empty">No approved descriptors yet. This slot stays empty until you approve one, so nothing reads as locked before it is.</p></div></div>
+  </section>
 
   <section class="voice-section" aria-labelledby="voice-1">
     <div class="voice-section-head">
@@ -490,8 +517,8 @@
 
 
   <div class="footer-nav">
-    <span>Section B · VO · Brand Identity</span>
-    <span><a href="signature.html">Signature →</a></span>
+    <span>Section B · Voice Rules · Brand Identity</span><span class="footer-stamp" style="font-family:var(--ff-b);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:3px 9px;border-radius:2px;white-space:nowrap;">Section B layout v2</span>
+    <span><a href="personal-branding.html">Personal Branding →</a></span>
   </div>
   <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
@@ -501,9 +528,9 @@
 <!--
   Brand:        Florian P. Consulting (fp)
   Version:      4.0.0
-  Built at:     2026-06-13T22:05:56+00:00
-  Git SHA:      e15d302c59ac839543108e69718c9f3448a7f09e
-  Bundle hash:  sha256:d55d0839c59fdfd9a4d9efc17ad9c9f53044e72cf93bff19c41ee42a9a330c51
+  Built at:     2026-06-17T01:25:52+00:00
+  Git SHA:      2ab3d8d0927dc5ca4c06fcaee61722d552f9088a
+  Bundle hash:  sha256:a1d4f85b136916e3abd50ad83e3a294d598fd6a572dd2fadfca1ed74bc5f1350
   Source:       brand-os/brands/fp/IDENTITY.md + STRATEGY.md
 -->
 </body>
