@@ -9,24 +9,23 @@
   },
   "source": {
     "source_slug": "fp",
-    "build_timestamp": "2026-06-17T01:25:52+00:00",
-    "git_sha": "2ab3d8d0927dc5ca4c06fcaee61722d552f9088a",
-    "bundle_hash": "sha256:a1d4f85b136916e3abd50ad83e3a294d598fd6a572dd2fadfca1ed74bc5f1350",
+    "build_timestamp": "2026-06-17T17:20:47+00:00",
+    "git_sha": "9c4e725b9a13da54d5be93cf63d9c64596cdf1e8",
+    "bundle_hash": "sha256:c1d00c859148f963e5652233da0a93826e02156588a332afc2c6d7beeca71edb",
     "source_hashes": {
       "STRATEGY.md": "sha256:800c222653331ab4c44a3175c3bb218bfc27121a8349e3c6599c68cbfaac5752",
-      "IDENTITY.md": "sha256:504720428958a9762430a62f95b54f6852fa496aec1eed9326f3e122e84bf314",
+      "IDENTITY.md": "sha256:0437476813e3160df8949cabcce2328800bcc59ddb2af5318ebc2fdea227e9f8",
       "SKILL.md": "sha256:be6d4104dc20ee62d1e02765ce9246a3d375682bebfb42fe3156660d5f791007",
-      "APPLICATION.md": "sha256:be07da2b587aba2515f4e1bfbe0dca57b5f8d818fd47fc1f8e87b3ca9a8d37ce",
+      "APPLICATION.md": "sha256:fd8e6e92b31db08947139004c24cf41cb53e72a056247286ac77710594dbac96",
       "CHANNELS.md": "sha256:2edaaff112556b018af7f7e03ceeb6a87734b18f1cf246a49d9fd2f601802fc4",
-      "PERSONAL_BRANDING.md": "sha256:6aedf541695be190bac9af39c038004079918033dd916057bdea5072e7c6d771",
+      "PERSONAL_BRANDING.md": "sha256:6f14f0d8d395e4267c092f1b358c3e7a83feb70eacb5bdb2c3ee6db06edc7501",
       "QUICKSTART.md": "sha256:150a373d10d1ae2117e809992fba1d3cc3131e20529b8ad19a5d5edeaf8ab4fd",
       "DIFFERENTIATION.md": "sha256:27a8f0f001c023cc53b85b47adaf1bfaa845d93c51bf4e03750b28e1e96dca54",
       "references/methodology.md": "sha256:a78b3041530a33181897518135c9034708744d8d9d41c5b77fcf49c63c01c590",
       "references/viewfinder.md": "sha256:b6fc802e8b9db94f18d589daaa96d565f026a3f3c32e02cd77f8565ab6b9b54a",
       "references/voice-exemplars.md": "sha256:62edce5e4e74e55931da4d2152d2c593ce1cb388c1210f9f09c0c57ce13af649",
-      "images_manifest": "sha256:36eda64dadea98a37046e74705a911a1367201126caeadbe2d69dc0885f141ab",
-      "application_references_manifest": "sha256:84f2f4fddd3f0ef98c398a9d5c7e231eb7647da5e9a2f2f5cbb1a5e28173494d",
-      "personal_branding_references_manifest": "sha256:71d1867a0763c763d26848140ddb6b7c05b311c6803d259305f39bb0867ea27c"
+      "images_manifest": "sha256:651f88a881d170e27b601b12dec226256874685d4b5a9ea0de818677e11108a9",
+      "application_references_manifest": "sha256:5f33b813525f9a16a7524f28091a5f8deeddb3efffb9d30d361cc400e9483ae4"
     },
     "source_order": [
       "STRATEGY.md",
@@ -68,9 +67,9 @@
         "brand-os/source/output/collateral/c11-print-collateral.html": "references/collateral/c11-print-collateral.html"
       },
       "reference_asset_roots": {
-        "[private asset root removed]": "references/collateral/florian-photos/",
-        "marketing/brand-system/references/personal-branding/finished": "references/personal-branding/pb-finished/",
-        "marketing/brand-system/references/personal-branding/portraits": "references/personal-branding/pb-portraits/"
+        "[private asset root removed]": "references/collateral/social-evergreen/",
+        "marketing/brand-system/references/personal-branding/portraits": "references/collateral/pb-portraits/",
+        "marketing/brand-system/references/personal-branding/finished": "references/collateral/pb-finished/"
       },
       "founder_spectrum_visual": {
         "template": "source/shared/templates/components/founder-spectrum/vertical-stack.template.html",
@@ -486,6 +485,15 @@
       }
     },
     "creative_direction": {
+      "status": "approved",
+      "approach_label": "Editorial clarity system",
+      "hero_reference": {
+        "image": "moodboard/master-stylescape.png",
+        "label": "Master Stylescape",
+        "kind_label": "Stylescape · Master board",
+        "render_overlay": false,
+        "description": "FP's locked palette and type, the Viewfinder signature, the logo, founder photography, and live applications, composed into one board. This is the master format every FP brand decision is checked against, and the format future brand stylescapes follow."
+      },
       "brand_style_sliders": [
         {
           "axis": "Classic|Modern",
@@ -834,7 +842,27 @@
     "reference_asset_roots": [
       {
         "source_dir": "[private asset root removed]",
-        "output_dir": "florian-photos"
+        "output_dir": "florian-photos",
+        "label": "Founder photography",
+        "description": "Approved photography of Florian: workshop, editorial, and lifestyle frames. The first place to pull a real photo before generating anything new."
+      },
+      {
+        "source_dir": "marketing/brand-system/references/personal-branding/portraits",
+        "output_dir": "pb-portraits",
+        "label": "Founder portraits",
+        "description": "Portrait references across settings: desk, cafe, stage, home office. Pull from these for context, wardrobe, and lighting in personal-mode imagery."
+      },
+      {
+        "source_dir": "marketing/brand-system/references/personal-branding/finished",
+        "output_dir": "pb-finished",
+        "label": "Personal-branding examples",
+        "description": "Finished example posts that show the personal-branding system fully composed. Reference compositions, not stock to reuse verbatim."
+      },
+      {
+        "source_dir": "[private asset root removed]",
+        "output_dir": "social-evergreen",
+        "label": "Social evergreen",
+        "description": "Evergreen social and profile assets: LinkedIn banners, Substack banners, and reusable post graphics. Download and use as-is, or treat as layout references."
       }
     ],
     "pages": [
@@ -1467,20 +1495,7 @@
       "logo_image": "brand-os/source/components/founder-spectrum/fp-logo.png",
       "output_dir": "founder-spectrum"
     },
-    "reference_asset_roots": [
-      {
-        "source_dir": "marketing/brand-system/references/personal-branding/finished",
-        "output_dir": "pb-finished",
-        "label": "Finished personal-branding posts",
-        "role": "Gold-standard composition references for personal mode."
-      },
-      {
-        "source_dir": "marketing/brand-system/references/personal-branding/portraits",
-        "output_dir": "pb-portraits",
-        "label": "Portrait references",
-        "role": "Look, lighting, outfit, and context references for personal-mode imagery."
-      }
-    ],
+    "reference_asset_roots": [],
     "spectrum_positions": [
       {
         "position": 1,
@@ -2533,20 +2548,7 @@
               "behavior",
               "aesthetic"
             ],
-            "reference_asset_roots": [
-              {
-                "source_dir": "marketing/brand-system/references/personal-branding/finished",
-                "output_dir": "pb-finished",
-                "label": "Finished personal-branding posts",
-                "role": "Gold-standard composition references for personal mode."
-              },
-              {
-                "source_dir": "marketing/brand-system/references/personal-branding/portraits",
-                "output_dir": "pb-portraits",
-                "label": "Portrait references",
-                "role": "Look, lighting, outfit, and context references for personal-mode imagery."
-              }
-            ],
+            "reference_asset_roots": [],
             "fields": [
               "summary",
               "rules_in",
@@ -2585,20 +2587,7 @@
             "founder image"
           ],
           "context_load": {
-            "reference_asset_roots": [
-              {
-                "source_dir": "marketing/brand-system/references/personal-branding/finished",
-                "output_dir": "pb-finished",
-                "label": "Finished personal-branding posts",
-                "role": "Gold-standard composition references for personal mode."
-              },
-              {
-                "source_dir": "marketing/brand-system/references/personal-branding/portraits",
-                "output_dir": "pb-portraits",
-                "label": "Portrait references",
-                "role": "Look, lighting, outfit, and context references for personal-mode imagery."
-              }
-            ],
+            "reference_asset_roots": [],
             "personal_branding_dimensions": [
               "aesthetic",
               "presentation"

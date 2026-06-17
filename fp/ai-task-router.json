@@ -859,20 +859,7 @@
             "behavior",
             "aesthetic"
           ],
-          "reference_asset_roots": [
-            {
-              "source_dir": "marketing/brand-system/references/personal-branding/finished",
-              "output_dir": "pb-finished",
-              "label": "Finished personal-branding posts",
-              "role": "Gold-standard composition references for personal mode."
-            },
-            {
-              "source_dir": "marketing/brand-system/references/personal-branding/portraits",
-              "output_dir": "pb-portraits",
-              "label": "Portrait references",
-              "role": "Look, lighting, outfit, and context references for personal-mode imagery."
-            }
-          ],
+          "reference_asset_roots": [],
           "fields": [
             "summary",
             "rules_in",
@@ -911,20 +898,7 @@
           "founder image"
         ],
         "context_load": {
-          "reference_asset_roots": [
-            {
-              "source_dir": "marketing/brand-system/references/personal-branding/finished",
-              "output_dir": "pb-finished",
-              "label": "Finished personal-branding posts",
-              "role": "Gold-standard composition references for personal mode."
-            },
-            {
-              "source_dir": "marketing/brand-system/references/personal-branding/portraits",
-              "output_dir": "pb-portraits",
-              "label": "Portrait references",
-              "role": "Look, lighting, outfit, and context references for personal-mode imagery."
-            }
-          ],
+          "reference_asset_roots": [],
           "personal_branding_dimensions": [
             "aesthetic",
             "presentation"
