@@ -12,8 +12,8 @@
   --muted: #8888A0;
   --border: #E5E7EB;
   --border-soft: #F0F0F5;
-  --ff-h: 'Bricolage Grotesque', system-ui, sans-serif;
-  --ff-b: 'Poppins', system-ui, sans-serif;
+  --ff-h: system-ui, sans-serif;
+  --ff-b: system-ui, sans-serif;
 
   --section-pad: clamp(80px, 10vw, 140px);
   --container: 1200px;
@@ -88,7 +88,7 @@ main.content {
 
 .brand-mark {
   display: flex; align-items: center; gap: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
   padding-bottom: 22px;
   border-bottom: 1px solid var(--border);
 }
@@ -128,7 +128,7 @@ details.nav-group { margin-bottom: 4px; }
 details.nav-group > summary {
   list-style: none;
   cursor: pointer;
-  padding: 9px 8px;
+  padding: 7px 8px;
   font-size: 13px;
   display: flex; align-items: center; gap: 12px;
   user-select: none;
@@ -162,8 +162,9 @@ details.nav-group .group-label {
 }
 .nav-list a {
   display: flex; align-items: center; gap: 10px;
-  padding: 8px 10px;
+  padding: 6px 10px;
   font-size: 13px;
+  line-height: 1.4;
   color: var(--muted);
   position: relative;
   transition: color 0.2s, background 0.2s;
@@ -196,7 +197,7 @@ details.nav-group .group-label {
 }
 
 .toolbar-mini {
-  margin-top: 28px;
+  margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid var(--border);
   font-family: var(--ff-b);
@@ -878,6 +879,19 @@ footer.page-footer {
 }
 footer.page-footer a { color: var(--text); transition: color 0.2s; }
 footer.page-footer a:hover { color: var(--accent); }
+
+.footer-legal {
+  font-family: var(--ff-b);
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 640px;
+  margin: 28px 0 0;
+  opacity: 0.85;
+}
+@media (max-width: 820px) {
+  main.content > .footer-legal { padding: 0 24px 20px; margin-top: 8px; }
+}
 
 
 .fill-banner {

@@ -16,7 +16,7 @@ window.FOCUS_STAR_CONFIG = {
     "background": "#FFFFFF",
     "dialBackground": "#FFFFFF",
     "bgMode": "unified",
-    "hideTitleDot": false,
+    "hideTitleDot": true,
     "titleTransform": "uppercase",
     "titleWeight": 800
   },
@@ -572,8 +572,8 @@ window.FOCUS_STAR_CONFIG = {
             "Event and membership language that avoids vendor spam",
             "Copy and proof examples that make connection and collaboration tangible",
             "Member proof across plant-touching and ancillary categories",
-            "Voice exemplars maintained in references/voice-exemplars.md as the canonical bank",
-            "Page copy for Membership, Networking, Events, Mentorship, and Advocacy that proves the stronger Google Doc positioning without overclaiming benefits"
+            "Voice exemplars maintained as the canonical bank",
+            "Page copy for Membership, Networking, Events, Mentorship, and Advocacy that proves the stronger positioning without overclaiming benefits"
           ],
           "AI rule": [
             "Address serious cannabis and hemp professionals, leaders, operators, executives, investors, policymakers, sponsors, regional leaders, and ancillary partners",

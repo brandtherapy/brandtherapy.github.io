@@ -1,36 +1,15 @@
 <!DOCTYPE html>
-<!--
-  section-a-shell.html
-  ====================
-  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
-  visual design (sidebar nav, editorial typography, viewfinder treatment, footer).
-
-  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
-  are documented in shared/templates/README.md (section: "Template token syntax
-  in section-a-shell.html").
-
-  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
-  fonts, nav contents) are injected. The CSS at assets/style.css carries the
-  shared visual system; per-brand color and typography overrides come through
-  the CSS custom-property block in the inline <style> below.
-
-  When opening this file in a browser directly (without build.py running),
-  the {{ tokens }} display as literals. That's expected. The shell is a
-  template, not a standalone page. Visual parity check happens against the
-  rendered output, not the shell file.
--->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noai, noimageai">
 <title>Brand OS Overview · Cannabis Chamber Of Commerce Brand OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700;800&family=Atkinson+Hyperlegible:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <style>
-  /* Per-brand color and typography token overrides.
-     Injected by build.py from IDENTITY.md frontmatter. */
   :root {
     --accent: #505A66;
     --accent-glow: rgba(80, 90, 102, 0.24);
@@ -58,7 +37,7 @@
 
 <aside class="sidebar">
   <div class="brand-mark">
-    <div class="name">Cannabis Chamber Of Commerce<span class="dot">.</span></div>
+    <div class="name">Cannabis Chamber Of Commerce</div>
     <div class="meta">Brand OS</div>
   </div>
   <nav class="nav-section" aria-label="Brand OS sections">
@@ -75,6 +54,10 @@
 </div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
 <a href="identity/index.html">Direction Three</a>
 <a href="identity/exploration.html">Exploration</a>
+<a href="identity/look-and-feel.html">Look &amp; Feel</a>
+<a href="identity/voice.html">Voice</a>
+<a href="identity/logo.html">Logo</a>
+<a href="identity/signature.html">Signature</a>
 </div></details>
   </nav>
   <div class="toolbar-mini">
@@ -121,9 +104,27 @@
 .flow-row p { font-family: var(--ff-b); font-size: 14px; line-height: 1.65; color: var(--text); max-width: 720px; margin: 0; }
 @media (max-width: 720px) { .flow-row { grid-template-columns: 1fr; gap: 10px; } }
 </style>
+<style>
+.fpo-wrap { margin: 12px 0 0; }
+.fpo-svg { display: block; width: 100%; height: auto; max-width: 760px; margin: 0 auto; overflow: visible; }
+.fpo-svg text { fill: var(--text); }
+.fpo-svg .lbl { font-family: var(--ff-b); font-size: 8px; font-weight: 700; letter-spacing: 0.14em; fill: var(--accent); }
+.fpo-svg .bric { font-family: var(--ff-h); font-weight: 800; letter-spacing: -0.02em; }
+.fpo-svg .pttl { font-size: 12.5px; }
+.fpo-svg .ttl { font-size: 14px; }
+.fpo-svg .big { font-size: 16px; }
+.fpo-svg .stxt { font-family: var(--ff-b); font-size: 9.5px; fill: var(--muted); }
+.fpo-svg .sub { font-family: var(--ff-b); font-size: 10px; fill: var(--muted); }
+.fpo-svg .eyb { font-family: var(--ff-b); font-size: 8px; font-weight: 700; letter-spacing: 0.18em; fill: var(--accent); }
+.fpo-svg .tag { font-family: var(--ff-b); font-size: 9px; font-weight: 700; letter-spacing: 0.12em; fill: var(--accent); }
+.fpo-svg .flow { font-family: var(--ff-b); font-size: 8.5px; font-weight: 700; letter-spacing: 0.08em; fill: var(--muted); }
+.fpo-svg .stopttl { font-family: var(--ff-h); font-weight: 800; font-size: 11px; fill: var(--text); }
+.fpo-svg .conn { stroke: #B4B4C2; stroke-width: 1.5; fill: none; }
+.fpo-svg .brk { stroke: var(--accent); stroke-width: 3; fill: none; stroke-linecap: round; }
+</style>
   <section class="home-hero">
     <span class="hero-eyebrow">Brand OS · AI-first source system</span>
-    <h1>The Cannabis Chamber of Commerce Brand OS<span class="dot">.</span></h1>
+    <h1>The Cannabis Chamber of Commerce Brand OS</h1>
     <p class="hero-sub">One source thread: strategy decides, identity translates, application proves. Generated work is downstream until the source is approved.</p>
     <div class="hero-pills">
       <div class="hero-pill">Source<strong>A → B → C</strong></div>
@@ -136,24 +137,108 @@
     <div class="home-section-header">
       <div class="home-section-num">THREAD</div>
       <div>
-        <h2 class="home-section-title">How the system works<span class="dot">.</span></h2>
-        <p class="home-section-sub">Source of truth to generated output</p>
-        <p class="home-section-desc">The goal is not another static brand book. The goal is a compact source system that can generate a website direction, collateral, copy, and channel rules from approved strategic decisions.</p>
+        <h2 class="home-section-title">How the system works</h2>
+        <p class="home-section-sub">Decision to output, in seven steps</p>
+        <p class="home-section-desc">This is not a static brand book. It is a governed system: strategy decides, identity translates, a safety gate protects every real face before it ships, and all downstream work is generated from locked source.</p>
       </div>
     </div>
-    <div class="flow-band"><div class="flow-row"><div class="flow-step">A</div><div><h3>Strategy contract<span class="dot">.</span></h3><p>Focus Star turns the strategy into decisions an AI can reuse without re-interpreting the brand.</p></div></div><div class="flow-row"><div class="flow-step">B</div><div><h3>Creative direction options<span class="dot">.</span></h3><p>Section B proposal directions translate the same Section A strategy into visual options before one is approved.</p></div></div><div class="flow-row"><div class="flow-step">C</div><div><h3>Application references<span class="dot">.</span></h3><p>Application and channel rules are not declared in this source pack yet. Use the approved strategy and identity until channel-specific sources are added.</p></div></div></div>
+    
+<div class="fpo-wrap">
+<svg class="fpo-svg" viewBox="0 0 760 776" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Governed pipeline. The five strategic decisions of the Focus Star converge into a locked strategy, flow through creative direction and identity, pass a safety gate, then build, generated output, and activation.">
+  <defs>
+    <marker id="fpoarr" markerWidth="6" markerHeight="6" refX="5.5" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#B4B4C2"/>
+    </marker>
+  </defs>
+
+  <rect x="10"  y="14" width="132" height="58" rx="2" fill="#FCFCFD" stroke="#E5E7EB"/>
+  <rect x="162" y="14" width="132" height="58" rx="2" fill="#FCFCFD" stroke="#E5E7EB"/>
+  <rect x="314" y="14" width="132" height="58" rx="2" fill="#FCFCFD" stroke="#E5E7EB"/>
+  <rect x="466" y="14" width="132" height="58" rx="2" fill="#FCFCFD" stroke="#E5E7EB"/>
+  <rect x="618" y="14" width="132" height="58" rx="2" fill="#FCFCFD" stroke="#E5E7EB"/>
+
+  <text class="lbl"  x="76"  y="37" text-anchor="middle">P1 · PRODUCT</text>
+  <text class="bric pttl" x="76"  y="55" text-anchor="middle">Brand Therapy</text>
+  <text class="lbl"  x="228" y="37" text-anchor="middle">P2 · PEOPLE</text>
+  <text class="bric pttl" x="228" y="55" text-anchor="middle">Invisible Expert</text>
+  <text class="lbl"  x="380" y="37" text-anchor="middle">P3 · PURPOSE</text>
+  <text class="bric pttl" x="380" y="55" text-anchor="middle">Make it unique</text>
+  <text class="lbl"  x="532" y="37" text-anchor="middle">P4 · PROMISE</text>
+  <text class="bric pttl" x="532" y="55" text-anchor="middle">Curiosity</text>
+  <text class="lbl"  x="684" y="37" text-anchor="middle">P5 · PERSONALITY</text>
+  <text class="bric pttl" x="684" y="55" text-anchor="middle">Funny first</text>
+
+  <path class="conn" d="M76,72 L76,96"/>
+  <path class="conn" d="M228,72 L228,96"/>
+  <path class="conn" d="M380,72 L380,96"/>
+  <path class="conn" d="M532,72 L532,96"/>
+  <path class="conn" d="M684,72 L684,96"/>
+  <path class="conn" d="M76,96 L684,96"/>
+  <circle cx="380" cy="96" r="3" fill="#5A5CF9"/>
+  <path class="conn" d="M380,96 L380,124" marker-end="url(#fpoarr)"/>
+
+  <rect x="230" y="124" width="300" height="72" rx="2" fill="#FFFFFF" stroke="#5A5CF9" stroke-width="1.5"/>
+  <text class="bric big" x="380" y="156" text-anchor="middle">01 · Strategy<tspan fill="#5A5CF9">.</tspan></text>
+  <text class="stxt" x="380" y="176" text-anchor="middle">Focus Star locked into a reusable contract</text>
+  <path class="conn" d="M380,196 L380,224" marker-end="url(#fpoarr)"/>
+
+  <rect x="230" y="224" width="300" height="62" rx="2" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text class="bric ttl" x="380" y="252" text-anchor="middle">02 · Creative direction<tspan fill="#5A5CF9">.</tspan></text>
+  <text class="stxt" x="380" y="270" text-anchor="middle">one concept chosen before any asset</text>
+  <path class="conn" d="M380,286 L380,314" marker-end="url(#fpoarr)"/>
+
+  <rect x="230" y="314" width="300" height="62" rx="2" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text class="bric ttl" x="380" y="342" text-anchor="middle">03 · Identity system<tspan fill="#5A5CF9">.</tspan></text>
+  <text class="stxt" x="380" y="360" text-anchor="middle">logo · signature · likeness</text>
+  <path class="conn" d="M380,376 L380,404" marker-end="url(#fpoarr)"/>
+
+  <rect x="220" y="404" width="320" height="86" rx="2" fill="#F1F0FE" stroke="#E5E7EB"/>
+  <path class="brk" d="M220,430 L220,404 L246,404"/>
+  <path class="brk" d="M514,404 L540,404 L540,430"/>
+  <path class="brk" d="M220,464 L220,490 L246,490"/>
+  <path class="brk" d="M514,490 L540,490 L540,464"/>
+  <text class="eyb" x="380" y="425" text-anchor="middle">CHECKPOINT</text>
+  <text class="bric big" x="380" y="449" text-anchor="middle">04 · Safety gate<tspan fill="#5A5CF9">.</tspan></text>
+  <text class="sub" x="380" y="466" text-anchor="middle">every real face checked against an approved reference</text>
+  <text class="tag" x="380" y="483" text-anchor="middle">SHIP OR STOP</text>
+
+  <path class="conn" d="M380,490 L380,520" marker-end="url(#fpoarr)"/>
+  <text class="flow" x="392" y="509">PASS</text>
+
+  <path class="conn" d="M540,447 L590,447" marker-end="url(#fpoarr)"/>
+  <text class="flow" x="556" y="441">FAIL</text>
+
+  <rect x="590" y="419" width="158" height="56" rx="2" fill="#F4F4F6" stroke="#D0D0DA"/>
+  <text class="stopttl" x="669" y="444" text-anchor="middle">Stopped</text>
+  <text class="sub" x="669" y="461" text-anchor="middle">not published</text>
+
+  <rect x="230" y="520" width="300" height="62" rx="2" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text class="bric ttl" x="380" y="548" text-anchor="middle">05 · Build &amp; lock<tspan fill="#5A5CF9">.</tspan></text>
+  <text class="stxt" x="380" y="566" text-anchor="middle">version-locked bundle, no hand-edits</text>
+  <path class="conn" d="M380,582 L380,610" marker-end="url(#fpoarr)"/>
+
+  <rect x="230" y="610" width="300" height="62" rx="2" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text class="bric ttl" x="380" y="638" text-anchor="middle">06 · Generated output<tspan fill="#5A5CF9">.</tspan></text>
+  <text class="stxt" x="380" y="656" text-anchor="middle">Sections A/B/C + AI context pack</text>
+  <path class="conn" d="M380,672 L380,700" marker-end="url(#fpoarr)"/>
+
+  <rect x="230" y="700" width="300" height="62" rx="2" fill="#FFFFFF" stroke="#5A5CF9" stroke-width="1.5"/>
+  <text class="bric ttl" x="380" y="728" text-anchor="middle">07 · Activation<tspan fill="#5A5CF9">.</tspan></text>
+  <text class="stxt" x="380" y="746" text-anchor="middle">human-approved outbound</text>
+</svg>
+</div>
   </section>
 
   <section class="home-section">
     <div class="home-section-header">
-      <div class="home-section-num">REVIEW</div>
+      <div class="home-section-num">SECTIONS</div>
       <div>
-        <h2 class="home-section-title">Review order<span class="dot">.</span></h2>
-        <p class="home-section-sub">Do not inspect everything at once</p>
-        <p class="home-section-desc">Approve the upstream decision layer first, then the identity translation, then application examples. If a downstream page reveals a better decision, edit the source and rebuild.</p>
+        <h2 class="home-section-title">Explore the system</h2>
+        <p class="home-section-sub">Strategy, identity, application</p>
+        <p class="home-section-desc">Each layer is a working part of the brand: the strategy that decides, the identity that translates it, and the applications that prove it in real formats.</p>
       </div>
     </div>
-    <div class="toc-page-grid"><a class="toc-page-card" href="strategy/index.html"><div class="card-code">A</div><div class="card-name">Strategy contract<span class="dot">.</span></div><p>Focus Star turns the strategy into decisions an AI can reuse without re-interpreting the brand.</p><div class="card-status">Source: STRATEGY.md</div></a><a class="toc-page-card" href="identity/index.html"><div class="card-code">B</div><div class="card-name">Creative direction options<span class="dot">.</span></div><p>Section B proposal directions translate the same Section A strategy into visual options before one is approved.</p><div class="card-status">Source: DIRECTIONS.md + STRATEGY.md</div></a><a class="toc-page-card" href="identity/index.html"><div class="card-code">C</div><div class="card-name">Application references<span class="dot">.</span></div><p>Application and channel rules are not declared in this source pack yet. Use the approved strategy and identity until channel-specific sources are added.</p><div class="card-status">Not declared: APPLICATION.md + CHANNELS.md</div></a></div>
+    <div class="toc-page-grid"><a class="toc-page-card" href="strategy/index.html"><div class="card-code">A</div><div class="card-name">Strategy contract</div><p>Focus Star turns the strategy into decisions an AI can reuse without re-interpreting the brand.</p><div class="card-status">Brand strategy</div></a><a class="toc-page-card" href="identity/index.html"><div class="card-code">B</div><div class="card-name">Creative direction options</div><p>Section B proposal directions translate the same Section A strategy into visual options before one is approved.</p><div class="card-status">Creative direction</div></a><a class="toc-page-card" href="identity/index.html"><div class="card-code">C</div><div class="card-name">Application references</div><p>Application and channel rules are not declared in this source pack yet. Use the approved strategy and identity until channel-specific sources are added.</p><div class="card-status">Not declared yet</div></a></div>
   </section>
 
 
@@ -161,17 +246,8 @@
     <span>Brand OS · Overview</span>
     <span><a href="strategy/index.html">Brand Strategy →</a></span>
   </div>
+  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
 </div>
-
-<!-- Build metadata. Lets any reviewer trace this page to its source. -->
-<!--
-  Brand:        The Cannabis Chamber of Commerce (ccc)
-  Version:      1.2.2
-  Built at:     2026-06-05T22:27:05+00:00
-  Git SHA:      9977a84a3ae28d654775a8ea055a12e1b7826f44
-  Bundle hash:  sha256:b5c5a544d6f81ef15389f7ed0b1550d9ebfb076c53642ec14d0a74bcd3f71959
-  Source:       brand-os/brands/cannabis-chamber/STRATEGY.md + IDENTITY.md + DIRECTIONS.md
--->
 </body>
 </html>

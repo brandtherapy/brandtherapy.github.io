@@ -1,25 +1,27 @@
 {
   "brand": "ccc",
   "version": "1.2.2",
-  "approved_at": "2026-06-05T22:27:05+00:00",
+  "approved_at": "2026-06-24T00:46:39+00:00",
   "approved_by": "Florian",
   "source_hashes": {
-    "STRATEGY.md": "sha256:4803ba486373be86c3ceaf71a8dc01903f351d154d9e4d4741bf2c69a6717325",
-    "IDENTITY.md": "sha256:c8ecbf30371a7c7f030396ca46032d7cf078c2069727de41a02cdbbf0c8fa0e6",
+    "STRATEGY.md": "sha256:7c3a2a9775c5f97641407fd716d73d6431529c75f13dd8eccd4d5774c7fedebe",
+    "IDENTITY.md": "sha256:8c0d7e22497f833f9dcc58f64e17bb9cd886bf8b9bcc91c554169481071fabd4",
     "SKILL.md": "sha256:4fe6c81f31e02f339d343f172788d8adfea45fca21ab96d1cfa5cec72bea1934",
-    "DIRECTIONS.md": "sha256:bd80c97b09c6ca65cf27f0427bb2ec044363d3d2ec63c5ef6ff205dad22d9a85",
+    "DIRECTIONS.md": "sha256:5b7665aab063d8932f95ac4bd14fbb300f7032f5d4924fc2ba898bbd7cee2ebf",
+    "references/logo-spec.md": "sha256:25b576f655d1bfc97e2a5e0f23eb7201b7b2ccb91b8f4d5c241b3433ba93bcbd",
     "references/methodology.md": "sha256:eb848f84b2c5b15721762019975ee57f9e24d8e1d92f0c04db630a120a7eb00b",
-    "references/voice-exemplars.md": "sha256:ddc9136487f39bec01fcf57ab6891f1af70ee53043d274a34a4f41742aebae28",
-    "images_manifest": "sha256:21214f400800184f88770439267784aae0e570f124e64db35cfa3f3997dc23c9"
+    "references/signature-spec.md": "sha256:0a7f7093fecf1a67b5f00b1ae9372fc9271de9c0dc5da4d0a8ddd640164c7941",
+    "references/voice-exemplars.md": "sha256:89c3fe89d4a856ea20dfb9651a3b9b3b4f377c261fc8518afe631c53d9551f76",
+    "images_manifest": "sha256:9635442df9884aecb746f4b2518926bf710d1a88daeeeb7e4da9893a2dd8481e"
   },
-  "bundle_hash": "sha256:b5c5a544d6f81ef15389f7ed0b1550d9ebfb076c53642ec14d0a74bcd3f71959",
+  "bundle_hash": "sha256:3266467611bad40b88532f6951da55d1bbe89c8cebef7a92ac32a8bbf5c9a86c",
   "outputs": {
-    "ai_context_emitted_at": "2026-06-05T22:27:05+00:00",
-    "ai_context_json_emitted_at": "2026-06-05T22:27:05+00:00",
-    "ai_context_git_sha": "9977a84a3ae28d654775a8ea055a12e1b7826f44",
-    "strategy_html_emitted_at": "2026-06-05T22:27:05+00:00",
-    "identity_html_emitted_at": "2026-06-05T22:27:05+00:00",
-    "focus_star_json_emitted_at": "2026-06-05T22:27:05+00:00"
+    "ai_context_emitted_at": "2026-06-24T00:46:39+00:00",
+    "ai_context_json_emitted_at": "2026-06-24T00:46:39+00:00",
+    "ai_context_git_sha": "605616558b7e7d95b40ad6f8d9810b8c99cb44ee",
+    "strategy_html_emitted_at": "2026-06-24T00:46:39+00:00",
+    "identity_html_emitted_at": "2026-06-24T00:46:39+00:00",
+    "focus_star_json_emitted_at": "2026-06-24T00:46:39+00:00"
   },
   "validator_rules": {
     "must_match_at_build": [

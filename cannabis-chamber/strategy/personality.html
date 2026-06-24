@@ -1,36 +1,15 @@
 <!DOCTYPE html>
-<!--
-  section-a-shell.html
-  ====================
-  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
-  visual design (sidebar nav, editorial typography, viewfinder treatment, footer).
-
-  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
-  are documented in shared/templates/README.md (section: "Template token syntax
-  in section-a-shell.html").
-
-  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
-  fonts, nav contents) are injected. The CSS at assets/style.css carries the
-  shared visual system; per-brand color and typography overrides come through
-  the CSS custom-property block in the inline <style> below.
-
-  When opening this file in a browser directly (without build.py running),
-  the {{ tokens }} display as literals. That's expected. The shell is a
-  template, not a standalone page. Visual parity check happens against the
-  rendered output, not the shell file.
--->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noai, noimageai">
 <title>Personality · Cannabis Chamber Of Commerce Brand OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700;800&family=Atkinson+Hyperlegible:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  /* Per-brand color and typography token overrides.
-     Injected by build.py from IDENTITY.md frontmatter. */
   :root {
     --accent: #505A66;
     --accent-glow: rgba(80, 90, 102, 0.24);
@@ -58,7 +37,7 @@
 
 <aside class="sidebar">
   <div class="brand-mark">
-    <div class="name">Cannabis Chamber Of Commerce<span class="dot">.</span></div>
+    <div class="name">Cannabis Chamber Of Commerce</div>
     <div class="meta">Brand OS</div>
   </div>
   <nav class="nav-section" aria-label="Brand OS sections">
@@ -75,6 +54,10 @@
 </div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
 <a href="../identity/index.html">Direction Three</a>
 <a href="../identity/exploration.html">Exploration</a>
+<a href="../identity/look-and-feel.html">Look &amp; Feel</a>
+<a href="../identity/voice.html">Voice</a>
+<a href="../identity/logo.html">Logo</a>
+<a href="../identity/signature.html">Signature</a>
 </div></details>
   </nav>
   <div class="toolbar-mini">
@@ -90,7 +73,7 @@
   <section class="p-hero no-media">
     <div class="p-hero-copy">
       <div class="p-kicker">Section A · P5 · Brand Strategy</div>
-      <h1>Personality<span class="dot">.</span></h1>
+      <h1>Personality</h1>
       <p>Professional, confident, credible, and direct. Operator-led, standards-driven, rational, transparent, business-first, and welcoming to serious operators, leaders, partners, and organizations focused on outcomes, collaboration, and long-term industry progress.</p>
       <div class="p-tags"><span>Operator-led institution</span></div>
     </div>
@@ -103,7 +86,7 @@
       <div class="p-section-num">01</div>
       <div>
         <div class="p-kicker">Strategic position</div>
-        <h2>What is being claimed<span class="dot">.</span></h2>
+        <h2>What is being claimed</h2>
         <p class="p-section-desc">The brand's position on this edge, in one plain sentence.</p>
       </div>
     </div>
@@ -126,7 +109,7 @@
       <div class="p-section-num">02</div>
       <div>
         <div class="p-kicker">Offer boundaries</div>
-        <h2>What belongs and what does not<span class="dot">.</span></h2>
+        <h2>What belongs and what does not</h2>
         <p class="p-section-desc">The filters that keep this strategic choice operational.</p>
       </div>
     </div>
@@ -149,7 +132,7 @@
       <div class="p-section-num">03</div>
       <div>
         <div class="p-kicker">Tradeoffs</div>
-        <h2>What this choice costs<span class="dot">.</span></h2>
+        <h2>What this choice costs</h2>
         <p class="p-section-desc">Real strategy costs something. If this section is empty, the strategy is performative.</p>
       </div>
     </div>
@@ -163,7 +146,7 @@
       <div class="p-section-num">04</div>
       <div>
         <div class="p-kicker">Application</div>
-        <h2>How this changes behavior<span class="dot">.</span></h2>
+        <h2>How this changes behavior</h2>
         <p class="p-section-desc">Strategic choices that don't change behavior are descriptions, not strategy.</p>
       </div>
     </div>
@@ -177,11 +160,11 @@
       <div class="p-section-num">05</div>
       <div>
         <div class="p-kicker">Proof required</div>
-        <h2>What evidence supports this<span class="dot">.</span></h2>
+        <h2>What evidence supports this</h2>
         <p class="p-section-desc">Every public claim traces to verifiable evidence.</p>
       </div>
     </div>
-    <ul><li>Published Chamber copy demonstrating professional welcome without hype</li><li>Event and membership language that avoids vendor spam</li><li>Copy and proof examples that make connection and collaboration tangible</li><li>Member proof across plant-touching and ancillary categories</li><li>Voice exemplars maintained in references/voice-exemplars.md as the canonical bank</li><li>Page copy for Membership, Networking, Events, Mentorship, and Advocacy that proves the stronger Google Doc positioning without overclaiming benefits</li></ul>
+    <ul><li>Published Chamber copy demonstrating professional welcome without hype</li><li>Event and membership language that avoids vendor spam</li><li>Copy and proof examples that make connection and collaboration tangible</li><li>Member proof across plant-touching and ancillary categories</li><li>Voice exemplars maintained as the canonical bank</li><li>Page copy for Membership, Networking, Events, Mentorship, and Advocacy that proves the stronger positioning without overclaiming benefits</li></ul>
   </section>
 
   <section class="p-section">
@@ -189,7 +172,7 @@
       <div class="p-section-num">06</div>
       <div>
         <div class="p-kicker">Output control</div>
-        <h2>Rules for AI<span class="dot">.</span></h2>
+        <h2>Rules for AI</h2>
         <p class="p-section-desc">Directives any LLM must follow when producing content for this brand.</p>
       </div>
     </div>
@@ -201,17 +184,8 @@
     <span>Section A · P5 · Brand Strategy</span>
     <span><a href="../identity/index.html">Brand Identity →</a></span>
   </div>
+  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
 </div>
-
-<!-- Build metadata. Lets any reviewer trace this page to its source. -->
-<!--
-  Brand:        The Cannabis Chamber of Commerce (ccc)
-  Version:      1.2.2
-  Built at:     2026-06-05T22:27:05+00:00
-  Git SHA:      9977a84a3ae28d654775a8ea055a12e1b7826f44
-  Bundle hash:  sha256:b5c5a544d6f81ef15389f7ed0b1550d9ebfb076c53642ec14d0a74bcd3f71959
-  Source:       brand-os/brands/cannabis-chamber/STRATEGY.md + IDENTITY.md
--->
 </body>
 </html>

@@ -1,36 +1,15 @@
 <!DOCTYPE html>
-<!--
-  section-a-shell.html
-  ====================
-  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
-  visual design (sidebar nav, editorial typography, viewfinder treatment, footer).
-
-  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
-  are documented in shared/templates/README.md (section: "Template token syntax
-  in section-a-shell.html").
-
-  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
-  fonts, nav contents) are injected. The CSS at assets/style.css carries the
-  shared visual system; per-brand color and typography overrides come through
-  the CSS custom-property block in the inline <style> below.
-
-  When opening this file in a browser directly (without build.py running),
-  the {{ tokens }} display as literals. That's expected. The shell is a
-  template, not a standalone page. Visual parity check happens against the
-  rendered output, not the shell file.
--->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noai, noimageai">
 <title>Direction Three · Cannabis Chamber Of Commerce Brand OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700;800&family=Atkinson+Hyperlegible:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  /* Per-brand color and typography token overrides.
-     Injected by build.py from IDENTITY.md frontmatter. */
   :root {
     --accent: #505A66;
     --accent-glow: rgba(80, 90, 102, 0.24);
@@ -58,7 +37,7 @@
 
 <aside class="sidebar">
   <div class="brand-mark">
-    <div class="name">Cannabis Chamber Of Commerce<span class="dot">.</span></div>
+    <div class="name">Cannabis Chamber Of Commerce</div>
     <div class="meta">Brand OS</div>
   </div>
   <nav class="nav-section" aria-label="Brand OS sections">
@@ -75,6 +54,10 @@
 </div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
 <a class="active" href="index.html">Direction Three</a>
 <a href="exploration.html">Exploration</a>
+<a href="look-and-feel.html">Look &amp; Feel</a>
+<a href="voice.html">Voice</a>
+<a href="logo.html">Logo</a>
+<a href="signature.html">Signature</a>
 </div></details>
   </nav>
   <div class="toolbar-mini">
@@ -108,17 +91,17 @@
 .dir-meta strong { color: rgba(255,255,255,0.9); margin-left: 5px; }
 .dir-hero.light .dir-meta span { border-color: color-mix(in srgb, var(--dir-primary) 24%, var(--border)); color: var(--muted); background: rgba(255,255,255,0.62); }
 .dir-hero.light .dir-meta strong { color: var(--dir-ink); }
-.dir-hero.visual { min-height: 0; padding: 0; margin-bottom: 64px; display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(390px, 1fr); background: var(--dir-paper); color: var(--dir-ink); border: 1px solid var(--border); box-shadow: 0 18px 60px rgba(16,24,40,0.1); }
+.dir-hero.visual { width: min(100%, 1040px); min-height: 0; padding: 0; margin-bottom: 64px; display: grid; grid-template-columns: minmax(320px, 0.95fr) minmax(320px, 1fr); background: var(--dir-paper); color: var(--dir-ink); border: 1px solid var(--border); box-shadow: 0 18px 60px rgba(16,24,40,0.1); }
 .dir-hero.visual::before { display: none; }
 .dir-hero.visual::after { height: 8px; background: linear-gradient(90deg, var(--dir-primary), var(--dir-signal), color-mix(in srgb, var(--dir-primary) 45%, #28BFE7 55%), #F8C94A); }
-.dir-hero-copy { padding: clamp(34px,4.5vw,64px); display: flex; flex-direction: column; justify-content: center; min-width: 0; }
-.dir-hero.visual h1 { color: var(--dir-ink); font-size: clamp(58px,8vw,112px); line-height: 0.9; max-width: 720px; margin: 18px 0 14px; }
-.dir-hero.visual .dir-working { color: var(--dir-signal); font-size: clamp(18px,2vw,28px); margin: 0 0 22px; }
-.dir-hero.visual .dir-thesis { color: color-mix(in srgb, var(--dir-ink) 78%, transparent); max-width: 700px; font-size: clamp(15px,1.35vw,19px); line-height: 1.58; }
+.dir-hero-copy { padding: clamp(32px,4vw,52px); display: flex; flex-direction: column; justify-content: center; min-width: 0; background: color-mix(in srgb, var(--dir-secondary) 72%, #050505 28%); color: #fff; }
+.dir-hero.visual h1 { color: color-mix(in srgb, #fff 88%, var(--dir-primary) 12%); font-size: clamp(46px,5.2vw,76px); line-height: 0.92; max-width: 430px; margin: 16px 0 14px; overflow-wrap: normal; }
+.dir-hero.visual .dir-working { color: color-mix(in srgb, var(--dir-signal) 72%, #fff 28%); font-size: clamp(17px,1.65vw,24px); line-height: 1.1; margin: 0 0 22px; max-width: 360px; }
+.dir-hero.visual .dir-thesis { color: rgba(255,255,255,0.88); max-width: 430px; font-size: clamp(14px,1.2vw,17px); line-height: 1.58; }
 .dir-hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
-.dir-hero-badge { border: 1px solid color-mix(in srgb, var(--dir-primary) 34%, var(--border)); background: rgba(255,255,255,0.62); color: var(--dir-ink); padding: 9px 12px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
-.dir-hero-visual { min-height: 430px; border-left: 1px solid var(--border); background: var(--white); position: relative; overflow: hidden; }
-.dir-hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.02) contrast(1.02); }
+.dir-hero-badge { border: 1px solid color-mix(in srgb, var(--dir-primary) 34%, var(--border)); background: rgba(255,255,255,0.9); color: color-mix(in srgb, var(--dir-secondary) 82%, #000 18%); padding: 9px 12px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.dir-hero-visual { min-height: 500px; border-left: 1px solid var(--border); background: color-mix(in srgb, var(--dir-paper) 84%, #fff 16%); position: relative; overflow: hidden; }
+.dir-hero-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%; display: block; filter: saturate(1.02) contrast(1.02); }
 .dir-hero-visual::after { content: ""; position: absolute; inset: 0; border: 18px solid rgba(255,255,255,0.22); pointer-events: none; }
 .dir-section { margin: 0 0 92px; }
 .dir-section-head { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; padding-top: 22px; border-top: 1px solid var(--text); margin-bottom: 32px; }
@@ -165,29 +148,31 @@
 .dir-logo-cell:only-child img { width: 100%; max-width: 100%; max-height: none; height: auto; }
 .dir-logo-cell span { position: absolute; left: 14px; bottom: 12px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 9px; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); }
 .dir-logo-cell.dark span { color: rgba(255,255,255,0.62); }
-.dir-signature-demo { min-height: 290px; background: var(--dir-paper); color: var(--dir-ink); border: 1px solid var(--border); display: grid; place-items: center; padding: 36px; position: relative; overflow: hidden; }
-.dir-signature-demo .sig-lines { width: min(460px,80%); display: grid; gap: 8px; margin: 0 auto; }
-.dir-signature-demo .sig-line { height: 7px; background: var(--dir-primary); }
-.dir-signature-demo .sig-line:nth-child(2) { background: var(--dir-secondary); }
-.dir-signature-demo .sig-line:nth-child(3) { background: var(--dir-signal); }
-.dir-signature-demo .sig-word { font-family: var(--dir-font-display, var(--ff-h)); font-weight: 800; font-size: clamp(42px,7vw,82px); line-height: 0.92; letter-spacing: 0; margin-bottom: 30px; text-align: center; }
+.dir-signature-notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
+.dir-signature-note { border: 1px solid var(--border); background: var(--white); padding: 22px; min-width: 0; }
+.dir-signature-note h3 { font-family: var(--dir-font-display, var(--ff-h)); font-size: 24px; line-height: 1.05; margin: 0 0 12px; color: var(--text); }
+.dir-signature-note p, .dir-signature-note li { font-family: var(--dir-font-body, var(--ff-b)); font-size: 13px; line-height: 1.6; color: var(--muted); }
+.dir-signature-note p { margin: 0; }
+.dir-signature-note ul { margin: 0; padding-left: 18px; }
 .dir-copy-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
 .dir-copy-list .dir-card { min-height: 180px; }
 .dir-application-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .dir-app { border: 1px solid var(--border); background: var(--white); padding: 22px; display: grid; gap: 18px; min-width: 0; overflow: hidden; }
 .dir-app-head { display: flex; justify-content: space-between; gap: 18px; align-items: start; border-bottom: 1px solid var(--border); padding-bottom: 14px; }
+.dir-app-head > div { min-width: 0; }
 .dir-app-head h3 { font-family: var(--dir-font-display, var(--ff-h)); font-size: 24px; line-height: 1.05; letter-spacing: 0; margin: 0; color: var(--text); }
-.dir-app-head span, .dir-app-format { font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dir-primary); white-space: nowrap; }
-.dir-app-format { white-space: normal; overflow-wrap: anywhere; }
+.dir-app-head span, .dir-app-format { font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: color-mix(in srgb, var(--dir-secondary) 78%, var(--dir-primary) 22%); white-space: nowrap; }
+.dir-app-head span { max-width: min(220px, 46%); text-align: right; white-space: normal; overflow-wrap: break-word; }
+.dir-app-format { white-space: normal; overflow-wrap: break-word; line-height: 1.45; }
 .dir-app-role { font-family: var(--dir-font-body, var(--ff-b)); font-size: 13px; line-height: 1.6; color: var(--muted); margin: 0; }
-.dir-app-image { width: 100%; height: auto; display: block; border: 1px solid var(--border); background: var(--dir-paper); box-shadow: 0 12px 32px rgba(16,24,40,0.1); }
+.dir-app-image { width: 100%; height: auto; display: block; box-sizing: border-box; border: 1px solid var(--border); background: var(--dir-paper); box-shadow: 0 12px 32px rgba(16,24,40,0.1); }
 .dir-mock { width: 100%; max-width: 100%; min-width: 0; min-height: 330px; border: 1px solid var(--border); background: var(--dir-paper); color: var(--dir-ink); position: relative; overflow: hidden; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
 .mock-mark { font-family: var(--dir-font-display, var(--ff-h)); font-weight: 800; font-size: 24px; letter-spacing: 0; color: var(--dir-secondary); }
 .mock-kicker { font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dir-primary); }
 .mock-headline { font-family: var(--dir-font-display, var(--ff-h)); font-weight: 800; font-size: clamp(34px,5vw,62px); line-height: 0.96; letter-spacing: 0; max-width: 560px; color: var(--dir-secondary); }
 .mock-sub { font-family: var(--dir-font-body, var(--ff-b)); font-size: 14px; line-height: 1.5; max-width: 460px; color: color-mix(in srgb, var(--dir-secondary) 74%, transparent); }
-.mock-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.mock-pill { border: 1px solid currentColor; padding: 6px 10px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dir-secondary); background: color-mix(in srgb, var(--dir-paper) 78%, transparent); }
+.mock-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; min-width: 0; max-width: 100%; }
+.mock-pill { border: 1px solid currentColor; padding: 6px 10px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dir-secondary); background: color-mix(in srgb, var(--dir-paper) 78%, transparent); max-width: 100%; white-space: normal; overflow-wrap: break-word; }
 .dir-mock.flyer { aspect-ratio: 4 / 5; min-height: 520px; background: linear-gradient(160deg, var(--dir-paper) 0 48%, color-mix(in srgb, var(--dir-primary) 18%, var(--dir-paper)) 48% 100%); }
 .dir-mock.flyer::after { content: ""; position: absolute; width: 34%; height: 18%; right: 0; bottom: 0; background: var(--dir-signal); mix-blend-mode: multiply; opacity: 0.9; }
 .dir-mock.badge { aspect-ratio: 3 / 4.5; max-width: 390px; margin: 0 auto; min-height: 500px; background: var(--white); border-color: var(--dir-secondary); }
@@ -225,33 +210,33 @@
 .dir-review.clarity-review .dir-section-desc { max-width: 760px; }
 .dir-review.clarity-review .dir-board-shell { box-shadow: 0 16px 48px rgba(16,24,40,0.1); }
 .dir-review.clarity-review .dir-slider .dir-dot, .dir-review.clarity-review .keyword.active { background: var(--accent); border-color: var(--accent); }
-@media (max-width: 980px) { .dir-grid, .dir-mood, .dir-logo-grid, .dir-slider-grid, .dir-copy-list, .dir-application-grid, .dir-reference-grid, .dir-hero.visual { grid-template-columns: 1fr; } .dir-slider { grid-template-columns: 84px 1fr 84px; } .dir-section-head { grid-template-columns: 1fr; gap: 10px; } .dir-hero-visual { min-height: 280px; border-left: 0; border-top: 1px solid var(--border); } }
+@media (max-width: 980px) { .dir-grid, .dir-mood, .dir-logo-grid, .dir-slider-grid, .dir-copy-list, .dir-application-grid, .dir-reference-grid, .dir-signature-notes, .dir-hero.visual { grid-template-columns: 1fr; } .dir-slider { grid-template-columns: 84px 1fr 84px; } .dir-section-head { grid-template-columns: 1fr; gap: 10px; } .dir-hero-visual { min-height: 280px; border-left: 0; border-top: 1px solid var(--border); } .dir-app { overflow: visible; padding: clamp(16px, 5vw, 22px); } .dir-app-head { display: grid; gap: 8px; } .dir-app-head span { white-space: normal; overflow-wrap: anywhere; } .dir-app-image { box-shadow: 0 8px 22px rgba(16,24,40,0.08); } }
 </style>
 <div class="dir-review" style="--dir-primary:#35B86B; --dir-secondary:#183E35; --dir-signal:#FF6B4A; --dir-paper:#FAF4E8; --dir-ink:#183E35; --dir-font-display:&quot;Avenir Next Condensed&quot;, &quot;Arial Narrow&quot;, system-ui, sans-serif; --dir-font-body:&quot;Avenir Next&quot;, system-ui, sans-serif;">
   
   <section class="dir-hero visual">
     <div class="dir-hero-copy">
-      <div class="dir-kicker">Direction Three · Approved Refinement Route</div>
-      <h1>Common Ground<span class="dot">.</span></h1>
+      <div class="dir-kicker">Direction Three · Approved Route</div>
+      <h1>Common Ground</h1>
       <div class="dir-working">Where Cannabis Business Connects</div>
-      <p class="dir-thesis">A bright business-membership system built around access, visible connection, and the D2 center-dot mark.</p>
-      <div class="dir-hero-badges"><span class="dir-hero-badge">D2 mark integrated</span><span class="dir-hero-badge">Connector signature</span><span class="dir-hero-badge">Membership objects</span></div>
+      <p class="dir-thesis">The approved Common Ground route: D2 center-dot mark, full-name wordmark, connector signature, and membership objects in one bright business system.</p>
+      <div class="dir-hero-badges"><span class="dir-hero-badge">D2 shape route</span><span class="dir-hero-badge">Common center</span><span class="dir-hero-badge">Full-name lockup</span></div>
     </div>
     <div class="dir-hero-visual">
-      <img src="../images/generated-boards/tribe-v11-stylescape-d2-mark.png" alt="Generated stylescape: Direction 3 / Common Ground with D2 mark integration">
+      <img src="../images/generated-boards/d2-approved/d2-approved-01-isolated-mark.png" alt="Generated stylescape: Direction 3 / Common Ground with D2 mark integration">
     </div>
   </section>
 
 
   
   <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">01</div><div><div class="dir-label">Generated creative board</div><h2>Direction board<span class="dot">.</span></h2><p class="dir-section-desc">This raster board is the lead proposal artifact for the direction. Treat it as discussion material, not logo approval, not final public imagery, and not identity canon.</p></div></div>
+    <div class="dir-section-head"><div class="dir-num">01</div><div><div class="dir-label">Generated creative board</div><h2>Direction board</h2><p class="dir-section-desc">This raster board is the lead proposal artifact for the direction. Treat it as discussion material, not logo approval, not final public imagery, and not identity canon.</p></div></div>
     <div class="dir-board-shell"><img src="../images/generated-boards/tribe-v11-stylescape-d2-mark.png" alt="Generated stylescape: Direction 3 / Common Ground with D2 mark integration"><div class="dir-board-note">Generated stylescape: Direction 3 / Common Ground with D2 mark integration</div></div>
   </section>
         
 
   <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">02</div><div><div class="dir-label">Strategy translation</div><h2>What this direction is saying<span class="dot">.</span></h2><p class="dir-section-desc">Common Ground translates the Chamber&#x27;s economic accelerator promise into an active visual system: circular three-C paths, clear member roles, chapter-ready materials, sponsor visibility, warm high-energy color, and real event-room proof. It makes access feel successful, practical, and human while keeping business standards visible.</p></div></div>
+    <div class="dir-section-head"><div class="dir-num">02</div><div><div class="dir-label">Strategy translation</div><h2>What this direction is saying</h2><p class="dir-section-desc">Common Ground translates the Chamber&#x27;s economic accelerator promise into an active visual system: circular three-C paths, clear member roles, chapter-ready materials, sponsor visibility, warm high-energy color, and real event-room proof. It makes access feel successful, practical, and human while keeping business standards visible.</p></div></div>
     <div class="dir-grid">
       <div class="dir-card"><h3>Best Fit</h3><p>Direction 3-only refinement, membership growth, chapter launch kits, logo exploration, business cards, pins, credentials, stationery, event signage, sponsor materials, education content, and public-facing proof that the Chamber connects serious people.</p></div>
       <div class="dir-card"><h3>Watchout</h3><p>If it becomes too playful, the Chamber loses institutional weight. If it defaults to dark fields or generic community warmth, it misses Chris and Cortney&#x27;s feedback. The system needs bright surfaces, full-name wordmarks, role clarity, and business-first language.</p></div>
@@ -260,23 +245,23 @@
   </section>
 
   <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">03</div><div><div class="dir-label">Creative platform</div><h2>The world this builds<span class="dot">.</span></h2><p class="dir-section-desc">The direction is treated as a brand system, not a palette. These are the decisions a flyer, badge, backdrop, sponsor deck, and website would all inherit.</p></div></div>
+    <div class="dir-section-head"><div class="dir-num">03</div><div><div class="dir-label">Creative platform</div><h2>The world this builds</h2><p class="dir-section-desc">The direction is treated as a brand system, not a palette. These are the decisions that website, content, email, collateral, and social surfaces inherit.</p></div></div>
     <div class="dir-grid"><div class="dir-card"><h3>Creative idea</h3><p>The Chamber as common ground where cannabis business access becomes visible.</p></div><div class="dir-card"><h3>World</h3><p>Regional rooms, business cards, pins, credentials, sponsor walls, chapter kits, member follow-up cards, and practical education surfaces.</p></div><div class="dir-card"><h3>Feeling</h3><p>Bright, energetic, successful, uplifting, professional, and human.</p></div><div class="dir-card"><h3>Behavior</h3><p>Use circular three-C paths as a signature device: a mark, routing field, membership artifact, and event connection system.</p></div><div class="dir-card"><h3>Signature line</h3><p>Where cannabis business connects.</p></div><div class="dir-card"><h3>Not this</h3><p>Not dark blue, not dark-first identity, not startup hardware, not old-money competition, not wellness cannabis, not generic community softness.</p></div></div>
   </section>
 
   <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">04</div><div><div class="dir-label">Brand sliders</div><h2>Style coordinates<span class="dot">.</span></h2><p class="dir-section-desc">The slider positions are the design contract for this option. They are different enough that each direction should generate a different event system.</p></div></div>
+    <div class="dir-section-head"><div class="dir-num">04</div><div><div class="dir-label">Brand sliders</div><h2>Style coordinates</h2><p class="dir-section-desc">The slider positions are the design contract for this option. They define how the brand should behave across its application system.</p></div></div>
     <div class="dir-slider-grid"><div class="dir-slider" role="img" aria-label="Classic to Modern: 72 percent"><span>Classic</span><div class="dir-track"><div class="dir-dot" style="left:72%"></div></div><span>Modern</span></div><div class="dir-slider" role="img" aria-label="Mature to Youthful: 52 percent"><span>Mature</span><div class="dir-track"><div class="dir-dot" style="left:52%"></div></div><span>Youthful</span></div><div class="dir-slider" role="img" aria-label="Formal to Energetic: 74 percent"><span>Formal</span><div class="dir-track"><div class="dir-dot" style="left:74%"></div></div><span>Energetic</span></div><div class="dir-slider" role="img" aria-label="Institutional to Human: 82 percent"><span>Institutional</span><div class="dir-track"><div class="dir-dot" style="left:82%"></div></div><span>Human</span></div><div class="dir-slider" role="img" aria-label="Quiet to Talkative: 64 percent"><span>Quiet</span><div class="dir-track"><div class="dir-dot" style="left:64%"></div></div><span>Talkative</span></div><div class="dir-slider" role="img" aria-label="Muted to Vibrant: 80 percent"><span>Muted</span><div class="dir-track"><div class="dir-dot" style="left:80%"></div></div><span>Vibrant</span></div><div class="dir-slider" role="img" aria-label="Minimal to Expressive: 68 percent"><span>Minimal</span><div class="dir-track"><div class="dir-dot" style="left:68%"></div></div><span>Expressive</span></div><div class="dir-slider" role="img" aria-label="Literal to Abstract: 72 percent"><span>Literal</span><div class="dir-track"><div class="dir-dot" style="left:72%"></div></div><span>Abstract</span></div><div class="dir-slider" role="img" aria-label="Traditional to Inventive: 70 percent"><span>Traditional</span><div class="dir-track"><div class="dir-dot" style="left:70%"></div></div><span>Inventive</span></div><div class="dir-slider" role="img" aria-label="Closed to Accessible: 92 percent"><span>Closed</span><div class="dir-track"><div class="dir-dot" style="left:92%"></div></div><span>Accessible</span></div></div>
     <div class="slider-signal-block"><div class="keyword-cloud"><div class="keyword-cloud-label">AI signal: be this</div><span class="keyword active" title="axis Closed|Accessible p=92">Accessible +42</span><span class="keyword active" title="axis Institutional|Human p=82">Human +32</span><span class="keyword active" title="axis Muted|Vibrant p=80">Vibrant +30</span><span class="keyword active" title="axis Formal|Energetic p=74">Energetic +24</span><span class="keyword active" title="axis Literal|Abstract p=72">Abstract +22</span><span class="keyword active" title="axis Classic|Modern p=72">Modern +22</span><span class="keyword active" title="axis Traditional|Inventive p=70">Inventive +20</span><span class="keyword active" title="axis Minimal|Expressive p=68">Expressive +18</span><span class="keyword active" title="axis Quiet|Talkative p=64">Talkative +14</span><span class="keyword active" title="axis Mature|Youthful p=52">Youthful +2</span></div><div class="keyword-cloud"><div class="keyword-cloud-label">AI signal: dont be this</div><span class="keyword " title="axis Closed|Accessible p=92">Closed -42</span><span class="keyword " title="axis Institutional|Human p=82">Institutional -32</span><span class="keyword " title="axis Muted|Vibrant p=80">Muted -30</span><span class="keyword " title="axis Formal|Energetic p=74">Formal -24</span><span class="keyword " title="axis Classic|Modern p=72">Classic -22</span><span class="keyword " title="axis Literal|Abstract p=72">Literal -22</span><span class="keyword " title="axis Traditional|Inventive p=70">Traditional -20</span><span class="keyword " title="axis Minimal|Expressive p=68">Minimal -18</span><span class="keyword " title="axis Quiet|Talkative p=64">Quiet -14</span><span class="keyword " title="axis Mature|Youthful p=52">Mature -2</span></div></div>
   </section>
 
   <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">05</div><div><div class="dir-label">Visual vocabulary</div><h2>Moodboard<span class="dot">.</span></h2><p class="dir-section-desc">New local reference images generated for this pass. They are not copied from the archive and are meant to teach composition, material, energy, and event context.</p></div></div>
+    <div class="dir-section-head"><div class="dir-num">05</div><div><div class="dir-label">Visual vocabulary</div><h2>Moodboard</h2><p class="dir-section-desc">Inspected raster boards and reference images for this pass. They teach composition, material, energy, source behavior, and application context.</p></div></div>
     <div class="dir-mood"><div class="dir-mood-item"><img src="../images/generated-boards/tribe-v11-logo-exploration-d2-signature.png" alt="D2 logo and connector signature exploration"><div class="dir-mood-label">D2 logo and connector signature exploration</div></div><div class="dir-mood-item"><img src="../images/generated-boards/tribe-v11-business-cards-d2-mark.png" alt="Business card system"><div class="dir-mood-label">Business card system</div></div><div class="dir-mood-item"><img src="../images/generated-boards/tribe-v11-membership-artifacts-d2-mark.png" alt="Pins, credentials, and member pride artifacts"><div class="dir-mood-label">Pins, credentials, and member pride artifacts</div></div><div class="dir-mood-item"><img src="../images/generated-boards/tribe-v11-stationery-system-d2-mark.png" alt="Full stationery system"><div class="dir-mood-label">Full stationery system</div></div><div class="dir-mood-item"><img src="../images/generated-boards/tribe-v11-event-sponsor-kit-d2-mark.png" alt="Event and sponsor kit"><div class="dir-mood-label">Event and sponsor kit</div></div></div>
   </section>
 
   <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">06</div><div><div class="dir-label">Identity ingredients</div><h2>Palette and type<span class="dot">.</span></h2><p class="dir-section-desc">Proposed identity ingredients stay scoped inside this page until a direction is approved. The surrounding Brand OS shell is neutral review chrome.</p></div></div>
+    <div class="dir-section-head"><div class="dir-num">06</div><div><div class="dir-label">Identity ingredients</div><h2>Palette and type</h2><p class="dir-section-desc">These source-validated ingredients stay scoped inside this page until they are promoted into the approved identity source.</p></div></div>
     <div class="dir-palette"><div class="dir-swatch" style="background:#35B86B; color:#fff"><div class="dir-swatch-name">Lift Green</div><div class="dir-swatch-hex">#35B86B</div><div class="dir-swatch-role">Primary identity energy for access paths, member signals, and chapter activation.</div></div><div class="dir-swatch" style="background:#183E35; color:#fff"><div class="dir-swatch-name">Evergreen Ink</div><div class="dir-swatch-hex">#183E35</div><div class="dir-swatch-role">Authority, type, serious contrast, and restrained inverted surfaces. It replaces dark blue.</div></div><div class="dir-swatch" style="background:#FF6B4A; color:#fff"><div class="dir-swatch-name">Signal Coral</div><div class="dir-swatch-hex">#FF6B4A</div><div class="dir-swatch-role">Human emphasis, introduction points, event moments, and connection handoffs.</div></div><div class="dir-swatch" style="background:#28BFE7; color:var(--text)"><div class="dir-swatch-name">Skyline Cyan</div><div class="dir-swatch-hex">#28BFE7</div><div class="dir-swatch-role">Education, navigation, open access, and visible movement across the system.</div></div><div class="dir-swatch" style="background:#F8C94A; color:var(--text)"><div class="dir-swatch-name">Commerce Gold</div><div class="dir-swatch-hex">#F8C94A</div><div class="dir-swatch-role">Sponsorship, achievement without competition, member pride, and opportunity markers.</div></div><div class="dir-swatch" style="background:#FAF4E8; color:var(--text)"><div class="dir-swatch-name">Warm Paper</div><div class="dir-swatch-hex">#FAF4E8</div><div class="dir-swatch-role">Default canvas for stationery, cards, event materials, and non-dark review surfaces.</div></div></div>
     <div class="dir-grid" style="margin-top:24px;">
       <div class="dir-card"><h3>Display</h3><p>Avenir Next Condensed, bold, vertical, energetic, and business-direct without tech hardware cues.</p></div>
@@ -286,28 +271,23 @@
   </section>
 
   <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">07</div><div><div class="dir-label">Signature system</div><h2>Mark and device<span class="dot">.</span></h2><p class="dir-section-desc">A circular signature built from three C-shaped paths around one common center. The v3 exploration tests interlocking paths, a common-center lockup, a chamber seal, a compass ring, member pins, sponsor badges, event credentials, and textile applications. Public-facing applications pair the mark with the full Cannabis Chamber Of Commerce wordmark.</p></div></div>
+    <div class="dir-section-head"><div class="dir-num">07</div><div><div class="dir-label">Signature system</div><h2>Mark and device</h2><p class="dir-section-desc">A circular signature built from three C-shaped paths around one common center. The v3 exploration tests interlocking paths, a common-center lockup, a chamber seal, a compass ring, member pins, sponsor badges, event credentials, and textile applications. Public-facing applications pair the mark with the full Cannabis Chamber Of Commerce wordmark.</p></div></div>
     <div class="dir-logo-grid"><div class="dir-logo-cell"><img src="../images/generated-boards/tribe-v11-logo-exploration-d2-signature.png" alt="D2 mark inside the Common Ground signature system"><span>D2 mark inside the Common Ground signature system</span></div></div>
-    <div class="dir-signature-demo" style="margin-top:24px;">
-      <div>
-        <div class="sig-word">The Three-C Commons</div>
-        <div class="sig-lines"><div class="sig-line"></div><div class="sig-line"></div><div class="sig-line"></div></div>
-      </div>
-    </div>
+    <div class="dir-signature-notes"><article class="dir-signature-note"><h3>The Three-C Commons</h3><p>Use the source-backed signature rules from this direction. Do not infer a generic decorative device.</p></article><article class="dir-signature-note"><h3>Use</h3><p>No usage rules declared.</p></article><article class="dir-signature-note"><h3>Avoid</h3><p>No avoid rules declared.</p></article></div>
   </section>
 
   <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">08</div><div><div class="dir-label">Event application system</div><h2>Flyer, badge, backdrop, card<span class="dot">.</span></h2><p class="dir-section-desc">The real test is whether the direction can run an event organization: promote an event, identify people, give sponsors visibility, and make the Chamber feel credible in someone&apos;s hand.</p></div></div>
-    <div class="dir-application-grid"><article class="dir-app"><div class="dir-app-head"><div><h3>Logo exploration</h3><p class="dir-app-role">Approved D2 three-C shape integrated into the current Direction 3 palette, full-name lockup, and connector-line signature.</p></div><span>Standalone 16:9 raster sheet</span></div><img class="dir-app-image logo-exploration" src="../images/generated-boards/tribe-v11-logo-exploration-d2-signature.png" alt="Direction 3 D2 logo exploration sheet with Common Ground connector signature"><div class="dir-app-format">Use as draft logo territory only. Redraw the approved D2 shape as vector before any approval decision.</div><div class="mock-row"><span class="mock-pill">D2 shape route</span><span class="mock-pill">center dot</span><span class="mock-pill">connector signature</span></div></article><article class="dir-app"><div class="dir-app-head"><div><h3>Business cards</h3><p class="dir-app-role">Full-name business-card system for chapter hosts, membership leads, and partner conversations.</p></div><span>Standalone 16:9 raster sheet</span></div><img class="dir-app-image business-card" src="../images/generated-boards/tribe-v11-business-cards-d2-mark.png" alt="Direction 3 business card front and back mockup"><div class="dir-app-format">Cards use the three-C mark as access signal and the full Chamber name as public wordmark.</div><div class="mock-row"><span class="mock-pill">front and back</span><span class="mock-pill">full wordmark</span><span class="mock-pill">no dark blue</span></div></article><article class="dir-app"><div class="dir-app-head"><div><h3>Membership artifacts</h3><p class="dir-app-role">Pins, badges, lanyards, credentials, and visible membership artifacts that make belonging tangible.</p></div><span>Standalone 16:9 raster sheet</span></div><img class="dir-app-image pins" src="../images/generated-boards/tribe-v11-membership-artifacts-d2-mark.png" alt="Direction 3 pins, badges, credentials, and member pride mockups"><div class="dir-app-format">Pride artifacts must signal role, contribution, and access in the room, not empty merch.</div><div class="mock-row"><span class="mock-pill">member</span><span class="mock-pill">sponsor</span><span class="mock-pill">chapter host</span><span class="mock-pill">event partner</span></div></article><article class="dir-app"><div class="dir-app-head"><div><h3>Full stationery</h3><p class="dir-app-role">Letterhead, envelope, note card, folder, and business card family for institutional credibility.</p></div><span>Standalone 16:9 raster board</span></div><img class="dir-app-image stationery" src="../images/generated-boards/tribe-v11-stationery-system-d2-mark.png" alt="Direction 3 full stationery system mockup"><div class="dir-app-format">Stationery keeps the bright system credible by using warm paper, clear type, and restrained deep green.</div><div class="mock-row"><span class="mock-pill">letterhead</span><span class="mock-pill">envelope</span><span class="mock-pill">folder</span><span class="mock-pill">business card</span></div></article><article class="dir-app"><div class="dir-app-head"><div><h3>Event and sponsor kit</h3><p class="dir-app-role">Backdrop, pull-up banner, welcome sign, invitation, table tent, badges, sponsor board, and follow-up card for chapter events.</p></div><span>Standalone 16:9 raster board</span></div><img class="dir-app-image event-sponsor-kit" src="../images/generated-boards/tribe-v11-event-sponsor-kit-d2-mark.png" alt="Direction 3 event and sponsor system mockup"><div class="dir-app-format">Sponsor visibility is generous but must not imply guaranteed leads or outcomes.</div><div class="mock-row"><span class="mock-pill">stage</span><span class="mock-pill">sponsor</span><span class="mock-pill">welcome</span><span class="mock-pill">chapter kit</span></div></article></div>
+    <div class="dir-section-head"><div class="dir-num">08</div><div><div class="dir-label">Application system</div><h2>Social, page, email, card</h2><p class="dir-section-desc">The real test is whether the direction can carry useful brand surfaces: attract attention, explain the offer, prove credibility, introduce the team, and give the brand a system someone can hold or share.</p></div></div>
+    <div class="dir-application-grid"><article class="dir-app"><div class="dir-app-head"><div><h3>Logo exploration</h3><p class="dir-app-role">Approved D2 three-C shape integrated into the current Direction 3 palette, full-name lockup, and connector-line signature.</p></div><span>Standalone 16:9 raster sheet</span></div><img class="dir-app-image logo-exploration" src="../images/generated-boards/tribe-v11-logo-exploration-d2-signature.png" alt="Direction 3 D2 logo exploration sheet with Common Ground connector signature"><div class="dir-app-format">An exploratory logo territory, not a final mark.</div><div class="mock-row"><span class="mock-pill">D2 shape route</span><span class="mock-pill">center dot</span><span class="mock-pill">connector signature</span></div></article><article class="dir-app"><div class="dir-app-head"><div><h3>Business cards</h3><p class="dir-app-role">Full-name business-card system for chapter hosts, membership leads, and partner conversations.</p></div><span>Standalone 16:9 raster sheet</span></div><img class="dir-app-image business-card" src="../images/generated-boards/tribe-v11-business-cards-d2-mark.png" alt="Direction 3 business card front and back mockup"><div class="dir-app-format">Cards use the three-C mark as access signal and the full Chamber name as public wordmark.</div><div class="mock-row"><span class="mock-pill">front and back</span><span class="mock-pill">full wordmark</span><span class="mock-pill">no dark blue</span></div></article><article class="dir-app"><div class="dir-app-head"><div><h3>Membership artifacts</h3><p class="dir-app-role">Pins, badges, lanyards, credentials, and visible membership artifacts that make belonging tangible.</p></div><span>Standalone 16:9 raster sheet</span></div><img class="dir-app-image pins" src="../images/generated-boards/tribe-v11-membership-artifacts-d2-mark.png" alt="Direction 3 pins, badges, credentials, and member pride mockups"><div class="dir-app-format">Pride artifacts must signal role, contribution, and access in the room, not empty merch.</div><div class="mock-row"><span class="mock-pill">member</span><span class="mock-pill">sponsor</span><span class="mock-pill">chapter host</span><span class="mock-pill">event partner</span></div></article><article class="dir-app"><div class="dir-app-head"><div><h3>Full stationery</h3><p class="dir-app-role">Letterhead, envelope, note card, folder, and business card family for institutional credibility.</p></div><span>Standalone 16:9 raster board</span></div><img class="dir-app-image stationery" src="../images/generated-boards/tribe-v11-stationery-system-d2-mark.png" alt="Direction 3 full stationery system mockup"><div class="dir-app-format">Stationery keeps the bright system credible by using warm paper, clear type, and restrained deep green.</div><div class="mock-row"><span class="mock-pill">letterhead</span><span class="mock-pill">envelope</span><span class="mock-pill">folder</span><span class="mock-pill">business card</span></div></article><article class="dir-app"><div class="dir-app-head"><div><h3>Event and sponsor kit</h3><p class="dir-app-role">Backdrop, pull-up banner, welcome sign, invitation, table tent, badges, sponsor board, and follow-up card for chapter events.</p></div><span>Standalone 16:9 raster board</span></div><img class="dir-app-image event-sponsor-kit" src="../images/generated-boards/tribe-v11-event-sponsor-kit-d2-mark.png" alt="Direction 3 event and sponsor system mockup"><div class="dir-app-format">Sponsor visibility is generous but must not imply guaranteed leads or outcomes.</div><div class="mock-row"><span class="mock-pill">stage</span><span class="mock-pill">sponsor</span><span class="mock-pill">welcome</span><span class="mock-pill">chapter kit</span></div></article></div>
   </section>
 
   <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">09</div><div><div class="dir-label">Production references</div><h2>How to extend it<span class="dot">.</span></h2><p class="dir-section-desc">These notes define the first downstream artifacts if this direction is selected for a proper identity build.</p></div></div>
+    <div class="dir-section-head"><div class="dir-num">09</div><div><div class="dir-label">Production references</div><h2>How to extend it</h2><p class="dir-section-desc">These notes define the first downstream artifacts if this direction is selected for a proper identity build.</p></div></div>
     <div class="dir-reference-grid"><article class="dir-ref"><h3>Member journey</h3><p>A join, attend, meet, follow up path that turns membership into clear business movement.</p></article><article class="dir-ref"><h3>Chapter kit</h3><p>Local leader templates for cards, stationery, pins, credentials, sponsor walls, and follow-up notes.</p></article><article class="dir-ref"><h3>Education series</h3><p>A recurring content wrapper for policy insight, market orientation, and operator education without overclaiming mentorship products.</p></article><article class="dir-ref"><h3>Logo production path</h3><p>If selected, redraw the circular three-C system as proper vector art, test small-size legibility, and define public lockup rules.</p></article></div>
   </section>
 
   <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">10</div><div><div class="dir-label">AI production rules</div><h2>Generator notes<span class="dot">.</span></h2><p class="dir-section-desc">These are the first constraints a future website or campaign generator should load if this direction is selected.</p></div></div>
+    <div class="dir-section-head"><div class="dir-num">10</div><div><div class="dir-label">AI production rules</div><h2>Generator notes</h2><p class="dir-section-desc">These are the first constraints a future website or campaign generator should load if this direction is selected.</p></div></div>
     <div class="dir-copy-list">
       <div class="dir-card"><h3>Do</h3><ul><li>Use Cannabis Chamber Of Commerce as the public wordmark. Do not use CCC on public-facing artifacts.</li><li>Make belonging concrete through roles, rooms, learning paths, member credentials, sponsor value, and follow-up behaviors.</li><li>Use circular three-C path logic for marks and signatures, not generic three-line motifs.</li><li>Use bright professional surfaces as the default. Dark green can anchor serious contrast, but dark backgrounds are not the main read.</li><li>Show people, connection, collaboration, and business lift through practical participation.</li><li>Keep standards visible in cards, pins, credentials, stationery, event, sponsor, and education surfaces.</li><li>Keep cannabis signals professional, abstract, and secondary.</li></ul></div>
       <div class="dir-card"><h3>Avoid</h3><ul><li>Dark blue, navy default pages, or dark-background-first identity.</li><li>Direction 1 tech-hardware, device, circuit, or startup network cues.</li><li>Direction 2 award-winning, competition, closed-room, old-money, or prestige-for-prestige cues.</li><li>Wellness cannabis, leaf metaphors, spiritual language, or earthy cliches.</li><li>Vague community copy without business utility.</li><li>Generic three-line marks, disconnected arcs, or decorative swirls without Chamber connection logic.</li><li>Softness that erases standards, sponsors, operator seriousness, or economic value.</li><li>Cultural appropriation or decorative tribal motifs.</li></ul></div>
@@ -320,17 +300,8 @@
     <span>Section B · Direction Three · Creative Direction</span>
     <span><a href="exploration.html">Exploration →</a></span>
   </div>
+  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
 </div>
-
-<!-- Build metadata. Lets any reviewer trace this page to its source. -->
-<!--
-  Brand:        The Cannabis Chamber of Commerce (ccc)
-  Version:      1.2.2
-  Built at:     2026-06-05T22:27:05+00:00
-  Git SHA:      9977a84a3ae28d654775a8ea055a12e1b7826f44
-  Bundle hash:  sha256:b5c5a544d6f81ef15389f7ed0b1550d9ebfb076c53642ec14d0a74bcd3f71959
-  Source:       brand-os/brands/cannabis-chamber/DIRECTIONS.md + STRATEGY.md + IDENTITY.md
--->
 </body>
 </html>
