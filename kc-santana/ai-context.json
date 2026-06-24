@@ -9,17 +9,17 @@
   },
   "source": {
     "source_slug": "kc-santana",
-    "build_timestamp": "2026-06-12T22:30:17+00:00",
-    "git_sha": "9bf4d69fbd0c9885c3545cc5bb9a4b7198678cd0",
-    "bundle_hash": "sha256:9410ff0cc8fa1dc27fb7740594230e052a366958a5afd415572b73742b695da9",
+    "build_timestamp": "2026-06-24T00:42:34+00:00",
+    "git_sha": "605616558b7e7d95b40ad6f8d9810b8c99cb44ee",
+    "bundle_hash": "sha256:b9573b07cb9195ccb3177140508ed8dd757fa90fb6a5d80654b8d8471746c70e",
     "source_hashes": {
       "STRATEGY.md": "sha256:ff6dce219c91e020cde53abf9e7339707faba1397b05b0ee52d3d5685edefde7",
-      "IDENTITY.md": "sha256:de2d9d6606571bdc2a3d74849a01d29def1a2349c50077a248ba3333a08256d1",
+      "IDENTITY.md": "sha256:e6e9af1f542d3fc6878a27913557d42b26ba64bc13cad620b04d3e0c8479361f",
       "APPLICATION.md": "sha256:e96c266ec132f5965810023ae186d7c69fa9f0996fb820d9648d24187ffab552",
-      "CHANNELS.md": "sha256:4ffb3d582e04d47ba5c8a1bff6bd9c925a49abfa4ddd63dc7abca79dea999761",
-      "DIRECTIONS.md": "sha256:07a6abe40443873829815297ac2a8a2a34372df105ab5bc18e8c6191c7ae9e52",
+      "CHANNELS.md": "sha256:94441ef587c820c5a77fd66559a81adc0a0dee3f789b509ec4166634daaa5548",
+      "DIRECTIONS.md": "sha256:fb4785506b4ff33034a80b60f86c38d5821960fb7040ada0fea30ac77c71b72c",
       "QUICKSTART.md": "sha256:00d0284cd8022dd55b33599365ca25e3c6c67f21d814871deb7f3e01a3848ab7",
-      "DIFFERENTIATION.md": "sha256:559dd496d84f4cc05aebe7a066e6cc0952fae6f746d02baf5c3aee57b00dba77",
+      "DIFFERENTIATION.md": "sha256:fd95e515af00624515f2d64c98abce600a87720a392afdd2de4a0abe5d20c5f2",
       "references/signature-data-strip.md": "sha256:7f8902d578c14980be676bb63d37a75842c2ea64ca14968a807347e95efe90fd",
       "references/source-map.md": "sha256:aa409f8ca56549806bf9117348ca51bd1e80773c1c1a95781de134fea2c4ee11",
       "images_manifest": "sha256:bc987aab1f30a2b0db75c7eb7fa697cc24684c7c5b7b3d10b717c72cc9f654f6",
@@ -335,7 +335,7 @@
   },
   "differentiation": {
     "positioning_statement": "For high-earning women who know something has to change but do not know where to start, KC Santana is proof-led thought leadership. A mentor who lives the standard instead of selling another program. No shortcuts, no GLP-1 identity, no passive wellness. No excuses.",
-    "positioning_note": "Assembled from locked decisions, not written fresh. P1 product, P2 people, P4 promise. To change it, change STRATEGY.md and rebuild.",
+    "positioning_note": "Assembled from locked strategic decisions across position, persona, and promise.",
     "differentiators": [
       {
         "label": "The proof is the product",
@@ -744,7 +744,7 @@
         "warnings": []
       }
     },
-    "voice": "Voice is part of identity. The strategic decision about Personality lives in `STRATEGY.md`; the operational voice rules live here.\n\n### Principles\n\n- Rough-edged. Plainspoken. Unsentimental.\n- Tough-love and demanding, not nurturing.\n- Serious before playful. Rational before emotional. Transparent before mysterious. Literal before abstract.\n- Commanding without body shame. The target is behavior, never bodies.\n- Feminine through strength and presence, not cuteness.\n- Cannabis as discipline-stack tool, not a flag.\n\n### No-excuse language system\n\nKC is the product. Authority comes from thought leadership and example-setting, never from coaching packages or curriculum language. \"Run the standard\" means show up and do it: the copy shows KC doing the work and lets the example issue the command.\n\n- Lead with proof: the run happened, the stack is measured, the schedule is visible.\n- Short sentences. Direct commands. Hard contrast.\n- Refuse shortcuts by name when needed (GLP-1s, hacks, passive wellness), without moralizing at individual people.\n- Never soften the standard into generic empowerment or motivational poster language.\n\n### Special-needs-mom intertwine rule\n\nFrom the 2026-06-10 session: the special-needs-mom layer is woven organically through fitness and healthy-lifestyle content. It is lived context that raises the standard, never the story being sold.\n\n- Correct: training framed as \"free therapy for a special needs mom.\" Correct: bringing the kids to the marathon instead of skipping it.\n- It appears mid-content, as one thread of proof among many. It NEVER leads a piece, never becomes a sobby opening, and never asks for sympathy.\n- Her son's face is never used. The brand never becomes mommy-first.\n\n### On-voice examples\n\n- \"No shortcuts. Do the work.\"\n- \"The routine is not cute. That is why it works.\"\n- \"Cannabis belongs in the discipline stack, not on a basement couch.\"\n- \"If the body keeps receipts, stop acting surprised by the bill.\"\n- \"Show up. No exceptions.\"\n- \"Saturday long run. Free therapy for a special needs mom.\"\n- \"Race day. The kids came with me.\"\n\n### Off-voice examples\n\n- \"Yass queen, time to glow.\"\n- \"Your wellness journey starts with self-love.\"\n- \"Cannabis vibes for your soft era.\"\n- \"Unlock your best self with effortless transformation.\"\n- \"As a special needs mom, some days I just want to cry. Here's my story.\"\n\n### Banned characters\n\n- em-dash\n- en-dash\n\nPlain hyphen-minus is fine.\n\n### Banned phrases and tropes\n\n- Yass queen.\n- Soft era.\n- Weed girl.\n- Mommy wellness.\n- Namaste.\n- Shortcut body.\n- Miracle weight loss.\n- Stoner chic.\n- Cannabis goddess.",
+    "voice": "Voice is part of identity. The strategic decision about Personality lives in the brand strategy; the operational voice rules live here.\n\n### Principles\n\n- Rough-edged. Plainspoken. Unsentimental.\n- Tough-love and demanding, not nurturing.\n- Serious before playful. Rational before emotional. Transparent before mysterious. Literal before abstract.\n- Commanding without body shame. The target is behavior, never bodies.\n- Feminine through strength and presence, not cuteness.\n- Cannabis as discipline-stack tool, not a flag.\n\n### No-excuse language system\n\nKC is the product. Authority comes from thought leadership and example-setting, never from coaching packages or curriculum language. \"Run the standard\" means show up and do it: the copy shows KC doing the work and lets the example issue the command.\n\n- Lead with proof: the run happened, the stack is measured, the schedule is visible.\n- Short sentences. Direct commands. Hard contrast.\n- Refuse shortcuts by name when needed (GLP-1s, hacks, passive wellness), without moralizing at individual people.\n- Never soften the standard into generic empowerment or motivational poster language.\n\n### Special-needs-mom intertwine rule\n\nFrom the 2026-06-10 session: the special-needs-mom layer is woven organically through fitness and healthy-lifestyle content. It is lived context that raises the standard, never the story being sold.\n\n- Correct: training framed as \"free therapy for a special needs mom.\" Correct: bringing the kids to the marathon instead of skipping it.\n- It appears mid-content, as one thread of proof among many. It NEVER leads a piece, never becomes a sobby opening, and never asks for sympathy.\n- Her son's face is never used. The brand never becomes mommy-first.\n\n### On-voice examples\n\n- \"No shortcuts. Do the work.\"\n- \"The routine is not cute. That is why it works.\"\n- \"Cannabis belongs in the discipline stack, not on a basement couch.\"\n- \"If the body keeps receipts, stop acting surprised by the bill.\"\n- \"Show up. No exceptions.\"\n- \"Saturday long run. Free therapy for a special needs mom.\"\n- \"Race day. The kids came with me.\"\n\n### Off-voice examples\n\n- \"Yass queen, time to glow.\"\n- \"Your wellness journey starts with self-love.\"\n- \"Cannabis vibes for your soft era.\"\n- \"Unlock your best self with effortless transformation.\"\n- \"As a special needs mom, some days I just want to cry. Here's my story.\"\n\n### Banned characters\n\n- em-dash\n- en-dash\n\nPlain hyphen-minus is fine.\n\n### Banned phrases and tropes\n\n- Yass queen.\n- Soft era.\n- Weed girl.\n- Mommy wellness.\n- Namaste.\n- Shortcut body.\n- Miracle weight loss.\n- Stoner chic.\n- Cannabis goddess.",
     "section_titles": [
       "1. Visual Theme & Atmosphere",
       "2. Color Palette & Roles",
@@ -1076,7 +1076,7 @@
         "working_name": "Run the Standard",
         "presentation": "brand_therapy_clarity",
         "status": "selected",
-        "source_note": "Selected by KC on the 2026-06-10 session (09:44 \"the one on the right probably speaks the loudest\"). Client-facing name \"Run the Standard\"; slug stays sun-grown-athlete. This direction feeds the approved identity in IDENTITY.md.",
+        "source_note": "The selected direction, client-facing name \"Run the Standard\", carried into the approved identity.",
         "creative_board": "generated-boards/sun-grown-athlete-board.png",
         "creative_board_label": "Generated board: Sun-Grown Athlete",
         "thesis": "A SoCal performance direction where cannabis becomes part of a disciplined outdoor fitness and recovery ritual.",
@@ -2345,8 +2345,8 @@
             "conversion issue"
           ],
           "inputs": [
-            "STRATEGY.md",
-            "IDENTITY.md",
+            "brand strategy",
+            "visual identity",
             "website application examples",
             "real event and podcast facts"
           ],

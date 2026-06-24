@@ -1,24 +1,4 @@
 <!DOCTYPE html>
-<!--
-  section-a-shell.html
-  ====================
-  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
-  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
-
-  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
-  are documented in shared/templates/README.md (section: "Template token syntax
-  in section-a-shell.html").
-
-  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
-  fonts, nav contents) are injected. The CSS at assets/style.css carries the
-  shared visual system; per-brand color and typography overrides come through
-  the CSS custom-property block in the inline <style> below.
-
-  When opening this file in a browser directly (without build.py running),
-  the {{ tokens }} display as literals. That's expected. The shell is a
-  template, not a standalone page. Visual parity check happens against the
-  rendered output, not the shell file.
--->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -30,8 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  /* Per-brand color and typography token overrides.
-     Injected by build.py from IDENTITY.md frontmatter. */
   :root {
     --accent: #4E6B46;
     --accent-glow: rgba(78, 107, 70, 0.30);
@@ -203,7 +181,7 @@
         <p class="app-section-desc">Reference examples for recreating the medium without flattening the brand.</p>
       </div>
     </div>
-    <div class="app-example-grid"><article class="app-example"><div class="code">podcast-cover</div><h3>Podcast cover art</h3><p>Show art: authority at the mic, hard light.</p><div class="app-chip-row"><span class="app-chip">show title</span><span class="app-chip">KC at the mic</span><span class="app-chip">data strip</span></div><div class="app-example-meta"><a class="app-ref-link" href="../images/social-kit/podcast-cover.png">Open image</a><span class="app-ref-source">podcast-cover.png</span></div><div class="app-ref-preview image"><img loading="lazy" src="../images/social-kit/podcast-cover.png" alt="Podcast cover art reference image"></div></article><article class="app-example"><div class="code">episode-thumbnail</div><h3>Episode thumbnail</h3><p>Episode frame: conversation, not performance.</p><div class="app-chip-row"><span class="app-chip">episode title</span><span class="app-chip">guest context</span><span class="app-chip">series identity</span></div><div class="app-example-meta"><a class="app-ref-link" href="../images/social-kit/episode-thumbnail.png">Open image</a><span class="app-ref-source">episode-thumbnail.png</span></div><div class="app-ref-preview image"><img loading="lazy" src="../images/social-kit/episode-thumbnail.png" alt="Episode thumbnail reference image"></div></article><article class="app-example"><div class="code">reel-cover-no-excuses</div><h3>Reel cover</h3><p>Effort on a hill. The cover sets the tone before play.</p><div class="app-chip-row"><span class="app-chip">effort image</span><span class="app-chip">command line</span><span class="app-chip">Heat Clay tick</span></div><div class="app-example-meta"><a class="app-ref-link" href="../images/social-kit/reel-cover-no-excuses.png">Open image</a><span class="app-ref-source">reel-cover-no-excuses.png</span></div><div class="app-ref-preview image"><img loading="lazy" src="../images/social-kit/reel-cover-no-excuses.png" alt="Reel cover reference image"></div></article><article class="app-example"><div class="code">speaking-podcast-authority</div><h3>Performance-health speaking image</h3><p>KC as the bridge between women's health and functional cannabis.</p><div class="app-chip-row"><span class="app-chip">speaking authority</span><span class="app-chip">clean photography</span><span class="app-chip">no overlay</span></div><div class="app-example-meta"><a class="app-ref-link" href="../images/applications/speaking-podcast-authority.png">Open image</a><span class="app-ref-source">speaking-podcast-authority.png</span></div><div class="app-ref-preview image"><img loading="lazy" src="../images/applications/speaking-podcast-authority.png" alt="Performance-health speaking image reference image"></div></article></div>
+    <div class="app-example-grid"><article class="app-example"><div class="code">podcast-cover</div><h3>Podcast cover art</h3><p>Show art: authority at the mic, hard light.</p><div class="app-chip-row"><span class="app-chip">show title</span><span class="app-chip">KC at the mic</span><span class="app-chip">data strip</span></div><div class="app-example-meta"><a class="app-ref-link" href="../images/social-kit/podcast-cover.png">Open image</a><span class="app-ref-source">podcast-cover.png</span></div><div class="app-ref-preview image"><img loading="eager" decoding="async" src="../images/social-kit/podcast-cover.png" alt="Podcast cover art reference image"></div></article><article class="app-example"><div class="code">episode-thumbnail</div><h3>Episode thumbnail</h3><p>Episode frame: conversation, not performance.</p><div class="app-chip-row"><span class="app-chip">episode title</span><span class="app-chip">guest context</span><span class="app-chip">series identity</span></div><div class="app-example-meta"><a class="app-ref-link" href="../images/social-kit/episode-thumbnail.png">Open image</a><span class="app-ref-source">episode-thumbnail.png</span></div><div class="app-ref-preview image"><img loading="eager" decoding="async" src="../images/social-kit/episode-thumbnail.png" alt="Episode thumbnail reference image"></div></article><article class="app-example"><div class="code">reel-cover-no-excuses</div><h3>Reel cover</h3><p>Effort on a hill. The cover sets the tone before play.</p><div class="app-chip-row"><span class="app-chip">effort image</span><span class="app-chip">command line</span><span class="app-chip">Heat Clay tick</span></div><div class="app-example-meta"><a class="app-ref-link" href="../images/social-kit/reel-cover-no-excuses.png">Open image</a><span class="app-ref-source">reel-cover-no-excuses.png</span></div><div class="app-ref-preview image"><img loading="eager" decoding="async" src="../images/social-kit/reel-cover-no-excuses.png" alt="Reel cover reference image"></div></article><article class="app-example"><div class="code">speaking-podcast-authority</div><h3>Performance-health speaking image</h3><p>KC as the bridge between women's health and functional cannabis.</p><div class="app-chip-row"><span class="app-chip">speaking authority</span><span class="app-chip">clean photography</span><span class="app-chip">no overlay</span></div><div class="app-example-meta"><a class="app-ref-link" href="../images/applications/speaking-podcast-authority.png">Open image</a><span class="app-ref-source">speaking-podcast-authority.png</span></div><div class="app-ref-preview image"><img loading="eager" decoding="async" src="../images/applications/speaking-podcast-authority.png" alt="Performance-health speaking image reference image"></div></article></div>
   </section>
 
 
@@ -214,15 +192,5 @@
   <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
 </div>
-
-<!-- Build metadata. Lets any reviewer trace this page to its source. -->
-<!--
-  Brand:        KC Santana (kc-santana)
-  Version:      1.0.0
-  Built at:     2026-06-12T22:30:17+00:00
-  Git SHA:      9bf4d69fbd0c9885c3545cc5bb9a4b7198678cd0
-  Bundle hash:  sha256:9410ff0cc8fa1dc27fb7740594230e052a366958a5afd415572b73742b695da9
-  Source:       brand-os/brands/kc-santana/APPLICATION.md + CHANNELS.md + STRATEGY.md + IDENTITY.md
--->
 </body>
 </html>

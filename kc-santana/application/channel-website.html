@@ -1,24 +1,4 @@
 <!DOCTYPE html>
-<!--
-  section-a-shell.html
-  ====================
-  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
-  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
-
-  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
-  are documented in shared/templates/README.md (section: "Template token syntax
-  in section-a-shell.html").
-
-  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
-  fonts, nav contents) are injected. The CSS at assets/style.css carries the
-  shared visual system; per-brand color and typography overrides come through
-  the CSS custom-property block in the inline <style> below.
-
-  When opening this file in a browser directly (without build.py running),
-  the {{ tokens }} display as literals. That's expected. The shell is a
-  template, not a standalone page. Visual parity check happens against the
-  rendered output, not the shell file.
--->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -30,8 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  /* Per-brand color and typography token overrides.
-     Injected by build.py from IDENTITY.md frontmatter. */
   :root {
     --accent: #4E6B46;
     --accent-glow: rgba(78, 107, 70, 0.30);
@@ -203,7 +181,7 @@
         <p class="app-section-desc">What the agent or human needs before drafting this channel.</p>
       </div>
     </div>
-    <div class="app-rule-list"><div class="app-rule"><h3>Trigger</h3><div class="app-chip-row"><span class="app-chip">Squarespace relaunch</span><span class="app-chip">new page</span><span class="app-chip">section copy</span><span class="app-chip">event page update</span><span class="app-chip">conversion issue</span></div></div><div class="app-rule"><h3>Inputs</h3><div class="app-chip-row"><span class="app-chip">STRATEGY.md</span><span class="app-chip">IDENTITY.md</span><span class="app-chip">website application examples</span><span class="app-chip">real event and podcast facts</span></div></div><div class="app-rule"><h3>Outputs</h3><div class="app-chip-row"><span class="app-chip">page copy blocks</span><span class="app-chip">section hierarchy</span><span class="app-chip">nav labels</span><span class="app-chip">CTA set</span><span class="app-chip">visual notes</span></div></div><div class="app-rule"><h3>Approval Gate</h3><div class="app-chip-row"><span class="app-chip">KC approves page copy</span><span class="app-chip">likeness imagery approval</span><span class="app-chip">claim check</span><span class="app-chip">public publishing</span></div></div></div>
+    <div class="app-rule-list"><div class="app-rule"><h3>Trigger</h3><div class="app-chip-row"><span class="app-chip">Squarespace relaunch</span><span class="app-chip">new page</span><span class="app-chip">section copy</span><span class="app-chip">event page update</span><span class="app-chip">conversion issue</span></div></div><div class="app-rule"><h3>Inputs</h3><div class="app-chip-row"><span class="app-chip">brand strategy</span><span class="app-chip">visual identity</span><span class="app-chip">website application examples</span><span class="app-chip">real event and podcast facts</span></div></div><div class="app-rule"><h3>Outputs</h3><div class="app-chip-row"><span class="app-chip">page copy blocks</span><span class="app-chip">section hierarchy</span><span class="app-chip">nav labels</span><span class="app-chip">CTA set</span><span class="app-chip">visual notes</span></div></div><div class="app-rule"><h3>Approval Gate</h3><div class="app-chip-row"><span class="app-chip">KC approves page copy</span><span class="app-chip">likeness imagery approval</span><span class="app-chip">claim check</span><span class="app-chip">public publishing</span></div></div></div>
   </section>
   
   <section class="app-section" aria-labelledby="app-section-3">
@@ -226,15 +204,5 @@
   <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
 </div>
-
-<!-- Build metadata. Lets any reviewer trace this page to its source. -->
-<!--
-  Brand:        KC Santana (kc-santana)
-  Version:      1.0.0
-  Built at:     2026-06-12T22:30:17+00:00
-  Git SHA:      9bf4d69fbd0c9885c3545cc5bb9a4b7198678cd0
-  Bundle hash:  sha256:9410ff0cc8fa1dc27fb7740594230e052a366958a5afd415572b73742b695da9
-  Source:       brand-os/brands/kc-santana/APPLICATION.md + CHANNELS.md + STRATEGY.md + IDENTITY.md
--->
 </body>
 </html>

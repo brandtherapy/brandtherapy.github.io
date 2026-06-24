@@ -1,24 +1,4 @@
 <!DOCTYPE html>
-<!--
-  section-a-shell.html
-  ====================
-  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
-  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
-
-  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
-  are documented in shared/templates/README.md (section: "Template token syntax
-  in section-a-shell.html").
-
-  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
-  fonts, nav contents) are injected. The CSS at assets/style.css carries the
-  shared visual system; per-brand color and typography overrides come through
-  the CSS custom-property block in the inline <style> below.
-
-  When opening this file in a browser directly (without build.py running),
-  the {{ tokens }} display as literals. That's expected. The shell is a
-  template, not a standalone page. Visual parity check happens against the
-  rendered output, not the shell file.
--->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -30,8 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  /* Per-brand color and typography token overrides.
-     Injected by build.py from IDENTITY.md frontmatter. */
   :root {
     --accent: #4E6B46;
     --accent-glow: rgba(78, 107, 70, 0.30);
@@ -203,7 +181,7 @@
         <p class="app-section-desc">Reference examples for recreating the medium without flattening the brand.</p>
       </div>
     </div>
-    <div class="app-example-grid"><article class="app-example"><div class="code">run-the-standard-board</div><h3>Run the Standard direction board</h3><p>The visual world the site has to hold: daylight, terrain, the stack, authority.</p><div class="app-chip-row"><span class="app-chip">palette in use</span><span class="app-chip">type energy</span><span class="app-chip">imagery system</span></div><div class="app-example-meta"><a class="app-ref-link" href="../images/generated-boards/sun-grown-athlete-board.png">Open image</a><span class="app-ref-source">sun-grown-athlete-board.png</span></div><div class="app-ref-preview image"><img loading="lazy" src="../images/generated-boards/sun-grown-athlete-board.png" alt="Run the Standard direction board reference image"></div></article><article class="app-example"><div class="code">signature-board-web</div><h3>Signature board</h3><p>Data strip anatomy and variants for section dividers and image captions on web.</p><div class="app-chip-row"><span class="app-chip">strip anatomy</span><span class="app-chip">variants</span><span class="app-chip">companion elements</span></div><div class="app-example-meta"><a class="app-ref-link" href="../images/signature/signature-board.png">Open image</a><span class="app-ref-source">signature-board.png</span></div><div class="app-ref-preview image"><img loading="lazy" src="../images/signature/signature-board.png" alt="Signature board reference image"></div></article><article class="app-example"><div class="code">recovery-ritual-web</div><h3>Recovery ritual image</h3><p>The controlled stack as web imagery: measured, labeled, never lifestyle.</p><div class="app-chip-row"><span class="app-chip">measured objects</span><span class="app-chip">hard light</span><span class="app-chip">functional frame</span></div><div class="app-example-meta"><a class="app-ref-link" href="../images/applications/cannabis-tool-recovery-ritual.png">Open image</a><span class="app-ref-source">cannabis-tool-recovery-ritual.png</span></div><div class="app-ref-preview image"><img loading="lazy" src="../images/applications/cannabis-tool-recovery-ritual.png" alt="Recovery ritual image reference image"></div></article></div>
+    <div class="app-example-grid"><article class="app-example"><div class="code">run-the-standard-board</div><h3>Run the Standard direction board</h3><p>The visual world the site has to hold: daylight, terrain, the stack, authority.</p><div class="app-chip-row"><span class="app-chip">palette in use</span><span class="app-chip">type energy</span><span class="app-chip">imagery system</span></div><div class="app-example-meta"><a class="app-ref-link" href="../images/generated-boards/sun-grown-athlete-board.png">Open image</a><span class="app-ref-source">sun-grown-athlete-board.png</span></div><div class="app-ref-preview image"><img loading="eager" decoding="async" src="../images/generated-boards/sun-grown-athlete-board.png" alt="Run the Standard direction board reference image"></div></article><article class="app-example"><div class="code">signature-board-web</div><h3>Signature board</h3><p>Data strip anatomy and variants for section dividers and image captions on web.</p><div class="app-chip-row"><span class="app-chip">strip anatomy</span><span class="app-chip">variants</span><span class="app-chip">companion elements</span></div><div class="app-example-meta"><a class="app-ref-link" href="../images/signature/signature-board.png">Open image</a><span class="app-ref-source">signature-board.png</span></div><div class="app-ref-preview image"><img loading="eager" decoding="async" src="../images/signature/signature-board.png" alt="Signature board reference image"></div></article><article class="app-example"><div class="code">recovery-ritual-web</div><h3>Recovery ritual image</h3><p>The controlled stack as web imagery: measured, labeled, never lifestyle.</p><div class="app-chip-row"><span class="app-chip">measured objects</span><span class="app-chip">hard light</span><span class="app-chip">functional frame</span></div><div class="app-example-meta"><a class="app-ref-link" href="../images/applications/cannabis-tool-recovery-ritual.png">Open image</a><span class="app-ref-source">cannabis-tool-recovery-ritual.png</span></div><div class="app-ref-preview image"><img loading="eager" decoding="async" src="../images/applications/cannabis-tool-recovery-ritual.png" alt="Recovery ritual image reference image"></div></article></div>
   </section>
 
 
@@ -214,15 +192,5 @@
   <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
 </div>
-
-<!-- Build metadata. Lets any reviewer trace this page to its source. -->
-<!--
-  Brand:        KC Santana (kc-santana)
-  Version:      1.0.0
-  Built at:     2026-06-12T22:30:17+00:00
-  Git SHA:      9bf4d69fbd0c9885c3545cc5bb9a4b7198678cd0
-  Bundle hash:  sha256:9410ff0cc8fa1dc27fb7740594230e052a366958a5afd415572b73742b695da9
-  Source:       brand-os/brands/kc-santana/APPLICATION.md + CHANNELS.md + STRATEGY.md + IDENTITY.md
--->
 </body>
 </html>
