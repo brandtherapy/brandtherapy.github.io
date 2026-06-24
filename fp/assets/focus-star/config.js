@@ -487,7 +487,7 @@ window.FOCUS_STAR_CONFIG = {
           {
             "label": "Proof required",
             "items": [
-              "Live voice exemplars (see references/voice-exemplars.md)",
+              "Live voice exemplars (see the voice exemplar bank)",
               "On-voice examples per channel and matching off-voice library entries showing what \"funny first\" looks like when it works vs. when it slides into joke-only",
               "Channel-by-channel calibration evidence"
             ],
@@ -523,7 +523,7 @@ window.FOCUS_STAR_CONFIG = {
             "First-chair founder bios"
           ],
           "Proof required": [
-            "Live voice exemplars (see references/voice-exemplars.md)",
+            "Live voice exemplars (see the voice exemplar bank)",
             "On-voice examples per channel and matching off-voice library entries showing what \"funny first\" looks like when it works vs. when it slides into joke-only",
             "Channel-by-channel calibration evidence"
           ],

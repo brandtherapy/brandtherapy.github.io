@@ -1,24 +1,4 @@
 <!DOCTYPE html>
-<!--
-  section-a-shell.html
-  ====================
-  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
-  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
-
-  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
-  are documented in shared/templates/README.md (section: "Template token syntax
-  in section-a-shell.html").
-
-  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
-  fonts, nav contents) are injected. The CSS at assets/style.css carries the
-  shared visual system; per-brand color and typography overrides come through
-  the CSS custom-property block in the inline <style> below.
-
-  When opening this file in a browser directly (without build.py running),
-  the {{ tokens }} display as literals. That's expected. The shell is a
-  template, not a standalone page. Visual parity check happens against the
-  rendered output, not the shell file.
--->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -30,8 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  /* Per-brand color and typography token overrides.
-     Injected by build.py from IDENTITY.md frontmatter. */
   :root {
     --accent: #5A5CF9;
     --accent-glow: rgba(90, 92, 249, 0.35);
@@ -216,21 +194,11 @@
 
 
   <div class="footer-nav">
-    <span>Section C · Overview</span><span class="footer-stamp" style="font-family:var(--ff-b);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:3px 9px;border-radius:2px;white-space:nowrap;">Section B layout v2</span>
+    <span>Section C · Overview</span>
     <span><a href="images.html">Images →</a></span>
   </div>
   <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
 </div>
-
-<!-- Build metadata. Lets any reviewer trace this page to its source. -->
-<!--
-  Brand:        Florian P. Consulting (fp)
-  Version:      4.0.0
-  Built at:     2026-06-17T17:20:47+00:00
-  Git SHA:      9c4e725b9a13da54d5be93cf63d9c64596cdf1e8
-  Bundle hash:  sha256:c1d00c859148f963e5652233da0a93826e02156588a332afc2c6d7beeca71edb
-  Source:       brand-os/brands/fp/APPLICATION.md + CHANNELS.md + STRATEGY.md + IDENTITY.md
--->
 </body>
 </html>

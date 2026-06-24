@@ -9,22 +9,22 @@
   },
   "source": {
     "source_slug": "fp",
-    "build_timestamp": "2026-06-17T17:20:47+00:00",
-    "git_sha": "9c4e725b9a13da54d5be93cf63d9c64596cdf1e8",
-    "bundle_hash": "sha256:c1d00c859148f963e5652233da0a93826e02156588a332afc2c6d7beeca71edb",
+    "build_timestamp": "2026-06-24T00:22:24+00:00",
+    "git_sha": "605616558b7e7d95b40ad6f8d9810b8c99cb44ee",
+    "bundle_hash": "sha256:52e06a0f336259971f6cbf5b25c73a0f538402993b3192e23f3a34917684a50d",
     "source_hashes": {
-      "STRATEGY.md": "sha256:800c222653331ab4c44a3175c3bb218bfc27121a8349e3c6599c68cbfaac5752",
-      "IDENTITY.md": "sha256:0437476813e3160df8949cabcce2328800bcc59ddb2af5318ebc2fdea227e9f8",
+      "STRATEGY.md": "sha256:dc8947edacf0fd3d88b9cf6453e7a99b2e461785b5ad8d5de9e477a212638ee4",
+      "IDENTITY.md": "sha256:71d235f5ff0a7ad20cee92e8ba2034f7386bf6514b445d075be3cd95db501bba",
       "SKILL.md": "sha256:be6d4104dc20ee62d1e02765ce9246a3d375682bebfb42fe3156660d5f791007",
       "APPLICATION.md": "sha256:fd8e6e92b31db08947139004c24cf41cb53e72a056247286ac77710594dbac96",
       "CHANNELS.md": "sha256:2edaaff112556b018af7f7e03ceeb6a87734b18f1cf246a49d9fd2f601802fc4",
       "PERSONAL_BRANDING.md": "sha256:6f14f0d8d395e4267c092f1b358c3e7a83feb70eacb5bdb2c3ee6db06edc7501",
       "QUICKSTART.md": "sha256:150a373d10d1ae2117e809992fba1d3cc3131e20529b8ad19a5d5edeaf8ab4fd",
-      "DIFFERENTIATION.md": "sha256:27a8f0f001c023cc53b85b47adaf1bfaa845d93c51bf4e03750b28e1e96dca54",
+      "DIFFERENTIATION.md": "sha256:19a5ee16772672e63462b12b5306de66e4e4b8147d86b60d6803a3792bfa8d09",
       "references/methodology.md": "sha256:a78b3041530a33181897518135c9034708744d8d9d41c5b77fcf49c63c01c590",
-      "references/viewfinder.md": "sha256:b6fc802e8b9db94f18d589daaa96d565f026a3f3c32e02cd77f8565ab6b9b54a",
-      "references/voice-exemplars.md": "sha256:62edce5e4e74e55931da4d2152d2c593ce1cb388c1210f9f09c0c57ce13af649",
-      "images_manifest": "sha256:651f88a881d170e27b601b12dec226256874685d4b5a9ea0de818677e11108a9",
+      "references/viewfinder.md": "sha256:b161710cddcf3031a87f3ea1b1181959f4c019e2fa5ddf3fbde08a68756957d9",
+      "references/voice-exemplars.md": "sha256:874e0f995077a7b8b3773ac9ad307c22db2c02182699497f3475fe9ccf0dced9",
+      "images_manifest": "sha256:775741862c88cdda7056744b526045e72aa03728d4039418fbf717780b05663c",
       "application_references_manifest": "sha256:5f33b813525f9a16a7524f28091a5f8deeddb3efffb9d30d361cc400e9483ae4"
     },
     "source_order": [
@@ -320,13 +320,13 @@
         ],
         "application": {
           "strategy": "voice is the surface where strategy becomes visible; personality choices flow from P1-P4, not the other way around",
-          "copy": "see voice principles + voice-exemplars.md for the full bank; the funny-first dry-diagnosis pattern is the spine",
+          "copy": "see voice principles and the voice exemplar bank for the full set; the funny-first dry-diagnosis pattern is the spine",
           "visuals": "the viewfinder bracket sits comfortably with this voice: sharp inside the frame, blurred outside, observed not staged",
           "sales": "professional confidence dialed up; wit is subtle, not central; clarity dominates",
           "content": "peak personality on LinkedIn (150-300 words); most conversational on email (500-1200 words); calm authority on website; lowest performance on sales decks"
         },
         "proof_required": [
-          "Live voice exemplars (see references/voice-exemplars.md)",
+          "Live voice exemplars (see the voice exemplar bank)",
           "On-voice examples per channel and matching off-voice library entries showing what \"funny first\" looks like when it works vs. when it slides into joke-only",
           "Channel-by-channel calibration evidence"
         ],
@@ -344,7 +344,7 @@
   },
   "differentiation": {
     "positioning_statement": "For founders, brands, and companies whose work is stronger than the way it is explained, Brand Therapy is brand strategy with psychology built in. A diagnostic practice that turns hidden expertise into a working blueprint the client owns, built on looking closely instead of performing certainty.",
-    "positioning_note": "Assembled from locked decisions, not written fresh. P1 position, P2 persona, P4 method. To change it, change STRATEGY.md and rebuild.",
+    "positioning_note": "Assembled from locked strategic decisions across position, persona, and method.",
     "differentiators": [
       {
         "label": "Psychology built into the strategy work",
@@ -452,7 +452,15 @@
       "light": "#F5F5F7",
       "white": "#FFFFFF",
       "dark": "#18181B",
-      "dark_surface": "#1D1D1D"
+      "dark_surface": "#1D1D1D",
+      "fn_focus": "#5A5CF9",
+      "fn_info": "#2F86E6",
+      "fn_active": "#119FB2",
+      "fn_alert": "#C13AD6",
+      "fn_alert_soft": "#D58CE4",
+      "fn_neutral": "#8888A0",
+      "fn_quiet": "#AEB0C4",
+      "fn_ink": "#1A1A2E"
     },
     "typography": {
       "display": {
@@ -800,7 +808,7 @@
         "warnings": []
       }
     },
-    "voice": "Voice is part of brand identity, not strategic positioning. The strategic decision about Personality (P5) lives in STRATEGY.md; the operational voice rules live here. See `references/voice-exemplars.md` for the full paired exemplar bank.\n\n### Principles\n\n- Direct observation over encouragement\n- Funny first, dry diagnosis over cheerleading\n- Spoken register, not editorial\n- Questions over affirmations. Turn statements into invitations the reader answers\n- Short sentences when possible. Long when the idea demands breath\n- Silence is an option\n- Curious over prescriptive. Ask the question, observe the pattern\n- Humor must sharpen the point. If the joke works without the strategy, cut it\n- Prefer \"brand\" over \"company\" when ambiguity helps\n- Don't overclaim what the Brand Therapy process does\n- Bold the load-bearing phrases. Two to four per section in long-form\n\n### Banned characters\n\n- em-dash (U+2014)\n- en-dash (U+2013)\n\n(Plain hyphen-minus `-` is fine in compound words, list bullets, signatures, ranges, and titles. Do not auto-replace plain hyphens with ellipses.)\n\n### Banned phrases\n\n- \"at Brand Therapy\": methodology, not company\n- \"the Brand Therapy team\": methodology, not company\n- \"Most branding starts with a logo\": banned framing\n- \"credentialed\": banned word\n\n### Emojis\n\nDefault: no emojis in brand content. Approved exceptions:\n\n- `:-]` and `;-]` for wink or sarcasm in long-form content, where it lands\n- Standard business or check-mark emojis (e.g., ✅) in social-media copy only\n- No decorative emoji stacks. One per post maximum.\n\n### Signatures (FP-specific)\n\n- Long-form openers can use: **\"Bonjour Friends,\"** as a warm opener that carries the French texture\n- Long-form closers can use: **\"Cheers,\"** as a sign-off\n- These are signature elements for FP's own founder voice. Do not apply to client brand work. They live here as a brand reference, not as content rules.\n\n### Voice exemplars (brief)\n\nFor the full exemplar bank (on-voice examples by channel + off-voice library, verbatim port from `source/voice-exemplars.yaml`), see `references/voice-exemplars.md`.\n\n**On-voice signals:**\n- \"When everyone looks good, weird starts mattering again.\": short, dry, strategic, names the market shift\n- \"You made it premium. Did you make it yours?\": direct question with a smile, the brand point is still the point\n- \"The 30-slide crime scene is dying.\": specific, funny, the joke points at the problem\n- \"AI made credible brands easier to build. Very generous. Also deeply inconvenient.\": dry reversal, useful tension\n\n**Off-voice traps:**\n- \"AI is lowering the barrier to high-quality brand execution, which means authenticity is now more important than ever.\": abstract trend-report voice\n- \"Your brand has Wi-Fi but no signal.\": joke-only, the strategy is vague\n- \"Great question! Let me help you with that.\": hollow affirmation opener",
+    "voice": "Voice is part of brand identity, not strategic positioning. The strategic decision about Personality (P5) lives in the brand strategy; the operational voice rules live here. See the voice exemplar bank for the full paired set of examples.\n\n### Principles\n\n- Direct observation over encouragement\n- Funny first, dry diagnosis over cheerleading\n- Spoken register, not editorial\n- Questions over affirmations. Turn statements into invitations the reader answers\n- Short sentences when possible. Long when the idea demands breath\n- Silence is an option\n- Curious over prescriptive. Ask the question, observe the pattern\n- Humor must sharpen the point. If the joke works without the strategy, cut it\n- Prefer \"brand\" over \"company\" when ambiguity helps\n- Don't overclaim what the Brand Therapy process does\n- Bold the load-bearing phrases. Two to four per section in long-form\n\n### Banned characters\n\n- em-dash (U+2014)\n- en-dash (U+2013)\n\n(Plain hyphen-minus `-` is fine in compound words, list bullets, signatures, ranges, and titles. Do not auto-replace plain hyphens with ellipses.)\n\n### Banned phrases\n\n- \"at Brand Therapy\": methodology, not company\n- \"the Brand Therapy team\": methodology, not company\n- \"Most branding starts with a logo\": banned framing\n- \"credentialed\": banned word\n\n### Emojis\n\nDefault: no emojis in brand content. Approved exceptions:\n\n- `:-]` and `;-]` for wink or sarcasm in long-form content, where it lands\n- Standard business or check-mark emojis (e.g., ✅) in social-media copy only\n- No decorative emoji stacks. One per post maximum.\n\n### Signatures (FP-specific)\n\n- Long-form openers can use: **\"Bonjour Friends,\"** as a warm opener that carries the French texture\n- Long-form closers can use: **\"Cheers,\"** as a sign-off\n- These are signature elements for FP's own founder voice. Do not apply to client brand work. They live here as a brand reference, not as content rules.\n\n### Voice exemplars (brief)\n\nFor the full exemplar bank, see the on-voice examples by channel plus the off-voice library in the voice exemplar bank.\n\n**On-voice signals:**\n- \"When everyone looks good, weird starts mattering again.\": short, dry, strategic, names the market shift\n- \"You made it premium. Did you make it yours?\": direct question with a smile, the brand point is still the point\n- \"The 30-slide crime scene is dying.\": specific, funny, the joke points at the problem\n- \"AI made credible brands easier to build. Very generous. Also deeply inconvenient.\": dry reversal, useful tension\n\n**Off-voice traps:**\n- \"AI is lowering the barrier to high-quality brand execution, which means authenticity is now more important than ever.\": abstract trend-report voice\n- \"Your brand has Wi-Fi but no signal.\": joke-only, the strategy is vague\n- \"Great question! Let me help you with that.\": hollow affirmation opener",
     "section_titles": [
       "1. Visual Theme & Atmosphere",
       "2. Color Palette & Roles",
@@ -2632,7 +2640,7 @@
       "Evidence of narrowed positioning or refusal language, where available",
       "Examples where a messy personal or founder-led brand became easier to explain",
       "Florian's preference for branding \"boring\" industries where people expect the least to see a well-differentiated, unique brand. Example: Cachet Advisory, the CPA firm that gives a shit. A well-positioned brand in an industry that does not assume differentiation is possible is the clearest proof of the purpose.",
-      "Live voice exemplars (see references/voice-exemplars.md)",
+      "Live voice exemplars (see the voice exemplar bank)",
       "On-voice examples per channel and matching off-voice library entries showing what \"funny first\" looks like when it works vs. when it slides into joke-only",
       "Process steps (Discovery → Blueprint → Build → Launch)",
       "Public credentials (15+ years, 6 countries, 25+ clients/companies)",
@@ -2643,6 +2651,35 @@
       "Visual examples that show the person as thoughtful and real, not staged as a guru",
       "Voice exemplars showing the question-over-assertion pattern at work"
     ]
+  },
+  "likeness": {
+    "person": "Florian Philippe",
+    "purpose": "Canonical face references for model-agnostic image generation. Attach the face-anchor image as a reference, start the prompt with prompt_preamble, then describe the scene.",
+    "canonical_description": "Florian Philippe in his early 30s. A lean, moderately angular face with visible cheekbone relief and a clean jaw-to-neck line, narrowing in a mild inverted-triangle proportion to a relatively narrow chin. Dark brown hair, short and tapered at the sides, longer on top and swept loosely upward with a relaxed forelock. Warm hazelnut / amber-brown eyes with a calm, composed set. A defined, modestly convex nose bridge with a rounded, neutral tip. Very light, near clean-shaven stubble. Smooth, youthful early-30s skin and neck.",
+    "prompt_preamble": "Generate the exact same specific man shown in the attached face-anchor reference: Florian Philippe. Preserve his precise identity and bone structure exactly; do not generalize, average, idealize, slim, widen, beautify, or age him. Keep his lean face, dark brown swept-up hair, warm hazelnut eyes, modestly convex nose bridge, and very light, near clean-shaven stubble. Mouth closed, no teeth.",
+    "usage_rules": [
+      "Always attach the face-anchor image as a reference and begin the prompt with prompt_preamble.",
+      "Mouth closed in every output, no teeth visible.",
+      "Keep him in his early 30s, no aged neck, neck bands, crepe, deep nasolabial folds, or heavy stubble.",
+      "Use a low generation temperature (around 0.1) for faithful identity; outfit and setting vary per brief."
+    ],
+    "images": [
+      {
+        "role": "face-anchor",
+        "label": "Florian Philippe — V1 face anchor",
+        "description": "Florian Philippe in his early 30s. A lean, moderately angular face with visible cheekbone relief and a clean jaw-to-neck line, narrowing in a mild inverted-triangle proportion to a relatively narrow chin. Dark brown hair, short and tapered at the sides, longer on top and swept loosely upward with a relaxed forelock. Warm hazelnut / amber-brown eyes with a calm, composed set. A defined, modestly convex nose bridge with a rounded, neutral tip. Very light, near clean-shaven stubble. Smooth, youthful early-30s skin and neck.",
+        "path": "images/likeness/fp-v1-anchor.jpg",
+        "url": "https://brandtherapy.florianp.com/fp/images/likeness/fp-v1-anchor.jpg"
+      },
+      {
+        "role": "turnaround",
+        "label": "V1 profile (approved)",
+        "description": "Full right-side profile in flat light-grey studio light. Vest, near-black micro-check shirt, slim knit tie. Approved profile angle; front/three-quarter angles still pending.",
+        "path": "images/likeness/fp-v1-profile.jpg",
+        "url": "https://brandtherapy.florianp.com/fp/images/likeness/fp-v1-profile.jpg"
+      }
+    ],
+    "likeness_page": "https://brandtherapy.florianp.com/fp/identity/likeness.html"
   },
   "retrieval_guidance": {
     "example_count": "Use 3 to 5 relevant examples when possible.",
