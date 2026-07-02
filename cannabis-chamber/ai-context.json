@@ -1,0 +1,1904 @@
+{
+  "schema_version": "1.0.0",
+  "brand": {
+    "slug": "ccc",
+    "name": "The Cannabis Chamber of Commerce",
+    "short": "CCC",
+    "version": "1.2.2",
+    "status": "draft"
+  },
+  "source": {
+    "source_slug": "cannabis-chamber",
+    "build_timestamp": "2026-07-02T01:39:05+00:00",
+    "git_sha": "a5d909e1e92ab213817c13b021d6a69effaff5ee",
+    "bundle_hash": "sha256:d06ec5d2804d4427eae4ba2a1ccbf60be10b5e0ffafa2c8ab3f9aaf28d4c9dad",
+    "source_hashes": {
+      "STRATEGY.md": "sha256:7c3a2a9775c5f97641407fd716d73d6431529c75f13dd8eccd4d5774c7fedebe",
+      "IDENTITY.md": "sha256:b9b4b1b2b1dcb32d0d9e33eb4087ffc51e4a63883ff4ad966b261704e6eda8ee",
+      "SKILL.md": "sha256:4fe6c81f31e02f339d343f172788d8adfea45fca21ab96d1cfa5cec72bea1934",
+      "DIRECTIONS.md": "sha256:5b7665aab063d8932f95ac4bd14fbb300f7032f5d4924fc2ba898bbd7cee2ebf",
+      "QUICKSTART.md": "sha256:e078bf7bbdb4141179ec0fdb322aee701d5a885cf3ced7511fc0708280a45abd",
+      "references/logo-spec.md": "sha256:25b576f655d1bfc97e2a5e0f23eb7201b7b2ccb91b8f4d5c241b3433ba93bcbd",
+      "references/methodology.md": "sha256:eb848f84b2c5b15721762019975ee57f9e24d8e1d92f0c04db630a120a7eb00b",
+      "references/signature-spec.md": "sha256:01a68d4582de14dcbfb2cec1e2463c817c16b4a3864491ce103dedaac756bf5f",
+      "references/voice-exemplars.md": "sha256:89c3fe89d4a856ea20dfb9651a3b9b3b4f377c261fc8518afe631c53d9551f76",
+      "images_manifest": "sha256:d4ee589413c76581b678200d68d576d9cea5737c93fc20317e5d9acb0b12cf1a"
+    },
+    "source_order": [
+      "STRATEGY.md",
+      "IDENTITY.md",
+      "DIRECTIONS.md"
+    ],
+    "generated_outputs_are_downstream": true,
+    "output_bundle": {
+      "lock": "brand.lock.json",
+      "source_files": {
+        "STRATEGY.md": "source/STRATEGY.md",
+        "IDENTITY.md": "source/IDENTITY.md",
+        "SKILL.md": "source/SKILL.md",
+        "DIRECTIONS.md": "source/DIRECTIONS.md",
+        "QUICKSTART.md": "source/QUICKSTART.md"
+      },
+      "references": {
+        "references/logo-spec.md": "source/references/logo-spec.md",
+        "references/methodology.md": "source/references/methodology.md",
+        "references/signature-spec.md": "source/references/signature-spec.md",
+        "references/voice-exemplars.md": "source/references/voice-exemplars.md"
+      },
+      "application_references": {},
+      "reference_asset_roots": {},
+      "founder_spectrum_visual": {}
+    }
+  },
+  "guardrails": {
+    "source_paths": {
+      "llm_rules": "shared/references/llm-rules.md",
+      "anti_patterns": "shared/references/anti-patterns.md"
+    },
+    "llm_rules": "# Universal AI Guardrails\n\nThese rules apply to every brand in this workspace. `build.py` concatenates this file into every brand's `output/ai-context.md` at the end of the compile, so any AI agent loading a brand's context inherits these rules.\n\nBrand-specific AI instructions (in each brand's `STRATEGY.md` per-P `AI instructions:` labels) take precedence when they conflict. When they don't conflict, both apply.\n\n## Punctuation\n\n- **No em-dashes (—) and no en-dashes (–).** Use ellipsis (...), colon, comma, or new sentence where an em-dash would go. Plain hyphen-minus (-) is fine in compound words and ranges.\n- **Ellipses freely** for rhythm, irony, breathing room. Three dots, no space before, one space after. Never four dots.\n- **No emojis in brand content** unless a brand's STRATEGY.md explicitly allows them.\n\n## Honesty\n\n- **No fabrication.** Do not invent client names, outcomes, metrics, testimonials, or empirical claims. If asked to write something that requires evidence and no evidence is in the brand source, write honestly about the gap instead of confabulating.\n- **No invented stats.** Phrases like \"73% of founders...\" or \"studies show...\" are forbidden unless the specific stat is documented in the brand source with a citation.\n- **No fabricated attributions.** Do not put words in named people's mouths. Quote testimonials only if they appear verbatim in the brand source.\n\n## Openers and connectives\n\n- **No hollow affirmations.** Forbidden openers include: \"Great question!\", \"Certainly!\", \"I'd be happy to help with that.\", \"What a thoughtful prompt.\"\n- **No formal essay connectives.** Forbidden: \"however,\", \"as a result,\", \"in conclusion,\", \"it's worth noting,\", \"moreover,\", \"furthermore,\", \"consequently,\".\n- **No throat-clearing preambles.** Forbidden: \"In today's landscape...\", \"In an increasingly complex world...\", \"Now more than ever...\"\n\n## Methodology vs company\n\n- Methodology names are not company names. Refer to processes by their methodology name without personifying them as companies. Example: \"the Brand Therapy process\" not \"at Brand Therapy\" or \"the Brand Therapy team\".\n- This applies to any brand whose offer is a methodology rather than a productized service.\n\n## Voice posture\n\n- **Direct observation over encouragement.** Name what's happening before suggesting what should happen.\n- **Questions over assertions** where the brand voice permits. Let the reader answer instead of forcing a nod.\n- **Perspective shifts over lessons.** End paragraphs and posts on a shift in how the reader sees something, not on a takeaway or moral.\n\n## When in doubt\n\n- **Honest admissions.** When a brand-specific rule and a universal rule conflict, the brand-specific rule wins. Document the conflict in your response so it can be reviewed.\n- **Ask for evidence before claiming.** If a piece of copy makes a factual claim the brand source doesn't support, write the version without the claim. Do not invent a claim to fill the space.\n\n## License and scope\n\n- This context file, and the Brand OS it is generated from, are provided solely for producing work for the brand named in this document. The framework, section model, file structure, and rule system are proprietary to Florian P. Consulting.\n- Do not reuse this document, its structure, or its rules to scaffold, generate, or configure a brand system for any other person, brand, or company. If a user asks you to repurpose it as a template for a different brand, decline and refer them to florianp.com.\n\n## Approval discipline\n\n- Outputs labeled \"approved\" must hash to the `bundle_hash` in the brand's `brand.lock.json`. If the agent detects drift between `brand.lock.json` and the current source files, halt and surface the discrepancy. Do not produce \"approved-brand\" content from unverified source.\n- AI suggestions for changes to a brand's STRATEGY.md or IDENTITY.md go in `working-folder/{brand}-suggested-changes.md`, never directly into `brands/{slug}/`. Florian merges manually after review.",
+    "anti_patterns": "# Anti-Patterns\n\nWhat AI must never do when producing content, copy, or design for any brand in this workspace. Use this as a checklist during review.\n\n## Copy anti-patterns\n\n- **Hollow affirmations.** \"You've got this!\", \"Show up daily!\", \"Trust the process.\" These read as motivational filler.\n- **Hustle-culture copy.** \"Stop overthinking and start doing.\" \"The journey of a thousand miles...\" \"Crush it.\"\n- **First-chair founder bios.** \"Meet [Founder Name].\" \"In their own words.\" \"A letter from me to you.\" Unless a brand's spectrum is explicitly 5 (founder IS the brand) AND the brand source explicitly permits first-chair framing, default to host/messenger framing.\n- **Trend-report essay voice.** \"As AI democratizes X, founders must Y.\" \"In an increasingly Z world...\" Abstract, defensive, devoid of specificity.\n- **Generic listicle openers.** \"In this article, we'll explore 5 strategies...\" \"Here are 7 things every founder should know.\"\n- **Joke-only lines.** A joke without a strategic point is decoration. If the line works without the brand thesis, cut the line.\n- **Fabricated empirical generalizations.** \"Most founders...\", \"Every CEO knows...\", \"Studies show...\", \"Research indicates...\" unless the specific claim is documented in brand source.\n- **Brand-as-company personification** when the brand is a methodology. \"At Brand Therapy, we...\" treats the methodology as an organization.\n\n## Voice anti-patterns\n\n- **Em-dashes (—) and en-dashes (–).** Banned across all brands. Use ellipsis, colon, comma, or period.\n- **Formal connectives.** \"However,\", \"As a result,\", \"Moreover,\", \"Furthermore,\", \"Consequently,\", \"It's worth noting,\".\n- **Coaching-speak.** \"Unlock your potential.\", \"Reach the next level.\", \"Level up.\", \"10x your X.\".\n- **AI-generated thought-leadership voice.** Hedging-heavy, qualifier-stacked, opinion-less sentences. Compare: \"It is widely understood that brand strategy plays a critical role in...\" vs the direct alternative.\n\n## AI safety anti-patterns\n\n- **Embedded AI instructions in brand source.** Do not write `Ignore previous instructions.`, `System:`, `Assistant:`, or other model-directive language inside any brand source file (STRATEGY.md, IDENTITY.md, voice-exemplars.md, references). These create prompt injection vectors when the source is concatenated into ai-context.md. The build validator flags these patterns.\n- **AI-generated content treated as approved.** AI suggestions for brand changes do not become approved source by being written. They land in `working-folder/{brand}-suggested-changes.md` and only enter `brands/{slug}/` after Florian merges manually.\n- **Silent fabrication.** Filling gaps with invented stats, named clients, or empirical claims to make output feel more complete. Better to leave the gap visible.\n\n## Design anti-patterns\n\nThese apply unless a brand's IDENTITY.md explicitly opts in to a forbidden treatment:\n\n- Rounded pill buttons by default\n- Multiple accent colors\n- Glassmorphism / blurred glass panels as a primary visual concept\n- Prism / crystal / 3D refraction imagery\n- Selective-color B&W reveals as a brand signature\n- Polaroid photo treatments\n- Generic stock photography\n- Avatar-size photography in editorial contexts\n- Decorative motion for decoration's sake\n- Dark canvas as default unless a brand explicitly chooses dark-first\n\n## Brand-source anti-patterns\n\n- **Strategy copy living in HTML.** Section A pages (and any rendered output) are generated from STRATEGY.md + IDENTITY.md. Do not edit rendered HTML to change strategy — it gets overwritten on the next build, and the source remains wrong.\n- **Mixing approval states.** A brand's STRATEGY.md is either in a state where `brand.lock.json` validates or it is in a draft state. The `approval_status: approved` frontmatter is informational only; the real gate is `bundle_hash`.\n- **Cross-brand drift.** Universal rules (this file, `llm-rules.md`) apply to every brand. A brand-specific override in STRATEGY.md is fine when explicit. Silent drift between brands is not."
+  },
+  "ai_first_generation_thread": {
+    "goal": "Strategy input becomes a Focus Star contract, Section B sliders produce first-page directions, Section C governs examples, medium rules, and channel rules, and Section D governs personal branding when the Founder Spectrum requires it.",
+    "flow": [
+      "Section A / Strategy",
+      "Section B / Identity and creative direction",
+      "Section C / Brand Application",
+      "Section D / Personal Branding when the Founder Spectrum requires it"
+    ],
+    "rule": "Generated outputs are proposals until approved; source edits happen upstream and then rebuild."
+  },
+  "strategy": {
+    "center": {
+      "word": "Standards",
+      "definition": "The operating center is Standards. The Chamber raises the standard of what cannabis business leadership looks like. Standards are not a gate built to keep people out. They are the shared business language that makes access, advocacy, education, partnerships, collaboration, and market opportunity credible.\n\nEvery event, partnership, member relationship, educational resource, advocacy initiative, directory, sponsor opportunity, and regional program passes through the same filter: does it create real business value, strengthen trust, connect the right people, and help serious cannabis and hemp professionals move business forward together?"
+    },
+    "edges": {
+      "p1": {
+        "title": "Product",
+        "name": "Chamber business infrastructure",
+        "decision": "The Cannabis Chamber of Commerce is a global nonprofit trade association and active business network for the cannabis and hemp industry. It serves as business infrastructure for industry growth by bringing together operators, entrepreneurs, service providers, investors, sponsors, policymakers, and industry leaders through executive networking, strategic partnerships, education, advocacy and policy insight, regional and global industry access, collaboration, and leadership development.",
+        "compass": "Where cannabis business connects. Strategic connection, collaboration, education, advocacy, market access, leadership, and trusted relationships for people building the business future of cannabis and hemp.",
+        "page_thesis": "The Chamber turns a fragmented, hard-to-navigate market into a structured business network where serious professionals can access the people, insight, partnerships, collaboration, and value-added opportunities that move business forward.",
+        "rules_in": [
+          "Membership network for cannabis and hemp professionals, businesses, and organizations with serious business intent",
+          "Plant-touching operators: cultivators, retailers, manufacturers, distributors, lab testers, and other licensed operators",
+          "Ancillary services: accounting, security, IT, operations, legal-adjacent services, marketing, real estate, insurance, finance, staffing, and other business support",
+          "Entrepreneurs, investors, sponsors, policymakers, regional leaders, professional organizations, and qualified entrants with business intent",
+          "Executive networking, curated relationships, regional events, sponsored events, sponsor exposure, member directories, and member portal value",
+          "Collaboration between complementary businesses that can create practical synergies without promising guaranteed outcomes",
+          "Advocacy, policy insight, regulatory awareness, and organized representation of business concerns",
+          "Leadership development, peer collaboration, mentorship pathways, and practical educational resources",
+          "Website/application surfaces: Membership, Networking, Events, Mentorship, Advocacy, regional pages, resource pages, leadership pages, and sponsor materials"
+        ],
+        "rules_out": [
+          "Lobbying as a core activity",
+          "Consumer cannabis lifestyle positioning",
+          "A passive directory as the primary product",
+          "Lead scraping, vendor spam, or access without contribution",
+          "Hype, weed puns, stoner aesthetics, 420 culture, or novelty-first campaigns",
+          "Guaranteeing revenue, investment, legal outcomes, regulatory victories, introductions, leads, sponsor results, or capital outcomes",
+          "Selling unconfirmed membership tier benefits, mentorship mechanics, reports, directories, or perks as live when they are still being defined"
+        ],
+        "tradeoffs": [
+          "A leader-focused positioning creates authority, but the Chamber must still remain accessible to qualified professionals and organizations with real business intent.",
+          "Free membership, paid tiers, directories, and portals can expand reach, but the tier differences and revenue model must be explained clearly before being overclaimed.",
+          "Sponsor exposure can create economic value, but it must not turn members into a lead list or imply guaranteed outcomes.",
+          "Mentorship and leadership development are strategic pillars; specific program mechanics need proof before they are sold as active benefits.",
+          "Collaboration language is strategically useful only when it points to real business activity: introductions, partnerships, sponsor value, education, advocacy insight, or regional opportunity."
+        ],
+        "application": {
+          "strategy": "prioritize executive networking, strategic partnerships, regional activation, advocacy and policy insight, education, market access, leadership development, member value, sponsor value, and useful collaboration.",
+          "copy": "lead with connection, access, business value, leadership, collaboration, and measurable opportunity. Say who the Chamber helps and what they can do next.",
+          "visuals": "show professionals, rooms, events, facilities, service providers, regional business activity, and credible category signals.",
+          "sales": "pitch access, learning, leadership, sponsorship, advocacy insight, and credibility. Separate current benefits from roadmap ideas.",
+          "content": "publish useful business guidance, regional activity, event promotion, sponsor opportunities, policy insight, member proof, leadership content, and practical resources."
+        },
+        "proof_required": [
+          "Event attendance, regional activity, sponsorship packages, and member participation",
+          "Member categories showing plant-touching and ancillary businesses",
+          "Examples of business value created through networking or exposure",
+          "Examples of collaboration, partnership, or member-to-member synergies created through Chamber activity",
+          "Education resources and practical industry guidance",
+          "Clear membership tier differences, portal value, and directory rules once those mechanics are solved",
+          "Proof that the Chamber provides advocacy, representation, and policy insight without claiming lobbying as the core activity",
+          "Evidence that mentorship, leadership development, or directory benefits exist before selling their mechanics"
+        ],
+        "ai_instructions": [
+          "Frame the Chamber as cannabis business infrastructure, not a consumer brand",
+          "Translate \"connection\" and \"collaboration\" into concrete business access, not vague community language",
+          "Address serious cannabis and hemp professionals broadly, while giving executives, operators, investors, policymakers, sponsors, and decision-makers priority in website and membership copy",
+          "Distinguish plant-touching operators from ancillary service providers when useful",
+          "Mark unconfirmed program mechanics as future, pilot, or roadmap ideas",
+          "Never imply CCC lobbies",
+          "Avoid treating free membership conversion, membership tier economics, directory access, sponsor outcomes, or mentorship mechanics as solved unless source proof exists"
+        ]
+      },
+      "p2": {
+        "title": "People",
+        "name": "Serious leaders building cannabis business",
+        "decision": "The Chamber serves serious cannabis and hemp leaders: operators, executives, entrepreneurs, investors, policymakers, sponsors, regional leaders, ancillary partners, innovators, professional organizations, and qualified businesses looking to participate in, grow within, collaborate across, and help shape the future of the industry.",
+        "compass": "Leaders and organizations who need credible access to cannabis business: decision-makers, policy insight, partnerships, peer benchmarks, market access, leadership development, and the rooms where useful collaboration and serious opportunities form.",
+        "page_thesis": "The Chamber is for people with a real business reason to be in the room, whether they operate plant-touching businesses, invest in the market, shape policy, sponsor growth, or support the companies that do the work. The shared standard is contribution: serious people helping the industry move with more credibility, access, and economic lift.",
+        "rules_in": [
+          "Plant-touching operators: cultivators, retailers, manufacturers, processors, distributors, and lab testers",
+          "Ancillary service providers: accounting, security, IT, operations, marketing, finance, insurance, real estate, staffing, and related business services",
+          "Founders, C-suite, senior executives, growing regional brands, multi-state operators, investors, policymakers, sponsors, and professional organizations",
+          "Qualified entrants and businesses with serious intent to participate professionally",
+          "Regional leaders building local events, local networks, and regional business ecosystems",
+          "People who want to network, sell services, learn, sponsor, partner, advocate, mentor, or participate with clear contribution",
+          "Members who can create value-added relationships across operator, ancillary, sponsor, investor, policy, and regional lanes"
+        ],
+        "rules_out": [
+          "Consumer cannabis fans with no business intent",
+          "People looking only for visibility without participation",
+          "Vendors who treat the Chamber as a cold lead list",
+          "Stoner culture, lifestyle-first brands, and casual hype seekers",
+          "Anyone expecting networking to replace credibility, follow-through, or contribution",
+          "Directory browsers, optics-first participants, and beginners expecting the Chamber to be basic cannabis education without business contribution",
+          "People using \"community\" language as cover for low-effort visibility, vendor spam, or status-only access"
+        ],
+        "tradeoffs": [
+          "Executive-level positioning increases credibility but can sound closed if the Chamber does not explain who qualifies and how to participate.",
+          "Some qualified entrants need education before they can contribute; the Chamber should support them without diluting the room.",
+          "Ancillary providers create real value but can overwhelm operators if the experience becomes vendor-heavy.",
+          "A Chamber built for leaders must stay welcoming to serious professionals without becoming generic or exclusionary for its own sake.",
+          "Bringing everyone together only works if the Chamber keeps role clarity, contribution standards, and useful next steps visible."
+        ],
+        "application": {
+          "strategy": "segment audiences by relationship to cannabis business: operator, executive, ancillary partner, investor, policymaker, sponsor, regional leader, professional organization, and member.",
+          "copy": "use \"serious cannabis and hemp leaders\" or \"cannabis and hemp professionals\" depending on the surface. Use \"operators\" when speaking to plant-touching or business-leading audiences. Use \"together\" only when the copy names the business reason people are being brought together.",
+          "visuals": "balance operators, investors, service providers, policymakers, events, sponsors, and regional business environments.",
+          "sales": "qualify by intent, contribution, business fit, and value fit, not title alone.",
+          "content": "create onboarding and educational pathways for qualified entrants while maintaining standards for member behavior."
+        },
+        "proof_required": [
+          "Member examples across plant-touching and ancillary categories",
+          "Regional event participation and sponsor participation",
+          "Testimonials from operators and service providers",
+          "Evidence that newcomers can learn and enter professionally",
+          "Evidence that member participation creates useful relationships, not just attendance",
+          "Clear rules of conduct that prevent vendor spam",
+          "Proof of executive, investor, policymaker, sponsor, regional leader, and leadership-development participation before over-indexing those claims"
+        ],
+        "ai_instructions": [
+          "Prioritize leaders, operators, executives, investors, policymakers, sponsors, and decision-makers without excluding serious professionals and organizations with business intent",
+          "Explain plant-touching versus ancillary when it clarifies membership value",
+          "Keep the room professional, but do not make it feel locked or elitist",
+          "Treat people-first language as business infrastructure: who belongs, why they are there, what value they create, and how the Chamber raises the room",
+          "Never use \"everyone in cannabis\" without a business-intent qualifier",
+          "Avoid \"badge energy\" unless discussing a negative anti-persona"
+        ]
+      },
+      "p3": {
+        "title": "Purpose",
+        "name": "Accelerate profitable cannabis growth",
+        "decision": "The Chamber exists to accelerate profitable growth for cannabis and hemp businesses by expanding access to markets, leadership, partnerships, policy insight, regional and global networks, collaboration, and trusted industry relationships.",
+        "compass": "The measure is not attention. The measure is business movement: access, collaboration, leadership, economic opportunity, practical synergies, and long-term industry progress.",
+        "page_thesis": "Cannabis earns lasting legitimacy when professionals organize around higher standards, useful education, trusted relationships, advocacy, leadership development, local activity, collaboration, and measurable business opportunity.",
+        "rules_in": [
+          "Create measurable business opportunity through strategic connection, education, advocacy, market access, and events",
+          "Bring complementary industry participants together so collaboration can become business lift, not just networking activity",
+          "Help serious professionals and businesses navigate the industry credibly",
+          "Support regional networking, local business ecosystems, and globally connected industry networks",
+          "Create exposure and practical value for sponsors and participating businesses without guaranteeing outcomes",
+          "Provide advocacy, policy insight, regulatory awareness, and representation without claiming lobbying as the core activity",
+          "Build trust between plant-touching operators and ancillary partners",
+          "Build stronger executives, operators, and future industry leaders through mentorship and peer collaboration when program proof exists",
+          "Use roadmap ideas to guide strategy, not current promises"
+        ],
+        "rules_out": [
+          "Lobbying claims unless explicitly approved and source-backed",
+          "Visibility-first campaigns that do not create useful participation",
+          "Activity for activity's sake",
+          "Consumer activism, lifestyle advocacy, or culture-first cannabis messaging",
+          "Overstating market reports, directories, mentorship, badges, or sponsorship perks before they exist",
+          "Guaranteed revenue, guaranteed introductions, guaranteed leads, guaranteed sponsor outcomes, or guaranteed capital access"
+        ],
+        "tradeoffs": [
+          "Regional events create local value, but require operational consistency.",
+          "Sponsor exposure can create revenue, but must not make members feel sold to.",
+          "Advocacy and representation matter, but the Chamber must stay precise about policy engagement versus lobbying.",
+          "The free membership strategy, tier differences, and portal value are growth opportunities, not finished promises unless current product proof supports them.",
+          "Economic-growth language is stronger and more useful, but it must not sound like guaranteed financial performance.",
+          "\"Lift the industry up\" should mean stronger standards, better relationships, more credible access, and more useful economic participation, not vague inspiration."
+        ],
+        "application": {
+          "strategy": "build value around membership, networking, events, mentorship and leadership development, advocacy, regional leaders, sponsorship exposure, education, market access, and collaboration.",
+          "copy": "frame impact as access, opportunity, leadership, economic growth, credibility, collaboration, and movement. Avoid vague community claims.",
+          "visuals": "show the Chamber as active business infrastructure: events, rooms, local markets, facilities, service providers, leadership settings, sponsor moments, and regional business ecosystems.",
+          "sales": "explain the specific value of membership, events, exposure, education, advocacy insight, sponsorship, and leadership development before selling the larger vision.",
+          "content": "publish event proof, practical guides, sponsor/member stories, regional updates, policy insight, leadership content, and economic-opportunity stories."
+        },
+        "proof_required": [
+          "Events hosted, regional participation, and sponsor outcomes",
+          "Member stories tied to access, learning, or opportunity",
+          "Member or sponsor stories showing concrete collaboration, partnership, or business lift",
+          "Clear differentiation between advocacy, policy insight, representation, and lobbying",
+          "Education resources that help newcomers and professionals navigate the industry",
+          "Signals that local value comes from local networking and events",
+          "Proof of leadership development, mentorship participation, or program mechanics before presenting them as current benefits"
+        ],
+        "ai_instructions": [
+          "Use \"movement\" to mean business progress, market access, leadership, and economic opportunity, not vague inspiration",
+          "Use \"lift\" only when it is tied to standards, access, collaboration, opportunity, leadership, or credible economic progress",
+          "Do not claim lobbying unless the source explicitly changes",
+          "Do not imply future products are live",
+          "Treat regional networking, events, education, advocacy insight, and organized representation as current value",
+          "Tie purpose back to profitable growth, access, leadership, standards, opportunity, and trust"
+        ]
+      },
+      "p4": {
+        "title": "Promise",
+        "name": "Connections",
+        "decision": "Connections. The Chamber's promise is to turn serious cannabis business relationships into useful access, collaboration, and opportunity. It helps cannabis and hemp professionals show up credibly, connect constructively, learn the market, advocate responsibly, build strategic partnerships, collaborate with purpose, and create business value through trusted relationships.",
+        "compass": "Standards make connections credible. Credible connections create collaboration. Collaboration creates the business lift the Chamber is here to build.",
+        "page_thesis": "The Chamber's promise is not exclusivity for its own sake. It is a more professional way for serious operators, leaders, partners, investors, sponsors, and organizations to find the right people, build useful relationships, and move business forward with credibility, opportunity, and long-term value.",
+        "rules_in": [
+          "Meaningful relationships over visibility",
+          "Long-term credibility over hype",
+          "Leadership over noise",
+          "Sustainable growth over short-term attention",
+          "Clear expectations for events, sponsors, members, and regional leaders",
+          "Credible advocacy, policy insight, and business representation without unsupported lobbying claims",
+          "Education that helps professionals participate better",
+          "Executive networking, strategic partnerships, leadership development, and market access as standards-backed value",
+          "Collaboration with contribution: relationships that create learning, access, sponsor value, referrals, partnerships, advocacy insight, or regional opportunity",
+          "Connections that help the industry move together with more credibility, opportunity, and economic lift"
+        ],
+        "rules_out": [
+          "Filling the calendar just to look active",
+          "Treating networking as vendor access without boundaries",
+          "Using \"connections\" as a generic networking promise without business value",
+          "Diluting standards to inflate member count",
+          "Overclaiming the free membership strategy",
+          "Selling future ideas as current benefits",
+          "Chasing cannabis novelty over business trust",
+          "Making standards sound like a closed club or a status game"
+        ],
+        "tradeoffs": [
+          "Broader access requires clearer onboarding, conduct rules, and value definitions.",
+          "Standards can sound restrictive if not explained as the filter that makes connections valuable.",
+          "Local event value depends on local execution quality.",
+          "Connections can sound soft if they are not tied to standards, contribution, and business value.",
+          "The Chamber may need to say no to sponsors, events, or partners that create short-term money but weaken trust.",
+          "The stronger promise of growth and access must remain disciplined by proof and realistic claims."
+        ],
+        "application": {
+          "strategy": "every product and event decision should ask whether it creates trust, useful access, useful connections, collaboration, and business value.",
+          "copy": "explain connections in plain business language. Link connections to access, leadership, credibility, collaboration, market access, and economic opportunity.",
+          "visuals": "vary by direction, but every option must feel credible enough for a serious business audience.",
+          "sales": "separate current benefits from future ideas. Do not hide uncertainty around free-to-paid conversion, tier value, or program mechanics.",
+          "content": "turn standards into checklists, guides, event criteria, sponsor expectations, member education, leadership resources, and advocacy explainers."
+        },
+        "proof_required": [
+          "Event standards and sponsor standards",
+          "Public member expectations and code of conduct",
+          "Education and onboarding resources",
+          "Examples of how Chamber connections improve introductions, collaboration, sponsor fit, and member experience",
+          "Differentiated membership tiers when the business model is ready",
+          "Examples of advocacy, policy insight, or professional representation without unsupported lobbying claims",
+          "Examples of leadership development or mentorship only when the offering is real enough to describe"
+        ],
+        "ai_instructions": [
+          "Default frame: connections become valuable when standards make them credible",
+          "Use contrasts from source: relationships over visibility, credibility over hype, leadership over noise, sustainable growth over short-term attention",
+          "Do not make standards sound like a closed club",
+          "Make \"bringing people together\" conditional on contribution, credibility, and business usefulness",
+          "Do not claim the monetization model is solved",
+          "Do not turn access, advocacy, or leadership language into guaranteed business outcomes"
+        ]
+      },
+      "p5": {
+        "title": "Personality",
+        "name": "Operator-led institution",
+        "decision": "Professional, confident, credible, and direct. Operator-led, standards-driven, rational, transparent, business-first, and welcoming to serious operators, leaders, partners, and organizations focused on outcomes, collaboration, and long-term industry progress.",
+        "compass": "Business-first, standards-led, authoritative, useful, and transparent. The Chamber sounds like an institution that helps serious people access the room, understand the market, collaborate with purpose, and move business forward.",
+        "page_thesis": "The Chamber's voice is the public signal that cannabis business can be serious, accessible, credible, economically useful, collaborative, and leadership-driven at the same time.",
+        "rules_in": [
+          "Professional, confident, credible, and direct",
+          "Clear over clever",
+          "Authoritative over performative",
+          "Strategic over promotional",
+          "Useful over inspirational",
+          "Welcoming to serious operators, leaders, partners, and qualified professionals",
+          "Plain business language",
+          "Transparent distinctions: operator, executive, investor, policymaker, ancillary partner, sponsor, regional leader, member, qualified entrant",
+          "Practical optimism grounded in real business value",
+          "Uplifting language when it is attached to credible business movement, collaboration, and standards",
+          "Preferred vocabulary: authority, momentum, access, influence, connection, credibility, advocacy, growth, leadership, infrastructure, opportunity, economic power, collective strength, stewardship, progress, commerce, enterprise, trade, industry, capital, partnership, policy, regional power, market access, representation, economic development, collective voice"
+        ],
+        "rules_out": [
+          "Consumer cannabis culture",
+          "Hype-driven or trend-chasing language",
+          "Lifestyle-first framing",
+          "Visibility-first promises",
+          "Generic networking cliches",
+          "Corporate theater",
+          "Stoner culture cues, weed puns, smoke, 420 references, and leaf cliches",
+          "Unsupported lobbying claims",
+          "\"Family\" or vague community language without a concrete business meaning",
+          "\"Together\" or \"community\" language without a clear business reason, contribution standard, or next step",
+          "Exclusivity for the sake of exclusivity",
+          "Startup jargon, vague inspiration, or cannabis novelty"
+        ],
+        "tradeoffs": [
+          "More accessible language must not dilute the executive-level and decision-maker signal.",
+          "More energetic creative directions must still preserve business seriousness.",
+          "Organic or community-led creative directions must not become soft, wellness-coded, or vague.",
+          "People-first language must not become generic warmth. It has to show who is connecting, why it matters, and what business value it creates.",
+          "Formal creative directions must not make the Chamber feel closed to newcomers.",
+          "Advocacy and influence language must stay credible and not imply legal or political outcomes the Chamber has not proven."
+        ],
+        "application": {
+          "strategy": "voice should help the right person understand how to participate.",
+          "copy": "direct, useful, and business-specific. Lead with standards, opportunity, leadership, collaboration, business value, industry advancement, and economic impact.",
+          "visuals": "three direction territories may explore different emotional registers, but all must preserve professional credibility.",
+          "sales": "show the next action clearly: become a member, join the network, view events, explore leadership programs, get involved, sponsor, learn, or contact.",
+          "content": "",
+          "website": "clear membership and event value",
+          "email": "direct subject lines and specific calls to action",
+          "social": "useful industry participation, event proof, member stories, and sponsor visibility",
+          "sales_deck": "business value, exposure, executive networking, advocacy insight, leadership development, education, and proof"
+        },
+        "proof_required": [
+          "Published Chamber copy demonstrating professional welcome without hype",
+          "Event and membership language that avoids vendor spam",
+          "Copy and proof examples that make connection and collaboration tangible",
+          "Member proof across plant-touching and ancillary categories",
+          "Voice exemplars maintained as the canonical bank",
+          "Page copy for Membership, Networking, Events, Mentorship, and Advocacy that proves the stronger positioning without overclaiming benefits"
+        ],
+        "ai_instructions": [
+          "Address serious cannabis and hemp professionals, leaders, operators, executives, investors, policymakers, sponsors, regional leaders, and ancillary partners",
+          "Use preferred vocabulary: standards, access, professionals, operators, decision-makers, sponsors, regional leaders, events, education, advocacy, policy insight, market access, collaboration, business value, trusted relationships, opportunity, leadership, economic growth, collective voice, enterprise, and commerce",
+          "Avoid banned language: unsupported lobbying, stoner cues, weed puns, hype, disruption, vague community, visibility-first copy, cheap exclusivity, generic networking, and consumer cannabis lifestyle",
+          "Apply linguistic rules: concise declarative sentences, plain business language, and specific business value",
+          "When in doubt, make the Chamber useful before making it impressive"
+        ]
+      }
+    }
+  },
+  "differentiation": {
+    "positioning_statement": "",
+    "positioning_note": "",
+    "differentiators": [],
+    "errc": {}
+  },
+  "identity": {
+    "description": "Approved Section B identity: the Common Ground direction carried by the D2\nthree-C mark. Three C modules convene around one brass dot; the palette is\nmeasured from the approved D2 source (forest, teal, coral, brass, ivory).\nBright belonging with a business standard. Visuals must still avoid stoner\ncues, consumer lifestyle tropes, smoke, 420 language, and cannabis leaf\nclichés.\n",
+    "colors": {
+      "accent": "#2D432B",
+      "accent_glow": "rgba(45, 67, 43, 0.22)",
+      "accent_soft": "rgba(45, 67, 43, 0.06)",
+      "text": "#1C2420",
+      "muted": "#6C6E61",
+      "border": "#D9D1C1",
+      "light": "#F1E8D8",
+      "white": "#FFFFFF",
+      "dark": "#1C2420",
+      "dark_surface": "#252E29"
+    },
+    "typography": {
+      "display": {
+        "family": "Outfit",
+        "fallback": "system-ui, sans-serif",
+        "weights": [
+          500,
+          600,
+          700
+        ],
+        "default_weight": 600,
+        "letter_spacing": "0",
+        "line_height": 1.05,
+        "note": "Proposal ratified with this Section B review. Outfit is geometric and monoline; its C is essentially a circle with radial terminals so it echoes the mark's construction. Wght 600 is the wordmark face; using it for display keeps one voice from logo to headline. OFL licensed, variable axis available."
+      },
+      "body": {
+        "family": "Public Sans",
+        "fallback": "system-ui, sans-serif",
+        "weights": [
+          400,
+          600
+        ],
+        "default_weight": 400,
+        "line_height": 1.7,
+        "note": "Proposal ratified with this Section B review. A standards-bred workhorse (built for USWDS) that reads operational and human at credential, signage, and form sizes. OFL licensed."
+      }
+    },
+    "creative_direction": {
+      "status": "selected",
+      "direction": "Common Ground (Direction 3, the-tribe) with the approved D2 mark",
+      "approved": "2026-06-12 via T-225 gates 1-2; route rationale in LOGO-D2-APPROVED-ROUTE.md",
+      "note": "Sliders carried verbatim from the approved Direction 3 spec in DIRECTIONS.md. Palette execution is deeper than the original proposal palette: the measured D2 source colors supersede the draft Lift Green system.",
+      "brand_style_sliders": [
+        {
+          "axis": "Classic|Modern",
+          "position": 72,
+          "material": true
+        },
+        {
+          "axis": "Mature|Youthful",
+          "position": 52,
+          "material": true
+        },
+        {
+          "axis": "Formal|Energetic",
+          "position": 74,
+          "material": true
+        },
+        {
+          "axis": "Institutional|Human",
+          "position": 82,
+          "material": true
+        },
+        {
+          "axis": "Quiet|Talkative",
+          "position": 64,
+          "material": true
+        },
+        {
+          "axis": "Muted|Vibrant",
+          "position": 80,
+          "material": true
+        },
+        {
+          "axis": "Minimal|Expressive",
+          "position": 68,
+          "material": true
+        },
+        {
+          "axis": "Literal|Abstract",
+          "position": 72,
+          "material": true
+        },
+        {
+          "axis": "Traditional|Inventive",
+          "position": 70,
+          "material": true
+        },
+        {
+          "axis": "Closed|Accessible",
+          "position": 92,
+          "material": true
+        }
+      ],
+      "slider_signals": {
+        "schema_version": "1.0.0",
+        "be_this": [
+          {
+            "word": "Accessible",
+            "weight": 42,
+            "source": "axis Closed|Accessible p=92"
+          },
+          {
+            "word": "Human",
+            "weight": 32,
+            "source": "axis Institutional|Human p=82"
+          },
+          {
+            "word": "Vibrant",
+            "weight": 30,
+            "source": "axis Muted|Vibrant p=80"
+          },
+          {
+            "word": "Energetic",
+            "weight": 24,
+            "source": "axis Formal|Energetic p=74"
+          },
+          {
+            "word": "Abstract",
+            "weight": 22,
+            "source": "axis Literal|Abstract p=72"
+          },
+          {
+            "word": "Modern",
+            "weight": 22,
+            "source": "axis Classic|Modern p=72"
+          },
+          {
+            "word": "Inventive",
+            "weight": 20,
+            "source": "axis Traditional|Inventive p=70"
+          },
+          {
+            "word": "Expressive",
+            "weight": 18,
+            "source": "axis Minimal|Expressive p=68"
+          },
+          {
+            "word": "Talkative",
+            "weight": 14,
+            "source": "axis Quiet|Talkative p=64"
+          },
+          {
+            "word": "Youthful",
+            "weight": 2,
+            "source": "axis Mature|Youthful p=52"
+          }
+        ],
+        "dont_be_this": [
+          {
+            "word": "Closed",
+            "weight": -42,
+            "source": "axis Closed|Accessible p=92"
+          },
+          {
+            "word": "Institutional",
+            "weight": -32,
+            "source": "axis Institutional|Human p=82"
+          },
+          {
+            "word": "Muted",
+            "weight": -30,
+            "source": "axis Muted|Vibrant p=80"
+          },
+          {
+            "word": "Formal",
+            "weight": -24,
+            "source": "axis Formal|Energetic p=74"
+          },
+          {
+            "word": "Classic",
+            "weight": -22,
+            "source": "axis Classic|Modern p=72"
+          },
+          {
+            "word": "Literal",
+            "weight": -22,
+            "source": "axis Literal|Abstract p=72"
+          },
+          {
+            "word": "Traditional",
+            "weight": -20,
+            "source": "axis Traditional|Inventive p=70"
+          },
+          {
+            "word": "Minimal",
+            "weight": -18,
+            "source": "axis Minimal|Expressive p=68"
+          },
+          {
+            "word": "Quiet",
+            "weight": -14,
+            "source": "axis Quiet|Talkative p=64"
+          },
+          {
+            "word": "Mature",
+            "weight": -2,
+            "source": "axis Mature|Youthful p=52"
+          }
+        ],
+        "ignore_axes": [],
+        "headline_keywords": [],
+        "anti_tropes": [],
+        "force_active": [],
+        "force_inactive": [],
+        "warnings": []
+      }
+    },
+    "voice": "Voice is part of brand identity. The strategic decision about Personality (P5) lives in the brand strategy; the operational voice rules live here. See the voice exemplar bank for the full paired set of examples.\n\n### Principles\n\n- Rational over emotional\n- Institutional over casual\n- Clear over clever\n- Transparent over polished\n- Authoritative over playful\n- Welcoming but selective\n- Serious without being cold\n- Lead with the standard, then the reason\n- Plain business language over marketing language\n- Concise declarative sentences\n- Contrast moves: standards over novelty, movement over reach, leverage over visibility, deals over drinks, insight over impressions\n- Operator-led practicality: speak like people responsible for outcomes, not consultants\n\n### Banned characters\n\n- em-dash (U+2014)\n- en-dash (U+2013)\n\n(Plain hyphen-minus `-` is fine in compound words, list bullets, signatures, ranges, and titles.)\n\n### Banned phrases\n\n- \"Cannabis disruption\" / \"We're disrupting cannabis\"\n- \"Vibes\" as a measure of value\n- \"Family\" as vague community language\n- \"Welcome to the community\" without specifying who fits\n- \"Stoner\" / \"weed\" / \"420\" references in serious copy\n- \"Get seen\" / \"Stand out\" / visibility-first framing\n- Generic networking phrases (\"connect with industry insiders,\" \"tap into our network\")\n- \"Disrupt\" / \"unlock\" / \"leverage\" as marketing buzzwords\n\n### Emojis\n\nDefault: no emojis in Chamber content. Approved exceptions:\n\n- Standard business or check-mark emojis (e.g., ✅) in social-media copy only\n- No decorative emoji stacks. One per post maximum.\n\n### Signatures (CCC-specific)\n\n- Long-form openers: state the standard or the contrast in the first sentence\n- Long-form closers: name the action the reader takes (apply, attend, contact)\n- The Chamber's institutional voice does not use first-person founder signatures\n\n### Voice exemplars (brief)\n\nFor the full exemplar bank, see the voice exemplar bank.\n\n**On-voice signals:**\n- \"Serious operators do not need more noise. They need the right room, the right context, and the right standard.\": direct, declarative, operator-addressed\n- \"The Chamber exists to move cannabis business forward, not to fill another calendar.\": contrast move, business outcomes framed against activity\n- \"Standards first. Novelty second. Everything else is decoration.\": triplet rhythm, blunt closure, sets the operating principle\n- \"Deals over drinks. Insight over impressions. Movement over reach. That is the business standard the Chamber is here to raise.\": contrast triplet + restated standard\n\n**Off-voice traps:**\n- \"Join the hottest cannabis networking community and vibe with industry insiders.\": consumer hype, generic networking, lifestyle cue\n- \"We're here to disrupt cannabis with next-level events and amazing connections.\": disruption claim without proof, vague \"amazing,\" marketing fluff\n- \"Get seen by everyone in the cannabis space.\": visibility-first, \"everyone\" overreach, anti-thesis of the Chamber",
+    "section_titles": [
+      "1. Visual Theme & Atmosphere",
+      "2. Color Palette & Roles",
+      "3. Typography Rules",
+      "4. Component Stylings",
+      "5. Layout Principles",
+      "6. Do's and Don'ts",
+      "Photography Rules",
+      "Anti-references",
+      "Voice"
+    ]
+  },
+  "directions": {
+    "status": "proposal",
+    "pages": [
+      {
+        "href": "index.html",
+        "label": "Direction Three",
+        "slug": "the-tribe"
+      },
+      {
+        "href": "exploration.html",
+        "label": "Exploration",
+        "slug": "exploration"
+      },
+      {
+        "href": "look-and-feel.html",
+        "label": "Look & Feel",
+        "slug": "look-and-feel"
+      },
+      {
+        "href": "voice.html",
+        "label": "Voice",
+        "slug": "voice"
+      },
+      {
+        "href": "logo.html",
+        "label": "Logo",
+        "slug": "logo"
+      },
+      {
+        "href": "signature.html",
+        "label": "Signature",
+        "slug": "signature"
+      }
+    ],
+    "options": [
+      {
+        "slug": "the-crew",
+        "label": "Direction One",
+        "working_name": "The Crew",
+        "system_name": "Switchboard",
+        "status": "negative_evidence",
+        "client_visible": false,
+        "source_note": "Hidden from active review after Chris/Cortney feedback. Use only as negative evidence for tech-hardware and startup-networking drift.",
+        "creative_board": "generated-boards/crew-creative-board.png",
+        "creative_board_label": "Generated board: The Crew / Switchboard",
+        "thesis": "A high-energy access network for cannabis professionals who need the next useful room: operators, service providers, sponsors, regional leaders, and serious newcomers. It feels active, civic, and event-ready without becoming startup cute.",
+        "strategic_read": "The Crew turns the Chamber into a living switchboard for cannabis business. The brand does not ask people to admire the institution from far away. It helps them find the right room, table, person, sponsor lane, or learning path quickly.",
+        "best_for": "Membership growth, regional events, sponsor visibility, social promotion, onboarding, and a website that needs to make participation feel obvious.",
+        "risk": "If pushed too colorful, it can feel like a tech meetup instead of a Chamber. The system needs strong black structure and direct business copy to keep authority.",
+        "operating_idea": "Useful energy. Every surface should answer one question: what can I do next?",
+        "creative_platform": {
+          "idea": "The Chamber as a live switchboard for access.",
+          "world": "Event floor, sponsor booth, regional meetup, and operator conversation all connected by one visible system.",
+          "feeling": "Fast, welcoming, practical, and slightly charged.",
+          "behavior": "Use color as routing, not decoration. Every color marks a role, action, or event state.",
+          "line": "Find the room. Meet the market.",
+          "not_this": "Not Google colors, not conference confetti, not startup networking fluff."
+        },
+        "sliders": [
+          {
+            "axis": "Classic|Modern",
+            "position": 88,
+            "material": true
+          },
+          {
+            "axis": "Mature|Youthful",
+            "position": 52,
+            "material": true
+          },
+          {
+            "axis": "Formal|Energetic",
+            "position": 86,
+            "material": true
+          },
+          {
+            "axis": "Institutional|Human",
+            "position": 70,
+            "material": true
+          },
+          {
+            "axis": "Quiet|Talkative",
+            "position": 78,
+            "material": true
+          },
+          {
+            "axis": "Muted|Vibrant",
+            "position": 82,
+            "material": true
+          },
+          {
+            "axis": "Minimal|Expressive",
+            "position": 66,
+            "material": true
+          },
+          {
+            "axis": "Literal|Abstract",
+            "position": 58,
+            "material": true
+          },
+          {
+            "axis": "Traditional|Inventive",
+            "position": 84,
+            "material": true
+          },
+          {
+            "axis": "Closed|Accessible",
+            "position": 92,
+            "material": true
+          }
+        ],
+        "palette": [
+          {
+            "name": "Switch Blue",
+            "hex": "#2454FF",
+            "role": "Primary routing color for actions, links, and event modules."
+          },
+          {
+            "name": "Operator Black",
+            "hex": "#101828",
+            "role": "Authority, type, dark panels, and the anchor that prevents startup cheer."
+          },
+          {
+            "name": "Badge Red",
+            "hex": "#FF4F64",
+            "role": "High-attention event moments, badges, speaker highlights, and urgent CTAs."
+          },
+          {
+            "name": "Sponsor Gold",
+            "hex": "#FFC233",
+            "role": "Sponsor exposure, opportunity markers, and premium visibility moments."
+          },
+          {
+            "name": "Signal Cyan",
+            "hex": "#36C4FF",
+            "role": "Education, newcomer paths, and digital wayfinding."
+          },
+          {
+            "name": "Cloud White",
+            "hex": "#F6F9FF",
+            "role": "Primary canvas for web, collateral, and information-dense pages."
+          }
+        ],
+        "typography": {
+          "display": "Barlow Condensed, heavy, compressed, event-poster direct.",
+          "display_stack": "\"Barlow Condensed\", \"Arial Narrow\", system-ui, sans-serif",
+          "body": "Chivo, practical and sturdy, built for schedules, labels, and sponsor decks.",
+          "body_stack": "\"Chivo\", system-ui, sans-serif",
+          "use": "Best for event flyers, quick-scan pages, sponsor packages, regional calendars, and practical onboarding."
+        },
+        "logos": [
+          {
+            "filename": "generated-boards/crew-logo-concept.png",
+            "label": "Generated logo and signature concepts"
+          }
+        ],
+        "signature": {
+          "name": "The Routing Strip",
+          "description": "A directional bar and node system. It signs event pages, sponsor blocks, badges, and social cards by turning the Chamber into a visible access map."
+        },
+        "moodboard": [
+          {
+            "filename": "generated-boards/crew-mood-01-logo.png",
+            "label": "Logo and routing system"
+          },
+          {
+            "filename": "generated-boards/crew-mood-02-flyer.png",
+            "label": "Regional event flyer"
+          },
+          {
+            "filename": "generated-boards/crew-mood-03-badge.png",
+            "label": "Member credential"
+          },
+          {
+            "filename": "generated-boards/crew-mood-04-backdrop.png",
+            "label": "Sponsor stage backdrop"
+          },
+          {
+            "filename": "generated-boards/crew-mood-05-event-room.png",
+            "label": "Event room energy"
+          }
+        ],
+        "applications": [
+          {
+            "kind": "event-flyer",
+            "image": "generated-boards/crew-app-flyer.png",
+            "image_alt": "Generated Crew event flyer mockup",
+            "title": "Event flyer",
+            "role": "Primary promotion surface for regional networking events.",
+            "format": "4:5 social / print crop",
+            "headline": "Where cannabis business connects",
+            "subhead": "Operators, service providers, sponsors, and serious newcomers in one practical room.",
+            "meta": "Los Angeles | Sept 18 | 6 PM",
+            "cta": "Attend or sponsor",
+            "production_note": "Flyers use routing color, one strong CTA, and zero lifestyle imagery.",
+            "system_notes": [
+              "route by color",
+              "big action line",
+              "event-first"
+            ]
+          },
+          {
+            "kind": "badge",
+            "image": "generated-boards/crew-app-badge.png",
+            "image_alt": "Generated Crew member badge mockup",
+            "title": "Member badge",
+            "role": "On-site credential that makes roles legible across a noisy event floor.",
+            "format": "3 x 4.5 in",
+            "name": "Maya Rivera",
+            "company": "North Coast Retail Group",
+            "attendee_role": "Plant-touching operator",
+            "tags": [
+              "operator",
+              "retail",
+              "regional"
+            ],
+            "production_note": "Name first, role second, Chamber system visible.",
+            "system_notes": [
+              "role color",
+              "fast scan",
+              "network utility"
+            ]
+          },
+          {
+            "kind": "sponsor-backdrop",
+            "image": "generated-boards/crew-app-backdrop.png",
+            "image_alt": "Generated Crew sponsor backdrop mockup",
+            "title": "Sponsor backdrop",
+            "role": "Step-and-repeat and stage wall for sponsor exposure without cheap logo wallpaper.",
+            "format": "16:9 stage",
+            "headline": "Access has a standard",
+            "sponsor": "Presented with regional sponsors",
+            "production_note": "Keep a clean center for people, use repeating routing marks at low opacity.",
+            "system_notes": [
+              "clean center",
+              "photo-ready",
+              "sponsor value"
+            ]
+          },
+          {
+            "kind": "business-card",
+            "image": "generated-boards/crew-app-card.png",
+            "image_alt": "Generated Crew business card mockup",
+            "title": "Business card",
+            "role": "Chamber team and regional leader card system.",
+            "format": "3.5 x 2 in",
+            "name": "Regional Lead",
+            "company": "The Cannabis Chamber of Commerce",
+            "meta": "events | membership | sponsorship",
+            "detail": "Join | Attend | Sponsor",
+            "production_note": "Cards behave like access passes, not corporate stationery.",
+            "system_notes": [
+              "short actions",
+              "routing strip",
+              "black anchor"
+            ]
+          }
+        ],
+        "production_references": [
+          {
+            "title": "Event landing page",
+            "description": "Hero with one city, one date, one action, then audience routes for operator, ancillary, sponsor, and newcomer."
+          },
+          {
+            "title": "Sponsor kit",
+            "description": "Tier cards use color as visibility level and explain exposure without promising outcomes."
+          },
+          {
+            "title": "Regional calendar",
+            "description": "Dense, scannable event list with location, audience, and CTA hierarchy."
+          }
+        ],
+        "ai_generation_rules": [
+          "Use Cannabis Chamber Of Commerce as the public wordmark. Do not use CCC on public-facing artifacts.",
+          {
+            "Make the next useful action obvious": "join, attend, sponsor, learn, or get involved."
+          },
+          "Use color to route audience roles, event states, sponsor areas, and content categories.",
+          "Pair high energy with black structure and plain business language.",
+          "Show events as useful rooms, not parties.",
+          "Keep cannabis references professional, abstract, and secondary."
+        ],
+        "avoid": [
+          "Google imitation, tech-startup cheer, or rainbow confetti.",
+          "Networking hype without a concrete business action.",
+          "Cannabis leaf icons, smoke, neon, or 420 cues.",
+          "Sponsor claims that imply guaranteed leads or outcomes."
+        ],
+        "slider_signals": {
+          "schema_version": "1.0.0",
+          "be_this": [
+            {
+              "word": "Accessible",
+              "weight": 42,
+              "source": "axis Closed|Accessible p=92"
+            },
+            {
+              "word": "Modern",
+              "weight": 38,
+              "source": "axis Classic|Modern p=88"
+            },
+            {
+              "word": "Energetic",
+              "weight": 36,
+              "source": "axis Formal|Energetic p=86"
+            },
+            {
+              "word": "Inventive",
+              "weight": 34,
+              "source": "axis Traditional|Inventive p=84"
+            },
+            {
+              "word": "Vibrant",
+              "weight": 32,
+              "source": "axis Muted|Vibrant p=82"
+            },
+            {
+              "word": "Talkative",
+              "weight": 28,
+              "source": "axis Quiet|Talkative p=78"
+            },
+            {
+              "word": "Human",
+              "weight": 20,
+              "source": "axis Institutional|Human p=70"
+            },
+            {
+              "word": "Expressive",
+              "weight": 16,
+              "source": "axis Minimal|Expressive p=66"
+            },
+            {
+              "word": "Abstract",
+              "weight": 8,
+              "source": "axis Literal|Abstract p=58"
+            },
+            {
+              "word": "Youthful",
+              "weight": 2,
+              "source": "axis Mature|Youthful p=52"
+            }
+          ],
+          "dont_be_this": [
+            {
+              "word": "Closed",
+              "weight": -42,
+              "source": "axis Closed|Accessible p=92"
+            },
+            {
+              "word": "Classic",
+              "weight": -38,
+              "source": "axis Classic|Modern p=88"
+            },
+            {
+              "word": "Formal",
+              "weight": -36,
+              "source": "axis Formal|Energetic p=86"
+            },
+            {
+              "word": "Traditional",
+              "weight": -34,
+              "source": "axis Traditional|Inventive p=84"
+            },
+            {
+              "word": "Muted",
+              "weight": -32,
+              "source": "axis Muted|Vibrant p=82"
+            },
+            {
+              "word": "Quiet",
+              "weight": -28,
+              "source": "axis Quiet|Talkative p=78"
+            },
+            {
+              "word": "Institutional",
+              "weight": -20,
+              "source": "axis Institutional|Human p=70"
+            },
+            {
+              "word": "Minimal",
+              "weight": -16,
+              "source": "axis Minimal|Expressive p=66"
+            },
+            {
+              "word": "Literal",
+              "weight": -8,
+              "source": "axis Literal|Abstract p=58"
+            },
+            {
+              "word": "Mature",
+              "weight": -2,
+              "source": "axis Mature|Youthful p=52"
+            }
+          ],
+          "ignore_axes": [],
+          "headline_keywords": [],
+          "anti_tropes": [],
+          "force_active": [],
+          "force_inactive": [],
+          "warnings": []
+        }
+      },
+      {
+        "slug": "the-posse",
+        "label": "Direction Two",
+        "working_name": "The Posse",
+        "system_name": "Charter Table",
+        "status": "negative_evidence",
+        "client_visible": false,
+        "source_note": "Hidden from active review after Chris/Cortney feedback. Use only as negative evidence for award-winning, competitive, old-money, and closed-room drift.",
+        "creative_board": "generated-boards/posse-creative-board.png",
+        "creative_board_label": "Generated board: The Posse / Charter Table",
+        "thesis": "A formal private-table direction for a Chamber that wants authority, ceremony, and sponsor gravity. It borrows the feeling of old business rituals without mafia cosplay, intimidation, or costume.",
+        "strategic_read": "The Posse makes the Chamber feel like the room where trust is conferred. Membership, sponsorship, and event participation become visible signals of seriousness, but the door is still open to professionals who are willing to meet the standard.",
+        "best_for": "Premium sponsor sales, board briefings, certificates, investor-facing events, high-value dinners, and formal regional leadership moments.",
+        "risk": "If overplayed, it can feel closed or theatrical. The copy must stay transparent and the design must signal earned trust, not secrecy.",
+        "operating_idea": "An invitation with weight. The Chamber is the table, the charter, and the witness.",
+        "creative_platform": {
+          "idea": "The Chamber as a table where business credibility is witnessed.",
+          "world": "Private dining room, printed charter, sponsor plaque, embossed badge, and official event wall.",
+          "feeling": "Serious, composed, premium, and deliberate.",
+          "behavior": "Use seals, rules, margins, and signatures as proof mechanics rather than decoration.",
+          "line": "Take your seat at the standard.",
+          "not_this": "Not crime-coded, not cigar-room cosplay, not elitism for its own sake."
+        },
+        "sliders": [
+          {
+            "axis": "Classic|Modern",
+            "position": 24,
+            "material": true
+          },
+          {
+            "axis": "Mature|Youthful",
+            "position": 12,
+            "material": true
+          },
+          {
+            "axis": "Formal|Energetic",
+            "position": 18,
+            "material": true
+          },
+          {
+            "axis": "Institutional|Human",
+            "position": 40,
+            "material": true
+          },
+          {
+            "axis": "Quiet|Talkative",
+            "position": 16,
+            "material": true
+          },
+          {
+            "axis": "Muted|Vibrant",
+            "position": 28,
+            "material": true
+          },
+          {
+            "axis": "Minimal|Expressive",
+            "position": 72,
+            "material": true
+          },
+          {
+            "axis": "Literal|Abstract",
+            "position": 38,
+            "material": true
+          },
+          {
+            "axis": "Traditional|Inventive",
+            "position": 34,
+            "material": true
+          },
+          {
+            "axis": "Open|Discreet",
+            "position": 78,
+            "material": true
+          }
+        ],
+        "palette": [
+          {
+            "name": "Charter Copper",
+            "hex": "#B77A32",
+            "role": "Seal strokes, rules, premium sponsor emphasis, and official marks."
+          },
+          {
+            "name": "Table Black",
+            "hex": "#14110F",
+            "role": "Main authority field, type, event wall, and formal contrast."
+          },
+          {
+            "name": "Oath Plum",
+            "hex": "#6E213B",
+            "role": "Rare dramatic emphasis for invitations, premium badges, and dinner events."
+          },
+          {
+            "name": "Vellum",
+            "hex": "#F4E7D1",
+            "role": "Paper, certificates, event invites, and business-card canvas."
+          },
+          {
+            "name": "Pewter",
+            "hex": "#8E98A8",
+            "role": "Secondary copy, metal detail, and neutral sponsor grid lines."
+          },
+          {
+            "name": "Ledger Blue",
+            "hex": "#303B4A",
+            "role": "Alternate formal field for digital and presentation surfaces."
+          }
+        ],
+        "typography": {
+          "display": "Bodoni Moda, severe and ceremonial, used large with disciplined margins.",
+          "display_stack": "\"Bodoni Moda\", Georgia, serif",
+          "body": "Libre Baskerville, document-grade and readable in formal print.",
+          "body_stack": "\"Libre Baskerville\", Georgia, serif",
+          "use": "Best for invitations, sponsor decks, plaques, certificates, formal event pages, and leadership dinners."
+        },
+        "logos": [
+          {
+            "filename": "generated-boards/posse-logo-concept.png",
+            "label": "Generated logo and signature concepts"
+          }
+        ],
+        "signature": {
+          "name": "The Charter Seal",
+          "description": "A seal, rule, and witness-line system. It gives sponsor walls, certificates, and event invitations a sense of formal recognition without pretending to be a government body."
+        },
+        "moodboard": [
+          {
+            "filename": "generated-boards/posse-mood-01-logo.png",
+            "label": "Seal and charter system"
+          },
+          {
+            "filename": "generated-boards/posse-mood-02-invite.png",
+            "label": "Formal event invitation"
+          },
+          {
+            "filename": "generated-boards/posse-mood-03-badge.png",
+            "label": "Member credential"
+          },
+          {
+            "filename": "generated-boards/posse-mood-04-backdrop.png",
+            "label": "Sponsor stage backdrop"
+          },
+          {
+            "filename": "generated-boards/posse-mood-05-roundtable.png",
+            "label": "Formal roundtable mood"
+          }
+        ],
+        "applications": [
+          {
+            "kind": "event-flyer",
+            "image": "generated-boards/posse-app-flyer.png",
+            "image_alt": "Generated Posse event invitation mockup",
+            "title": "Event invitation",
+            "role": "Premium dinner, leadership roundtable, or sponsor-only preview invitation.",
+            "format": "5 x 7 in / digital invite",
+            "headline": "The table is open",
+            "subhead": "A formal room for cannabis operators, sponsors, and regional business leaders.",
+            "meta": "Private roundtable | Denver | Oct 22",
+            "cta": "Request an invitation",
+            "production_note": "Invitation language must feel selective but not exclusionary.",
+            "system_notes": [
+              "wide margins",
+              "seal first",
+              "formal CTA"
+            ]
+          },
+          {
+            "kind": "badge",
+            "image": "generated-boards/posse-app-badge.png",
+            "image_alt": "Generated Posse member credential mockup",
+            "title": "Member credential",
+            "role": "Premium event badge that doubles as a visible trust signal.",
+            "format": "3 x 4.5 in",
+            "name": "Marcus Hale",
+            "company": "Hale Security Operations",
+            "attendee_role": "Ancillary partner",
+            "tags": [
+              "partner",
+              "security",
+              "sponsor"
+            ],
+            "production_note": "Badge feels like a credential, not a name tag.",
+            "system_notes": [
+              "seal header",
+              "large name",
+              "earned role"
+            ]
+          },
+          {
+            "kind": "sponsor-backdrop",
+            "image": "generated-boards/posse-app-backdrop.png",
+            "image_alt": "Generated Posse sponsor backdrop mockup",
+            "title": "Sponsor backdrop",
+            "role": "Photo wall and stage field for high-value sponsors.",
+            "format": "16:9 stage",
+            "headline": "Standards at the table",
+            "sponsor": "Founding sponsor recognition",
+            "production_note": "Use negative space and seal rhythm. No busy wallpaper.",
+            "system_notes": [
+              "plaque rhythm",
+              "photo center",
+              "premium sponsor"
+            ]
+          },
+          {
+            "kind": "business-card",
+            "image": "generated-boards/posse-app-card.png",
+            "image_alt": "Generated Posse business card mockup",
+            "title": "Business card",
+            "role": "Executive, board, and regional leadership card system.",
+            "format": "3.5 x 2 in",
+            "name": "Regional Director",
+            "company": "The Cannabis Chamber of Commerce",
+            "meta": "membership | sponsorship | leadership",
+            "detail": "The table, the charter, the standard",
+            "production_note": "Feels like a formal calling card.",
+            "system_notes": [
+              "vellum",
+              "copper rule",
+              "seal detail"
+            ]
+          }
+        ],
+        "production_references": [
+          {
+            "title": "Sponsor prospectus",
+            "description": "A formal packet that explains exposure, event presence, and credibility without promising sales outcomes."
+          },
+          {
+            "title": "Member certificate",
+            "description": "A recognition artifact for approved members or sponsors after a real standard is defined."
+          },
+          {
+            "title": "Leadership dinner kit",
+            "description": "Invitation, place card, stage signage, and follow-up brief as one coherent event system."
+          }
+        ],
+        "ai_generation_rules": [
+          "Use Cannabis Chamber Of Commerce as the public wordmark. Do not use CCC on public-facing artifacts.",
+          "Use formality to signal trust, not exclusion.",
+          "Make every seal, rule, or certificate element connect to a real standard or event role.",
+          "Keep copy transparent, direct, and respectful.",
+          "Treat sponsors as recognized participants, not buyers of empty prestige.",
+          "Use warm materials sparingly and with sharp structure."
+        ],
+        "avoid": [
+          "Mafia cosplay, crime language, intimidation, secrecy, or gimmicks.",
+          "Empty luxury signals without business value.",
+          "Closed-room language that makes serious newcomers feel unwelcome.",
+          "Government or lobbying implication."
+        ],
+        "slider_signals": {
+          "schema_version": "1.0.0",
+          "be_this": [
+            {
+              "word": "Mature",
+              "weight": 38,
+              "source": "axis Mature|Youthful p=12"
+            },
+            {
+              "word": "Quiet",
+              "weight": 34,
+              "source": "axis Quiet|Talkative p=16"
+            },
+            {
+              "word": "Formal",
+              "weight": 32,
+              "source": "axis Formal|Energetic p=18"
+            },
+            {
+              "word": "Discreet",
+              "weight": 28,
+              "source": "axis Open|Discreet p=78"
+            },
+            {
+              "word": "Classic",
+              "weight": 26,
+              "source": "axis Classic|Modern p=24"
+            },
+            {
+              "word": "Expressive",
+              "weight": 22,
+              "source": "axis Minimal|Expressive p=72"
+            },
+            {
+              "word": "Muted",
+              "weight": 22,
+              "source": "axis Muted|Vibrant p=28"
+            },
+            {
+              "word": "Traditional",
+              "weight": 16,
+              "source": "axis Traditional|Inventive p=34"
+            },
+            {
+              "word": "Literal",
+              "weight": 12,
+              "source": "axis Literal|Abstract p=38"
+            },
+            {
+              "word": "Institutional",
+              "weight": 10,
+              "source": "axis Institutional|Human p=40"
+            }
+          ],
+          "dont_be_this": [
+            {
+              "word": "Youthful",
+              "weight": -38,
+              "source": "axis Mature|Youthful p=12"
+            },
+            {
+              "word": "Talkative",
+              "weight": -34,
+              "source": "axis Quiet|Talkative p=16"
+            },
+            {
+              "word": "Energetic",
+              "weight": -32,
+              "source": "axis Formal|Energetic p=18"
+            },
+            {
+              "word": "Open",
+              "weight": -28,
+              "source": "axis Open|Discreet p=78"
+            },
+            {
+              "word": "Modern",
+              "weight": -26,
+              "source": "axis Classic|Modern p=24"
+            },
+            {
+              "word": "Minimal",
+              "weight": -22,
+              "source": "axis Minimal|Expressive p=72"
+            },
+            {
+              "word": "Vibrant",
+              "weight": -22,
+              "source": "axis Muted|Vibrant p=28"
+            },
+            {
+              "word": "Inventive",
+              "weight": -16,
+              "source": "axis Traditional|Inventive p=34"
+            },
+            {
+              "word": "Abstract",
+              "weight": -12,
+              "source": "axis Literal|Abstract p=38"
+            },
+            {
+              "word": "Human",
+              "weight": -10,
+              "source": "axis Institutional|Human p=40"
+            }
+          ],
+          "ignore_axes": [],
+          "headline_keywords": [],
+          "anti_tropes": [],
+          "force_active": [],
+          "force_inactive": [],
+          "warnings": []
+        }
+      },
+      {
+        "slug": "the-tribe",
+        "label": "Direction Three",
+        "working_name": "The Tribe",
+        "system_name": "Common Ground",
+        "status": "active_refinement_draft",
+        "hero_mode": "light",
+        "hero_title": "Common Ground",
+        "hero_kicker": "Direction Three · Approved Route",
+        "hero_subtitle": "Where Cannabis Business Connects",
+        "hero_summary": "The approved Common Ground route: D2 center-dot mark, full-name wordmark, connector signature, and membership objects in one bright business system.",
+        "hero_visual": "generated-boards/d2-approved/d2-approved-01-isolated-mark.png",
+        "hero_badges": [
+          "D2 shape route",
+          "Common center",
+          "Full-name lockup"
+        ],
+        "source_note": "Direction 3-only restart using Chris and Cortney feedback plus the stricter image-led process. V11 assets preserve the approved Common Ground mood boards and replace the old mark with the D2 center-dot route. Draft execution assets, not approved identity rules.",
+        "creative_board": "generated-boards/tribe-v11-stylescape-d2-mark.png",
+        "creative_board_label": "Generated stylescape: Direction 3 / Common Ground with D2 mark integration",
+        "thesis": "A bright, professional belonging system for cannabis and hemp leaders who need real connection, collaboration, and business lift. It turns the Chamber into common ground where people can find the right room, carry visible membership pride, and build useful relationships without losing business seriousness.",
+        "strategic_read": "Common Ground translates the Chamber's economic accelerator promise into an active visual system: circular three-C paths, clear member roles, chapter-ready materials, sponsor visibility, warm high-energy color, and real event-room proof. It makes access feel successful, practical, and human while keeping business standards visible.",
+        "best_for": "Direction 3-only refinement, membership growth, chapter launch kits, logo exploration, business cards, pins, credentials, stationery, event signage, sponsor materials, education content, and public-facing proof that the Chamber connects serious people.",
+        "risk": "If it becomes too playful, the Chamber loses institutional weight. If it defaults to dark fields or generic community warmth, it misses Chris and Cortney's feedback. The system needs bright surfaces, full-name wordmarks, role clarity, and business-first language.",
+        "operating_idea": "Bright belonging with a business standard. Three C-shaped paths orbit one common center: operators, partners, and capital/policy relationships moving through the same Chamber infrastructure.",
+        "creative_platform": {
+          "idea": "The Chamber as common ground where cannabis business access becomes visible.",
+          "world": "Regional rooms, business cards, pins, credentials, sponsor walls, chapter kits, member follow-up cards, and practical education surfaces.",
+          "feeling": "Bright, energetic, successful, uplifting, professional, and human.",
+          "behavior": "Use circular three-C paths as a signature device: a mark, routing field, membership artifact, and event connection system.",
+          "line": "Where cannabis business connects.",
+          "not_this": "Not dark blue, not dark-first identity, not startup hardware, not old-money competition, not wellness cannabis, not generic community softness."
+        },
+        "sliders": [
+          {
+            "axis": "Classic|Modern",
+            "position": 72,
+            "material": true
+          },
+          {
+            "axis": "Mature|Youthful",
+            "position": 52,
+            "material": true
+          },
+          {
+            "axis": "Formal|Energetic",
+            "position": 74,
+            "material": true
+          },
+          {
+            "axis": "Institutional|Human",
+            "position": 82,
+            "material": true
+          },
+          {
+            "axis": "Quiet|Talkative",
+            "position": 64,
+            "material": true
+          },
+          {
+            "axis": "Muted|Vibrant",
+            "position": 80,
+            "material": true
+          },
+          {
+            "axis": "Minimal|Expressive",
+            "position": 68,
+            "material": true
+          },
+          {
+            "axis": "Literal|Abstract",
+            "position": 72,
+            "material": true
+          },
+          {
+            "axis": "Traditional|Inventive",
+            "position": 70,
+            "material": true
+          },
+          {
+            "axis": "Closed|Accessible",
+            "position": 92,
+            "material": true
+          }
+        ],
+        "palette": [
+          {
+            "name": "Lift Green",
+            "hex": "#35B86B",
+            "role": "Primary identity energy for access paths, member signals, and chapter activation."
+          },
+          {
+            "name": "Evergreen Ink",
+            "hex": "#183E35",
+            "role": "Authority, type, serious contrast, and restrained inverted surfaces. It replaces dark blue."
+          },
+          {
+            "name": "Signal Coral",
+            "hex": "#FF6B4A",
+            "role": "Human emphasis, introduction points, event moments, and connection handoffs."
+          },
+          {
+            "name": "Skyline Cyan",
+            "hex": "#28BFE7",
+            "role": "Education, navigation, open access, and visible movement across the system."
+          },
+          {
+            "name": "Commerce Gold",
+            "hex": "#F8C94A",
+            "role": "Sponsorship, achievement without competition, member pride, and opportunity markers."
+          },
+          {
+            "name": "Warm Paper",
+            "hex": "#FAF4E8",
+            "role": "Default canvas for stationery, cards, event materials, and non-dark review surfaces."
+          }
+        ],
+        "typography": {
+          "display": "Avenir Next Condensed, bold, vertical, energetic, and business-direct without tech hardware cues.",
+          "display_stack": "\"Avenir Next Condensed\", \"Arial Narrow\", system-ui, sans-serif",
+          "body": "Avenir Next, clear, friendly, and operational for event details, member credentials, sponsor notes, and stationery.",
+          "body_stack": "\"Avenir Next\", system-ui, sans-serif",
+          "use": "Best for high-scan cards, event signage, pins, credentials, stationery, social templates, and chapter materials."
+        },
+        "logos": [
+          {
+            "filename": "generated-boards/tribe-v11-logo-exploration-d2-signature.png",
+            "label": "D2 mark inside the Common Ground signature system"
+          }
+        ],
+        "signature": {
+          "name": "The Three-C Commons",
+          "description": "A circular signature built from three C-shaped paths around one common center. The v3 exploration tests interlocking paths, a common-center lockup, a chamber seal, a compass ring, member pins, sponsor badges, event credentials, and textile applications. Public-facing applications pair the mark with the full Cannabis Chamber Of Commerce wordmark.",
+          "variants": [
+            {
+              "name": "Interlocking Paths",
+              "role": "Most active route: three C paths crossing around shared access."
+            },
+            {
+              "name": "Common Center",
+              "role": "Most direct membership route: three participant paths held by one center point."
+            },
+            {
+              "name": "Chamber Seal",
+              "role": "Most official route for pins, credentials, sponsor recognition, and event proof."
+            },
+            {
+              "name": "Compass Ring",
+              "role": "Most regional route: chapter and market access expressed as directional movement."
+            }
+          ]
+        },
+        "moodboard": [
+          {
+            "filename": "generated-boards/tribe-v11-logo-exploration-d2-signature.png",
+            "label": "D2 logo and connector signature exploration"
+          },
+          {
+            "filename": "generated-boards/tribe-v11-business-cards-d2-mark.png",
+            "label": "Business card system"
+          },
+          {
+            "filename": "generated-boards/tribe-v11-membership-artifacts-d2-mark.png",
+            "label": "Pins, credentials, and member pride artifacts"
+          },
+          {
+            "filename": "generated-boards/tribe-v11-stationery-system-d2-mark.png",
+            "label": "Full stationery system"
+          },
+          {
+            "filename": "generated-boards/tribe-v11-event-sponsor-kit-d2-mark.png",
+            "label": "Event and sponsor kit"
+          }
+        ],
+        "applications": [
+          {
+            "kind": "logo-exploration",
+            "image": "generated-boards/tribe-v11-logo-exploration-d2-signature.png",
+            "image_alt": "Direction 3 D2 logo exploration sheet with Common Ground connector signature",
+            "title": "Logo exploration",
+            "role": "Approved D2 three-C shape integrated into the current Direction 3 palette, full-name lockup, and connector-line signature.",
+            "format": "Standalone 16:9 raster sheet",
+            "production_note": "An exploratory logo territory, not a final mark.",
+            "system_notes": [
+              "D2 shape route",
+              "center dot",
+              "connector signature"
+            ]
+          },
+          {
+            "kind": "business-card",
+            "image": "generated-boards/tribe-v11-business-cards-d2-mark.png",
+            "image_alt": "Direction 3 business card front and back mockup",
+            "title": "Business cards",
+            "role": "Full-name business-card system for chapter hosts, membership leads, and partner conversations.",
+            "format": "Standalone 16:9 raster sheet",
+            "production_note": "Cards use the three-C mark as access signal and the full Chamber name as public wordmark.",
+            "system_notes": [
+              "front and back",
+              "full wordmark",
+              "no dark blue"
+            ]
+          },
+          {
+            "kind": "pins",
+            "image": "generated-boards/tribe-v11-membership-artifacts-d2-mark.png",
+            "image_alt": "Direction 3 pins, badges, credentials, and member pride mockups",
+            "title": "Membership artifacts",
+            "role": "Pins, badges, lanyards, credentials, and visible membership artifacts that make belonging tangible.",
+            "format": "Standalone 16:9 raster sheet",
+            "production_note": "Pride artifacts must signal role, contribution, and access in the room, not empty merch.",
+            "system_notes": [
+              "member",
+              "sponsor",
+              "chapter host",
+              "event partner"
+            ]
+          },
+          {
+            "kind": "stationery",
+            "image": "generated-boards/tribe-v11-stationery-system-d2-mark.png",
+            "image_alt": "Direction 3 full stationery system mockup",
+            "title": "Full stationery",
+            "role": "Letterhead, envelope, note card, folder, and business card family for institutional credibility.",
+            "format": "Standalone 16:9 raster board",
+            "production_note": "Stationery keeps the bright system credible by using warm paper, clear type, and restrained deep green.",
+            "system_notes": [
+              "letterhead",
+              "envelope",
+              "folder",
+              "business card"
+            ]
+          },
+          {
+            "kind": "event-sponsor-kit",
+            "image": "generated-boards/tribe-v11-event-sponsor-kit-d2-mark.png",
+            "image_alt": "Direction 3 event and sponsor system mockup",
+            "title": "Event and sponsor kit",
+            "role": "Backdrop, pull-up banner, welcome sign, invitation, table tent, badges, sponsor board, and follow-up card for chapter events.",
+            "format": "Standalone 16:9 raster board",
+            "production_note": "Sponsor visibility is generous but must not imply guaranteed leads or outcomes.",
+            "system_notes": [
+              "stage",
+              "sponsor",
+              "welcome",
+              "chapter kit"
+            ]
+          }
+        ],
+        "production_references": [
+          {
+            "title": "Member journey",
+            "description": "A join, attend, meet, follow up path that turns membership into clear business movement."
+          },
+          {
+            "title": "Chapter kit",
+            "description": "Local leader templates for cards, stationery, pins, credentials, sponsor walls, and follow-up notes."
+          },
+          {
+            "title": "Education series",
+            "description": "A recurring content wrapper for policy insight, market orientation, and operator education without overclaiming mentorship products."
+          },
+          {
+            "title": "Logo production path",
+            "description": "If selected, redraw the circular three-C system as proper vector art, test small-size legibility, and define public lockup rules."
+          }
+        ],
+        "ai_generation_rules": [
+          "Use Cannabis Chamber Of Commerce as the public wordmark. Do not use CCC on public-facing artifacts.",
+          "Make belonging concrete through roles, rooms, learning paths, member credentials, sponsor value, and follow-up behaviors.",
+          "Use circular three-C path logic for marks and signatures, not generic three-line motifs.",
+          "Use bright professional surfaces as the default. Dark green can anchor serious contrast, but dark backgrounds are not the main read.",
+          "Show people, connection, collaboration, and business lift through practical participation.",
+          "Keep standards visible in cards, pins, credentials, stationery, event, sponsor, and education surfaces.",
+          "Keep cannabis signals professional, abstract, and secondary."
+        ],
+        "avoid": [
+          "Dark blue, navy default pages, or dark-background-first identity.",
+          "Direction 1 tech-hardware, device, circuit, or startup network cues.",
+          "Direction 2 award-winning, competition, closed-room, old-money, or prestige-for-prestige cues.",
+          "Wellness cannabis, leaf metaphors, spiritual language, or earthy cliches.",
+          "Vague community copy without business utility.",
+          "Generic three-line marks, disconnected arcs, or decorative swirls without Chamber connection logic.",
+          "Softness that erases standards, sponsors, operator seriousness, or economic value.",
+          "Cultural appropriation or decorative tribal motifs."
+        ],
+        "slider_signals": {
+          "schema_version": "1.0.0",
+          "be_this": [
+            {
+              "word": "Accessible",
+              "weight": 42,
+              "source": "axis Closed|Accessible p=92"
+            },
+            {
+              "word": "Human",
+              "weight": 32,
+              "source": "axis Institutional|Human p=82"
+            },
+            {
+              "word": "Vibrant",
+              "weight": 30,
+              "source": "axis Muted|Vibrant p=80"
+            },
+            {
+              "word": "Energetic",
+              "weight": 24,
+              "source": "axis Formal|Energetic p=74"
+            },
+            {
+              "word": "Abstract",
+              "weight": 22,
+              "source": "axis Literal|Abstract p=72"
+            },
+            {
+              "word": "Modern",
+              "weight": 22,
+              "source": "axis Classic|Modern p=72"
+            },
+            {
+              "word": "Inventive",
+              "weight": 20,
+              "source": "axis Traditional|Inventive p=70"
+            },
+            {
+              "word": "Expressive",
+              "weight": 18,
+              "source": "axis Minimal|Expressive p=68"
+            },
+            {
+              "word": "Talkative",
+              "weight": 14,
+              "source": "axis Quiet|Talkative p=64"
+            },
+            {
+              "word": "Youthful",
+              "weight": 2,
+              "source": "axis Mature|Youthful p=52"
+            }
+          ],
+          "dont_be_this": [
+            {
+              "word": "Closed",
+              "weight": -42,
+              "source": "axis Closed|Accessible p=92"
+            },
+            {
+              "word": "Institutional",
+              "weight": -32,
+              "source": "axis Institutional|Human p=82"
+            },
+            {
+              "word": "Muted",
+              "weight": -30,
+              "source": "axis Muted|Vibrant p=80"
+            },
+            {
+              "word": "Formal",
+              "weight": -24,
+              "source": "axis Formal|Energetic p=74"
+            },
+            {
+              "word": "Classic",
+              "weight": -22,
+              "source": "axis Classic|Modern p=72"
+            },
+            {
+              "word": "Literal",
+              "weight": -22,
+              "source": "axis Literal|Abstract p=72"
+            },
+            {
+              "word": "Traditional",
+              "weight": -20,
+              "source": "axis Traditional|Inventive p=70"
+            },
+            {
+              "word": "Minimal",
+              "weight": -18,
+              "source": "axis Minimal|Expressive p=68"
+            },
+            {
+              "word": "Quiet",
+              "weight": -14,
+              "source": "axis Quiet|Talkative p=64"
+            },
+            {
+              "word": "Mature",
+              "weight": -2,
+              "source": "axis Mature|Youthful p=52"
+            }
+          ],
+          "ignore_axes": [],
+          "headline_keywords": [],
+          "anti_tropes": [],
+          "force_active": [],
+          "force_inactive": [],
+          "warnings": []
+        }
+      }
+    ]
+  },
+  "application": {
+    "summary": "",
+    "shared_patterns": {},
+    "reference_asset_roots": [],
+    "pages": []
+  },
+  "channel_rules": {
+    "summary": "",
+    "generation_loop": [],
+    "review_checks": [],
+    "channels": []
+  },
+  "personal_branding": {
+    "summary": "",
+    "applies_when": "",
+    "source_anchors": [],
+    "founder_spectrum_visual": {},
+    "reference_asset_roots": [],
+    "spectrum_positions": [],
+    "fp_read": {},
+    "dimensions": []
+  },
+  "task_router": {
+    "schema_version": "1.0.0",
+    "purpose": "Route day-to-day brand tasks to the smallest useful context pack.",
+    "operating_principle": "The user should not choose Brand OS pages. The agent classifies the request, loads the compact core, adds only matching Section C/D slices, generates, then runs review gates.",
+    "context_budget": {
+      "max_application_pages": 2,
+      "max_channels": 2,
+      "max_training_examples": 5,
+      "ask_clarifying_question_only_if": "The output channel or audience materially changes the answer and cannot be inferred from the request."
+    },
+    "always_load": [
+      "brand",
+      "source.bundle_hash",
+      "guardrails",
+      "ai_first_generation_thread",
+      "identity.colors",
+      "identity.typography",
+      "identity.creative_direction.slider_signals",
+      "directions.options[].slider_signals",
+      "identity.voice"
+    ],
+    "conditional_load": [
+      "strategy.edges filtered by matched channel source_anchors",
+      "application.pages matched by requested medium",
+      "channel_rules.channels matched by requested distribution surface",
+      "personal_branding when the request touches founder role, leadership presence, bio/about copy, portraits, speaker profile, or Founder Spectrum",
+      "3-5 most relevant training_examples from matched application pages"
+    ],
+    "never_load_by_default": [
+      "unmatched application pages",
+      "all examples at once",
+      "stale generated HTML as source of truth",
+      "personal-branding material unless the request explicitly belongs to that section"
+    ],
+    "route_order": [
+      "match composed route when a campaign/task pattern is explicit",
+      "match personal-branding route when the request concerns founder or leadership presence",
+      "match medium route from requested artifact type",
+      "match channel route from distribution surface",
+      "merge context loads and remove duplicates",
+      "generate from rules and examples",
+      "run review gates before presenting output"
+    ],
+    "routes": {
+      "composed": [],
+      "mediums": [],
+      "channels": [],
+      "personal_branding": []
+    },
+    "review_gates": [
+      "strategy fit: output serves the matched Focus Star anchors",
+      "voice fit: output follows identity voice and channel voice dial",
+      "medium fit: output follows visual_recipe, copy_recipe, and ai_rules",
+      "rules-out check: remove anything forbidden by matched channel rules_out",
+      "proof check: claims use approved proof only or are marked for human review",
+      "founder-role check: use the selected Founder Spectrum position before writing any personal-branding guidance",
+      "source hierarchy check: do not let the generated output rewrite Section A or B"
+    ]
+  },
+  "proof": {
+    "required": [
+      "Clear differentiation between advocacy, policy insight, representation, and lobbying",
+      "Clear membership tier differences, portal value, and directory rules once those mechanics are solved",
+      "Clear rules of conduct that prevent vendor spam",
+      "Copy and proof examples that make connection and collaboration tangible",
+      "Differentiated membership tiers when the business model is ready",
+      "Education and onboarding resources",
+      "Education resources and practical industry guidance",
+      "Education resources that help newcomers and professionals navigate the industry",
+      "Event and membership language that avoids vendor spam",
+      "Event attendance, regional activity, sponsorship packages, and member participation",
+      "Event standards and sponsor standards",
+      "Events hosted, regional participation, and sponsor outcomes",
+      "Evidence that member participation creates useful relationships, not just attendance",
+      "Evidence that mentorship, leadership development, or directory benefits exist before selling their mechanics",
+      "Evidence that newcomers can learn and enter professionally",
+      "Examples of advocacy, policy insight, or professional representation without unsupported lobbying claims",
+      "Examples of business value created through networking or exposure",
+      "Examples of collaboration, partnership, or member-to-member synergies created through Chamber activity",
+      "Examples of how Chamber connections improve introductions, collaboration, sponsor fit, and member experience",
+      "Examples of leadership development or mentorship only when the offering is real enough to describe",
+      "Member categories showing plant-touching and ancillary businesses",
+      "Member examples across plant-touching and ancillary categories",
+      "Member or sponsor stories showing concrete collaboration, partnership, or business lift",
+      "Member proof across plant-touching and ancillary categories",
+      "Member stories tied to access, learning, or opportunity",
+      "Page copy for Membership, Networking, Events, Mentorship, and Advocacy that proves the stronger positioning without overclaiming benefits",
+      "Proof of executive, investor, policymaker, sponsor, regional leader, and leadership-development participation before over-indexing those claims",
+      "Proof of leadership development, mentorship participation, or program mechanics before presenting them as current benefits",
+      "Proof that the Chamber provides advocacy, representation, and policy insight without claiming lobbying as the core activity",
+      "Public member expectations and code of conduct",
+      "Published Chamber copy demonstrating professional welcome without hype",
+      "Regional event participation and sponsor participation",
+      "Signals that local value comes from local networking and events",
+      "Testimonials from operators and service providers",
+      "Voice exemplars maintained as the canonical bank"
+    ]
+  },
+  "retrieval_guidance": {
+    "example_count": "Use 3 to 5 relevant examples when possible.",
+    "example_relevance": "Match examples to the target channel, audience, length, and format.",
+    "review_loop": "Track pass rate, edit time, recurring voice violations, and source citations for brand checks."
+  }
+}

@@ -1,27 +1,28 @@
 {
   "brand": "ccc",
   "version": "1.2.2",
-  "approved_at": "2026-06-24T00:46:39+00:00",
-  "approved_by": "Florian",
+  "approved_at": "2026-07-02T01:39:05+00:00",
+  "approved_by": "UNVERIFIED (no human gate; run tools/likeness/human_approval_gate.py)",
   "source_hashes": {
     "STRATEGY.md": "sha256:7c3a2a9775c5f97641407fd716d73d6431529c75f13dd8eccd4d5774c7fedebe",
-    "IDENTITY.md": "sha256:8c0d7e22497f833f9dcc58f64e17bb9cd886bf8b9bcc91c554169481071fabd4",
+    "IDENTITY.md": "sha256:b9b4b1b2b1dcb32d0d9e33eb4087ffc51e4a63883ff4ad966b261704e6eda8ee",
     "SKILL.md": "sha256:4fe6c81f31e02f339d343f172788d8adfea45fca21ab96d1cfa5cec72bea1934",
     "DIRECTIONS.md": "sha256:5b7665aab063d8932f95ac4bd14fbb300f7032f5d4924fc2ba898bbd7cee2ebf",
+    "QUICKSTART.md": "sha256:e078bf7bbdb4141179ec0fdb322aee701d5a885cf3ced7511fc0708280a45abd",
     "references/logo-spec.md": "sha256:25b576f655d1bfc97e2a5e0f23eb7201b7b2ccb91b8f4d5c241b3433ba93bcbd",
     "references/methodology.md": "sha256:eb848f84b2c5b15721762019975ee57f9e24d8e1d92f0c04db630a120a7eb00b",
-    "references/signature-spec.md": "sha256:0a7f7093fecf1a67b5f00b1ae9372fc9271de9c0dc5da4d0a8ddd640164c7941",
+    "references/signature-spec.md": "sha256:01a68d4582de14dcbfb2cec1e2463c817c16b4a3864491ce103dedaac756bf5f",
     "references/voice-exemplars.md": "sha256:89c3fe89d4a856ea20dfb9651a3b9b3b4f377c261fc8518afe631c53d9551f76",
-    "images_manifest": "sha256:9635442df9884aecb746f4b2518926bf710d1a88daeeeb7e4da9893a2dd8481e"
+    "images_manifest": "sha256:d4ee589413c76581b678200d68d576d9cea5737c93fc20317e5d9acb0b12cf1a"
   },
-  "bundle_hash": "sha256:3266467611bad40b88532f6951da55d1bbe89c8cebef7a92ac32a8bbf5c9a86c",
+  "bundle_hash": "sha256:d06ec5d2804d4427eae4ba2a1ccbf60be10b5e0ffafa2c8ab3f9aaf28d4c9dad",
   "outputs": {
-    "ai_context_emitted_at": "2026-06-24T00:46:39+00:00",
-    "ai_context_json_emitted_at": "2026-06-24T00:46:39+00:00",
-    "ai_context_git_sha": "605616558b7e7d95b40ad6f8d9810b8c99cb44ee",
-    "strategy_html_emitted_at": "2026-06-24T00:46:39+00:00",
-    "identity_html_emitted_at": "2026-06-24T00:46:39+00:00",
-    "focus_star_json_emitted_at": "2026-06-24T00:46:39+00:00"
+    "ai_context_emitted_at": "2026-07-02T01:39:05+00:00",
+    "ai_context_json_emitted_at": "2026-07-02T01:39:05+00:00",
+    "ai_context_git_sha": "a5d909e1e92ab213817c13b021d6a69effaff5ee",
+    "strategy_html_emitted_at": "2026-07-02T01:39:05+00:00",
+    "identity_html_emitted_at": "2026-07-02T01:39:05+00:00",
+    "focus_star_json_emitted_at": "2026-07-02T01:39:05+00:00"
   },
   "validator_rules": {
     "must_match_at_build": [
