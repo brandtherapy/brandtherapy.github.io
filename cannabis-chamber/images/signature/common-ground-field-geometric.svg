@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 672" role="img" aria-label="CCC Common Ground Field geometric SVG">
+<title>CCC Common Ground Field geometric SVG</title>
+<desc>Clean SVG arc reconstruction from measured node and centerline geometry. No embedded raster.</desc>
+<g id="field-arcs" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path id="left-coral" d="M -37.02 366.72 A 559.33 559.33 0 0 0 648.67 -33.16" stroke="#D06E53" stroke-width="50"/>
+<path id="right-coral" d="M 1507.38 298.97 A 626.82 626.82 0 0 0 885.54 706.67" stroke="#D06E53" stroke-width="47"/>
+<path id="left-forest" d="M 32.91 -32.85 A 688.74 688.74 0 0 0 326.49 703.01" stroke="#2D432B" stroke-width="43"/>
+<path id="right-forest" d="M 1510.31 735.69 A 512.74 512.74 0 0 0 1150.62 -26.43" stroke="#2D432B" stroke-width="36"/>
+<path id="left-teal" d="M -36.32 481.81 A 672.76 672.76 0 0 0 292.9 -34.97" stroke="#2A5D5B" stroke-width="49"/>
+<path id="right-teal" d="M 1617.82 233.38 A 629.83 629.83 0 0 0 1288.8 703.28" stroke="#2A5D5B" stroke-width="46"/>
+</g>
+<g id="node-knockouts">
+<circle id="node-1-knockout" cx="72" cy="402" r="51" fill="#F1E8D8"/>
+<circle id="node-5-knockout" cx="265" cy="646" r="34" fill="#F1E8D8"/>
+<circle id="node-4-knockout" cx="535" cy="186" r="34" fill="#F1E8D8"/>
+<circle id="node-6-knockout" cx="1029" cy="479" r="34" fill="#F1E8D8"/>
+<circle id="node-3-knockout" cx="1337" cy="42" r="36" fill="#F1E8D8"/>
+<circle id="node-2-knockout" cx="1537" cy="288" r="51" fill="#F1E8D8"/>
+</g>
+<g id="brass-nodes">
+<circle id="node-1" cx="72" cy="402" r="45" fill="#AA8952"/>
+<circle id="node-5" cx="265" cy="646" r="28" fill="#AA8952"/>
+<circle id="node-4" cx="535" cy="186" r="28" fill="#AA8952"/>
+<circle id="node-6" cx="1029" cy="479" r="28" fill="#AA8952"/>
+<circle id="node-3" cx="1337" cy="42" r="30" fill="#AA8952"/>
+<circle id="node-2" cx="1537" cy="288" r="45" fill="#AA8952"/>
+</g>
+</svg>

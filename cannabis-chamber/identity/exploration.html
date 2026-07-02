@@ -1,36 +1,15 @@
 <!DOCTYPE html>
-<!--
-  section-a-shell.html
-  ====================
-  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
-  visual design (sidebar nav, editorial typography, viewfinder treatment, footer).
-
-  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
-  are documented in shared/templates/README.md (section: "Template token syntax
-  in section-a-shell.html").
-
-  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
-  fonts, nav contents) are injected. The CSS at assets/style.css carries the
-  shared visual system; per-brand color and typography overrides come through
-  the CSS custom-property block in the inline <style> below.
-
-  When opening this file in a browser directly (without build.py running),
-  the {{ tokens }} display as literals. That's expected. The shell is a
-  template, not a standalone page. Visual parity check happens against the
-  rendered output, not the shell file.
--->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noai, noimageai">
 <title>Exploration · Cannabis Chamber Of Commerce Brand OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700;800&family=Atkinson+Hyperlegible:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  /* Per-brand color and typography token overrides.
-     Injected by build.py from IDENTITY.md frontmatter. */
   :root {
     --accent: #505A66;
     --accent-glow: rgba(80, 90, 102, 0.24);
@@ -58,7 +37,7 @@
 
 <aside class="sidebar">
   <div class="brand-mark">
-    <div class="name">Cannabis Chamber Of Commerce<span class="dot">.</span></div>
+    <div class="name">Cannabis Chamber Of Commerce</div>
     <div class="meta">Brand OS</div>
   </div>
   <nav class="nav-section" aria-label="Brand OS sections">
@@ -75,6 +54,10 @@
 </div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
 <a href="index.html">Direction Three</a>
 <a class="active" href="exploration.html">Exploration</a>
+<a href="look-and-feel.html">Look &amp; Feel</a>
+<a href="voice.html">Voice</a>
+<a href="logo.html">Logo</a>
+<a href="signature.html">Signature</a>
 </div></details>
   </nav>
   <div class="toolbar-mini">
@@ -108,17 +91,17 @@
 .dir-meta strong { color: rgba(255,255,255,0.9); margin-left: 5px; }
 .dir-hero.light .dir-meta span { border-color: color-mix(in srgb, var(--dir-primary) 24%, var(--border)); color: var(--muted); background: rgba(255,255,255,0.62); }
 .dir-hero.light .dir-meta strong { color: var(--dir-ink); }
-.dir-hero.visual { min-height: 0; padding: 0; margin-bottom: 64px; display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(390px, 1fr); background: var(--dir-paper); color: var(--dir-ink); border: 1px solid var(--border); box-shadow: 0 18px 60px rgba(16,24,40,0.1); }
+.dir-hero.visual { width: min(100%, 1040px); min-height: 0; padding: 0; margin-bottom: 64px; display: grid; grid-template-columns: minmax(320px, 0.95fr) minmax(320px, 1fr); background: var(--dir-paper); color: var(--dir-ink); border: 1px solid var(--border); box-shadow: 0 18px 60px rgba(16,24,40,0.1); }
 .dir-hero.visual::before { display: none; }
 .dir-hero.visual::after { height: 8px; background: linear-gradient(90deg, var(--dir-primary), var(--dir-signal), color-mix(in srgb, var(--dir-primary) 45%, #28BFE7 55%), #F8C94A); }
-.dir-hero-copy { padding: clamp(34px,4.5vw,64px); display: flex; flex-direction: column; justify-content: center; min-width: 0; }
-.dir-hero.visual h1 { color: var(--dir-ink); font-size: clamp(58px,8vw,112px); line-height: 0.9; max-width: 720px; margin: 18px 0 14px; }
-.dir-hero.visual .dir-working { color: var(--dir-signal); font-size: clamp(18px,2vw,28px); margin: 0 0 22px; }
-.dir-hero.visual .dir-thesis { color: color-mix(in srgb, var(--dir-ink) 78%, transparent); max-width: 700px; font-size: clamp(15px,1.35vw,19px); line-height: 1.58; }
+.dir-hero-copy { padding: clamp(32px,4vw,52px); display: flex; flex-direction: column; justify-content: center; min-width: 0; background: color-mix(in srgb, var(--dir-secondary) 72%, #050505 28%); color: #fff; }
+.dir-hero.visual h1 { color: color-mix(in srgb, #fff 88%, var(--dir-primary) 12%); font-size: clamp(46px,5.2vw,76px); line-height: 0.92; max-width: 430px; margin: 16px 0 14px; overflow-wrap: normal; }
+.dir-hero.visual .dir-working { color: color-mix(in srgb, var(--dir-signal) 72%, #fff 28%); font-size: clamp(17px,1.65vw,24px); line-height: 1.1; margin: 0 0 22px; max-width: 360px; }
+.dir-hero.visual .dir-thesis { color: rgba(255,255,255,0.88); max-width: 430px; font-size: clamp(14px,1.2vw,17px); line-height: 1.58; }
 .dir-hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
-.dir-hero-badge { border: 1px solid color-mix(in srgb, var(--dir-primary) 34%, var(--border)); background: rgba(255,255,255,0.62); color: var(--dir-ink); padding: 9px 12px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
-.dir-hero-visual { min-height: 430px; border-left: 1px solid var(--border); background: var(--white); position: relative; overflow: hidden; }
-.dir-hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.02) contrast(1.02); }
+.dir-hero-badge { border: 1px solid color-mix(in srgb, var(--dir-primary) 34%, var(--border)); background: rgba(255,255,255,0.9); color: color-mix(in srgb, var(--dir-secondary) 82%, #000 18%); padding: 9px 12px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.dir-hero-visual { min-height: 500px; border-left: 1px solid var(--border); background: color-mix(in srgb, var(--dir-paper) 84%, #fff 16%); position: relative; overflow: hidden; }
+.dir-hero-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%; display: block; filter: saturate(1.02) contrast(1.02); }
 .dir-hero-visual::after { content: ""; position: absolute; inset: 0; border: 18px solid rgba(255,255,255,0.22); pointer-events: none; }
 .dir-section { margin: 0 0 92px; }
 .dir-section-head { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; padding-top: 22px; border-top: 1px solid var(--text); margin-bottom: 32px; }
@@ -165,29 +148,31 @@
 .dir-logo-cell:only-child img { width: 100%; max-width: 100%; max-height: none; height: auto; }
 .dir-logo-cell span { position: absolute; left: 14px; bottom: 12px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 9px; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); }
 .dir-logo-cell.dark span { color: rgba(255,255,255,0.62); }
-.dir-signature-demo { min-height: 290px; background: var(--dir-paper); color: var(--dir-ink); border: 1px solid var(--border); display: grid; place-items: center; padding: 36px; position: relative; overflow: hidden; }
-.dir-signature-demo .sig-lines { width: min(460px,80%); display: grid; gap: 8px; margin: 0 auto; }
-.dir-signature-demo .sig-line { height: 7px; background: var(--dir-primary); }
-.dir-signature-demo .sig-line:nth-child(2) { background: var(--dir-secondary); }
-.dir-signature-demo .sig-line:nth-child(3) { background: var(--dir-signal); }
-.dir-signature-demo .sig-word { font-family: var(--dir-font-display, var(--ff-h)); font-weight: 800; font-size: clamp(42px,7vw,82px); line-height: 0.92; letter-spacing: 0; margin-bottom: 30px; text-align: center; }
+.dir-signature-notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
+.dir-signature-note { border: 1px solid var(--border); background: var(--white); padding: 22px; min-width: 0; }
+.dir-signature-note h3 { font-family: var(--dir-font-display, var(--ff-h)); font-size: 24px; line-height: 1.05; margin: 0 0 12px; color: var(--text); }
+.dir-signature-note p, .dir-signature-note li { font-family: var(--dir-font-body, var(--ff-b)); font-size: 13px; line-height: 1.6; color: var(--muted); }
+.dir-signature-note p { margin: 0; }
+.dir-signature-note ul { margin: 0; padding-left: 18px; }
 .dir-copy-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
 .dir-copy-list .dir-card { min-height: 180px; }
 .dir-application-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .dir-app { border: 1px solid var(--border); background: var(--white); padding: 22px; display: grid; gap: 18px; min-width: 0; overflow: hidden; }
 .dir-app-head { display: flex; justify-content: space-between; gap: 18px; align-items: start; border-bottom: 1px solid var(--border); padding-bottom: 14px; }
+.dir-app-head > div { min-width: 0; }
 .dir-app-head h3 { font-family: var(--dir-font-display, var(--ff-h)); font-size: 24px; line-height: 1.05; letter-spacing: 0; margin: 0; color: var(--text); }
-.dir-app-head span, .dir-app-format { font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dir-primary); white-space: nowrap; }
-.dir-app-format { white-space: normal; overflow-wrap: anywhere; }
+.dir-app-head span, .dir-app-format { font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: color-mix(in srgb, var(--dir-secondary) 78%, var(--dir-primary) 22%); white-space: nowrap; }
+.dir-app-head span { max-width: min(220px, 46%); text-align: right; white-space: normal; overflow-wrap: break-word; }
+.dir-app-format { white-space: normal; overflow-wrap: break-word; line-height: 1.45; }
 .dir-app-role { font-family: var(--dir-font-body, var(--ff-b)); font-size: 13px; line-height: 1.6; color: var(--muted); margin: 0; }
-.dir-app-image { width: 100%; height: auto; display: block; border: 1px solid var(--border); background: var(--dir-paper); box-shadow: 0 12px 32px rgba(16,24,40,0.1); }
+.dir-app-image { width: 100%; height: auto; display: block; box-sizing: border-box; border: 1px solid var(--border); background: var(--dir-paper); box-shadow: 0 12px 32px rgba(16,24,40,0.1); }
 .dir-mock { width: 100%; max-width: 100%; min-width: 0; min-height: 330px; border: 1px solid var(--border); background: var(--dir-paper); color: var(--dir-ink); position: relative; overflow: hidden; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
 .mock-mark { font-family: var(--dir-font-display, var(--ff-h)); font-weight: 800; font-size: 24px; letter-spacing: 0; color: var(--dir-secondary); }
 .mock-kicker { font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dir-primary); }
 .mock-headline { font-family: var(--dir-font-display, var(--ff-h)); font-weight: 800; font-size: clamp(34px,5vw,62px); line-height: 0.96; letter-spacing: 0; max-width: 560px; color: var(--dir-secondary); }
 .mock-sub { font-family: var(--dir-font-body, var(--ff-b)); font-size: 14px; line-height: 1.5; max-width: 460px; color: color-mix(in srgb, var(--dir-secondary) 74%, transparent); }
-.mock-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.mock-pill { border: 1px solid currentColor; padding: 6px 10px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dir-secondary); background: color-mix(in srgb, var(--dir-paper) 78%, transparent); }
+.mock-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; min-width: 0; max-width: 100%; }
+.mock-pill { border: 1px solid currentColor; padding: 6px 10px; font-family: var(--dir-font-body, var(--ff-b)); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dir-secondary); background: color-mix(in srgb, var(--dir-paper) 78%, transparent); max-width: 100%; white-space: normal; overflow-wrap: break-word; }
 .dir-mock.flyer { aspect-ratio: 4 / 5; min-height: 520px; background: linear-gradient(160deg, var(--dir-paper) 0 48%, color-mix(in srgb, var(--dir-primary) 18%, var(--dir-paper)) 48% 100%); }
 .dir-mock.flyer::after { content: ""; position: absolute; width: 34%; height: 18%; right: 0; bottom: 0; background: var(--dir-signal); mix-blend-mode: multiply; opacity: 0.9; }
 .dir-mock.badge { aspect-ratio: 3 / 4.5; max-width: 390px; margin: 0 auto; min-height: 500px; background: var(--white); border-color: var(--dir-secondary); }
@@ -225,12 +210,12 @@
 .dir-review.clarity-review .dir-section-desc { max-width: 760px; }
 .dir-review.clarity-review .dir-board-shell { box-shadow: 0 16px 48px rgba(16,24,40,0.1); }
 .dir-review.clarity-review .dir-slider .dir-dot, .dir-review.clarity-review .keyword.active { background: var(--accent); border-color: var(--accent); }
-@media (max-width: 980px) { .dir-grid, .dir-mood, .dir-logo-grid, .dir-slider-grid, .dir-copy-list, .dir-application-grid, .dir-reference-grid, .dir-hero.visual { grid-template-columns: 1fr; } .dir-slider { grid-template-columns: 84px 1fr 84px; } .dir-section-head { grid-template-columns: 1fr; gap: 10px; } .dir-hero-visual { min-height: 280px; border-left: 0; border-top: 1px solid var(--border); } }
+@media (max-width: 980px) { .dir-grid, .dir-mood, .dir-logo-grid, .dir-slider-grid, .dir-copy-list, .dir-application-grid, .dir-reference-grid, .dir-signature-notes, .dir-hero.visual { grid-template-columns: 1fr; } .dir-slider { grid-template-columns: 84px 1fr 84px; } .dir-section-head { grid-template-columns: 1fr; gap: 10px; } .dir-hero-visual { min-height: 280px; border-left: 0; border-top: 1px solid var(--border); } .dir-app { overflow: visible; padding: clamp(16px, 5vw, 22px); } .dir-app-head { display: grid; gap: 8px; } .dir-app-head span { white-space: normal; overflow-wrap: anywhere; } .dir-app-image { box-shadow: 0 8px 22px rgba(16,24,40,0.08); } }
 </style>
 <div class="dir-review" style="--dir-primary:#35B86B; --dir-secondary:#183E35; --dir-signal:#FF6B4A; --dir-paper:#FAF4E8; --dir-ink:#183E35; --dir-font-display:&quot;Avenir Next Condensed&quot;, &quot;Arial Narrow&quot;, system-ui, sans-serif; --dir-font-body:&quot;Avenir Next&quot;, system-ui, sans-serif;">
   <section class="dir-hero light">
     <div class="dir-kicker">Section B · Supplemental exploration</div>
-    <h1>Badge, Coin, Key, and D2 Access Exploration<span class="dot">.</span></h1>
+    <h1>Badge, Coin, Key, and D2 Access Exploration</h1>
     <div class="dir-working">Exploration</div>
     <p class="dir-thesis">A separate holding page for badge, coin, key, and access-node studies. The approved D2 route remains protected and Direction 3 uses only the D2 shape integration unless Florian promotes another concept.</p>
     <div class="dir-meta">
@@ -240,17 +225,17 @@
   </section>
 
   <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">01</div><div><div class="dir-label">Protected route</div><h2>D2 stays the source<span class="dot">.</span></h2><p class="dir-section-desc">This section is the reference boundary. The approved three-C center-dot route is not a dumping ground for new explorations.</p></div></div>
+    <div class="dir-section-head"><div class="dir-num">01</div><div><div class="dir-label">Protected route</div><h2>D2 stays the source</h2><p class="dir-section-desc">This section is the reference boundary. The approved three-C center-dot route is not a dumping ground for new explorations.</p></div></div>
     <article class="dir-app"><div class="dir-app-head"><div><h3>Protected D2 source</h3><p class="dir-app-role">Approved route for Direction 3 logo shape, center dot, and offset C relationship.</p></div><span>Protected raster</span></div><img class="dir-app-image protected-source" src="../images/generated-boards/tribe-v9-logo-ignition-pin-system.png" alt="Protected D2 source board with approved three C center-dot mark and member-object mockups"><div class="dir-app-format">Do not overwrite or mix new concepts into this source.</div></article>
   </section>
 
   <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">02</div><div><div class="dir-label">Parallel logo object studies</div><h2>Badge, coin, key, access<span class="dot">.</span></h2><p class="dir-section-desc">These boards explore adjacent logo object systems. They can inform future work, but they do not replace the protected D2 route unless Florian explicitly promotes one.</p></div></div>
+    <div class="dir-section-head"><div class="dir-num">02</div><div><div class="dir-label">Parallel logo object studies</div><h2>Badge, coin, key, access</h2><p class="dir-section-desc">These boards explore adjacent logo object systems. They can inform future work, but they do not replace the protected D2 route unless Florian explicitly promotes one.</p></div></div>
     <div class="dir-application-grid"><article class="dir-app"><div class="dir-app-head"><div><h3>Badge, Coin, and Trust Objects</h3><p class="dir-app-role">Badge and coin direction for jacket pins, member recognition, and website trust marks.</p></div><span>16:9 raster</span></div><img class="dir-app-image" src="../images/generated-boards/badge-coin-key-d2-exploration/badge-coin-pin-trust-board-2026-06-05.png" alt="Badge, coin, pin, and trust mark exploration for Cannabis Chamber"><div class="dir-app-format">Strong object lane. Keep separate from D2 unless promoted.</div></article><article class="dir-app"><div class="dir-app-head"><div><h3>Flat Circular Seal Study</h3><p class="dir-app-role">Minimal black and white seal logic with name around the mark.</p></div><span>16:9 raster</span></div><img class="dir-app-image" src="../images/generated-boards/badge-coin-key-d2-exploration/flat-circular-seal-study-board-2026-06-05.png" alt="Flat circular seal logo study for Cannabis Chamber"><div class="dir-app-format">Useful for badge structure, not current Direction 3 logo.</div></article><article class="dir-app"><div class="dir-app-head"><div><h3>Leaf Key Access Study</h3><p class="dir-app-role">Leaf and key exploration for access, market entry, and membership unlock metaphors.</p></div><span>16:9 raster</span></div><img class="dir-app-image" src="../images/generated-boards/badge-coin-key-d2-exploration/leaf-key-access-board-2026-06-05.png" alt="Leaf key logo exploration for Cannabis Chamber access concept"><div class="dir-app-format">Backup concept. Keep cannabis cues professional and secondary.</div></article><article class="dir-app"><div class="dir-app-head"><div><h3>D2 Access Node Refinement</h3><p class="dir-app-role">Closest bridge between the approved D2 route and the access, collaboration, opportunity strategy.</p></div><span>16:9 raster</span></div><img class="dir-app-image" src="../images/generated-boards/badge-coin-key-d2-exploration/d2-access-node-refinement-board-2026-06-05.png" alt="D2 access node refinement board for Cannabis Chamber"><div class="dir-app-format">Reference only. The Direction 3 page uses the protected D2 shape integration asset.</div></article></div>
   </section>
 
   <section class="dir-section">
-    <div class="dir-section-head"><div class="dir-num">03</div><div><div class="dir-label">Review notes</div><h2>How to read this page<span class="dot">.</span></h2><p class="dir-section-desc">Use this page as a holding area for exploration only. Direction 3 remains driven by the approved D2 shape integration.</p></div></div>
+    <div class="dir-section-head"><div class="dir-num">03</div><div><div class="dir-label">Review notes</div><h2>How to read this page</h2><p class="dir-section-desc">Use this page as a holding area for exploration only. Direction 3 remains driven by the approved D2 shape integration.</p></div></div>
     <div class="dir-grid"><div class="dir-card"><h3>D2 hierarchy</h3><p>D2 is the approved route. This page is exploration, not replacement.</p></div><div class="dir-card"><h3>Badge lane</h3><p>Coin, pin, and trust-badge systems are promising as applications, but do not change the mark without approval.</p></div><div class="dir-card"><h3>Key lane</h3><p>The key idea is strategically relevant but must stay business-first and avoid obvious leaf gimmicks.</p></div></div>
   </section>
 </div>
@@ -258,19 +243,10 @@
 
   <div class="footer-nav">
     <span>Section B · Exploration · Supplemental Exploration</span>
-    <span><a href="../strategy/index.html">Brand Strategy →</a></span>
+    <span><a href="look-and-feel.html">Look & Feel →</a></span>
   </div>
+  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
 </div>
-
-<!-- Build metadata. Lets any reviewer trace this page to its source. -->
-<!--
-  Brand:        The Cannabis Chamber of Commerce (ccc)
-  Version:      1.2.2
-  Built at:     2026-06-05T22:27:05+00:00
-  Git SHA:      9977a84a3ae28d654775a8ea055a12e1b7826f44
-  Bundle hash:  sha256:b5c5a544d6f81ef15389f7ed0b1550d9ebfb076c53642ec14d0a74bcd3f71959
-  Source:       brand-os/brands/cannabis-chamber/DIRECTIONS.md + STRATEGY.md + IDENTITY.md
--->
 </body>
 </html>
