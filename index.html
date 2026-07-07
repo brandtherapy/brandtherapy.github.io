@@ -1,98 +1,1376 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
 <meta name="robots" content="noindex, nofollow">
-<title>Brand Therapy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brand Therapy. Self-serve.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{ --accent:#5A5CF9; --ink:#0a0a10; --paper:#f4f2ee; --muted:rgba(244,242,238,.46); }
-  *{ box-sizing:border-box; margin:0; padding:0; }
-  html,body{ height:100%; }
-  body{
-    background: radial-gradient(130% 120% at 50% -10%, #16161f 0%, var(--ink) 58%, #050509 100%);
-    color: var(--paper);
-    font-family: "Poppins", system-ui, sans-serif;
-    min-height:100%; display:grid; place-items:center;
-    overflow:hidden; position:relative;
-  }
-  .room{ text-align:center; padding: 10vh 24px; max-width: 780px; position:relative; z-index:1; }
-  .kicker{
-    font-size:11px; font-weight:600; letter-spacing:.34em; text-transform:uppercase;
-    color: var(--accent); margin-bottom: 30px;
-  }
-  h1{
-    font-family: "Bricolage Grotesque", system-ui, sans-serif; font-weight:800;
-    font-size: clamp(54px, 11.5vw, 122px); line-height:.9; letter-spacing:-.035em;
-    user-select:none;
-  }
-  h1 .dot{ color: var(--accent); display:inline-block; cursor:pointer; transition: transform .25s cubic-bezier(.16,1,.3,1); }
-  h1 .dot.pulse{ animation: pulse 1.5s ease-in-out infinite; }
-  @keyframes pulse{ 0%,100%{ transform:scale(1);} 50%{ transform:scale(1.22);} }
-  .line{
-    margin-top: 38px; min-height: 3.2em;
-    font-size: clamp(16px, 2.3vw, 22px); font-weight:400; line-height:1.45;
-    color: var(--muted);
-  }
-  .cursor{ display:inline-block; width:2px; height:1.05em; background: var(--accent);
-    margin-left:4px; vertical-align:-3px; animation: blink 1.05s steps(2) infinite; }
-  @keyframes blink{ 50%{ opacity:0; } }
-  .foot{
-    position:fixed; bottom:22px; left:0; right:0; text-align:center;
-    font-size:10px; letter-spacing:.26em; text-transform:uppercase;
-    color: rgba(244,242,238,.2);
-  }
-  @media (prefers-reduced-motion: reduce){ .cursor,.dot.pulse{ animation:none; } }
+:root{
+  --accent:#5A5CF9; --accent-soft:rgba(90,92,249,.06); --accent-glow:rgba(90,92,249,.35);
+  --text:#1A1A2E; --muted:#8888A0; --border:#E5E7EB; --light:#F5F5F7; --white:#FFFFFF;
+  --ff-h:'Bricolage Grotesque',system-ui,sans-serif; --ff-b:'Poppins',system-ui,sans-serif;
+  --exo:cubic-bezier(0.16,1,0.3,1); --quart:cubic-bezier(0.25,1,0.5,1);
+  --dur-fast:.25s; --dur-med:.4s; --dur-slow:.6s;
+  --shadow:0 1px 2px rgba(26,26,46,.04),0 8px 30px rgba(26,26,46,.06);
+  --shadow-lg:0 10px 50px rgba(26,26,46,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--white);color:var(--text);font-family:var(--ff-b);-webkit-font-smoothing:antialiased;line-height:1.7}
+h1,h2,h3,h4{font-family:var(--ff-h);letter-spacing:-.02em;line-height:1.05;font-weight:800}
+p{font-size:15px}
+a{color:inherit}
+.p{color:var(--accent)}
+button{font-family:var(--ff-b);cursor:pointer;border:none;background:none;color:inherit}
+::selection{background:var(--accent);color:var(--white)}
+
+/* ============ viewfinder eyebrow motif ============ */
+.eyebrow{position:relative;padding-left:18px;display:inline-flex;align-items:baseline;gap:10px;margin-bottom:12px}
+.eyebrow::before{content:"";position:absolute;left:0;top:1px;width:11px;height:11px;border-top:3px solid var(--accent);border-left:3px solid var(--accent)}
+.eyebrow .code{font-family:var(--ff-b);font-weight:500;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+/* ============ app shell / states ============ */
+#app{min-height:100vh;position:relative}
+.state{display:none}
+.state.active{display:block}
+
+/* ============ LANDING ============ */
+#landing-wrap{max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:28px 0}
+.wm{font-family:var(--ff-h);font-weight:800;font-size:18px}
+.wm b{color:var(--accent)}
+.nav .tag{font-family:var(--ff-b);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+.hero{padding:clamp(60px,10vw,120px) 0 clamp(50px,8vw,90px);border-top:1px solid var(--text)}
+.hero h1{font-size:clamp(38px,5.4vw,68px);max-width:920px}
+.hero .lede{font-size:clamp(16px,1.6vw,19px);color:var(--text);max-width:640px;margin-top:26px;line-height:1.65}
+.hero .lede b{color:var(--accent)}
+.cta-row{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+.resume-card{margin-top:38px;border:1px solid var(--accent);background:rgba(90,92,249,.06);padding:20px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.resume-card .rc-text{flex:1 1 260px;font-size:13.5px;line-height:1.55}
+.resume-card+.cta-row{margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;font-size:14px;font-weight:600;letter-spacing:.02em;transition:all var(--dur-fast) var(--exo)}
+.btn-primary{background:var(--accent);color:var(--white)}
+.btn-primary:hover{opacity:.85}
+.btn-ghost{border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.trust-line{margin-top:26px;font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.trust-line .dot{width:6px;height:6px;background:var(--accent);flex-shrink:0}
+
+.time-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);padding:8px 14px;font-size:11.5px;color:var(--muted);letter-spacing:.04em;margin-top:22px}
+.time-badge b{color:var(--text);font-weight:600}
+
+.steps{border-top:1px solid var(--text);padding:clamp(60px,8vw,100px) 0}
+.steps h2{font-size:clamp(24px,3vw,34px);margin-bottom:44px}
+.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,48px)}
+.step{border-top:1px solid var(--border);padding-top:20px}
+.step .n{font-family:var(--ff-h);font-weight:800;font-size:13px;color:var(--accent);letter-spacing:.05em;margin-bottom:14px}
+.step h3{font-size:19px;margin-bottom:10px}
+.step p{color:var(--text);font-size:14px}
+
+.star-preview{border-top:1px solid var(--text);padding:clamp(60px,8vw,100px) 0;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.star-preview .copy h2{font-size:clamp(24px,3vw,34px);margin-bottom:18px}
+.star-preview .copy p{font-size:14.5px;color:var(--text);margin-bottom:14px}
+.star-preview .copy ul{list-style:none;margin-top:18px}
+.star-preview .copy li{font-size:13.5px;padding-left:16px;position:relative;margin:9px 0;color:var(--text)}
+.star-preview .copy li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;background:var(--accent)}
+.mini-star-wrap{display:flex;align-items:center;justify-content:center;aspect-ratio:1;background:var(--light);border:1px solid var(--border)}
+.mini-star-wrap svg{width:78%;height:78%}
+.mini-star-outline{fill:none;stroke:var(--text);stroke-width:1.4;opacity:.55}
+.mini-node{fill:var(--white);stroke:var(--border);stroke-width:1.4}
+.mini-node.on{stroke:var(--accent)}
+
+.trust-block{border-top:1px solid var(--text);padding:clamp(50px,7vw,80px) 0;display:flex;gap:24px;align-items:flex-start}
+.trust-block .mark{width:44px;height:44px;background:var(--accent);flex-shrink:0;display:grid;place-items:center}
+.trust-block .mark span{color:var(--white);font-family:var(--ff-h);font-weight:800;font-size:16px}
+.trust-block p{font-size:15.5px;max-width:600px}
+.trust-block p b{color:var(--text)}
+
+footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;letter-spacing:.02em}
+
+@media (max-width:900px){
+  .step-grid{grid-template-columns:1fr}
+  .star-preview{grid-template-columns:1fr}
+  .star-preview .mini-star-wrap{order:-1;max-width:320px;margin:0 auto}
+}
+
+/* ============ DEMO BANNER ============ */
+.demo-banner{position:fixed;top:0;left:0;right:0;z-index:120;background:var(--text);color:var(--white);display:flex;align-items:center;justify-content:center;gap:16px;padding:11px 20px;font-size:12.5px;letter-spacing:.02em}
+.demo-banner b{color:var(--accent)}
+.demo-banner button{border:1px solid rgba(255,255,255,.35);color:var(--white);padding:6px 14px;font-size:11.5px;letter-spacing:.03em}
+.demo-banner button:hover{border-color:var(--white)}
+
+/* ============ SESSION ============ */
+#session-wrap{height:100vh;display:flex;overflow:hidden}
+#session-wrap.has-banner{padding-top:40px}
+.chat-col{width:40%;min-width:360px;border-right:1px solid var(--border);display:flex;flex-direction:column;background:var(--white)}
+.chat-head{padding:20px 26px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.chat-head .wm{font-size:16px}
+.chat-head .actions{display:flex;gap:8px}
+.icon-btn{border:1px solid var(--border);padding:7px 12px;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);transition:all var(--dur-fast) var(--exo)}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+.chat-scroll{flex:1;overflow-y:auto;padding:24px 26px;display:flex;flex-direction:column;gap:14px}
+.chat-scroll::-webkit-scrollbar{width:8px}
+.chat-scroll::-webkit-scrollbar-thumb{background:var(--border)}
+.msg{max-width:88%;padding:13px 17px;font-size:14px;line-height:1.6;animation:msgIn .35s var(--exo)}
+@keyframes msgIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.msg.assistant{align-self:flex-start;background:var(--light);color:var(--text);border-left:2px solid var(--accent)}
+.msg.user{align-self:flex-end;background:var(--accent);color:var(--white)}
+.msg.error{align-self:center;background:var(--white);border:1px solid var(--border);color:var(--muted);font-size:12.5px;text-align:center;max-width:100%}
+.retry-row{display:flex;justify-content:center;margin-top:8px}
+.retry-btn{border:1px solid var(--accent);color:var(--accent);padding:8px 18px;font-size:12px;letter-spacing:.03em}
+.retry-btn:hover{background:var(--accent);color:var(--white)}
+
+.typing{align-self:flex-start;display:flex;gap:5px;padding:14px 17px;background:var(--light);border-left:2px solid var(--accent)}
+.typing span{width:6px;height:6px;background:var(--muted);border-radius:50%;animation:tbounce 1.2s infinite ease-in-out}
+.typing span:nth-child(2){animation-delay:.15s}
+.typing span:nth-child(3){animation-delay:.3s}
+@keyframes tbounce{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+
+.chat-input-row{border-top:1px solid var(--border);padding:16px 20px;display:flex;gap:10px;align-items:flex-end}
+.chat-input-row textarea{flex:1;border:1px solid var(--border);padding:12px 14px;font-family:var(--ff-b);font-size:14px;resize:none;max-height:140px;min-height:46px;transition:border-color var(--dur-fast) var(--exo)}
+.chat-input-row textarea:focus{outline:none;border-color:var(--accent)}
+.chat-input-row textarea:disabled{background:var(--light);color:var(--muted)}
+.send-btn{background:var(--accent);color:var(--white);padding:12px 20px;font-size:13px;font-weight:600;flex-shrink:0;transition:opacity var(--dur-fast) var(--exo)}
+.send-btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* quotes drawer */
+.quotes-drawer{border-top:1px solid var(--border);background:var(--light)}
+.quotes-toggle{width:100%;padding:11px 26px;display:flex;align-items:center;justify-content:space-between;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.quotes-toggle:hover{color:var(--accent)}
+.quotes-toggle .n{color:var(--accent);font-weight:600}
+.quotes-body{max-height:0;overflow:hidden;transition:max-height var(--dur-med) var(--exo)}
+.quotes-body.open{max-height:220px;overflow-y:auto}
+.quotes-inner{padding:4px 26px 16px;display:flex;flex-wrap:wrap;gap:8px}
+.quote-chip{background:var(--white);border:1px solid var(--border);padding:7px 12px;font-size:11.5px;max-width:100%}
+.quote-chip .qe{color:var(--accent);font-size:9px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:3px}
+.no-quotes{font-size:12px;color:var(--muted);padding:6px 0}
+
+/* star column */
+.star-col{flex:1;position:relative;background:var(--white);overflow:hidden}
+#viewport{position:absolute;inset:0;cursor:grab;touch-action:none}
+#viewport.grabbing{cursor:grabbing}
+#world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+#world.focusmode .star-outline{opacity:.12}
+#world.focusmode .center-word{opacity:.12}
+#world.focusmode .node:not(.on){opacity:.12}
+#world.focusmode .plabel:not(.on){opacity:.12}
+.star-outline,.center-word,.node,.plabel{transition:opacity var(--dur-med) var(--exo)}
+#star{position:absolute;left:-700px;top:-700px;width:1400px;height:1400px;overflow:visible}
+.star-outline{fill:none;stroke:var(--text);stroke-width:1.1;vector-effect:non-scaling-stroke}
+.center-cap{fill:var(--white);stroke:var(--border);stroke-width:1;vector-effect:non-scaling-stroke;transition:fill var(--dur-slow) var(--exo),stroke var(--dur-slow) var(--exo)}
+.center-word{position:absolute;transform:translate(-50%,-50%);text-align:center;cursor:pointer;user-select:none;background:var(--white);padding:8px 14px}
+.center-word .w{font-family:var(--ff-h);font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--text)}
+.center-word .w b{color:var(--accent)}
+.center-word.chosen .w{color:var(--accent)}
+.center-word .e{font-family:var(--ff-b);font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.center-word.chosen .e{color:var(--accent)}
+.center-word .cands{font-family:var(--ff-b);font-size:9.5px;color:var(--muted);opacity:.55;margin-top:4px}
+.node{position:absolute;transform:translate(-50%,-50%);cursor:pointer}
+.node .ringwrap{position:relative;width:76px;height:76px;display:grid;place-items:center;transition:transform var(--dur-fast) var(--exo)}
+.node:hover .ringwrap{transform:translateY(-2px) scale(1.04)}
+.node .ringwrap svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.ring-bg{fill:none;stroke:var(--border);stroke-width:3}
+.ring-fg{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;transition:stroke-dashoffset var(--dur-slow) var(--exo)}
+.node .core{width:48px;height:48px;border-radius:50%;background:var(--white);border:1px solid var(--border);display:grid;place-items:center;box-shadow:var(--shadow);transition:all var(--dur-fast) var(--exo)}
+.node .core .code{font-family:var(--ff-h);font-weight:700;font-size:13px;letter-spacing:.04em;color:var(--accent)}
+.node:hover .core{border-color:var(--accent)}
+.node.on .core{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft),var(--shadow);animation:breathe 2.8s ease-in-out infinite}
+@keyframes breathe{0%,100%{box-shadow:0 0 0 2px var(--accent-soft),var(--shadow)}50%{box-shadow:0 0 0 4px var(--accent-soft),0 0 16px var(--accent-glow),var(--shadow)}}
+.plabel{position:absolute;transform:translate(-50%,-50%);text-align:center;cursor:pointer;user-select:none;width:156px}
+.plabel .t{font-family:var(--ff-h);font-weight:700;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--text);transition:color var(--dur-fast) var(--exo)}
+.plabel .o{font-family:var(--ff-b);font-weight:400;font-size:11px;color:var(--muted);margin-top:2px;transition:color var(--dur-fast) var(--exo)}
+.plabel.on .t{color:var(--accent)}
+#wire{position:absolute;inset:0;pointer-events:none;z-index:8;overflow:visible}
+#wire path{fill:none;stroke:var(--accent);stroke-width:1.4;opacity:0;transition:opacity var(--dur-med) var(--exo)}
+#wire.show path{opacity:.85}
+#wire circle{fill:var(--accent);opacity:0;transition:opacity var(--dur-med) var(--exo)}
+#wire.show circle{opacity:1}
+
+.hud{position:absolute;z-index:20}
+.spectrum-badge{left:26px;top:24px;display:flex;align-items:center;gap:8px;font-family:var(--ff-b);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent);padding:7px 14px}
+.comp{right:24px;top:24px;width:270px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow);padding:16px 18px}
+.comp h3{font-family:var(--ff-b);font-weight:500;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.comp .big{font-family:var(--ff-h);font-weight:800;font-size:26px;line-height:1;color:var(--text);margin-bottom:2px}
+.comp .big b{color:var(--accent)}
+.comp .cap{font-family:var(--ff-b);font-size:10px;color:var(--muted);margin-bottom:12px}
+.comp .row{display:flex;align-items:center;gap:9px;padding:6px 0;cursor:pointer;border-top:1px solid var(--border)}
+.comp .row:hover .rn{color:var(--accent)}
+.comp .row.on .rn{color:var(--accent);font-weight:600}
+.comp .rn{font-family:var(--ff-b);font-size:11px;color:var(--text);width:70px;flex-shrink:0;transition:color var(--dur-fast) var(--exo)}
+.comp .bar{flex:1;height:5px;background:var(--light)}
+.comp .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width var(--dur-slow) var(--exo)}
+.comp .pc{font-family:var(--ff-b);font-size:9.5px;color:var(--muted);width:28px;text-align:right;flex-shrink:0}
+
+.pane{position:absolute;right:24px;top:172px;bottom:20px;width:min(38vw,400px);background:var(--white);border:1px solid var(--text);box-shadow:var(--shadow-lg);padding:24px 26px 26px;overflow-y:auto;overflow-x:hidden;transform:translateX(26px);opacity:0;pointer-events:none;transition:transform var(--dur-slow) var(--exo),opacity var(--dur-med) var(--exo);z-index:21}
+.pane.show{transform:none;opacity:1;pointer-events:auto}
+.pane::-webkit-scrollbar{width:8px}.pane::-webkit-scrollbar-thumb{background:var(--border)}
+.pane .eyebrow{margin-bottom:10px}
+.pane .meta{font-family:var(--ff-b);font-size:10px;color:var(--muted);margin-left:auto}
+.pane h2{font-size:26px;line-height:1.1;margin-bottom:10px}
+.pane .close-pane{position:absolute;right:20px;top:20px;font-size:18px;color:var(--muted);width:28px;height:28px;display:grid;place-items:center;border:1px solid var(--border)}
+.pane .close-pane:hover{border-color:var(--accent);color:var(--accent)}
+.sec{opacity:0;transform:translateY(8px);transition:opacity .5s var(--exo),transform .5s var(--exo)}
+.pane.show .sec{opacity:1;transform:none}
+.sec .lab{font-family:var(--ff-b);font-weight:500;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:12px;margin:14px 0 7px;border-top:1px solid var(--border)}
+.sec p{font-size:12.5px;line-height:1.55}
+.sec ul{list-style:none}
+.sec li{font-size:12px;line-height:1.5;padding-left:14px;position:relative;margin:5px 0}
+.sec li::before{content:"";position:absolute;left:0;top:6px;width:6px;height:6px;background:var(--accent)}
+.sec li.out::before{background:var(--white);border:1.5px solid var(--muted)}
+.none{font-size:12px;color:var(--muted)}
+
+.ctrls{position:absolute;right:24px;bottom:20px;display:flex;gap:4px;z-index:22}
+.ctrls button{border:1px solid var(--border);background:var(--white);color:var(--text);width:32px;height:30px;cursor:pointer;font-size:14px;transition:all var(--dur-fast) var(--exo)}
+.ctrls button:hover{border-color:var(--accent);color:var(--accent)}
+.ctrls .fit{width:auto;padding:0 12px;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(16px);z-index:80;background:var(--text);color:var(--white);font-family:var(--ff-b);font-size:12px;padding:10px 18px;max-width:420px;text-align:center;opacity:0;pointer-events:none;transition:opacity .3s var(--exo),transform .3s var(--exo)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast b{color:var(--accent)}
+
+/* review banner + modal */
+.review-banner{position:absolute;left:0;right:0;bottom:0;z-index:30;background:var(--text);color:var(--white);padding:16px 26px;display:flex;align-items:center;justify-content:space-between;gap:18px;transform:translateY(100%);transition:transform var(--dur-slow) var(--exo)}
+.review-banner.show{transform:none}
+.review-banner .rb-text{font-size:13px}
+.review-banner .rb-text b{color:var(--accent)}
+.review-banner button{background:var(--accent);color:var(--white);padding:11px 22px;font-size:12.5px;font-weight:600;flex-shrink:0}
+.review-banner button:hover{opacity:.85}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(26,26,46,.5);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.show{display:flex}
+.modal{background:var(--white);border:1px solid var(--text);box-shadow:var(--shadow-lg);max-width:460px;width:100%;padding:32px 34px}
+.modal .eyebrow{margin-bottom:14px}
+.modal h2{font-size:24px;margin-bottom:8px}
+.modal .sub{font-size:13px;color:var(--muted);margin-bottom:24px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.field input{width:100%;border:1px solid var(--border);padding:12px 14px;font-family:var(--ff-b);font-size:14px;transition:border-color var(--dur-fast) var(--exo)}
+.field input:focus{outline:none;border-color:var(--accent)}
+.modal-actions{display:flex;gap:10px;margin-top:22px}
+.modal-actions .btn-ghost{flex:0 0 auto}
+.modal-actions .btn-primary{flex:1;justify-content:center}
+.modal-err{color:var(--text);font-size:12px;margin-top:6px}
+
+.field textarea{width:100%;border:1px solid var(--border);padding:12px 14px;font-family:var(--ff-b);font-size:14px;resize:vertical;transition:border-color var(--dur-fast) var(--exo)}
+.field textarea:focus{outline:none;border-color:var(--accent)}
+
+.drawer-overlay{position:fixed;inset:0;background:rgba(26,26,46,.35);z-index:220;display:none;justify-content:flex-end}
+.drawer-overlay.show{display:flex}
+.drawer{background:var(--white);border-left:1px solid var(--text);box-shadow:var(--shadow-lg);width:min(420px,94vw);height:100%;padding:30px 30px 40px;overflow-y:auto;animation:drawer-in .28s var(--exo)}
+@keyframes drawer-in{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
+.drawer-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.drawer h2{font-size:22px;margin-top:8px}
+.drawer .sub{font-size:13px;color:var(--muted);margin-bottom:22px}
+.drawer-close{border:none;background:none;font-size:26px;line-height:1;cursor:pointer;color:var(--muted);padding:4px 8px}
+.drawer-close:hover{color:var(--text)}
+.img-thumbs{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.img-thumbs .th{position:relative;width:76px;height:76px;border:1px solid var(--border)}
+.img-thumbs .th img{width:100%;height:100%;object-fit:cover;display:block}
+.img-thumbs .th button{position:absolute;top:-8px;right:-8px;width:20px;height:20px;border-radius:50%;border:1px solid var(--text);background:var(--white);font-size:12px;line-height:1;cursor:pointer;padding:0}
+.details-nudge{font-size:12px;color:var(--muted);margin-top:8px}
+.details-nudge button{border:none;background:none;color:var(--accent);cursor:pointer;font-size:12px;text-decoration:underline;padding:0}
+
+.confirm-body{text-align:center;padding:8px 0}
+.confirm-body .mark{width:52px;height:52px;background:var(--accent);display:grid;place-items:center;margin:0 auto 20px}
+.confirm-body .mark span{color:var(--white);font-size:22px;font-family:var(--ff-h);font-weight:800}
+.confirm-body h2{font-size:24px;margin-bottom:12px}
+.confirm-body p{font-size:13.5px;color:var(--text);margin-bottom:10px;text-align:left}
+.confirm-list{text-align:left;margin-top:16px}
+.confirm-list li{font-size:13px;padding-left:16px;position:relative;margin:8px 0;color:var(--text)}
+.confirm-list li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;background:var(--accent)}
+
+@media (max-width:900px){
+  #session-wrap{flex-direction:column;height:auto;min-height:100vh;overflow:visible}
+  .star-col{height:70vh;min-height:480px;order:-1;border-bottom:1px solid var(--border)}
+  .chat-col{width:100%;min-width:0;height:auto}
+  .pane{width:calc(100vw - 32px);right:16px;left:16px;top:auto;bottom:16px;height:70%}
+  .comp{width:220px}
+}
 </style>
 </head>
 <body>
-  <main class="room">
-    <p class="kicker">Off the record</p>
-    <h1>Brand Therapy<span class="dot" id="dot">.</span></h1>
-    <p class="line"><span id="typed"></span><span class="cursor" aria-hidden="true"></span></p>
-  </main>
-  <p class="foot">You found a quiet room.</p>
+<div id="app">
+
+  <!-- ============ LANDING ============ -->
+  <section class="state active" id="state-landing">
+    <div id="landing-wrap">
+      <nav class="nav">
+        <div class="wm">Florian P<b>.</b></div>
+        <div class="tag">Brand Therapy, self-serve</div>
+      </nav>
+
+      <div class="hero">
+        <div class="eyebrow"><span class="code">Self-serve Brand Therapy</span></div>
+        <h1>Clarity you can act on, built in one conversation<span class="p">.</span></h1>
+        <p class="lede">Answer questions the way you would in a real strategy session. Your answers fill a live Focus Star in front of you. No forms, no dropdowns, no guessing what a brand strategist would ask. Just the questions, and what they surface.</p>
+
+        <div class="resume-card" id="resume-card" style="display:none">
+          <div class="rc-text">Welcome back. Your session is <b id="rc-count">0</b> answers in, and your star is exactly where you left it.</div>
+          <button class="btn btn-primary" id="cta-resume">Continue your session</button>
+        </div>
+
+        <div class="cta-row">
+          <button class="btn btn-primary" id="cta-start">Start your session</button>
+          <button class="btn btn-ghost" id="cta-demo">Watch the demo</button>
+        </div>
+
+        <div class="time-badge">Takes <b>25 to 45 minutes</b>. One sitting or several, your progress stays put.</div>
+
+        <div class="trust-line"><span class="dot"></span> Florian personally reviews every star before it becomes your blueprint.</div>
+      </div>
+
+      <div class="steps">
+        <h2>How it works<span class="p">.</span></h2>
+        <div class="step-grid">
+          <div class="step">
+            <div class="n">01</div>
+            <h3>You talk</h3>
+            <p>One question at a time, in plain language. Some will feel obvious. Answer them anyway, the obvious answer is usually where the real one is hiding.</p>
+          </div>
+          <div class="step">
+            <div class="n">02</div>
+            <h3>The star fills</h3>
+            <p>Every answer lands somewhere. Watch a five-edge Focus Star build in real time as your position, audience, purpose, voice, and promise take shape.</p>
+          </div>
+          <div class="step">
+            <div class="n">03</div>
+            <h3>Florian reviews and certifies</h3>
+            <p>Nothing publishes automatically. Florian reads what you built, checks it against your own words, and sharpens anything that's still soft before it becomes real.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="star-preview">
+        <div class="copy">
+          <h2>The Focus Star<span class="p">.</span></h2>
+          <p>Five edges, one center. Not a worksheet, a working map of how your brand actually decides things.</p>
+          <ul>
+            <li><b>Product.</b> What people actually pay for, not the mission version.</li>
+            <li><b>People.</b> Who you do your best work for, and who you don't.</li>
+            <li><b>Purpose.</b> The real reason this exists, traced to something concrete.</li>
+            <li><b>Personality.</b> How it sounds when it's not performing.</li>
+            <li><b>Promise.</b> The one thing that has to be true every time.</li>
+          </ul>
+        </div>
+        <div class="mini-star-wrap">
+          <svg viewBox="-320 -320 640 640" id="mini-star-svg"></svg>
+        </div>
+      </div>
+
+      <div class="trust-block">
+        <div class="mark"><span>FP</span></div>
+        <p>This isn't an AI-generated brand kit. It's a real diagnostic. <b>Florian personally reviews every star before it becomes your blueprint,</b> checking your positions against what you actually said, sharpening anything still soft, and flagging what needs a real conversation instead of a chat message.</p>
+      </div>
+
+      <footer class="landing-foot">
+        <div>Brand Therapy is a process, not a company.</div>
+        <div>&copy; Florian P.</div>
+      </footer>
+    </div>
+  </section>
+
+  <!-- ============ SESSION ============ -->
+  <section class="state" id="state-session">
+    <div class="demo-banner" id="demo-banner" style="display:none">
+      Demo replay with a fictional brand. <b>Dana Reyes Advisory</b> is not a real client.
+      <button id="demo-exit">Exit demo</button>
+    </div>
+    <div id="session-wrap">
+      <div class="chat-col">
+        <div class="chat-head">
+          <div class="wm">Florian P<b>.</b></div>
+          <div class="actions">
+            <button class="icon-btn" id="btn-open-details">Your details</button>
+            <button class="icon-btn" id="btn-start-over">Start over</button>
+          </div>
+        </div>
+        <div class="chat-scroll" id="chat-scroll"></div>
+        <div class="quotes-drawer">
+          <button class="quotes-toggle" id="quotes-toggle">
+            <span>Your words <span class="n" id="quotes-count">0</span></span>
+            <span id="quotes-caret">&#9662;</span>
+          </button>
+          <div class="quotes-body" id="quotes-body">
+            <div class="quotes-inner" id="quotes-inner"><div class="no-quotes">Nothing captured yet. Sharp lines you say will show up here.</div></div>
+          </div>
+        </div>
+        <div class="chat-input-row">
+          <textarea id="chat-input" placeholder="Type your answer..." rows="1"></textarea>
+          <button class="send-btn" id="send-btn">Send</button>
+        </div>
+      </div>
+
+      <div class="star-col">
+        <div id="viewport">
+          <div id="world"><svg id="star" viewBox="-700 -700 1400 1400"></svg></div>
+          <svg id="wire"><path/><circle r="3.5"/></svg>
+        </div>
+        <div class="hud spectrum-badge" id="spectrum-badge">Spectrum &middot; TBD</div>
+        <div class="hud comp" id="comp"></div>
+        <div class="hud pane" id="pane"></div>
+        <div class="ctrls">
+          <button onclick="zoomBy(.82)">&minus;</button><button onclick="zoomBy(1.22)">+</button>
+          <button class="fit" onclick="unfocusEdge()">Whole star</button>
+        </div>
+        <div class="review-banner" id="review-banner">
+          <div class="rb-text">Your star is <b>ready for review</b>. Every edge has a real position.
+            <div class="details-nudge" id="rb-nudge">Before you send: <button id="btn-nudge-details">add your LinkedIn, bio, or photos</button> so Florian reviews the full picture.</div>
+          </div>
+          <button id="btn-open-submit">Send to Florian for review</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- lead gate: name + email before the session starts -->
+<div class="modal-overlay" id="lead-overlay">
+  <div class="modal" id="lead-modal">
+    <div class="eyebrow"><span class="code">Before we start</span></div>
+    <h2>Two things, then we begin<span class="p">.</span></h2>
+    <p class="sub">So your star has a name on it and Florian can get your review back to you. That's all we need up front.</p>
+    <div class="field"><label for="l-name">Your name</label><input id="l-name" type="text" placeholder="Full name" autocomplete="name" /></div>
+    <div class="field"><label for="l-email">Email</label><input id="l-email" type="email" placeholder="you@yourbrand.com" autocomplete="email" /></div>
+    <div class="modal-err" id="lead-err" style="display:none"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="btn-cancel-lead">Back</button>
+      <button class="btn btn-primary" id="btn-do-lead" style="justify-content:center">Start the session</button>
+    </div>
+  </div>
+</div>
+
+<!-- details drawer: optional profile, open any time from the session header -->
+<div class="drawer-overlay" id="details-overlay">
+  <aside class="drawer" id="details-drawer">
+    <div class="drawer-head">
+      <div>
+        <div class="eyebrow"><span class="code">Your details</span></div>
+        <h2>Round out your file<span class="p">.</span></h2>
+      </div>
+      <button class="drawer-close" id="btn-close-details" aria-label="Close">&times;</button>
+    </div>
+    <p class="sub">All optional. Anything you add here rides along when your star goes to Florian for review.</p>
+    <div class="field"><label for="d-linkedin">LinkedIn</label><input id="d-linkedin" type="url" placeholder="https://linkedin.com/in/you" /></div>
+    <div class="field"><label for="d-links">Other links</label><textarea id="d-links" rows="3" placeholder="Website, Instagram, portfolio... one per line"></textarea></div>
+    <div class="field"><label for="d-bio">Short bio</label><textarea id="d-bio" rows="5" placeholder="A few lines about you and your work, in your own words."></textarea></div>
+    <div class="field">
+      <label>Photos or brand images</label>
+      <input id="d-images" type="file" accept="image/*" multiple style="display:none" />
+      <button class="btn btn-ghost" id="btn-add-images" style="width:100%;justify-content:center">Add images (up to 3)</button>
+      <div class="img-thumbs" id="img-thumbs"></div>
+    </div>
+    <div class="modal-err" id="details-err" style="display:none"></div>
+    <div class="modal-actions">
+      <button class="btn btn-primary" id="btn-save-details" style="width:100%;justify-content:center">Save</button>
+    </div>
+  </aside>
+</div>
+
+<!-- submit modal -->
+<div class="modal-overlay" id="submit-overlay">
+  <div class="modal" id="submit-modal">
+    <div class="eyebrow"><span class="code">Send for review</span></div>
+    <h2>Get your blueprint reviewed<span class="p">.</span></h2>
+    <p class="sub">Florian reads every star personally. He'll check your positions, sharpen what's still soft, and get back to you.</p>
+    <div class="field"><label for="f-name">Your name</label><input id="f-name" type="text" placeholder="Full name" /></div>
+    <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" placeholder="you@yourbrand.com" /></div>
+    <div class="field"><label for="f-brand">Brand name</label><input id="f-brand" type="text" placeholder="What you go by" /></div>
+    <div class="modal-err" id="submit-err" style="display:none"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="btn-cancel-submit">Cancel</button>
+      <button class="btn btn-primary" id="btn-do-submit" style="justify-content:center">Send for review</button>
+    </div>
+  </div>
+</div>
+
+<!-- confirmation modal -->
+<div class="modal-overlay" id="confirm-overlay">
+  <div class="modal">
+    <div class="confirm-body">
+      <div class="mark"><span>FP</span></div>
+      <h2>Sent<span class="p">.</span></h2>
+      <p>Your star is queued for Florian's personal review. Here's what happens next.</p>
+      <ul class="confirm-list">
+        <li>Florian reads the whole star, not a summary, the actual positions and quotes.</li>
+        <li>He checks them against what you said and sharpens anything still soft.</li>
+        <li>You hear back from him directly.</li>
+      </ul>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-primary" id="btn-confirm-close" style="justify-content:center;flex:1">Done</button>
+    </div>
+  </div>
+</div>
+
 <script>
-  var lines = [
-    "Tell me about your brand.",
-    "And how does that positioning make you feel?",
-    "You've been carrying that tagline a long time.",
-    "Let's sit with the silence between your words.",
-    "There are no wrong answers. Only unclear ones.",
-    "We don't have to fix everything today.",
-    "Say the thing you actually mean."
-  ];
-  var typed = document.getElementById('typed');
-  var li = 0, ci = 0, deleting = false;
-  function tick(){
-    var full = lines[li];
-    if(!deleting){
-      typed.textContent = full.slice(0, ++ci);
-      if(ci === full.length){ deleting = true; return setTimeout(tick, 2400); }
-    } else {
-      typed.textContent = full.slice(0, --ci);
-      if(ci === 0){ deleting = false; li = (li + 1) % lines.length; }
-    }
-    setTimeout(tick, deleting ? 26 : 48);
+/* =========================================================================
+   GEOMETRY (lifted exactly from tools/focus-star-live/index.html)
+   ========================================================================= */
+const ORDER=["product","people","purpose","promise","personality"];
+const TITLES={product:"Product",people:"People",purpose:"Purpose",promise:"Promise",personality:"Personality"};
+const CODE={product:'P1',people:'P2',purpose:'P3',promise:'P4',personality:'P5'};
+const STEP=72, STAR_R=278, STAR_INNER=278*0.38, NODE_R=300, LABEL_R=412;
+const ang=i=>i*STEP;
+function pt(a,r){const rad=(a-90)*Math.PI/180;return{x:Math.cos(rad)*r,y:Math.sin(rad)*r};}
+const NS='http://www.w3.org/2000/svg';
+
+function emptyStar(){
+  const edges={};
+  ORDER.forEach(id=>edges[id]={offer_name:'',position:'',compass:'',rules_in:[],rules_out:[],tradeoffs:[],proof:[],filled:0});
+  return {
+    spectrum:{position:null,note:''},
+    center:{word:'',candidates:[]},
+    edges,
+    completeness:0,
+    quotes:[],
+    ready_for_review:false
+  };
+}
+
+/* =========================================================================
+   STATE / PERSISTENCE
+   ========================================================================= */
+const API_BASE=(location.hostname==='localhost'||location.hostname==='127.0.0.1'||location.hostname==='star.florianp.com')?'':'https://star.florianp.com';
+const LS_KEY='fp_self_serve_bt_session_v1';
+let session={
+  messages:[],   // {role, content}
+  star:null,
+  started:false,
+  demo:false,
+  profile:{name:'',email:'',linkedin:'',links:[],bio:''}
+};
+const LS_IMG_KEY='fp_self_serve_bt_images_v1';
+let profileImages=[]; // [{name,data}] kept out of the main session blob
+function saveImages(){
+  try{localStorage.setItem(LS_IMG_KEY,JSON.stringify(profileImages));}catch(e){
+    toast('Photos are too large to keep between visits. They will still send with your star.');
   }
-  tick();
+}
+function loadImages(){
+  try{const raw=localStorage.getItem(LS_IMG_KEY);if(raw)profileImages=JSON.parse(raw)||[];}catch(e){}
+}
 
-  var dot = document.getElementById('dot');
-  var taps = 0;
-  dot.addEventListener('click', function(){
-    taps++;
-    dot.classList.toggle('pulse');
-    if(taps === 5){
-      lines = ["Okay. You clearly came here for the real thing."];
-      li = 0; ci = 0; deleting = false;
-    }
+function saveSession(){
+  if(session.demo)return; // never persist a demo session over a real one
+  try{localStorage.setItem(LS_KEY,JSON.stringify(session));}catch(e){}
+}
+function loadSession(){
+  try{
+    const raw=localStorage.getItem(LS_KEY);
+    if(!raw)return false;
+    const parsed=JSON.parse(raw);
+    if(!parsed||!parsed.started)return false;
+    session=parsed;
+    return true;
+  }catch(e){return false;}
+}
+function clearSession(){
+  try{localStorage.removeItem(LS_KEY);}catch(e){}
+}
+
+/* =========================================================================
+   VIEW SWITCHING
+   ========================================================================= */
+function showState(id){
+  document.querySelectorAll('.state').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+/* =========================================================================
+   MINI STAR ON LANDING (static preview, no interaction)
+   ========================================================================= */
+function buildMiniStar(){
+  const svg=document.getElementById('mini-star-svg');
+  let p=[];
+  for(let i=0;i<5;i++){const o=pt(ang(i),278),v=pt(ang(i)+36,278*0.38);p.push(`${o.x.toFixed(1)},${o.y.toFixed(1)}`,`${v.x.toFixed(1)},${v.y.toFixed(1)}`);}
+  let html=`<polygon points="${p.join(' ')}" class="mini-star-outline"/>`;
+  html+=`<circle cx="0" cy="0" r="30" fill="var(--accent)" opacity="0.9"/>`;
+  ORDER.forEach((id,i)=>{
+    const N=pt(ang(i),300);
+    const on=(i%2===0);
+    html+=`<circle cx="${N.x.toFixed(1)}" cy="${N.y.toFixed(1)}" r="26" class="mini-node${on?' on':''}"/>`;
+    html+=`<text x="${N.x.toFixed(1)}" y="${(N.y+4).toFixed(1)}" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="700" font-size="13" fill="${on?'var(--accent)':'var(--muted)'}">${CODE[id]}</text>`;
   });
+  svg.innerHTML=html;
+}
 
-  console.log('%cBrand Therapy.', 'color:#5A5CF9;font:800 30px "Bricolage Grotesque",system-ui,sans-serif');
-  console.log('%cNothing on the surface here. The work happens behind closed doors.', 'color:#9a9aa6;font:14px Poppins,system-ui,sans-serif');
+/* =========================================================================
+   TOAST
+   ========================================================================= */
+let toastTimer=null;
+function toast(html){
+  const t=document.getElementById('toast');
+  t.innerHTML=html;t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'),3600);
+}
+
+/* =========================================================================
+   STAR RENDER (session view)
+   ========================================================================= */
+const starSvg=document.getElementById('star'), world=document.getElementById('world');
+let focused=null;
+const seenCenterCandidates=new Set();
+
+function edgesObj(star){ return (star && star.edges) || {}; }
+
+function buildStarSkeleton(){
+  starSvg.innerHTML='';
+  const out=document.createElementNS(NS,'polygon');let p=[];
+  for(let i=0;i<5;i++){const o=pt(ang(i),STAR_R),v=pt(ang(i)+36,STAR_INNER);p.push(`${o.x.toFixed(1)},${o.y.toFixed(1)}`,`${v.x.toFixed(1)},${v.y.toFixed(1)}`);}
+  out.setAttribute('points',p.join(' '));out.setAttribute('class','star-outline');starSvg.appendChild(out);
+  const cap=document.createElementNS(NS,'circle');cap.setAttribute('cx',0);cap.setAttribute('cy',0);cap.setAttribute('r',40);cap.setAttribute('class','center-cap');
+  starSvg.appendChild(cap);
+}
+function paintCenterCap(star){
+  const cap=starSvg.querySelector('.center-cap');if(!cap)return;
+  const on=!!(star.center&&star.center.word);
+  cap.style.fill=on?'var(--accent)':'var(--white)';
+  cap.style.stroke=on?'var(--accent)':'var(--border)';
+}
+function buildStarContent(star){
+  world.querySelectorAll('.node,.plabel,.center-word').forEach(n=>n.remove());
+  const em=edgesObj(star);
+  const cw=document.createElement('div');
+  const hasWord=!!(star.center&&star.center.word);
+  cw.className='center-word'+(hasWord?' chosen':'');
+  cw.style.left='0px';cw.style.top='2px';
+  const word=hasWord?star.center.word:'';
+  const cands=(star.center&&star.center.candidates)||[];
+  let inner='';
+  if(hasWord){
+    inner=`<div class="w">${word.replace(/([?!.])$/,'<b>$1</b>')}${/[?!.]$/.test(word)?'':'<b>.</b>'}</div><div class="e">Center &middot; Promise</div>`;
+  } else if(cands.length){
+    inner=`<div class="w" style="opacity:.4">${cands[cands.length-1]}<b>?</b></div><div class="e">Center &middot; candidate</div>`;
+  } else {
+    inner=`<div class="w" style="opacity:.3">TBD<b>.</b></div><div class="e">Center &middot; Promise</div>`;
+  }
+  cw.innerHTML=inner;
+  cw.addEventListener('click',()=>focusEdge('promise'));
+  world.appendChild(cw);
+
+  ORDER.forEach((id,i)=>{
+    const e=em[id]||{filled:0,offer_name:''},N=pt(ang(i),NODE_R),L=pt(ang(i),LABEL_R);
+    const fr=(e.filled||0)/10,C=2*Math.PI*33,off=C*(1-fr);
+    const node=document.createElement('div');node.className='node';node.dataset.id=id;node.style.left=N.x+'px';node.style.top=N.y+'px';
+    node.innerHTML=`<div class="ringwrap"><svg viewBox="0 0 76 76"><circle class="ring-bg" cx="38" cy="38" r="33"/><circle class="ring-fg" cx="38" cy="38" r="33" stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}"/></svg><div class="core"><span class="code">${CODE[id]}</span></div></div>`;
+    node.addEventListener('click',ev=>{ev.stopPropagation();focusEdge(id);});
+    world.appendChild(node);
+    const lab=document.createElement('div');lab.className='plabel';lab.dataset.id=id;lab.style.left=L.x+'px';lab.style.top=L.y+'px';
+    lab.innerHTML=`<div class="t">${TITLES[id]}</div><div class="o">${e.offer_name||''}</div>`;
+    lab.addEventListener('click',ev=>{ev.stopPropagation();focusEdge(id);});
+    world.appendChild(lab);
+  });
+}
+function updateStarContent(star){
+  const em=edgesObj(star);
+  ORDER.forEach(id=>{
+    const e=em[id]||{filled:0};
+    const node=world.querySelector(`.node[data-id="${id}"]`);
+    if(node){
+      const fg=node.querySelector('.ring-fg');
+      if(fg){const C=2*Math.PI*33,off=C*(1-(e.filled||0)/10);fg.setAttribute('stroke-dashoffset',off.toFixed(1));}
+    }
+    const o=world.querySelector(`.plabel[data-id="${id}"] .o`);if(o)o.textContent=e.offer_name||'';
+  });
+  const cwEl=world.querySelector('.center-word');
+  if(cwEl){
+    const hasWord=!!(star.center&&star.center.word);
+    const cands=(star.center&&star.center.candidates)||[];
+    let inner='';
+    if(hasWord){
+      const word=star.center.word;
+      inner=`<div class="w">${word.replace(/([?!.])$/,'<b>$1</b>')}${/[?!.]$/.test(word)?'':'<b>.</b>'}</div><div class="e">Center &middot; Promise</div>`;
+    } else if(cands.length){
+      inner=`<div class="w" style="opacity:.4">${cands[cands.length-1]}<b>?</b></div><div class="e">Center &middot; candidate</div>`;
+    } else {
+      inner=`<div class="w" style="opacity:.3">TBD<b>.</b></div><div class="e">Center &middot; Promise</div>`;
+    }
+    cwEl.innerHTML=inner;
+    cwEl.classList.toggle('chosen',hasWord);
+    if(hasWord && !seenCenterCandidates.has('__center_word__')){
+      seenCenterCandidates.add('__center_word__');
+      toast(`Center word set: <b>${star.center.word}</b>`);
+    }
+  }
+  paintCenterCap(star);
+  const comp=document.getElementById('comp');
+  const big=comp.querySelector('.big');if(big)big.innerHTML=`${star.completeness||0}<b>%</b>`;
+  ORDER.forEach(id=>{
+    const e=em[id]||{filled:0},row=comp.querySelector(`.row[data-id="${id}"]`);if(!row)return;
+    const bar=row.querySelector('.bar i');if(bar)bar.style.width=((e.filled||0)*10)+'%';
+    const pc=row.querySelector('.pc');if(pc)pc.textContent=((e.filled||0)*10)+'%';
+  });
+  if(focused){const pane=document.getElementById('pane');pane.innerHTML=paneHTML(focused,em[focused]||{filled:0});pane.classList.add('show');}
+  const badge=document.getElementById('spectrum-badge');
+  const pos=star.spectrum&&star.spectrum.position;
+  badge.textContent='Spectrum · '+(pos==null?'TBD':('P'+pos+' of 5'));
+}
+function buildComp(star){
+  const em=edgesObj(star),c=document.getElementById('comp');
+  c.innerHTML=`<h3>Strategy completeness</h3><div class="big">${star.completeness||0}<b>%</b></div><div class="cap">Your Focus Star</div>`+
+    ORDER.map(id=>{const e=em[id]||{filled:0};return `<div class="row" data-id="${id}"><span class="rn">${TITLES[id]}</span><span class="bar"><i style="width:${(e.filled||0)*10}%"></i></span><span class="pc">${(e.filled||0)*10}%</span></div>`;}).join('');
+  c.querySelectorAll('.row').forEach(r=>r.addEventListener('click',()=>focusEdge(r.dataset.id)));
+}
+function paneHTML(id,e){
+  const L=(items,o)=>items&&items.length?`<ul>${items.map(t=>`<li class="${o||''}">${t}</li>`).join('')}</ul>`:`<div class="none">Not yet drafted.</div>`;
+  const filledTag=`<span class="meta">${e.filled||0}/10 &middot; ${(e.filled||0)*10}%</span>`;
+  const secs=[
+    ['Position', e.position?`<p>${e.position}</p>`:`<div class="none">Not yet drafted.</div>`],
+    ['Compass', e.compass?`<p>${e.compass}</p>`:`<div class="none">Not yet drafted.</div>`],
+    ['Rules in', L(e.rules_in)],
+    ['Rules out', L(e.rules_out,'out')],
+    ['Tradeoffs', L(e.tradeoffs)],
+    ['Proof', L(e.proof)]
+  ];
+  return `<button class="close-pane" onclick="unfocusEdge()">&times;</button>
+    <div class="eyebrow"><span class="code">${CODE[id]} &middot; ${TITLES[id]}</span>${filledTag}</div>
+    <h2>${e.offer_name||TITLES[id]}<span class="p">.</span></h2>`+
+    secs.map((sx,i)=>`<div class="sec" style="transition-delay:${(0.04*i+0.05).toFixed(2)}s"><div class="lab">${sx[0]}</div>${sx[1]}</div>`).join('');
+}
+
+/* ============ camera ============ */
+const vp=document.getElementById('viewport');
+const tf={x:0,y:0,k:1};
+function clampK(k){return Math.max(.3,Math.min(3,k));}
+const wire=document.getElementById('wire'),wirePath=wire.querySelector('path'),wireDot=wire.querySelector('circle');
+function apply(){world.style.transform=`translate(${tf.x}px,${tf.y}px) scale(${tf.k})`;if(focused)updateWire();}
+function starColRect(){return document.querySelector('.star-col').getBoundingClientRect();}
+function nodeScreen(id){const r=starColRect();const i=ORDER.indexOf(id),N=pt(ang(i),NODE_R);return{x:N.x*tf.k+tf.x+r.left,y:N.y*tf.k+tf.y+r.top};}
+function updateWire(){
+  const pane=document.getElementById('pane');const pr=pane.getBoundingClientRect();
+  const r=starColRect();
+  const sc=nodeScreen(focused);const tx=pr.left,ty=pr.top+46;
+  const dx=Math.max(Math.abs(tx-sc.x)*0.4,60);
+  wirePath.setAttribute('d',`M${sc.x-r.left},${sc.y-r.top} C${sc.x-r.left+dx},${sc.y-r.top} ${tx-r.left-dx},${ty-r.top} ${tx-r.left},${ty-r.top}`);
+  wireDot.setAttribute('cx',sc.x-r.left);wireDot.setAttribute('cy',sc.y-r.top);
+}
+function zoomBy(f){const r=starColRect();const cx=r.width/2,cy=r.height/2,k1=clampK(tf.k*f),s=k1/tf.k;tf.x=cx-(cx-tf.x)*s;tf.y=cy-(cy-tf.y)*s;tf.k=k1;apply();}
+let raf=null;
+function tween(to,dur=620,done){cancelAnimationFrame(raf);const f={...tf},t0=performance.now();
+  const ez=t=>t>=1?1:1-Math.pow(2,-10*t);
+  (function s(now){let t=Math.min(1,(now-t0)/dur),e=ez(t);tf.x=f.x+(to.x-f.x)*e;tf.y=f.y+(to.y-f.y)*e;tf.k=f.k+(to.k-f.k)*e;apply();if(t<1)raf=requestAnimationFrame(s);else if(done)done();})(t0);}
+function fitTarget(){const r=starColRect();const half=560,k=clampK(Math.min(r.width,r.height)/(2*half)*0.92);return{x:r.width/2,y:r.height/2,k};}
+function fitStar(instant){const t=fitTarget();if(instant){tf.x=t.x;tf.y=t.y;tf.k=t.k;apply();}else tween(t);}
+function focusEdge(id){
+  const r=starColRect();
+  const i=ORDER.indexOf(id),N=pt(ang(i),NODE_R);
+  const k=clampK(1.15);const sx=r.width*0.30,sy=r.height*0.46;
+  tween({k,x:sx-N.x*k,y:sy-N.y*k});
+  focused=id;world.classList.add('focusmode');
+  world.querySelectorAll('.node').forEach(n=>n.classList.toggle('on',n.dataset.id===id));
+  world.querySelectorAll('.plabel').forEach(l=>l.classList.toggle('on',l.dataset.id===id));
+  document.querySelectorAll('.comp .row').forEach(rr=>rr.classList.toggle('on',rr.dataset.id===id));
+  const em=edgesObj(session.star||emptyStar());const pane=document.getElementById('pane');pane.innerHTML=paneHTML(id,em[id]||{filled:0});
+  pane.scrollTop=0;pane.classList.add('show');wire.classList.add('show');
+}
+function unfocusEdge(){
+  focused=null;world.classList.remove('focusmode');
+  world.querySelectorAll('.node,.plabel').forEach(n=>n.classList.remove('on'));
+  document.querySelectorAll('.comp .row').forEach(r=>r.classList.remove('on'));
+  document.getElementById('pane').classList.remove('show');wire.classList.remove('show');
+  fitStar();
+}
+let down=null;
+vp.addEventListener('pointerdown',e=>{if(e.target.closest('.node,.plabel,.center-word'))return;down={x:e.clientX,y:e.clientY,tx:tf.x,ty:tf.y};world._m=false;vp.classList.add('grabbing');vp.setPointerCapture(e.pointerId);});
+vp.addEventListener('pointermove',e=>{if(!down)return;const dx=e.clientX-down.x,dy=e.clientY-down.y;if(Math.abs(dx)+Math.abs(dy)>4)world._m=true;tf.x=down.tx+dx;tf.y=down.ty+dy;apply();});
+vp.addEventListener('pointerup',()=>{down=null;vp.classList.remove('grabbing');});
+vp.addEventListener('pointercancel',()=>{down=null;vp.classList.remove('grabbing');});
+vp.addEventListener('click',e=>{if(!world._m&&e.target===vp&&focused)unfocusEdge();});
+vp.addEventListener('wheel',e=>{e.preventDefault();const r=vp.getBoundingClientRect(),cx=e.clientX-r.left,cy=e.clientY-r.top;
+  const k1=clampK(tf.k*Math.exp(-e.deltaY*0.0016)),s=k1/tf.k;tf.x=cx-(cx-tf.x)*s;tf.y=cy-(cy-tf.y)*s;tf.k=k1;apply();},{passive:false});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&focused)unfocusEdge();});
+addEventListener('resize',()=>{if(document.getElementById('state-session').classList.contains('active')){if(focused)apply();else fitStar(true);}});
+
+/* =========================================================================
+   CHAT
+   ========================================================================= */
+const chatScroll=document.getElementById('chat-scroll');
+const chatInput=document.getElementById('chat-input');
+const sendBtn=document.getElementById('send-btn');
+let pending=false;
+
+function appendMsg(role,content){
+  const d=document.createElement('div');
+  d.className='msg '+role;
+  d.textContent=content;
+  chatScroll.appendChild(d);
+  chatScroll.scrollTop=chatScroll.scrollHeight;
+  return d;
+}
+function appendError(text,onRetry){
+  const wrap=document.createElement('div');
+  wrap.className='msg error';
+  wrap.textContent=text;
+  chatScroll.appendChild(wrap);
+  const row=document.createElement('div');
+  row.className='retry-row';
+  const btn=document.createElement('button');
+  btn.className='retry-btn';btn.textContent='Retry';
+  btn.addEventListener('click',()=>{wrap.remove();row.remove();onRetry();});
+  row.appendChild(btn);
+  chatScroll.appendChild(row);
+  chatScroll.scrollTop=chatScroll.scrollHeight;
+}
+let typingEl=null;
+function showTyping(){
+  typingEl=document.createElement('div');
+  typingEl.className='typing';
+  typingEl.innerHTML='<span></span><span></span><span></span>';
+  chatScroll.appendChild(typingEl);
+  chatScroll.scrollTop=chatScroll.scrollHeight;
+}
+function hideTyping(){ if(typingEl){typingEl.remove();typingEl=null;} }
+
+function setPending(v){
+  pending=v;
+  chatInput.disabled=v;
+  sendBtn.disabled=v;
+}
+
+function renderQuotes(){
+  const quotes=(session.star&&session.star.quotes)||[];
+  document.getElementById('quotes-count').textContent=quotes.length;
+  const inner=document.getElementById('quotes-inner');
+  if(!quotes.length){
+    inner.innerHTML='<div class="no-quotes">Nothing captured yet. Sharp lines you say will show up here.</div>';
+    return;
+  }
+  inner.innerHTML=quotes.map(q=>`<div class="quote-chip"><span class="qe">${(q.edge||'').toString().toUpperCase()}</span>&ldquo;${q.quote}&rdquo;</div>`).join('');
+}
+
+function renderReviewBanner(){
+  const banner=document.getElementById('review-banner');
+  const ready=!!(session.star&&session.star.ready_for_review);
+  banner.classList.toggle('show',ready);
+}
+
+function renderStarFull(){
+  const star=session.star||emptyStar();
+  buildStarContent(star);
+  buildComp(star);
+  paintCenterCap(star);
+  updateStarContent(star);
+  renderQuotes();
+  renderReviewBanner();
+}
+
+async function callChatAPI(messages,star){
+  const res=await fetch(API_BASE+'/api/chat',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({messages,star})
+  });
+  if(!res.ok){
+    let msg='The session hit a snag ('+res.status+').';
+    throw new Error(msg);
+  }
+  return res.json();
+}
+
+function doSendTurn(afterMessages){
+  setPending(true);
+  showTyping();
+  callChatAPI(afterMessages,session.star)
+    .then(data=>{
+      hideTyping();
+      session.star=data.star||session.star||emptyStar();
+      if(!session.star.edges) session.star.edges=emptyStar().edges;
+      session.messages.push({role:'assistant',content:data.reply||''});
+      appendMsg('assistant',data.reply||'');
+      renderStarFull();
+      setPending(false);
+      saveSession();
+    })
+    .catch(err=>{
+      hideTyping();
+      setPending(false);
+      appendError('Could not reach the session. This sometimes happens, the connection dropped or the server hiccuped.', ()=>{
+        doSendTurn(session.messages);
+      });
+    });
+}
+
+function sendUserMessage(text){
+  if(pending)return;
+  const trimmed=text.trim();
+  if(!trimmed)return;
+  session.messages.push({role:'user',content:trimmed});
+  appendMsg('user',trimmed);
+  chatInput.value='';
+  chatInput.style.height='auto';
+  saveSession();
+  doSendTurn(session.messages);
+}
+
+chatInput.addEventListener('input',()=>{
+  chatInput.style.height='auto';
+  chatInput.style.height=Math.min(chatInput.scrollHeight,140)+'px';
+});
+chatInput.addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&!e.shiftKey){
+    e.preventDefault();
+    sendUserMessage(chatInput.value);
+  }
+});
+sendBtn.addEventListener('click',()=>sendUserMessage(chatInput.value));
+
+document.getElementById('quotes-toggle').addEventListener('click',()=>{
+  const body=document.getElementById('quotes-body');
+  const caret=document.getElementById('quotes-caret');
+  const open=body.classList.toggle('open');
+  caret.style.transform=open?'rotate(180deg)':'none';
+});
+
+/* =========================================================================
+   SESSION BOOTSTRAP (real session)
+   ========================================================================= */
+function startRealSession(resumed){
+  session.demo=false;
+  document.getElementById('demo-banner').style.display='none';
+  document.getElementById('session-wrap').classList.remove('has-banner');
+  showState('state-session');
+  buildStarSkeleton();
+  requestAnimationFrame(()=>fitStar(true));
+
+  if(resumed){
+    chatScroll.innerHTML='';
+    session.messages.forEach(m=>{ if(m.content!=='__START__') appendMsg(m.role,m.content); });
+    renderStarFull();
+    return;
+  }
+
+  // fresh session
+  chatScroll.innerHTML='';
+  session.messages=[{role:'user',content:'__START__'}];
+  session.star=null;
+  session.started=true;
+  saveSession();
+  doSendTurn(session.messages);
+}
+
+function startOver(){
+  clearSession();
+  try{localStorage.removeItem(LS_IMG_KEY);}catch(e){}
+  profileImages=[];
+  session={messages:[],star:null,started:false,demo:false,profile:{name:'',email:'',linkedin:'',links:[],bio:''}};
+  document.getElementById('resume-card').style.display='none';
+  const cs=document.getElementById('cta-start');
+  cs.classList.add('btn-primary');cs.classList.remove('btn-ghost');
+  cs.textContent='Start your session';
+  showState('state-landing');
+}
+
+/* lead gate: name + email before anything else */
+const leadOverlay=document.getElementById('lead-overlay');
+document.getElementById('cta-start').addEventListener('click',()=>{
+  if(session.started&&!session.demo&&session.messages.length>1){
+    if(!confirm('Start fresh? This clears your current session and its star.'))return;
+    startOver();
+  }
+  const p=session.profile||{};
+  if(p.name&&p.email){startRealSession(false);return;} // already gave them
+  document.getElementById('lead-err').style.display='none';
+  document.getElementById('l-name').value=p.name||'';
+  document.getElementById('l-email').value=p.email||'';
+  leadOverlay.classList.add('show');
+  document.getElementById('l-name').focus();
+});
+document.getElementById('btn-cancel-lead').addEventListener('click',()=>leadOverlay.classList.remove('show'));
+document.getElementById('btn-do-lead').addEventListener('click',()=>{
+  const name=document.getElementById('l-name').value.trim();
+  const email=document.getElementById('l-email').value.trim();
+  const err=document.getElementById('lead-err');
+  if(!name){err.textContent='Your name, so the star has one on it.';err.style.display='block';return;}
+  if(!/.+@.+\..+/.test(email)){err.textContent='A real email, so the review can reach you.';err.style.display='block';return;}
+  session.profile=Object.assign({name:'',email:'',linkedin:'',links:[],bio:''},session.profile,{name,email});
+  leadOverlay.classList.remove('show');
+  fetch(API_BASE+'/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({name,email})}).catch(()=>{});
+  startRealSession(false);
+});
+document.getElementById('l-email').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('btn-do-lead').click();});
+
+/* details drawer */
+const detailsOverlay=document.getElementById('details-overlay');
+function renderThumbs(){
+  const box=document.getElementById('img-thumbs');
+  box.innerHTML=profileImages.map((im,i)=>
+    `<div class="th"><img src="${im.data}" alt=""><button data-i="${i}" aria-label="Remove">&times;</button></div>`).join('');
+  box.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{
+    profileImages.splice(+b.dataset.i,1);saveImages();renderThumbs();
+  }));
+  document.getElementById('btn-add-images').style.display=profileImages.length>=3?'none':'';
+}
+function openDetails(){
+  const p=session.profile||{};
+  document.getElementById('d-linkedin').value=p.linkedin||'';
+  document.getElementById('d-links').value=(p.links||[]).join('\n');
+  document.getElementById('d-bio').value=p.bio||'';
+  document.getElementById('details-err').style.display='none';
+  renderThumbs();
+  detailsOverlay.classList.add('show');
+}
+document.getElementById('btn-open-details').addEventListener('click',openDetails);
+document.getElementById('btn-nudge-details').addEventListener('click',openDetails);
+document.getElementById('btn-close-details').addEventListener('click',()=>detailsOverlay.classList.remove('show'));
+detailsOverlay.addEventListener('click',e=>{if(e.target===detailsOverlay)detailsOverlay.classList.remove('show');});
+document.getElementById('btn-add-images').addEventListener('click',()=>document.getElementById('d-images').click());
+document.getElementById('d-images').addEventListener('change',e=>{
+  const err=document.getElementById('details-err');err.style.display='none';
+  [...e.target.files].slice(0,3-profileImages.length).forEach(f=>{
+    if(f.size>4*1024*1024){err.textContent=`${f.name} is over 4MB, use a smaller version.`;err.style.display='block';return;}
+    const r=new FileReader();
+    r.onload=()=>{profileImages.push({name:f.name,data:r.result});saveImages();renderThumbs();};
+    r.readAsDataURL(f);
+  });
+  e.target.value='';
+});
+document.getElementById('btn-save-details').addEventListener('click',()=>{
+  const p=session.profile||{};
+  p.linkedin=document.getElementById('d-linkedin').value.trim();
+  p.links=document.getElementById('d-links').value.split('\n').map(s=>s.trim()).filter(Boolean);
+  p.bio=document.getElementById('d-bio').value.trim();
+  session.profile=p;
+  saveSession();
+  if(p.name&&p.email){
+    fetch(API_BASE+'/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name:p.name,email:p.email,linkedin:p.linkedin,links:p.links,bio:p.bio})}).catch(()=>{});
+  }
+  detailsOverlay.classList.remove('show');
+  toast('Saved. It all rides along with your star.');
+});
+document.getElementById('btn-start-over').addEventListener('click',()=>{
+  if(confirm('Start over? This clears your current session.')){
+    startOver();
+  }
+});
+
+/* =========================================================================
+   SUBMIT / REVIEW GATE
+   ========================================================================= */
+const submitOverlay=document.getElementById('submit-overlay');
+const confirmOverlay=document.getElementById('confirm-overlay');
+
+document.getElementById('btn-open-submit').addEventListener('click',()=>{
+  document.getElementById('submit-err').style.display='none';
+  const p=session.profile||{};
+  if(p.name&&!document.getElementById('f-name').value)document.getElementById('f-name').value=p.name;
+  if(p.email&&!document.getElementById('f-email').value)document.getElementById('f-email').value=p.email;
+  submitOverlay.classList.add('show');
+});
+document.getElementById('btn-cancel-submit').addEventListener('click',()=>{
+  submitOverlay.classList.remove('show');
+});
+document.getElementById('btn-do-submit').addEventListener('click',async ()=>{
+  const name=document.getElementById('f-name').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const brand=document.getElementById('f-brand').value.trim();
+  const errEl=document.getElementById('submit-err');
+  if(!name||!email){
+    errEl.textContent='Name and email are required.';
+    errEl.style.display='block';
+    return;
+  }
+  const btn=document.getElementById('btn-do-submit');
+  btn.disabled=true;btn.textContent='Sending...';
+  try{
+    const res=await fetch(API_BASE+'/api/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name,email,brand,star:session.star,transcript:session.messages,
+        profile:Object.assign({},session.profile,{name,email,images:profileImages})})
+    });
+    if(!res.ok)throw new Error('submit failed '+res.status);
+    await res.json();
+    submitOverlay.classList.remove('show');
+    confirmOverlay.classList.add('show');
+    btn.disabled=false;btn.textContent='Send for review';
+  }catch(e){
+    errEl.textContent='Could not send right now. Check your connection and try again.';
+    errEl.style.display='block';
+    btn.disabled=false;btn.textContent='Send for review';
+  }
+});
+document.getElementById('btn-confirm-close').addEventListener('click',()=>{
+  confirmOverlay.classList.remove('show');
+});
+
+/* =========================================================================
+   DEMO MODE
+   ========================================================================= */
+const DEMO_TURNS=[
+  {
+    user:'__START__',
+    reply:"I'm going to ask you questions the way a strategist would in a real session, one at a time. No forms, no dropdowns. Just answer like you're talking to someone who actually wants to know. This takes 25 to 45 minutes. At the end, Florian reviews what we build together before it becomes anything real. Ready when you are. First: when people pay you, are they paying for you specifically, or for a company or offer that would still work if you stepped back?",
+    star: (()=>{const s=emptyStar();return s;})()
+  },
+  {
+    user:"Honestly, mostly for me. I'm a fractional CFO, clients hire me because they trust my read on their numbers, not because they hired 'a firm.' But I do have two contractors who help with the modeling grunt work.",
+    reply:"So if you disappeared from the marketing tomorrow, photo, name, voice, all of it, would the business still make sense to a stranger looking at it cold?",
+    star:(()=>{const s=emptyStar();s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work.";return s;})()
+  },
+  {
+    user:"No, honestly it would fall apart. The contractors execute what I tell them to. Clients want my judgment on their numbers, not a generic model.",
+    reply:"On a 1 to 5 scale, where 1 is nobody should ever see me, this is a company, and 5 is people are buying me, the company is just how they pay me, where does that put you right now, not where you wish you were?",
+    star:(()=>{const s=emptyStar();s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work.";return s;})()
+  },
+  {
+    user:"Probably a 4. I'd like it to run without me eventually but right now it's me.",
+    reply:"Got it, a 4, founder-led and honest about it. Now let's get specific. Why does this exist. Not the mission-statement version, the real one: what were you reacting to, fixing, or refusing to accept when you started?",
+    star:(()=>{const s=emptyStar();s.spectrum.position=4;s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work. Wants to eventually run without her, currently a 4.";return s;})()
+  },
+  {
+    user:"I watched two founders I respected make huge decisions on gut feeling because their bookkeeper gave them a P&L that meant nothing to a non-accountant. One of them almost ran out of cash and didn't see it coming until it was three weeks away. I refuse to hand someone a spreadsheet they can't read.",
+    reply:"That's more specific than most people bring me on the first pass. If you had to pick one reason, just one, why would you say you actually do this?",
+    star:(()=>{const s=emptyStar();s.spectrum.position=4;s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work. Wants to eventually run without her, currently a 4.";
+      s.edges.purpose={offer_name:'Cash clarity before the cliff',position:'Founders should never be three weeks from a crisis they could not see coming in their own numbers.',compass:'Every deliverable has to be readable by a non-finance founder, or it does not ship.',rules_in:['Translate every number into a decision, not a report'],rules_out:[],tradeoffs:[],proof:['Watched a founder nearly run out of cash because the bookkeeper handed over an unreadable P&L'],filled:5};
+      s.quotes=[{edge:'purpose',quote:"I refuse to hand someone a spreadsheet they can't read."}];
+      return s;})()
+  },
+  {
+    user:"The industry default I refuse to accept is treating the founder like they don't need to understand their own numbers. A lot of bookkeepers and even some fractional CFOs just want to be the only one who 'gets it.' I want my clients to actually understand what I'm showing them.",
+    reply:"That's a real refusal, not a values word. Now describe the specific person or brand you do your best work for, the one where you think yes, exactly them, not a demographic, an actual type of person or situation.",
+    star:(()=>{const s=emptyStar();s.spectrum.position=4;s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work. Wants to eventually run without her, currently a 4.";
+      s.edges.purpose={offer_name:'Cash clarity before the cliff',position:'Founders should never be three weeks from a crisis they could not see coming in their own numbers.',compass:'Every deliverable has to be readable by a non-finance founder, or it does not ship.',rules_in:['Translate every number into a decision, not a report'],rules_out:['Being the only one who understands the numbers, on purpose, to stay indispensable'],tradeoffs:['Sacrifices looking impressively technical for being genuinely useful'],proof:['Watched a founder nearly run out of cash because the bookkeeper handed over an unreadable P&L'],filled:8};
+      s.quotes=[{edge:'purpose',quote:"I refuse to hand someone a spreadsheet they can't read."}];
+      s.completeness=16;
+      return s;})()
+  },
+  {
+    user:"A founder who just raised their first real round, seed or Series A, and suddenly has a board asking questions they've never had to answer before. They're smart about their product but they freeze up in the finance conversation.",
+    reply:"What's true about them before they ever talk to you? What are they frustrated by, stuck on, or quietly embarrassed about?",
+    star:(()=>{const s=emptyStar();s.spectrum.position=4;s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work. Wants to eventually run without her, currently a 4.";
+      s.edges.purpose={offer_name:'Cash clarity before the cliff',position:'Founders should never be three weeks from a crisis they could not see coming in their own numbers.',compass:'Every deliverable has to be readable by a non-finance founder, or it does not ship.',rules_in:['Translate every number into a decision, not a report'],rules_out:['Being the only one who understands the numbers, on purpose, to stay indispensable'],tradeoffs:['Sacrifices looking impressively technical for being genuinely useful'],proof:['Watched a founder nearly run out of cash because the bookkeeper handed over an unreadable P&L'],filled:8};
+      s.edges.people={offer_name:'Newly-funded, finance-anxious founders',position:'First-time raised founders who now face a board and freeze in finance conversations.',compass:'',rules_in:[],rules_out:[],tradeoffs:[],proof:[],filled:4};
+      s.quotes=[{edge:'purpose',quote:"I refuse to hand someone a spreadsheet they can't read."}];
+      s.completeness=20;
+      return s;})()
+  },
+  {
+    user:"Embarrassed, honestly. A lot of them feel like they should already know this stuff and are afraid to ask basic questions in front of their board or even in front of me. Frustrated because their existing bookkeeper gives them data, not a story.",
+    reply:"Now the harder one: who asks you for help but isn't actually who you want to work with? What's different about them?",
+    star:(()=>{const s=emptyStar();s.spectrum.position=4;s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work. Wants to eventually run without her, currently a 4.";
+      s.edges.purpose={offer_name:'Cash clarity before the cliff',position:'Founders should never be three weeks from a crisis they could not see coming in their own numbers.',compass:'Every deliverable has to be readable by a non-finance founder, or it does not ship.',rules_in:['Translate every number into a decision, not a report'],rules_out:['Being the only one who understands the numbers, on purpose, to stay indispensable'],tradeoffs:['Sacrifices looking impressively technical for being genuinely useful'],proof:['Watched a founder nearly run out of cash because the bookkeeper handed over an unreadable P&L'],filled:8};
+      s.edges.people={offer_name:'Newly-funded, finance-anxious founders',position:'First-time raised founders who now face a board and freeze in finance conversations, embarrassed to ask basic questions.',compass:'Work with founders who want to understand, not just be handed answers.',rules_in:['Founders willing to sit in the numbers with me, even when it is uncomfortable'],rules_out:[],tradeoffs:[],proof:["Client said her old bookkeeper 'gives me data, not a story'"],filled:6};
+      s.quotes=[{edge:'purpose',quote:"I refuse to hand someone a spreadsheet they can't read."},{edge:'people',quote:"gives me data, not a story"}];
+      s.completeness=27;
+      return s;})()
+  },
+  {
+    user:"People who just want someone else to own the numbers completely so they never have to think about it. That's not me, I don't want to be the one making the decision for them, I want them to be able to make it themselves with what I give them.",
+    reply:"That's a clean rule-out. Now, in one or two sentences, what do people actually pay you for? Not the mission version, the version where money changes hands.",
+    star:(()=>{const s=emptyStar();s.spectrum.position=4;s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work. Wants to eventually run without her, currently a 4.";
+      s.edges.purpose={offer_name:'Cash clarity before the cliff',position:'Founders should never be three weeks from a crisis they could not see coming in their own numbers.',compass:'Every deliverable has to be readable by a non-finance founder, or it does not ship.',rules_in:['Translate every number into a decision, not a report'],rules_out:['Being the only one who understands the numbers, on purpose, to stay indispensable'],tradeoffs:['Sacrifices looking impressively technical for being genuinely useful'],proof:['Watched a founder nearly run out of cash because the bookkeeper handed over an unreadable P&L'],filled:8};
+      s.edges.people={offer_name:'Newly-funded, finance-anxious founders',position:'First-time raised founders who now face a board and freeze in finance conversations, embarrassed to ask basic questions.',compass:'Work with founders who want to understand, not just be handed answers.',rules_in:['Founders willing to sit in the numbers with me, even when it is uncomfortable'],rules_out:['Founders who want to hand off the numbers completely and never engage with them'],tradeoffs:[],proof:["Client said her old bookkeeper 'gives me data, not a story'"],filled:7};
+      s.quotes=[{edge:'purpose',quote:"I refuse to hand someone a spreadsheet they can't read."},{edge:'people',quote:"gives me data, not a story"}];
+      s.completeness=30;
+      return s;})()
+  },
+  {
+    user:"They pay me to walk into their board meeting with them and make the numbers make sense in real time. Not a monthly report that sits in a folder, live command of the model when someone on the board asks a hard question.",
+    reply:"What's the one thing you always include, no matter what, because leaving it out would make the work not really yours?",
+    star:(()=>{const s=emptyStar();s.spectrum.position=4;s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work. Wants to eventually run without her, currently a 4.";
+      s.edges.purpose={offer_name:'Cash clarity before the cliff',position:'Founders should never be three weeks from a crisis they could not see coming in their own numbers.',compass:'Every deliverable has to be readable by a non-finance founder, or it does not ship.',rules_in:['Translate every number into a decision, not a report'],rules_out:['Being the only one who understands the numbers, on purpose, to stay indispensable'],tradeoffs:['Sacrifices looking impressively technical for being genuinely useful'],proof:['Watched a founder nearly run out of cash because the bookkeeper handed over an unreadable P&L'],filled:8};
+      s.edges.people={offer_name:'Newly-funded, finance-anxious founders',position:'First-time raised founders who now face a board and freeze in finance conversations, embarrassed to ask basic questions.',compass:'Work with founders who want to understand, not just be handed answers.',rules_in:['Founders willing to sit in the numbers with me, even when it is uncomfortable'],rules_out:['Founders who want to hand off the numbers completely and never engage with them'],tradeoffs:[],proof:["Client said her old bookkeeper 'gives me data, not a story'"],filled:7};
+      s.edges.product={offer_name:'Live board-room command of the model',position:'Founders pay to have live command of their financial model in the room, not a static monthly report.',compass:'',rules_in:['Being in the actual board meeting, not just producing the deck beforehand'],rules_out:[],tradeoffs:[],proof:[],filled:5};
+      s.quotes=[{edge:'purpose',quote:"I refuse to hand someone a spreadsheet they can't read."},{edge:'people',quote:"gives me data, not a story"}];
+      s.completeness=34;
+      return s;})()
+  },
+  {
+    user:"I always sit in the actual meeting, live, not just hand over slides beforehand and disappear. That's non-negotiable. What I say no to is being treated as a bookkeeper who just closes the books at month end, that's not my job and I've turned down clients who only wanted that.",
+    reply:"If a client compared you to the obvious alternative, cheaper, faster, more famous, what would make them pick you anyway?",
+    star:(()=>{const s=emptyStar();s.spectrum.position=4;s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work. Wants to eventually run without her, currently a 4.";
+      s.edges.purpose={offer_name:'Cash clarity before the cliff',position:'Founders should never be three weeks from a crisis they could not see coming in their own numbers.',compass:'Every deliverable has to be readable by a non-finance founder, or it does not ship.',rules_in:['Translate every number into a decision, not a report'],rules_out:['Being the only one who understands the numbers, on purpose, to stay indispensable'],tradeoffs:['Sacrifices looking impressively technical for being genuinely useful'],proof:['Watched a founder nearly run out of cash because the bookkeeper handed over an unreadable P&L'],filled:8};
+      s.edges.people={offer_name:'Newly-funded, finance-anxious founders',position:'First-time raised founders who now face a board and freeze in finance conversations, embarrassed to ask basic questions.',compass:'Work with founders who want to understand, not just be handed answers.',rules_in:['Founders willing to sit in the numbers with me, even when it is uncomfortable'],rules_out:['Founders who want to hand off the numbers completely and never engage with them'],tradeoffs:[],proof:["Client said her old bookkeeper 'gives me data, not a story'"],filled:7};
+      s.edges.product={offer_name:'Live board-room command of the model',position:'Founders pay to have live command of their financial model in the room, not a static monthly report.',compass:'The work always shows up live, in the room, never just handed off in a deck.',rules_in:['Being in the actual board meeting, not just producing the deck beforehand'],rules_out:['Month-end bookkeeping and books-closing work with no strategic conversation attached'],tradeoffs:[],proof:['Turned down clients who only wanted month-end closing'],filled:7};
+      s.quotes=[{edge:'purpose',quote:"I refuse to hand someone a spreadsheet they can't read."},{edge:'people',quote:"gives me data, not a story"},{edge:'product',quote:"I always sit in the actual meeting, live, not just hand over slides beforehand and disappear."}];
+      s.completeness=38;
+      return s;})()
+  },
+  {
+    user:"They'd pick me because when a board member asks 'what happens to runway if we hire two more engineers,' I can answer it live, on the spot, changing the model in front of everyone. A cheaper bookkeeper can't do that and a big firm sends a different associate every quarter who doesn't know the history.",
+    reply:"If your brand walked into a room and started talking, how would people describe it thirty seconds later? Funny, blunt, warm, formal, whatever's true.",
+    star:(()=>{const s=emptyStar();s.spectrum.position=4;s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work. Wants to eventually run without her, currently a 4.";
+      s.edges.purpose={offer_name:'Cash clarity before the cliff',position:'Founders should never be three weeks from a crisis they could not see coming in their own numbers.',compass:'Every deliverable has to be readable by a non-finance founder, or it does not ship.',rules_in:['Translate every number into a decision, not a report'],rules_out:['Being the only one who understands the numbers, on purpose, to stay indispensable'],tradeoffs:['Sacrifices looking impressively technical for being genuinely useful'],proof:['Watched a founder nearly run out of cash because the bookkeeper handed over an unreadable P&L'],filled:8};
+      s.edges.people={offer_name:'Newly-funded, finance-anxious founders',position:'First-time raised founders who now face a board and freeze in finance conversations, embarrassed to ask basic questions.',compass:'Work with founders who want to understand, not just be handed answers.',rules_in:['Founders willing to sit in the numbers with me, even when it is uncomfortable'],rules_out:['Founders who want to hand off the numbers completely and never engage with them'],tradeoffs:[],proof:["Client said her old bookkeeper 'gives me data, not a story'"],filled:7};
+      s.edges.product={offer_name:'Live board-room command of the model',position:'Founders pay to have live command of their financial model in the room, not a static monthly report.',compass:'The work always shows up live, in the room, never just handed off in a deck.',rules_in:['Being in the actual board meeting, not just producing the deck beforehand'],rules_out:['Month-end bookkeeping and books-closing work with no strategic conversation attached'],tradeoffs:[],proof:['Turned down clients who only wanted month-end closing','Can answer runway-impact questions live, changing the model in the room'],filled:9};
+      s.quotes=[{edge:'purpose',quote:"I refuse to hand someone a spreadsheet they can't read."},{edge:'people',quote:"gives me data, not a story"},{edge:'product',quote:"I always sit in the actual meeting, live, not just hand over slides beforehand and disappear."}];
+      s.completeness=42;
+      s.center.candidates=['clarity','command'];
+      return s;})()
+  },
+  {
+    user:"Blunt but calm. I don't sugarcoat a bad number, but I'm not dramatic about it either. Think 'here's exactly what's happening and here's what we do about it' energy, not panic, not corporate-speak.",
+    reply:"What's a way you sound that would feel completely wrong for you, even if it worked for someone else in your field?",
+    star:(()=>{const s=emptyStar();s.spectrum.position=4;s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work. Wants to eventually run without her, currently a 4.";
+      s.edges.purpose={offer_name:'Cash clarity before the cliff',position:'Founders should never be three weeks from a crisis they could not see coming in their own numbers.',compass:'Every deliverable has to be readable by a non-finance founder, or it does not ship.',rules_in:['Translate every number into a decision, not a report'],rules_out:['Being the only one who understands the numbers, on purpose, to stay indispensable'],tradeoffs:['Sacrifices looking impressively technical for being genuinely useful'],proof:['Watched a founder nearly run out of cash because the bookkeeper handed over an unreadable P&L'],filled:8};
+      s.edges.people={offer_name:'Newly-funded, finance-anxious founders',position:'First-time raised founders who now face a board and freeze in finance conversations, embarrassed to ask basic questions.',compass:'Work with founders who want to understand, not just be handed answers.',rules_in:['Founders willing to sit in the numbers with me, even when it is uncomfortable'],rules_out:['Founders who want to hand off the numbers completely and never engage with them'],tradeoffs:[],proof:["Client said her old bookkeeper 'gives me data, not a story'"],filled:7};
+      s.edges.product={offer_name:'Live board-room command of the model',position:'Founders pay to have live command of their financial model in the room, not a static monthly report.',compass:'The work always shows up live, in the room, never just handed off in a deck.',rules_in:['Being in the actual board meeting, not just producing the deck beforehand'],rules_out:['Month-end bookkeeping and books-closing work with no strategic conversation attached'],tradeoffs:[],proof:['Turned down clients who only wanted month-end closing','Can answer runway-impact questions live, changing the model in the room'],filled:9};
+      s.edges.personality={offer_name:'Blunt calm, not corporate calm',position:'Blunt and steady even with bad numbers, never dramatic, never softened into corporate-speak.',compass:'',rules_in:['State the number plainly, then the plan'],rules_out:[],tradeoffs:[],proof:[],filled:5};
+      s.quotes=[{edge:'purpose',quote:"I refuse to hand someone a spreadsheet they can't read."},{edge:'people',quote:"gives me data, not a story"},{edge:'product',quote:"I always sit in the actual meeting, live, not just hand over slides beforehand and disappear."},{edge:'personality',quote:"here's exactly what's happening and here's what we do about it"}];
+      s.completeness=48;
+      s.center.candidates=['clarity','command'];
+      return s;})()
+  },
+  {
+    user:"The overly reassuring, cheerleader consultant voice. 'We've got this, exciting times ahead!' when the runway is actually tight. That would feel like a costume, and founders can smell it, it makes them trust me less, not more.",
+    reply:"Across everything we've talked about, what's the one thing that has to be true every single time, the thing that if it were missing, this wouldn't be your brand anymore?",
+    star:(()=>{const s=emptyStar();s.spectrum.position=4;s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work. Wants to eventually run without her, currently a 4.";
+      s.edges.purpose={offer_name:'Cash clarity before the cliff',position:'Founders should never be three weeks from a crisis they could not see coming in their own numbers.',compass:'Every deliverable has to be readable by a non-finance founder, or it does not ship.',rules_in:['Translate every number into a decision, not a report'],rules_out:['Being the only one who understands the numbers, on purpose, to stay indispensable'],tradeoffs:['Sacrifices looking impressively technical for being genuinely useful'],proof:['Watched a founder nearly run out of cash because the bookkeeper handed over an unreadable P&L'],filled:8};
+      s.edges.people={offer_name:'Newly-funded, finance-anxious founders',position:'First-time raised founders who now face a board and freeze in finance conversations, embarrassed to ask basic questions.',compass:'Work with founders who want to understand, not just be handed answers.',rules_in:['Founders willing to sit in the numbers with me, even when it is uncomfortable'],rules_out:['Founders who want to hand off the numbers completely and never engage with them'],tradeoffs:[],proof:["Client said her old bookkeeper 'gives me data, not a story'"],filled:7};
+      s.edges.product={offer_name:'Live board-room command of the model',position:'Founders pay to have live command of their financial model in the room, not a static monthly report.',compass:'The work always shows up live, in the room, never just handed off in a deck.',rules_in:['Being in the actual board meeting, not just producing the deck beforehand'],rules_out:['Month-end bookkeeping and books-closing work with no strategic conversation attached'],tradeoffs:[],proof:['Turned down clients who only wanted month-end closing','Can answer runway-impact questions live, changing the model in the room'],filled:9};
+      s.edges.personality={offer_name:'Blunt calm, not corporate calm',position:'Blunt and steady even with bad numbers, never dramatic, never softened into corporate-speak.',compass:'When a number is bad, state it plainly first, then the plan, never cushion it into vagueness.',rules_in:['State the number plainly, then the plan'],rules_out:['The overly reassuring cheerleader-consultant voice when the news is actually bad'],tradeoffs:['Some founders want to be soothed first; she risks feeling cold to them'],proof:["Says the cheerleader voice 'would feel like a costume' and founders can smell it"],filled:8};
+      s.quotes=[{edge:'purpose',quote:"I refuse to hand someone a spreadsheet they can't read."},{edge:'people',quote:"gives me data, not a story"},{edge:'product',quote:"I always sit in the actual meeting, live, not just hand over slides beforehand and disappear."},{edge:'personality',quote:"here's exactly what's happening and here's what we do about it"},{edge:'personality',quote:"it would feel like a costume"}];
+      s.completeness=64;
+      s.center.candidates=['clarity','command','plain truth'];
+      return s;})()
+  },
+  {
+    user:"That the founder understands their own numbers by the time I leave the room. If they walk away still confused, I failed, no matter how good the model is.",
+    reply:"You said command earlier when we talked about the board room, and clarity kept coming up in how you talk about numbers and the founder's understanding. Which of those feels more like the center, the thing everything else hangs off of? Or is there a sharper word underneath both, something like command of clarity?",
+    star:(()=>{const s=emptyStar();s.spectrum.position=4;s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work. Wants to eventually run without her, currently a 4.";
+      s.edges.purpose={offer_name:'Cash clarity before the cliff',position:'Founders should never be three weeks from a crisis they could not see coming in their own numbers.',compass:'Every deliverable has to be readable by a non-finance founder, or it does not ship.',rules_in:['Translate every number into a decision, not a report'],rules_out:['Being the only one who understands the numbers, on purpose, to stay indispensable'],tradeoffs:['Sacrifices looking impressively technical for being genuinely useful'],proof:['Watched a founder nearly run out of cash because the bookkeeper handed over an unreadable P&L'],filled:8};
+      s.edges.people={offer_name:'Newly-funded, finance-anxious founders',position:'First-time raised founders who now face a board and freeze in finance conversations, embarrassed to ask basic questions.',compass:'Work with founders who want to understand, not just be handed answers.',rules_in:['Founders willing to sit in the numbers with me, even when it is uncomfortable'],rules_out:['Founders who want to hand off the numbers completely and never engage with them'],tradeoffs:[],proof:["Client said her old bookkeeper 'gives me data, not a story'"],filled:7};
+      s.edges.product={offer_name:'Live board-room command of the model',position:'Founders pay to have live command of their financial model in the room, not a static monthly report.',compass:'The work always shows up live, in the room, never just handed off in a deck.',rules_in:['Being in the actual board meeting, not just producing the deck beforehand'],rules_out:['Month-end bookkeeping and books-closing work with no strategic conversation attached'],tradeoffs:[],proof:['Turned down clients who only wanted month-end closing','Can answer runway-impact questions live, changing the model in the room'],filled:9};
+      s.edges.personality={offer_name:'Blunt calm, not corporate calm',position:'Blunt and steady even with bad numbers, never dramatic, never softened into corporate-speak.',compass:'When a number is bad, state it plainly first, then the plan, never cushion it into vagueness.',rules_in:['State the number plainly, then the plan'],rules_out:['The overly reassuring cheerleader-consultant voice when the news is actually bad'],tradeoffs:['Some founders want to be soothed first; she risks feeling cold to them'],proof:["Says the cheerleader voice 'would feel like a costume' and founders can smell it"],filled:8};
+      s.edges.promise={offer_name:'The founder leaves the room understanding',position:'If the founder walks away still confused about their own numbers, the work failed, no matter how good the model was.',compass:'',rules_in:[],rules_out:[],tradeoffs:[],proof:[],filled:4};
+      s.quotes=[{edge:'purpose',quote:"I refuse to hand someone a spreadsheet they can't read."},{edge:'people',quote:"gives me data, not a story"},{edge:'product',quote:"I always sit in the actual meeting, live, not just hand over slides beforehand and disappear."},{edge:'personality',quote:"here's exactly what's happening and here's what we do about it"},{edge:'personality',quote:"it would feel like a costume"},{edge:'promise',quote:"If they walk away still confused, I failed, no matter how good the model is."}];
+      s.completeness=72;
+      s.center.candidates=['clarity','command','plain truth','command of clarity'];
+      return s;})()
+  },
+  {
+    user:"Command of clarity is exactly it. That's the whole job. Command in the room, clarity in the founder's head after.",
+    reply:"That's a real center, it functions as a decision filter, not just a nice phrase. Last check: what do you always do, no exceptions, and what do you never do, no exceptions?",
+    star:(()=>{const s=emptyStar();s.spectrum.position=4;s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work. Wants to eventually run without her, currently a 4.";
+      s.edges.purpose={offer_name:'Cash clarity before the cliff',position:'Founders should never be three weeks from a crisis they could not see coming in their own numbers.',compass:'Every deliverable has to be readable by a non-finance founder, or it does not ship.',rules_in:['Translate every number into a decision, not a report'],rules_out:['Being the only one who understands the numbers, on purpose, to stay indispensable'],tradeoffs:['Sacrifices looking impressively technical for being genuinely useful'],proof:['Watched a founder nearly run out of cash because the bookkeeper handed over an unreadable P&L'],filled:8};
+      s.edges.people={offer_name:'Newly-funded, finance-anxious founders',position:'First-time raised founders who now face a board and freeze in finance conversations, embarrassed to ask basic questions.',compass:'Work with founders who want to understand, not just be handed answers.',rules_in:['Founders willing to sit in the numbers with me, even when it is uncomfortable'],rules_out:['Founders who want to hand off the numbers completely and never engage with them'],tradeoffs:[],proof:["Client said her old bookkeeper 'gives me data, not a story'"],filled:7};
+      s.edges.product={offer_name:'Live board-room command of the model',position:'Founders pay to have live command of their financial model in the room, not a static monthly report.',compass:'The work always shows up live, in the room, never just handed off in a deck.',rules_in:['Being in the actual board meeting, not just producing the deck beforehand'],rules_out:['Month-end bookkeeping and books-closing work with no strategic conversation attached'],tradeoffs:[],proof:['Turned down clients who only wanted month-end closing','Can answer runway-impact questions live, changing the model in the room'],filled:9};
+      s.edges.personality={offer_name:'Blunt calm, not corporate calm',position:'Blunt and steady even with bad numbers, never dramatic, never softened into corporate-speak.',compass:'When a number is bad, state it plainly first, then the plan, never cushion it into vagueness.',rules_in:['State the number plainly, then the plan'],rules_out:['The overly reassuring cheerleader-consultant voice when the news is actually bad'],tradeoffs:['Some founders want to be soothed first; she risks feeling cold to them'],proof:["Says the cheerleader voice 'would feel like a costume' and founders can smell it"],filled:8};
+      s.edges.promise={offer_name:'Command of clarity',position:'Command of the model in the room, clarity in the founder\'s head after. If the founder leaves confused, the work failed regardless of model quality.',compass:'When deciding what to build or say next, ask: does this give the founder more command of clarity, or just more data?',rules_in:['Always translate the number into a decision the founder can act on'],rules_out:['Never leave a founder with a report they cannot explain to their own board'],tradeoffs:['Turns down flashier technical work in favor of what the founder can actually use'],proof:["Client confirmed: 'Command in the room, clarity in the founder's head after.'"],filled:9};
+      s.quotes=[{edge:'purpose',quote:"I refuse to hand someone a spreadsheet they can't read."},{edge:'people',quote:"gives me data, not a story"},{edge:'product',quote:"I always sit in the actual meeting, live, not just hand over slides beforehand and disappear."},{edge:'personality',quote:"here's exactly what's happening and here's what we do about it"},{edge:'personality',quote:"it would feel like a costume"},{edge:'promise',quote:"If they walk away still confused, I failed, no matter how good the model is."},{edge:'promise',quote:"Command in the room, clarity in the founder's head after."}];
+      s.completeness=82;
+      s.center.word='Command of clarity';
+      s.center.candidates=['clarity','command','plain truth','command of clarity'];
+      return s;})()
+  },
+  {
+    user:"Always: I sit in the room live. Never: I never hand a founder a number without telling them what to do about it.",
+    reply:"Here's where things stand: 82% built, all five edges have a real position, and the center word is Command of clarity. This is genuinely good work, some of what you said today is sharper than what a lot of paying clients bring to a first session. Here's what happens next: this doesn't auto-publish anywhere. Florian reads every single star before it becomes a blueprint, personally, not a bot, not a template match. He'll check the positions against what you actually said, sharpen anything that's still soft, and flag anything that needs a real conversation instead of a chat message. You'll hear back from him directly. Nothing about your business goes anywhere else. Ready to submit this for his review?",
+    star:(()=>{const s=emptyStar();s.spectrum.position=4;s.spectrum.note="Says clients hire her specifically for her read, but has two contractors doing supporting work. Wants to eventually run without her, currently a 4.";
+      s.edges.purpose={offer_name:'Cash clarity before the cliff',position:'Founders should never be three weeks from a crisis they could not see coming in their own numbers.',compass:'Every deliverable has to be readable by a non-finance founder, or it does not ship.',rules_in:['Translate every number into a decision, not a report'],rules_out:['Being the only one who understands the numbers, on purpose, to stay indispensable'],tradeoffs:['Sacrifices looking impressively technical for being genuinely useful'],proof:['Watched a founder nearly run out of cash because the bookkeeper handed over an unreadable P&L'],filled:8};
+      s.edges.people={offer_name:'Newly-funded, finance-anxious founders',position:'First-time raised founders who now face a board and freeze in finance conversations, embarrassed to ask basic questions.',compass:'Work with founders who want to understand, not just be handed answers.',rules_in:['Founders willing to sit in the numbers with me, even when it is uncomfortable'],rules_out:['Founders who want to hand off the numbers completely and never engage with them'],tradeoffs:[],proof:["Client said her old bookkeeper 'gives me data, not a story'"],filled:7};
+      s.edges.product={offer_name:'Live board-room command of the model',position:'Founders pay to have live command of their financial model in the room, not a static monthly report.',compass:'The work always shows up live, in the room, never just handed off in a deck.',rules_in:['Being in the actual board meeting, not just producing the deck beforehand'],rules_out:['Month-end bookkeeping and books-closing work with no strategic conversation attached'],tradeoffs:[],proof:['Turned down clients who only wanted month-end closing','Can answer runway-impact questions live, changing the model in the room'],filled:9};
+      s.edges.personality={offer_name:'Blunt calm, not corporate calm',position:'Blunt and steady even with bad numbers, never dramatic, never softened into corporate-speak.',compass:'When a number is bad, state it plainly first, then the plan, never cushion it into vagueness.',rules_in:['State the number plainly, then the plan'],rules_out:['The overly reassuring cheerleader-consultant voice when the news is actually bad'],tradeoffs:['Some founders want to be soothed first; she risks feeling cold to them'],proof:["Says the cheerleader voice 'would feel like a costume' and founders can smell it"],filled:8};
+      s.edges.promise={offer_name:'Command of clarity',position:'Command of the model in the room, clarity in the founder\'s head after. If the founder leaves confused, the work failed regardless of model quality.',compass:'When deciding what to build or say next, ask: does this give the founder more command of clarity, or just more data?',rules_in:['Always translate the number into a decision the founder can act on','I sit in the room live, always'],rules_out:['Never leave a founder with a report they cannot explain to their own board','Never hand over a number without saying what to do about it'],tradeoffs:['Turns down flashier technical work in favor of what the founder can actually use'],proof:["Client confirmed: 'Command in the room, clarity in the founder's head after.'"],filled:10};
+      s.quotes=[{edge:'purpose',quote:"I refuse to hand someone a spreadsheet they can't read."},{edge:'people',quote:"gives me data, not a story"},{edge:'product',quote:"I always sit in the actual meeting, live, not just hand over slides beforehand and disappear."},{edge:'personality',quote:"here's exactly what's happening and here's what we do about it"},{edge:'personality',quote:"it would feel like a costume"},{edge:'promise',quote:"If they walk away still confused, I failed, no matter how good the model is."},{edge:'promise',quote:"Command in the room, clarity in the founder's head after."},{edge:'promise',quote:"I never hand over a number without telling them what to do about it."}];
+      s.completeness=89;
+      s.center.word='Command of clarity';
+      s.center.candidates=['clarity','command','plain truth','command of clarity'];
+      s.ready_for_review=true;
+      return s;})()
+  }
+];
+
+let demoRunning=false;
+let demoTimer=null;
+
+function stopDemoPlayback(){
+  demoRunning=false;
+  if(demoTimer){clearTimeout(demoTimer);demoTimer=null;}
+  hideTyping();
+}
+
+function exitDemo(){
+  stopDemoPlayback();
+  session={messages:[],star:null,started:false,demo:false};
+  showState('state-landing');
+}
+
+function startDemo(){
+  stopDemoPlayback();
+  session={messages:[],star:emptyStar(),started:true,demo:true};
+  document.getElementById('demo-banner').style.display='flex';
+  document.getElementById('session-wrap').classList.add('has-banner');
+  showState('state-session');
+  chatScroll.innerHTML='';
+  buildStarSkeleton();
+  requestAnimationFrame(()=>fitStar(true));
+  renderStarFull();
+  chatInput.disabled=true;
+  sendBtn.disabled=true;
+  demoRunning=true;
+  playDemoTurn(0);
+}
+
+function playDemoTurn(idx){
+  if(!demoRunning)return;
+  if(idx>=DEMO_TURNS.length){
+    demoRunning=false;
+    return;
+  }
+  const turn=DEMO_TURNS[idx];
+  const isFirst=idx===0;
+
+  function showUserThenReply(){
+    if(!isFirst){
+      appendMsg('user',turn.user);
+    }
+    showTyping();
+    const thinkMs=900+Math.random()*1600;
+    demoTimer=setTimeout(()=>{
+      if(!demoRunning)return;
+      hideTyping();
+      appendMsg('assistant',turn.reply);
+      session.star=turn.star;
+      renderStarFull();
+      demoTimer=setTimeout(()=>{ if(demoRunning) playDemoTurn(idx+1); },1100+Math.random()*900);
+    },thinkMs);
+  }
+
+  if(isFirst){
+    showUserThenReply();
+  }else{
+    demoTimer=setTimeout(showUserThenReply, 700+Math.random()*700);
+  }
+}
+
+document.getElementById('cta-demo').addEventListener('click',startDemo);
+document.getElementById('demo-exit').addEventListener('click',exitDemo);
+
+/* demo submit uses the same modal but never actually persists a real lead separately from marking demo */
+document.getElementById('btn-open-submit').addEventListener('click',()=>{
+  if(session.demo){
+    document.getElementById('f-brand').value='Dana Reyes Advisory';
+  }
+});
+
+/* =========================================================================
+   BOOT
+   ========================================================================= */
+buildMiniStar();
+loadImages();
+showState('state-landing');
+if(loadSession() && session.started && !session.demo){
+  session.profile=Object.assign({name:'',email:'',linkedin:'',links:[],bio:''},session.profile||{});
+  const answers=session.messages.filter(m=>m.role==='user'&&m.content!=='__START__').length;
+  document.getElementById('rc-count').textContent=answers;
+  document.getElementById('resume-card').style.display='flex';
+  document.getElementById('cta-start').classList.remove('btn-primary');
+  document.getElementById('cta-start').classList.add('btn-ghost');
+  document.getElementById('cta-start').textContent='Start fresh instead';
+}
+document.getElementById('cta-resume').addEventListener('click',()=>startRealSession(true));
 </script>
 </body>
 </html>
