@@ -66,7 +66,7 @@ button{font-family:var(--ff-b);cursor:pointer;border:none;background:none;color:
 .trust-line{margin-top:26px;font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:8px}
 .trust-line .dot{width:6px;height:6px;background:var(--accent);flex-shrink:0}
 
-.time-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);padding:8px 14px;font-size:11.5px;color:var(--muted);letter-spacing:.04em;margin-top:22px}
+.time-badge{display:inline-block;border:1px solid var(--border);padding:8px 14px;font-size:11.5px;color:var(--muted);letter-spacing:.04em;margin-top:22px;line-height:1.6}
 .time-badge b{color:var(--text);font-weight:600}
 
 .steps{border-top:1px solid var(--text);padding:clamp(60px,8vw,100px) 0}
@@ -295,7 +295,12 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
   .star-col{height:70vh;min-height:480px;order:-1;border-bottom:1px solid var(--border)}
   .chat-col{width:100%;min-width:0;height:auto}
   .pane{width:calc(100vw - 32px);right:16px;left:16px;top:auto;bottom:16px;height:70%}
-  .comp{width:220px}
+  /* phones: comp collapses to the % chip so badge, card, and star never overlap */
+  .comp{width:auto;right:16px;top:16px;padding:10px 14px}
+  .comp .row{display:none}
+  .comp h3{display:none}
+  .comp .cap{margin-bottom:0}
+  .spectrum-badge{left:16px;top:16px;display:block;max-width:calc(100vw - 140px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 }
 </style>
 </head>
@@ -725,7 +730,7 @@ function updateStarContent(star){
   if(focused){const pane=document.getElementById('pane');pane.innerHTML=paneHTML(focused,em[focused]||{filled:0});pane.classList.add('show');}
   const badge=document.getElementById('spectrum-badge');
   const pos=star.spectrum&&star.spectrum.position;
-  badge.textContent='Spectrum · '+(pos==null?'TBD':('P'+pos+' of 5'));
+  badge.textContent='Spectrum · '+((pos==null||pos<1||pos>5)?'TBD':('P'+pos+' of 5'));
 }
 function buildComp(star){
   const em=edgesObj(star),c=document.getElementById('comp');
