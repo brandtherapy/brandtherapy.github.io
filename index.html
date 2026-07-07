@@ -575,6 +575,13 @@ function loadSession(){
 function clearSession(){
   try{localStorage.removeItem(LS_KEY);}catch(e){}
 }
+function ensureSid(){
+  if(!session.sid){
+    try{session.sid=crypto.randomUUID();}
+    catch(e){session.sid='s-'+Date.now()+'-'+Math.random().toString(36).slice(2,10);}
+  }
+  return session.sid;
+}
 
 /* =========================================================================
    VIEW SWITCHING
@@ -867,7 +874,8 @@ async function callChatAPI(messages,star){
   const res=await fetch(API_BASE+'/api/chat',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({messages,star})
+    body:JSON.stringify({messages,star,sid:ensureSid(),
+      name:(session.profile||{}).name||'',email:(session.profile||{}).email||''})
   });
   if(!res.ok){
     let msg='The session hit a snag ('+res.status+').';
@@ -994,7 +1002,7 @@ document.getElementById('btn-do-lead').addEventListener('click',()=>{
   session.profile=Object.assign({name:'',email:'',linkedin:'',links:[],bio:''},session.profile,{name,email});
   leadOverlay.classList.remove('show');
   fetch(API_BASE+'/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({name,email})}).catch(()=>{});
+    body:JSON.stringify({name,email,sid:ensureSid()})}).catch(()=>{});
   startRealSession(false);
 });
 document.getElementById('l-email').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('btn-do-lead').click();});
@@ -1043,7 +1051,7 @@ document.getElementById('btn-save-details').addEventListener('click',()=>{
   saveSession();
   if(p.name&&p.email){
     fetch(API_BASE+'/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({name:p.name,email:p.email,linkedin:p.linkedin,links:p.links,bio:p.bio})}).catch(()=>{});
+      body:JSON.stringify({name:p.name,email:p.email,linkedin:p.linkedin,links:p.links,bio:p.bio,sid:ensureSid()})}).catch(()=>{});
   }
   detailsOverlay.classList.remove('show');
   toast('Saved. It all rides along with your star.');
@@ -1086,7 +1094,7 @@ document.getElementById('btn-do-submit').addEventListener('click',async ()=>{
     const res=await fetch(API_BASE+'/api/submit',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({name,email,brand,star:session.star,transcript:session.messages,
+      body:JSON.stringify({name,email,brand,star:session.star,transcript:session.messages,sid:ensureSid(),
         profile:Object.assign({},session.profile,{name,email,images:profileImages})})
     });
     if(!res.ok)throw new Error('submit failed '+res.status);
