@@ -127,6 +127,12 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 .msg.assistant{align-self:flex-start;background:var(--light);color:var(--text);border-left:2px solid var(--accent)}
 .msg.user{align-self:flex-end;background:var(--accent);color:var(--white)}
 .msg.error{align-self:center;background:var(--white);border:1px solid var(--border);color:var(--muted);font-size:12.5px;text-align:center;max-width:100%}
+.msg.assistant p{margin:0 0 9px}
+.msg.assistant p:last-child{margin-bottom:0}
+.msg.assistant strong{font-weight:600}
+.msg.assistant ul{margin:8px 0;padding-left:17px;list-style:none}
+.msg.assistant li{position:relative;margin:5px 0;padding-left:2px}
+.msg.assistant li::before{content:"";position:absolute;left:-13px;top:8px;width:5px;height:5px;background:var(--accent)}
 .retry-row{display:flex;justify-content:center;margin-top:8px}
 .retry-btn{border:1px solid var(--accent);color:var(--accent);padding:8px 18px;font-size:12px;letter-spacing:.03em}
 .retry-btn:hover{background:var(--accent);color:var(--white)}
@@ -819,10 +825,30 @@ const chatInput=document.getElementById('chat-input');
 const sendBtn=document.getElementById('send-btn');
 let pending=false;
 
+function escHtml(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function inlineFmt(s){return s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');}
+// tiny, safe markdown subset for assistant bubbles: **bold**, - bullets, blank-line paragraphs.
+// escapes first, so nothing the model or a quoted answer emits can inject markup.
+function renderRich(text){
+  const lines=escHtml(text).split('\n');
+  let html='',inList=false,para=[];
+  const flushPara=()=>{if(para.length){html+='<p>'+para.join(' ')+'</p>';para=[];}};
+  const closeList=()=>{if(inList){html+='</ul>';inList=false;}};
+  for(const raw of lines){
+    const line=raw.trim();
+    if(!line){flushPara();closeList();continue;}
+    const m=line.match(/^[-*•]\s+(.*)$/);
+    if(m){flushPara();if(!inList){html+='<ul>';inList=true;}html+='<li>'+inlineFmt(m[1])+'</li>';}
+    else{closeList();para.push(inlineFmt(line));}
+  }
+  flushPara();closeList();
+  return html||'<p></p>';
+}
 function appendMsg(role,content){
   const d=document.createElement('div');
   d.className='msg '+role;
-  d.textContent=content;
+  if(role==='assistant'){d.innerHTML=renderRich(content);}
+  else{d.textContent=content;}
   chatScroll.appendChild(d);
   chatScroll.scrollTop=chatScroll.scrollHeight;
   return d;
