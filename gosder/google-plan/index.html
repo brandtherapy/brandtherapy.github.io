@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noai, noimageai">
+<meta name="referrer" content="no-referrer">
+<title>Your Name on Google</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M18 35V18h17M65 18h17v17M18 65v17h17M82 65v17H65' fill='none' stroke='%235A5CF9' stroke-width='10'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #5A5CF9;
+    --accent-soft: rgba(90, 92, 249, 0.06);
+    --text: #1A1A2E;
+    --muted: #8888A0;
+    --border: #E5E7EB;
+    --light: #F5F5F7;
+    --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Poppins", system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--white);
+  }
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: clamp(48px, 8vw, 96px) clamp(24px, 5vw, 64px) clamp(56px, 8vw, 96px);
+  }
+  a { color: var(--accent); text-decoration: none; font-weight: 500; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  p + p { margin-top: 1.1em; }
+  strong { font-weight: 600; }
+  .accent { color: var(--accent); }
+
+  /* Viewfinder heading bracket: top-left corner, 28x10, 3px */
+  .vf {
+    width: 28px;
+    height: 10px;
+    border-top: 3px solid var(--accent);
+    border-left: 3px solid var(--accent);
+    margin-bottom: 28px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.4rem, 7.5vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+  .standfirst {
+    font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+    color: var(--muted);
+    max-width: 34em;
+  }
+
+  section { margin-top: clamp(64px, 10vw, 104px); }
+  .section-head {
+    border-top: 1px solid var(--text);
+    padding-top: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+    margin-bottom: 28px;
+  }
+  .section-num {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    flex: 0 0 auto;
+  }
+  h2 {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.5rem, 4vw, 1.9rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .step {
+    border: 1px solid var(--border);
+    background: var(--white);
+    padding: 28px;
+    display: flex;
+    gap: 24px;
+  }
+  .step + .step { margin-top: 16px; }
+  .step-num {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--accent);
+    flex: 0 0 auto;
+    min-width: 34px;
+  }
+  .step h3 {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+  }
+  .step p { font-size: 15.5px; }
+
+  .stories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .story {
+    border: 1px solid var(--border);
+    background: var(--white);
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .story h3 {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    line-height: 1.25;
+  }
+  .story p { font-size: 15px; }
+  .story .lands {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 13.5px;
+  }
+  .lands .label {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .parked {
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 14.5px;
+    max-width: 40em;
+  }
+
+  .note {
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 24px;
+  }
+  .note + .note { margin-top: 22px; }
+  .note p { font-size: 15.5px; }
+
+  .signoff {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 32px;
+  }
+  footer {
+    margin-top: clamp(64px, 10vw, 104px);
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  @media (max-width: 680px) {
+    .stories { grid-template-columns: 1fr; }
+    .step { flex-direction: column; gap: 12px; padding: 24px; }
+  }
+  @media print {
+    .page { max-width: none; padding: 24px 8px; }
+    .step, .story { break-inside: avoid; }
+    section { margin-top: 48px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="vf"></div>
+    <p class="eyebrow">Private · July 2026</p>
+    <h1>Your name on Google<span class="accent">.</span></h1>
+    <p class="standfirst">I dug into what shows up when people search your name and put this together for you. Not gonna lie, this isn't really my specialty. I used AI to help research and pull it together, but here's honestly what I'd do if I were you.</p>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>What I'm seeing<span class="accent">.</span></h2>
+    </div>
+    <p>The good news: your Wikipedia photo is the real one from your Lions days, and your Instagram and LinkedIn already show up near the top when people search you. The rough part is the images and videos Google shows first, still pulling from 2024.</p>
+    <p>Here's the thing though: none of that stuff actually gets deleted from Google. It just stops being the first thing people see once there's more good, newer stuff out there. So it's less about cleanup and more about giving Google plenty of better, fresher material to show instead. Realistically that's months of doing this, not an overnight fix.</p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>A few things I'd try first<span class="accent">.</span></h2>
+    </div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h3>Claim your panel</h3>
+        <p>Whenever you've got 10 minutes: sign into your Google account and search your own name. Click the three dots next to where it says "American former football player" and hit "Claim this knowledge panel," then follow the verification steps. Once you're verified you can suggest a better photo, fix your profile links, and ask Google to remove personal info. I noticed your parents' names are listed there right now, totally your call if you want that gone. If it gets confusing, <a href="https://support.google.com/knowledgepanel/answer/7534842" target="_blank" rel="noopener noreferrer">Google has a decent guide</a> for it.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h3>Keep posting</h3>
+        <p>Your Instagram's already earning you a spot on the results page, so keep that going, maybe once a week: site visits, foundation days, golf, family, whatever feels natural. Just documenting, not selling anything. If you ever post video somewhere like YouTube or LinkedIn, even better, it gives Google something fresher to show instead of the old clips.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h3>The Detroit thing</h3>
+        <p>One I'd jump on: Detroit Sports Daily still holds the top video spot for your name from the old story. You were just back in Detroit with Calvin's foundation, so maybe your team offers them that story instead, two Lions back in the city giving back. Same audience, much better story, probably an easy yes for them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>A few story ideas, whenever<span class="accent">.</span></h2>
+    </div>
+    <p>No pressure on any of these, just things that could be good stories when the timing's right or you've got the bandwidth.</p>
+    <div class="stories" style="margin-top: 24px;">
+      <div class="story">
+        <h3>The tower's done</h3>
+        <p>Might be worth getting a photo of you at the building once it's finished, suit on, not site gear. Bisnow and Banker &amp; Tradesman both wrote about you before, so a follow-up is an easy pitch.</p>
+        <div class="lands"><span class="label">Who might run it</span>Bisnow, Banker &amp; Tradesman</div>
+      </div>
+      <div class="story">
+        <h3>The numbers nobody else has</h3>
+        <p>Something like a third of the development team, 30% of construction, 20% of consulting being MWBE, that's genuinely rare in Boston. Worth mentioning next time you're on a panel or talking to Banker &amp; Tradesman again.</p>
+        <div class="lands"><span class="label">Who might run it</span>Banker &amp; Tradesman, CommonWealth Beacon, a NAIOP or CREW panel</div>
+      </div>
+      <div class="story">
+        <h3>16 years of the foundation</h3>
+        <p>Whenever the next golf day or Haiti trip happens, that's probably your best shot at good photos and a good local story.</p>
+        <div class="lands"><span class="label">Who might run it</span>Boston Haitian Reporter, Haitian Times, GBH</div>
+      </div>
+      <div class="story">
+        <h3>Life after football</h3>
+        <p>Once football season rolls around (Aug to Nov), outlets like these "where are they now" stories. Could be a good window for a podcast or two, those clips tend to show up fast in search.</p>
+        <div class="lands"><span class="label">Who might run it</span>BC Magazine, BCEagles.com, sports podcasts</div>
+      </div>
+    </div>
+    <p class="parked">Separate thought: Primitiv could be its own story someday, but cannabis stuff gets complicated with real estate people, so that one's fully your call. Not pushing it either way.</p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2>A couple things I'd keep in mind<span class="accent">.</span></h2>
+    </div>
+    <div class="note">
+      <p>I'd skip mentioning 2024 in interviews or pitches. Not because it's a secret, just, you don't need the past to tell a good forward story.</p>
+    </div>
+    <div class="note">
+      <p>Stick to real photos, at real places: you at the building, in Haiti, back at BC, in Detroit.</p>
+    </div>
+    <div class="note">
+      <p>If the building's vacancy ever comes up, something simple like "the market's just slow right now, I'm proud of what's behind it" should cover it.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2>Where I stop<span class="accent">.</span></h2>
+    </div>
+    <p>This is me sharing what I found and what I'd personally do, not a service I'm running for you. The actual posting, the emails to reporters, setting up the photos, that part's on you and your team. But if you ever want a second pair of eyes on something before you send it, happy to take a look, just send it over.</p>
+    <p class="signoff">Talk soon,<br>Florian</p>
+  </section>
+
+  <footer>
+    Private, just for you.
+  </footer>
+
+</div>
+</body>
+</html>
