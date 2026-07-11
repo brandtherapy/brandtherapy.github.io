@@ -235,6 +235,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 .pane::-webkit-scrollbar{width:8px}.pane::-webkit-scrollbar-thumb{background:var(--border)}
 .pane .eyebrow{margin-bottom:10px}
 .pane .meta{font-family:var(--ff-b);font-size:10px;color:var(--muted);margin-left:auto}
+.pane .statement-label{font-family:var(--ff-b);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:2px 0 7px}
 .pane h2{font-size:26px;line-height:1.1;margin-bottom:10px}
 .pane .close-pane{position:absolute;right:20px;top:20px;font-size:18px;color:var(--muted);width:28px;height:28px;display:grid;place-items:center;border:1px solid var(--border)}
 .pane .close-pane:hover{border-color:var(--accent);color:var(--accent)}
@@ -322,6 +323,88 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
   .comp .cap{margin-bottom:0}
   .spectrum-badge{left:16px;top:16px;display:block;max-width:calc(100vw - 140px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 }
+
+/* ============ EXERCISES ============ */
+.ex-dock{border-bottom:1px solid var(--border);background:var(--accent-soft);padding:14px 20px 16px}
+.ex-dock-head{display:flex;align-items:center;gap:8px;font-family:var(--ff-b);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text);font-weight:600;margin-bottom:10px}
+.ex-dock-head .pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:expulse 1.8s ease-in-out infinite}
+@keyframes expulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
+.ex-dock-head .ex-progress{margin-left:auto;color:var(--muted);font-weight:500;letter-spacing:.06em;text-transform:none}
+.ex-cards{display:flex;gap:8px}
+.ex-card{flex:1;background:var(--white);border:1px solid var(--accent);padding:10px 12px;text-align:left;transition:all var(--dur-fast) var(--exo)}
+.ex-card:hover{box-shadow:0 0 0 2px var(--accent-soft),var(--shadow)}
+.ex-card .xn{font-family:var(--ff-h);font-weight:800;font-size:11px;color:var(--accent);letter-spacing:.05em}
+.ex-card .xt{font-family:var(--ff-h);font-weight:700;font-size:13px;line-height:1.25;margin:3px 0 5px;color:var(--text)}
+.ex-card .xs{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ex-card.done{border-color:var(--border)}
+.ex-card.done .xs{color:var(--accent);font-weight:600}
+.ex-card.done .xn{color:var(--muted)}
+
+.ex-overlay{position:fixed;inset:0;background:var(--white);z-index:300;display:none;overflow-y:auto}
+.ex-overlay.show{display:block}
+.ex-inner{max-width:760px;margin:0 auto;padding:clamp(28px,6vh,64px) clamp(20px,4vw,40px) 120px}
+.ex-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.ex-back{border:1px solid var(--border);padding:9px 16px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.ex-back:hover{border-color:var(--accent);color:var(--accent)}
+.ex-inner h2{font-size:clamp(26px,4vw,36px);margin-bottom:14px}
+.ex-explain{font-size:14.5px;line-height:1.7;color:var(--text);max-width:620px;margin-bottom:10px}
+.ex-note{font-size:12.5px;color:var(--muted);margin-bottom:28px}
+.ex-foot{position:sticky;bottom:0;background:var(--white);border-top:1px solid var(--border);margin:34px calc(clamp(20px,4vw,40px) * -1) -120px;padding:16px clamp(20px,4vw,40px) 26px;display:flex;gap:12px;align-items:center}
+.ex-foot .btn-primary{flex:1;justify-content:center}
+.ex-foot .btn-primary:disabled{opacity:.35;cursor:not-allowed}
+.ex-saved-line{font-size:12px;color:var(--muted)}
+
+/* sliders */
+.exs-row{display:grid;grid-template-columns:96px 1fr 96px;gap:14px;align-items:center;padding:13px 0;border-bottom:1px solid var(--border)}
+.exs-lab{font-family:var(--ff-b);font-size:12.5px;color:var(--muted);transition:color var(--dur-fast) var(--exo)}
+.exs-lab.r{text-align:right}
+.exs-row.moved .exs-lab{color:var(--text)}
+.exs-track{position:relative;height:34px;cursor:pointer;touch-action:none}
+.exs-track::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:var(--border);transform:translateY(-50%)}
+.exs-track::after{content:"";position:absolute;left:50%;top:50%;width:1px;height:12px;background:var(--border);transform:translate(-50%,-50%)}
+.exs-dot{position:absolute;top:50%;width:18px;height:18px;border-radius:50%;background:var(--white);border:2px solid var(--muted);transform:translate(-50%,-50%);transition:border-color var(--dur-fast) var(--exo),background var(--dur-fast) var(--exo)}
+.exs-row.moved .exs-dot{background:var(--accent);border-color:var(--accent)}
+@media (max-width:640px){
+  .exs-row{grid-template-columns:72px 1fr 72px;gap:8px}
+  .exs-lab{font-size:11px}
+  .ex-card .xt{font-size:12px}
+  .ex-dock{padding:12px 14px 14px}
+  .ex-foot{flex-direction:column-reverse;align-items:stretch;gap:10px;text-align:center}
+  .ex-foot .btn-primary{width:100%}
+}
+
+/* word bank */
+.exw-count{font-size:12px;color:var(--muted);margin-bottom:14px}
+.exw-count b{color:var(--accent)}
+.exw-bank{display:flex;flex-wrap:wrap;gap:8px}
+.exw-word{border:1px solid var(--border);padding:8px 14px;font-size:13px;color:var(--text);cursor:pointer;user-select:none;transition:all var(--dur-fast) var(--exo)}
+.exw-word:hover{border-color:var(--accent)}
+.exw-word.on{background:var(--accent);border-color:var(--accent);color:var(--white)}
+
+/* board */
+.exb-add{display:flex;gap:10px;align-items:flex-end;margin-bottom:18px}
+.exb-add textarea{flex:1;border:1px solid var(--border);padding:12px 14px;font-family:var(--ff-b);font-size:14px;resize:none;min-height:46px;max-height:120px}
+.exb-add textarea:focus{outline:none;border-color:var(--accent)}
+.exb-notes{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:26px}
+.exb-note{position:relative;background:var(--light);border-left:2px solid var(--accent);padding:12px 30px 12px 14px;font-size:13px;line-height:1.55;white-space:pre-wrap;word-wrap:break-word}
+.exb-note button{position:absolute;top:6px;right:6px;width:20px;height:20px;font-size:13px;line-height:1;color:var(--muted)}
+.exb-note button:hover{color:var(--text)}
+.exb-files-lab{font-family:var(--ff-b);font-weight:500;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--border);padding-top:16px;margin-bottom:10px}
+.exb-thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.exb-thumbs .th{position:relative;width:86px;height:86px;border:1px solid var(--border)}
+.exb-thumbs .th img{width:100%;height:100%;object-fit:cover;display:block}
+.exb-thumbs .th .doc{width:100%;height:100%;display:grid;place-items:center;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:center;padding:6px;word-break:break-word}
+.exb-thumbs .th button{position:absolute;top:-8px;right:-8px;width:20px;height:20px;border-radius:50%;border:1px solid var(--text);background:var(--white);font-size:12px;line-height:1;padding:0}
+
+/* submit modal exercise status */
+.subex{border:1px solid var(--border);margin-bottom:16px}
+.subex-row{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);font-size:12.5px}
+.subex-row:last-child{border-bottom:none}
+.subex-row .st{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--muted);flex-shrink:0;display:grid;place-items:center;font-size:10px;color:var(--white)}
+.subex-row.ok .st{background:var(--accent);border-color:var(--accent)}
+.subex-row .nm{flex:1}
+.subex-row button{color:var(--accent);font-size:11.5px;text-decoration:underline;padding:0}
+.subex-warn{font-size:12px;line-height:1.55;color:var(--text);background:var(--accent-soft);border-left:2px solid var(--accent);padding:10px 13px;margin-bottom:16px}
 </style>
 </head>
 <body>
@@ -420,6 +503,14 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
             <button class="icon-btn" id="btn-start-over">Start over</button>
           </div>
         </div>
+        <div class="ex-dock" id="ex-dock">
+          <div class="ex-dock-head"><span class="pulse-dot" id="ex-pulse"></span>Your three exercises<span class="ex-progress" id="ex-progress">0 of 3 done</span></div>
+          <div class="ex-cards">
+            <button class="ex-card" id="ex-card-sliders" data-ex="sliders"><div class="xn">01</div><div class="xt">Brand sliders</div><div class="xs">To do</div></button>
+            <button class="ex-card" id="ex-card-archetype" data-ex="archetype"><div class="xn">02</div><div class="xt">Personality words</div><div class="xs">To do</div></button>
+            <button class="ex-card" id="ex-card-board" data-ex="board"><div class="xn">03</div><div class="xt">Your board</div><div class="xs">To do</div></button>
+          </div>
+        </div>
         <div class="chat-scroll" id="chat-scroll"></div>
         <div class="quotes-drawer">
           <button class="quotes-toggle" id="quotes-toggle">
@@ -449,8 +540,9 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
           <button class="fit" onclick="unfocusEdge()">Whole star</button>
         </div>
         <div class="review-banner" id="review-banner">
-          <div class="rb-text">Your star is <b>ready for review</b>. Every edge has a real position.
+          <div class="rb-text">Your evidence draft is <b>ready for review</b>. Every edge has a supported working position.
             <div class="details-nudge" id="rb-nudge">Before you send: <button id="btn-nudge-details">add your LinkedIn, bio, or photos</button> so Florian reviews the full picture.</div>
+            <div class="details-nudge" id="rb-ex-nudge" style="display:none">Also: <button id="btn-nudge-ex">finish your three exercises</button> <span id="rb-ex-count"></span>. They feed the review directly.</div>
           </div>
           <button id="btn-open-submit">Send to Florian for review</button>
         </div>
@@ -515,6 +607,8 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
     <div class="field"><label for="f-name">Your name</label><input id="f-name" type="text" placeholder="Full name" /></div>
     <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" placeholder="you@yourbrand.com" /></div>
     <div class="field"><label for="f-brand">Brand name</label><input id="f-brand" type="text" placeholder="What you go by" /></div>
+    <div class="subex" id="subex-rows"></div>
+    <div class="subex-warn" id="subex-warn" style="display:none">Some exercises aren't done yet. You can still send, but Florian reviews the full picture... the sliders, the words, and your board all feed the session.</div>
     <div class="modal-err" id="submit-err" style="display:none"></div>
     <div class="modal-actions">
       <button class="btn btn-ghost" id="btn-cancel-submit">Cancel</button>
@@ -531,13 +625,76 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
       <h2>Sent<span class="p">.</span></h2>
       <p>Your star is queued for Florian's personal review. Here's what happens next.</p>
       <ul class="confirm-list">
-        <li>Florian reads the whole star, not a summary, the actual positions and quotes.</li>
-        <li>He checks them against what you said and sharpens anything still soft.</li>
+        <li>Florian reads the working positions, persona, boundaries, proof, and quotes.</li>
+        <li>He synthesizes the clean final Focus Star and checks it against what you said.</li>
         <li>You hear back from him directly.</li>
       </ul>
     </div>
     <div class="modal-actions">
       <button class="btn btn-primary" id="btn-confirm-close" style="justify-content:center;flex:1">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- exercise 1: brand sliders -->
+<div class="ex-overlay" id="exo-sliders">
+  <div class="ex-inner">
+    <div class="ex-topbar">
+      <div class="eyebrow"><span class="code">Exercise 1 of 3</span></div>
+      <button class="ex-back" id="exo-sliders-close">Back to session</button>
+    </div>
+    <h2>Where does your brand sit<span class="p">?</span></h2>
+    <p class="ex-explain">Your brand is not your logo. It is everything people meet: how you speak, how you write, what the website looks like, what you wear, how the invoice reads. Drag each dot to where your brand actually lives today. Not where your industry says it should sit.</p>
+    <p class="ex-note">Go on instinct. The middle is a real answer too, as long as you put it there on purpose.</p>
+    <div id="exs-rows"></div>
+    <div class="ex-foot">
+      <span class="ex-saved-line" id="exs-saved"></span>
+      <button class="btn btn-primary" id="btn-save-sliders" disabled>Place all dots</button>
+    </div>
+  </div>
+</div>
+
+<!-- exercise 2: personality words -->
+<div class="ex-overlay" id="exo-archetype">
+  <div class="ex-inner">
+    <div class="ex-topbar">
+      <div class="eyebrow"><span class="code">Exercise 2 of 3</span></div>
+      <button class="ex-back" id="exo-archetype-close">Back to session</button>
+    </div>
+    <h2>Words that are already true<span class="p">.</span></h2>
+    <p class="ex-explain">Pick every word that describes your brand as it is today, at least 80 percent of the time. Not the brand you're building toward. If you hesitate on a word, it doesn't make the cut. Most people land between 10 and 20.</p>
+    <p class="ex-note">There is no score on this screen, on purpose. Florian reads the pattern, not you.</p>
+    <div class="exw-count">Picked: <b id="exw-n">0</b></div>
+    <div class="exw-bank" id="exw-bank"></div>
+    <div class="ex-foot">
+      <span class="ex-saved-line" id="exw-saved"></span>
+      <button class="btn btn-primary" id="btn-save-words" disabled>Pick at least 8 words</button>
+    </div>
+  </div>
+</div>
+
+<!-- exercise 3: open board -->
+<div class="ex-overlay" id="exo-board">
+  <div class="ex-inner">
+    <div class="ex-topbar">
+      <div class="eyebrow"><span class="code">Exercise 3 of 3</span></div>
+      <button class="ex-back" id="exo-board-close">Back to session</button>
+    </div>
+    <h2>Your board<span class="p">.</span></h2>
+    <p class="ex-explain">Everything that doesn't fit a chat message goes here. Notes to yourself, brands you admire, things you never want to become, half-formed ideas, links, images, a PDF. Add as many notes as you want.</p>
+    <p class="ex-note">Nothing on this board is private. Florian sees all of it, that is the point.</p>
+    <div class="exb-add">
+      <textarea id="exb-input" placeholder="Write a note..." rows="1"></textarea>
+      <button class="btn btn-ghost" id="btn-add-note">Add note</button>
+    </div>
+    <div class="exb-notes" id="exb-notes"></div>
+    <div class="exb-files-lab">Files (up to 3, images or PDF)</div>
+    <input id="exb-file-input" type="file" accept="image/*,application/pdf" multiple style="display:none" />
+    <button class="btn btn-ghost" id="btn-add-board-file" style="width:100%;justify-content:center">Add a file</button>
+    <div class="exb-thumbs" id="exb-thumbs"></div>
+    <div class="ex-foot">
+      <span class="ex-saved-line" id="exb-saved"></span>
+      <button class="btn btn-primary" id="btn-save-board" disabled>Add something first</button>
     </div>
   </div>
 </div>
@@ -560,9 +717,11 @@ function emptyStar(){
   return {
     spectrum:{position:null,note:''},
     center:{word:'',candidates:[]},
+    persona:{role:'',context:'',need:'',trigger:''},
     edges,
     completeness:0,
     quotes:[],
+    evidence_gate:{passed:false,issues:[]},
     ready_for_review:false
   };
 }
@@ -763,15 +922,21 @@ function paneHTML(id,e){
   const L=(items,o)=>items&&items.length?`<ul>${items.map(t=>`<li class="${o||''}">${t}</li>`).join('')}</ul>`:`<div class="none">Not yet drafted.</div>`;
   const filledTag=`<span class="meta">${e.filled||0}/10 &middot; ${(e.filled||0)*10}%</span>`;
   const secs=[
-    ['Position', e.position?`<p>${e.position}</p>`:`<div class="none">Not yet drafted.</div>`],
-    ['Compass', e.compass?`<p>${e.compass}</p>`:`<div class="none">Not yet drafted.</div>`],
+    ['Working decision', e.position?`<p>${e.position}</p>`:`<div class="none">Not yet drafted.</div>`],
+    ['Decision filter', e.compass?`<p>${e.compass}</p>`:`<div class="none">Not yet drafted.</div>`],
     ['Rules in', L(e.rules_in)],
     ['Rules out', L(e.rules_out,'out')],
     ['Tradeoffs', L(e.tradeoffs)],
     ['Proof', L(e.proof)]
   ];
+  if(id==='people'){
+    const p=(session.star&&session.star.persona)||{};
+    const persona=[p.role,p.context,p.need,p.trigger].filter(Boolean);
+    secs.splice(2,0,['Persona evidence',persona.length?L(persona):`<div class="none">Not yet drafted.</div>`]);
+  }
   return `<button class="close-pane" onclick="unfocusEdge()">&times;</button>
     <div class="eyebrow"><span class="code">${CODE[id]} &middot; ${TITLES[id]}</span>${filledTag}</div>
+    <div class="statement-label">Candidate statement</div>
     <h2>${e.offer_name||TITLES[id]}<span class="p">.</span></h2>`+
     secs.map((sx,i)=>`<div class="sec" style="transition-delay:${(0.04*i+0.05).toFixed(2)}s"><div class="lab">${sx[0]}</div>${sx[1]}</div>`).join('');
 }
@@ -826,7 +991,7 @@ vp.addEventListener('pointercancel',()=>{down=null;vp.classList.remove('grabbing
 vp.addEventListener('click',e=>{if(!world._m&&e.target===vp&&focused)unfocusEdge();});
 vp.addEventListener('wheel',e=>{e.preventDefault();const r=vp.getBoundingClientRect(),cx=e.clientX-r.left,cy=e.clientY-r.top;
   const k1=clampK(tf.k*Math.exp(-e.deltaY*0.0016)),s=k1/tf.k;tf.x=cx-(cx-tf.x)*s;tf.y=cy-(cy-tf.y)*s;tf.k=k1;apply();},{passive:false});
-addEventListener('keydown',e=>{if(e.key==='Escape'&&focused)unfocusEdge();});
+addEventListener('keydown',e=>{if(e.key!=='Escape')return;if(exOpen){closeExercise();return;}if(focused)unfocusEdge();});
 addEventListener('resize',()=>{if(document.getElementById('state-session').classList.contains('active')){if(focused)apply();else fitStar(true);}});
 
 /* =========================================================================
@@ -910,6 +1075,10 @@ function renderReviewBanner(){
   const banner=document.getElementById('review-banner');
   const ready=!!(session.star&&session.star.ready_for_review);
   banner.classList.toggle('show',ready);
+  const exn=document.getElementById('rb-ex-nudge');
+  const n=exDone();
+  exn.style.display=n<3?'':'none';
+  document.getElementById('rb-ex-count').textContent='('+n+' of 3 done)';
 }
 
 function renderStarFull(){
@@ -1000,6 +1169,8 @@ function startRealSession(resumed){
   showState('state-session');
   buildStarSkeleton();
   requestAnimationFrame(()=>fitStar(true));
+  ensureExercises();
+  renderExDock();
 
   if(resumed){
     chatScroll.innerHTML='';
@@ -1021,6 +1192,8 @@ function startOver(){
   clearSession();
   try{localStorage.removeItem(LS_IMG_KEY);}catch(e){}
   profileImages=[];
+  try{localStorage.removeItem(LS_BOARD_KEY);}catch(e){}
+  boardFiles=[];
   session={messages:[],star:null,started:false,demo:false,profile:{name:'',email:'',linkedin:'',links:[],bio:''}};
   document.getElementById('resume-card').style.display='none';
   const cs=document.getElementById('cta-start');
@@ -1115,6 +1288,328 @@ document.getElementById('btn-start-over').addEventListener('click',()=>{
 });
 
 /* =========================================================================
+   EXERCISES (sliders, personality words, open board)
+   Words are a flat list on purpose: the archetype mapping and scoring live
+   server-side in the admin view only, so nothing in this file leaks it.
+   ========================================================================= */
+const EX_AXES=[
+  {left:'Classic',right:'Modern'},{left:'Mature',right:'Youthful'},{left:'Feminine',right:'Masculine'},
+  {left:'Playful',right:'Serious'},{left:'Economical',right:'Luxurious'},{left:'Abstract',right:'Literal'},
+  {left:'Geometric',right:'Organic'},{left:'Calm',right:'Energetic'},{left:'Rational',right:'Emotional'},
+  {left:'Mysterious',right:'Transparent'},{left:'Quiet',right:'Talkative'}
+];
+const EX_WORDS=['Adventurous','Alluring','Analytical','Artistic','Authoritative','Bold','Brave','Calm','Caring','Charismatic','Cheeky','Commanding','Compassionate','Confident','Controlling','Curious','Decisive','Dependable','Desirable','Determined','Disruptive','Down-to-earth','Edgy','Emotional','Empowering','Enchanting','Entertaining','Explorative','Expressive','Fearless','Friendly','Fun','Generous','Glamorous','Honest','Hopeful','Humble','Imaginative','Independent','Insightful','Inspiring','Intimate','Irreverent','Joyful','Knowledgeable','Loyal','Magical','Mature','Mystical','Nurturing','Optimistic','Original','Passionate','Playful','Positive','Powerful','Prestigious','Protective','Pure','Quirky','Radical','Relatable','Reliable','Resilient','Resourceful','Romantic','Safe','Selfless','Sensual','Serious','Simple','Spontaneous','Strong','Thoughtful','Transformative','Trustworthy','Unconventional','Visionary','Warm','Witty'];
+
+const LS_BOARD_KEY='fp_self_serve_bt_boardfiles_v1';
+let boardFiles=[]; // [{name,type,data}] kept out of the main session blob, like profileImages
+function saveBoardFiles(){
+  try{localStorage.setItem(LS_BOARD_KEY,JSON.stringify(boardFiles));}catch(e){
+    toast('Files are too large to keep between visits. They will still send with your star.');
+  }
+}
+function loadBoardFiles(){
+  try{const raw=localStorage.getItem(LS_BOARD_KEY);if(raw)boardFiles=JSON.parse(raw)||[];}catch(e){}
+}
+
+function emptyExercises(){
+  return {
+    sliders:{axes:EX_AXES.map(()=>({position:50,moved:false})),done:false,updated:null},
+    archetype:{picks:[],done:false,updated:null},
+    board:{notes:[],done:false,updated:null}
+  };
+}
+function ensureExercises(){
+  if(!session.exercises)session.exercises=emptyExercises();
+  const ex=session.exercises;
+  if(!ex.sliders||!Array.isArray(ex.sliders.axes)||ex.sliders.axes.length!==EX_AXES.length)ex.sliders={axes:EX_AXES.map(()=>({position:50,moved:false})),done:false,updated:null};
+  if(!ex.archetype||!Array.isArray(ex.archetype.picks))ex.archetype={picks:[],done:false,updated:null};
+  if(!ex.board||!Array.isArray(ex.board.notes))ex.board={notes:[],done:false,updated:null};
+  return ex;
+}
+function exDone(){
+  const ex=ensureExercises();
+  return ['sliders','archetype','board'].filter(k=>ex[k].done).length;
+}
+function exercisesPayload(){
+  const ex=ensureExercises();
+  return {
+    sliders:{axes:EX_AXES.map((a,i)=>({left:a.left,right:a.right,position:ex.sliders.axes[i].position,moved:ex.sliders.axes[i].moved})),done:ex.sliders.done},
+    archetype:{picks:ex.archetype.picks,done:ex.archetype.done},
+    board:{notes:ex.board.notes,done:ex.board.done}
+  };
+}
+
+/* every mutation queues a background sync so Florian sees progress even if the star is never submitted */
+let exSyncTimer=null;
+function syncExercises(){
+  if(session.demo)return;
+  clearTimeout(exSyncTimer);
+  exSyncTimer=setTimeout(()=>{
+    const p=session.profile||{};
+    fetch(API_BASE+'/api/exercises',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({sid:ensureSid(),name:p.name||'',email:p.email||'',exercises:exercisesPayload(),files:boardFiles})
+    }).catch(()=>{});
+  },900);
+}
+
+/* dock */
+function renderExDock(){
+  const ex=ensureExercises();
+  const n=exDone();
+  document.getElementById('ex-progress').textContent=n+' of 3 done';
+  document.getElementById('ex-pulse').style.display=n===3?'none':'';
+  [['sliders','ex-card-sliders'],['archetype','ex-card-archetype'],['board','ex-card-board']].forEach(pair=>{
+    const card=document.getElementById(pair[1]);
+    card.classList.toggle('done',!!ex[pair[0]].done);
+    card.querySelector('.xs').innerHTML=ex[pair[0]].done?'Done &#10003;':'To do';
+  });
+}
+
+/* overlay switching */
+const EX_OVERLAYS={sliders:'exo-sliders',archetype:'exo-archetype',board:'exo-board'};
+let exOpen=null;
+function openExercise(k){
+  ensureExercises();
+  exOpen=k;
+  if(k==='sliders')renderSliders();
+  if(k==='archetype')renderWordBank();
+  if(k==='board')renderBoard();
+  document.getElementById(EX_OVERLAYS[k]).classList.add('show');
+}
+function closeExercise(){
+  if(!exOpen)return;
+  document.getElementById(EX_OVERLAYS[exOpen]).classList.remove('show');
+  exOpen=null;
+  renderExDock();
+  renderReviewBanner();
+}
+document.querySelectorAll('.ex-card').forEach(c=>c.addEventListener('click',()=>openExercise(c.dataset.ex)));
+document.getElementById('exo-sliders-close').addEventListener('click',closeExercise);
+document.getElementById('exo-archetype-close').addEventListener('click',closeExercise);
+document.getElementById('exo-board-close').addEventListener('click',closeExercise);
+document.getElementById('btn-nudge-ex').addEventListener('click',()=>{
+  const ex=ensureExercises();
+  const k=['sliders','archetype','board'].find(x=>!ex[x].done)||'sliders';
+  openExercise(k);
+});
+
+/* exercise 1: sliders */
+function bindSliderTrack(track,i){
+  function setFromEvent(ev){
+    const r=track.getBoundingClientRect();
+    const pos=Math.round(Math.max(0,Math.min(100,(ev.clientX-r.left)/r.width*100)));
+    const ex=ensureExercises();
+    ex.sliders.axes[i]={position:pos,moved:true};
+    track.parentElement.classList.add('moved');
+    track.querySelector('.exs-dot').style.left=pos+'%';
+    updateSlidersFoot();
+  }
+  track.addEventListener('pointerdown',ev=>{
+    ev.preventDefault();
+    try{track.setPointerCapture(ev.pointerId);}catch(e){}
+    setFromEvent(ev);
+    const move=e=>setFromEvent(e);
+    const up=()=>{
+      track.removeEventListener('pointermove',move);
+      track.removeEventListener('pointerup',up);
+      track.removeEventListener('pointercancel',up);
+      saveSession();syncExercises();
+    };
+    track.addEventListener('pointermove',move);
+    track.addEventListener('pointerup',up);
+    track.addEventListener('pointercancel',up);
+  });
+}
+function renderSliders(){
+  const ex=ensureExercises();
+  const box=document.getElementById('exs-rows');
+  box.innerHTML='';
+  EX_AXES.forEach((a,i)=>{
+    const st=ex.sliders.axes[i];
+    const row=document.createElement('div');
+    row.className='exs-row'+(st.moved?' moved':'');
+    const l=document.createElement('span');l.className='exs-lab';l.textContent=a.left;
+    const track=document.createElement('div');track.className='exs-track';
+    const dot=document.createElement('div');dot.className='exs-dot';dot.style.left=(st.position!=null?st.position:50)+'%';
+    track.appendChild(dot);
+    const r=document.createElement('span');r.className='exs-lab r';r.textContent=a.right;
+    row.appendChild(l);row.appendChild(track);row.appendChild(r);
+    box.appendChild(row);
+    bindSliderTrack(track,i);
+  });
+  updateSlidersFoot();
+}
+function updateSlidersFoot(){
+  const ex=ensureExercises();
+  const placed=ex.sliders.axes.filter(a=>a.moved).length;
+  const btn=document.getElementById('btn-save-sliders');
+  if(placed<EX_AXES.length){btn.disabled=true;btn.textContent='Place all dots ('+placed+' of '+EX_AXES.length+')';}
+  else{btn.disabled=false;btn.textContent='Save my sliders';}
+  document.getElementById('exs-saved').textContent=ex.sliders.done?'Saved. You can still adjust any dot.':'';
+}
+document.getElementById('btn-save-sliders').addEventListener('click',()=>{
+  const ex=ensureExercises();
+  if(ex.sliders.axes.some(a=>!a.moved))return;
+  ex.sliders.done=true;ex.sliders.updated=new Date().toISOString();
+  saveSession();syncExercises();
+  toast('Sliders saved. Florian sees where you placed every dot.');
+  closeExercise();
+});
+
+/* exercise 2: personality words */
+function renderWordBank(){
+  const ex=ensureExercises();
+  const bank=document.getElementById('exw-bank');
+  if(!bank.childElementCount){
+    EX_WORDS.forEach(w=>{
+      const b=document.createElement('button');
+      b.className='exw-word';b.dataset.w=w;b.textContent=w;
+      b.addEventListener('click',()=>{
+        const ex2=ensureExercises();
+        const i=ex2.archetype.picks.indexOf(w);
+        if(i>=0)ex2.archetype.picks.splice(i,1);else ex2.archetype.picks.push(w);
+        b.classList.toggle('on',i<0);
+        saveSession();syncExercises();
+        updateWordsFoot();
+      });
+      bank.appendChild(b);
+    });
+  }
+  bank.querySelectorAll('.exw-word').forEach(b=>b.classList.toggle('on',ex.archetype.picks.indexOf(b.dataset.w)>=0));
+  updateWordsFoot();
+}
+function updateWordsFoot(){
+  const ex=ensureExercises();
+  const n=ex.archetype.picks.length;
+  document.getElementById('exw-n').textContent=n;
+  const btn=document.getElementById('btn-save-words');
+  if(n<8){btn.disabled=true;btn.textContent='Pick at least 8 words';}
+  else{btn.disabled=false;btn.textContent='Save my words';}
+  document.getElementById('exw-saved').textContent=ex.archetype.done?'Saved. You can still change your picks.':'';
+}
+document.getElementById('btn-save-words').addEventListener('click',()=>{
+  const ex=ensureExercises();
+  if(ex.archetype.picks.length<8)return;
+  ex.archetype.done=true;ex.archetype.updated=new Date().toISOString();
+  saveSession();syncExercises();
+  toast('Words saved. Florian reads the pattern from here.');
+  closeExercise();
+});
+
+/* exercise 3: open board */
+function renderBoardNotes(){
+  const ex=ensureExercises();
+  const box=document.getElementById('exb-notes');
+  box.innerHTML='';
+  ex.board.notes.forEach((n,i)=>{
+    const d=document.createElement('div');
+    d.className='exb-note';
+    d.textContent=n.text;
+    const rm=document.createElement('button');
+    rm.innerHTML='&times;';rm.setAttribute('aria-label','Remove');
+    rm.addEventListener('click',()=>{
+      const ex2=ensureExercises();
+      ex2.board.notes.splice(i,1);
+      saveSession();syncExercises();renderBoardNotes();updateBoardFoot();
+    });
+    d.appendChild(rm);
+    box.appendChild(d);
+  });
+}
+function renderBoardThumbs(){
+  const box=document.getElementById('exb-thumbs');
+  box.innerHTML='';
+  boardFiles.forEach((f,i)=>{
+    const th=document.createElement('div');th.className='th';
+    if((f.data||'').indexOf('data:image')===0){
+      const img=document.createElement('img');img.src=f.data;img.alt='';th.appendChild(img);
+    }else{
+      const doc=document.createElement('div');doc.className='doc';doc.textContent=f.name||'file';th.appendChild(doc);
+    }
+    const rm=document.createElement('button');
+    rm.innerHTML='&times;';rm.setAttribute('aria-label','Remove');
+    rm.addEventListener('click',()=>{
+      boardFiles.splice(i,1);
+      saveBoardFiles();syncExercises();renderBoardThumbs();updateBoardFoot();
+    });
+    th.appendChild(rm);
+    box.appendChild(th);
+  });
+  document.getElementById('btn-add-board-file').style.display=boardFiles.length>=3?'none':'';
+}
+function updateBoardFoot(){
+  const ex=ensureExercises();
+  const has=ex.board.notes.length>0||boardFiles.length>0;
+  const btn=document.getElementById('btn-save-board');
+  btn.disabled=!has;
+  btn.textContent=has?"That's everything for now":'Add something first';
+  document.getElementById('exb-saved').textContent=ex.board.done?'Saved. Add more any time.':'';
+}
+function renderBoard(){renderBoardNotes();renderBoardThumbs();updateBoardFoot();}
+function addBoardNote(){
+  const inp=document.getElementById('exb-input');
+  const text=inp.value.trim();
+  if(!text)return;
+  const ex=ensureExercises();
+  ex.board.notes.push({id:'n-'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),text:text.slice(0,600),ts:new Date().toISOString()});
+  inp.value='';inp.style.height='auto';
+  saveSession();syncExercises();renderBoardNotes();updateBoardFoot();
+}
+document.getElementById('btn-add-note').addEventListener('click',addBoardNote);
+document.getElementById('exb-input').addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();addBoardNote();}
+});
+document.getElementById('exb-input').addEventListener('input',()=>{
+  const t=document.getElementById('exb-input');
+  t.style.height='auto';t.style.height=Math.min(t.scrollHeight,120)+'px';
+});
+document.getElementById('btn-add-board-file').addEventListener('click',()=>document.getElementById('exb-file-input').click());
+document.getElementById('exb-file-input').addEventListener('change',e=>{
+  [...e.target.files].slice(0,3-boardFiles.length).forEach(f=>{
+    if(f.size>4*1024*1024){toast(f.name+' is over 4MB, use a smaller version.');return;}
+    if(!(/^image\//.test(f.type)||f.type==='application/pdf')){toast('Images or PDF only.');return;}
+    const r=new FileReader();
+    r.onload=()=>{boardFiles.push({name:f.name,type:f.type,data:r.result});saveBoardFiles();syncExercises();renderBoardThumbs();updateBoardFoot();};
+    r.readAsDataURL(f);
+  });
+  e.target.value='';
+});
+document.getElementById('btn-save-board').addEventListener('click',()=>{
+  const ex=ensureExercises();
+  if(!ex.board.notes.length&&!boardFiles.length)return;
+  ex.board.done=true;ex.board.updated=new Date().toISOString();
+  saveSession();syncExercises();
+  toast('Board saved. Everything on it goes to Florian.');
+  closeExercise();
+});
+
+/* submit modal: exercise status rows (submission is never blocked) */
+function renderSubmitExStatus(){
+  const ex=ensureExercises();
+  const rows=document.getElementById('subex-rows');
+  rows.innerHTML='';
+  [['sliders','Brand sliders'],['archetype','Personality words'],['board','Your board']].forEach(pair=>{
+    const done=!!ex[pair[0]].done;
+    const row=document.createElement('div');
+    row.className='subex-row'+(done?' ok':'');
+    const st=document.createElement('span');st.className='st';if(done)st.innerHTML='&#10003;';
+    const nm=document.createElement('span');nm.className='nm';nm.textContent=pair[1];
+    row.appendChild(st);row.appendChild(nm);
+    if(!done){
+      const go=document.createElement('button');
+      go.textContent='Do it now';
+      go.addEventListener('click',()=>{
+        submitOverlay.classList.remove('show');
+        openExercise(pair[0]);
+      });
+      row.appendChild(go);
+    }
+    rows.appendChild(row);
+  });
+  document.getElementById('subex-warn').style.display=exDone()<3?'block':'none';
+}
+
+/* =========================================================================
    SUBMIT / REVIEW GATE
    ========================================================================= */
 const submitOverlay=document.getElementById('submit-overlay');
@@ -1125,6 +1620,7 @@ document.getElementById('btn-open-submit').addEventListener('click',()=>{
   const p=session.profile||{};
   if(p.name&&!document.getElementById('f-name').value)document.getElementById('f-name').value=p.name;
   if(p.email&&!document.getElementById('f-email').value)document.getElementById('f-email').value=p.email;
+  renderSubmitExStatus();
   submitOverlay.classList.add('show');
 });
 document.getElementById('btn-cancel-submit').addEventListener('click',()=>{
@@ -1147,6 +1643,7 @@ document.getElementById('btn-do-submit').addEventListener('click',async ()=>{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({name,email,brand,star:session.star,transcript:session.messages,sid:ensureSid(),
+        exercises:exercisesPayload(),boardFiles:boardFiles,
         profile:Object.assign({},session.profile,{name,email,images:profileImages})})
     });
     if(!res.ok)throw new Error('submit failed '+res.status);
@@ -1366,6 +1863,8 @@ function startDemo(){
   chatScroll.innerHTML='';
   buildStarSkeleton();
   requestAnimationFrame(()=>fitStar(true));
+  ensureExercises();
+  renderExDock();
   renderStarFull();
   chatInput.disabled=true;
   sendBtn.disabled=true;
@@ -1420,6 +1919,7 @@ document.getElementById('btn-open-submit').addEventListener('click',()=>{
    ========================================================================= */
 buildMiniStar();
 loadImages();
+loadBoardFiles();
 showState('state-landing');
 if(loadSession() && session.started && !session.demo){
   session.profile=Object.assign({name:'',email:'',linkedin:'',links:[],bio:''},session.profile||{});
