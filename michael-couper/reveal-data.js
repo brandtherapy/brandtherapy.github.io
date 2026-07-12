@@ -2,6 +2,8 @@ window.REVEAL_DATA = {
   slug: "michael-couper",
   client: "Michael Couper",
   firstName: "Michael",
+  version: "2026-07-11-v4",
+  responseEndpoint: "https://bt-api.florianp.com/api/reveal-response",
   likenessNotice: {
     title: "A note on likeness.",
     body: "Exact facial likeness is not the decision being made at this stage. These portraits are close creative representations used to evaluate the visual world, styling, and outfit. Final production will use a more accurate likeness.",
@@ -44,7 +46,7 @@ window.REVEAL_DATA = {
   ],
   spectrum: {
     title: "Michael is the brand.",
-    body: "CCS Interactive, Lenders, composition, teaching, technology, and civic work are not separate identities. They are evidence of the same mind moving across different rooms."
+    body: "CCS Interactive, Lendrose, composition, teaching, technology, and civic work are not separate identities. They are evidence of the same mind moving across different rooms."
   },
   sliders: {
     title: "Quiet authority. Visible range.",
@@ -71,7 +73,7 @@ window.REVEAL_DATA = {
       outfit: "Thick rectangular glasses, midnight-charcoal wool suit, fine black mock neck, matte black shoes, restrained silver detail.",
       risk: "It must never become professor cosplay, generic luxury, or moody founder theater.",
       compare: "More artistic, intimate, and nocturnal. It puts the serious, cultivated polymath first.",
-      image: "images/michael-couper-composed-inquiry-v3.png",
+      image: "images/michael-couper-composed-inquiry-v4.png",
       heroPosition: "43% center",
       bg: "#11111a",
       accent: "#4057ff"
@@ -85,7 +87,7 @@ window.REVEAL_DATA = {
       outfit: "No glasses, stone-grey structured field jacket, mineral-blue merino crewneck, charcoal trousers, clean black leather sneakers.",
       risk: "It must never become sterile SaaS, political campaign imagery, or productivity minimalism.",
       compare: "More open, architectural, and public-facing. It puts the clear independent decision-maker first.",
-      image: "images/michael-couper-open-frame-v3.png",
+      image: "images/michael-couper-open-frame-v4.png",
       heroPosition: "18% center",
       bg: "#18201d",
       accent: "#e65432"
@@ -94,6 +96,6 @@ window.REVEAL_DATA = {
   choices: [
     { id: "composed-inquiry", label: "Direction 1: Composed Inquiry" },
     { id: "open-frame", label: "Direction 2: Open Frame" },
-    { id: "revise", label: "Revise the foundation" }
+    { id: "revise", label: "Revise completely" }
   ]
 };

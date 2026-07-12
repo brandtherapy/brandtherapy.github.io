@@ -10,16 +10,16 @@
   <meta property="og:description" content="Your private Brand Therapy reveal is ready.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Brand Therapy">
-  <meta property="og:image" content="https://brandtherapy.florianp.com/og-image.jpg">
-  <meta property="og:image:secure_url" content="https://brandtherapy.florianp.com/og-image.jpg">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1527">
-  <meta property="og:image:height" content="834">
+  <meta property="og:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
+  <meta property="og:image:secure_url" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Brand Therapy">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Brand Therapy.">
   <meta name="twitter:description" content="Your private Brand Therapy reveal is ready.">
-  <meta name="twitter:image" content="https://brandtherapy.florianp.com/og-image.jpg">
+  <meta name="twitter:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
   <meta name="twitter:image:alt" content="Brand Therapy">
   <title>Brand Therapy Reveal</title>
   <link rel="icon" href="data:,">
@@ -122,65 +122,39 @@
     .sliderline strong { min-width: 92px; color: var(--paper); font-weight: 500; }
     .sliderline span { color: var(--muted); }
     .board-scene { padding: 0; background: #08080a; }
-    .board-viewport {
+    .board-link {
       position: absolute;
       inset: 0;
       display: grid;
       place-items: center;
       overflow: hidden;
-      touch-action: pan-y;
+      color: inherit;
+      text-decoration: none;
+      cursor: zoom-in;
     }
     .board-scene img {
       width: 100%;
       height: 100svh;
       object-fit: contain;
       display: block;
-      transform: translate3d(0, 0, 0) scale(1);
-      transform-origin: center;
-      user-select: none;
-      -webkit-user-drag: none;
-      will-change: transform;
     }
-    .board-scene.is-zoomed .board-viewport { cursor: grab; touch-action: none; }
-    .board-scene.is-dragging .board-viewport { cursor: grabbing; }
-    .zoom-controls {
+    .fullsize-hint {
       position: absolute;
       z-index: 30;
       right: clamp(18px, 3vw, 42px);
       bottom: max(20px, env(safe-area-inset-bottom));
-      display: flex;
+      padding: 13px 16px;
       border: 1px solid rgba(12, 12, 15, .22);
       background: var(--paper);
       color: var(--ink);
       box-shadow: 0 12px 40px rgba(0, 0, 0, .24);
+      font-size: .76rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      pointer-events: none;
     }
-    .zoom-controls button {
-      min-width: 48px;
-      min-height: 48px;
-      padding: 0 14px;
-      border: 0;
-      border-right: 1px solid rgba(12, 12, 15, .18);
-      background: transparent;
-      color: inherit;
-      cursor: pointer;
-    }
-    .zoom-controls button:last-child { border-right: 0; }
-    .zoom-controls button[data-zoom-reset] { min-width: 74px; font-size: .82rem; }
-    .zoom-controls button:hover { background: var(--ink); color: var(--paper); }
-    .zoom-controls button:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; background: var(--ink); color: var(--paper); }
-    .zoom-controls button:disabled { cursor: default; opacity: .34; background: transparent; color: inherit; }
-    .visual-crop {
-      background-image: linear-gradient(180deg, transparent 58%, rgba(7, 7, 9, .72)), var(--visual);
-      background-size: cover;
-      background-position: var(--visual-position, center);
-    }
-    .visual-crop .crop-label {
-      position: absolute;
-      left: clamp(24px, 7vw, 112px);
-      bottom: clamp(54px, 7vh, 84px);
-      font-size: clamp(1.4rem, 4vw, 3.2rem);
-      letter-spacing: -.04em;
-    }
+    .board-link:hover .fullsize-hint { background: var(--ink); color: var(--paper); border-color: var(--paper); }
+    .board-link:focus-visible { outline: 2px solid var(--paper); outline-offset: -8px; }
     .direction-intro { background: var(--direction-bg, #101014); }
     .direction-intro::after {
       content: "";
@@ -220,6 +194,57 @@
     .choice small { display: block; margin-bottom: 18px; letter-spacing: .12em; text-transform: uppercase; opacity: .62; }
     .choice strong { font-size: clamp(1rem, 1.8vw, 1.35rem); font-weight: 500; }
     .selection { min-height: 1.5em; margin-top: 24px; color: var(--muted); }
+    .response-form {
+      width: min(760px, 100%);
+      margin-top: 30px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+    .response-form label {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+      font-size: .76rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--paper);
+    }
+    .response-form label span { color: var(--muted); }
+    .response-form textarea {
+      display: block;
+      width: 100%;
+      min-height: 126px;
+      resize: vertical;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      color: var(--paper);
+      font: inherit;
+      font-size: 1rem;
+      line-height: 1.5;
+      transition: border-color 180ms ease, background 180ms ease;
+    }
+    .response-form textarea::placeholder { color: #77756f; }
+    .response-form textarea:focus { outline: none; border-color: var(--paper); background: rgba(239, 237, 231, .035); }
+    .response-actions { display: grid; grid-template-columns: minmax(190px, 260px) 1fr; gap: 20px; align-items: center; margin-top: 14px; }
+    .response-submit {
+      min-height: 54px;
+      padding: 14px 20px;
+      border: 1px solid var(--paper);
+      border-radius: 0;
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease, opacity 180ms ease;
+    }
+    .response-submit:hover:not(:disabled), .response-submit:focus-visible { background: transparent; color: var(--paper); }
+    .response-submit:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
+    .response-submit:disabled { cursor: default; opacity: .34; }
+    .response-status { min-height: 1.5em; color: var(--muted); line-height: 1.45; }
+    .response-status[data-state="error"] { color: #f1b7ae; }
+    .response-status[data-state="success"] { color: var(--paper); }
     .likeness-note {
       width: min(540px, calc(100vw - 40px));
       padding: 0;
@@ -278,8 +303,10 @@
       .fact { padding: 15px 0; }
       .choices { margin-top: 28px; }
       .choice { min-height: 92px; }
+      .response-actions { grid-template-columns: 1fr; gap: 12px; }
+      .response-submit { width: 100%; }
       .board-scene img { object-fit: contain; }
-      .zoom-controls { right: 18px; }
+      .fullsize-hint { right: 18px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -332,13 +359,15 @@
     html += line('Creative Direction', 'One strategy. Two possible worlds.', 'Both are true to you. They choose a different way to make that truth visible.');
     d.directions.forEach((dir, i) => {
       html += `<section class="scene direction-intro" style="--direction-bg:${esc(dir.bg)};--direction-accent:${esc(dir.accent)}"><div class="inner"><p class="kicker reveal direction-number">Direction ${i + 1}</p><h2 class="display reveal delay">${esc(dir.name)}</h2><p class="body reveal delay">${esc(dir.premise)}</p></div></section>`;
-      html += `<section class="scene visual-crop" style="--visual:url('${esc(dir.image)}');--visual-position:${esc(dir.heroPosition || 'center')}"><p class="crop-label reveal">${esc(dir.name)}</p></section>`;
-      html += `<section class="scene board-scene" data-board-name="${esc(dir.name)}"><div class="board-viewport"><img src="${esc(dir.image)}" alt="${esc(dir.name)} creative direction stylescape" draggable="false"></div><div class="zoom-controls" role="group" aria-label="Zoom ${esc(dir.name)} stylescape"><button type="button" data-zoom-out aria-label="Zoom out" title="Zoom out">−</button><button type="button" data-zoom-reset aria-label="Reset zoom, currently 100 percent" title="Reset zoom"><span data-zoom-label>100%</span></button><button type="button" data-zoom-in aria-label="Zoom in" title="Zoom in">+</button></div></section>`;
+      html += `<section class="scene board-scene" data-board-name="${esc(dir.name)}"><a class="board-link" href="${esc(dir.image)}" target="_blank" rel="noopener" aria-label="Open ${esc(dir.name)} stylescape full size"><img src="${esc(dir.image)}" alt="${esc(dir.name)} creative direction stylescape"><span class="fullsize-hint">Open full size</span></a></section>`;
       html += `<section class="scene direction-detail"><div class="inner direction-grid"><div><p class="kicker reveal">Direction ${i + 1}</p><h2 class="statement reveal delay">${esc(dir.emotionalRead)}</h2></div><div class="reveal delay"><div class="fact"><b>Signature</b><span>${esc(dir.signature)}</span></div><div class="fact"><b>Outfit</b><span>${esc(dir.outfit)}</span></div><div class="fact"><b>Risk to guard</b><span>${esc(dir.risk)}</span></div></div></div></section>`;
+      if (dir.companion?.image) {
+        html += line('Direction in use', dir.companion.label || 'Material in use', dir.companion.caption || '', 'light');
+        html += `<section class="scene board-scene" data-board-name="${esc(dir.name)} application companion"><a class="board-link" href="${esc(dir.companion.image)}" target="_blank" rel="noopener" aria-label="Open ${esc(dir.name)} application companion full size"><img src="${esc(dir.companion.image)}" alt="${esc(dir.companion.alt || (dir.name + ' application companion'))}"><span class="fullsize-hint">Open full size</span></a></section>`;
+      }
     });
     html += `<section class="scene black"><div class="inner"><p class="kicker reveal">The choice</p><h2 class="statement reveal delay">Which world makes you feel most seen?</h2><div class="compare reveal delay">${d.directions.map(dir => `<div><h3>${esc(dir.name)}</h3><p>${esc(dir.compare)}</p></div>`).join('')}</div></div></section>`;
-    html += `<section class="scene black" id="decision"><div class="inner"><p class="kicker reveal">Your decision</p><h2 class="statement reveal delay">Choose a direction, or reopen the foundation.</h2><div class="choices reveal delay">${d.choices.map((c, i) => `<button class="choice" data-choice="${esc(c.id)}"><small>0${i + 1}</small><strong>${esc(c.label)}</strong></button>`).join('')}</div><p class="selection reveal delay" role="status"></p><p class="body reveal delay">Nothing is sent from this page. Your selection stays on this device until it is recorded with Florian.</p></div></section>`;
-    html += line('Next', 'Your choice unlocks your Brand Therapy OS.', 'Then the selected direction becomes a complete identity and application system.', 'light');
+    html += `<section class="scene black" id="decision"><div class="inner"><p class="kicker reveal">Your decision</p><h2 class="statement reveal delay">Choose a direction, or revise completely.</h2><div class="choices reveal delay">${d.choices.map((c, i) => `<button type="button" class="choice" data-choice="${esc(c.id)}"><small>0${i + 1}</small><strong>${esc(c.label)}</strong></button>`).join('')}</div><p class="selection reveal delay" role="status"></p><form class="response-form reveal delay" novalidate><label for="response-note">Send with a note <span>Optional</span></label><textarea id="response-note" name="note" maxlength="2000" placeholder="Anything you want Florian to understand about your choice."></textarea><div class="response-actions"><button class="response-submit" type="submit" disabled>Send response</button><p class="response-status" role="status" aria-live="polite"></p></div></form></div></section>`;
     story.innerHTML = html;
     const scenes = [...document.querySelectorAll('.scene')];
     scenes.forEach((s, i) => s.insertAdjacentHTML('afterbegin', `<span class="index">${String(i + 1).padStart(2,'0')} / ${String(scenes.length).padStart(2,'0')}</span>`));
@@ -350,114 +379,6 @@
       meter.style.width = `${((i + 1) / scenes.length) * 100}%`;
     }), { threshold: .56 });
     scenes.forEach(s => observer.observe(s));
-    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
-    document.querySelectorAll('.board-scene').forEach(board => {
-      const viewport = board.querySelector('.board-viewport');
-      const image = board.querySelector('img');
-      const zoomOut = board.querySelector('[data-zoom-out]');
-      const zoomIn = board.querySelector('[data-zoom-in]');
-      const zoomReset = board.querySelector('[data-zoom-reset]');
-      const zoomLabel = board.querySelector('[data-zoom-label]');
-      const pointers = new Map();
-      const state = { scale: 1, x: 0, y: 0, drag: null, pinch: null };
-      const renderZoom = () => {
-        if (state.scale <= 1) {
-          state.scale = 1;
-          state.x = 0;
-          state.y = 0;
-        } else {
-          const maxX = viewport.clientWidth * (state.scale - 1) / 2;
-          const maxY = viewport.clientHeight * (state.scale - 1) / 2;
-          state.x = clamp(state.x, -maxX, maxX);
-          state.y = clamp(state.y, -maxY, maxY);
-        }
-        image.style.transform = `translate3d(${state.x}px, ${state.y}px, 0) scale(${state.scale})`;
-        const percent = Math.round(state.scale * 100);
-        zoomLabel.textContent = `${percent}%`;
-        zoomReset.setAttribute('aria-label', `Reset zoom, currently ${percent} percent`);
-        zoomOut.disabled = state.scale <= 1;
-        zoomIn.disabled = state.scale >= 4;
-        board.classList.toggle('is-zoomed', state.scale > 1);
-      };
-      const setScale = nextScale => {
-        state.scale = clamp(Math.round(nextScale * 100) / 100, 1, 4);
-        renderZoom();
-      };
-      zoomOut.addEventListener('click', () => setScale(state.scale - .5));
-      zoomIn.addEventListener('click', () => setScale(state.scale + .5));
-      zoomReset.addEventListener('click', () => {
-        state.scale = 1;
-        state.x = 0;
-        state.y = 0;
-        renderZoom();
-      });
-      viewport.addEventListener('dblclick', event => {
-        event.preventDefault();
-        if (state.scale > 1) {
-          state.scale = 1;
-          state.x = 0;
-          state.y = 0;
-        } else {
-          state.scale = 2;
-        }
-        renderZoom();
-      });
-      viewport.addEventListener('wheel', event => {
-        if (!event.ctrlKey && !event.metaKey) return;
-        event.preventDefault();
-        setScale(state.scale + (event.deltaY < 0 ? .25 : -.25));
-      }, { passive: false });
-      const startPinch = () => {
-        if (pointers.size !== 2) return;
-        const [a, b] = [...pointers.values()];
-        state.pinch = {
-          distance: Math.hypot(b.x - a.x, b.y - a.y),
-          midpointX: (a.x + b.x) / 2,
-          midpointY: (a.y + b.y) / 2,
-          scale: state.scale,
-          x: state.x,
-          y: state.y
-        };
-        state.drag = null;
-      };
-      viewport.addEventListener('pointerdown', event => {
-        pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
-        viewport.setPointerCapture(event.pointerId);
-        if (pointers.size === 2) {
-          startPinch();
-        } else if (state.scale > 1) {
-          state.drag = { pointerId: event.pointerId, startX: event.clientX, startY: event.clientY, x: state.x, y: state.y };
-          board.classList.add('is-dragging');
-        }
-      });
-      viewport.addEventListener('pointermove', event => {
-        if (!pointers.has(event.pointerId)) return;
-        pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
-        if (pointers.size === 2 && state.pinch) {
-          const [a, b] = [...pointers.values()];
-          const distance = Math.hypot(b.x - a.x, b.y - a.y);
-          const midpointX = (a.x + b.x) / 2;
-          const midpointY = (a.y + b.y) / 2;
-          state.scale = clamp(state.pinch.scale * distance / Math.max(1, state.pinch.distance), 1, 4);
-          state.x = state.pinch.x + midpointX - state.pinch.midpointX;
-          state.y = state.pinch.y + midpointY - state.pinch.midpointY;
-          renderZoom();
-        } else if (state.drag?.pointerId === event.pointerId && state.scale > 1) {
-          state.x = state.drag.x + event.clientX - state.drag.startX;
-          state.y = state.drag.y + event.clientY - state.drag.startY;
-          renderZoom();
-        }
-      });
-      const releasePointer = event => {
-        pointers.delete(event.pointerId);
-        state.drag = null;
-        state.pinch = null;
-        board.classList.remove('is-dragging');
-      };
-      viewport.addEventListener('pointerup', releasePointer);
-      viewport.addEventListener('pointercancel', releasePointer);
-      renderZoom();
-    });
     const likenessNote = document.getElementById('likeness-note');
     const likenessConfirm = document.getElementById('likeness-note-confirm');
     const notice = d.likenessNotice;
@@ -483,19 +404,83 @@
       if (firstDirection) noticeObserver.observe(firstDirection);
     }
     const selection = document.querySelector('.selection');
+    const responseForm = document.querySelector('.response-form');
+    const responseNote = document.getElementById('response-note');
+    const responseSubmit = document.querySelector('.response-submit');
+    const responseStatus = document.querySelector('.response-status');
+    let selectedChoice = '';
+    let responseSent = false;
+    const setResponseStatus = (message='', state='') => {
+      responseStatus.textContent = message;
+      if (state) responseStatus.dataset.state = state;
+      else delete responseStatus.dataset.state;
+    };
+    const markResponseChanged = () => {
+      if (!responseSent) return;
+      responseSent = false;
+      responseSubmit.textContent = 'Send updated response';
+      responseSubmit.disabled = !selectedChoice;
+      setResponseStatus('Your change is only recorded when you send again.');
+    };
     const applyChoice = id => {
+      selectedChoice = id;
       document.querySelectorAll('.choice').forEach(button => button.classList.toggle('is-selected', button.dataset.choice === id));
       const item = d.choices.find(c => c.id === id);
-      selection.textContent = item ? `Selected on this device: ${item.label}` : '';
+      selection.textContent = item ? `Selected: ${item.label}` : '';
+      responseSubmit.disabled = !item;
     };
     const saved = localStorage.getItem(`brand-therapy-reveal:${d.slug}:choice`);
     if (saved) applyChoice(saved);
     document.querySelectorAll('.choice').forEach(button => button.addEventListener('click', () => {
       localStorage.setItem(`brand-therapy-reveal:${d.slug}:choice`, button.dataset.choice);
+      markResponseChanged();
       applyChoice(button.dataset.choice);
     }));
+    responseNote.addEventListener('input', markResponseChanged);
+    responseForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      const item = d.choices.find(choice => choice.id === selectedChoice);
+      if (!item) {
+        setResponseStatus('Choose one direction, or revise completely, before sending.', 'error');
+        document.querySelector('.choice')?.focus();
+        return;
+      }
+      responseSubmit.disabled = true;
+      responseSubmit.textContent = 'Sending...';
+      setResponseStatus('Recording your response.');
+      const submissionKey = `brand-therapy-reveal:${d.slug}:submission-id`;
+      let submissionId = localStorage.getItem(submissionKey);
+      if (!submissionId) {
+        submissionId = crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+        localStorage.setItem(submissionKey, submissionId);
+      }
+      try {
+        const response = await fetch(d.responseEndpoint || 'https://bt-api.florianp.com/api/reveal-response', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            slug: d.slug,
+            client: d.client,
+            version: d.version || '',
+            choice: item.id,
+            choiceLabel: item.label,
+            note: responseNote.value.trim(),
+            submissionId
+          })
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || !result.ok) throw new Error(result.error || 'request failed');
+        responseSent = true;
+        responseSubmit.textContent = 'Response sent';
+        setResponseStatus('Received. Florian will review your response before anything moves forward.', 'success');
+      } catch (error) {
+        responseSubmit.disabled = false;
+        responseSubmit.textContent = 'Try sending again';
+        setResponseStatus('That did not reach Florian. Your choice is still saved here. Try again.', 'error');
+      }
+    });
     document.addEventListener('keydown', event => {
-      if (event.target.closest?.('.zoom-controls')) return;
+      if (event.target.closest?.('.response-form')) return;
       const current = scenes.findIndex(s => {
         const r = s.getBoundingClientRect();
         return r.top <= innerHeight * .45 && r.bottom >= innerHeight * .45;
