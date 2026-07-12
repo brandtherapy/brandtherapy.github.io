@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+  <meta name="description" content="Your private Brand Therapy reveal is ready.">
+  <meta property="og:title" content="Brand Therapy.">
+  <meta property="og:description" content="Your private Brand Therapy reveal is ready.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Brand Therapy">
+  <meta property="og:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
+  <meta property="og:image:secure_url" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Brand Therapy">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brand Therapy.">
+  <meta name="twitter:description" content="Your private Brand Therapy reveal is ready.">
+  <meta name="twitter:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
+  <meta name="twitter:image:alt" content="Brand Therapy">
+  <title>Brand Therapy Reveal</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      --ink: #0c0c0f;
+      --paper: #efede7;
+      --muted: #aaa7a0;
+      --line: rgba(239, 237, 231, .18);
+      --accent: #c9c5ba;
+      --ease: cubic-bezier(.16, 1, .3, 1);
+    }
+    * { box-sizing: border-box; }
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    body { margin: 0; background: var(--ink); overflow-x: hidden; }
+    button { font: inherit; }
+    .scene {
+      min-height: 100svh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      position: relative;
+      display: grid;
+      align-items: center;
+      padding: clamp(76px, 10vh, 120px) clamp(24px, 7vw, 112px) clamp(62px, 8vh, 96px);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .scene.light { background: var(--paper); color: var(--ink); }
+    .scene.black { background: #070709; }
+    .inner { width: min(1120px, 100%); margin: 0 auto; }
+    .inner.narrow { width: min(820px, 100%); }
+    .kicker {
+      margin: 0 0 22px;
+      font-size: .72rem;
+      line-height: 1;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .framework-definition {
+      max-width: 38ch;
+      margin: -7px 0 22px;
+      font-size: clamp(.9rem, 1.25vw, 1.05rem);
+      line-height: 1.4;
+      color: var(--muted);
+    }
+    h1, h2, h3, p { margin: 0; }
+    .display {
+      max-width: 14ch;
+      font-size: clamp(3.3rem, 10vw, 9.6rem);
+      line-height: .88;
+      letter-spacing: -.065em;
+      font-weight: 500;
+    }
+    .statement {
+      max-width: 20ch;
+      font-size: clamp(2.35rem, 7vw, 7.3rem);
+      line-height: .95;
+      letter-spacing: -.052em;
+      font-weight: 500;
+    }
+    .body {
+      max-width: 48ch;
+      margin-top: 30px;
+      font-size: clamp(1rem, 1.6vw, 1.35rem);
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .light .body, .light .kicker, .light .framework-definition { color: #605f5a; }
+    .accent { color: var(--accent); }
+    .index {
+      position: absolute;
+      top: max(22px, env(safe-area-inset-top));
+      right: clamp(20px, 3vw, 42px);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      color: var(--muted);
+      z-index: 20;
+    }
+    .meter {
+      position: fixed;
+      z-index: 40;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 2px;
+      background: rgba(239, 237, 231, .08);
+    }
+    .meter span { display: block; width: 0; height: 100%; background: var(--paper); transition: width 420ms var(--ease); }
+    .wordfield { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 34px; max-width: 900px; }
+    .wordfield span { font-size: clamp(.88rem, 1.6vw, 1.15rem); color: var(--muted); }
+    .sliderline { display: grid; gap: 13px; margin-top: 36px; max-width: 720px; }
+    .sliderline div { display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid var(--line); padding-bottom: 11px; }
+    .sliderline strong { min-width: 92px; color: var(--paper); font-weight: 500; }
+    .sliderline span { color: var(--muted); }
+    .board-scene { padding: 0; background: #08080a; }
+    .board-link {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: inherit;
+      text-decoration: none;
+      cursor: zoom-in;
+    }
+    .board-scene img {
+      width: 100%;
+      height: 100svh;
+      object-fit: contain;
+      display: block;
+    }
+    .fullsize-hint {
+      position: absolute;
+      z-index: 30;
+      right: clamp(18px, 3vw, 42px);
+      bottom: max(20px, env(safe-area-inset-bottom));
+      padding: 13px 16px;
+      border: 1px solid rgba(12, 12, 15, .22);
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .24);
+      font-size: .76rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+    .board-link:hover .fullsize-hint { background: var(--ink); color: var(--paper); border-color: var(--paper); }
+    .board-link:focus-visible { outline: 2px solid var(--paper); outline-offset: -8px; }
+    .direction-intro { background: var(--direction-bg, #101014); }
+    .direction-intro::after {
+      content: "";
+      position: absolute;
+      width: min(46vw, 600px);
+      aspect-ratio: 1;
+      border: 1px solid color-mix(in srgb, var(--direction-accent) 50%, transparent);
+      right: -12vw;
+      bottom: -28vw;
+      transform: rotate(15deg);
+      z-index: -1;
+    }
+    .direction-number { color: var(--direction-accent); }
+    .direction-detail { background: #111115; }
+    .direction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(34px, 7vw, 110px); align-items: start; }
+    .fact { padding: 20px 0; border-top: 1px solid var(--line); }
+    .fact:first-child { border-top: 0; padding-top: 0; }
+    .fact b { display: block; margin-bottom: 8px; font-size: .72rem; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); }
+    .fact span { font-size: clamp(1.15rem, 2vw, 1.65rem); line-height: 1.28; }
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 38px; }
+    .compare > div { background: var(--ink); padding: clamp(24px, 4vw, 52px); }
+    .compare h3 { font-size: clamp(1.7rem, 3.4vw, 3rem); font-weight: 500; letter-spacing: -.04em; }
+    .compare p { margin-top: 26px; color: var(--muted); line-height: 1.55; }
+    .choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 40px; }
+    .choice {
+      min-height: 132px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--paper);
+      text-align: left;
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+    .choice:hover, .choice:focus-visible { outline: none; background: var(--paper); color: var(--ink); transform: translateY(-2px); }
+    .choice.is-selected { background: var(--paper); color: var(--ink); }
+    .choice small { display: block; margin-bottom: 18px; letter-spacing: .12em; text-transform: uppercase; opacity: .62; }
+    .choice strong { font-size: clamp(1rem, 1.8vw, 1.35rem); font-weight: 500; }
+    .selection { min-height: 1.5em; margin-top: 24px; color: var(--muted); }
+    .response-form {
+      width: min(760px, 100%);
+      margin-top: 30px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+    .response-form label {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+      font-size: .76rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--paper);
+    }
+    .response-form label span { color: var(--muted); }
+    .response-form textarea {
+      display: block;
+      width: 100%;
+      min-height: 126px;
+      resize: vertical;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      color: var(--paper);
+      font: inherit;
+      font-size: 1rem;
+      line-height: 1.5;
+      transition: border-color 180ms ease, background 180ms ease;
+    }
+    .response-form textarea::placeholder { color: #77756f; }
+    .response-form textarea:focus { outline: none; border-color: var(--paper); background: rgba(239, 237, 231, .035); }
+    .response-actions { display: grid; grid-template-columns: minmax(190px, 260px) 1fr; gap: 20px; align-items: center; margin-top: 14px; }
+    .response-submit {
+      min-height: 54px;
+      padding: 14px 20px;
+      border: 1px solid var(--paper);
+      border-radius: 0;
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease, opacity 180ms ease;
+    }
+    .response-submit:hover:not(:disabled), .response-submit:focus-visible { background: transparent; color: var(--paper); }
+    .response-submit:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
+    .response-submit:disabled { cursor: default; opacity: .34; }
+    .response-status { min-height: 1.5em; color: var(--muted); line-height: 1.45; }
+    .response-status[data-state="error"] { color: #f1b7ae; }
+    .response-status[data-state="success"] { color: var(--paper); }
+    .likeness-note {
+      width: min(540px, calc(100vw - 40px));
+      padding: 0;
+      border: 1px solid rgba(12, 12, 15, .18);
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .36);
+    }
+    .likeness-note::backdrop { background: rgba(7, 7, 9, .82); }
+    .likeness-note-inner { padding: clamp(28px, 5vw, 48px); }
+    .likeness-note .kicker { color: #605f5a; }
+    .likeness-note h2 {
+      max-width: 10ch;
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      line-height: .94;
+      letter-spacing: -.055em;
+      font-weight: 500;
+    }
+    .likeness-note p:not(.kicker) {
+      max-width: 42ch;
+      margin-top: 24px;
+      color: #605f5a;
+      font-size: clamp(1rem, 1.7vw, 1.18rem);
+      line-height: 1.52;
+    }
+    .likeness-note button {
+      width: 100%;
+      margin-top: 32px;
+      padding: 16px 20px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease;
+    }
+    .likeness-note button:hover {
+      background: transparent;
+      color: var(--ink);
+    }
+    .likeness-note button:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+    body.ack-open { overflow: hidden; }
+    .hint { position: absolute; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translateX(-50%); color: var(--muted); font-size: .7rem; letter-spacing: .13em; text-transform: uppercase; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 800ms var(--ease), transform 800ms var(--ease); }
+    .scene.is-visible .reveal { opacity: 1; transform: none; }
+    .scene.is-visible .reveal.delay { transition-delay: 120ms; }
+    @media (max-width: 760px) {
+      .scene { padding-left: 24px; padding-right: 24px; }
+      .display { font-size: clamp(3.2rem, 17vw, 5.6rem); }
+      .statement { font-size: clamp(2.55rem, 12vw, 4.7rem); }
+      .direction-grid, .compare, .choices { grid-template-columns: 1fr; }
+      .direction-detail { align-items: start; }
+      .direction-detail .inner { padding-top: 3vh; }
+      .fact { padding: 15px 0; }
+      .choices { margin-top: 28px; }
+      .choice { min-height: 92px; }
+      .response-actions { grid-template-columns: 1fr; gap: 12px; }
+      .response-submit { width: 100%; }
+      .board-scene img { object-fit: contain; }
+      .fullsize-hint { right: 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="meter" aria-hidden="true"><span></span></div>
+  <main id="story"></main>
+  <dialog class="likeness-note" id="likeness-note" aria-labelledby="likeness-note-title" aria-describedby="likeness-note-body">
+    <div class="likeness-note-inner">
+      <p class="kicker">Before the visuals</p>
+      <h2 id="likeness-note-title"></h2>
+      <p id="likeness-note-body"></p>
+      <button type="button" id="likeness-note-confirm">Got it</button>
+    </div>
+  </dialog>
+  <script src="reveal-data.js"></script>
+  <script>
+    const d = window.REVEAL_DATA;
+    const story = document.getElementById('story');
+    const esc = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
+    const frameworkDefinitions = {
+      product: 'What you uniquely offer.',
+      people: 'Who you are here to serve.',
+      purpose: 'Why your work needs to exist.',
+      promise: 'What people can consistently expect from you.',
+      personality: 'How your brand should feel and behave.',
+      archetype: 'The timeless roles your brand naturally embodies.',
+      founderSpectrum: 'How closely your personal identity and business brand should overlap.',
+      brandSliders: 'The creative tensions that calibrate how your brand should feel.'
+    };
+    Object.assign(frameworkDefinitions, d.frameworkDefinitions || {});
+    const scene = (content, cls='black') => `<section class="scene ${cls}"><div class="inner">${content}</div></section>`;
+    const line = (kicker, title, body='', cls='black') => scene(`<p class="kicker reveal">${esc(kicker)}</p><h2 class="statement reveal delay">${esc(title)}</h2>${body ? `<p class="body reveal delay">${esc(body)}</p>` : ''}`, cls);
+    let html = '';
+    html += scene(`<h1 class="display reveal">Hello,<br>${esc(d.firstName)}.</h1><span class="hint">Scroll to begin</span>`);
+    html += line('Brand Therapy', 'Your Brand Therapy is ready.', `For your approval, before we build your Brand Therapy OS.`);
+    html += line('My read', `Here is what I see in you, ${d.firstName}.`);
+    d.strategy.forEach((item, i) => {
+      const nested = item.nested ? `<p class="body reveal delay">${esc(item.nested.label)}: ${esc(item.nested.value)}</p>` : '';
+      const definition = item.definition || frameworkDefinitions[item.label.toLowerCase()] || '';
+      html += scene(`<p class="kicker reveal">0${i + 1} / ${esc(item.label)}</p>${definition ? `<p class="framework-definition reveal">${esc(definition)}</p>` : ''}<h2 class="statement reveal delay">${esc(item.title)}</h2><p class="body reveal delay">${esc(item.body)}</p>${nested}`, i % 2 ? 'light' : 'black');
+    });
+    html += scene(`<p class="kicker reveal">Brand archetype</p><p class="framework-definition reveal">${esc(frameworkDefinitions.archetype)}</p><h2 class="statement reveal delay">${esc(d.archetype)}</h2><div class="wordfield reveal delay">${d.personalityWords.map(w => `<span>${esc(w)}</span>`).join('')}</div>`);
+    html += scene(`<p class="kicker reveal">Founder Spectrum</p><p class="framework-definition reveal">${esc(frameworkDefinitions.founderSpectrum)}</p><h2 class="statement reveal delay">${esc(d.spectrum.title)}</h2><p class="body reveal delay">${esc(d.spectrum.body)}</p>`, 'light');
+    html += scene(`<p class="kicker reveal">Brand Sliders</p><p class="framework-definition reveal">${esc(frameworkDefinitions.brandSliders)}</p><h2 class="statement reveal delay">${esc(d.sliders.title)}</h2><div class="sliderline reveal delay">${d.sliders.lines.map(row => `<div><strong>${esc(row[0])}</strong><span>${esc(row[1])}</span></div>`).join('')}</div>`);
+    html += line('The through-line', d.synthesis.title, d.synthesis.body, 'light');
+    html += line('Creative Direction', 'One strategy. Two possible worlds.', 'Both are true to you. They choose a different way to make that truth visible.');
+    d.directions.forEach((dir, i) => {
+      html += `<section class="scene direction-intro" style="--direction-bg:${esc(dir.bg)};--direction-accent:${esc(dir.accent)}"><div class="inner"><p class="kicker reveal direction-number">Direction ${i + 1}</p><h2 class="display reveal delay">${esc(dir.name)}</h2><p class="body reveal delay">${esc(dir.premise)}</p></div></section>`;
+      html += `<section class="scene board-scene" data-board-name="${esc(dir.name)}"><a class="board-link" href="${esc(dir.image)}" target="_blank" rel="noopener" aria-label="Open ${esc(dir.name)} stylescape full size"><img src="${esc(dir.image)}" alt="${esc(dir.name)} creative direction stylescape"><span class="fullsize-hint">Open full size</span></a></section>`;
+      html += `<section class="scene direction-detail"><div class="inner direction-grid"><div><p class="kicker reveal">Direction ${i + 1}</p><h2 class="statement reveal delay">${esc(dir.emotionalRead)}</h2></div><div class="reveal delay"><div class="fact"><b>Signature</b><span>${esc(dir.signature)}</span></div><div class="fact"><b>Outfit</b><span>${esc(dir.outfit)}</span></div><div class="fact"><b>Risk to guard</b><span>${esc(dir.risk)}</span></div></div></div></section>`;
+      if (dir.companion?.image) {
+        html += line('Direction in use', dir.companion.label || 'Material in use', dir.companion.caption || '', 'light');
+        html += `<section class="scene board-scene" data-board-name="${esc(dir.name)} application companion"><a class="board-link" href="${esc(dir.companion.image)}" target="_blank" rel="noopener" aria-label="Open ${esc(dir.name)} application companion full size"><img src="${esc(dir.companion.image)}" alt="${esc(dir.companion.alt || (dir.name + ' application companion'))}"><span class="fullsize-hint">Open full size</span></a></section>`;
+      }
+    });
+    html += `<section class="scene black"><div class="inner"><p class="kicker reveal">The choice</p><h2 class="statement reveal delay">Which world makes you feel most seen?</h2><div class="compare reveal delay">${d.directions.map(dir => `<div><h3>${esc(dir.name)}</h3><p>${esc(dir.compare)}</p></div>`).join('')}</div></div></section>`;
+    html += `<section class="scene black" id="decision"><div class="inner"><p class="kicker reveal">Your decision</p><h2 class="statement reveal delay">Choose a direction, or revise completely.</h2><div class="choices reveal delay">${d.choices.map((c, i) => `<button type="button" class="choice" data-choice="${esc(c.id)}"><small>0${i + 1}</small><strong>${esc(c.label)}</strong></button>`).join('')}</div><p class="selection reveal delay" role="status"></p><form class="response-form reveal delay" novalidate><label for="response-note">Send with a note <span>Optional</span></label><textarea id="response-note" name="note" maxlength="2000" placeholder="Anything you want Florian to understand about your choice."></textarea><div class="response-actions"><button class="response-submit" type="submit" disabled>Send response</button><p class="response-status" role="status" aria-live="polite"></p></div></form></div></section>`;
+    story.innerHTML = html;
+    const scenes = [...document.querySelectorAll('.scene')];
+    scenes.forEach((s, i) => s.insertAdjacentHTML('afterbegin', `<span class="index">${String(i + 1).padStart(2,'0')} / ${String(scenes.length).padStart(2,'0')}</span>`));
+    const meter = document.querySelector('.meter span');
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      const i = scenes.indexOf(entry.target);
+      meter.style.width = `${((i + 1) / scenes.length) * 100}%`;
+    }), { threshold: .56 });
+    scenes.forEach(s => observer.observe(s));
+    const likenessNote = document.getElementById('likeness-note');
+    const likenessConfirm = document.getElementById('likeness-note-confirm');
+    const notice = d.likenessNotice;
+    let likenessAcknowledged = sessionStorage.getItem(`brand-therapy-reveal:${d.slug}:likeness-notice`) === '1';
+    if (notice) {
+      document.getElementById('likeness-note-title').textContent = notice.title;
+      document.getElementById('likeness-note-body').textContent = notice.body;
+      likenessConfirm.textContent = notice.button || 'Got it';
+      likenessNote.addEventListener('cancel', event => event.preventDefault());
+      likenessConfirm.addEventListener('click', () => {
+        likenessAcknowledged = true;
+        sessionStorage.setItem(`brand-therapy-reveal:${d.slug}:likeness-notice`, '1');
+        document.body.classList.remove('ack-open');
+        likenessNote.close();
+      });
+      const firstDirection = document.querySelector('.direction-intro');
+      const noticeObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (!entry.isIntersecting || likenessAcknowledged || likenessNote.open) return;
+        document.body.classList.add('ack-open');
+        likenessNote.showModal();
+        likenessConfirm.focus();
+      }), { threshold: .55 });
+      if (firstDirection) noticeObserver.observe(firstDirection);
+    }
+    const selection = document.querySelector('.selection');
+    const responseForm = document.querySelector('.response-form');
+    const responseNote = document.getElementById('response-note');
+    const responseSubmit = document.querySelector('.response-submit');
+    const responseStatus = document.querySelector('.response-status');
+    let selectedChoice = '';
+    let responseSent = false;
+    const setResponseStatus = (message='', state='') => {
+      responseStatus.textContent = message;
+      if (state) responseStatus.dataset.state = state;
+      else delete responseStatus.dataset.state;
+    };
+    const markResponseChanged = () => {
+      if (!responseSent) return;
+      responseSent = false;
+      responseSubmit.textContent = 'Send updated response';
+      responseSubmit.disabled = !selectedChoice;
+      setResponseStatus('Your change is only recorded when you send again.');
+    };
+    const applyChoice = id => {
+      selectedChoice = id;
+      document.querySelectorAll('.choice').forEach(button => button.classList.toggle('is-selected', button.dataset.choice === id));
+      const item = d.choices.find(c => c.id === id);
+      selection.textContent = item ? `Selected: ${item.label}` : '';
+      responseSubmit.disabled = !item;
+    };
+    const saved = localStorage.getItem(`brand-therapy-reveal:${d.slug}:choice`);
+    if (saved) applyChoice(saved);
+    document.querySelectorAll('.choice').forEach(button => button.addEventListener('click', () => {
+      localStorage.setItem(`brand-therapy-reveal:${d.slug}:choice`, button.dataset.choice);
+      markResponseChanged();
+      applyChoice(button.dataset.choice);
+    }));
+    responseNote.addEventListener('input', markResponseChanged);
+    responseForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      const item = d.choices.find(choice => choice.id === selectedChoice);
+      if (!item) {
+        setResponseStatus('Choose one direction, or revise completely, before sending.', 'error');
+        document.querySelector('.choice')?.focus();
+        return;
+      }
+      responseSubmit.disabled = true;
+      responseSubmit.textContent = 'Sending...';
+      setResponseStatus('Recording your response.');
+      const submissionKey = `brand-therapy-reveal:${d.slug}:submission-id`;
+      let submissionId = localStorage.getItem(submissionKey);
+      if (!submissionId) {
+        submissionId = crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+        localStorage.setItem(submissionKey, submissionId);
+      }
+      try {
+        const response = await fetch(d.responseEndpoint || 'https://bt-api.florianp.com/api/reveal-response', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            slug: d.slug,
+            client: d.client,
+            version: d.version || '',
+            choice: item.id,
+            choiceLabel: item.label,
+            note: responseNote.value.trim(),
+            submissionId
+          })
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || !result.ok) throw new Error(result.error || 'request failed');
+        responseSent = true;
+        responseSubmit.textContent = 'Response sent';
+        setResponseStatus('Received. Florian will review your response before anything moves forward.', 'success');
+      } catch (error) {
+        responseSubmit.disabled = false;
+        responseSubmit.textContent = 'Try sending again';
+        setResponseStatus('That did not reach Florian. Your choice is still saved here. Try again.', 'error');
+      }
+    });
+    document.addEventListener('keydown', event => {
+      if (event.target.closest?.('.response-form')) return;
+      const current = scenes.findIndex(s => {
+        const r = s.getBoundingClientRect();
+        return r.top <= innerHeight * .45 && r.bottom >= innerHeight * .45;
+      });
+      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') scenes[Math.min(scenes.length - 1, current + 1)]?.scrollIntoView();
+      if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') scenes[Math.max(0, current - 1)]?.scrollIntoView();
+    });
+  </script>
+</body>
+</html>
