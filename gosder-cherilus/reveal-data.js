@@ -70,7 +70,7 @@ window.REVEAL_DATA = {
       outfit: "Black fitted cap and bare-head looks, heavyweight black T-shirt, deep olive technical warm-up jacket, tapered charcoal performance pants, black-and-white high-top sneakers, restrained gold cross.",
       risk: "It must never become grind culture, athlete worship, motivational sports advertising, or cold masculine theater.",
       compare: "More athletic, grounded, and disciplined. It puts resilience, mentorship, and the lived example first.",
-      image: "images/gosder-the-standard-v2.png?v=3ff9246",
+      image: "images/gosder-the-standard-v2.png?v=20260712-1139",
       heroPosition: "48% center",
       bg: "#171917",
       accent: "#D8A45C"
@@ -84,7 +84,7 @@ window.REVEAL_DATA = {
       outfit: "Black fitted cap and bare-head looks, indigo French workwear jacket, heavyweight chalk T-shirt, relaxed black technical trousers, black-and-cream high-top sneakers, restrained gold cross.",
       risk: "It must never become country-club wealth, Paris cosplay, fashion luxury, or beige lifestyle advertising.",
       compare: "More urban, colorful, cultivated, and social. It shows enjoyment as culture and connection, not status.",
-      image: "images/gosder-life-in-full-v2.png?v=3ff9246",
+      image: "images/gosder-life-in-full-v2.png?v=20260712-1139",
       heroPosition: "50% center",
       bg: "#182337",
       accent: "#7B2331"
