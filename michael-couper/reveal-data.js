@@ -2,7 +2,7 @@ window.REVEAL_DATA = {
   slug: "michael-couper",
   client: "Michael Couper",
   firstName: "Michael",
-  version: "2026-07-11-v4",
+  version: "2026-07-11-v5",
   responseEndpoint: "https://bt-api.florianp.com/api/reveal-response",
   likenessNotice: {
     title: "A note on likeness.",
@@ -66,21 +66,25 @@ window.REVEAL_DATA = {
   directions: [
     {
       id: "composed-inquiry",
-      name: "Composed Inquiry",
+      name: "Counterpoint",
       premise: "A composer-engineer whose questions have weight, rhythm, and consequence.",
       emotionalRead: "Depth, precision, and quiet gravity.",
-      signature: "The Counterpoint. Independent lines remain visible until they resolve at one chosen point.",
+      signature: "The Counterpoint Mark. Independent lines remain visible until they resolve at one chosen point.",
       outfit: "Thick rectangular glasses, midnight-charcoal wool suit, fine black mock neck, matte black shoes, restrained silver detail.",
       risk: "It must never become professor cosplay, generic luxury, or moody founder theater.",
       compare: "More artistic, intimate, and nocturnal. It puts the serious, cultivated polymath first.",
       image: "images/michael-couper-composed-inquiry-v4.png",
+      variants: [
+        { id: "blue", label: "Blue", color: "#2b4bfc", image: "images/michael-couper-composed-inquiry-v4.png", default: true },
+        { id: "red", label: "Red", color: "#a81f27", image: "images/michael-couper-composed-inquiry-v5-red.png" }
+      ],
       heroPosition: "43% center",
       bg: "#11111a",
       accent: "#4057ff"
     },
     {
       id: "open-frame",
-      name: "Open Frame",
+      name: "Field of View",
       premise: "A lucid independent thinker who makes the whole field visible.",
       emotionalRead: "Clarity, range, and modern usefulness.",
       signature: "The Shifted Frame. One displaced corner reveals what the assumed boundary left out.",
@@ -94,8 +98,8 @@ window.REVEAL_DATA = {
     }
   ],
   choices: [
-    { id: "composed-inquiry", label: "Direction 1: Composed Inquiry" },
-    { id: "open-frame", label: "Direction 2: Open Frame" },
+    { id: "composed-inquiry", label: "Direction 1: Counterpoint" },
+    { id: "open-frame", label: "Direction 2: Field of View" },
     { id: "revise", label: "Revise completely" }
   ]
 };
