@@ -43,6 +43,7 @@ p{font-size:15px}
 a{color:inherit}
 .p{color:var(--accent)}
 button{font-family:var(--ff-b);cursor:pointer;border:none;background:none;color:inherit}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 ::selection{background:var(--accent);color:var(--white)}
 
 /* ============ viewfinder eyebrow motif ============ */
@@ -120,6 +121,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 .demo-banner b{color:var(--accent)}
 .demo-banner button{border:1px solid rgba(255,255,255,.35);color:var(--white);padding:6px 14px;font-size:11.5px;letter-spacing:.03em}
 .demo-banner button:hover{border-color:var(--white)}
+.demo-short{display:none}
 
 /* ============ SESSION ============ */
 #session-wrap{height:100vh;display:flex;overflow:hidden}
@@ -176,6 +178,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 
 /* star column */
 .star-col{flex:1;position:relative;background:var(--white);overflow:hidden}
+.mobile-star-toggle,.mobile-star-bar{display:none}
 #viewport{position:absolute;inset:0;cursor:grab;touch-action:none}
 #viewport.grabbing{cursor:grabbing}
 #world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
@@ -312,33 +315,74 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 .confirm-list li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;background:var(--accent)}
 
 @media (max-width:900px){
-  #session-wrap{flex-direction:column;height:auto;min-height:100vh;overflow:visible}
-  .star-col{height:70vh;min-height:480px;order:-1;border-bottom:1px solid var(--border)}
-  .chat-col{width:100%;min-width:0;height:auto}
+  #session-wrap{display:block;height:100dvh;min-height:0;overflow:hidden}
+  #session-wrap.has-banner{padding-top:48px}
+  .chat-col{width:100%;min-width:0;height:100%;border-right:0}
+  .chat-head{padding:12px 16px;min-height:58px}
+  .chat-head .actions{gap:6px}
+  .icon-btn{padding:8px 10px;font-size:9.5px}
+  .mobile-star-toggle{display:inline-flex}
+  .chat-scroll{padding:18px 16px;gap:12px}
+  .msg{max-width:92%;font-size:13.5px;padding:12px 14px}
+  .quotes-toggle{padding:10px 16px}
+  .quotes-inner{padding:4px 16px 14px}
+  .chat-input-row{padding:12px 12px calc(12px + env(safe-area-inset-bottom));gap:8px}
+  .chat-input-row textarea{font-size:16px;min-height:44px;padding:10px 12px}
+  .send-btn{min-height:44px;padding:10px 16px}
+  .star-col{display:none}
+  #session-wrap.mobile-star-open .star-col{display:block;position:fixed;inset:0;z-index:240;height:100dvh;min-height:0;background:var(--white)}
+  .mobile-star-bar{display:flex;position:absolute;left:0;right:0;top:0;height:49px;z-index:60;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid var(--border);background:var(--white)}
+  .mobile-star-bar span{font-family:var(--ff-h);font-size:14px;font-weight:700}
+  .mobile-star-bar button{border:1px solid var(--border);padding:7px 10px;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  #session-wrap.mobile-star-open #viewport{top:49px}
   .pane{width:calc(100vw - 32px);right:16px;left:16px;top:auto;bottom:16px;height:70%}
   /* phones: comp collapses to the % chip so badge, card, and star never overlap */
-  .comp{width:auto;right:16px;top:16px;padding:10px 14px}
+  .comp{width:auto;right:16px;top:65px;padding:10px 14px}
   .comp .row{display:none}
   .comp h3{display:none}
   .comp .cap{margin-bottom:0}
-  .spectrum-badge{left:16px;top:16px;display:block;max-width:calc(100vw - 140px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .spectrum-badge{left:16px;top:65px;display:block;max-width:calc(100vw - 140px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .ctrls{right:16px;bottom:16px}
+  .plabel{width:110px}
+  .plabel .t{font-size:20px}
+  .plabel .o{display:none}
+  .drawer{width:100vw;max-width:none;border-left:0;padding:24px 20px calc(30px + env(safe-area-inset-bottom))}
+  .modal-overlay{align-items:flex-end;padding:0}
+  .modal{max-width:none;border-left:0;border-right:0;border-bottom:0;padding:24px 20px calc(24px + env(safe-area-inset-bottom))}
+  .demo-banner{height:48px;justify-content:space-between;padding:8px 12px;font-size:11px;line-height:1.25}
+  .demo-long{display:none}
+  .demo-short{display:inline}
+  .demo-banner button{padding:6px 10px;font-size:10px;white-space:nowrap}
 }
 
 /* ============ EXERCISES ============ */
-.ex-dock{border-bottom:1px solid var(--border);background:var(--accent-soft);padding:14px 20px 16px}
-.ex-dock-head{display:flex;align-items:center;gap:8px;font-family:var(--ff-b);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text);font-weight:600;margin-bottom:10px}
+.ex-dock{border-bottom:1px solid var(--border);background:var(--accent-soft)}
+.ex-dock-toggle{width:100%;display:flex;align-items:center;gap:8px;padding:12px 20px;font-family:var(--ff-b);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text);font-weight:600;text-align:left}
+.ex-dock-toggle:hover{color:var(--accent)}
 .ex-dock-head .pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:expulse 1.8s ease-in-out infinite}
 @keyframes expulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
-.ex-dock-head .ex-progress{margin-left:auto;color:var(--muted);font-weight:500;letter-spacing:.06em;text-transform:none}
+.ex-dock-toggle .ex-progress{margin-left:auto;color:var(--muted);font-weight:500;letter-spacing:.04em;text-transform:none;white-space:nowrap}
+.ex-dock-caret{color:var(--muted);transition:transform var(--dur-med) var(--exo)}
+.ex-dock.open .ex-dock-caret{transform:rotate(180deg)}
+.ex-dock-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows var(--dur-med) var(--exo)}
+.ex-dock.open .ex-dock-body{grid-template-rows:1fr}
+.ex-dock-content{min-height:0;overflow:hidden;padding:0 20px}
+.ex-dock.open .ex-dock-content{padding-bottom:16px}
 .ex-cards{display:flex;gap:8px}
 .ex-card{flex:1;min-width:0;background:var(--white);border:1px solid var(--accent);padding:10px 12px;text-align:left;transition:all var(--dur-fast) var(--exo)}
 .ex-card:hover{box-shadow:0 0 0 2px var(--accent-soft),var(--shadow)}
-.ex-card .xn{font-family:var(--ff-h);font-weight:800;font-size:11px;color:var(--accent);letter-spacing:.05em}
-.ex-card .xt{font-family:var(--ff-h);font-weight:700;font-size:13px;line-height:1.25;margin:3px 0 5px;color:var(--text)}
+.ex-card .xt{font-family:var(--ff-h);font-weight:700;font-size:13px;line-height:1.25;margin:0 0 5px;color:var(--text)}
 .ex-card .xs{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .ex-card.done{border-color:var(--border)}
 .ex-card.done .xs{color:var(--accent);font-weight:600}
-.ex-card.done .xn{color:var(--muted)}
+.taste-chat-track{margin-top:8px;border:1px solid var(--border);background:var(--white);padding:10px 12px;display:flex;align-items:center;gap:10px}
+.taste-chat-copy{min-width:0;flex:1}
+.taste-chat-copy b{display:block;font-family:var(--ff-h);font-size:12px;line-height:1.25}
+.taste-chat-copy span{display:block;font-size:10.5px;color:var(--muted);line-height:1.4;margin-top:2px}
+.taste-dots{display:flex;gap:5px;flex-shrink:0}
+.taste-dots i{width:9px;height:9px;border:1px solid var(--muted);border-radius:50%;background:var(--white)}
+.taste-dots i.done{background:var(--accent);border-color:var(--accent)}
+.taste-count{font-size:10px;color:var(--muted);white-space:nowrap}
 
 .ex-overlay{position:fixed;inset:0;background:var(--white);z-index:300;display:none;overflow-y:auto}
 .ex-overlay.show{display:block}
@@ -369,7 +413,12 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
   .exs-lab{font-size:11px}
   .ex-cards{display:grid;grid-template-columns:1fr 1fr}
   .ex-card .xt{font-size:12px}
-  .ex-dock{padding:12px 14px 14px}
+  .ex-dock-toggle{padding:11px 14px}
+  .ex-dock-content{padding-left:14px;padding-right:14px}
+  .ex-dock.open .ex-dock-content{padding-bottom:14px}
+  .taste-chat-track{align-items:flex-start;flex-wrap:wrap}
+  .taste-chat-copy{flex-basis:calc(100% - 40px)}
+  .taste-count{margin-left:auto}
   .ex-foot{flex-direction:column-reverse;align-items:stretch;gap:10px;text-align:center}
   .ex-foot .btn-primary{width:100%}
 }
@@ -396,16 +445,6 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 .exb-thumbs .th img{width:100%;height:100%;object-fit:cover;display:block}
 .exb-thumbs .th .doc{width:100%;height:100%;display:grid;place-items:center;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:center;padding:6px;word-break:break-word}
 .exb-thumbs .th button{position:absolute;top:-8px;right:-8px;width:20px;height:20px;border-radius:50%;border:1px solid var(--text);background:var(--white);font-size:12px;line-height:1;padding:0}
-
-/* taste */
-.ext-lab{font-family:var(--ff-b);font-weight:500;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-.ext-lab.sep{border-top:1px solid var(--border);padding-top:16px;margin-top:26px}
-.ext-refs{display:grid;gap:10px}
-.ext-refs input{border:1px solid var(--border);padding:12px 14px;font-family:var(--ff-b);font-size:14px}
-.ext-refs input:focus{outline:none;border-color:var(--accent)}
-#ext-nos{width:100%;border:1px solid var(--border);padding:12px 14px;font-family:var(--ff-b);font-size:14px;resize:vertical;min-height:76px}
-#ext-nos:focus{outline:none;border-color:var(--accent)}
-.ext-hint{font-size:11.5px;color:var(--muted);margin-top:8px}
 
 /* submit modal exercise status */
 .subex{border:1px solid var(--border);margin-bottom:16px}
@@ -502,7 +541,8 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
   <!-- ============ SESSION ============ -->
   <section class="state" id="state-session">
     <div class="demo-banner" id="demo-banner" style="display:none">
-      Demo replay with a fictional brand. <b>Dana Reyes Advisory</b> is not a real client.
+      <span class="demo-long">Demo replay with a fictional brand. <b>Dana Reyes Advisory</b> is not a real client.</span>
+      <span class="demo-short">Demo: <b>Dana Reyes Advisory</b></span>
       <button id="demo-exit">Exit demo</button>
     </div>
     <div id="session-wrap">
@@ -510,17 +550,31 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
         <div class="chat-head">
           <div class="wm">Florian P<b>.</b></div>
           <div class="actions">
-            <button class="icon-btn" id="btn-open-details">Your details</button>
+            <button class="icon-btn mobile-star-toggle" id="btn-mobile-star" aria-label="View your Focus Star">View star</button>
             <button class="icon-btn" id="btn-start-over">Start over</button>
           </div>
         </div>
         <div class="ex-dock" id="ex-dock">
-          <div class="ex-dock-head"><span class="pulse-dot" id="ex-pulse"></span>Your four exercises<span class="ex-progress" id="ex-progress">0 of 4 done</span></div>
-          <div class="ex-cards">
-            <button class="ex-card" id="ex-card-sliders" data-ex="sliders"><div class="xn">01</div><div class="xt">Brand sliders</div><div class="xs">To do</div></button>
-            <button class="ex-card" id="ex-card-archetype" data-ex="archetype"><div class="xn">02</div><div class="xt">Personality words</div><div class="xs">To do</div></button>
-            <button class="ex-card" id="ex-card-board" data-ex="board"><div class="xn">03</div><div class="xt">Your board</div><div class="xs">To do</div></button>
-            <button class="ex-card" id="ex-card-taste" data-ex="taste"><div class="xn">04</div><div class="xt">Taste</div><div class="xs">To do</div></button>
+          <button class="ex-dock-toggle" id="ex-dock-toggle" aria-expanded="false" aria-controls="ex-dock-body">
+            <span class="pulse-dot" id="ex-pulse"></span>
+            <span>Workshop tools</span>
+            <span class="ex-progress" id="ex-progress">0 of 3 saved</span>
+            <span class="ex-dock-caret" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="ex-dock-body" id="ex-dock-body">
+            <div class="ex-dock-content">
+              <div class="ex-cards">
+                <button class="ex-card" id="ex-card-sliders" data-ex="sliders"><div class="xt">Brand sliders</div><div class="xs">To do</div></button>
+                <button class="ex-card" id="ex-card-archetype" data-ex="archetype"><div class="xt">Personality words</div><div class="xs">To do</div></button>
+                <button class="ex-card" id="ex-card-board" data-ex="board"><div class="xt">Your board</div><div class="xs">To do</div></button>
+                <button class="ex-card" id="ex-card-details"><div class="xt">Your details</div><div class="xs">Optional</div></button>
+              </div>
+              <div class="taste-chat-track" id="taste-chat-track">
+                <div class="taste-chat-copy"><b>Taste stays in the conversation</b><span>Visual references, what pulls you in, and hard nos.</span></div>
+                <div class="taste-dots" aria-label="Taste progress"><i data-taste="references"></i><i data-taste="specifics"></i><i data-taste="hard_nos"></i></div>
+                <div class="taste-count" id="taste-count">0 of 3 answered</div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="chat-scroll" id="chat-scroll"></div>
@@ -540,6 +594,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
       </div>
 
       <div class="star-col">
+        <div class="mobile-star-bar"><span>Your Focus Star</span><button id="btn-mobile-star-close">Back to chat</button></div>
         <div id="viewport">
           <div id="world"><svg id="star" viewBox="-700 -700 1400 1400"></svg></div>
           <svg id="wire"><path/><circle r="3.5"/></svg>
@@ -554,7 +609,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
         <div class="review-banner" id="review-banner">
           <div class="rb-text">Your evidence draft is <b>ready for review</b>. Every edge has a supported working position.
             <div class="details-nudge" id="rb-nudge">Before you send: <button id="btn-nudge-details">add your LinkedIn, bio, or photos</button> so Florian reviews the full picture.</div>
-            <div class="details-nudge" id="rb-ex-nudge" style="display:none">Also: <button id="btn-nudge-ex">finish your four exercises</button> <span id="rb-ex-count"></span>. They feed the review directly.</div>
+            <div class="details-nudge" id="rb-ex-nudge" style="display:none">Also: <button id="btn-nudge-ex">finish your workshop exercises</button> <span id="rb-ex-count"></span>. They feed the review directly.</div>
           </div>
           <button id="btn-open-submit">Send to Florian for review</button>
         </div>
@@ -595,7 +650,8 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
     </div>
     <p class="sub">All optional. Anything you add here rides along when your star goes to Florian for review.</p>
     <div class="field"><label for="d-linkedin">LinkedIn</label><input id="d-linkedin" type="url" placeholder="https://linkedin.com/in/you" /></div>
-    <div class="field"><label for="d-links">Other links</label><textarea id="d-links" rows="3" placeholder="Website, Instagram, portfolio... one per line"></textarea></div>
+    <div class="field"><label for="d-instagram">Instagram</label><input id="d-instagram" type="url" inputmode="url" placeholder="https://instagram.com/you" /></div>
+    <div class="field"><label for="d-links">Other links</label><textarea id="d-links" rows="3" placeholder="Website, portfolio, press... one per line"></textarea></div>
     <div class="field"><label for="d-bio">Short bio</label><textarea id="d-bio" rows="5" placeholder="A few lines about you and your work, in your own words."></textarea></div>
     <div class="field">
       <label>Photos or brand images</label>
@@ -620,7 +676,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
     <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" placeholder="you@yourbrand.com" /></div>
     <div class="field"><label for="f-brand">Brand name</label><input id="f-brand" type="text" placeholder="What you go by" /></div>
     <div class="subex" id="subex-rows"></div>
-    <div class="subex-warn" id="subex-warn" style="display:none">Some exercises aren't done yet. You can still send, but Florian reviews the full picture... the sliders, the words, your board, and your taste all feed the session.</div>
+    <div class="subex-warn" id="subex-warn" style="display:none">Some workshop inputs are still open. You can keep talking or send with the gaps visible to Florian.</div>
     <div class="modal-err" id="submit-err" style="display:none"></div>
     <div class="modal-actions">
       <button class="btn btn-ghost" id="btn-cancel-submit">Cancel</button>
@@ -652,7 +708,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 <div class="ex-overlay" id="exo-sliders">
   <div class="ex-inner">
     <div class="ex-topbar">
-      <div class="eyebrow"><span class="code">Exercise 1 of 4</span></div>
+        <div class="eyebrow"><span class="code">Workshop exercise</span></div>
       <button class="ex-back" id="exo-sliders-close">Back to session</button>
     </div>
     <h2>Where does your brand sit<span class="p">?</span></h2>
@@ -670,7 +726,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 <div class="ex-overlay" id="exo-archetype">
   <div class="ex-inner">
     <div class="ex-topbar">
-      <div class="eyebrow"><span class="code">Exercise 2 of 4</span></div>
+        <div class="eyebrow"><span class="code">Workshop exercise</span></div>
       <button class="ex-back" id="exo-archetype-close">Back to session</button>
     </div>
     <h2>Words that are already true<span class="p">.</span></h2>
@@ -689,7 +745,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 <div class="ex-overlay" id="exo-board">
   <div class="ex-inner">
     <div class="ex-topbar">
-      <div class="eyebrow"><span class="code">Exercise 3 of 4</span></div>
+        <div class="eyebrow"><span class="code">Workshop exercise</span></div>
       <button class="ex-back" id="exo-board-close">Back to session</button>
     </div>
     <h2>Your board<span class="p">.</span></h2>
@@ -711,36 +767,6 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
   </div>
 </div>
 
-<!-- exercise 4: taste -->
-<div class="ex-overlay" id="exo-taste">
-  <div class="ex-inner">
-    <div class="ex-topbar">
-      <div class="eyebrow"><span class="code">Exercise 4 of 4</span></div>
-      <button class="ex-back" id="exo-taste-close">Back to session</button>
-    </div>
-    <h2>What your eye keeps choosing<span class="p">.</span></h2>
-    <p class="ex-explain">This is the one exercise about how your brand should look, and it runs on evidence, not options. Name people or brands whose look you're drawn to. The look only: how they dress, their website, their covers, their feed. Not their ideas, not their success.</p>
-    <p class="ex-note">No color pickers, no font menus, on purpose. You bring the evidence, the direction gets derived from the pattern. Nothing to pick, nothing to tweak later.</p>
-    <div class="ext-lab">Whose look pulls you in (up to 3)</div>
-    <div class="ext-refs">
-      <input class="ext-ref" type="text" maxlength="80" placeholder="A person or a brand" />
-      <input class="ext-ref" type="text" maxlength="80" placeholder="Another, if one comes to mind" />
-      <input class="ext-ref" type="text" maxlength="80" placeholder="A third, only if it's real" />
-    </div>
-    <div class="ext-lab sep">Images that pull you in (up to 3)</div>
-    <input id="ext-file-input" type="file" accept="image/*" multiple style="display:none" />
-    <button class="btn btn-ghost" id="btn-add-taste-file" style="width:100%;justify-content:center">Add an image</button>
-    <div class="exb-thumbs" id="ext-thumbs"></div>
-    <p class="ext-hint">Screenshots, saved posts, a website, a poster, a jacket. Anything you kept because it looked right.</p>
-    <div class="ext-lab sep">Hard nos</div>
-    <textarea id="ext-nos" rows="3" maxlength="600" placeholder="Anything that should never show up in your brand? A color, a vibe, a style your industry loves and you can't stand..."></textarea>
-    <div class="ex-foot">
-      <span class="ex-saved-line" id="ext-saved"></span>
-      <button class="btn btn-primary" id="btn-save-taste" disabled>Add something first</button>
-    </div>
-  </div>
-</div>
-
 <script>
 /* =========================================================================
    GEOMETRY (lifted exactly from tools/focus-star-live/index.html)
@@ -749,9 +775,35 @@ const ORDER=["product","people","purpose","promise","personality"];
 const TITLES={product:"Product",people:"People",purpose:"Purpose",promise:"Promise",personality:"Personality"};
 const CODE={product:'P1',people:'P2',purpose:'P3',promise:'P4',personality:'P5'};
 const STEP=72, STAR_R=278, STAR_INNER=278*0.38, NODE_R=300, LABEL_R=412;
+const MOBILE_LABEL_POS={
+  product:{x:0,y:-365},
+  people:{x:285,y:-175},
+  purpose:{x:176,y:330},
+  promise:{x:-176,y:330},
+  personality:{x:-285,y:-175}
+};
 const ang=i=>i*STEP;
 function pt(a,r){const rad=(a-90)*Math.PI/180;return{x:Math.cos(rad)*r,y:Math.sin(rad)*r};}
 const NS='http://www.w3.org/2000/svg';
+
+function emptyTaste(){
+  return {references:[],specifics:[],hard_nos:[],coverage:{references:false,specifics:false,hard_nos:false},complete:false};
+}
+function ensureTasteState(star){
+  if(!star||typeof star!=='object')return emptyTaste();
+  const t=star.taste&&typeof star.taste==='object'?star.taste:emptyTaste();
+  t.references=Array.isArray(t.references)?t.references.filter(v=>String(v||'').trim()).map(v=>String(v).slice(0,400)):[];
+  t.specifics=Array.isArray(t.specifics)?t.specifics.filter(v=>String(v||'').trim()).map(v=>String(v).slice(0,600)):[];
+  t.hard_nos=Array.isArray(t.hard_nos)?t.hard_nos.filter(v=>String(v||'').trim()).map(v=>String(v).slice(0,400)):[];
+  t.coverage={references:t.references.length>0,specifics:t.specifics.length>0,hard_nos:t.hard_nos.length>0};
+  t.complete=t.coverage.references&&t.coverage.specifics&&t.coverage.hard_nos;
+  star.taste=t;
+  return t;
+}
+function tasteProgress(star){
+  const t=ensureTasteState(star||{});
+  return ['references','specifics','hard_nos'].filter(k=>t.coverage[k]).length;
+}
 
 function emptyStar(){
   const edges={};
@@ -760,6 +812,7 @@ function emptyStar(){
     spectrum:{position:null,note:''},
     center:{word:'',candidates:[]},
     persona:{role:'',context:'',need:'',trigger:''},
+    taste:emptyTaste(),
     edges,
     completeness:0,
     quotes:[],
@@ -778,7 +831,7 @@ let session={
   star:null,
   started:false,
   demo:false,
-  profile:{name:'',email:'',linkedin:'',links:[],bio:''}
+  profile:{name:'',email:'',linkedin:'',instagram:'',links:[],bio:''}
 };
 const LS_IMG_KEY='fp_self_serve_bt_images_v1';
 let profileImages=[]; // [{name,data}] kept out of the main session blob
@@ -898,7 +951,8 @@ function buildStarContent(star){
   world.appendChild(cw);
 
   ORDER.forEach((id,i)=>{
-    const e=em[id]||{filled:0,offer_name:''},N=pt(ang(i),NODE_R),L=pt(ang(i),LABEL_R);
+    const mobile=matchMedia('(max-width: 900px)').matches;
+    const e=em[id]||{filled:0,offer_name:''},N=pt(ang(i),NODE_R),L=mobile?MOBILE_LABEL_POS[id]:pt(ang(i),LABEL_R);
     const fr=(e.filled||0)/10,C=2*Math.PI*33,off=C*(1-fr);
     const node=document.createElement('div');node.className='node';node.dataset.id=id;node.style.left=N.x+'px';node.style.top=N.y+'px';
     node.innerHTML=`<div class="ringwrap"><svg viewBox="0 0 76 76"><circle class="ring-bg" cx="38" cy="38" r="33"/><circle class="ring-fg" cx="38" cy="38" r="33" stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}"/></svg><div class="core"><span class="code">${CODE[id]}</span></div></div>`;
@@ -1004,7 +1058,7 @@ let raf=null;
 function tween(to,dur=620,done){cancelAnimationFrame(raf);const f={...tf},t0=performance.now();
   const ez=t=>t>=1?1:1-Math.pow(2,-10*t);
   (function s(now){let t=Math.min(1,(now-t0)/dur),e=ez(t);tf.x=f.x+(to.x-f.x)*e;tf.y=f.y+(to.y-f.y)*e;tf.k=f.k+(to.k-f.k)*e;apply();if(t<1)raf=requestAnimationFrame(s);else if(done)done();})(t0);}
-function fitTarget(){const r=starColRect();const half=560,k=clampK(Math.min(r.width,r.height)/(2*half)*0.92);return{x:r.width/2,y:r.height/2,k};}
+function fitTarget(){const r=starColRect();const half=matchMedia('(max-width: 900px)').matches?390:560,k=clampK(Math.min(r.width,r.height)/(2*half)*0.92);return{x:r.width/2,y:r.height/2,k};}
 function fitStar(instant){const t=fitTarget();if(instant){tf.x=t.x;tf.y=t.y;tf.k=t.k;apply();}else tween(t);}
 function focusEdge(id){
   const r=starColRect();
@@ -1115,12 +1169,12 @@ function renderQuotes(){
 
 function renderReviewBanner(){
   const banner=document.getElementById('review-banner');
-  const ready=!!(session.star&&session.star.ready_for_review);
+  const ready=!!(session.star&&session.star.ready_for_review&&tasteProgress(session.star)===3);
   banner.classList.toggle('show',ready);
   const exn=document.getElementById('rb-ex-nudge');
   const n=exDone();
-  exn.style.display=n<4?'':'none';
-  document.getElementById('rb-ex-count').textContent='('+n+' of 4 done)';
+  exn.style.display=n<3?'':'none';
+  document.getElementById('rb-ex-count').textContent='('+n+' of 3 saved)';
 }
 
 function renderStarFull(){
@@ -1130,6 +1184,7 @@ function renderStarFull(){
   paintCenterCap(star);
   updateStarContent(star);
   renderQuotes();
+  renderExDock();
   renderReviewBanner();
 }
 
@@ -1155,6 +1210,7 @@ function doSendTurn(afterMessages){
       hideTyping();
       session.star=data.star||session.star||emptyStar();
       if(!session.star.edges) session.star.edges=emptyStar().edges;
+      ensureTasteState(session.star);
       session.messages.push({role:'assistant',content:data.reply||''});
       appendMsg('assistant',data.reply||'');
       renderStarFull();
@@ -1201,6 +1257,14 @@ document.getElementById('quotes-toggle').addEventListener('click',()=>{
   caret.style.transform=open?'rotate(180deg)':'none';
 });
 
+document.getElementById('btn-mobile-star').addEventListener('click',()=>{
+  document.getElementById('session-wrap').classList.add('mobile-star-open');
+  requestAnimationFrame(()=>fitStar(true));
+});
+document.getElementById('btn-mobile-star-close').addEventListener('click',()=>{
+  document.getElementById('session-wrap').classList.remove('mobile-star-open');
+});
+
 /* =========================================================================
    SESSION BOOTSTRAP (real session)
    ========================================================================= */
@@ -1212,12 +1276,14 @@ function startRealSession(resumed){
   buildStarSkeleton();
   requestAnimationFrame(()=>fitStar(true));
   ensureExercises();
+  if(session.star)migrateLegacyTaste();
   renderExDock();
 
   if(resumed){
     chatScroll.innerHTML='';
     session.messages.forEach(m=>{ if(m.content!=='__START__') appendMsg(m.role,m.content); });
     renderStarFull();
+    addTasteResumePrompt();
     return;
   }
 
@@ -1230,6 +1296,19 @@ function startRealSession(resumed){
   doSendTurn(session.messages);
 }
 
+function addTasteResumePrompt(){
+  if(!session.star||tasteProgress(session.star)===3||session.tasteResumeNoticeShown)return;
+  const t=ensureTasteState(session.star);
+  let content='One thing changed while you were away: Taste now happens here in the conversation instead of in a separate exercise. ';
+  if(!t.coverage.references)content+='Whose look do you keep coming back to, a person, brand, site, object, or image?';
+  else if(!t.coverage.specifics)content+='What specifically pulls you in about the visual reference you named?';
+  else content+='What should never show up in your brand visually, even if your industry loves it?';
+  session.messages.push({role:'assistant',content});
+  session.tasteResumeNoticeShown=true;
+  appendMsg('assistant',content);
+  saveSession();
+}
+
 function startOver(){
   clearSession();
   try{localStorage.removeItem(LS_IMG_KEY);}catch(e){}
@@ -1238,7 +1317,8 @@ function startOver(){
   boardFiles=[];
   try{localStorage.removeItem(LS_TASTE_KEY);}catch(e){}
   tasteFiles=[];
-  session={messages:[],star:null,started:false,demo:false,profile:{name:'',email:'',linkedin:'',links:[],bio:''}};
+  session={messages:[],star:null,started:false,demo:false,profile:{name:'',email:'',linkedin:'',instagram:'',links:[],bio:''}};
+  document.getElementById('session-wrap').classList.remove('mobile-star-open');
   document.getElementById('resume-card').style.display='none';
   const cs=document.getElementById('cta-start');
   cs.classList.add('btn-primary');cs.classList.remove('btn-ghost');
@@ -1268,7 +1348,7 @@ document.getElementById('btn-do-lead').addEventListener('click',()=>{
   const err=document.getElementById('lead-err');
   if(!name){err.textContent='Your name, so the star has one on it.';err.style.display='block';return;}
   if(!/.+@.+\..+/.test(email)){err.textContent='A real email, so the review can reach you.';err.style.display='block';return;}
-  session.profile=Object.assign({name:'',email:'',linkedin:'',links:[],bio:''},session.profile,{name,email});
+  session.profile=Object.assign({name:'',email:'',linkedin:'',instagram:'',links:[],bio:''},session.profile,{name,email});
   leadOverlay.classList.remove('show');
   fetch(API_BASE+'/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
     body:JSON.stringify({name,email,sid:ensureSid()})}).catch(()=>{});
@@ -1283,20 +1363,20 @@ function renderThumbs(){
   box.innerHTML=profileImages.map((im,i)=>
     `<div class="th"><img src="${im.data}" alt=""><button data-i="${i}" aria-label="Remove">&times;</button></div>`).join('');
   box.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{
-    profileImages.splice(+b.dataset.i,1);saveImages();renderThumbs();
+    profileImages.splice(+b.dataset.i,1);saveImages();renderThumbs();renderExDock();
   }));
   document.getElementById('btn-add-images').style.display=profileImages.length>=3?'none':'';
 }
 function openDetails(){
   const p=session.profile||{};
   document.getElementById('d-linkedin').value=p.linkedin||'';
+  document.getElementById('d-instagram').value=p.instagram||'';
   document.getElementById('d-links').value=(p.links||[]).join('\n');
   document.getElementById('d-bio').value=p.bio||'';
   document.getElementById('details-err').style.display='none';
   renderThumbs();
   detailsOverlay.classList.add('show');
 }
-document.getElementById('btn-open-details').addEventListener('click',openDetails);
 document.getElementById('btn-nudge-details').addEventListener('click',openDetails);
 document.getElementById('btn-close-details').addEventListener('click',()=>detailsOverlay.classList.remove('show'));
 detailsOverlay.addEventListener('click',e=>{if(e.target===detailsOverlay)detailsOverlay.classList.remove('show');});
@@ -1306,7 +1386,7 @@ document.getElementById('d-images').addEventListener('change',e=>{
   [...e.target.files].slice(0,3-profileImages.length).forEach(f=>{
     if(f.size>4*1024*1024){err.textContent=`${f.name} is over 4MB, use a smaller version.`;err.style.display='block';return;}
     const r=new FileReader();
-    r.onload=()=>{profileImages.push({name:f.name,data:r.result});saveImages();renderThumbs();};
+    r.onload=()=>{profileImages.push({name:f.name,data:r.result});saveImages();renderThumbs();renderExDock();};
     r.readAsDataURL(f);
   });
   e.target.value='';
@@ -1314,15 +1394,17 @@ document.getElementById('d-images').addEventListener('change',e=>{
 document.getElementById('btn-save-details').addEventListener('click',()=>{
   const p=session.profile||{};
   p.linkedin=document.getElementById('d-linkedin').value.trim();
+  p.instagram=document.getElementById('d-instagram').value.trim();
   p.links=document.getElementById('d-links').value.split('\n').map(s=>s.trim()).filter(Boolean);
   p.bio=document.getElementById('d-bio').value.trim();
   session.profile=p;
   saveSession();
   if(p.name&&p.email){
     fetch(API_BASE+'/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({name:p.name,email:p.email,linkedin:p.linkedin,links:p.links,bio:p.bio,sid:ensureSid()})}).catch(()=>{});
+      body:JSON.stringify({name:p.name,email:p.email,linkedin:p.linkedin,instagram:p.instagram,links:p.links,bio:p.bio,sid:ensureSid()})}).catch(()=>{});
   }
   detailsOverlay.classList.remove('show');
+  renderExDock();
   toast('Saved. It all rides along with your star.');
 });
 document.getElementById('btn-start-over').addEventListener('click',()=>{
@@ -1385,9 +1467,19 @@ function ensureExercises(){
   if(typeof ex.taste.nos!=='string')ex.taste.nos='';
   return ex;
 }
+function migrateLegacyTaste(){
+  if(!session.star)return;
+  const legacy=ensureExercises().taste;
+  const taste=ensureTasteState(session.star);
+  if(!taste.references.length){
+    taste.references=legacy.refs.filter(v=>String(v||'').trim()).map(v=>String(v).trim());
+  }
+  if(!taste.hard_nos.length&&String(legacy.nos||'').trim())taste.hard_nos=[String(legacy.nos).trim()];
+  ensureTasteState(session.star);
+}
 function exDone(){
   const ex=ensureExercises();
-  return ['sliders','archetype','board','taste'].filter(k=>ex[k].done).length;
+  return ['sliders','archetype','board'].filter(k=>ex[k].done).length;
 }
 function exercisesPayload(){
   const ex=ensureExercises();
@@ -1413,20 +1505,53 @@ function syncExercises(){
 }
 
 /* dock */
+const LS_DOCK_KEY='fp_self_serve_bt_workshop_open_v1';
+function setDockOpen(open,persist){
+  const dock=document.getElementById('ex-dock');
+  dock.classList.toggle('open',open);
+  document.getElementById('ex-dock-toggle').setAttribute('aria-expanded',open?'true':'false');
+  if(persist){try{localStorage.setItem(LS_DOCK_KEY,open?'1':'0');}catch(e){}}
+}
+function initDock(){
+  let saved=null;
+  try{saved=localStorage.getItem(LS_DOCK_KEY);}catch(e){}
+  const open=saved===null?!matchMedia('(max-width: 900px)').matches:saved==='1';
+  setDockOpen(open,false);
+}
+document.getElementById('ex-dock-toggle').addEventListener('click',()=>{
+  const pinned=chatScroll.scrollHeight-chatScroll.scrollTop-chatScroll.clientHeight<120;
+  setDockOpen(!document.getElementById('ex-dock').classList.contains('open'),true);
+  if(pinned)setTimeout(()=>{chatScroll.scrollTop=chatScroll.scrollHeight;},420);
+});
+function profileHasDetails(){
+  const p=session.profile||{};
+  return !!(p.linkedin||p.instagram||(p.links||[]).length||p.bio||profileImages.length);
+}
+function renderTasteTracker(){
+  const star=session.star||emptyStar();
+  const t=ensureTasteState(star);
+  const n=tasteProgress(star);
+  document.getElementById('taste-count').textContent=n+' of 3 answered';
+  document.querySelectorAll('.taste-dots i').forEach(dot=>dot.classList.toggle('done',!!t.coverage[dot.dataset.taste]));
+}
 function renderExDock(){
   const ex=ensureExercises();
   const n=exDone();
-  document.getElementById('ex-progress').textContent=n+' of 4 done';
-  document.getElementById('ex-pulse').style.display=n===4?'none':'';
-  [['sliders','ex-card-sliders'],['archetype','ex-card-archetype'],['board','ex-card-board'],['taste','ex-card-taste']].forEach(pair=>{
+  document.getElementById('ex-progress').textContent=n+' of 3 saved';
+  document.getElementById('ex-pulse').style.display=n===3?'none':'';
+  [['sliders','ex-card-sliders'],['archetype','ex-card-archetype'],['board','ex-card-board']].forEach(pair=>{
     const card=document.getElementById(pair[1]);
     card.classList.toggle('done',!!ex[pair[0]].done);
-    card.querySelector('.xs').innerHTML=ex[pair[0]].done?'Done &#10003;':'To do';
+    card.querySelector('.xs').innerHTML=ex[pair[0]].done?'Saved &#10003;':'Open';
   });
+  const details=document.getElementById('ex-card-details');
+  details.classList.toggle('done',profileHasDetails());
+  details.querySelector('.xs').innerHTML=profileHasDetails()?'Added &#10003;':'Optional';
+  renderTasteTracker();
 }
 
 /* overlay switching */
-const EX_OVERLAYS={sliders:'exo-sliders',archetype:'exo-archetype',board:'exo-board',taste:'exo-taste'};
+const EX_OVERLAYS={sliders:'exo-sliders',archetype:'exo-archetype',board:'exo-board'};
 let exOpen=null;
 function openExercise(k){
   ensureExercises();
@@ -1434,7 +1559,6 @@ function openExercise(k){
   if(k==='sliders')renderSliders();
   if(k==='archetype')renderWordBank();
   if(k==='board')renderBoard();
-  if(k==='taste')renderTaste();
   document.getElementById(EX_OVERLAYS[k]).classList.add('show');
 }
 function closeExercise(){
@@ -1444,14 +1568,14 @@ function closeExercise(){
   renderExDock();
   renderReviewBanner();
 }
-document.querySelectorAll('.ex-card').forEach(c=>c.addEventListener('click',()=>openExercise(c.dataset.ex)));
+document.querySelectorAll('.ex-card[data-ex]').forEach(c=>c.addEventListener('click',()=>openExercise(c.dataset.ex)));
+document.getElementById('ex-card-details').addEventListener('click',openDetails);
 document.getElementById('exo-sliders-close').addEventListener('click',closeExercise);
 document.getElementById('exo-archetype-close').addEventListener('click',closeExercise);
 document.getElementById('exo-board-close').addEventListener('click',closeExercise);
-document.getElementById('exo-taste-close').addEventListener('click',closeExercise);
 document.getElementById('btn-nudge-ex').addEventListener('click',()=>{
   const ex=ensureExercises();
-  const k=['sliders','archetype','board','taste'].find(x=>!ex[x].done)||'sliders';
+  const k=['sliders','archetype','board'].find(x=>!ex[x].done)||'sliders';
   openExercise(k);
 });
 
@@ -1645,80 +1769,12 @@ document.getElementById('btn-save-board').addEventListener('click',()=>{
   closeExercise();
 });
 
-/* exercise 4: taste */
-function tasteHas(){
-  const ex=ensureExercises();
-  return ex.taste.refs.some(r=>String(r||'').trim())||String(ex.taste.nos||'').trim()!==''||tasteFiles.length>0;
-}
-function renderTasteThumbs(){
-  const box=document.getElementById('ext-thumbs');
-  box.innerHTML='';
-  tasteFiles.forEach((f,i)=>{
-    const th=document.createElement('div');th.className='th';
-    const img=document.createElement('img');img.src=f.data;img.alt='';th.appendChild(img);
-    const rm=document.createElement('button');
-    rm.innerHTML='&times;';rm.setAttribute('aria-label','Remove');
-    rm.addEventListener('click',()=>{
-      tasteFiles.splice(i,1);
-      saveTasteFiles();syncExercises();renderTasteThumbs();updateTasteFoot();
-    });
-    th.appendChild(rm);
-    box.appendChild(th);
-  });
-  document.getElementById('btn-add-taste-file').style.display=tasteFiles.length>=3?'none':'';
-}
-function updateTasteFoot(){
-  const has=tasteHas();
-  const btn=document.getElementById('btn-save-taste');
-  btn.disabled=!has;
-  btn.textContent=has?'Save my taste':'Add something first';
-  document.getElementById('ext-saved').textContent=ensureExercises().taste.done?'Saved. Add or change any time.':'';
-}
-function renderTaste(){
-  const ex=ensureExercises();
-  document.querySelectorAll('.ext-ref').forEach((inp,i)=>{inp.value=ex.taste.refs[i]||'';});
-  document.getElementById('ext-nos').value=ex.taste.nos||'';
-  renderTasteThumbs();
-  updateTasteFoot();
-}
-document.querySelectorAll('.ext-ref').forEach((inp,i)=>{
-  inp.addEventListener('input',()=>{
-    const ex=ensureExercises();
-    ex.taste.refs[i]=inp.value.slice(0,80);
-    saveSession();syncExercises();updateTasteFoot();
-  });
-});
-document.getElementById('ext-nos').addEventListener('input',()=>{
-  const ex=ensureExercises();
-  ex.taste.nos=document.getElementById('ext-nos').value.slice(0,600);
-  saveSession();syncExercises();updateTasteFoot();
-});
-document.getElementById('btn-add-taste-file').addEventListener('click',()=>document.getElementById('ext-file-input').click());
-document.getElementById('ext-file-input').addEventListener('change',e=>{
-  [...e.target.files].slice(0,3-tasteFiles.length).forEach(f=>{
-    if(f.size>4*1024*1024){toast(f.name+' is over 4MB, use a smaller version.');return;}
-    if(!/^image\//.test(f.type)){toast('Images only for this one.');return;}
-    const r=new FileReader();
-    r.onload=()=>{tasteFiles.push({name:f.name,type:f.type,data:r.result});saveTasteFiles();syncExercises();renderTasteThumbs();updateTasteFoot();};
-    r.readAsDataURL(f);
-  });
-  e.target.value='';
-});
-document.getElementById('btn-save-taste').addEventListener('click',()=>{
-  if(!tasteHas())return;
-  const ex=ensureExercises();
-  ex.taste.done=true;ex.taste.updated=new Date().toISOString();
-  saveSession();syncExercises();
-  toast('Taste saved. Florian reads the pattern and derives the direction.');
-  closeExercise();
-});
-
 /* submit modal: exercise status rows (submission is never blocked) */
 function renderSubmitExStatus(){
   const ex=ensureExercises();
   const rows=document.getElementById('subex-rows');
   rows.innerHTML='';
-  [['sliders','Brand sliders'],['archetype','Personality words'],['board','Your board'],['taste','Taste']].forEach(pair=>{
+  [['sliders','Brand sliders'],['archetype','Personality words'],['board','Your board']].forEach(pair=>{
     const done=!!ex[pair[0]].done;
     const row=document.createElement('div');
     row.className='subex-row'+(done?' ok':'');
@@ -1736,7 +1792,19 @@ function renderSubmitExStatus(){
     }
     rows.appendChild(row);
   });
-  document.getElementById('subex-warn').style.display=exDone()<4?'block':'none';
+  const tn=tasteProgress(session.star||{});
+  const tasteRow=document.createElement('div');
+  tasteRow.className='subex-row'+(tn===3?' ok':'');
+  const tasteSt=document.createElement('span');tasteSt.className='st';if(tn===3)tasteSt.innerHTML='&#10003;';
+  const tasteNm=document.createElement('span');tasteNm.className='nm';tasteNm.textContent='Taste in conversation ('+tn+' of 3)';
+  tasteRow.appendChild(tasteSt);tasteRow.appendChild(tasteNm);
+  if(tn<3){
+    const go=document.createElement('button');go.textContent='Keep talking';
+    go.addEventListener('click',()=>{submitOverlay.classList.remove('show');chatInput.focus();});
+    tasteRow.appendChild(go);
+  }
+  rows.appendChild(tasteRow);
+  document.getElementById('subex-warn').style.display=(exDone()<3||tn<3)?'block':'none';
 }
 
 /* =========================================================================
@@ -1969,6 +2037,27 @@ const DEMO_TURNS=[
   }
 ];
 
+const demoPreTaste=DEMO_TURNS[DEMO_TURNS.length-1];
+const demoCloseReply=demoPreTaste.reply;
+demoPreTaste.reply="Before we close, whose visual world keeps pulling you back in, and what about the look feels right for this work?";
+demoPreTaste.star.ready_for_review=false;
+DEMO_TURNS.push({
+  user:"I keep coming back to Stripe's early annual reports. The diagrams are precise, the purple feels controlled, and everything looks designed without looking decorated. I never want glossy finance stock photos or the usual navy-and-gold banker polish.",
+  reply:demoCloseReply,
+  star:(()=>{
+    const s=JSON.parse(JSON.stringify(demoPreTaste.star));
+    s.taste={
+      references:["Stripe's early annual reports"],
+      specifics:["Precise diagrams, controlled purple, and a designed but undecorated feeling"],
+      hard_nos:["Glossy finance stock photography","Navy-and-gold banker polish"],
+      coverage:{references:true,specifics:true,hard_nos:true},
+      complete:true
+    };
+    s.ready_for_review=true;
+    return s;
+  })()
+});
+
 let demoRunning=false;
 let demoTimer=null;
 
@@ -1981,12 +2070,14 @@ function stopDemoPlayback(){
 function exitDemo(){
   stopDemoPlayback();
   session={messages:[],star:null,started:false,demo:false};
+  document.getElementById('session-wrap').classList.remove('mobile-star-open');
   showState('state-landing');
 }
 
 function startDemo(){
   stopDemoPlayback();
   session={messages:[],star:emptyStar(),started:true,demo:true};
+  document.getElementById('session-wrap').classList.remove('mobile-star-open');
   document.getElementById('demo-banner').style.display='flex';
   document.getElementById('session-wrap').classList.add('has-banner');
   showState('state-session');
@@ -2051,9 +2142,11 @@ buildMiniStar();
 loadImages();
 loadBoardFiles();
 loadTasteFiles();
+initDock();
 showState('state-landing');
 if(loadSession() && session.started && !session.demo){
-  session.profile=Object.assign({name:'',email:'',linkedin:'',links:[],bio:''},session.profile||{});
+  session.profile=Object.assign({name:'',email:'',linkedin:'',instagram:'',links:[],bio:''},session.profile||{});
+  if(session.star){migrateLegacyTaste();saveSession();}
   const answers=session.messages.filter(m=>m.role==='user'&&m.content!=='__START__').length;
   document.getElementById('rc-count').textContent=answers;
   document.getElementById('resume-card').style.display='flex';
