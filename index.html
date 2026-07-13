@@ -619,7 +619,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 
 </div>
 
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- lead gate: name + email before the session starts -->
 <div class="modal-overlay" id="lead-overlay">
@@ -839,14 +839,16 @@ function saveImages(){
   try{localStorage.setItem(LS_IMG_KEY,JSON.stringify(profileImages));}catch(e){
     toast('Photos are too large to keep between visits. They will still send with your star.');
   }
+  scheduleProfileMediaSync();
 }
 function loadImages(){
   try{const raw=localStorage.getItem(LS_IMG_KEY);if(raw)profileImages=JSON.parse(raw)||[];}catch(e){}
 }
 
-function saveSession(){
+function saveSession(reason,urgent){
   if(session.demo)return; // never persist a demo session over a real one
   try{localStorage.setItem(LS_KEY,JSON.stringify(session));}catch(e){}
+  scheduleSessionSnapshot(reason||'state_change',urgent?0:1100);
 }
 function loadSession(){
   try{
@@ -868,6 +870,181 @@ function ensureSid(){
   }
   return session.sid;
 }
+
+function writeHeaders(){
+  const headers={'Content-Type':'application/json'};
+  if(session.writeToken)headers.Authorization='Bearer '+session.writeToken;
+  return headers;
+}
+async function currentResumeProof(){
+  const lastUser=(session.messages||[]).slice().reverse().find(m=>m&&m.role==='user'&&m.content!=='__START__');
+  if(!lastUser)return '';
+  const digest=new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(String(lastUser.content||'').slice(0,8000))));
+  let binary='';digest.forEach(byte=>{binary+=String.fromCharCode(byte);});
+  return btoa(binary).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/g,'');
+}
+async function ensureSessionCapability(force){
+  if(!force&&session.sid&&session.writeToken)return true;
+  const p=session.profile||{};
+  if(!p.name||!p.email)throw new Error('name and email required');
+  const res=await fetch(API_BASE+'/api/session-init',{
+    method:'POST',headers:writeHeaders(),
+    body:JSON.stringify({
+      sid:session.started?(session.sid||''):'',name:p.name,email:p.email,
+      resumeProof:session.started?await currentResumeProof():''
+    })
+  });
+  if(!res.ok)throw new Error('session verification '+res.status);
+  const data=await res.json();
+  session.sid=data.sid;
+  session.writeToken=data.writeToken;
+  try{localStorage.setItem(LS_KEY,JSON.stringify(session));}catch(e){}
+  return true;
+}
+
+/* Cloud persistence is independent of localStorage. Browser storage is only
+   a convenience copy; immutable Worker snapshots are the recovery record. */
+let sessionSyncTimer=null,sessionSyncSeq=0,sessionSyncFailures=0,sessionSyncInFlight=false;
+let sessionPendingSnapshot=null;
+let mediaSyncTimer=null,mediaSyncSeq=0,mediaSyncFailures=0,mediaSyncInFlight=false;
+let mediaPendingSnapshot=null;
+let exSyncTimer=null,exSyncFailures=0,exSyncInFlight=false,exPendingSnapshot=null;
+function syncEventId(prefix,seq){
+  return prefix+'-'+Date.now().toString(36)+'-'+seq.toString(36)+'-'+Math.random().toString(36).slice(2,8);
+}
+function sessionSnapshotBody(reason){
+  const messageReasons=new Set(['session_started','taste_resume_prompt','user_message','assistant_response','resume_recovery']);
+  const recentMessages=(session.messages||[]).slice(-2);
+  return {
+    sid:ensureSid(),
+    eventId:syncEventId('session',++sessionSyncSeq),
+    reason:reason||'state_change',
+    clientUpdated:new Date().toISOString(),
+    profile:session.profile||{},
+    messages:messageReasons.has(reason)?recentMessages:[],
+    star:session.star||null,
+    exercises:session.exercises||null
+  };
+}
+async function persistSessionSnapshot(keepalive,force){
+  if(session.demo||!session.started||!session.writeToken||!sessionPendingSnapshot)return false;
+  if(sessionSyncInFlight&&!force)return false;
+  const candidate=force&&sessionSyncInFlight
+    ?Object.assign({},sessionPendingSnapshot,{eventId:syncEventId('pagehide',++sessionSyncSeq)})
+    :sessionPendingSnapshot;
+  const body=JSON.stringify(candidate);
+  if(keepalive&&body.length>60000)return false;
+  if(!force){
+    clearTimeout(sessionSyncTimer);sessionSyncTimer=null;
+    sessionSyncInFlight=true;
+  }
+  try{
+    const res=await fetch(API_BASE+'/api/session-snapshot',{
+      method:'POST',headers:writeHeaders(),body,keepalive:!!keepalive
+    });
+    if(res.status===401&&!force)await ensureSessionCapability(true);
+    if(!res.ok)throw new Error('cloud snapshot '+res.status);
+    const data=await res.json();
+    session.cloudSavedAt=data.persistedAt||new Date().toISOString();
+    sessionSyncFailures=0;
+    if(!force&&sessionPendingSnapshot&&sessionPendingSnapshot.eventId===candidate.eventId){
+      sessionPendingSnapshot=null;
+    }
+    try{localStorage.setItem(LS_KEY,JSON.stringify(session));}catch(e){}
+    return true;
+  }catch(e){
+    if(!force){
+      sessionSyncFailures++;
+      if(sessionSyncFailures<5){
+        sessionSyncTimer=setTimeout(()=>persistSessionSnapshot(false,false),Math.min(15000,1500*sessionSyncFailures));
+      }else{
+        toast('Your latest answer is not saved to the cloud yet. Keep this page open and try again.');
+      }
+    }
+    return false;
+  }finally{
+    if(!force){
+      sessionSyncInFlight=false;
+      if(sessionPendingSnapshot&&!sessionSyncTimer&&sessionSyncFailures<5){
+        sessionSyncTimer=setTimeout(()=>persistSessionSnapshot(false,false),0);
+      }
+    }
+  }
+}
+function scheduleSessionSnapshot(reason,delay){
+  if(session.demo||!session.started)return;
+  sessionPendingSnapshot=sessionSnapshotBody(reason||'state_change');
+  sessionSyncFailures=0;
+  clearTimeout(sessionSyncTimer);
+  sessionSyncTimer=setTimeout(()=>persistSessionSnapshot(false,false),delay==null?1100:delay);
+}
+async function persistProfileMediaSnapshot(keepalive,force){
+  if(session.demo||!session.started||!session.writeToken||!mediaPendingSnapshot)return false;
+  if(mediaSyncInFlight&&!force)return false;
+  const candidate=force&&mediaSyncInFlight
+    ?Object.assign({},mediaPendingSnapshot,{eventId:syncEventId('pagehide-media',++mediaSyncSeq)})
+    :mediaPendingSnapshot;
+  const body=JSON.stringify(candidate);
+  if(keepalive&&body.length>60000)return false;
+  if(!force){
+    clearTimeout(mediaSyncTimer);mediaSyncTimer=null;
+    mediaSyncInFlight=true;
+  }
+  try{
+    const res=await fetch(API_BASE+'/api/session-media',{
+      method:'POST',headers:writeHeaders(),body,keepalive:!!keepalive
+    });
+    if(res.status===401&&!force)await ensureSessionCapability(true);
+    if(!res.ok)throw new Error('cloud media '+res.status);
+    mediaSyncFailures=0;
+    if(!force&&mediaPendingSnapshot&&mediaPendingSnapshot.eventId===candidate.eventId){
+      mediaPendingSnapshot=null;
+    }
+    return true;
+  }catch(e){
+    if(!force){
+      mediaSyncFailures++;
+      if(mediaSyncFailures<5){
+        mediaSyncTimer=setTimeout(()=>persistProfileMediaSnapshot(false,false),Math.min(20000,2500*mediaSyncFailures));
+      }else{
+        toast('Your photos are not saved to the cloud yet. Keep this page open and try again.');
+      }
+    }
+    return false;
+  }finally{
+    if(!force){
+      mediaSyncInFlight=false;
+      if(mediaPendingSnapshot&&!mediaSyncTimer&&mediaSyncFailures<5){
+        mediaSyncTimer=setTimeout(()=>persistProfileMediaSnapshot(false,false),0);
+      }
+    }
+  }
+}
+function scheduleProfileMediaSync(){
+  if(session.demo||!session.started||!session.writeToken)return;
+  mediaPendingSnapshot={
+    sid:ensureSid(),eventId:syncEventId('media',++mediaSyncSeq),images:profileImages
+  };
+  mediaSyncFailures=0;
+  clearTimeout(mediaSyncTimer);
+  mediaSyncTimer=setTimeout(()=>persistProfileMediaSnapshot(false,false),400);
+}
+addEventListener('pagehide',()=>{
+  if(sessionPendingSnapshot)persistSessionSnapshot(true,true);
+  if(mediaPendingSnapshot)persistProfileMediaSnapshot(true,true);
+  if(exPendingSnapshot)persistExerciseSnapshot(true,true);
+});
+addEventListener('beforeunload',e=>{
+  if(sessionPendingSnapshot||sessionSyncInFlight||mediaPendingSnapshot||mediaSyncInFlight||exPendingSnapshot||exSyncInFlight){
+    e.preventDefault();e.returnValue='';
+  }
+});
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='hidden'){
+    if(sessionPendingSnapshot&&!sessionSyncInFlight)persistSessionSnapshot(false,false);
+    if(exPendingSnapshot&&!exSyncInFlight)persistExerciseSnapshot(false,false);
+  }
+});
 
 /* =========================================================================
    VIEW SWITCHING
@@ -1188,13 +1365,15 @@ function renderStarFull(){
   renderReviewBanner();
 }
 
-async function callChatAPI(messages,star){
+async function callChatAPI(messages,star,retried){
   const res=await fetch(API_BASE+'/api/chat',{
     method:'POST',
-    headers:{'Content-Type':'application/json'},
+    headers:writeHeaders(),
     body:JSON.stringify({messages,star,sid:ensureSid(),
-      name:(session.profile||{}).name||'',email:(session.profile||{}).email||''})
+      name:(session.profile||{}).name||'',email:(session.profile||{}).email||'',
+      profile:session.profile||{}})
   });
+  if(res.status===401&&!retried){await ensureSessionCapability(true);return callChatAPI(messages,star,true);}
   if(!res.ok){
     let msg='The session hit a snag ('+res.status+').';
     throw new Error(msg);
@@ -1215,7 +1394,7 @@ function doSendTurn(afterMessages){
       appendMsg('assistant',data.reply||'');
       renderStarFull();
       setPending(false);
-      saveSession();
+      saveSession('assistant_response',true);
     })
     .catch(err=>{
       hideTyping();
@@ -1234,7 +1413,7 @@ function sendUserMessage(text){
   appendMsg('user',trimmed);
   chatInput.value='';
   chatInput.style.height='auto';
-  saveSession();
+  saveSession('user_message',true);
   doSendTurn(session.messages);
 }
 
@@ -1283,6 +1462,9 @@ function startRealSession(resumed){
     chatScroll.innerHTML='';
     session.messages.forEach(m=>{ if(m.content!=='__START__') appendMsg(m.role,m.content); });
     renderStarFull();
+    if(profileImages.length)scheduleProfileMediaSync();
+    syncExercises();
+    saveSession('resume_recovery',true);
     addTasteResumePrompt();
     return;
   }
@@ -1292,7 +1474,7 @@ function startRealSession(resumed){
   session.messages=[{role:'user',content:'__START__'}];
   session.star=null;
   session.started=true;
-  saveSession();
+  saveSession('session_started',true);
   doSendTurn(session.messages);
 }
 
@@ -1306,10 +1488,14 @@ function addTasteResumePrompt(){
   session.messages.push({role:'assistant',content});
   session.tasteResumeNoticeShown=true;
   appendMsg('assistant',content);
-  saveSession();
+  saveSession('taste_resume_prompt',true);
 }
 
 function startOver(){
+  clearTimeout(sessionSyncTimer);sessionSyncTimer=null;
+  clearTimeout(mediaSyncTimer);mediaSyncTimer=null;
+  clearTimeout(exSyncTimer);exSyncTimer=null;
+  sessionPendingSnapshot=null;mediaPendingSnapshot=null;exPendingSnapshot=null;
   clearSession();
   try{localStorage.removeItem(LS_IMG_KEY);}catch(e){}
   profileImages=[];
@@ -1328,13 +1514,17 @@ function startOver(){
 
 /* lead gate: name + email before anything else */
 const leadOverlay=document.getElementById('lead-overlay');
-document.getElementById('cta-start').addEventListener('click',()=>{
+document.getElementById('cta-start').addEventListener('click',async()=>{
   if(session.started&&!session.demo&&session.messages.length>1){
     if(!confirm('Start fresh? This clears your current session and its star.'))return;
     startOver();
   }
   const p=session.profile||{};
-  if(p.name&&p.email){startRealSession(false);return;} // already gave them
+  if(p.name&&p.email){
+    try{await ensureSessionCapability();startRealSession(false);}
+    catch(e){toast('Could not secure this session yet. Please try again.');}
+    return;
+  }
   document.getElementById('lead-err').style.display='none';
   document.getElementById('l-name').value=p.name||'';
   document.getElementById('l-email').value=p.email||'';
@@ -1342,17 +1532,24 @@ document.getElementById('cta-start').addEventListener('click',()=>{
   document.getElementById('l-name').focus();
 });
 document.getElementById('btn-cancel-lead').addEventListener('click',()=>leadOverlay.classList.remove('show'));
-document.getElementById('btn-do-lead').addEventListener('click',()=>{
+document.getElementById('btn-do-lead').addEventListener('click',async e=>{
   const name=document.getElementById('l-name').value.trim();
   const email=document.getElementById('l-email').value.trim();
   const err=document.getElementById('lead-err');
   if(!name){err.textContent='Your name, so the star has one on it.';err.style.display='block';return;}
   if(!/.+@.+\..+/.test(email)){err.textContent='A real email, so the review can reach you.';err.style.display='block';return;}
   session.profile=Object.assign({name:'',email:'',linkedin:'',instagram:'',links:[],bio:''},session.profile,{name,email});
-  leadOverlay.classList.remove('show');
-  fetch(API_BASE+'/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({name,email,sid:ensureSid()})}).catch(()=>{});
-  startRealSession(false);
+  const button=e.currentTarget;button.disabled=true;
+  try{
+    await ensureSessionCapability();
+    const lead=await fetch(API_BASE+'/api/lead',{method:'POST',headers:writeHeaders(),
+      body:JSON.stringify({name,email,sid:ensureSid()})});
+    if(!lead.ok)throw new Error('lead '+lead.status);
+    leadOverlay.classList.remove('show');
+    startRealSession(false);
+  }catch(error){
+    err.textContent='Could not secure your session yet. Please try again.';err.style.display='block';
+  }finally{button.disabled=false;}
 });
 document.getElementById('l-email').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('btn-do-lead').click();});
 
@@ -1398,9 +1595,9 @@ document.getElementById('btn-save-details').addEventListener('click',()=>{
   p.links=document.getElementById('d-links').value.split('\n').map(s=>s.trim()).filter(Boolean);
   p.bio=document.getElementById('d-bio').value.trim();
   session.profile=p;
-  saveSession();
+  saveSession('profile_details',true);
   if(p.name&&p.email){
-    fetch(API_BASE+'/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
+    fetch(API_BASE+'/api/lead',{method:'POST',headers:writeHeaders(),
       body:JSON.stringify({name:p.name,email:p.email,linkedin:p.linkedin,instagram:p.instagram,links:p.links,bio:p.bio,sid:ensureSid()})}).catch(()=>{});
   }
   detailsOverlay.classList.remove('show');
@@ -1492,16 +1689,51 @@ function exercisesPayload(){
 }
 
 /* every mutation queues a background sync so Florian sees progress even if the star is never submitted */
-let exSyncTimer=null;
+function exerciseSnapshotBody(){
+  const p=session.profile||{};
+  return {sid:ensureSid(),eventId:syncEventId('exercise',++sessionSyncSeq),name:p.name||'',email:p.email||'',exercises:exercisesPayload(),files:boardFiles,tasteFiles:tasteFiles};
+}
+async function persistExerciseSnapshot(keepalive,force){
+  if(session.demo||!session.writeToken||!exPendingSnapshot)return false;
+  if(exSyncInFlight&&!force)return false;
+  const candidate=force&&exSyncInFlight
+    ?Object.assign({},exPendingSnapshot,{eventId:syncEventId('pagehide-exercise',++sessionSyncSeq)})
+    :exPendingSnapshot;
+  const body=JSON.stringify(candidate);
+  if(keepalive&&body.length>60000)return false;
+  if(!force){clearTimeout(exSyncTimer);exSyncTimer=null;exSyncInFlight=true;}
+  try{
+    const res=await fetch(API_BASE+'/api/exercises',{method:'POST',headers:writeHeaders(),body,keepalive:!!keepalive});
+    if(res.status===401&&!force)await ensureSessionCapability(true);
+    if(!res.ok)throw new Error('exercise sync '+res.status);
+    exSyncFailures=0;
+    if(!force&&exPendingSnapshot&&exPendingSnapshot.eventId===candidate.eventId)exPendingSnapshot=null;
+    return true;
+  }catch(error){
+    if(!force){
+      exSyncFailures++;
+      if(exSyncFailures<5){
+        exSyncTimer=setTimeout(()=>persistExerciseSnapshot(false,false),Math.min(15000,1500*exSyncFailures));
+      }else{
+        toast('Your latest exercise changes are not saved to the cloud yet. Keep this page open and try again.');
+      }
+    }
+    return false;
+  }finally{
+    if(!force){
+      exSyncInFlight=false;
+      if(exPendingSnapshot&&!exSyncTimer&&exSyncFailures<5){
+        exSyncTimer=setTimeout(()=>persistExerciseSnapshot(false,false),0);
+      }
+    }
+  }
+}
 function syncExercises(){
-  if(session.demo)return;
+  if(session.demo||!session.writeToken)return;
+  exPendingSnapshot=exerciseSnapshotBody();
+  exSyncFailures=0;
   clearTimeout(exSyncTimer);
-  exSyncTimer=setTimeout(()=>{
-    const p=session.profile||{};
-    fetch(API_BASE+'/api/exercises',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({sid:ensureSid(),name:p.name||'',email:p.email||'',exercises:exercisesPayload(),files:boardFiles,tasteFiles:tasteFiles})
-    }).catch(()=>{});
-  },900);
+  exSyncTimer=setTimeout(()=>persistExerciseSnapshot(false,false),900);
 }
 
 /* dock */
@@ -2146,7 +2378,7 @@ initDock();
 showState('state-landing');
 if(loadSession() && session.started && !session.demo){
   session.profile=Object.assign({name:'',email:'',linkedin:'',instagram:'',links:[],bio:''},session.profile||{});
-  if(session.star){migrateLegacyTaste();saveSession();}
+  if(session.star){migrateLegacyTaste();if(session.writeToken)saveSession();}
   const answers=session.messages.filter(m=>m.role==='user'&&m.content!=='__START__').length;
   document.getElementById('rc-count').textContent=answers;
   document.getElementById('resume-card').style.display='flex';
@@ -2154,7 +2386,12 @@ if(loadSession() && session.started && !session.demo){
   document.getElementById('cta-start').classList.add('btn-ghost');
   document.getElementById('cta-start').textContent='Start fresh instead';
 }
-document.getElementById('cta-resume').addEventListener('click',()=>startRealSession(true));
+document.getElementById('cta-resume').addEventListener('click',async e=>{
+  const button=e.currentTarget;button.disabled=true;
+  try{await ensureSessionCapability(true);startRealSession(true);}
+  catch(error){toast('Could not verify this saved session. Keep this browser open and try again.');}
+  finally{button.disabled=false;}
+});
 </script>
 </body>
 </html>
