@@ -1619,6 +1619,7 @@ document.getElementById('btn-save-details').addEventListener('click',()=>{
   toast('Saved. It all rides along with your star.');
 });
 document.getElementById('btn-start-over').addEventListener('click',()=>{
+  if(session.viewas){exitDemo();return;}
   if(confirm('Start over? This clears your current session.')){
     startOver();
   }
@@ -2071,10 +2072,20 @@ document.getElementById('btn-cancel-submit').addEventListener('click',()=>{
   submitOverlay.classList.remove('show');
 });
 document.getElementById('btn-do-submit').addEventListener('click',async ()=>{
+  const errEl=document.getElementById('submit-err');
+  if(session.viewas){
+    errEl.textContent='Read-only view. Nothing is sent from here.';
+    errEl.style.display='block';
+    return;
+  }
+  if(session.demo){
+    submitOverlay.classList.remove('show');
+    confirmOverlay.classList.add('show');
+    return;
+  }
   const name=document.getElementById('f-name').value.trim();
   const email=document.getElementById('f-email').value.trim();
   const brand=document.getElementById('f-brand').value.trim();
-  const errEl=document.getElementById('submit-err');
   if(!name||!email){
     errEl.textContent='Name and email are required.';
     errEl.style.display='block';
@@ -2314,6 +2325,7 @@ function stopDemoPlayback(){
 }
 
 function exitDemo(){
+  if(session&&session.viewas){location.replace(location.pathname);return;}
   stopDemoPlayback();
   session={messages:[],star:null,started:false,demo:false};
   document.getElementById('session-wrap').classList.remove('mobile-star-open');
@@ -2376,29 +2388,104 @@ document.getElementById('demo-exit').addEventListener('click',exitDemo);
 
 /* demo submit uses the same modal but never actually persists a real lead separately from marking demo */
 document.getElementById('btn-open-submit').addEventListener('click',()=>{
-  if(session.demo){
+  if(session.viewas){
+    document.getElementById('f-brand').value=(session.profile&&session.profile.name)||'';
+  }else if(session.demo){
     document.getElementById('f-brand').value='Dana Reyes Advisory';
   }
 });
 
 /* =========================================================================
+   VIEW AS CLIENT (Florian only) - open with #viewas=<sid>
+   Loads a client's live record through the admin endpoint and renders it on
+   the demo chassis: session.demo=true means saveSession, snapshots, media
+   sync, exercise sync, and lead submit are all no-ops, and no writeToken
+   exists. Nothing in this mode can touch the client's record, the KV, or
+   this browser's own saved session.
+   ========================================================================= */
+function viewAsSid(){
+  const m=(location.hash||'').match(/^#viewas=([A-Za-z0-9_-]{4,80})$/);
+  return m?m[1]:null;
+}
+async function startViewAs(sid){
+  let key=(sessionStorage.getItem('bt_viewas_key')||'').trim();
+  if(!key){
+    key=(window.prompt('Florian only. Paste the bt-api admin key to open this client view.')||'').trim();
+    if(!key){toast('View as client cancelled.');return;}
+  }
+  let rec=null;
+  try{
+    const r=await fetch(API_BASE+'/api/admin/session?sid='+encodeURIComponent(sid)+'&key='+encodeURIComponent(key),{cache:'no-store'});
+    if(r.status===404){sessionStorage.removeItem('bt_viewas_key');toast('Not found: wrong admin key or unknown session id.');return;}
+    if(!r.ok){toast('Could not load the client session ('+r.status+').');return;}
+    rec=await r.json();
+  }catch(err){toast('Network error loading the client session.');return;}
+  sessionStorage.setItem('bt_viewas_key',key);
+
+  stopDemoPlayback();
+  const msgs=(Array.isArray(rec.transcript)?rec.transcript:[])
+    .filter(m=>m&&typeof m.content==='string'&&m.content!=='__START__'&&(m.role==='user'||m.role==='assistant'))
+    .map(m=>({role:m.role,content:m.content}));
+  session={
+    sid:rec.sid||sid,
+    started:true,
+    demo:true,
+    viewas:true,
+    profile:Object.assign({name:'',email:'',linkedin:'',instagram:'',links:[],bio:''},rec.profile||{}),
+    messages:msgs,
+    star:rec.star||emptyStar(),
+    exercises:rec.exercises||undefined
+  };
+  migrateLegacyTaste();
+
+  const name=(session.profile.name||rec.name||sid).toString();
+  const banner=document.getElementById('demo-banner');
+  const long=banner.querySelector('.demo-long');
+  const short=banner.querySelector('.demo-short');
+  long.innerHTML='Viewing as <b></b>. Read-only, nothing saves or sends.';
+  long.querySelector('b').textContent=name;
+  short.innerHTML='Viewing: <b></b>';
+  short.querySelector('b').textContent=name;
+  document.getElementById('demo-exit').textContent='Close';
+  banner.style.display='flex';
+  document.getElementById('session-wrap').classList.add('has-banner');
+  document.getElementById('session-wrap').classList.remove('mobile-star-open');
+
+  showState('state-session');
+  chatScroll.innerHTML='';
+  buildStarSkeleton();
+  requestAnimationFrame(()=>fitStar(true));
+  ensureExercises();
+  renderExDock();
+  renderStarFull();
+  msgs.forEach(m=>appendMsg(m.role,m.content));
+  chatInput.disabled=true;
+  sendBtn.disabled=true;
+  chatInput.placeholder='Read-only view';
+}
+
+/* =========================================================================
    BOOT
    ========================================================================= */
 buildMiniStar();
-loadImages();
-loadBoardFiles();
-loadTasteFiles();
 initDock();
 showState('state-landing');
-if(loadSession() && session.started && !session.demo){
-  session.profile=Object.assign({name:'',email:'',linkedin:'',instagram:'',links:[],bio:''},session.profile||{});
-  if(session.star){migrateLegacyTaste();if(session.writeToken)saveSession();}
-  const answers=session.messages.filter(m=>m.role==='user'&&m.content!=='__START__').length;
-  document.getElementById('rc-count').textContent=answers;
-  document.getElementById('resume-card').style.display='flex';
-  document.getElementById('cta-start').classList.remove('btn-primary');
-  document.getElementById('cta-start').classList.add('btn-ghost');
-  document.getElementById('cta-start').textContent='Start fresh instead';
+if(viewAsSid()){
+  startViewAs(viewAsSid());
+}else{
+  loadImages();
+  loadBoardFiles();
+  loadTasteFiles();
+  if(loadSession() && session.started && !session.demo){
+    session.profile=Object.assign({name:'',email:'',linkedin:'',instagram:'',links:[],bio:''},session.profile||{});
+    if(session.star){migrateLegacyTaste();if(session.writeToken)saveSession();}
+    const answers=session.messages.filter(m=>m.role==='user'&&m.content!=='__START__').length;
+    document.getElementById('rc-count').textContent=answers;
+    document.getElementById('resume-card').style.display='flex';
+    document.getElementById('cta-start').classList.remove('btn-primary');
+    document.getElementById('cta-start').classList.add('btn-ghost');
+    document.getElementById('cta-start').textContent='Start fresh instead';
+  }
 }
 document.getElementById('cta-resume').addEventListener('click',async e=>{
   const button=e.currentTarget;button.disabled=true;
