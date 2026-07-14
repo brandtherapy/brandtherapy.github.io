@@ -1,0 +1,928 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+  <meta name="description" content="Your private Brand Therapy reveal is ready.">
+  <meta property="og:title" content="Brand Therapy.">
+  <meta property="og:description" content="Your private Brand Therapy reveal is ready.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Brand Therapy">
+  <meta property="og:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
+  <meta property="og:image:secure_url" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Brand Therapy">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brand Therapy.">
+  <meta name="twitter:description" content="Your private Brand Therapy reveal is ready.">
+  <meta name="twitter:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
+  <meta name="twitter:image:alt" content="Brand Therapy">
+  <title>Brand Therapy Reveal</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      --ink: #0c0c0f;
+      --paper: #efede7;
+      --muted: #aaa7a0;
+      --line: rgba(239, 237, 231, .18);
+      --accent: #c9c5ba;
+      --ease: cubic-bezier(.16, 1, .3, 1);
+    }
+    * { box-sizing: border-box; }
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    body { margin: 0; background: var(--ink); overflow-x: hidden; }
+    button { font: inherit; }
+    .scene {
+      min-height: 100svh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      position: relative;
+      display: grid;
+      align-items: center;
+      padding: clamp(76px, 10vh, 120px) clamp(24px, 7vw, 112px) clamp(62px, 8vh, 96px);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .scene.light { background: var(--paper); color: var(--ink); }
+    .scene.black { background: #070709; }
+    .inner { width: min(1120px, 100%); margin: 0 auto; }
+    .inner.narrow { width: min(820px, 100%); }
+    .kicker {
+      margin: 0 0 22px;
+      font-size: .72rem;
+      line-height: 1;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .framework-definition {
+      max-width: 38ch;
+      margin: -7px 0 22px;
+      font-size: clamp(.9rem, 1.25vw, 1.05rem);
+      line-height: 1.4;
+      color: var(--muted);
+    }
+    h1, h2, h3, p { margin: 0; }
+    .display {
+      max-width: 14ch;
+      font-size: clamp(3.3rem, 10vw, 9.6rem);
+      line-height: .88;
+      letter-spacing: -.065em;
+      font-weight: 500;
+    }
+    .statement {
+      max-width: 20ch;
+      font-size: clamp(2.35rem, 7vw, 7.3rem);
+      line-height: .95;
+      letter-spacing: -.052em;
+      font-weight: 500;
+    }
+    .body {
+      max-width: 48ch;
+      margin-top: 30px;
+      font-size: clamp(1rem, 1.6vw, 1.35rem);
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .light .body, .light .kicker, .light .framework-definition { color: #605f5a; }
+    .accent { color: var(--accent); }
+    .index {
+      position: absolute;
+      top: max(22px, env(safe-area-inset-top));
+      right: clamp(20px, 3vw, 42px);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      color: var(--muted);
+      z-index: 20;
+    }
+    .meter {
+      position: fixed;
+      z-index: 40;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 2px;
+      background: rgba(239, 237, 231, .08);
+    }
+    .meter span { display: block; width: 0; height: 100%; background: var(--paper); transition: width 420ms var(--ease); }
+    .wordfield { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 34px; max-width: 900px; }
+    .wordfield span { font-size: clamp(.88rem, 1.6vw, 1.15rem); color: var(--muted); }
+    .sliderline { display: grid; gap: 13px; margin-top: 36px; max-width: 720px; }
+    .sliderline div { display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid var(--line); padding-bottom: 11px; }
+    .sliderline strong { min-width: 92px; color: var(--paper); font-weight: 500; }
+    .sliderline span { color: var(--muted); }
+    .board-scene { padding: 0; background: #08080a; }
+    .board-stage {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .board-scene img {
+      width: 100%;
+      height: 100svh;
+      object-fit: contain;
+      display: block;
+    }
+    .board-actions {
+      position: absolute;
+      z-index: 30;
+      right: clamp(18px, 3vw, 42px);
+      bottom: max(20px, env(safe-area-inset-bottom));
+      display: flex;
+      align-items: stretch;
+      gap: 8px;
+    }
+    .board-action,
+    .variant-switch button {
+      min-height: 46px;
+      border: 1px solid rgba(239, 237, 231, .5);
+      border-radius: 0;
+      background: var(--ink);
+      color: var(--paper);
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+    .board-action {
+      padding: 12px 17px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .24);
+      font-size: .76rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .board-action:hover,
+    .board-action:focus-visible,
+    .variant-switch button:hover,
+    .variant-switch button:focus-visible,
+    .variant-switch button.is-active {
+      outline: none;
+      background: var(--paper);
+      color: var(--ink);
+      border-color: var(--paper);
+    }
+    .variant-switch {
+      display: flex;
+      padding: 3px;
+      border: 1px solid rgba(239, 237, 231, .5);
+      background: var(--ink);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .24);
+    }
+    .variant-switch button {
+      min-width: 54px;
+      min-height: 38px;
+      padding: 8px 12px;
+      border-color: transparent;
+      font-size: .7rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .chapter-toggle {
+      position: fixed;
+      z-index: 46;
+      left: clamp(14px, 2vw, 28px);
+      top: max(14px, env(safe-area-inset-top));
+      width: 44px;
+      height: 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      opacity: .34;
+      transition: opacity 200ms ease, visibility 0s linear;
+    }
+    .chapter-toggle span {
+      display: block;
+      width: 16px;
+      height: 1px;
+      background: var(--paper);
+      transition: transform 260ms var(--ease), opacity 160ms ease, background 200ms ease;
+    }
+    body.on-light .chapter-toggle span { background: #3f3e39; }
+    .chapter-toggle:hover,
+    .chapter-toggle:focus-visible { outline: none; opacity: 1; }
+    .chapter-toggle:focus-visible { outline: 1px solid var(--paper); outline-offset: 5px; }
+    body.nav-open .chapter-toggle { opacity: 1; }
+    body.nav-open .chapter-toggle span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+    body.nav-open .chapter-toggle span:nth-child(2) { opacity: 0; }
+    body.nav-open .chapter-toggle span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+    body.at-start .chapter-toggle {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 200ms ease, visibility 0s linear 200ms;
+    }
+    .chapter-nav {
+      position: fixed;
+      z-index: 45;
+      left: clamp(14px, 2vw, 28px);
+      top: calc(max(14px, env(safe-area-inset-top)) + 52px);
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      border: 1px solid rgba(239, 237, 231, .28);
+      background: var(--ink);
+      box-shadow: 0 12px 38px rgba(0, 0, 0, .28);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity 200ms ease, transform 320ms var(--ease), visibility 0s linear 200ms;
+    }
+    body.nav-open .chapter-nav {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: none;
+      transition: opacity 200ms ease, transform 320ms var(--ease), visibility 0s linear;
+    }
+    .chapter-nav button {
+      min-height: 44px;
+      padding: 9px 14px;
+      border: 0;
+      border-right: 1px solid rgba(239, 237, 231, .16);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      text-align: left;
+      transition: background 180ms ease, color 180ms ease;
+    }
+    .chapter-nav button:last-child { border-right: 0; }
+    .chapter-nav button:hover,
+    .chapter-nav button:focus-visible,
+    .chapter-nav button[aria-current="true"] {
+      outline: none;
+      background: var(--paper);
+      color: var(--ink);
+    }
+    .chapter-nav small {
+      display: block;
+      margin-bottom: 2px;
+      font-size: .58rem;
+      letter-spacing: .1em;
+      opacity: .62;
+    }
+    .chapter-nav span {
+      display: block;
+      font-size: .7rem;
+      letter-spacing: .04em;
+    }
+    body.ack-open .chapter-nav,
+    body.viewer-open .chapter-nav {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-10px);
+    }
+    body.ack-open .chapter-toggle,
+    body.viewer-open .chapter-toggle {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 200ms ease, visibility 0s linear 200ms;
+    }
+    .stylescape-viewer {
+      width: 100vw;
+      max-width: none;
+      height: 100dvh;
+      max-height: none;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: #070709;
+      color: var(--paper);
+      overflow: hidden;
+    }
+    .stylescape-viewer::backdrop { background: #070709; }
+    .viewer-toolbar {
+      position: absolute;
+      z-index: 4;
+      top: 0;
+      left: 0;
+      right: 0;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: max(10px, env(safe-area-inset-top)) clamp(14px, 3vw, 34px) 10px;
+      border-bottom: 1px solid var(--line);
+      background: #070709;
+    }
+    .viewer-title {
+      overflow: hidden;
+      font-size: .76rem;
+      letter-spacing: .1em;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .viewer-toolbar > div { min-width: 0; display: flex; align-items: center; gap: 14px; }
+    .viewer-variants .variant-switch { box-shadow: none; }
+    .viewer-close {
+      min-width: 46px;
+      min-height: 44px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      color: var(--paper);
+      cursor: pointer;
+    }
+    .viewer-close:hover,
+    .viewer-close:focus-visible { outline: none; border-color: var(--paper); background: var(--paper); color: var(--ink); }
+    .viewer-stage {
+      position: absolute;
+      inset: 64px 0 70px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      touch-action: none;
+      cursor: zoom-in;
+    }
+    .viewer-stage.is-zoomed { cursor: grab; }
+    .viewer-stage.is-dragging { cursor: grabbing; }
+    .viewer-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform-origin: center;
+      user-select: none;
+      will-change: transform;
+    }
+    .viewer-footer {
+      position: absolute;
+      z-index: 4;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 10px 18px max(10px, env(safe-area-inset-bottom));
+      border-top: 1px solid var(--line);
+      background: #070709;
+    }
+    .viewer-footer button {
+      min-width: 48px;
+      min-height: 44px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      color: var(--paper);
+      cursor: pointer;
+    }
+    .viewer-footer button:hover,
+    .viewer-footer button:focus-visible { outline: none; border-color: var(--paper); background: var(--paper); color: var(--ink); }
+    .direction-intro {
+      padding: 0;
+      background: var(--direction-bg, #101014);
+      align-items: stretch;
+    }
+    .direction-portrait {
+      position: absolute;
+      inset: 0 0 0 46%;
+      width: 54%;
+      height: 100%;
+      object-fit: cover;
+      object-position: var(--portrait-position, center);
+      display: block;
+    }
+    .direction-intro-copy {
+      position: relative;
+      z-index: 2;
+      width: 46%;
+      min-height: 100svh;
+      margin: 0;
+      padding: clamp(78px, 11vh, 124px) clamp(32px, 6vw, 94px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--direction-bg, #101014);
+      border-right: 1px solid color-mix(in srgb, var(--direction-accent) 46%, transparent);
+    }
+    .direction-intro .display { max-width: 7ch; }
+    .direction-intro .body { max-width: 30ch; color: color-mix(in srgb, var(--paper) 68%, transparent); }
+    .direction-number { color: var(--direction-accent); }
+    .direction-detail { background: #111115; }
+    .direction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(34px, 7vw, 110px); align-items: start; }
+    .fact { padding: 20px 0; border-top: 1px solid var(--line); }
+    .fact:first-child { border-top: 0; padding-top: 0; }
+    .fact b { display: block; margin-bottom: 8px; font-size: .72rem; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); }
+    .fact span { font-size: clamp(1.15rem, 2vw, 1.65rem); line-height: 1.28; }
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 38px; }
+    .compare > div { background: var(--ink); padding: clamp(24px, 4vw, 52px); }
+    .compare h3 { font-size: clamp(1.7rem, 3.4vw, 3rem); font-weight: 500; letter-spacing: -.04em; }
+    .compare p { margin-top: 26px; color: var(--muted); line-height: 1.55; }
+    .choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 40px; }
+    .choice {
+      min-height: 132px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--paper);
+      text-align: left;
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+    .choice:hover, .choice:focus-visible { outline: none; background: var(--paper); color: var(--ink); transform: translateY(-2px); }
+    .choice.is-selected { background: var(--paper); color: var(--ink); }
+    .choice small { display: block; margin-bottom: 18px; letter-spacing: .12em; text-transform: uppercase; opacity: .62; }
+    .choice strong { font-size: clamp(1rem, 1.8vw, 1.35rem); font-weight: 500; }
+    .selection { min-height: 1.5em; margin-top: 24px; color: var(--muted); }
+    .response-form {
+      width: min(760px, 100%);
+      margin-top: 30px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+    .response-form label {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+      font-size: .76rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--paper);
+    }
+    .response-form label span { color: var(--muted); }
+    .response-form textarea {
+      display: block;
+      width: 100%;
+      min-height: 126px;
+      resize: vertical;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      color: var(--paper);
+      font: inherit;
+      font-size: 1rem;
+      line-height: 1.5;
+      transition: border-color 180ms ease, background 180ms ease;
+    }
+    .response-form textarea::placeholder { color: #77756f; }
+    .response-form textarea:focus { outline: none; border-color: var(--paper); background: rgba(239, 237, 231, .035); }
+    .response-actions { display: grid; grid-template-columns: minmax(190px, 260px) 1fr; gap: 20px; align-items: center; margin-top: 14px; }
+    .response-submit {
+      min-height: 54px;
+      padding: 14px 20px;
+      border: 1px solid var(--paper);
+      border-radius: 0;
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease, opacity 180ms ease;
+    }
+    .response-submit:hover:not(:disabled), .response-submit:focus-visible { background: transparent; color: var(--paper); }
+    .response-submit:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
+    .response-submit:disabled { cursor: default; opacity: .34; }
+    .response-status { min-height: 1.5em; color: var(--muted); line-height: 1.45; }
+    .response-status[data-state="error"] { color: #f1b7ae; }
+    .response-status[data-state="success"] { color: var(--paper); }
+    .local-choice-note {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.45;
+    }
+    .likeness-note {
+      width: min(540px, calc(100vw - 40px));
+      padding: 0;
+      border: 1px solid rgba(12, 12, 15, .18);
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .36);
+    }
+    .likeness-note::backdrop { background: rgba(7, 7, 9, .82); }
+    .likeness-note-inner { padding: clamp(28px, 5vw, 48px); }
+    .likeness-note .kicker { color: #605f5a; }
+    .likeness-note h2 {
+      max-width: 10ch;
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      line-height: .94;
+      letter-spacing: -.055em;
+      font-weight: 500;
+    }
+    .likeness-note p:not(.kicker) {
+      max-width: 42ch;
+      margin-top: 24px;
+      color: #605f5a;
+      font-size: clamp(1rem, 1.7vw, 1.18rem);
+      line-height: 1.52;
+    }
+    .likeness-note button {
+      width: 100%;
+      margin-top: 32px;
+      padding: 16px 20px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease;
+    }
+    .likeness-note button:hover {
+      background: transparent;
+      color: var(--ink);
+    }
+    .likeness-note button:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+    body.ack-open, body.viewer-open { overflow: hidden; }
+    .hint { position: absolute; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translateX(-50%); color: var(--muted); font-size: .7rem; letter-spacing: .13em; text-transform: uppercase; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 800ms var(--ease), transform 800ms var(--ease); }
+    .scene.is-visible .reveal { opacity: 1; transform: none; }
+    .scene.is-visible .reveal.delay { transition-delay: 120ms; }
+    @media (max-width: 760px) {
+      .scene { padding-left: 24px; padding-right: 24px; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .display { font-size: clamp(3.2rem, 17vw, 5.6rem); }
+      .statement { font-size: clamp(2.55rem, 12vw, 4.7rem); }
+      .direction-grid, .compare, .choices { grid-template-columns: 1fr; }
+      .direction-detail { align-items: start; }
+      .direction-detail .inner { padding-top: 3vh; }
+      .fact { padding: 15px 0; }
+      .choices { margin-top: 28px; }
+      .choice { min-height: 92px; }
+      .response-actions { grid-template-columns: 1fr; gap: 12px; }
+      .response-submit { width: 100%; }
+      .board-scene img { object-fit: contain; }
+      .board-actions { right: 18px; left: 18px; justify-content: flex-end; }
+      .chapter-nav { width: calc(100vw - 48px); grid-template-columns: repeat(4, 1fr); }
+      .chapter-nav button { padding: 8px 7px; text-align: center; }
+      .chapter-nav small { margin-bottom: 1px; }
+      .chapter-nav span { font-size: .62rem; }
+      .viewer-toolbar { min-height: 58px; }
+      .viewer-stage { inset: 58px 0 70px; }
+      .viewer-title { display: none; }
+      .direction-portrait {
+        inset: 0 0 auto;
+        width: 100%;
+        height: 56%;
+        object-position: var(--portrait-position-mobile, var(--portrait-position, center));
+      }
+      .direction-intro-copy {
+        width: 100%;
+        min-height: 48svh;
+        margin-top: 52svh;
+        padding: 40px 24px 56px;
+        justify-content: flex-start;
+        border-top: 1px solid color-mix(in srgb, var(--direction-accent) 46%, transparent);
+        border-right: 0;
+      }
+      .direction-intro .display { font-size: clamp(3.8rem, 18vw, 6.2rem); }
+      .direction-intro .body { margin-top: 22px; }
+      #decision {
+        align-items: start;
+        overflow: visible;
+        padding-top: 84px;
+        padding-bottom: 84px;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body class="at-start">
+  <div class="meter" aria-hidden="true"><span></span></div>
+  <button class="chapter-toggle" type="button" aria-label="Open chapters" aria-controls="chapter-nav" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="chapter-nav" id="chapter-nav" aria-label="Reveal chapters">
+    <button type="button" data-chapter-target="intro" aria-current="true"><small>01</small><span>Start</span></button>
+    <button type="button" data-chapter-target="strategy"><small>02</small><span>Strategy</span></button>
+    <button type="button" data-chapter-target="directions"><small>03</small><span>Directions</span></button>
+    <button type="button" data-chapter-target="decide"><small>04</small><span>Choose</span></button>
+  </nav>
+  <main id="story"></main>
+  <dialog class="likeness-note" id="likeness-note" aria-labelledby="likeness-note-title" aria-describedby="likeness-note-body">
+    <div class="likeness-note-inner">
+      <p class="kicker">Before the visuals</p>
+      <h2 id="likeness-note-title"></h2>
+      <p id="likeness-note-body"></p>
+      <button type="button" id="likeness-note-confirm">Got it</button>
+    </div>
+  </dialog>
+  <dialog class="stylescape-viewer" id="stylescape-viewer" aria-labelledby="viewer-title">
+    <div class="viewer-toolbar">
+      <div>
+        <div class="viewer-title" id="viewer-title">Stylescape</div>
+        <div class="viewer-variants" aria-label="Color version"></div>
+      </div>
+      <button class="viewer-close" type="button" aria-label="Close zoom view">Close</button>
+    </div>
+    <div class="viewer-stage">
+      <img class="viewer-image" alt="" draggable="false">
+    </div>
+    <div class="viewer-footer" aria-label="Zoom controls">
+      <button type="button" data-viewer-zoom="out" aria-label="Zoom out">−</button>
+      <button type="button" data-viewer-zoom="reset" aria-label="Reset zoom">100%</button>
+      <button type="button" data-viewer-zoom="in" aria-label="Zoom in">+</button>
+    </div>
+  </dialog>
+  <script src="reveal-data.js?v=a8e2b45b117f"></script>
+  <script>
+    const d = window.REVEAL_DATA;
+    const story = document.getElementById('story');
+    const esc = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
+    const frameworkDefinitions = {
+      product: 'What you uniquely offer.',
+      people: 'Who you are here to serve.',
+      purpose: 'Why your work needs to exist.',
+      promise: 'What people can consistently expect from you.',
+      personality: 'How your brand should feel and behave.',
+      archetype: 'The timeless roles your brand naturally embodies.',
+      founderSpectrum: 'How closely your personal identity and business brand should overlap.',
+      brandSliders: 'The creative tensions that calibrate how your brand should feel.'
+    };
+    Object.assign(frameworkDefinitions, d.frameworkDefinitions || {});
+    const scene = (content, cls='black', chapter='intro') => `<section class="scene ${cls}" data-chapter="${esc(chapter)}"><div class="inner">${content}</div></section>`;
+    const line = (kicker, title, body='', cls='black', chapter='intro') => scene(`<p class="kicker reveal">${esc(kicker)}</p><h2 class="statement reveal delay">${esc(title)}</h2>${body ? `<p class="body reveal delay">${esc(body)}</p>` : ''}`, cls, chapter);
+    let html = '';
+    html += scene(`<h1 class="display reveal">Hello,<br>${esc(d.firstName)}.</h1><span class="hint">Scroll to begin</span>`);
+    html += line('Brand Therapy', 'Your Brand Therapy is ready.', `For your approval, before we build your Brand Therapy OS.`);
+    html += line('My read', `Here is what I see in you, ${d.firstName}.`);
+    d.strategy.forEach((item, i) => {
+      const nested = item.nested ? `<p class="body reveal delay">${esc(item.nested.label)}: ${esc(item.nested.value)}</p>` : '';
+      const definition = item.definition || frameworkDefinitions[item.label.toLowerCase()] || '';
+      html += scene(`<p class="kicker reveal">0${i + 1} / ${esc(item.label)}</p>${definition ? `<p class="framework-definition reveal">${esc(definition)}</p>` : ''}<h2 class="statement reveal delay">${esc(item.title)}</h2><p class="body reveal delay">${esc(item.body)}</p>${nested}`, i % 2 ? 'light' : 'black', 'strategy');
+    });
+    html += scene(`<p class="kicker reveal">Brand archetype</p><p class="framework-definition reveal">${esc(frameworkDefinitions.archetype)}</p><h2 class="statement reveal delay">${esc(d.archetype)}</h2><div class="wordfield reveal delay">${d.personalityWords.map(w => `<span>${esc(w)}</span>`).join('')}</div>`, 'black', 'strategy');
+    html += scene(`<p class="kicker reveal">Founder Spectrum</p><p class="framework-definition reveal">${esc(frameworkDefinitions.founderSpectrum)}</p><h2 class="statement reveal delay">${esc(d.spectrum.title)}</h2><p class="body reveal delay">${esc(d.spectrum.body)}</p>`, 'light', 'strategy');
+    html += scene(`<p class="kicker reveal">Brand Sliders</p><p class="framework-definition reveal">${esc(frameworkDefinitions.brandSliders)}</p><h2 class="statement reveal delay">${esc(d.sliders.title)}</h2><div class="sliderline reveal delay">${d.sliders.lines.map(row => `<div><strong>${esc(row[0])}</strong><span>${esc(row[1])}</span></div>`).join('')}</div>`, 'black', 'strategy');
+    html += line('The through-line', d.synthesis.title, d.synthesis.body, 'light', 'strategy');
+    html += line('Creative Direction', 'One strategy. Two possible worlds.', 'Both are true to you. They choose a different way to make that truth visible.', 'black', 'directions');
+    d.directions.forEach((dir, i) => {
+      const directionName = dir.name || `Direction ${i + 1}`;
+      const variants = Array.isArray(dir.variants) && dir.variants.length ? dir.variants : [{ id: 'default', label: '', image: dir.image }];
+      const activeVariant = variants.find(variant => variant.default) || variants[0];
+      const variantSwitch = variants.length > 1 ? `<div class="variant-switch" role="group" aria-label="${esc(directionName)} color version">${variants.map(variant => `<button type="button" data-variant-id="${esc(variant.id)}" data-variant-image="${esc(variant.image)}" aria-pressed="${variant.id === activeVariant.id}" class="${variant.id === activeVariant.id ? 'is-active' : ''}">${esc(variant.label)}</button>`).join('')}</div>` : '';
+      const portrait = dir.introImage ? `<img class="direction-portrait" src="${esc(dir.introImage)}" alt="${esc(dir.introAlt || `${directionName} portrait of ${d.firstName}`)}" draggable="false">` : '';
+      html += `<section class="scene direction-intro" data-chapter="directions" style="--direction-bg:${esc(dir.bg)};--direction-accent:${esc(dir.accent)};--portrait-position:${esc(dir.introPosition || 'center')};--portrait-position-mobile:${esc(dir.introPositionMobile || dir.introPosition || 'center')}">${portrait}<div class="direction-intro-copy"><p class="kicker reveal direction-number">Visual direction</p><h2 class="display reveal delay">${esc(directionName)}</h2><p class="body reveal delay">${esc(dir.premise)}</p></div></section>`;
+      html += `<section class="scene board-scene" data-chapter="directions" data-board-id="${esc(dir.id)}" data-board-name="${esc(directionName)}"><div class="board-stage"><img class="board-image" src="${esc(activeVariant.image)}" alt="${esc(directionName)} creative direction stylescape" draggable="false"><div class="board-actions">${variantSwitch}<button class="board-action" type="button" data-open-viewer>Zoom</button></div></div></section>`;
+      html += `<section class="scene direction-detail" data-chapter="directions"><div class="inner direction-grid"><div><p class="kicker reveal">Direction ${i + 1}</p><h2 class="statement reveal delay">${esc(dir.emotionalRead)}</h2></div><div class="reveal delay"><div class="fact"><b>Signature</b><span>${esc(dir.signature)}</span></div><div class="fact"><b>Outfit</b><span>${esc(dir.outfit)}</span></div><div class="fact"><b>Risk to guard</b><span>${esc(dir.risk)}</span></div></div></div></section>`;
+    });
+    html += `<section class="scene black" data-chapter="directions"><div class="inner"><p class="kicker reveal">The choice</p><h2 class="statement reveal delay">Which world makes you feel most seen?</h2><div class="compare reveal delay">${d.directions.map((dir, i) => `<div><h3>${esc(dir.name || `Direction ${i + 1}`)}</h3><p>${esc(dir.compare)}</p></div>`).join('')}</div></div></section>`;
+    const localPreviewNote = d.localOnly ? `<p class="local-choice-note">Private preview. The form is shown for review, but sending is not connected here.</p>` : '';
+    const responsePanel = `<form class="response-form reveal delay" novalidate><label for="response-note">Send with a note <span>Optional</span></label><textarea id="response-note" name="note" maxlength="2000" placeholder="Anything you want Florian to know."></textarea><div class="response-actions"><button class="response-submit" type="submit" disabled>Send response</button><p class="response-status" role="status" aria-live="polite"></p></div>${localPreviewNote}</form>`;
+    html += `<section class="scene black" data-chapter="decide" id="decision"><div class="inner"><p class="kicker reveal">Your decision</p><h2 class="statement reveal delay">Choose a direction, or revise completely.</h2><div class="choices reveal delay">${d.choices.map((c, i) => `<button type="button" class="choice" data-choice="${esc(c.id)}"><small>0${i + 1}</small><strong>${esc(c.label)}</strong></button>`).join('')}</div><p class="selection reveal delay" role="status"></p>${responsePanel}</div></section>`;
+    story.innerHTML = html;
+    const scenes = [...document.querySelectorAll('.scene')];
+    scenes.forEach((s, i) => s.insertAdjacentHTML('afterbegin', `<span class="index">${String(i + 1).padStart(2,'0')} / ${String(scenes.length).padStart(2,'0')}</span>`));
+    const meter = document.querySelector('.meter span');
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      const i = scenes.indexOf(entry.target);
+      meter.style.width = `${((i + 1) / scenes.length) * 100}%`;
+      const chapter = entry.target.dataset.chapter;
+      document.querySelectorAll('.chapter-nav button').forEach(button => button.setAttribute('aria-current', button.dataset.chapterTarget === chapter ? 'true' : 'false'));
+      const atStart = i === 0;
+      document.body.classList.toggle('at-start', atStart);
+      document.body.classList.toggle('on-light', entry.target.classList.contains('light'));
+      if (atStart) setNavOpen(false);
+    }), { threshold: .24 });
+    scenes.forEach(s => observer.observe(s));
+    const chapterToggle = document.querySelector('.chapter-toggle');
+    const setNavOpen = open => {
+      document.body.classList.toggle('nav-open', open);
+      chapterToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      chapterToggle.setAttribute('aria-label', open ? 'Close chapters' : 'Open chapters');
+    };
+    chapterToggle.addEventListener('click', () => setNavOpen(!document.body.classList.contains('nav-open')));
+    document.addEventListener('click', event => {
+      if (!document.body.classList.contains('nav-open')) return;
+      if (event.target.closest('.chapter-nav') || event.target.closest('.chapter-toggle')) return;
+      setNavOpen(false);
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && document.body.classList.contains('nav-open')) setNavOpen(false);
+    });
+    document.querySelectorAll('.chapter-nav button').forEach(button => button.addEventListener('click', () => {
+      setNavOpen(false);
+      document.querySelector(`.scene[data-chapter="${button.dataset.chapterTarget}"]`)?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    }));
+    document.querySelectorAll('.board-image').forEach(image => image.addEventListener('contextmenu', event => event.preventDefault()));
+    const viewer = document.getElementById('stylescape-viewer');
+    const viewerImage = viewer.querySelector('.viewer-image');
+    const viewerStage = viewer.querySelector('.viewer-stage');
+    const viewerTitle = viewer.querySelector('.viewer-title');
+    const viewerVariants = viewer.querySelector('.viewer-variants');
+    const viewerPercent = viewer.querySelector('[data-viewer-zoom="reset"]');
+    let activeBoard = null;
+    let zoom = { scale: 1, x: 0, y: 0 };
+    let drag = null;
+    const updateViewer = () => {
+      viewerImage.style.transform = `translate3d(${zoom.x}px, ${zoom.y}px, 0) scale(${zoom.scale})`;
+      viewerPercent.textContent = `${Math.round(zoom.scale * 100)}%`;
+      viewerStage.classList.toggle('is-zoomed', zoom.scale > 1);
+    };
+    const resetViewer = () => { zoom = { scale: 1, x: 0, y: 0 }; updateViewer(); };
+    const setViewerZoom = scale => {
+      zoom.scale = Math.max(1, Math.min(4, scale));
+      if (zoom.scale === 1) { zoom.x = 0; zoom.y = 0; }
+      updateViewer();
+    };
+    const setBoardVariant = (board, id) => {
+      const button = board.querySelector(`[data-variant-id="${id}"]`);
+      if (!button) return;
+      board.querySelector('.board-image').src = button.dataset.variantImage;
+      board.querySelectorAll('[data-variant-id]').forEach(item => {
+        const active = item.dataset.variantId === id;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      if (viewer.open && activeBoard === board) {
+        viewerImage.src = button.dataset.variantImage;
+        viewerVariants.querySelectorAll('[data-viewer-variant]').forEach(item => {
+          const active = item.dataset.viewerVariant === id;
+          item.classList.toggle('is-active', active);
+          item.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        resetViewer();
+      }
+    };
+    document.querySelectorAll('.board-scene').forEach(board => {
+      board.querySelectorAll('[data-variant-id]').forEach(button => button.addEventListener('click', () => setBoardVariant(board, button.dataset.variantId)));
+      board.querySelector('[data-open-viewer]').addEventListener('click', () => {
+        activeBoard = board;
+        const boardImage = board.querySelector('.board-image');
+        viewerTitle.textContent = board.dataset.boardName;
+        viewerImage.src = boardImage.getAttribute('src');
+        viewerImage.alt = boardImage.alt;
+        const variants = [...board.querySelectorAll('[data-variant-id]')];
+        viewerVariants.innerHTML = variants.length ? `<div class="variant-switch" role="group" aria-label="Color version">${variants.map(button => `<button type="button" data-viewer-variant="${esc(button.dataset.variantId)}" aria-pressed="${button.getAttribute('aria-pressed')}" class="${button.classList.contains('is-active') ? 'is-active' : ''}">${esc(button.textContent)}</button>`).join('')}</div>` : '';
+        viewerVariants.querySelectorAll('[data-viewer-variant]').forEach(button => button.addEventListener('click', () => setBoardVariant(board, button.dataset.viewerVariant)));
+        resetViewer();
+        document.body.classList.add('viewer-open');
+        viewer.showModal();
+        viewer.querySelector('.viewer-close').focus();
+      });
+    });
+    viewer.querySelector('.viewer-close').addEventListener('click', () => viewer.close());
+    viewer.addEventListener('close', () => { document.body.classList.remove('viewer-open'); activeBoard = null; resetViewer(); });
+    viewerImage.addEventListener('contextmenu', event => event.preventDefault());
+    viewer.querySelector('[data-viewer-zoom="in"]').addEventListener('click', () => setViewerZoom(zoom.scale + .25));
+    viewer.querySelector('[data-viewer-zoom="out"]').addEventListener('click', () => setViewerZoom(zoom.scale - .25));
+    viewerPercent.addEventListener('click', resetViewer);
+    viewerStage.addEventListener('dblclick', () => setViewerZoom(zoom.scale === 1 ? 2 : 1));
+    viewerStage.addEventListener('wheel', event => { event.preventDefault(); setViewerZoom(zoom.scale + (event.deltaY < 0 ? .25 : -.25)); }, { passive: false });
+    viewerStage.addEventListener('pointerdown', event => {
+      if (zoom.scale === 1) return;
+      drag = { pointerId: event.pointerId, startX: event.clientX, startY: event.clientY, x: zoom.x, y: zoom.y };
+      viewerStage.setPointerCapture(event.pointerId);
+      viewerStage.classList.add('is-dragging');
+    });
+    viewerStage.addEventListener('pointermove', event => {
+      if (!drag || drag.pointerId !== event.pointerId) return;
+      zoom.x = drag.x + event.clientX - drag.startX;
+      zoom.y = drag.y + event.clientY - drag.startY;
+      updateViewer();
+    });
+    const endDrag = event => {
+      if (!drag || drag.pointerId !== event.pointerId) return;
+      drag = null;
+      viewerStage.classList.remove('is-dragging');
+    };
+    viewerStage.addEventListener('pointerup', endDrag);
+    viewerStage.addEventListener('pointercancel', endDrag);
+    const likenessNote = document.getElementById('likeness-note');
+    const likenessConfirm = document.getElementById('likeness-note-confirm');
+    const notice = d.likenessNotice;
+    let likenessAcknowledged = sessionStorage.getItem(`brand-therapy-reveal:${d.slug}:likeness-notice`) === '1';
+    if (notice) {
+      document.getElementById('likeness-note-title').textContent = notice.title;
+      document.getElementById('likeness-note-body').textContent = notice.body;
+      likenessConfirm.textContent = notice.button || 'Got it';
+      likenessNote.addEventListener('cancel', event => event.preventDefault());
+      likenessConfirm.addEventListener('click', () => {
+        likenessAcknowledged = true;
+        sessionStorage.setItem(`brand-therapy-reveal:${d.slug}:likeness-notice`, '1');
+        document.body.classList.remove('ack-open');
+        likenessNote.close();
+      });
+      const firstDirection = document.querySelector('.direction-intro');
+      const noticeObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (!entry.isIntersecting || likenessAcknowledged || likenessNote.open) return;
+        document.body.classList.add('ack-open');
+        likenessNote.showModal();
+        likenessConfirm.focus();
+      }), { threshold: .55 });
+      if (firstDirection) noticeObserver.observe(firstDirection);
+    }
+    const selection = document.querySelector('.selection');
+    const responseForm = document.querySelector('.response-form');
+    const responseNote = document.getElementById('response-note');
+    const responseSubmit = document.querySelector('.response-submit');
+    const responseStatus = document.querySelector('.response-status');
+    const submissionsEnabled = !d.localOnly;
+    let selectedChoice = '';
+    let responseSent = false;
+    const setResponseStatus = (message='', state='') => {
+      responseStatus.textContent = message;
+      if (state) responseStatus.dataset.state = state;
+      else delete responseStatus.dataset.state;
+    };
+    const markResponseChanged = () => {
+      if (!responseSent) return;
+      responseSent = false;
+      responseSubmit.textContent = 'Send updated response';
+      responseSubmit.disabled = !selectedChoice || !submissionsEnabled;
+      setResponseStatus('Your change is only recorded when you send again.');
+    };
+    const applyChoice = id => {
+      selectedChoice = id;
+      document.querySelectorAll('.choice').forEach(button => button.classList.toggle('is-selected', button.dataset.choice === id));
+      const item = d.choices.find(c => c.id === id);
+      selection.textContent = item ? `Selected: ${item.label}` : '';
+      responseSubmit.disabled = !item || !submissionsEnabled;
+      if (item && !submissionsEnabled) setResponseStatus('Private preview only. Sending is not connected.');
+    };
+    const saved = localStorage.getItem(`brand-therapy-reveal:${d.slug}:choice`);
+    if (saved) applyChoice(saved);
+    document.querySelectorAll('.choice').forEach(button => button.addEventListener('click', () => {
+      localStorage.setItem(`brand-therapy-reveal:${d.slug}:choice`, button.dataset.choice);
+      markResponseChanged();
+      applyChoice(button.dataset.choice);
+    }));
+    responseNote.addEventListener('input', markResponseChanged);
+    responseForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (!submissionsEnabled) {
+        setResponseStatus('Private preview only. Sending is not connected.', 'error');
+        return;
+      }
+      const item = d.choices.find(choice => choice.id === selectedChoice);
+      if (!item) {
+        setResponseStatus('Choose one direction, or revise completely, before sending.', 'error');
+        document.querySelector('.choice')?.focus();
+        return;
+      }
+      responseSubmit.disabled = true;
+      responseSubmit.textContent = 'Sending...';
+      setResponseStatus('Recording your response.');
+      const submissionKey = `brand-therapy-reveal:${d.slug}:submission-id`;
+      let submissionId = localStorage.getItem(submissionKey);
+      if (!submissionId) {
+        submissionId = crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+        localStorage.setItem(submissionKey, submissionId);
+      }
+      try {
+        const response = await fetch(d.responseEndpoint || 'https://bt-api.florianp.com/api/reveal-response', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            slug: d.slug,
+            client: d.client,
+            version: d.version || '',
+            choice: item.id,
+            choiceLabel: item.label,
+            note: responseNote.value.trim(),
+            submissionId
+          })
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || !result.ok) throw new Error(result.error || 'request failed');
+        responseSent = true;
+        responseSubmit.textContent = 'Response sent';
+        setResponseStatus('Received. Florian will review your response before anything moves forward.', 'success');
+      } catch (error) {
+        responseSubmit.disabled = false;
+        responseSubmit.textContent = 'Try sending again';
+        setResponseStatus('That did not reach Florian. Your choice is still saved here. Try again.', 'error');
+      }
+    });
+    document.addEventListener('keydown', event => {
+      if (viewer.open) return;
+      if (event.target.closest?.('.response-form')) return;
+      const current = scenes.findIndex(s => {
+        const r = s.getBoundingClientRect();
+        return r.top <= innerHeight * .45 && r.bottom >= innerHeight * .45;
+      });
+      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') scenes[Math.min(scenes.length - 1, current + 1)]?.scrollIntoView();
+      if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') scenes[Math.max(0, current - 1)]?.scrollIntoView();
+    });
+  </script>
+</body>
+</html>
