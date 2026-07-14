@@ -2408,19 +2408,19 @@ function viewAsSid(){
   return m?m[1]:null;
 }
 async function startViewAs(sid){
-  let key=(sessionStorage.getItem('bt_viewas_key')||'').trim();
+  let key=(localStorage.getItem('bt_viewas_key')||sessionStorage.getItem('bt_viewas_key')||'').trim();
   if(!key){
-    key=(window.prompt('Florian only. Paste the bt-api admin key to open this client view.')||'').trim();
+    key=(window.prompt('Florian only. Paste the bt-api admin key once. It stays on this device.')||'').trim();
     if(!key){toast('View as client cancelled.');return;}
   }
   let rec=null;
   try{
     const r=await fetch(API_BASE+'/api/admin/session?sid='+encodeURIComponent(sid)+'&key='+encodeURIComponent(key),{cache:'no-store'});
-    if(r.status===404){sessionStorage.removeItem('bt_viewas_key');toast('Not found: wrong admin key or unknown session id.');return;}
+    if(r.status===404){localStorage.removeItem('bt_viewas_key');sessionStorage.removeItem('bt_viewas_key');toast('Not found: wrong admin key or unknown session id.');return;}
     if(!r.ok){toast('Could not load the client session ('+r.status+').');return;}
     rec=await r.json();
   }catch(err){toast('Network error loading the client session.');return;}
-  sessionStorage.setItem('bt_viewas_key',key);
+  try{localStorage.setItem('bt_viewas_key',key);}catch(e){sessionStorage.setItem('bt_viewas_key',key);}
 
   stopDemoPlayback();
   const msgs=(Array.isArray(rec.transcript)?rec.transcript:[])
