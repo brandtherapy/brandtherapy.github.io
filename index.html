@@ -1466,6 +1466,7 @@ function startRealSession(resumed){
     syncExercises();
     saveSession('resume_recovery',true);
     addTasteResumePrompt();
+    addWorkshopResumePrompt();
     return;
   }
 
@@ -1489,6 +1490,19 @@ function addTasteResumePrompt(){
   session.tasteResumeNoticeShown=true;
   appendMsg('assistant',content);
   saveSession('taste_resume_prompt',true);
+}
+
+function addWorkshopResumePrompt(){
+  if(session.workshopResumeNoticeShown)return;
+  if(!session.star||(session.star.completeness||0)<60)return;
+  if(tasteProgress(session.star)<3)return;
+  if(exDone()>=3)return;
+  setDockOpen(true,false);
+  const content='One more thing before this reaches Florian: three quick visual exercises are still open. Brand sliders, personality words, and your board. They live in the Workshop tools panel right above this chat, I opened it for you, about ten minutes all together. When they feel done, the Send to Florian for review button under your star is what actually delivers everything to him. On a phone, tap View star at the top to find it.';
+  session.messages.push({role:'assistant',content});
+  session.workshopResumeNoticeShown=true;
+  appendMsg('assistant',content);
+  saveSession('workshop_resume_prompt',true);
 }
 
 function startOver(){
