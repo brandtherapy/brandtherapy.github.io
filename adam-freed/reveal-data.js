@@ -2,7 +2,7 @@ window.REVEAL_DATA = {
   slug: "adam-freed",
   client: "Adam Freed",
   firstName: "Adam",
-  version: "2026-07-13-two-stylescapes",
+  version: "2026-07-14-strategy-and-comparison-fix",
   localOnly: location.protocol === "file:" || ["127.0.0.1", "localhost"].includes(location.hostname),
   responseEndpoint: "https://bt-api.florianp.com/api/reveal-response",
   likenessNotice: {
@@ -65,8 +65,8 @@ window.REVEAL_DATA = {
     ]
   },
   synthesis: {
-    title: "Two directions. One stylescape each.",
-    body: "The strategy stays fixed. What changes is how Data Integrity becomes visible, memorable, and recognizably yours."
+    title: "Adam closes this information gap by treating data as a shared source of truth, not a marketing tool.",
+    body: "Legal cannabis markets were supposed to make operations clearer, safer, and more accountable. Many operators are still trapped in half-matching reports and dashboards that do not agree."
   },
   directions: [
     {
@@ -78,10 +78,10 @@ window.REVEAL_DATA = {
       outfit: "Adam appears in the approved navy quarter-zip, dark flat cap, and glasses only when shown in context.",
       risk: "It must never become blue SaaS, a trendy dispensary campaign, a wellness shop, or generic green cannabis branding.",
       compare: "The daylight route. It combines the best of the previous two boards into one connected seed-to-sale operating company.",
-      introImage: "images/adam-freed-direction-1-portrait.png?v=headshot-tight-20260713",
-      introAlt: "Adam Freed facing forward in his approved navy quarter-zip and flat cap",
-      introPosition: "center 18%",
-      introPositionMobile: "center 16%",
+      introImage: "images/adam-freed-direction-1-intro.png?v=stylescape-crop-20260714b",
+      introAlt: "Direction 1 stylescape crop showing Adam in conversation with an operator",
+      introPosition: "center",
+      introPositionMobile: "center",
       image: "images/adam-freed-direction-1-stylescape.png?v=approved-20260713",
       heroPosition: "48% center",
       bg: "#1D303C",
@@ -96,10 +96,10 @@ window.REVEAL_DATA = {
       outfit: "Adam appears in the approved navy quarter-zip, dark flat cap, and glasses only when shown in context.",
       risk: "It must never become childish cable art, generic SaaS, code, dashboard theater, empty offices, or tech-bro whimsy.",
       compare: "The more graphic and playful route. Technical confidence comes from connection and dry wit, not darkness.",
-      introImage: "images/adam-freed-direction-2-portrait.png?v=headshot-tight-20260713",
-      introAlt: "Adam Freed in three-quarter view wearing his approved navy quarter-zip and flat cap",
-      introPosition: "center 18%",
-      introPositionMobile: "center 16%",
+      introImage: "images/adam-freed-direction-2-intro.png?v=stylescape-crop-20260714b",
+      introAlt: "Direction 2 stylescape crop showing Adam in conversation with the Connection Cable",
+      introPosition: "center",
+      introPositionMobile: "center",
       image: "images/adam-freed-direction-2-stylescape.png?v=approved-20260713",
       heroPosition: "50% center",
       bg: "#173A72",

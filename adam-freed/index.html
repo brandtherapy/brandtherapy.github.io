@@ -396,7 +396,7 @@
       background: var(--direction-bg, #101014);
       align-items: stretch;
     }
-    .direction-portrait {
+    .direction-visual {
       position: absolute;
       inset: 0 0 0 46%;
       width: 54%;
@@ -422,15 +422,21 @@
     .direction-intro .body { max-width: 30ch; color: color-mix(in srgb, var(--paper) 68%, transparent); }
     .direction-number { color: var(--direction-accent); }
     .direction-detail { background: #111115; }
-    .direction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(34px, 7vw, 110px); align-items: start; }
+    .direction-grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: clamp(34px, 7vw, 110px); align-items: center; }
+    .direction-detail .statement { max-width: 15ch; font-size: clamp(2.35rem, 3.8vw, 3.9rem); }
     .fact { padding: 20px 0; border-top: 1px solid var(--line); }
     .fact:first-child { border-top: 0; padding-top: 0; }
     .fact b { display: block; margin-bottom: 8px; font-size: .72rem; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); }
-    .fact span { font-size: clamp(1.15rem, 2vw, 1.65rem); line-height: 1.28; }
-    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 38px; }
-    .compare > div { background: var(--ink); padding: clamp(24px, 4vw, 52px); }
-    .compare h3 { font-size: clamp(1.7rem, 3.4vw, 3rem); font-weight: 500; letter-spacing: -.04em; }
-    .compare p { margin-top: 26px; color: var(--muted); line-height: 1.55; }
+    .fact span { font-size: clamp(1rem, 1.45vw, 1.25rem); line-height: 1.38; }
+    .comparison-scene { overflow: visible; background: #070709; }
+    .comparison-scene .inner { width: min(1380px, 100%); max-width: none; }
+    .comparison-scene .statement { max-width: 18ch; font-size: clamp(2.5rem, 4.5vw, 4.8rem); }
+    .stylescape-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 24px); margin-top: clamp(22px, 3vh, 34px); }
+    .stylescape-card { min-width: 0; margin: 0; border: 1px solid var(--line); background: #111115; }
+    .stylescape-card img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #070709; }
+    .stylescape-card figcaption { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px; align-items: start; padding: 16px 18px 18px; }
+    .stylescape-card h3 { font-size: clamp(1rem, 1.5vw, 1.3rem); font-weight: 500; letter-spacing: -.025em; }
+    .stylescape-card p { color: var(--muted); font-size: clamp(.78rem, .9vw, .92rem); line-height: 1.45; }
     .choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 40px; }
     .choice {
       min-height: 132px;
@@ -557,9 +563,10 @@
       .reveal { opacity: 1; transform: none; transition: none; }
       .display { font-size: clamp(3.2rem, 17vw, 5.6rem); }
       .statement { font-size: clamp(2.55rem, 12vw, 4.7rem); }
-      .direction-grid, .compare, .choices { grid-template-columns: 1fr; }
+      .direction-grid, .stylescape-compare, .choices { grid-template-columns: 1fr; }
       .direction-detail { align-items: start; }
       .direction-detail .inner { padding-top: 3vh; }
+      .direction-detail .statement { font-size: clamp(2rem, 9.5vw, 3.35rem); }
       .fact { padding: 15px 0; }
       .choices { margin-top: 28px; }
       .choice { min-height: 92px; }
@@ -574,7 +581,7 @@
       .viewer-toolbar { min-height: 58px; }
       .viewer-stage { inset: 58px 0 70px; }
       .viewer-title { display: none; }
-      .direction-portrait {
+      .direction-visual {
         inset: 0 0 auto;
         width: 100%;
         height: 56%;
@@ -591,6 +598,13 @@
       }
       .direction-intro .display { font-size: clamp(3.8rem, 18vw, 6.2rem); }
       .direction-intro .body { margin-top: 22px; }
+      .comparison-scene {
+        align-items: start;
+        padding-top: 84px;
+        padding-bottom: 84px;
+      }
+      .comparison-scene .statement { font-size: clamp(2.35rem, 10.5vw, 3.55rem); }
+      .stylescape-card figcaption { grid-template-columns: 1fr; gap: 8px; }
       #decision {
         align-items: start;
         overflow: visible;
@@ -641,7 +655,7 @@
       <button type="button" data-viewer-zoom="in" aria-label="Zoom in">+</button>
     </div>
   </dialog>
-  <script src="reveal-data.js?v=a8e2b45b117f"></script>
+  <script src="reveal-data.js?v=6838b64fd6b7"></script>
   <script>
     const d = window.REVEAL_DATA;
     const story = document.getElementById('story');
@@ -678,12 +692,18 @@
       const variants = Array.isArray(dir.variants) && dir.variants.length ? dir.variants : [{ id: 'default', label: '', image: dir.image }];
       const activeVariant = variants.find(variant => variant.default) || variants[0];
       const variantSwitch = variants.length > 1 ? `<div class="variant-switch" role="group" aria-label="${esc(directionName)} color version">${variants.map(variant => `<button type="button" data-variant-id="${esc(variant.id)}" data-variant-image="${esc(variant.image)}" aria-pressed="${variant.id === activeVariant.id}" class="${variant.id === activeVariant.id ? 'is-active' : ''}">${esc(variant.label)}</button>`).join('')}</div>` : '';
-      const portrait = dir.introImage ? `<img class="direction-portrait" src="${esc(dir.introImage)}" alt="${esc(dir.introAlt || `${directionName} portrait of ${d.firstName}`)}" draggable="false">` : '';
-      html += `<section class="scene direction-intro" data-chapter="directions" style="--direction-bg:${esc(dir.bg)};--direction-accent:${esc(dir.accent)};--portrait-position:${esc(dir.introPosition || 'center')};--portrait-position-mobile:${esc(dir.introPositionMobile || dir.introPosition || 'center')}">${portrait}<div class="direction-intro-copy"><p class="kicker reveal direction-number">Visual direction</p><h2 class="display reveal delay">${esc(directionName)}</h2><p class="body reveal delay">${esc(dir.premise)}</p></div></section>`;
+      const directionVisual = dir.introImage ? `<img class="direction-visual" src="${esc(dir.introImage)}" alt="${esc(dir.introAlt || `${directionName} visual introduction`)}" draggable="false">` : '';
+      html += `<section class="scene direction-intro" data-chapter="directions" style="--direction-bg:${esc(dir.bg)};--direction-accent:${esc(dir.accent)};--portrait-position:${esc(dir.introPosition || 'center')};--portrait-position-mobile:${esc(dir.introPositionMobile || dir.introPosition || 'center')}">${directionVisual}<div class="direction-intro-copy"><p class="kicker reveal direction-number">Visual direction</p><h2 class="display reveal delay">${esc(directionName)}</h2><p class="body reveal delay">${esc(dir.premise)}</p></div></section>`;
       html += `<section class="scene board-scene" data-chapter="directions" data-board-id="${esc(dir.id)}" data-board-name="${esc(directionName)}"><div class="board-stage"><img class="board-image" src="${esc(activeVariant.image)}" alt="${esc(directionName)} creative direction stylescape" draggable="false"><div class="board-actions">${variantSwitch}<button class="board-action" type="button" data-open-viewer>Zoom</button></div></div></section>`;
       html += `<section class="scene direction-detail" data-chapter="directions"><div class="inner direction-grid"><div><p class="kicker reveal">Direction ${i + 1}</p><h2 class="statement reveal delay">${esc(dir.emotionalRead)}</h2></div><div class="reveal delay"><div class="fact"><b>Signature</b><span>${esc(dir.signature)}</span></div><div class="fact"><b>Outfit</b><span>${esc(dir.outfit)}</span></div><div class="fact"><b>Risk to guard</b><span>${esc(dir.risk)}</span></div></div></div></section>`;
     });
-    html += `<section class="scene black" data-chapter="directions"><div class="inner"><p class="kicker reveal">The choice</p><h2 class="statement reveal delay">Which world makes you feel most seen?</h2><div class="compare reveal delay">${d.directions.map((dir, i) => `<div><h3>${esc(dir.name || `Direction ${i + 1}`)}</h3><p>${esc(dir.compare)}</p></div>`).join('')}</div></div></section>`;
+    const comparisonCards = d.directions.map((dir, i) => {
+      const directionName = dir.name || `Direction ${i + 1}`;
+      const variants = Array.isArray(dir.variants) && dir.variants.length ? dir.variants : [{ image: dir.image }];
+      const activeVariant = variants.find(variant => variant.default) || variants[0];
+      return `<figure class="stylescape-card"><img src="${esc(activeVariant.image)}" alt="${esc(directionName)} creative direction stylescape" data-compare-image-id="${esc(dir.id)}" draggable="false"><figcaption><h3>${esc(directionName)}</h3><p>${esc(dir.compare)}</p></figcaption></figure>`;
+    }).join('');
+    html += `<section class="scene comparison-scene" data-chapter="directions"><div class="inner"><p class="kicker reveal">The choice</p><h2 class="statement reveal delay">Which world makes you feel most seen?</h2><div class="stylescape-compare reveal delay">${comparisonCards}</div></div></section>`;
     const localPreviewNote = d.localOnly ? `<p class="local-choice-note">Private preview. The form is shown for review, but sending is not connected here.</p>` : '';
     const responsePanel = `<form class="response-form reveal delay" novalidate><label for="response-note">Send with a note <span>Optional</span></label><textarea id="response-note" name="note" maxlength="2000" placeholder="Anything you want Florian to know."></textarea><div class="response-actions"><button class="response-submit" type="submit" disabled>Send response</button><p class="response-status" role="status" aria-live="polite"></p></div>${localPreviewNote}</form>`;
     html += `<section class="scene black" data-chapter="decide" id="decision"><div class="inner"><p class="kicker reveal">Your decision</p><h2 class="statement reveal delay">Choose a direction, or revise completely.</h2><div class="choices reveal delay">${d.choices.map((c, i) => `<button type="button" class="choice" data-choice="${esc(c.id)}"><small>0${i + 1}</small><strong>${esc(c.label)}</strong></button>`).join('')}</div><p class="selection reveal delay" role="status"></p>${responsePanel}</div></section>`;
@@ -748,6 +768,7 @@
       const button = board.querySelector(`[data-variant-id="${id}"]`);
       if (!button) return;
       board.querySelector('.board-image').src = button.dataset.variantImage;
+      document.querySelector(`[data-compare-image-id="${board.dataset.boardId}"]`)?.setAttribute('src', button.dataset.variantImage);
       board.querySelectorAll('[data-variant-id]').forEach(item => {
         const active = item.dataset.variantId === id;
         item.classList.toggle('is-active', active);
