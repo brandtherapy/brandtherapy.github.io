@@ -1,0 +1,309 @@
+{
+  "schema_version": "1.1.0",
+  "component_id": "brand-therapy-archetype-chart",
+  "rights_status": "internal_only",
+  "runtime_mode": "local_preview_only",
+  "master_runtime_allowed": false,
+  "display_order": [
+    "outlaw",
+    "magician",
+    "hero",
+    "lover",
+    "jester",
+    "friend",
+    "caregiver",
+    "ruler",
+    "creator",
+    "innocent",
+    "sage",
+    "explorer"
+  ],
+  "source_extraction_order": [
+    "outlaw",
+    "magician",
+    "hero",
+    "innocent",
+    "sage",
+    "explorer",
+    "caregiver",
+    "ruler",
+    "creator",
+    "lover",
+    "jester",
+    "friend"
+  ],
+  "source": {
+    "intake_path": "temporary/untitled folder 2/Brand Personality Archetype.svg",
+    "design_ssot_path": "marketing/brand-assets/brand-therapy/archetypes/source/Brand Personality Archetype.svg",
+    "sha256": "81d3137da7e02d9f69c67b7eb785ebedb3f54fc5ddbb6d0844a376a6f55bc8d7",
+    "bytes": 21505646,
+    "width": 1920,
+    "height": 1920,
+    "embedded_image_count": 24
+  },
+  "runtime": {
+    "base_path": "marketing/brand-assets/brand-therapy/archetypes/runtime",
+    "format": "webp",
+    "width": 512,
+    "height": 512,
+    "quality": 80,
+    "encoder": "Pillow 12.2.0 WebP method 6",
+    "individual_byte_budget": 60000,
+    "total_byte_budget": 900000,
+    "total_bytes": 631358
+  },
+  "archetypes": [
+    {
+      "id": "outlaw",
+      "source_order": 0,
+      "derivatives": {
+        "with_background": {
+          "source_image_id": "image0_1_94",
+          "source_sha256": "57dcc39eef7b00d9b278c6b898fdb9963704e496592141ef3b394c7b1fc77594",
+          "file": "outlaw-with-background.webp",
+          "sha256": "7701f523409b6b9761916f339d6b516b32ee0018b508e845bb908986188ff975",
+          "bytes": 18546
+        },
+        "transparent": {
+          "source_image_id": "image1_1_94",
+          "source_sha256": "65d352077b3c591d5e4d1fac0e0e298bacb4ca88183030cc7d67a9f1c03b31ef",
+          "file": "outlaw-transparent.webp",
+          "sha256": "998159af976ec309d4498a92789cd9f32dda21d820df51d5a5c35adc8344ff6d",
+          "bytes": 28038
+        }
+      },
+      "display_order": 0
+    },
+    {
+      "id": "magician",
+      "source_order": 1,
+      "derivatives": {
+        "with_background": {
+          "source_image_id": "image2_1_94",
+          "source_sha256": "4857fdef47361d9a38cffd4ff944850ba541e337102b02d0545163153224c700",
+          "file": "magician-with-background.webp",
+          "sha256": "ae8b2566e316a126ae92ea32bd3619eb08ce16f5fc802d870a5c037c1ec6a96a",
+          "bytes": 21862
+        },
+        "transparent": {
+          "source_image_id": "image3_1_94",
+          "source_sha256": "c54e22c1e909c5046e47d964e5c27febf5a16ea17cbca56ef96c4610e3b7ce98",
+          "file": "magician-transparent.webp",
+          "sha256": "3e2c575ca387c243d38bba0fbe93a8dad0ffabc8caa1a853c749841fb29f9da9",
+          "bytes": 37440
+        }
+      },
+      "display_order": 1
+    },
+    {
+      "id": "hero",
+      "source_order": 2,
+      "derivatives": {
+        "with_background": {
+          "source_image_id": "image4_1_94",
+          "source_sha256": "bc6756b36f6f677640c35ba5d5a18a255e71824d13c6bc5458e31ab97a7987e9",
+          "file": "hero-with-background.webp",
+          "sha256": "f5f59bd50ee898f33244ce0a3708af1c648fe03b9f53f2b73dc3cb97a32d3508",
+          "bytes": 27478
+        },
+        "transparent": {
+          "source_image_id": "image5_1_94",
+          "source_sha256": "3828e089258f2942a1d3e6c62cda90454556cf42d9506d072bf46e6a576c5676",
+          "file": "hero-transparent.webp",
+          "sha256": "0016d6de011de55e37400e0082acd9cb3fa6ba588a15164b4099bf8e7d73b586",
+          "bytes": 36552
+        }
+      },
+      "display_order": 2
+    },
+    {
+      "id": "lover",
+      "source_order": 9,
+      "derivatives": {
+        "with_background": {
+          "source_image_id": "image18_1_94",
+          "source_sha256": "b52b24f14ebf7452525ec3d9cbe1f956c0ed7d808b761b685836386c1c738a14",
+          "file": "lover-with-background.webp",
+          "sha256": "9b11dec5d31a4458fdc506bbc78d238930b52e262e03d7fe42a4ee2a4bffb2bb",
+          "bytes": 14340
+        },
+        "transparent": {
+          "source_image_id": "image19_1_94",
+          "source_sha256": "39de1da3da05648fde4e9642f4f9a8945837d53cd9db270b63810915636d0e90",
+          "file": "lover-transparent.webp",
+          "sha256": "bcf03d082fec03c1443a12a4696a41a2c8d7bd5103685b3b976d7a15221fc031",
+          "bytes": 23612
+        }
+      },
+      "display_order": 3
+    },
+    {
+      "id": "jester",
+      "source_order": 10,
+      "derivatives": {
+        "with_background": {
+          "source_image_id": "image20_1_94",
+          "source_sha256": "929ecd431cc637930e53dcd4ca085cf820ae9cbe082f1576462fb0b26549623c",
+          "file": "jester-with-background.webp",
+          "sha256": "ff1427213562204d781e8f2fef8ecff4d46d1c167c86c547ec3879d88e3cd037",
+          "bytes": 22438
+        },
+        "transparent": {
+          "source_image_id": "image21_1_94",
+          "source_sha256": "79c7388904d9e2889b3121c7d9f17b724bfc685ed8bd0fc6660d37e87d610b13",
+          "file": "jester-transparent.webp",
+          "sha256": "d96b060d21112a34ea5af792049eb0772be3bc28642838aed4d46064c465f6fc",
+          "bytes": 26008
+        }
+      },
+      "display_order": 4
+    },
+    {
+      "id": "friend",
+      "source_order": 11,
+      "derivatives": {
+        "with_background": {
+          "source_image_id": "image22_1_94",
+          "source_sha256": "1a97df2509369376ba4f11422bd69aaa492ee75694ea3a72ab2f7f645768e964",
+          "file": "friend-with-background.webp",
+          "sha256": "abd0493b55c4288590f186e8c1b4d2d050ec23ffb9a7ba75383d7140c8c32f25",
+          "bytes": 17106
+        },
+        "transparent": {
+          "source_image_id": "image23_1_94",
+          "source_sha256": "933868f4bd952e0194d60f5e0239b364e22b6f59276a137000932a9d9f0151ef",
+          "file": "friend-transparent.webp",
+          "sha256": "12f27485684453826ab16619a177a982a013b772f9d05f0badddd66bf3e61a06",
+          "bytes": 29742
+        }
+      },
+      "display_order": 5
+    },
+    {
+      "id": "caregiver",
+      "source_order": 6,
+      "derivatives": {
+        "with_background": {
+          "source_image_id": "image12_1_94",
+          "source_sha256": "8abe303fddd98c21dafebb23561fc8290c86f29b6cb3465751b36ca993362875",
+          "file": "caregiver-with-background.webp",
+          "sha256": "8f6a824572401c9cdfaea3046630c0267989c39f1752495eb4439804176605f6",
+          "bytes": 21748
+        },
+        "transparent": {
+          "source_image_id": "image13_1_94",
+          "source_sha256": "78978b61d3f7cdd7f399538a949d1051f4981709e201fe78625d794b5353e89a",
+          "file": "caregiver-transparent.webp",
+          "sha256": "c3a63f88a2b8d492dec607fb7388198ffcd1f50b62cce478588cb2948ddc1ba2",
+          "bytes": 30228
+        }
+      },
+      "display_order": 6
+    },
+    {
+      "id": "ruler",
+      "source_order": 7,
+      "derivatives": {
+        "with_background": {
+          "source_image_id": "image14_1_94",
+          "source_sha256": "96ac4482a7dc6a28e8b84111562524e272b7e504f32c80bdafc6b5f473ace560",
+          "file": "ruler-with-background.webp",
+          "sha256": "9ac718f9843abce23099c15960c58ff96b6606cb5877b21107d6250749fe48e7",
+          "bytes": 25080
+        },
+        "transparent": {
+          "source_image_id": "image15_1_94",
+          "source_sha256": "ef49cee1b3935859cda9193d14efcf316e45187f8d93cc35cd68ced19077887d",
+          "file": "ruler-transparent.webp",
+          "sha256": "8d19b9abb1b64b3e4b7f807bdc649a67efdeb1f988ddfc9df49ad11fc61723ec",
+          "bytes": 33266
+        }
+      },
+      "display_order": 7
+    },
+    {
+      "id": "creator",
+      "source_order": 8,
+      "derivatives": {
+        "with_background": {
+          "source_image_id": "image16_1_94",
+          "source_sha256": "a1adb219954b3ce02ad292a8c08c524f53c819ebeffd458fba0de4c5e7aab655",
+          "file": "creator-with-background.webp",
+          "sha256": "36ec22e537a9953c288f3c541c2d63cb3fa564ca067ac4c38dc293307d8877a7",
+          "bytes": 21228
+        },
+        "transparent": {
+          "source_image_id": "image17_1_94",
+          "source_sha256": "4d7cd932e59517cc182dc6022e77dc3f1adf94615ecfaca873cfafc62a227d1f",
+          "file": "creator-transparent.webp",
+          "sha256": "cbc8eaf14c056f370a2b3e9194dc6d0d6ce1943b6b97e375e42f97d109c59f39",
+          "bytes": 21256
+        }
+      },
+      "display_order": 8
+    },
+    {
+      "id": "innocent",
+      "source_order": 3,
+      "derivatives": {
+        "with_background": {
+          "source_image_id": "image6_1_94",
+          "source_sha256": "9b534a70869519d9fed683d357ebb818c66cf162e718db79a0e75743d3337487",
+          "file": "innocent-with-background.webp",
+          "sha256": "bbe5a53e6003b4510dd0dc0553b89f6e1b5f380d121de2d16f37212a732b329a",
+          "bytes": 25614
+        },
+        "transparent": {
+          "source_image_id": "image7_1_94",
+          "source_sha256": "9ee19ad76c2cbf7186d30fa48dc4b97bd56270fb380c6020f9e1ac5138abb58f",
+          "file": "innocent-transparent.webp",
+          "sha256": "6dba1aea2698a782ceea08eb7202bd49069c4a7a8ed7b4f0a5278e336c549bc1",
+          "bytes": 41602
+        }
+      },
+      "display_order": 9
+    },
+    {
+      "id": "sage",
+      "source_order": 4,
+      "derivatives": {
+        "with_background": {
+          "source_image_id": "image8_1_94",
+          "source_sha256": "94ebcd138f95229792c5da22ff7ae94178431295191599977d29c93bc9db343c",
+          "file": "sage-with-background.webp",
+          "sha256": "1a4c5a7e5228931abdb7ed408efbca610ad5805a5eacd45f23f0822c2d1781c6",
+          "bytes": 17516
+        },
+        "transparent": {
+          "source_image_id": "image9_1_94",
+          "source_sha256": "ccfbe1b9b7845c89d92f248285f80c02ee50e4fa562ab21f2f1fd6af20035378",
+          "file": "sage-transparent.webp",
+          "sha256": "b9ecf81cc253aaefcc88359945ba6db217e95681ce911e3088c0e068db86f960",
+          "bytes": 33622
+        }
+      },
+      "display_order": 10
+    },
+    {
+      "id": "explorer",
+      "source_order": 5,
+      "derivatives": {
+        "with_background": {
+          "source_image_id": "image10_1_94",
+          "source_sha256": "6b43727f4de615e8eba4bc4715e3c555035289b3481312984b46bcaf17b4c03d",
+          "file": "explorer-with-background.webp",
+          "sha256": "e2969ea7ec39800e0648d547d7b81076804928ef792ee02727c4344fd9f6b0df",
+          "bytes": 24732
+        },
+        "transparent": {
+          "source_image_id": "image11_1_94",
+          "source_sha256": "52f7e9d4b562095e45a6ba92d43ed8b7f293c9066d1ac556a7ab7352d270554c",
+          "file": "explorer-transparent.webp",
+          "sha256": "7c51e0d489680991a0b9f1d09c0d2db48648490986ab6546a077beb5ea839fc0",
+          "bytes": 32304
+        }
+      },
+      "display_order": 11
+    }
+  ]
+}
