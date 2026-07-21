@@ -146,6 +146,11 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 .msg.assistant{align-self:flex-start;background:var(--light);color:var(--text);border-left:2px solid var(--accent)}
 .msg.user{align-self:flex-end;background:var(--accent);color:var(--white)}
 .msg.error{align-self:center;background:var(--white);border:1px solid var(--border);color:var(--muted);font-size:12.5px;text-align:center;max-width:100%}
+.msg.florian{align-self:flex-start;background:var(--white);color:var(--text);border:1.5px solid var(--accent)}
+.msg.florian .florian-tag{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
+.msg.florian p{margin:0 0 9px}
+.msg.florian p:last-child{margin-bottom:0}
+.msg.florian strong{font-weight:600}
 .msg.assistant p{margin:0 0 9px}
 .msg.assistant p:last-child{margin-bottom:0}
 .msg.assistant strong{font-weight:600}
@@ -1055,6 +1060,7 @@ async function ensureSessionCapability(force){
   const data=await res.json();
   session.sid=data.sid;
   session.writeToken=data.writeToken;
+  if(data.coachFeedback&&data.coachFeedback.message)pendingCoachFeedback=data.coachFeedback;
   try{localStorage.setItem(LS_KEY,JSON.stringify(session));}catch(e){}
   return true;
 }
@@ -1070,7 +1076,7 @@ function syncEventId(prefix,seq){
   return prefix+'-'+Date.now().toString(36)+'-'+seq.toString(36)+'-'+Math.random().toString(36).slice(2,8);
 }
 function sessionSnapshotBody(reason){
-  const messageReasons=new Set(['session_started','taste_resume_prompt','user_message','assistant_response','resume_recovery']);
+  const messageReasons=new Set(['session_started','taste_resume_prompt','user_message','assistant_response','resume_recovery','coach_feedback']);
   const recentMessages=(session.messages||[]).slice(-2);
   return {
     sid:ensureSid(),
@@ -1555,6 +1561,7 @@ function appendMsg(role,content){
   const d=document.createElement('div');
   d.className='msg '+role;
   if(role==='assistant'){d.innerHTML=renderRich(content);}
+  else if(role==='florian'){d.innerHTML='<div class="florian-tag">Florian</div>'+renderRich(content);}
   else{d.textContent=content;}
   chatScroll.appendChild(d);
   chatScroll.scrollTop=chatScroll.scrollHeight;
@@ -1820,6 +1827,7 @@ function startRealSession(resumed){
     saveSession('resume_recovery',true);
     addTasteResumePrompt();
     addWorkshopResumePrompt();
+    applyCoachFeedback();
     return;
   }
 
@@ -1830,6 +1838,18 @@ function startRealSession(resumed){
   session.started=true;
   saveSession('session_started',true);
   doSendTurn(session.messages);
+}
+
+/* T-348: Florian's human feedback. Served only after session verification;
+   spliced into the persisted transcript exactly once per feedback id. */
+let pendingCoachFeedback=null;
+function applyCoachFeedback(){
+  const fb=pendingCoachFeedback;
+  if(!fb||!fb.message||session.coachFeedbackSeenId===fb.id)return;
+  session.messages.push({role:'florian',content:fb.message});
+  session.coachFeedbackSeenId=fb.id;
+  appendMsg('florian',fb.message);
+  saveSession('coach_feedback',true);
 }
 
 function addTasteResumePrompt(){
@@ -2910,20 +2930,44 @@ async function startViewAs(sid){
     let r=await load(key);
     if(r.status===404&&!prompted){
       sessionStorage.removeItem('bt_viewas_key');
+      localStorage.removeItem('bt_viewas_key');
       const replacement=(window.prompt('The saved admin key was not accepted. Paste the current key, or cancel if the session id may be wrong.')||'').trim();
       prompted=true;
       if(replacement&&replacement!==key){key=replacement;r=await load(key);}
     }
-    if(r.status===404){sessionStorage.removeItem('bt_viewas_key');toast('Not found: wrong admin key or unknown session id.');return;}
+    if(r.status===404){sessionStorage.removeItem('bt_viewas_key');localStorage.removeItem('bt_viewas_key');toast('Not found: wrong admin key or unknown session id.');return;}
     if(!r.ok){toast('Could not load the client session ('+r.status+').');return;}
     rec=await r.json();
   }catch(err){toast('Network error loading the client session.');return;}
-  try{sessionStorage.setItem('bt_viewas_key',key);}catch(e){}
+  try{sessionStorage.setItem('bt_viewas_key',key);localStorage.setItem('bt_viewas_key',key);}catch(e){}
 
   stopDemoPlayback();
   const msgs=(Array.isArray(rec.transcript)?rec.transcript:[])
-    .filter(m=>m&&typeof m.content==='string'&&m.content!=='__START__'&&(m.role==='user'||m.role==='assistant'))
+    .filter(m=>m&&typeof m.content==='string'&&m.content!=='__START__'&&(m.role==='user'||m.role==='assistant'||m.role==='florian'))
     .map(m=>({role:m.role,content:m.content}));
+  // Pending Florian review (own KV key) shows as if the client just resumed.
+  const fb=rec.coachFeedback;
+  if(fb&&fb.message&&!msgs.some(m=>m.role==='florian'&&m.content===fb.message)){
+    msgs.push({role:'florian',content:fb.message});
+  }
+  let star=rec.star||emptyStar();
+  if(fb&&fb.edgeDirectives){
+    star=JSON.parse(JSON.stringify(star));
+    const edges=star.edges||(star.edges={});
+    let touched=false;
+    ['product','people','purpose','promise','personality'].forEach(name=>{
+      const d=fb.edgeDirectives[name];
+      if(!d||(d.action!=='reset_confidence'&&d.action!=='restart'))return;
+      const edge=edges[name]&&typeof edges[name]==='object'?edges[name]:{};
+      const target=Number(d.targetFilled);
+      if(Number.isFinite(target)&&Number(edge.filled||0)>target){edge.filled=target;edges[name]=edge;touched=true;}
+    });
+    if(touched){
+      const filled=['product','people','purpose','promise','personality'].map(n=>Number((edges[n]&&edges[n].filled)||0));
+      star.completeness=Math.round((filled.reduce((a,b)=>a+b,0)/5)*10);
+      star.ready_for_review=false;
+    }
+  }
   session={
     sid:rec.sid||sid,
     started:true,
@@ -2931,8 +2975,9 @@ async function startViewAs(sid){
     viewas:true,
     profile:Object.assign({name:'',email:'',linkedin:'',instagram:'',links:[],bio:''},rec.profile||{}),
     messages:msgs,
-    star:rec.star||emptyStar(),
-    exercises:rec.exercises||undefined
+    star:star,
+    exercises:rec.exercises||undefined,
+    coachFeedbackSeenId:fb&&fb.id?fb.id:undefined
   };
   migrateLegacyTaste();
 
