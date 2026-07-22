@@ -1,0 +1,300 @@
+/* Michael Couper Client Core packaging overlay.
+   Shared shell stays brand-neutral. This file maps the OS chrome to Counterpoint. */
+
+:root {
+  --ink: #17171a;
+  --ink-soft: #1e1d2b;
+  --muted: #5c5f68;
+  --quiet: #8a8e98;
+  --line: rgba(23, 23, 26, 0.14);
+  --line-strong: rgba(23, 23, 26, 0.34);
+  --paper: #e9e4d8;
+  --surface: #f3efe6;
+  --panel: #ddd7c9;
+  --panel-strong: #d0c9b8;
+  --accent: #6e4cff;
+  --accent-strong: #5a3ae0;
+  --accent-soft: rgba(110, 76, 255, 0.12);
+  --inverse: #17171a;
+  --inverse-text: #e9e4d8;
+  --inverse-muted: #b8bcc6;
+  --carbon: #17171a;
+  --ink-violet: #1e1d2b;
+  --bone: #e9e4d8;
+  --seam-violet: #6e4cff;
+  --oxidized-silver: #b8bcc6;
+  --sidebar-width: 18rem;
+  --content-width: 78rem;
+  font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background:
+    linear-gradient(rgba(23, 23, 26, 0.03) 1px, transparent 1px),
+    var(--paper);
+  background-size: 100% 3.5rem;
+}
+
+h1,
+h2,
+h3,
+.section-headline h2,
+.display-sample,
+.product-lockup strong,
+.nav-section-code,
+.page-header h1,
+.not-in-use-message h2,
+.optional-gate h2 {
+  font-family: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.sidebar {
+  color: var(--inverse-text);
+  border-right: 0;
+  background: var(--carbon);
+}
+
+.sidebar-header {
+  min-height: 7.5rem;
+  border-color: rgba(233, 228, 216, 0.14);
+}
+
+.product-lockup {
+  gap: 0.2rem;
+}
+
+.product-lockup strong {
+  color: var(--inverse-text);
+  font-size: 1.28rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+.product-lockup span,
+.sidebar .mobile-context span {
+  color: var(--inverse-muted);
+}
+
+.nav-home,
+.nav-group a {
+  color: rgba(233, 228, 216, 0.68);
+  border-radius: 0;
+}
+
+.nav-home:hover,
+.nav-group a:hover {
+  color: var(--inverse-text);
+  background: rgba(233, 228, 216, 0.08);
+}
+
+.nav-home[aria-current="page"],
+.nav-group a[aria-current="page"] {
+  color: var(--inverse-text);
+  background: rgba(233, 228, 216, 0.12);
+}
+
+.nav-home[aria-current="page"]::before,
+.nav-group a[aria-current="page"]::before {
+  left: 0;
+  width: 0.16rem;
+  height: 1.35rem;
+  background: var(--seam-violet);
+}
+
+.nav-group summary,
+.nav-section-name {
+  color: var(--inverse-text);
+}
+
+.nav-section-code,
+.nav-group summary::after,
+.nav-optional {
+  color: rgba(233, 228, 216, 0.42);
+}
+
+.sidebar-footer {
+  color: rgba(233, 228, 216, 0.42);
+  border-color: rgba(233, 228, 216, 0.14);
+}
+
+.page-header {
+  align-items: end;
+  gap: var(--space-5);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.page-header .eyebrow {
+  color: var(--quiet);
+  letter-spacing: 0.12em;
+}
+
+.page-header h1 {
+  max-width: 18ch;
+  margin: 0.2rem 0 0;
+  font-size: clamp(2.4rem, 4.2vw, 3.4rem);
+  font-weight: 600;
+  line-height: 0.98;
+}
+
+.page-header .page-meta,
+.page-header p {
+  max-width: 28ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.content-section {
+  padding-top: var(--space-7);
+}
+
+.section-headline {
+  margin-bottom: var(--space-4);
+}
+
+.section-headline .eyebrow {
+  color: var(--quiet);
+}
+
+.section-headline h2 {
+  margin: 0.15rem 0 0;
+  font-size: clamp(1.55rem, 2.4vw, 2rem);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.section-note {
+  max-width: 62ch;
+  color: var(--muted);
+}
+
+.page-toc {
+  margin-top: var(--space-5);
+  border-color: var(--line);
+  background: var(--surface);
+}
+
+.page-toc summary strong {
+  font-family: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.page-nav {
+  margin-top: var(--space-8);
+  border-color: var(--line-strong);
+  background: var(--surface);
+}
+
+.page-nav a {
+  min-height: 5.5rem;
+}
+
+.page-nav span {
+  color: var(--quiet);
+  letter-spacing: 0.08em;
+}
+
+.page-nav strong {
+  font-family: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.not-in-use {
+  background: var(--ink-violet);
+  border-color: rgba(233, 228, 216, 0.16);
+}
+
+.not-in-use-preview {
+  background: rgba(233, 228, 216, 0.12);
+  opacity: 0.55;
+}
+
+.not-in-use-preview span {
+  color: rgba(233, 228, 216, 0.55);
+  background: rgba(23, 23, 26, 0.55);
+}
+
+.not-in-use-message {
+  background: rgba(23, 23, 26, 0.94);
+  border-left: 0.16rem solid var(--seam-violet);
+}
+
+.not-in-use-label {
+  color: var(--oxidized-silver);
+  border-color: rgba(233, 228, 216, 0.28);
+}
+
+.not-in-use-message h2 {
+  font-weight: 600;
+}
+
+.not-in-use-message > p {
+  color: var(--inverse-muted);
+}
+
+.character-sheet__outfits {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.display-sample {
+  font-family: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
+  font-weight: 600;
+}
+
+.reflection-sample {
+  font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.swatch strong {
+  font-family: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
+}
+
+.button {
+  border-radius: 0;
+  font-family: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.button--primary,
+.button--light {
+  background: var(--seam-violet);
+  border-color: var(--seam-violet);
+  color: var(--bone);
+}
+
+.button--primary:hover,
+.button--light:hover {
+  background: transparent;
+  color: var(--seam-violet);
+  border-color: var(--seam-violet);
+}
+
+@media (max-width: 900px) {
+  .character-sheet__outfits {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    align-items: start;
+  }
+
+  .page-header .page-meta,
+  .page-header p {
+    text-align: left;
+    max-width: 42ch;
+  }
+
+  .not-in-use-message {
+    inset: auto 1rem 1rem 1rem;
+    width: auto;
+  }
+}

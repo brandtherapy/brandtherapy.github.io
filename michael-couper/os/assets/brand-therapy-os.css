@@ -1564,6 +1564,82 @@ h1 {
   font-size: 0.98rem;
 }
 
+/* Named-client builders emit .not-in-use*; the demo emits .optional-gate*.
+   Keep both class families identical so inactive pages never concatenate
+   preview labels into one run-on string. */
+.not-in-use {
+  position: relative;
+  display: grid;
+  min-height: 22rem;
+  margin-top: var(--space-6);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.not-in-use-preview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  padding: var(--space-6);
+  background: var(--line);
+  opacity: 0.34;
+}
+
+.not-in-use-preview span {
+  display: flex;
+  align-items: flex-end;
+  min-height: 9rem;
+  padding: var(--space-4);
+  color: var(--quiet);
+  background: var(--surface);
+  font-size: 0.75rem;
+  font-weight: 720;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.not-in-use-message {
+  position: absolute;
+  inset: var(--space-6) auto var(--space-6) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: min(34rem, calc(100% - 4rem));
+  padding: var(--space-6);
+  color: var(--inverse-text);
+  background: oklch(0.2 0.025 255 / 0.96);
+}
+
+.not-in-use-label {
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: var(--space-4);
+  padding: 0.28rem 0.48rem;
+  color: var(--inverse-text);
+  border: 1px solid oklch(0.5 0.015 255);
+  font-size: 0.75rem;
+  font-weight: 720;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.not-in-use-message h2 {
+  max-width: 24ch;
+  margin: 0;
+  font-size: clamp(1.9rem, 3vw, 2.55rem);
+  font-weight: 760;
+  letter-spacing: -0.028em;
+  line-height: 1.04;
+}
+
+.not-in-use-message > p {
+  max-width: 58ch;
+  margin: var(--space-4) 0 0;
+  color: var(--inverse-muted);
+  font-size: 0.98rem;
+}
+
 .button--light {
   color: var(--inverse);
   border-color: var(--inverse-text);

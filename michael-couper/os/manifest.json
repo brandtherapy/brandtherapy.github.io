@@ -6,7 +6,7 @@
   "generated": "2026-07-22",
   "templateVersion": "0.4.0",
   "templateReleaseStatus": "review_pending",
-  "templateReleaseSha256": "3ea605e12d100a89f1f5c009e042fb8a4baafa778c32e40eea21d7e5b14fdac6",
+  "templateReleaseSha256": "bb1515ef186039b2718864c9ed41ec8effea7fce513a39f5c15ef8aefc928428",
   "routes": [
     "index.html",
     "use.html",
@@ -31,8 +31,8 @@
   "approval": {
     "strategy": "in_review",
     "creativeDirection": "temporary_stylescape_selected",
-    "identity": "ready_for_review",
-    "applications": "in_review",
+    "identity": "approved",
+    "applications": "approved",
     "delivery": false,
     "publishing": false
   },
@@ -40,9 +40,10 @@
     "Standard Client Core: 17 routes.",
     "Installed at brand-os/brands/michael-couper/output for local review.",
     "Image hrefs are output-root-relative (images/...) for GitHub Pages publish.",
+    "Counterpoint packaging via assets/michael-os.css.",
     "Logo not in use. Brand Signature (The Seam) and Personal Branding active.",
     "Personal Branding lives inside Section B. There is no top-level Section D.",
-    "Private review only: Gate 4 identity is ready_for_review, not approved.",
-    "Temporary stylescape remains art-direction-only until Stage 5b."
+    "Identity and Applications approved 2026-07-22. Delivery still not approved.",
+    "Temporary stylescape remains art-direction-only until canon stylescape rebuild."
   ]
 }
