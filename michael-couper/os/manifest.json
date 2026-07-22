@@ -27,7 +27,7 @@
     "application/video-covers.html"
   ],
   "routeCount": 17,
-  "reviewUrl": "/brand-os/brands/michael-couper/output/",
+  "reviewUrl": "brand-os/brands/michael-couper/output/",
   "approval": {
     "strategy": "in_review",
     "creativeDirection": "temporary_stylescape_selected",
@@ -39,6 +39,7 @@
   "notes": [
     "Standard Client Core: 17 routes.",
     "Installed at brand-os/brands/michael-couper/output for local review.",
+    "Image hrefs are output-root-relative (images/...) for GitHub Pages publish.",
     "Logo not in use. Brand Signature (The Seam) and Personal Branding active.",
     "Personal Branding lives inside Section B. There is no top-level Section D.",
     "Private review only: Gate 4 identity is ready_for_review, not approved.",
