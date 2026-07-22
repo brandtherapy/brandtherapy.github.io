@@ -1,0 +1,47 @@
+{
+  "manifestSchemaVersion": 3,
+  "artifact": "Michael Couper Brand Therapy OS Client Core review",
+  "status": "private_review",
+  "brand": "michael-couper",
+  "generated": "2026-07-22",
+  "templateVersion": "0.4.0",
+  "templateReleaseStatus": "review_pending",
+  "templateReleaseSha256": "3ea605e12d100a89f1f5c009e042fb8a4baafa778c32e40eea21d7e5b14fdac6",
+  "routes": [
+    "index.html",
+    "use.html",
+    "strategy/index.html",
+    "strategy/product.html",
+    "strategy/people.html",
+    "strategy/purpose.html",
+    "strategy/promise.html",
+    "strategy/personality.html",
+    "identity/index.html",
+    "identity/visual-rules.html",
+    "identity/logo.html",
+    "identity/signature.html",
+    "identity/voice.html",
+    "identity/personal-branding.html",
+    "application/index.html",
+    "application/social.html",
+    "application/video-covers.html"
+  ],
+  "routeCount": 17,
+  "reviewUrl": "/brand-os/brands/michael-couper/output/",
+  "approval": {
+    "strategy": "in_review",
+    "creativeDirection": "temporary_stylescape_selected",
+    "identity": "ready_for_review",
+    "applications": "in_review",
+    "delivery": false,
+    "publishing": false
+  },
+  "notes": [
+    "Standard Client Core: 17 routes.",
+    "Installed at brand-os/brands/michael-couper/output for local review.",
+    "Logo not in use. Brand Signature (The Seam) and Personal Branding active.",
+    "Personal Branding lives inside Section B. There is no top-level Section D.",
+    "Private review only: Gate 4 identity is ready_for_review, not approved.",
+    "Temporary stylescape remains art-direction-only until Stage 5b."
+  ]
+}

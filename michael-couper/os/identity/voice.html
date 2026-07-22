@@ -1,162 +1,76 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noai, noimageai">
-<title>Voice and Writing · Michael Brand Therapy OS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <title>Voice and Writing | Michael Couper Brand Therapy OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;700;800&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css">
-<style>
-
-  :root {
-    --accent: #6E4CFF;
-    --accent-glow: rgba(110, 76, 255, 0.28);
-    --accent-soft: rgba(110, 76, 255, 0.12);
-    --text: #17171A;
-    --muted: #1E1D2B;
-    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
-    --border: #B8BCC6;
-    --light: #E9E4D8;
-    --white: #E9E4D8;
-    --dark: #17171A;
-    --dark-surface: #1E1D2B;
-    --ff-h: "Archivo Narrow", Arial Narrow, sans-serif;
-    --ff-b: "Archivo", Arial, sans-serif;
-    --ff-accent: "Archivo Narrow", Arial Narrow, sans-serif;
-    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
-    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-</style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Narrow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/brand-therapy-os.css">
+  <script src="../assets/brand-therapy-os.js" defer></script>
 </head>
-<body class="grain">
-<div class="shell">
+<body data-page-id="B-05">
+  <a class="skip-link" href="#main-content">Skip to page content</a>
 
-<aside class="sidebar">
-  <div class="brand-mark">
-    <div class="name">Michael</div>
-    <div class="meta">Brand Therapy OS</div>
-  </div>
-  <nav class="nav-section" aria-label="Brand Therapy OS sections">
-    <div class="label">Sections</div>
-    <div class="nav-list">
-<a class="" href="../index.html">System Overview</a>
-</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
-<a href="../strategy/index.html">Focus Star</a>
-<a href="../strategy/product.html">Product</a>
-<a href="../strategy/people.html">People</a>
-<a href="../strategy/purpose.html">Purpose</a>
-<a href="../strategy/promise.html">Promise</a>
-<a href="../strategy/personality.html">Personality</a>
-</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
-<a href="index.html">Counterpoint</a>
-<a href="look-and-feel.html">Look and Feel</a>
-<a class="active" href="voice.html">Voice and Writing</a>
-<a href="signature.html">Brand Signature</a>
-<a href="likeness.html">Character</a>
-</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
-<a href="../application/index.html">Application Overview</a>
-<a href="../application/references.html">Reference Gallery</a>
-<a href="../application/channel-rules.html">Channel Rules</a>
-</div></details><details class="nav-group" open><summary><span class="group-letter">D</span><span class="group-label">Personal Branding</span></summary><div class="nav-list">
-<a href="../personal-branding/index.html">Position &amp; Role</a>
-<a href="../personal-branding/character-sheet.html">Character Sheet</a>
-<a href="../personal-branding/outputs.html">Personal-Mode Outputs</a>
-</div></details>
-  </nav>
-  <div class="toolbar-mini">
-    <div class="row"><span>Section</span><strong>Identity</strong></div>
-    <div class="row"><span>Use</span><strong>Visual + voice</strong></div>
-    <div class="row"><span>Brand DNA</span><strong>Question First</strong></div>
-  </div>
-</aside>
-
-<main class="content">
-
-<style>
-.voice-section { margin: 0 0 96px; }
-.voice-section-head { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; padding-top: 20px; border-top: 1px solid var(--text); margin-bottom: 40px; }
-.voice-section-num { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--accent); padding-top: 12px; }
-.voice-section-head h2 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.02; letter-spacing: -0.025em; color: var(--text); margin: 0 0 8px; }
-.voice-section-head h2 .dot { color: var(--accent); }
-.voice-section-sub { font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
-.voice-section-desc { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 640px; margin: 0; }
-.voice-body { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 800px; }
-.voice-body h2 { font-family: var(--ff-h); font-weight: 800; font-size: 28px; letter-spacing: -0.02em; color: var(--text); margin: 48px 0 16px; }
-.voice-body h3 { font-family: var(--ff-h); font-weight: 800; font-size: 20px; letter-spacing: -0.01em; color: var(--text); margin: 32px 0 12px; }
-.voice-body h4 { font-family: var(--ff-b); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin: 24px 0 8px; }
-.voice-body p { margin: 0 0 16px; }
-.voice-body ul, .voice-body ol { padding-left: 24px; margin: 0 0 16px; }
-.voice-body li { margin: 4px 0; }
-.voice-body code { background: var(--accent-soft); padding: 2px 6px; font-family: ui-monospace, monospace; font-size: 13px; }
-.voice-body blockquote { border: 1px solid var(--border); padding: 16px 18px; margin: 16px 0; color: var(--muted); font-style: normal; background: color-mix(in srgb, var(--light) 34%, var(--white)); }
-.voice-body strong { font-weight: 700; color: var(--text); }
-.voice-body table { border-collapse: collapse; width: 100%; margin: 24px 0; font-size: 14px; }
-.voice-body th, .voice-body td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; vertical-align: top; }
-.voice-body th { font-family: var(--ff-b); font-weight: 700; letter-spacing: 0.04em; background: var(--light); color: var(--text); }
-.voice-body td { color: var(--text); }
-</style>
-  <span class="eyebrow" style="font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);">Section B · Brand Identity · Voice</span>
-  <h1 style="font-family:var(--ff-h);font-weight:800;font-size:clamp(56px,8vw,112px);line-height:0.92;letter-spacing:-0.04em;color:var(--text);margin:16px 0 24px;">Voice</h1>
-  <p style="font-family:var(--ff-b);font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:var(--text);max-width:640px;margin:0 0 64px;">How the brand speaks. Principles first, then what's banned, then exemplars.</p>
-
-  <section class="voice-section" aria-labelledby="voice-1">
-    <div class="voice-section-head">
-      <div class="voice-section-num">01</div>
-      <div>
-        <div class="voice-section-sub">Operating rules</div>
-        <h2 id="voice-1">Voice principles</h2>
-      </div>
+  <div class="mobile-bar">
+    <div class="mobile-context">
+      <strong>Michael Couper</strong>
+      <span>Section B / Voice and Writing</span>
     </div>
-    <div class="voice-body"><h3>Principles</h3>
-<ul>
-<li>Follow the question before presenting the conclusion.</li>
-<li>Show context and competing perspectives without losing the decision.</li>
-<li>Separate evidence, inference, intuition, and opinion when the distinction matters.</li>
-<li>Keep serious ideas accessible through direct language and dry playfulness.</li>
-</ul>
-<h3>On-Voice Examples</h3>
-<ul>
-<li>"Before we argue about the answer, what question are we actually trying to solve?"</li>
-<li>"The data matters. So does the context the data cannot hold."</li>
-<li>"Changing your mind is not weakness. It is evidence that the inquiry worked."</li>
-</ul>
-<h3>Avoid</h3>
-<ul>
-<li>Automatic answers and borrowed certainty.</li>
-<li>Sales language, guru framing, and attention-seeking contrarianism.</li>
-<li>Complexity that never lands in a judgment.</li>
-<li>Mystical language without intellectual or human consequence.</li>
-</ul></div>
-  </section>
-
-  <section class="voice-section" aria-labelledby="voice-2">
-    <div class="voice-section-head">
-      <div class="voice-section-num">02</div>
-      <div>
-        <div class="voice-section-sub">Exemplar bank</div>
-        <h2 id="voice-2">Paired exemplars</h2>
-        <p class="voice-section-desc">On-voice examples and off-voice traps, verbatim from references/voice-exemplars.md. The exemplar bank is the calibration test for any new copy.</p>
-      </div>
-    </div>
-    <div class="voice-body"><p>No voice exemplars found.</p></div>
-  </section>
-
-
-  <div class="footer-nav">
-    <span>Section B · Voice and Writing · Brand Identity</span>
-    <span><a href="signature.html">Brand Signature →</a></span>
+    <button class="menu-button" type="button" data-menu-open aria-controls="site-navigation" aria-expanded="false">Menu</button>
   </div>
-  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand Therapy OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
-</main>
-</div>
 
+  <div class="shell">
+    <aside class="sidebar" id="site-navigation" aria-label="Brand Therapy OS navigation">
+      <div class="sidebar-header">
+        <a class="product-lockup" href="../index.html">
+          <strong>Michael Couper</strong>
+          <span>Brand Therapy OS</span>
+        </a>
+        <button class="close-button" type="button" data-menu-close>Close</button>
+      </div>
 
+      <nav class="primary-nav" aria-label="Pages"><a class="nav-home" href="../index.html">Overview</a><a class="nav-home" href="../use.html">Use with AI</a><details class="nav-group"><summary><span class="nav-section-code">A</span><span class="nav-section-name">Brand Strategy</span></summary><ul><li><a href="../strategy/index.html"><span>Focus Star</span></a></li><li><a href="../strategy/product.html"><span>Product</span></a></li><li><a href="../strategy/people.html"><span>People</span></a></li><li><a href="../strategy/purpose.html"><span>Purpose</span></a></li><li><a href="../strategy/promise.html"><span>Promise</span></a></li><li><a href="../strategy/personality.html"><span>Personality</span></a></li></ul></details><details class="nav-group" open><summary><span class="nav-section-code">B</span><span class="nav-section-name">Brand Identity</span></summary><ul><li><a href="index.html"><span>Creative Direction</span></a></li><li><a href="visual-rules.html"><span>Look and Feel</span></a></li><li><a href="logo.html"><span>Logo</span><span class="nav-optional">Not in use</span></a></li><li><a href="signature.html"><span>Brand Signature</span></a></li><li><a href="voice.html" aria-current="page"><span>Voice and Writing</span></a></li><li><a href="personal-branding.html"><span>Personal Branding</span></a></li></ul></details><details class="nav-group"><summary><span class="nav-section-code">C</span><span class="nav-section-name">Brand Applications</span></summary><ul><li><a href="../application/index.html"><span>Applications Overview</span></a></li><li><a href="../application/social.html"><span>Social Media</span></a></li><li><a href="../application/video-covers.html"><span>Video Covers</span></a></li></ul></details></nav>
 
+      <div class="sidebar-footer" aria-label="Template information">
+        <span>Brand Therapy OS</span>
+        <strong>Follow the question</strong>
+      </div>
+    </aside>
+
+    <div class="menu-backdrop" data-menu-backdrop hidden></div>
+
+    <main class="main" id="main-content" tabindex="-1">
+      <div class="workspace-bar" aria-label="Current page">
+        <span>Section B: Brand Identity</span>
+        <span>13 / 17</span>
+      </div>
+
+      <article class="page">
+        <header class="page-header">
+          <div class="page-heading">
+            <p class="section-label">Section B</p>
+            <h1>Voice and Writing</h1>
+          </div>
+          <div class="page-intro">
+            <p class="page-job">Write with calm authority and follow the question to a judgment.</p>
+
+          </div>
+        </header>
+
+        <details class="page-toc" data-page-toc open><summary><strong>On this page</strong></summary><ol><li><a href="#principles">Voice rules</a></li><li><a href="#examples">On-voice lines</a></li><li><a href="#avoid">Avoid</a></li></ol></details><section class="content-section" id="principles"><div class="section-headline"><p class="eyebrow">01</p><h2>Voice rules</h2></div><div class="principle-grid"><article><h3>Follow the question</h3><p>Open with the premise before presenting the conclusion.</p></article><article><h3>Show the whole picture</h3><p>Bring context and competing perspectives without losing the decision.</p></article><article><h3>Separate the layers</h3><p>Distinguish evidence, inference, intuition, and opinion when it matters.</p></article><article><h3>Serious but playful</h3><p>Keep serious ideas accessible with direct language and dry wit.</p></article></div></section><section class="content-section" id="examples"><div class="section-headline"><p class="eyebrow">02</p><h2>On-voice lines</h2></div><ul class="clean-list"><li>Before we argue about the answer, what question are we actually trying to solve?</li><li>The data matters. So does the context the data cannot hold.</li><li>Changing your mind is not weakness. It is evidence that the inquiry worked.</li></ul></section><section class="content-section" id="avoid"><div class="section-headline"><p class="eyebrow">03</p><h2>Avoid</h2></div><ul class="clean-list"><li>Automatic answers and borrowed certainty</li><li>Sales language, guru framing, and attention-seeking contrarianism</li><li>Complexity that never lands in a judgment, and mysticism without consequence</li></ul></section>
+
+        <nav class="previous-next" aria-label="Previous and next pages"><a href="signature.html" data-direction="previous"><small>Previous page</small><strong>Brand Signature</strong></a><a href="personal-branding.html" data-direction="next"><small>Next page</small><strong>Personal Branding</strong></a></nav>
+      </article>
+
+      <footer class="site-footer">
+        <span>Brand Therapy OS</span>
+      </footer>
+    </main>
+  </div>
 </body>
 </html>

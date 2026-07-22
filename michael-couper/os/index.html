@@ -1,163 +1,82 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noai, noimageai">
-<title>Brand Therapy OS Overview · Michael Brand Therapy OS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <title>Michael Couper Brand Therapy OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;700;800&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-<style>
-
-  :root {
-    --accent: #6E4CFF;
-    --accent-glow: rgba(110, 76, 255, 0.28);
-    --accent-soft: rgba(110, 76, 255, 0.12);
-    --text: #17171A;
-    --muted: #1E1D2B;
-    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
-    --border: #B8BCC6;
-    --light: #E9E4D8;
-    --white: #E9E4D8;
-    --dark: #17171A;
-    --dark-surface: #1E1D2B;
-    --ff-h: "Archivo Narrow", Arial Narrow, sans-serif;
-    --ff-b: "Archivo", Arial, sans-serif;
-    --ff-accent: "Archivo Narrow", Arial Narrow, sans-serif;
-    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
-    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-</style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Narrow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/brand-therapy-os.css">
+  <script src="assets/brand-therapy-os.js" defer></script>
 </head>
-<body class="grain">
-<div class="shell">
+<body data-page-id="overview">
+  <a class="skip-link" href="#main-content">Skip to page content</a>
 
-<aside class="sidebar">
-  <div class="brand-mark">
-    <div class="name">Michael</div>
-    <div class="meta">Brand Therapy OS</div>
-  </div>
-  <nav class="nav-section" aria-label="Brand Therapy OS sections">
-    <div class="label">Sections</div>
-    <div class="nav-list">
-<a class="active" href="index.html">System Overview</a>
-</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
-<a href="strategy/index.html">Focus Star</a>
-<a href="strategy/product.html">Product</a>
-<a href="strategy/people.html">People</a>
-<a href="strategy/purpose.html">Purpose</a>
-<a href="strategy/promise.html">Promise</a>
-<a href="strategy/personality.html">Personality</a>
-</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
-<a href="identity/index.html">Counterpoint</a>
-<a href="identity/look-and-feel.html">Look and Feel</a>
-<a href="identity/voice.html">Voice and Writing</a>
-<a href="identity/signature.html">Brand Signature</a>
-<a href="identity/likeness.html">Character</a>
-</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
-<a href="application/index.html">Application Overview</a>
-<a href="application/references.html">Reference Gallery</a>
-<a href="application/channel-rules.html">Channel Rules</a>
-</div></details><details class="nav-group" open><summary><span class="group-letter">D</span><span class="group-label">Personal Branding</span></summary><div class="nav-list">
-<a href="personal-branding/index.html">Position &amp; Role</a>
-<a href="personal-branding/character-sheet.html">Character Sheet</a>
-<a href="personal-branding/outputs.html">Personal-Mode Outputs</a>
-</div></details>
-  </nav>
-  <div class="toolbar-mini">
-    <div class="row"><span>Section</span><strong>Overview</strong></div>
-    <div class="row"><span>Use</span><strong>AI-first system</strong></div>
-    <div class="row"><span>Brand DNA</span><strong>Question First</strong></div>
-  </div>
-</aside>
-
-<main class="content">
-
-<style>
-
-.home-hero { background: var(--dark); padding: 96px clamp(40px,5vw,72px) 72px; margin: -96px calc(-1 * clamp(48px,7vw,120px)) 56px; width: calc(100% + 2 * clamp(48px,7vw,120px)); position: relative; }
-@media (max-width: 960px) { .home-hero { margin: -64px -28px 48px; width: calc(100% + 56px); padding: 56px 28px 48px; } }
-.home-hero .hero-eyebrow { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 32px; display: block; }
-.home-hero h1 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(56px,9vw,112px); line-height: 0.92; letter-spacing: -0.04em; color: #fff; margin: 0 0 24px; }
-.home-hero h1 .dot { color: var(--accent); }
-.home-hero .hero-sub { font-family: var(--ff-h); font-weight: 400; font-size: clamp(16px,2vw,22px); color: rgba(255,255,255,0.4); line-height: 1.5; max-width: 560px; margin: 0 0 48px; }
-.home-hero .hero-pills { display: flex; gap: 12px; flex-wrap: wrap; }
-.hero-pill { font-family: var(--ff-b); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.4); padding: 10px 20px; border: 1px solid rgba(255,255,255,0.1); }
-.hero-pill strong { color: rgba(255,255,255,0.8); margin-left: 6px; }
-.home-section { margin: 0 0 96px; }
-.home-section-header { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; padding-top: 20px; border-top: 1px solid var(--text); margin-bottom: 40px; }
-.home-section-num { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--accent); padding-top: 12px; }
-.home-section-title { font-family: var(--ff-h); font-weight: 800; font-size: clamp(32px,4.5vw,56px); line-height: 1.02; letter-spacing: -0.025em; color: var(--text); margin: 0 0 8px; }
-.home-section-title .dot { color: var(--accent); }
-.home-section-sub { font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
-.home-section-desc { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 640px; margin: 0; }
-.toc-page-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0; border-left: 1px solid var(--border); }
-.toc-page-card { display: flex; flex-direction: column; padding: 28px 24px 24px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--white); text-decoration: none; color: var(--text); position: relative; transition: background 0.3s var(--ease-out-expo); }
-.toc-page-card:hover { background: var(--accent-soft); }
-.toc-page-card .card-code { font-family: var(--ff-b); font-size: 10px; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 10px; }
-.toc-page-card .card-name { font-family: var(--ff-h); font-weight: 800; font-size: 18px; letter-spacing: -0.01em; color: var(--text); margin-bottom: 8px; line-height: 1.2; flex: 1; }
-.toc-page-card .card-name .dot { color: var(--accent); }
-.toc-page-card p { font-family: var(--ff-b); font-size: 13px; line-height: 1.6; color: var(--text); margin: 0 0 16px; }
-.toc-page-card .card-status { font-family: var(--ff-b); font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 3px 8px; display: inline-block; align-self: flex-start; color: var(--muted); border: 1px solid var(--border); }
-</style>
-<style>
-.flow-band { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--border); margin: 32px 0 0; }
-.flow-row { display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--border); }
-.flow-row .flow-step { font-family: var(--ff-h); font-weight: 800; font-size: 34px; line-height: 1; color: var(--accent); }
-.flow-row h3 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(22px,2.4vw,30px); line-height: 1.05; letter-spacing: -0.02em; color: var(--text); margin: 0 0 8px; }
-.flow-row p { font-family: var(--ff-b); font-size: 14px; line-height: 1.65; color: var(--text); max-width: 720px; margin: 0; }
-@media (max-width: 720px) { .flow-row { grid-template-columns: 1fr; gap: 10px; } }
-</style>
-  <section class="home-hero">
-    <span class="hero-eyebrow">Brand Therapy OS · AI-first source system</span>
-    <h1>Michael Couper Brand Therapy OS</h1>
-    <p class="hero-sub">One source thread: strategy decides, identity translates, application proves. Generated work is downstream until the source is approved.</p>
-    <div class="hero-pills">
-      <div class="hero-pill">Source<strong>A → B → C</strong></div>
-      <div class="hero-pill">Mode<strong>AI-first</strong></div>
-      <div class="hero-pill">Review<strong>Sequential</strong></div>
+  <div class="mobile-bar">
+    <div class="mobile-context">
+      <strong>Michael Couper</strong>
+      <span>Start / Overview</span>
     </div>
-  </section>
+    <button class="menu-button" type="button" data-menu-open aria-controls="site-navigation" aria-expanded="false">Menu</button>
+  </div>
 
-  <section class="home-section">
-    <div class="home-section-header">
-      <div class="home-section-num">THREAD</div>
-      <div>
-        <h2 class="home-section-title">How the system works</h2>
-        <p class="home-section-sub">Source of truth to generated output</p>
-        <p class="home-section-desc">The goal is not another static brand book. The goal is a compact source system that can generate a website direction, collateral, copy, and channel rules from approved strategic decisions.</p>
+  <div class="shell">
+    <aside class="sidebar" id="site-navigation" aria-label="Brand Therapy OS navigation">
+      <div class="sidebar-header">
+        <a class="product-lockup" href="index.html">
+          <strong>Michael Couper</strong>
+          <span>Brand Therapy OS</span>
+        </a>
+        <button class="close-button" type="button" data-menu-close>Close</button>
       </div>
-    </div>
-    <div class="flow-band"><div class="flow-row"><div class="flow-step">A</div><div><h3>Strategy contract</h3><p>Focus Star turns the strategy into decisions an AI can reuse without re-interpreting the brand.</p></div></div><div class="flow-row"><div class="flow-step">B</div><div><h3>Creative direction options</h3><p>Section B proposal directions translate the same Section A strategy into visual options before one is approved.</p></div></div><div class="flow-row"><div class="flow-step">C</div><div><h3>Application references</h3><p>Examples and channel rules show how the approved strategy and identity behave in real formats.</p></div></div><div class="flow-row"><div class="flow-step">D</div><div><h3>Personal branding</h3><p>Founder Spectrum and human-presence rules define how the person carries the brand without becoming performance.</p></div></div></div>
-  </section>
 
-  <section class="home-section">
-    <div class="home-section-header">
-      <div class="home-section-num">REVIEW</div>
-      <div>
-        <h2 class="home-section-title">Review order</h2>
-        <p class="home-section-sub">Do not inspect everything at once</p>
-        <p class="home-section-desc">Approve the upstream decision layer first, then the identity translation, then application examples. If a downstream page reveals a better decision, edit the source and rebuild.</p>
+      <nav class="primary-nav" aria-label="Pages"><a class="nav-home" href="index.html" aria-current="page">Overview</a><a class="nav-home" href="use.html">Use with AI</a><details class="nav-group"><summary><span class="nav-section-code">A</span><span class="nav-section-name">Brand Strategy</span></summary><ul><li><a href="strategy/index.html"><span>Focus Star</span></a></li><li><a href="strategy/product.html"><span>Product</span></a></li><li><a href="strategy/people.html"><span>People</span></a></li><li><a href="strategy/purpose.html"><span>Purpose</span></a></li><li><a href="strategy/promise.html"><span>Promise</span></a></li><li><a href="strategy/personality.html"><span>Personality</span></a></li></ul></details><details class="nav-group"><summary><span class="nav-section-code">B</span><span class="nav-section-name">Brand Identity</span></summary><ul><li><a href="identity/index.html"><span>Creative Direction</span></a></li><li><a href="identity/visual-rules.html"><span>Look and Feel</span></a></li><li><a href="identity/logo.html"><span>Logo</span><span class="nav-optional">Not in use</span></a></li><li><a href="identity/signature.html"><span>Brand Signature</span></a></li><li><a href="identity/voice.html"><span>Voice and Writing</span></a></li><li><a href="identity/personal-branding.html"><span>Personal Branding</span></a></li></ul></details><details class="nav-group"><summary><span class="nav-section-code">C</span><span class="nav-section-name">Brand Applications</span></summary><ul><li><a href="application/index.html"><span>Applications Overview</span></a></li><li><a href="application/social.html"><span>Social Media</span></a></li><li><a href="application/video-covers.html"><span>Video Covers</span></a></li></ul></details></nav>
+
+      <div class="sidebar-footer" aria-label="Template information">
+        <span>Brand Therapy OS</span>
+        <strong>Follow the question</strong>
       </div>
+    </aside>
+
+    <div class="menu-backdrop" data-menu-backdrop hidden></div>
+
+    <main class="main" id="main-content" tabindex="-1">
+      <div class="workspace-bar" aria-label="Current page">
+        <span>Brand Therapy OS</span>
+        <span>01 / 17</span>
+      </div>
+
+      <article class="page">
+        <header class="page-header">
+          <div class="page-heading">
+            <p class="section-label">Start</p>
+            <h1>Overview</h1>
+          </div>
+          <div class="page-intro">
+            <p class="page-job">Find the strategy, brand guidance, and applications you need.</p>
+
+          </div>
+        </header>
+
+        <details class="page-toc" data-page-toc open><summary><strong>On this page</strong></summary><ol><li><a href="#inside">Your Brand Therapy OS</a></li><li><a href="#how">How to use it</a></li></ol></details><section class="content-section" id="inside"><div class="section-headline"><p class="eyebrow">01</p><h2>Your Brand Therapy OS</h2></div>
+    <div class="section-map">
+      <a href="strategy/index.html"><span>Section A</span><strong>Brand Strategy</strong><p>The five parts of the Focus Star that keep the brand focused.</p></a>
+      <a href="identity/index.html"><span>Section B</span><strong>Brand Identity</strong><p>How the brand looks, sounds, and feels.</p></a>
+      <a href="application/index.html"><span>Section C</span><strong>Brand Applications</strong><p>Templates, examples, and files ready to use.</p></a>
     </div>
-    <div class="toc-page-grid"><a class="toc-page-card" href="strategy/index.html"><div class="card-code">A</div><div class="card-name">Strategy contract</div><p>Focus Star turns the strategy into decisions an AI can reuse without re-interpreting the brand.</p><div class="card-status">Strategy</div></a><a class="toc-page-card" href="identity/index.html"><div class="card-code">B</div><div class="card-name">Creative direction options</div><p>Section B proposal directions translate the same Section A strategy into visual options before one is approved.</p><div class="card-status">Creative direction</div></a><a class="toc-page-card" href="application/references.html"><div class="card-code">C</div><div class="card-name">Application references</div><p>Examples and channel rules show how the approved strategy and identity behave in real formats.</p><div class="card-status">Application</div></a><a class="toc-page-card" href="personal-branding/index.html"><div class="card-code">D</div><div class="card-name">Personal branding</div><p>Founder Spectrum and human-presence rules define how the person carries the brand without becoming performance.</p><div class="card-status">Source: PERSONAL_BRANDING.md</div></a></div>
-  </section>
+    </section><section class="content-section" id="how"><div class="section-headline"><p class="eyebrow">02</p><h2>How to use it</h2></div><ul class="clean-list"><li>Start with Strategy when a choice feels unclear.</li><li>Use Identity to keep the brand recognizable across writing, imagery, and layouts.</li><li>Build with Applications when you need templates and examples for the job.</li></ul></section>
 
+        <nav class="previous-next" aria-label="Previous and next pages"><a href="use.html" data-direction="next"><small>Next page</small><strong>Use with AI</strong></a></nav>
+      </article>
 
-  <div class="footer-nav">
-    <span>Brand Therapy OS · Overview</span>
-    <span><a href="strategy/index.html">Brand Strategy →</a></span>
+      <footer class="site-footer">
+        <span>Brand Therapy OS</span>
+      </footer>
+    </main>
   </div>
-  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand Therapy OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
-</main>
-</div>
-
-
-
 </body>
 </html>
