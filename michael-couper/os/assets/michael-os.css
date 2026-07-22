@@ -145,7 +145,7 @@ h3,
 
 .page {
   width: min(100%, var(--content-width));
-  margin: 0;
+  margin: 0 auto;
   padding: 2.5rem 2.5rem 4rem;
 }
 
@@ -221,7 +221,8 @@ h3,
 }
 
 .page-toc summary::after {
-  display: none;
+  content: none !important;
+  display: none !important;
 }
 
 .page-toc ol {
