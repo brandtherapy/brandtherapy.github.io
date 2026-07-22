@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noai, noimageai">
+<title>Brand Signature · Michael Brand Therapy OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;700;800&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+
+  :root {
+    --accent: #6E4CFF;
+    --accent-glow: rgba(110, 76, 255, 0.28);
+    --accent-soft: rgba(110, 76, 255, 0.12);
+    --text: #17171A;
+    --muted: #1E1D2B;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #B8BCC6;
+    --light: #E9E4D8;
+    --white: #E9E4D8;
+    --dark: #17171A;
+    --dark-surface: #1E1D2B;
+    --ff-h: "Archivo Narrow", Arial Narrow, sans-serif;
+    --ff-b: "Archivo", Arial, sans-serif;
+    --ff-accent: "Archivo Narrow", Arial Narrow, sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">Michael</div>
+    <div class="meta">Brand Therapy OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand Therapy OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="../strategy/index.html">Focus Star</a>
+<a href="../strategy/product.html">Product</a>
+<a href="../strategy/people.html">People</a>
+<a href="../strategy/purpose.html">Purpose</a>
+<a href="../strategy/promise.html">Promise</a>
+<a href="../strategy/personality.html">Personality</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="index.html">Counterpoint</a>
+<a href="look-and-feel.html">Look and Feel</a>
+<a href="voice.html">Voice and Writing</a>
+<a class="active" href="signature.html">Brand Signature</a>
+<a href="likeness.html">Character</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">D</span><span class="group-label">Personal Branding</span></summary><div class="nav-list">
+<a href="../personal-branding/index.html">Position &amp; Role</a>
+<a href="../personal-branding/character-sheet.html">Character Sheet</a>
+<a href="../personal-branding/outputs.html">Personal-Mode Outputs</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Identity</strong></div>
+    <div class="row"><span>Use</span><strong>Visual + voice</strong></div>
+    <div class="row"><span>Brand DNA</span><strong>Question First</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+<style>
+.sig-section { margin: 0 0 96px; }
+.sig-section-head { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; padding-top: 20px; border-top: 1px solid var(--text); margin-bottom: 40px; }
+.sig-section-num { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--accent); padding-top: 12px; }
+.sig-section-head h2 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.02; letter-spacing: -0.025em; color: var(--text); margin: 0 0 8px; }
+.sig-section-head h2 .dot { color: var(--accent); }
+.sig-section-sub { font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.sig-section-desc { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 640px; margin: 0; }
+.sig-variants { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 32px 0 48px; }
+@media (max-width: 900px) { .sig-variants { grid-template-columns: 1fr; } }
+.sig-variant { background: var(--white); border: 1px solid var(--border); padding: 24px; }
+.sig-variant .sig-label { font-family: var(--ff-b); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.sig-variant h3 { font-family: var(--ff-h); font-weight: 800; font-size: 22px; letter-spacing: -0.01em; color: var(--text); margin: 0 0 8px; }
+
+.vf-demo-frame, .sig-frame { position: relative; aspect-ratio: 4/3; overflow: hidden; container-type: inline-size; background: var(--light); }
+.vf-demo-frame.vf-hero, .sig-frame.vf-hero { --top: 16%; --right: 12%; --bottom: 18%; --left: 14%; --vf-thick: clamp(4px, 1.25cqi, 8px); --vf-blur: 8px; --vf-bright: 0.45; }
+.vf-demo-frame.vf-image, .sig-frame.vf-image { --vf-thick: clamp(4px, 1cqi, 7px); overflow: visible; }
+.vf-demo-frame.vf-hero img, .sig-frame.vf-hero img { margin: 0; }
+.vf-type-demo { display: grid; place-items: center; padding: 28px; }
+.vf-heading-lockup { position: relative; padding: 32px 0 0 32px; font-family: var(--ff-h); font-weight: 800; font-size: clamp(28px, 12cqi, 56px); line-height: 0.96; color: var(--text); }
+.vf-heading-lockup::before { content: ""; position: absolute; top: 0; left: 0; width: 28px; height: 10px; border-top: 4px solid var(--accent); border-left: 4px solid var(--accent); }
+
+	.sig-variant .sig-frame { margin: 16px 0; }
+	.sig-variant .sig-frame.vf-image { margin: calc(var(--vf-thick) * 2) 0; }
+.sig-variant p { font-family: var(--ff-b); font-size: 13px; color: var(--muted); line-height: 1.6; margin: 16px 0 0; }
+.sig-raster-board { border: 1px solid var(--border); background: var(--white); padding: 14px; margin: 32px 0 28px; }
+.sig-raster-board img { display: block; width: 100%; height: auto; max-height: 820px; object-fit: contain; background: var(--white); }
+.sig-raster-board figcaption { font-family: var(--ff-b); font-size: 11px; line-height: 1.5; color: var(--muted); margin-top: 10px; }
+.sig-variant-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 24px 0 48px; }
+@media (max-width: 900px) { .sig-variant-notes { grid-template-columns: 1fr; } }
+.sig-variant-note { background: var(--white); border: 1px solid var(--border); padding: 24px; }
+.sig-variant-note .sig-label { font-family: var(--ff-b); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.sig-variant-note h3 { font-family: var(--ff-h); font-weight: 800; font-size: 22px; letter-spacing: -0.01em; color: var(--text); margin: 0 0 8px; }
+.sig-variant-note p { font-family: var(--ff-b); font-size: 13px; color: var(--muted); line-height: 1.6; margin: 16px 0 0; }
+.sig-recognition { background: var(--dark); color: var(--white); padding: 48px clamp(32px, 5vw, 64px); margin: 48px 0; }
+.sig-recognition .sig-recognition-label { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.sig-recognition p { font-family: var(--ff-h); font-weight: 400; font-size: clamp(20px, 2.4vw, 28px); line-height: 1.4; color: var(--white); margin: 0; max-width: 760px; }
+.sig-spec-body { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 800px; }
+.sig-spec-body h2 { font-family: var(--ff-h); font-weight: 800; font-size: 24px; letter-spacing: -0.01em; color: var(--text); margin: 32px 0 12px; }
+.sig-spec-body h3 { font-family: var(--ff-h); font-weight: 800; font-size: 18px; letter-spacing: -0.01em; color: var(--text); margin: 24px 0 8px; }
+.sig-spec-body h4 { font-family: var(--ff-b); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin: 20px 0 6px; }
+.sig-spec-body p { margin: 0 0 12px; }
+.sig-spec-body ul { padding-left: 24px; margin: 0 0 12px; }
+.sig-spec-body li { margin: 4px 0; }
+.sig-spec-body code { background: var(--accent-soft); padding: 2px 6px; font-family: ui-monospace, monospace; font-size: 13px; }
+.sig-spec-body strong { font-weight: 700; color: var(--text); }
+	</style>
+  <span class="eyebrow" style="font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);">Section B · Brand Identity · Signature</span>
+  <h1 style="font-family:var(--ff-h);font-weight:800;font-size:clamp(56px,8vw,112px);line-height:0.92;letter-spacing:-0.04em;color:var(--text);margin:16px 0 24px;">The Union</h1>
+  <p style="font-family:var(--ff-b);font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:var(--text);max-width:640px;margin:0 0 64px;">The Union adaptive purple glass. Subtle host-aligned accents.</p>
+
+  <section class="sig-section" aria-labelledby="sig-1">
+    <div class="sig-section-head">
+      <div class="sig-section-num">01</div>
+      <div>
+        <div class="sig-section-sub">Signature evidence</div>
+        <h2 id="sig-1">The Union construction</h2>
+        <p class="sig-section-desc">Thread, edge, and frame accents on Carbon and Bone. Never rings, pours, pins, or Venns.</p>
+      </div>
+    </div>
+    <figure class="sig-raster-board"><img src="../images/signature/signature-board.png" alt="The Union source-backed signature board"><figcaption>Faceless The Union construction board for Section B.</figcaption></figure><div class="sig-variant-notes"><article class="sig-variant-note"><div class="sig-label">Thread accent · Wardrobe register</div><h3>Thread accent</h3><p>Tiny purple glass lining a jacket seam or stitch line.</p></article><article class="sig-variant-note"><div class="sig-label">Edge film · Media register</div><h3>Edge film</h3><p>Thin adaptive purple glass along a UI or print edge.</p></article></div>
+  </section>
+
+  <div class="sig-recognition">
+    <div class="sig-recognition-label">Recognition test</div>
+    <p>On a second look, the viewer notices subtle purple glass following a real structure. Michael remains the subject.</p>
+  </div>
+  <section class="sig-section" aria-labelledby="sig-2">
+    <div class="sig-section-head">
+      <div class="sig-section-num">02</div>
+      <div>
+        <div class="sig-section-sub">Construction · Spec</div>
+        <h2 id="sig-2">Build rules</h2>
+        <p class="sig-section-desc">Written rules for The Union adaptive glass.</p>
+      </div>
+    </div>
+    <div class="sig-spec-body"><h2>The Union</h2>
+<p>Status: temporary stylescape accepted 2026-07-21, pending Identity Gate 4</p>
+<p>The Union is translucent purple glass that adapts to where it goes. It has no fixed signature shape. It lines up with the host form it meets: a jacket thread or seam, a UI edge, a frame rule, a print margin. The signature is adaptive placement and glass material, not a mark and not literal water.</p>
+<h2>Geometry</h2>
+<p>None fixed. No rings. No discs. No Venn. No eye. No water pour sculpture.</p>
+<p>Follow the existing line of the host: stitch, seam, edge, rule, corner. Small. Subtle. Almost missed on first glance.</p>
+<h2>Color</h2>
+<ul>
+<li>Union Violet (translucent purple glass) is the main brand color.</li>
+<li>Signal Cobalt and Civic Red only as tiny refraction hints at glass edges.</li>
+<li>Neutrals: Carbon, Ink Violet, Bone, Oxidized Silver.</li>
+</ul>
+<h2>Use</h2>
+<ul>
+<li>Tiny adaptive accents on media and wardrobe hosts: along a lapel thread,</li>
+</ul>
+<p>seam, UI chrome edge, magazine rule, podcast frame. Glass quality, subtle.</p>
+<ul>
+<li>Never a logo lockup with the name.</li>
+<li>Never a large pour, puddle, ribbon, or sculptural water mass.</li>
+<li>Never rings, discs, badges, pins, or embroidery logos.</li>
+</ul>
+<h2>Failure conditions</h2>
+<ul>
+<li>Treated as a finished logo system.</li>
+<li>Fixed signature shapes (rings, discs, Venn, eye).</li>
+<li>Literal water / liquid sculpture dominating the frame.</li>
+<li>Large purple glass masses.</li>
+<li>Clothing logos, pins, badges.</li>
+<li>MasterCard red/blue circles.</li>
+<li>Sci-fi HUD or neon glow soup.</li>
+</ul></div>
+  </section>
+
+
+  <div class="footer-nav">
+    <span>Section B · Brand Signature · Brand Identity</span>
+    <span><a href="likeness.html">Character →</a></span>
+  </div>
+  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand Therapy OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
+</main>
+</div>
+
+
+
+</body>
+</html>

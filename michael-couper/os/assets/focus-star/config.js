@@ -1,0 +1,527 @@
+window.FOCUS_STAR_CONFIG = {
+  "brand": {
+    "name": "Michael Couper",
+    "shortName": "Michael",
+    "tagline": "Cross-disciplinary judgment and public thinking",
+    "description": "Cross-disciplinary judgment and public thinking",
+    "accentColor": "#6E4CFF",
+    "inkColor": "#17171A"
+  },
+  "visual": {
+    "darkMode": false,
+    "fonts": {
+      "heading": "Archivo Narrow",
+      "body": "Archivo"
+    },
+    "background": "#E9E4D8",
+    "dialBackground": "#E9E4D8",
+    "bgMode": "unified",
+    "hideTitleDot": true,
+    "titleTransform": "uppercase",
+    "titleWeight": 800
+  },
+  "center": "Question First",
+  "pillars": [
+    {
+      "id": "product",
+      "code": "P1",
+      "title": "Product",
+      "eyebrow": "Your offering",
+      "guide": {
+        "desc": "<strong>Product.</strong> What you actually sell, and the standard the offer has to hold.",
+        "impacts": [
+          "Offering architecture",
+          "Pricing",
+          "Deliverables",
+          "Sales conversation",
+          "Client experience",
+          "Proof"
+        ]
+      },
+      "case": {
+        "desc": "The product is not one profession, company, or opinion. It is Michael's ability to connect evidence, systems, art, business, technology, and civic reality so a difficult choice can be understood in full.",
+        "apply": "Michael's rare value is not that he has many interests. It is that he can move between disciplines, expose assumptions, and turn a wider field of evidence into better judgment.",
+        "impacts": [
+          "Offering architecture",
+          "Pricing",
+          "Deliverables",
+          "Sales conversation",
+          "Client experience",
+          "Proof"
+        ],
+        "focus": {
+          "label": "Decision",
+          "headline": "The context and tools to see the whole picture",
+          "support": "Bring the missing context into view. Make complexity usable without flattening it into an automatic answer.",
+          "chips": []
+        },
+        "cards": [
+          {
+            "label": "Rules in",
+            "items": [
+              "Cross-disciplinary explanations that connect technology, art, business, science, philosophy, and civic life.",
+              "Frameworks, tools, and context that help people inspect a decision for themselves.",
+              "Novel problems where the premise matters as much as the proposed answer."
+            ],
+            "tone": "in"
+          },
+          {
+            "label": "Rules out",
+            "items": [
+              "Automated answers presented as judgment.",
+              "Positioning Michael as only a marketer, software developer, composer, founder, or political voice.",
+              "A list of impressive titles without a useful synthesis."
+            ],
+            "tone": "out"
+          },
+          {
+            "label": "Proof required",
+            "items": [
+              "Michael's work across CCS Interactive, Lendrose, software, composition, teaching, and civic decision-making.",
+              "Examples where he identified a hidden premise or reframed a novel problem.",
+              "Evidence of tools, systems, or decisions produced from cross-disciplinary thinking."
+            ],
+            "tone": "proof"
+          }
+        ],
+        "details": {
+          "Strategic position": [
+            "The product is not one profession, company, or opinion. It is Michael's ability to connect evidence, systems, art, business, technology, and civic reality so a difficult choice can be understood in full."
+          ],
+          "Compass": [
+            "Bring the missing context into view. Make complexity usable without flattening it into an automatic answer."
+          ],
+          "Rules in": [
+            "Cross-disciplinary explanations that connect technology, art, business, science, philosophy, and civic life.",
+            "Frameworks, tools, and context that help people inspect a decision for themselves.",
+            "Novel problems where the premise matters as much as the proposed answer.",
+            "Work that preserves complexity long enough to reveal the real choice."
+          ],
+          "Rules out": [
+            "Automated answers presented as judgment.",
+            "Positioning Michael as only a marketer, software developer, composer, founder, or political voice.",
+            "A list of impressive titles without a useful synthesis.",
+            "Generic thought leadership, productivity advice, or certainty theater.",
+            "Complexity used to avoid making a decision."
+          ],
+          "Proof required": [
+            "Michael's work across CCS Interactive, Lendrose, software, composition, teaching, and civic decision-making.",
+            "Examples where he identified a hidden premise or reframed a novel problem.",
+            "Evidence of tools, systems, or decisions produced from cross-disciplinary thinking.",
+            "Source meetings: June 25, June 30, and July 8 Brand Therapy sessions."
+          ],
+          "AI rule": [
+            "Do not reduce Michael to one profession or describe breadth as the product by itself.",
+            "Show how the wider view changes a question, choice, or outcome.",
+            "Never invent business results, political positions, clients, or credentials.",
+            "Preserve complexity, then land it in a usable decision."
+          ],
+          "Image signal": []
+        }
+      }
+    },
+    {
+      "id": "people",
+      "code": "P2",
+      "title": "People",
+      "eyebrow": "Your tribe",
+      "guide": {
+        "desc": "<strong>People.</strong> The specific people the brand is built to serve. Not everyone.",
+        "impacts": [
+          "Positioning",
+          "Language",
+          "Visibility",
+          "Offer fit",
+          "Content themes",
+          "Sales filtering"
+        ]
+      },
+      "case": {
+        "desc": "The brand is for people who want to form their own judgment, can change their minds when the evidence changes, and know that consequential choices rarely fit inside one discipline or ideology.",
+        "apply": "Independent thinkers are not contrarians by default. They are intellectually responsible people who resist premature certainty because the cost of a shallow judgment is real.",
+        "impacts": [
+          "Positioning",
+          "Language",
+          "Visibility",
+          "Offer fit",
+          "Content themes",
+          "Sales filtering"
+        ],
+        "focus": {
+          "label": "Decision",
+          "headline": "Independent thinkers",
+          "support": "Speak to the person who would rather examine the whole picture than borrow someone else's certainty.",
+          "chips": []
+        },
+        "cards": [
+          {
+            "label": "Rules in",
+            "items": [
+              "Curious, rational people who remain open to dialogue and revision.",
+              "Builders, creators, founders, technologists, educators, and civic decision-makers facing complex choices.",
+              "People who are a little unusual, bored by their own normalness, or comfortable moving between disciplines."
+            ],
+            "tone": "in"
+          },
+          {
+            "label": "Rules out",
+            "items": [
+              "Ideologues, zealots, and one-sided thinkers seeking confirmation.",
+              "Audiences who equate changing a mind with weakness.",
+              "People looking for a personality to copy or an answer to repeat."
+            ],
+            "tone": "out"
+          },
+          {
+            "label": "Proof required",
+            "items": [
+              "Workshop language: rational, curious, open to dialogue, able to change their mind.",
+              "Anti-persona language: ideologists, one-sided thinkers, zealots, and closed-minded audiences.",
+              "Examples of the consequential decisions Michael wants to help people understand."
+            ],
+            "tone": "proof"
+          }
+        ],
+        "details": {
+          "Strategic position": [
+            "The brand is for people who want to form their own judgment, can change their minds when the evidence changes, and know that consequential choices rarely fit inside one discipline or ideology."
+          ],
+          "Compass": [
+            "Speak to the person who would rather examine the whole picture than borrow someone else's certainty."
+          ],
+          "Rules in": [
+            "Curious, rational people who remain open to dialogue and revision.",
+            "Builders, creators, founders, technologists, educators, and civic decision-makers facing complex choices.",
+            "People who are a little unusual, bored by their own normalness, or comfortable moving between disciplines.",
+            "People who value evidence but understand that judgment also involves context, intuition, and human consequence."
+          ],
+          "Rules out": [
+            "Ideologues, zealots, and one-sided thinkers seeking confirmation.",
+            "Audiences who equate changing a mind with weakness.",
+            "People looking for a personality to copy or an answer to repeat.",
+            "Partisan tribe-building from either side."
+          ],
+          "Proof required": [
+            "Workshop language: rational, curious, open to dialogue, able to change their mind.",
+            "Anti-persona language: ideologists, one-sided thinkers, zealots, and closed-minded audiences.",
+            "Examples of the consequential decisions Michael wants to help people understand."
+          ],
+          "AI rule": [
+            "Write for capable adults, not followers waiting for instructions.",
+            "Do not make independent thinking synonymous with contrarianism.",
+            "Avoid demographic shorthand when the defining trait is intellectual behavior.",
+            "Keep Persona detail inside People and never render it as a sixth Focus Star line."
+          ],
+          "Image signal": []
+        },
+        "persona": {
+          "role": "The Independent Decision-Maker",
+          "context": "A multidisciplinary person facing a consequential choice with incomplete, conflicting, or oversimplified information.",
+          "quote": "A multidisciplinary person facing a consequential choice with incomplete, conflicting, or oversimplified information.",
+          "need": "Enough context, evidence, and competing perspective to see the whole picture before choosing.",
+          "tags": [],
+          "rationalMotivation": "A rushed or manipulated judgment can misdirect work, community, or public life.",
+          "painPoint": "A rushed or manipulated judgment can misdirect work, community, or public life.",
+          "decisionTrigger": "The available answers feel too simple, partisan, automated, or incomplete."
+        }
+      }
+    },
+    {
+      "id": "purpose",
+      "code": "P3",
+      "title": "Purpose",
+      "eyebrow": "Your why",
+      "guide": {
+        "desc": "<strong>Purpose.</strong> The reason the brand exists beyond activity and attention.",
+        "impacts": [
+          "Vision",
+          "Story",
+          "Partnerships",
+          "Recruitment",
+          "Saying no",
+          "Editorial choices"
+        ]
+      },
+      "case": {
+        "desc": "Michael's larger purpose is progress through informed human choice. Society cannot move forward when decisions are driven by misinformation, manipulation, tribal certainty, or automated conclusions that remove judgment from the person making the choice.",
+        "apply": "Better information matters because choices have consequences. The goal is not truth as an intellectual trophy, but fuller understanding that improves what people build, protect, and pass forward.",
+        "impacts": [
+          "Vision",
+          "Story",
+          "Partnerships",
+          "Recruitment",
+          "Saying no",
+          "Editorial choices"
+        ],
+        "focus": {
+          "label": "Decision",
+          "headline": "To move society forward through better-informed human choices",
+          "support": "Put more truth, context, creativity, and human judgment into the choices that shape work, culture, technology, and civic life.",
+          "chips": []
+        },
+        "cards": [
+          {
+            "label": "Rules in",
+            "items": [
+              "Evidence, multiple perspectives, and context before conclusion.",
+              "Human creativity and judgment as essential forces in progress.",
+              "Decisions that balance technical possibility with cultural and human consequence."
+            ],
+            "tone": "in"
+          },
+          {
+            "label": "Rules out",
+            "items": [
+              "Truth-seeking as debate sport or personal superiority.",
+              "Misinformation, marketing spin, and ideological certainty replacing evidence.",
+              "Anti-AI panic or blind AI deference."
+            ],
+            "tone": "out"
+          },
+          {
+            "label": "Proof required",
+            "items": [
+              "Michael's stated commitment to human creativity and work that enriches lives.",
+              "His civic example of balancing personal preference against the needs of the community.",
+              "Examples where evidence changed or complicated his original position."
+            ],
+            "tone": "proof"
+          }
+        ],
+        "details": {
+          "Strategic position": [
+            "Michael's larger purpose is progress through informed human choice. Society cannot move forward when decisions are driven by misinformation, manipulation, tribal certainty, or automated conclusions that remove judgment from the person making the choice."
+          ],
+          "Compass": [
+            "Put more truth, context, creativity, and human judgment into the choices that shape work, culture, technology, and civic life."
+          ],
+          "Rules in": [
+            "Evidence, multiple perspectives, and context before conclusion.",
+            "Human creativity and judgment as essential forces in progress.",
+            "Decisions that balance technical possibility with cultural and human consequence.",
+            "Art, education, business, technology, and civic life as connected fields of progress."
+          ],
+          "Rules out": [
+            "Truth-seeking as debate sport or personal superiority.",
+            "Misinformation, marketing spin, and ideological certainty replacing evidence.",
+            "Anti-AI panic or blind AI deference.",
+            "False balance that treats every claim as equally supported.",
+            "Grand statements about humanity without a real decision underneath them."
+          ],
+          "Proof required": [
+            "Michael's stated commitment to human creativity and work that enriches lives.",
+            "His civic example of balancing personal preference against the needs of the community.",
+            "Examples where evidence changed or complicated his original position.",
+            "Clear separation between sourced fact, interpretation, and personal judgment."
+          ],
+          "AI rule": [
+            "Never frame Michael as the owner of the truth.",
+            "Make the human consequence of better information visible.",
+            "Do not invent consensus, evidence, or societal outcomes.",
+            "Distinguish evidence, inference, intuition, and opinion explicitly when the distinction matters."
+          ],
+          "Image signal": []
+        }
+      }
+    },
+    {
+      "id": "promise",
+      "code": "P4",
+      "title": "Promise",
+      "eyebrow": "Your non-negotiable",
+      "guide": {
+        "desc": "<strong>Promise.</strong> The one standard that should hold across every touchpoint.",
+        "impacts": [
+          "Writing",
+          "Visual metaphor",
+          "Discovery",
+          "Decision filter",
+          "Content topics",
+          "Client process"
+        ]
+      },
+      "case": {
+        "desc": "Follow the question is the operating commitment. Before accepting an answer, Michael examines the premise, looks for the missing perspective, tests the evidence, and stays with the inquiry until it can support a real judgment.",
+        "apply": "Inquiry is valuable only when it changes the decision. Follow the question rejects both reflexive answers and curiosity that never lands anywhere.",
+        "impacts": [
+          "Writing",
+          "Visual metaphor",
+          "Discovery",
+          "Decision filter",
+          "Content topics",
+          "Client process"
+        ],
+        "focus": {
+          "label": "Decision",
+          "headline": "Follow the question",
+          "support": "Question first. Gather the fuller picture. Let evidence and human judgment close the inquiry into a choice.",
+          "chips": []
+        },
+        "cards": [
+          {
+            "label": "Rules in",
+            "items": [
+              "Question the premise before optimizing the answer.",
+              "Seek evidence that could change the current view.",
+              "Bring competing perspectives into the same decision."
+            ],
+            "tone": "in"
+          },
+          {
+            "label": "Rules out",
+            "items": [
+              "Answers chosen before the question is understood.",
+              "Contrarianism for attention or identity.",
+              "Endless curiosity used to avoid commitment."
+            ],
+            "tone": "out"
+          },
+          {
+            "label": "Proof required",
+            "items": [
+              "July 8 workshop evidence around questioning assumptions and seeing perspectives beyond one point of view.",
+              "Michael's examples of choosing the overlooked objective or challenging the prevailing frame.",
+              "Published or working examples where inquiry produced a different decision."
+            ],
+            "tone": "proof"
+          }
+        ],
+        "details": {
+          "Strategic position": [
+            "Follow the question is the operating commitment. Before accepting an answer, Michael examines the premise, looks for the missing perspective, tests the evidence, and stays with the inquiry until it can support a real judgment."
+          ],
+          "Compass": [
+            "Question first. Gather the fuller picture. Let evidence and human judgment close the inquiry into a choice."
+          ],
+          "Rules in": [
+            "Question the premise before optimizing the answer.",
+            "Seek evidence that could change the current view.",
+            "Bring competing perspectives into the same decision.",
+            "Admit uncertainty without surrendering judgment.",
+            "Close the inquiry when the available evidence is sufficient to act responsibly."
+          ],
+          "Rules out": [
+            "Answers chosen before the question is understood.",
+            "Contrarianism for attention or identity.",
+            "Endless curiosity used to avoid commitment.",
+            "Intuition overriding stronger evidence without acknowledgment.",
+            "Automated or ideological certainty presented as neutral truth."
+          ],
+          "Proof required": [
+            "July 8 workshop evidence around questioning assumptions and seeing perspectives beyond one point of view.",
+            "Michael's examples of choosing the overlooked objective or challenging the prevailing frame.",
+            "Published or working examples where inquiry produced a different decision."
+          ],
+          "AI rule": [
+            "Keep the exact approved Promise: Follow the question.",
+            "Keep the nested Brand DNA: Question First.",
+            "Never turn the Promise into endless curiosity, generic skepticism, or a question-mark slogan.",
+            "Every inquiry-led output must eventually state what became clearer or what choice follows."
+          ],
+          "Image signal": []
+        }
+      }
+    },
+    {
+      "id": "personality",
+      "code": "P5",
+      "title": "Personality",
+      "eyebrow": "How you show up",
+      "guide": {
+        "desc": "<strong>Personality.</strong> How the brand sounds, looks, behaves, and is recognized.",
+        "impacts": [
+          "Voice",
+          "Visual language",
+          "Social behavior",
+          "Website tone",
+          "Decks",
+          "Email rhythm"
+        ]
+      },
+      "case": {
+        "desc": "Michael's personality holds apparent opposites together. He is serious about ideas without being solemn, rational without becoming machine-like, artistic without becoming precious, and independent without performing rebellion.",
+        "apply": "The brand becomes distinctive when Michael's range feels coherent rather than scattered. The tension between analytical rigor, artistic imagination, dry playfulness, and a restrained mystical edge is the character, not a contradiction to solve.",
+        "impacts": [
+          "Voice",
+          "Visual language",
+          "Social behavior",
+          "Website tone",
+          "Decks",
+          "Email rhythm"
+        ],
+        "focus": {
+          "label": "Decision",
+          "headline": "A serious, playful polymath: rational, artistic, independent, with a mystical edge",
+          "support": "Erudite but unpretentious. Serious but playful. Rational with room for art, intuition, mystery, and revision.",
+          "chips": []
+        },
+        "cards": [
+          {
+            "label": "Rules in",
+            "items": [
+              "Analytical, artistic, calm, curious, honest, independent, insightful, knowledgeable, mature, original, serious, thoughtful, and trustworthy.",
+              "Dry humor, candid self-awareness, and playful cultural references.",
+              "Quiet confidence and visible intellectual generosity."
+            ],
+            "tone": "in"
+          },
+          {
+            "label": "Rules out",
+            "items": [
+              "Computer-like rationality or a cold futurist persona.",
+              "Salesy founder performance, marketer language, or attention-chasing.",
+              "Contrarianism as costume."
+            ],
+            "tone": "out"
+          },
+          {
+            "label": "Proof required",
+            "items": [
+              "Workshop personality attributes and recovered slider decisions.",
+              "Michael's work as composer, teacher, software builder, business owner, fintech CTO, and civic participant.",
+              "Voice examples demonstrating seriousness, playfulness, rationality, artistry, independence, and mystery without posturing."
+            ],
+            "tone": "proof"
+          }
+        ],
+        "details": {
+          "Strategic position": [
+            "Michael's personality holds apparent opposites together. He is serious about ideas without being solemn, rational without becoming machine-like, artistic without becoming precious, and independent without performing rebellion."
+          ],
+          "Compass": [
+            "Erudite but unpretentious. Serious but playful. Rational with room for art, intuition, mystery, and revision."
+          ],
+          "Rules in": [
+            "Analytical, artistic, calm, curious, honest, independent, insightful, knowledgeable, mature, original, serious, thoughtful, and trustworthy.",
+            "Dry humor, candid self-awareness, and playful cultural references.",
+            "Quiet confidence and visible intellectual generosity.",
+            "Mystery used as texture around questions that cannot be flattened, not as unsupported authority.",
+            "Serious ideas explained in language an intelligent non-specialist can enter."
+          ],
+          "Rules out": [
+            "Computer-like rationality or a cold futurist persona.",
+            "Salesy founder performance, marketer language, or attention-chasing.",
+            "Contrarianism as costume.",
+            "Mysticism without intellectual or human consequence.",
+            "A chaotic list of interests with no through-line.",
+            "Pretension, academic gatekeeping, or grandstanding."
+          ],
+          "Proof required": [
+            "Workshop personality attributes and recovered slider decisions.",
+            "Michael's work as composer, teacher, software builder, business owner, fintech CTO, and civic participant.",
+            "Voice examples demonstrating seriousness, playfulness, rationality, artistry, independence, and mystery without posturing."
+          ],
+          "AI rule": [
+            "Preserve the serious and playful tension.",
+            "Keep the mystical edge restrained and consequential.",
+            "Do not make Michael sound like a marketer, guru, futurist, or debate personality.",
+            "Use cross-disciplinary references only when they clarify the question.",
+            "Prefer direct sentences and dry intelligence over ornate prose."
+          ],
+          "Image signal": []
+        }
+      }
+    }
+  ],
+  "defaultTab": "case"
+};

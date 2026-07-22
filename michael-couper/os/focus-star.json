@@ -1,0 +1,135 @@
+{
+  "brand": "michael-couper",
+  "name": "Michael Couper",
+  "focus_star": {
+    "schema_version": "2.0.0",
+    "decisions": {
+      "product": {
+        "statement": "The context and tools to see the whole picture",
+        "position": "The product is not one profession, company, or opinion. It is Michael's ability to connect evidence, systems, art, business, technology, and civic reality so a difficult choice can be understood in full.",
+        "compass": "Bring the missing context into view. Make complexity usable without flattening it into an automatic answer."
+      },
+      "people": {
+        "statement": "Independent thinkers",
+        "position": "The brand is for people who want to form their own judgment, can change their minds when the evidence changes, and know that consequential choices rarely fit inside one discipline or ideology.",
+        "compass": "Speak to the person who would rather examine the whole picture than borrow someone else's certainty.",
+        "persona": {
+          "label": "The Independent Decision-Maker",
+          "situation": "A multidisciplinary person facing a consequential choice with incomplete, conflicting, or oversimplified information.",
+          "need": "Enough context, evidence, and competing perspective to see the whole picture before choosing.",
+          "stakes": "A rushed or manipulated judgment can misdirect work, community, or public life.",
+          "trigger": "The available answers feel too simple, partisan, automated, or incomplete."
+        }
+      },
+      "purpose": {
+        "statement": "To move society forward through better-informed human choices",
+        "position": "Michael's larger purpose is progress through informed human choice. Society cannot move forward when decisions are driven by misinformation, manipulation, tribal certainty, or automated conclusions that remove judgment from the person making the choice.",
+        "compass": "Put more truth, context, creativity, and human judgment into the choices that shape work, culture, technology, and civic life."
+      },
+      "promise": {
+        "statement": "Follow the question",
+        "position": "Follow the question is the operating commitment. Before accepting an answer, Michael examines the premise, looks for the missing perspective, tests the evidence, and stays with the inquiry until it can support a real judgment.",
+        "compass": "Question first. Gather the fuller picture. Let evidence and human judgment close the inquiry into a choice.",
+        "brand_dna": "Question First"
+      },
+      "personality": {
+        "statement": "A serious, playful polymath: rational, artistic, independent, with a mystical edge",
+        "position": "Michael's personality holds apparent opposites together. He is serious about ideas without being solemn, rational without becoming machine-like, artistic without becoming precious, and independent without performing rebellion.",
+        "compass": "Erudite but unpretentious. Serious but playful. Rational with room for art, intuition, mystery, and revision."
+      }
+    },
+    "aliases": {
+      "legacy_persona": "decisions.people.persona",
+      "legacy_center": "decisions.promise.brand_dna"
+    },
+    "retired_terms": [
+      "center"
+    ]
+  },
+  "center": {
+    "word": "Question First",
+    "definition": ""
+  },
+  "edges": [
+    {
+      "id": "product",
+      "code": "P1",
+      "title": "Product",
+      "statement": "The context and tools to see the whole picture",
+      "offer_name": "The context and tools to see the whole picture",
+      "position": "The product is not one profession, company, or opinion. It is Michael's ability to connect evidence, systems, art, business, technology, and civic reality so a difficult choice can be understood in full.",
+      "compass": "Bring the missing context into view. Make complexity usable without flattening it into an automatic answer.",
+      "image": null
+    },
+    {
+      "id": "people",
+      "code": "P2",
+      "title": "People",
+      "statement": "Independent thinkers",
+      "offer_name": "Independent thinkers",
+      "position": "The brand is for people who want to form their own judgment, can change their minds when the evidence changes, and know that consequential choices rarely fit inside one discipline or ideology.",
+      "compass": "Speak to the person who would rather examine the whole picture than borrow someone else's certainty.",
+      "image": null
+    },
+    {
+      "id": "purpose",
+      "code": "P3",
+      "title": "Purpose",
+      "statement": "To move society forward through better-informed human choices",
+      "offer_name": "To move society forward through better-informed human choices",
+      "position": "Michael's larger purpose is progress through informed human choice. Society cannot move forward when decisions are driven by misinformation, manipulation, tribal certainty, or automated conclusions that remove judgment from the person making the choice.",
+      "compass": "Put more truth, context, creativity, and human judgment into the choices that shape work, culture, technology, and civic life.",
+      "image": null
+    },
+    {
+      "id": "promise",
+      "code": "P4",
+      "title": "Promise",
+      "statement": "Follow the question",
+      "offer_name": "Follow the question",
+      "position": "Follow the question is the operating commitment. Before accepting an answer, Michael examines the premise, looks for the missing perspective, tests the evidence, and stays with the inquiry until it can support a real judgment.",
+      "compass": "Question first. Gather the fuller picture. Let evidence and human judgment close the inquiry into a choice.",
+      "image": null
+    },
+    {
+      "id": "personality",
+      "code": "P5",
+      "title": "Personality",
+      "statement": "A serious, playful polymath: rational, artistic, independent, with a mystical edge",
+      "offer_name": "A serious, playful polymath: rational, artistic, independent, with a mystical edge",
+      "position": "Michael's personality holds apparent opposites together. He is serious about ideas without being solemn, rational without becoming machine-like, artistic without becoming precious, and independent without performing rebellion.",
+      "compass": "Erudite but unpretentious. Serious but playful. Rational with room for art, intuition, mystery, and revision.",
+      "image": null
+    }
+  ],
+  "star": {
+    "center": {
+      "word": "Question First",
+      "meaning": ""
+    },
+    "edges": {
+      "product": {
+        "statement": "The context and tools to see the whole picture"
+      },
+      "people": {
+        "statement": "Independent thinkers"
+      },
+      "purpose": {
+        "statement": "To move society forward through better-informed human choices"
+      },
+      "promise": {
+        "statement": "Follow the question"
+      },
+      "personality": {
+        "statement": "A serious, playful polymath: rational, artistic, independent, with a mystical edge"
+      }
+    },
+    "persona": {
+      "role": "The Independent Decision-Maker",
+      "context": "A multidisciplinary person facing a consequential choice with incomplete, conflicting, or oversimplified information.",
+      "need": "Enough context, evidence, and competing perspective to see the whole picture before choosing.",
+      "trigger": "The available answers feel too simple, partisan, automated, or incomplete."
+    }
+  },
+  "schema_version": "2.0.0"
+}
