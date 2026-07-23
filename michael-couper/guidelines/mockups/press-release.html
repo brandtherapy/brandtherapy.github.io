@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Michael Couper Media Kit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    body { background: #111; }
+    .page {
+      width: 1200px;
+      min-height: 1600px;
+      background: #E9E4D8;
+      color: #17171A;
+      font-family: Archivo, Arial, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+    .mast {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 24px;
+      padding: 36px 48px 28px;
+      background: #17171A;
+      color: #E9E4D8;
+      position: relative;
+    }
+    .mast::after {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, rgba(110,76,255,.15), rgba(110,76,255,.85), rgba(110,76,255,.2));
+    }
+    .mast .k {
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-size: 13px;
+      color: rgba(233,228,216,.7);
+      margin-bottom: 10px;
+    }
+    .mast h1 {
+      font-family: "Archivo Narrow", "Arial Narrow", sans-serif;
+      font-size: 52px;
+      line-height: .95;
+      font-weight: 600;
+      letter-spacing: -.02em;
+      max-width: 14ch;
+    }
+    .mast .promise {
+      text-align: right;
+      font-family: "Archivo Narrow", "Arial Narrow", sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      max-width: 16ch;
+      line-height: 1.2;
+      color: #B8BCC6;
+    }
+    .hero-strip {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 1fr;
+      gap: 8px;
+      padding: 8px;
+      background: #17171A;
+    }
+    .hero-strip img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-strip img:first-child { object-position: center 25%; }
+    .hero-strip img:nth-child(2) { object-position: 40% 40%; }
+    .hero-strip img:nth-child(3) { object-position: center 20%; }
+    .body {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 40px;
+      padding: 40px 48px 28px;
+    }
+    .lede {
+      font-family: "Archivo Narrow", "Arial Narrow", sans-serif;
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: 600;
+      max-width: 22ch;
+      margin-bottom: 18px;
+    }
+    .copy p {
+      font-size: 16px;
+      line-height: 1.55;
+      color: #1E1D2B;
+      margin-bottom: 14px;
+      max-width: 42ch;
+    }
+    .copy strong { color: #17171A; }
+    .facts {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+    .fact {
+      background: #fff;
+      border: 1px solid #B8BCC6;
+      padding: 18px 20px;
+    }
+    .fact b {
+      display: block;
+      font-family: "Archivo Narrow", "Arial Narrow", sans-serif;
+      font-size: 18px;
+      margin-bottom: 6px;
+      letter-spacing: -.01em;
+    }
+    .fact span {
+      font-size: 14px;
+      line-height: 1.45;
+      color: #3a3a40;
+    }
+    .usage {
+      margin: 0 48px 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding-top: 8px;
+      border-top: 1px solid #B8BCC6;
+    }
+    .usage h2 {
+      font-family: "Archivo Narrow", "Arial Narrow", sans-serif;
+      font-size: 20px;
+      margin-bottom: 10px;
+      grid-column: 1 / -1;
+      font-weight: 600;
+    }
+    .usage ul {
+      list-style: none;
+      font-size: 14px;
+      line-height: 1.55;
+      color: #1E1D2B;
+    }
+    .usage li { margin-bottom: 8px; padding-left: 14px; position: relative; }
+    .usage li::before {
+      content: "";
+      position: absolute;
+      left: 0; top: .55em;
+      width: 6px; height: 6px;
+      background: #6E4CFF;
+    }
+    .footer {
+      padding: 16px 48px 28px;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #6B6F79;
+      border-top: 1px solid #B8BCC6;
+      margin: 0 48px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page" id="artboard">
+    <div class="mast">
+      <div>
+        <div class="k">Media kit</div>
+        <h1>Michael Couper</h1>
+      </div>
+      <div class="promise">Follow the question</div>
+    </div>
+
+    <!-- Three distinct frames: face, world, face-in-context -->
+    <div class="hero-strip" aria-label="Approved imagery set">
+      <img src="../assets/imagery/desk-hero.jpg" alt="Inquiry at the desk">
+      <img src="../assets/imagery/focus-star-inquiry.jpg" alt="Faceless inquiry world">
+      <img src="../assets/imagery/studio-polo.jpg" alt="Quiet media context">
+    </div>
+
+    <div class="body">
+      <div class="copy">
+        <p class="lede">Context and tools so independent thinkers can see the whole picture before they choose.</p>
+        <p>Michael Couper is a personal brand above CCS Interactive, Lendrose, composition, teaching, and civic work. Those ventures are <strong>proof platforms</strong>, not competing master brands.</p>
+        <p>The product is cross-disciplinary judgment: evidence, systems, art, business, technology, and civic reality held in one view long enough to make a better choice.</p>
+        <p>Partners should communicate inquiry that lands. Avoid guru framing, certainty theater, professor costume, and automated answers sold as judgment.</p>
+      </div>
+      <div class="facts">
+        <div class="fact">
+          <b>Promise</b>
+          <span>Follow the question. Brand DNA: Question First.</span>
+        </div>
+        <div class="fact">
+          <b>People</b>
+          <span>Independent thinkers who will change their mind when the evidence changes.</span>
+        </div>
+        <div class="fact">
+          <b>Tone</b>
+          <span>Serious, playful polymath. Rational, artistic, independent, with a restrained mystical edge.</span>
+        </div>
+        <div class="fact">
+          <b>Contact</b>
+          <span>Press and partnership requests via Brand Therapy OS operator notes (placeholder).</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="usage">
+      <h2>Image use</h2>
+      <ul>
+        <li>Use distinct frames for banner vs avatar. Never the same portrait twice in one surface.</li>
+        <li>Prefer inquiry desk, glass teaching, quiet media, and faceless evidence worlds.</li>
+        <li>Seam Violet is a tiny glass edge, never a purple wash.</li>
+      </ul>
+      <ul>
+        <li>Do not crop into a professor costume, stock handshake, or music-only stage read.</li>
+        <li>Approved face canon only for likeness. Faceless worlds are preferred for shells.</li>
+        <li>Color grade stays cool Ink Violet depth with Bone paper highlights.</li>
+      </ul>
+    </div>
+
+    <div class="footer">Brand Therapy Guidelines · concept media kit · not a live press release</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{
+  "brand": "michael-couper",
+  "rule": "Never reuse same photo as banner+avatar. Prefer faceless for shells.",
+  "face_gate_pass": [
+    {
+      "file": "desk-hero.jpg",
+      "use": "inquiry face"
+    },
+    {
+      "file": "conversation-glass.jpg",
+      "use": "teaching/conversation"
+    },
+    {
+      "file": "studio-polo.jpg",
+      "use": "media face"
+    },
+    {
+      "file": "teaching-side.jpg",
+      "use": "teaching"
+    },
+    {
+      "file": "tuxedo-evening.jpg",
+      "use": "evening formality"
+    },
+    {
+      "file": "profile-avatar-tight.jpg",
+      "use": "avatar only"
+    }
+  ],
+  "faceless": [
+    {
+      "file": "banner-desk-evidence.jpg",
+      "use": "LinkedIn banner"
+    },
+    {
+      "file": "banner-city-glass.jpg",
+      "use": "YouTube banner / early scenes"
+    },
+    {
+      "file": "countryside-thinking.jpg",
+      "use": "People / thinking space"
+    },
+    {
+      "file": "focus-star-inquiry.jpg",
+      "use": "Focus Star / media kit middle"
+    },
+    {
+      "file": "media-studio-empty.jpg",
+      "use": "Imagery slide"
+    },
+    {
+      "file": "paper-seam-detail.jpg",
+      "use": "Product / detail"
+    },
+    {
+      "file": "imagery-direction-board.jpg",
+      "use": "Imagery direction board"
+    }
+  ],
+  "files": [
+    "avatar-tight.jpg",
+    "banner-brand-field.jpg",
+    "banner-city-glass-temp.jpg",
+    "banner-city-glass.jpg",
+    "banner-desk-evidence-temp.jpg",
+    "banner-desk-evidence.jpg",
+    "conversation-glass.jpg",
+    "countryside-thinking.jpg",
+    "desk-hero.jpg",
+    "evidence-sheet-music.jpg",
+    "focus-star-inquiry.jpg",
+    "imagery-direction-board.jpg",
+    "media-studio-empty.jpg",
+    "paper-seam-detail.jpg",
+    "profile-avatar-tight.jpg",
+    "studio-polo.jpg",
+    "teaching-side.jpg",
+    "tuxedo-evening.jpg"
+  ]
+}
