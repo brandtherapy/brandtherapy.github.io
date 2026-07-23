@@ -6,7 +6,7 @@
   "generated": "2026-07-22",
   "templateVersion": "0.5.0",
   "templateReleaseStatus": "review_pending",
-  "templateReleaseSha256": "2990747b7f364f63b7a78dccbb6c18fb9dfd3ca67b9e507c3e270de487daa102",
+  "templateReleaseSha256": "7be63d200e957769fa59ad4dc21cffbe5a2935b15eb4a613a116ac169c36dbe9",
   "routes": [
     "index.html",
     "use.html",
