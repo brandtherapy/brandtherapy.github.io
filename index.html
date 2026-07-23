@@ -10,17 +10,17 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://brandtherapy.florianp.com/">
 <meta property="og:site_name" content="Brand Therapy">
-<meta property="og:image" content="https://brandtherapy.florianp.com/og-image.jpg">
-<meta property="og:image:secure_url" content="https://brandtherapy.florianp.com/og-image.jpg">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1527">
-<meta property="og:image:height" content="834">
-<meta property="og:image:alt" content="Brand Therapy notebook on concrete">
+<meta property="og:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
+<meta property="og:image:secure_url" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Brand Therapy">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Brand Therapy. Self-serve.">
 <meta name="twitter:description" content="Answer questions the way you would in a real strategy session. Your answers fill a live Focus Star in front of you.">
-<meta name="twitter:image" content="https://brandtherapy.florianp.com/og-image.jpg">
-<meta name="twitter:image:alt" content="Brand Therapy notebook on concrete">
+<meta name="twitter:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
+<meta name="twitter:image:alt" content="Brand Therapy">
 <meta name="description" content="Answer questions the way you would in a real strategy session. Your answers fill a live Focus Star in front of you.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='38' fill='%235A5CF9'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -128,15 +128,15 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 #session-wrap{height:100vh;display:flex;overflow:hidden}
 #session-wrap.has-banner{padding-top:40px}
 .chat-col{width:40%;min-width:360px;border-right:1px solid var(--border);display:flex;flex-direction:column;background:var(--white)}
-.chat-head{padding:20px 26px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.chat-head .wm{font-size:16px}
-.chat-head .actions{display:flex;gap:8px}
-.icon-btn{border:1px solid var(--border);padding:7px 12px;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);transition:all var(--dur-fast) var(--exo)}
+.chat-head{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px}
+.chat-head .brand-lockup{display:flex;flex-direction:column;gap:2px;min-width:0}
+.chat-head .wm{font-size:16px;line-height:1.1}
+.chat-head .save-meta{font-size:10px;color:var(--muted);line-height:1.2}
+.chat-head .actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.icon-btn{border:1px solid var(--border);min-height:40px;padding:0 12px;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;justify-content:center;transition:all var(--dur-fast) var(--exo)}
 .icon-btn:hover{border-color:var(--accent);color:var(--accent)}
-.brand-destination{min-height:44px;padding:10px 16px;background:var(--accent);border-color:var(--accent);color:var(--white);font-size:12px;font-weight:600;letter-spacing:0;text-transform:none}
+.brand-destination{min-height:40px;padding:0 14px;background:var(--accent);border-color:var(--accent);color:var(--white);font-size:12px;font-weight:600;letter-spacing:0;text-transform:none}
 .brand-destination:hover{background:#4d4fe9;border-color:#4d4fe9;color:var(--white)}
-.conversation-progress{min-height:54px;padding:10px 26px;background:var(--light);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:12.5px;color:var(--muted)}
-.conversation-progress button{min-height:44px;color:var(--accent);font-size:12px;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
 .chat-scroll{flex:1;overflow-y:auto;padding:24px 26px;display:flex;flex-direction:column;gap:14px}
 .chat-scroll::-webkit-scrollbar{width:8px}
@@ -177,6 +177,58 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 .chat-context-bar button{width:100%;min-height:44px;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:11.5px;text-align:left}
 .chat-context-bar button:hover{color:var(--accent)}
 .chat-context-bar b{color:var(--text);font-weight:500}
+
+/* Chameleon/Appcues-style Launcher + Checklist (frame chrome, not chat body) */
+.setup-launcher{position:relative;display:inline-flex}
+.setup-launch-btn{min-height:40px;padding:0 12px;border:1px solid var(--border);background:var(--white);display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-b);font-size:12px;font-weight:600;color:var(--text);transition:border-color var(--dur-fast) var(--exo),color var(--dur-fast) var(--exo)}
+.setup-launch-btn:hover,.setup-launch-btn[aria-expanded="true"]{border-color:var(--accent);color:var(--accent)}
+.setup-launch-btn .sl-ring{width:18px;height:18px;flex-shrink:0}
+.setup-launch-btn .sl-ring circle{fill:none;stroke-width:2.5}
+.setup-launch-btn .sl-ring .track{stroke:var(--border)}
+.setup-launch-btn .sl-ring .fill{stroke:var(--accent);stroke-linecap:round;transform:rotate(-90deg);transform-origin:9px 9px;transition:stroke-dashoffset .35s var(--exo)}
+.setup-launch-btn.ready{border-color:var(--accent);background:var(--accent-soft)}
+/* Panel lives under #app (outside #session-wrap overflow:hidden) so fixed never clips on iOS */
+.setup-backdrop{display:none;position:fixed;inset:0;z-index:140;border:0;padding:0;margin:0;background:rgba(17,17,24,.28);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.setup-backdrop.open{display:block}
+.setup-panel{position:fixed;top:72px;right:24px;left:auto;width:340px;max-width:min(340px,calc(100vw - 24px));background:var(--white);border:1px solid var(--text);box-shadow:var(--shadow-lg);z-index:150;display:none;padding:16px 16px 14px;max-height:min(70vh,560px);overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.setup-panel.open{display:block}
+.setup-panel .sp-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.setup-panel .sp-title{font-family:var(--ff-h);font-weight:700;font-size:16px;letter-spacing:-.02em;line-height:1.2}
+.setup-panel .sp-sub{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.45}
+.setup-panel .sp-close{width:32px;height:32px;border:1px solid var(--border);color:var(--muted);font-size:16px;line-height:1;flex-shrink:0}
+.setup-panel .sp-close:hover{border-color:var(--accent);color:var(--accent)}
+.setup-progress{height:4px;background:var(--light);margin-bottom:14px;overflow:hidden}
+.setup-progress i{display:block;height:100%;width:0;background:var(--accent);transition:width .35s var(--exo)}
+.setup-group{margin-bottom:12px}
+.setup-group:last-child{margin-bottom:0}
+.setup-group-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
+.setup-item{width:100%;display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--border);background:var(--white);text-align:left;margin-bottom:6px;font-family:var(--ff-b);min-height:44px;transition:border-color var(--dur-fast) var(--exo)}
+.setup-item:last-child{margin-bottom:0}
+.setup-item:hover{border-color:var(--accent)}
+.setup-item.done{background:var(--light);border-color:rgba(90,92,249,.28)}
+.setup-item .si-check{width:18px;height:18px;border:1.5px solid var(--border);flex-shrink:0;display:grid;place-items:center;font-size:11px;color:transparent}
+.setup-item.done .si-check{border-color:var(--accent);background:var(--accent);color:var(--white)}
+.setup-item .si-body{flex:1;min-width:0}
+.setup-item .si-name{font-size:13px;font-weight:600;color:var(--text);line-height:1.3}
+.setup-item .si-why{display:none}
+.setup-item .si-go{font-size:11px;font-weight:600;color:var(--accent);white-space:nowrap}
+.setup-item.done .si-go{color:var(--muted);font-weight:500}
+.setup-foot{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);display:flex;justify-content:flex-end}
+.setup-foot button{font-size:12px;font-weight:600;color:var(--accent);font-family:var(--ff-b)}
+.setup-foot button:hover{text-decoration:underline}
+.msg-cta{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+.msg-cta button{min-height:36px;padding:8px 12px;border:1px solid var(--accent);background:var(--white);color:var(--accent);font-family:var(--ff-b);font-size:12px;font-weight:600}
+.msg-cta button:hover{background:var(--accent);color:var(--white)}
+.msg-cta button.ghost{border-color:var(--border);color:var(--muted);font-weight:500}
+.msg-cta button.ghost:hover{border-color:var(--accent);color:var(--accent);background:var(--white)}
+.msg.assistant.has-cta{background:var(--accent-soft);border:1px solid rgba(90,92,249,.28);border-left:2px solid var(--accent)}
+.ex-required-note{font-size:12px;line-height:1.45;color:var(--text);background:var(--accent-soft);border-left:2px solid var(--accent);padding:8px 12px;margin:0 0 8px}
+.ex-card.needed .xt::after{content:" · Required";color:var(--accent);font-weight:600;font-size:11px}
+#btn-open-submit:disabled,#btn-open-submit[aria-disabled="true"]{opacity:.4;cursor:not-allowed}
+#btn-do-submit:disabled{opacity:.4;cursor:not-allowed}
+.review-banner #btn-open-submit.blocked{background:#5a5a6e}
+.review-banner .rb-gate{margin-top:6px;color:#C7C7D6}
+.review-banner .rb-gate button{color:var(--accent-on-dark);text-decoration:underline;margin:0 2px}
 
 /* quotes drawer */
 .quotes-drawer{border-top:1px solid var(--border);background:var(--light)}
@@ -403,11 +455,22 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 
 @media (max-width:900px){
   #session-wrap{display:block;height:100dvh;min-height:0;overflow:hidden}
-  #session-wrap.has-banner{padding-top:48px}
-  .chat-col{width:100%;min-width:0;height:100%;border-right:0}
-  .chat-head{padding:12px 16px;min-height:58px}
+  .chat-col{width:100%;min-width:0;height:100%;border-right:0;overflow:visible}
+  .chat-head{padding:12px 16px;min-height:58px;position:relative;z-index:90;overflow:visible}
   .chat-head .actions{gap:6px}
-  .icon-btn{padding:8px 10px;font-size:9.5px}
+  .icon-btn{padding:0 10px;font-size:10px;min-height:40px}
+  .setup-launch-btn{padding:0 10px;font-size:11px;max-width:148px}
+  .setup-backdrop{z-index:140}
+  .setup-panel{
+    position:fixed;
+    left:max(12px,env(safe-area-inset-left));
+    right:max(12px,env(safe-area-inset-right));
+    width:auto;
+    max-width:none;
+    top:var(--setup-panel-top, 110px);
+    max-height:calc(100dvh - var(--setup-panel-top, 110px) - max(16px,env(safe-area-inset-bottom)));
+    z-index:150;
+  }
   .mobile-star-toggle{display:inline-flex}
   .chat-scroll{padding:18px 16px;gap:12px}
   .msg{max-width:92%;font-size:13.5px;padding:12px 14px}
@@ -416,8 +479,6 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
   .chat-input-row{padding:12px 12px calc(12px + env(safe-area-inset-bottom));gap:8px}
   .chat-input-row textarea{font-size:16px;min-height:44px;padding:10px 12px}
   .send-btn{min-height:44px;padding:10px 16px}
-  .conversation-progress{min-height:50px;padding:6px 16px;font-size:11.5px}
-  .conversation-progress button{min-width:88px;text-align:right}
   .brand-shell{border:0}
   .brand-topbar{min-height:62px;padding:9px 20px}
   .brand-main{padding:30px 20px calc(48px + env(safe-area-inset-bottom))}
@@ -662,15 +723,22 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
     <div id="session-wrap">
       <div class="chat-col">
         <div class="chat-head">
-          <div><div class="wm">Brand Therapy<b>.</b></div><div id="conversation-save-state" style="font-size:10px;color:var(--muted)">Your work is saved</div></div>
+          <div class="brand-lockup">
+            <div class="wm">Brand Therapy<b>.</b></div>
+            <div class="save-meta" id="conversation-save-state">Saved as you go</div>
+          </div>
           <div class="actions">
+            <div class="setup-launcher" id="setup-launcher">
+              <button type="button" class="setup-launch-btn" id="setup-launch-btn" aria-expanded="false" aria-controls="setup-panel" aria-haspopup="dialog">
+                <svg class="sl-ring" viewBox="0 0 18 18" aria-hidden="true"><circle class="track" cx="9" cy="9" r="6.5"/><circle class="fill" id="setup-ring-fill" cx="9" cy="9" r="6.5" stroke-dasharray="40.84" stroke-dashoffset="40.84"/></svg>
+                <span id="setup-launch-label">Checklist · 2</span>
+              </button>
+            </div>
             <button class="icon-btn mobile-star-toggle" id="btn-mobile-star" aria-label="View your Focus Star">Star</button>
             <button class="icon-btn brand-destination" id="btn-open-brand">Your Brand&nbsp; &#8250;</button>
           </div>
         </div>
-        <div class="conversation-progress"><span>Your brand is taking shape</span><button id="btn-see-progress">See progress</button></div>
         <div class="chat-scroll" id="chat-scroll" role="log" aria-live="off" aria-relevant="additions" aria-label="Brand Therapy conversation"></div>
-        <div class="chat-context-bar"><button id="chat-words-shortcut"><span><b>Your Words</b></span><span><span id="chat-quotes-count">0</span> captured&nbsp; &#8250;</span></button></div>
         <div class="chat-input-row">
           <textarea id="chat-input" placeholder="Type your answer..." rows="1"></textarea>
           <button class="send-btn" id="send-btn">Send</button>
@@ -694,6 +762,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
           <div class="rb-text">Your Focus Star is <b>ready for review</b>.<span class="rb-extra">Every edge has a supported working position.</span>
             <div class="details-nudge" id="rb-nudge">Before you send: <button id="btn-nudge-details">add your LinkedIn, bio, or photos</button> so Florian reviews the full picture.</div>
             <div class="details-nudge" id="rb-ex-nudge" style="display:none">Also: <button id="btn-nudge-ex">finish your workshop exercises</button> <span id="rb-ex-count"></span>. They feed the review directly.</div>
+            <div class="rb-gate" id="rb-gate" style="display:none">Still needed: <button type="button" id="rb-gate-sliders">Brand Sliders</button> and <button type="button" id="rb-gate-archetype">Personality Attributes</button>. Florian cannot review without both.</div>
           </div>
           <button id="btn-open-submit">Review &amp; send</button>
         </div>
@@ -723,6 +792,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
               </button>
               <div class="ex-dock-body" id="ex-dock-body" hidden aria-hidden="true">
                 <div class="ex-dock-content">
+                  <div class="ex-required-note" id="ex-required-note" hidden>Needed before Florian can review: Brand Sliders and Personality Attributes.</div>
                   <div class="ex-cards">
                     <button class="ex-card" id="ex-card-sliders" data-ex="sliders"><span class="xt">Brand Sliders</span><span class="xs">Open&nbsp; &#8250;</span></button>
                     <button class="ex-card" id="ex-card-archetype" data-ex="archetype"><span class="xt">Personality Attributes</span><span class="xs">Open&nbsp; &#8250;</span></button>
@@ -775,6 +845,31 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
     </section>
   </section>
 
+</div>
+
+<button type="button" class="setup-backdrop" id="setup-backdrop" aria-label="Close checklist" hidden></button>
+<div class="setup-panel" id="setup-panel" role="dialog" aria-labelledby="setup-panel-title" hidden>
+  <div class="sp-head">
+    <div>
+      <div class="sp-title" id="setup-panel-title">Checklist</div>
+      <div class="sp-sub">Required before review, plus a few optional extras.</div>
+    </div>
+    <button type="button" class="sp-close" id="setup-panel-close" aria-label="Close checklist">&times;</button>
+  </div>
+  <div class="setup-progress" aria-hidden="true"><i id="setup-progress-fill"></i></div>
+  <div class="setup-group">
+    <div class="setup-group-label">Required</div>
+    <button type="button" class="setup-item" data-setup="sliders"><span class="si-check" aria-hidden="true">&#10003;</span><span class="si-body"><span class="si-name">Brand Sliders</span></span><span class="si-go">Start</span></button>
+    <button type="button" class="setup-item" data-setup="archetype"><span class="si-check" aria-hidden="true">&#10003;</span><span class="si-body"><span class="si-name">Personality Attributes</span></span><span class="si-go">Start</span></button>
+  </div>
+  <div class="setup-group">
+    <div class="setup-group-label">Optional</div>
+    <button type="button" class="setup-item" data-setup="taste"><span class="si-check" aria-hidden="true">&#10003;</span><span class="si-body"><span class="si-name">Design Taste</span></span><span class="si-go">Talk</span></button>
+    <button type="button" class="setup-item" data-setup="spectrum"><span class="si-check" aria-hidden="true">&#10003;</span><span class="si-body"><span class="si-name">Founder Spectrum</span></span><span class="si-go">Talk</span></button>
+    <button type="button" class="setup-item" data-setup="board"><span class="si-check" aria-hidden="true">&#10003;</span><span class="si-body"><span class="si-name">Whiteboard</span></span><span class="si-go">Open</span></button>
+    <button type="button" class="setup-item" data-setup="profile"><span class="si-check" aria-hidden="true">&#10003;</span><span class="si-body"><span class="si-name">Profile and links</span></span><span class="si-go">Add</span></button>
+  </div>
+  <div class="setup-foot"><button type="button" id="setup-open-brand">Open Your Brand&nbsp; &#8250;</button></div>
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -834,7 +929,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
     <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" placeholder="you@yourbrand.com" /></div>
     <div class="field"><label for="f-brand">Brand name</label><input id="f-brand" type="text" placeholder="What you go by" /></div>
     <div class="subex" id="subex-rows"></div>
-    <div class="subex-warn" id="subex-warn" style="display:none">Some workshop inputs are still open. You can keep talking or send with the gaps visible to Florian.</div>
+    <div class="subex-warn" id="subex-warn" style="display:none">Brand Sliders and Personality Attributes are required before Florian can review. Design Taste, Founder Spectrum, and Whiteboard stay optional.</div>
     <div class="modal-err" id="submit-err" role="alert" style="display:none"></div>
     <div class="modal-actions">
       <button class="btn btn-ghost" id="btn-cancel-submit">Cancel</button>
@@ -1260,6 +1355,7 @@ function showBrand(options){
   if(wrap.contains(document.activeElement)&&brandBack.focus)brandBack.focus({preventScroll:true});
   setWorkspaceHidden(wrap,true);
   renderBrandHub();
+  if(!requiredExercisesDone())setDockOpen(true,false);
   requestAnimationFrame(()=>{
     brand.scrollTop=0;
     if(!(options&&options.preserveFocus))brandBack.focus();
@@ -1662,7 +1758,7 @@ function saveQuoteEdit(record,value){
 function renderQuotes(){
   const records=quoteRecords();
   const count=document.getElementById('quotes-count');if(count)count.textContent=records.length;
-  const chatCount=document.getElementById('chat-quotes-count');if(chatCount)chatCount.textContent=records.length;
+  const chatCount=document.getElementById('chat-quotes-count');if(chatCount)chatCount.textContent=String(records.length);
   const summary=document.getElementById('context-summary');if(summary)summary.textContent=records.length+' quote'+(records.length===1?'':'s')+' captured · Whiteboard and profile available';
   const inner=document.getElementById('quotes-inner');
   inner.replaceChildren();
@@ -1683,6 +1779,109 @@ function renderQuotes(){
   });
 }
 
+function requiredExercisesDone(){
+  const status=workshopStatus();
+  return !!(status.sliders&&status.archetype);
+}
+function checklistState(){
+  const status=workshopStatus();
+  const ex=ensureExercises();
+  return {
+    sliders:!!status.sliders,
+    archetype:!!status.archetype,
+    taste:!!status.taste,
+    spectrum:!!status.spectrum,
+    board:!!ex.board.done,
+    profile:profileHasDetails()
+  };
+}
+function setSetupPanelOpen(open){
+  const panel=document.getElementById('setup-panel');
+  const btn=document.getElementById('setup-launch-btn');
+  const backdrop=document.getElementById('setup-backdrop');
+  if(!panel||!btn)return;
+  if(open){
+    const mobile=window.matchMedia('(max-width:900px)').matches;
+    const head=document.querySelector('.chat-head');
+    const demo=document.getElementById('demo-banner');
+    let top=8;
+    if(demo&&demo.style.display!=='none'&&demo.offsetParent!==null)top=Math.max(top,demo.getBoundingClientRect().bottom);
+    if(head)top=Math.max(top,head.getBoundingClientRect().bottom);
+    if(mobile){
+      panel.style.left='';
+      panel.style.right='';
+      panel.style.top='';
+      panel.style.setProperty('--setup-panel-top',Math.round(top+8)+'px');
+    }else{
+      const r=btn.getBoundingClientRect();
+      const width=Math.min(340,window.innerWidth-24);
+      let left=Math.round(r.right-width);
+      left=Math.max(12,Math.min(left,window.innerWidth-width-12));
+      panel.style.setProperty('--setup-panel-top','');
+      panel.style.top=Math.round(r.bottom+8)+'px';
+      panel.style.left=left+'px';
+      panel.style.right='auto';
+    }
+  }
+  panel.classList.toggle('open',open);
+  panel.hidden=!open;
+  if(backdrop){
+    backdrop.classList.toggle('open',open && window.matchMedia('(max-width:900px)').matches);
+    backdrop.hidden=!backdrop.classList.contains('open');
+  }
+  btn.setAttribute('aria-expanded',open?'true':'false');
+}
+function renderSetupChecklist(){
+  const state=checklistState();
+  const keys=['sliders','archetype','taste','spectrum','board','profile'];
+  const doneCount=keys.filter(k=>state[k]).length;
+  const requiredLeft=(state.sliders?0:1)+(state.archetype?0:1);
+  const circ=40.84;
+  const fill=document.getElementById('setup-ring-fill');
+  if(fill)fill.style.strokeDashoffset=String(circ-(circ*(doneCount/keys.length)));
+  const bar=document.getElementById('setup-progress-fill');
+  if(bar)bar.style.width=Math.round((doneCount/keys.length)*100)+'%';
+  const launch=document.getElementById('setup-launch-btn');
+  const label=document.getElementById('setup-launch-label');
+  if(launch&&label){
+    launch.classList.toggle('ready',requiredLeft===0);
+    if(requiredLeft>0)label.textContent='Checklist · '+requiredLeft;
+    else if(doneCount<keys.length)label.textContent='Ready to send';
+    else label.textContent='Checklist done';
+  }
+  document.querySelectorAll('.setup-item[data-setup]').forEach(item=>{
+    const key=item.dataset.setup;
+    const done=!!state[key];
+    item.classList.toggle('done',done);
+    const go=item.querySelector('.si-go');
+    if(!go)return;
+    if(done)go.textContent='Done';
+    else if(key==='taste'||key==='spectrum')go.textContent='Talk';
+    else if(key==='profile')go.textContent='Add';
+    else if(key==='board')go.textContent='Open';
+    else go.textContent='Start';
+  });
+}
+function appendWorkshopCtaCard(content,options){
+  const d=appendMsg('assistant',content);
+  d.classList.add('has-cta');
+  const actions=document.createElement('div');
+  actions.className='msg-cta';
+  const mk=(label,fn,ghost)=>{
+    const b=document.createElement('button');
+    b.type='button';
+    b.textContent=label;
+    if(ghost)b.className='ghost';
+    b.addEventListener('click',fn);
+    return b;
+  };
+  if(!ensureExercises().sliders.done)actions.appendChild(mk('Start Brand Sliders',()=>openExercise('sliders')));
+  if(!ensureExercises().archetype.done)actions.appendChild(mk('Start Personality Attributes',()=>openExercise('archetype')));
+  actions.appendChild(mk('Open checklist',()=>setSetupPanelOpen(true),true));
+  d.appendChild(actions);
+  chatScroll.scrollTop=chatScroll.scrollHeight;
+  return d;
+}
 function renderReviewBanner(){
   const banner=document.getElementById('review-banner');
   const ready=!!(session.star&&session.star.ready_for_review&&tasteProgress(session.star)===3);
@@ -1693,10 +1892,20 @@ function renderReviewBanner(){
   const starColumn=banner.closest('.star-col');
   starColumn?.classList.toggle('review-banner-visible',visible);
   starColumn?.classList.toggle('pane-open',!!focused);
+  const requiredDone=requiredExercisesDone();
   const exn=document.getElementById('rb-ex-nudge');
   const n=Object.values(workshopStatus()).filter(Boolean).length;
-  exn.style.display=n<4?'':'none';
+  exn.style.display=(!requiredDone||n<4)?'':'none';
   document.getElementById('rb-ex-count').textContent='('+n+' of 4 complete)';
+  const gate=document.getElementById('rb-gate');
+  if(gate)gate.style.display=requiredDone?'none':'';
+  const submitBtn=document.getElementById('btn-open-submit');
+  // Keep clickable when blocked so mobile (where gate copy is hidden) can deep-link into the first missing workshop.
+  submitBtn.disabled=false;
+  submitBtn.setAttribute('aria-disabled',requiredDone?'false':'true');
+  submitBtn.classList.toggle('blocked',!requiredDone);
+  submitBtn.textContent=requiredDone?'Review & send':'Finish required workshops';
+  renderSetupChecklist();
 }
 
 function renderStarFull(){
@@ -1788,11 +1997,11 @@ document.getElementById('btn-mobile-star').addEventListener('click',()=>{
 });
 document.getElementById('btn-mobile-star-close').addEventListener('click',closeFullStar);
 document.getElementById('btn-open-brand').addEventListener('click',e=>showBrand({returnFocus:e.currentTarget}));
-document.getElementById('btn-see-progress').addEventListener('click',e=>showBrand({returnFocus:e.currentTarget}));
 document.getElementById('btn-brand-back').addEventListener('click',()=>showConversation(false));
 document.getElementById('brand-live-conversation').addEventListener('click',()=>showConversation(true));
 document.getElementById('btn-open-full-star').addEventListener('click',()=>showFullStar(null,'brand'));
-document.getElementById('chat-words-shortcut').addEventListener('click',e=>{showBrand({returnFocus:e.currentTarget,preserveFocus:true});requestAnimationFrame(()=>setContextOpen(true,true));});
+const chatWordsShortcut=document.getElementById('chat-words-shortcut');
+if(chatWordsShortcut)chatWordsShortcut.addEventListener('click',e=>{showBrand({returnFocus:e.currentTarget,preserveFocus:true});requestAnimationFrame(()=>setContextOpen(true,true));});
 document.querySelectorAll('[data-conversation-focus]').forEach(button=>button.addEventListener('click',()=>{
   showConversation(true);
   toast(button.dataset.conversationFocus==='taste'?'Continue here with the visual references and hard nos that shape your Design Taste.':'Continue here to place your Founder Spectrum.');
@@ -1819,7 +2028,11 @@ function startRealSession(resumed){
 
   if(resumed){
     chatScroll.innerHTML='';
-    session.messages.forEach(m=>{ if(m.content!=='__START__') appendMsg(m.role,m.content); });
+    session.messages.forEach(m=>{
+      if(m.content==='__START__')return;
+      if(m.role==='assistant'&&m.cta==='workshops')appendWorkshopCtaCard(m.content);
+      else appendMsg(m.role,m.content);
+    });
     chatScroll.setAttribute('aria-live','polite');
     renderStarFull();
     if(profileImages.length)scheduleProfileMediaSync();
@@ -1869,11 +2082,11 @@ function addWorkshopResumePrompt(){
   if(session.workshopResumeNoticeShown)return;
   if(!session.star||(session.star.completeness||0)<60)return;
   if(tasteProgress(session.star)<3)return;
-  if(Object.values(workshopStatus()).every(Boolean))return;
-  const content='One more thing before this reaches Florian: open Your Brand whenever you are ready to see your workshops, Focus Star, and additional context in one place. Brand Sliders and Personality Attributes can be completed in any order. Design Taste and Founder Spectrum continue here in the conversation.';
-  session.messages.push({role:'assistant',content});
+  if(requiredExercisesDone())return;
+  const content='Before Florian can review, finish Brand Sliders and Personality Attributes. Use the buttons below, or open the checklist in the header anytime. Design Taste and Founder Spectrum stay in this conversation.';
+  session.messages.push({role:'assistant',content,cta:'workshops'});
   session.workshopResumeNoticeShown=true;
-  appendMsg('assistant',content);
+  appendWorkshopCtaCard(content);
   saveSession('workshop_resume_prompt',true);
 }
 
@@ -2208,9 +2421,12 @@ function renderExDock(){
   const n=Object.values(status).filter(Boolean).length;
   document.getElementById('ex-progress').textContent=n+' of 4 complete';
   document.getElementById('ex-pulse').style.display=n===4?'none':'';
+  const note=document.getElementById('ex-required-note');
+  if(note)note.hidden=requiredExercisesDone();
   [['sliders','ex-card-sliders'],['archetype','ex-card-archetype']].forEach(pair=>{
     const card=document.getElementById(pair[1]);
     card.classList.toggle('done',!!ex[pair[0]].done);
+    card.classList.toggle('needed',!ex[pair[0]].done);
     card.querySelector('.xs').innerHTML=ex[pair[0]].done?'Saved &#10003;':'Continue &#8250;';
   });
   const tasteCard=document.getElementById('ex-card-taste');tasteCard.classList.toggle('done',status.taste);tasteCard.querySelector('.xs').innerHTML=status.taste?'Complete &#10003;':'Continue &#8250;';
@@ -2221,6 +2437,7 @@ function renderExDock(){
   details.querySelector('.go').innerHTML=profileHasDetails()?'Added &#10003;':'Add &#8250;';
   renderTasteTracker();
   renderBrandStarRows();
+  renderSetupChecklist();
 }
 
 function workshopStatus(){
@@ -2284,6 +2501,43 @@ document.getElementById('btn-nudge-ex').addEventListener('click',()=>{
   if(!status.taste){showConversation(true);toast('Continue here with the visual references and hard nos that shape your Design Taste.');return;}
   if(!status.spectrum){showConversation(true);toast('Continue here to place your Founder Spectrum.');return;}
   showBrand();
+});
+document.getElementById('rb-gate-sliders').addEventListener('click',()=>openExercise('sliders'));
+document.getElementById('rb-gate-archetype').addEventListener('click',()=>openExercise('archetype'));
+
+document.getElementById('setup-launch-btn').addEventListener('click',e=>{
+  e.stopPropagation();
+  const open=!document.getElementById('setup-panel').classList.contains('open');
+  setSetupPanelOpen(open);
+});
+document.getElementById('setup-panel-close').addEventListener('click',()=>setSetupPanelOpen(false));
+document.getElementById('setup-backdrop').addEventListener('click',()=>setSetupPanelOpen(false));
+document.getElementById('setup-open-brand').addEventListener('click',e=>{
+  setSetupPanelOpen(false);
+  showBrand({returnFocus:e.currentTarget});
+  setDockOpen(true,false);
+});
+document.querySelectorAll('.setup-item[data-setup]').forEach(item=>{
+  item.addEventListener('click',()=>{
+    const key=item.dataset.setup;
+    setSetupPanelOpen(false);
+    if(key==='sliders'||key==='archetype'||key==='board'){openExercise(key);return;}
+    if(key==='profile'){showBrand();requestAnimationFrame(()=>{setContextOpen(true,false);openDetails();});return;}
+    if(key==='taste'||key==='spectrum'){
+      showConversation(true);
+      toast(key==='taste'?'Keep talking here about references, specifics, and hard nos.':'Keep talking here to place your Founder Spectrum.');
+    }
+  });
+});
+document.addEventListener('click',e=>{
+  const panel=document.getElementById('setup-panel');
+  const btn=document.getElementById('setup-launch-btn');
+  if(!panel||!panel.classList.contains('open'))return;
+  if(panel.contains(e.target)||(btn&&btn.contains(e.target)))return;
+  setSetupPanelOpen(false);
+});
+window.addEventListener('resize',()=>{
+  if(document.getElementById('setup-panel')?.classList.contains('open'))setSetupPanelOpen(true);
 });
 
 /* exercise 1: native range sliders, plus optional inline guidance */
@@ -2533,7 +2787,11 @@ function renderSubmitExStatus(){
     tasteRow.appendChild(go);
   }
   rows.appendChild(tasteRow);
-  document.getElementById('subex-warn').style.display=Object.values(workshopStatus()).every(Boolean)?'none':'block';
+  const requiredDone=requiredExercisesDone();
+  document.getElementById('subex-warn').style.display=requiredDone?'none':'block';
+  const sendBtn=document.getElementById('btn-do-submit');
+  sendBtn.disabled=!requiredDone;
+  sendBtn.textContent=requiredDone?'Send for review':'Finish required workshops first';
 }
 
 /* =========================================================================
@@ -2559,6 +2817,13 @@ function closeConfirmation(){
 }
 
 document.getElementById('btn-open-submit').addEventListener('click',e=>{
+  if(!requiredExercisesDone()){
+    toast('Finish Brand Sliders and Personality Attributes before review.');
+    const status=workshopStatus();
+    if(!status.sliders){openExercise('sliders');return;}
+    if(!status.archetype){openExercise('archetype');return;}
+    return;
+  }
   submitReturnFocus=e.currentTarget;
   document.getElementById('submit-err').style.display='none';
   const p=session.profile||{};
@@ -2589,7 +2854,17 @@ document.getElementById('btn-do-submit').addEventListener('click',async ()=>{
     errEl.style.display='block';
     return;
   }
+  if(!requiredExercisesDone()){
+    errEl.textContent='Brand Sliders and Personality Attributes are required before review.';
+    errEl.style.display='block';
+    return;
+  }
   const btn=document.getElementById('btn-do-submit');
+  if(btn.dataset.submitting==='1'||session.submitted){
+    showConfirmation();
+    return;
+  }
+  btn.dataset.submitting='1';
   btn.disabled=true;btn.textContent='Sending...';
   try{
     const res=await fetch(API_BASE+'/api/submit',{
@@ -2599,13 +2874,19 @@ document.getElementById('btn-do-submit').addEventListener('click',async ()=>{
         exercises:exercisesPayload(),boardFiles:boardFiles,tasteFiles:tasteFiles,
         profile:Object.assign({},session.profile,{name,email,images:profileImages})})
     });
-    if(!res.ok)throw new Error('submit failed '+res.status);
+    if(!res.ok){
+      let detail='';
+      try{const errBody=await res.json();detail=errBody&&errBody.error?String(errBody.error):'';}catch(_){}
+      throw new Error(detail||('submit failed '+res.status));
+    }
     await res.json();
+    session.submitted=true;
     showConfirmation();
-    btn.disabled=false;btn.textContent='Send for review';
+    btn.textContent='Sent';
   }catch(e){
-    errEl.textContent='Could not send right now. Check your connection and try again.';
+    errEl.textContent=(e&&e.message&&!String(e.message).startsWith('submit failed'))?e.message:'Could not send right now. Check your connection and try again.';
     errEl.style.display='block';
+    btn.dataset.submitting='';
     btn.disabled=false;btn.textContent='Send for review';
   }
 });
@@ -2895,7 +3176,10 @@ document.getElementById('btn-open-submit').addEventListener('click',()=>{
 });
 
 /* =========================================================================
-   VIEW AS CLIENT (Florian only) - open with #viewas=<sid>
+   VIEW AS CLIENT (Florian only) - open with #viewas=<sid>[&vt=<ticket>]
+   Preferred path: Nova/admin open https://bt-api.florianp.com/view-as?sid=
+   which mints a 90s ticket after the admin cookie session. Legacy key paste
+   remains only as a fallback for old bookmarks.
    Loads a client's live record through the admin endpoint and renders it on
    the demo chassis: session.demo=true means saveSession, snapshots, media
    sync, exercise sync, and lead submit are all no-ops, and no writeToken
@@ -2903,7 +3187,11 @@ document.getElementById('btn-open-submit').addEventListener('click',()=>{
    this browser's own saved session.
    ========================================================================= */
 function viewAsSid(){
-  const m=(location.hash||'').match(/^#viewas=([A-Za-z0-9_-]{4,80})$/);
+  const m=(location.hash||'').match(/(?:^#|&)viewas=([A-Za-z0-9_-]{4,80})(?:&|$)/);
+  return m?m[1]:null;
+}
+function viewAsTicket(){
+  const m=(location.hash||'').match(/(?:^#|&)vt=([A-Za-z0-9._~-]+)(?:&|$)/);
   return m?m[1]:null;
 }
 function applyReadOnlyMode(){
@@ -2918,28 +3206,46 @@ function applyReadOnlyMode(){
   document.querySelectorAll('.exw-word').forEach(control=>{control.disabled=true;control.dataset.mutates='true';});
 }
 async function startViewAs(sid){
-  let key=(sessionStorage.getItem('bt_viewas_key')||localStorage.getItem('bt_viewas_key')||'').trim();
-  let prompted=!key;
-  if(!key){
-    key=(window.prompt('Florian only. Paste the bt-api admin key for this browser tab.')||'').trim();
-    if(!key){toast('View as client cancelled.');return;}
+  const ticket=(viewAsTicket()||'').trim();
+  if(ticket){
+    try{history.replaceState(null,'',location.pathname+location.search+'#viewas='+encodeURIComponent(sid));}catch(e){}
+  }
+  let key='';
+  let prompted=false;
+  if(!ticket){
+    key=(sessionStorage.getItem('bt_viewas_key')||'').trim();
+    prompted=!key;
+    if(!key){
+      key=(window.prompt('Florian only. Paste the bt-api admin key for this browser tab.')||'').trim();
+      if(!key){toast('View as client cancelled.');return;}
+    }
   }
   let rec=null;
   try{
-    const load=candidate=>fetch(API_BASE+'/api/admin/session?sid='+encodeURIComponent(sid)+'&key='+encodeURIComponent(candidate),{cache:'no-store'});
+    const load=candidate=>{
+      const auth=ticket
+        ?('&vt='+encodeURIComponent(ticket))
+        :('&key='+encodeURIComponent(candidate));
+      return fetch(API_BASE+'/api/admin/session?sid='+encodeURIComponent(sid)+auth,{cache:'no-store'});
+    };
     let r=await load(key);
-    if(r.status===404&&!prompted){
+    if(r.status===404&&!ticket&&!prompted){
       sessionStorage.removeItem('bt_viewas_key');
-      localStorage.removeItem('bt_viewas_key');
       const replacement=(window.prompt('The saved admin key was not accepted. Paste the current key, or cancel if the session id may be wrong.')||'').trim();
       prompted=true;
       if(replacement&&replacement!==key){key=replacement;r=await load(key);}
     }
-    if(r.status===404){sessionStorage.removeItem('bt_viewas_key');localStorage.removeItem('bt_viewas_key');toast('Not found: wrong admin key or unknown session id.');return;}
+    if(r.status===404){
+      if(!ticket)sessionStorage.removeItem('bt_viewas_key');
+      toast(ticket?'View-as ticket expired. Re-open from Nova or admin.':'Not found: wrong admin key or unknown session id.');
+      return;
+    }
     if(!r.ok){toast('Could not load the client session ('+r.status+').');return;}
     rec=await r.json();
   }catch(err){toast('Network error loading the client session.');return;}
-  try{sessionStorage.setItem('bt_viewas_key',key);localStorage.setItem('bt_viewas_key',key);}catch(e){}
+  if(!ticket&&key){
+    try{sessionStorage.setItem('bt_viewas_key',key);}catch(e){}
+  }
 
   stopDemoPlayback();
   const msgs=(Array.isArray(rec.transcript)?rec.transcript:[])
@@ -3017,10 +3323,11 @@ async function startViewAs(sid){
    ========================================================================= */
 buildMiniStar();
 initDock();
-showState('state-landing');
 if(viewAsSid()){
+  showState('state-landing');
   startViewAs(viewAsSid());
 }else{
+  showState('state-landing');
   loadImages();
   loadBoardFiles();
   loadTasteFiles();
