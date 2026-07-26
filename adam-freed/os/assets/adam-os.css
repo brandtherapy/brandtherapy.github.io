@@ -1,0 +1,761 @@
+/* Adam Freed Brand Therapy OS application expansion styles.
+   Adapted from the Gosder OS application surface; tokens follow IDENTITY.md.
+*/
+.application-showcase {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.application-visual-card {
+  position: relative;
+  display: grid;
+  grid-column: span 4;
+  min-height: 22rem;
+  overflow: hidden;
+  color: var(--inverse-text);
+  background: var(--inverse);
+  text-decoration: none;
+}
+
+.application-visual-card--social {
+  grid-column: span 7;
+  min-height: 34rem;
+}
+
+.application-visual-card--video {
+  grid-column: span 5;
+  min-height: 34rem;
+}
+
+.application-visual-card > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+.application-visual-card::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(to top, rgba(28, 36, 48, 0.96), rgba(28, 36, 48, 0.02) 68%);
+}
+
+.application-visual-card > span:last-child {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-self: end;
+  gap: 0.35rem;
+  padding: 1.4rem;
+}
+
+.application-visual-card small {
+  color: var(--inverse-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.application-visual-card > span:last-child strong {
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: clamp(1.9rem, 3vw, 3.2rem);
+  font-weight: 400;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.application-visual-card:hover > img {
+  transform: scale(1.025);
+}
+
+.application-visual-card--type,
+.application-visual-card--signature {
+  background: var(--accent);
+}
+
+.application-visual-card--signature {
+  color: var(--ink);
+  background: #fff;
+}
+
+.application-visual-card--signature::after {
+  background: linear-gradient(to top, rgba(28, 36, 48, 0.92), transparent 64%);
+}
+
+.application-type-preview {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+  padding: 2rem;
+}
+
+.application-type-preview b {
+  max-width: 9ch;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-weight: 400;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.application-visual-card--signature .application-type-preview b {
+  font-family: Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.showcase-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.showcase-gallery .asset-figure img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.showcase-gallery--portrait .asset-figure img {
+  aspect-ratio: 4 / 5;
+}
+
+.social-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.social-preview {
+  position: relative;
+  display: flex;
+  grid-column: span 4;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 4 / 5;
+  min-height: 28rem;
+  overflow: hidden;
+  padding: clamp(1.2rem, 2vw, 2rem);
+  color: var(--inverse-text);
+  background: var(--inverse);
+}
+
+.social-preview:nth-child(-n + 2) {
+  grid-column: span 6;
+  min-height: 36rem;
+}
+
+.social-preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.social-preview--right img {
+  object-position: 76% center;
+}
+
+.social-preview--left img {
+  object-position: 34% center;
+}
+
+.social-preview--center img {
+  object-position: center top;
+}
+
+.social-preview::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(to top, rgba(28, 36, 48, 0.98), rgba(28, 36, 48, 0.06) 72%);
+}
+
+.social-preview > *:not(img) {
+  position: relative;
+  z-index: 1;
+}
+
+.social-preview-label,
+.social-preview small {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.social-preview strong {
+  max-width: 12ch;
+  margin: 0.55rem 0 1.2rem;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: clamp(2.2rem, 4vw, 4.8rem);
+  font-weight: 400;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.application-card {
+  min-height: 16rem;
+}
+
+.application-card p {
+  margin: 1rem 0 0;
+  color: var(--muted);
+}
+
+.application-card:hover p {
+  color: rgba(245, 241, 234, 0.72);
+}
+
+.metric-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.metric-grid article {
+  min-height: 9rem;
+}
+
+.metric-grid--seven article:last-child {
+  grid-column: span 2;
+}
+
+.metric-grid b {
+  display: block;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.metric-grid span {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.library-results a {
+  text-decoration: none;
+}
+
+.asset-thumb {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  background: var(--panel);
+}
+
+.asset-status {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.template-gallery {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.template-family-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border: 1px solid var(--line);
+}
+
+.template-family-list article {
+  min-height: 13rem;
+  padding: 1.4rem;
+  border-right: 1px solid var(--line);
+}
+
+.template-family-list article:last-child {
+  border-right: 0;
+}
+
+.template-family-list b {
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 1.65rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.template-family-list p {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.cover-gallery {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cover-gallery--feature {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 64rem;
+}
+
+.cover-gallery .asset-figure img {
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+.video-cover-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.video-cover {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  padding: 1rem;
+  color: var(--inverse-text);
+  background: var(--inverse);
+}
+
+.video-cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--cover-position, center);
+}
+
+.video-cover::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(to top, rgba(28, 36, 48, 0.98), rgba(28, 36, 48, 0.02) 70%);
+}
+
+.video-cover > *:not(img) {
+  position: relative;
+  z-index: 1;
+}
+
+.video-cover small {
+  margin-bottom: 0.65rem;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.video-cover strong {
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: clamp(1.6rem, 2.4vw, 3rem);
+  font-weight: 400;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.video-cover--type {
+  background: var(--accent);
+}
+
+.video-cover--type::after {
+  background: linear-gradient(155deg, transparent, rgba(28, 36, 48, 0.52));
+}
+
+.pending-layout {
+  display: grid;
+  align-content: end;
+  min-height: 31rem;
+  padding: 2rem;
+  color: var(--inverse-text);
+  background:
+    linear-gradient(to top, var(--inverse) 0 48%, transparent 48%),
+    url("/brand-os/brands/gosder/images/application-photography/piano-window.png") center / cover;
+}
+
+.pending-layout strong {
+  max-width: 8ch;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.prompt-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.prompt-card {
+  min-height: 18rem;
+}
+
+.prompt-card pre,
+.signature-code {
+  max-height: 17rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  font-family: "Barlow", sans-serif;
+  font-size: 0.82rem;
+}
+
+.email-gallery {
+  grid-template-columns: repeat(3, minmax(18rem, 1fr));
+  overflow-x: auto;
+  padding-bottom: 0.75rem;
+}
+
+.email-mock {
+  min-height: 36rem;
+  color: #1C2430;
+  border: 1px solid var(--line);
+  background: #F2F0EE;
+}
+
+.email-chrome {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+  color: #4e5660;
+  border-bottom: 1px solid var(--line);
+  background: #E8E4E0;
+  font-size: 0.72rem;
+}
+
+.email-body {
+  padding: 2rem;
+}
+
+.email-masthead {
+  padding-bottom: 1.5rem;
+  color: #1C2430;
+  border-bottom: 0.25rem solid #B85742;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.email-body h3 {
+  margin: 2.4rem 0 1rem;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 400;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.email-body p {
+  font-size: 0.9rem;
+}
+
+.email-cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  color: #F2F0EE;
+  background: #1C2430;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.signature-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.email-signature {
+  min-height: 17rem;
+  padding: 2.4rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-family: Arial, sans-serif;
+  color: #1C2430;
+}
+
+.email-signature strong {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.email-signature .signature-role {
+  display: block;
+  margin: 0.2rem 0 1rem;
+  color: #B85742;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.email-signature a {
+  color: #004DC2;
+}
+
+.site-prototype {
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  box-shadow: 0 1.8rem 4rem rgba(28, 36, 48, 0.12);
+}
+
+.site-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.4rem;
+  padding: 0 0.85rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.site-browser-bar i {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--line-strong);
+}
+
+.site-home {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  min-height: 39rem;
+  color: var(--inverse-text);
+  background: var(--inverse);
+}
+
+.site-home-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1.6rem, 4vw, 4rem);
+}
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.72rem;
+}
+
+.site-display {
+  max-width: 7ch;
+  margin: 0;
+  font-size: clamp(4rem, 8vw, 8rem);
+  line-height: 0.82;
+}
+
+.site-home-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobile-prototype {
+  width: min(100%, 23rem);
+  margin: 0 auto;
+  border: 0.7rem solid var(--inverse);
+  background: var(--surface);
+}
+
+.mobile-prototype img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.mobile-prototype-copy {
+  padding: 1.5rem;
+}
+
+.mobile-prototype-copy h3 {
+  margin: 0;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.poster-gallery {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.poster {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  padding: clamp(1rem, 2vw, 2rem);
+  color: var(--poster-ink, var(--inverse-text));
+  background: var(--poster-bg, var(--inverse));
+}
+
+.poster img {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--poster-position, center);
+}
+
+.poster::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: var(--poster-overlay, transparent);
+  content: "";
+}
+
+.poster > *:not(img) {
+  position: relative;
+  z-index: 2;
+}
+
+.poster-type {
+  margin: 0;
+  font-size: clamp(3rem, 5vw, 5.6rem);
+  line-height: 0.84;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.poster small {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.editorial-note {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.2rem;
+  color: var(--inverse-text);
+  background: var(--accent);
+}
+
+.cover-concepts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.editorial-cover {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  color: var(--cover-ink, var(--inverse-text));
+  background: var(--inverse);
+}
+
+.editorial-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--cover-position, center top);
+}
+
+.editorial-cover::after {
+  position: absolute;
+  inset: 0;
+  background: var(--cover-overlay, linear-gradient(to top, rgba(28, 36, 48, 0.82), transparent 58%));
+  content: "";
+}
+
+.cover-masthead,
+.cover-story,
+.cover-meta {
+  position: absolute;
+  z-index: 2;
+  right: 1rem;
+  left: 1rem;
+}
+
+.cover-masthead {
+  top: 0.8rem;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: clamp(2rem, 3.7vw, 4.6rem);
+  line-height: 0.85;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cover-story {
+  bottom: 2.1rem;
+  max-width: 10ch;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: clamp(1.8rem, 3.2vw, 3.8rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.cover-meta {
+  bottom: 0.8rem;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.article-spread {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  min-height: 42rem;
+  color: var(--inverse-text);
+  background: var(--inverse);
+}
+
+.article-spread img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 34% center;
+}
+
+.article-copy {
+  display: grid;
+  align-content: center;
+  gap: 1.5rem;
+  padding: clamp(2rem, 5vw, 5rem);
+}
+
+.article-copy h3 {
+  margin: 0;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.article-copy p {
+  color: var(--inverse-muted);
+}
+
+.ai-workflow li span {
+  color: var(--accent);
+}
+
+.content-section--ai {
+  border-color: rgba(184, 87, 66, 0.28);
+  background: rgba(184, 87, 66, 0.07);
+}
+
+.button,
+.filter-reset,
+.menu-button,
+.close-button {
+  border-radius: 0;
+}
+
+.button:hover,

@@ -4,9 +4,9 @@
   "status": "private_review",
   "brand": "adam-freed",
   "generated": "2026-07-21",
-  "templateVersion": "0.4.0",
+  "templateVersion": "0.5.0",
   "templateReleaseStatus": "review_pending",
-  "templateReleaseSha256": "3ea605e12d100a89f1f5c009e042fb8a4baafa778c32e40eea21d7e5b14fdac6",
+  "templateReleaseSha256": "ce2d0a7120b4d6bf046a178ee60b1e253b9b10bbb2baaf4f6ff98e807e034fc0",
   "routes": [
     "index.html",
     "use.html",
@@ -24,9 +24,14 @@
     "identity/personal-branding.html",
     "application/index.html",
     "application/social.html",
-    "application/video-covers.html"
+    "application/video-covers.html",
+    "application/website-ux.html",
+    "application/email.html",
+    "application/email-signature.html",
+    "application/posters.html",
+    "application/editorial-covers.html"
   ],
-  "routeCount": 17,
+  "routeCount": 22,
   "reviewUrl": "/brand-os/brands/adam-freed/output/",
   "approval": {
     "strategy": "approved",
@@ -37,10 +42,10 @@
     "publishing": false
   },
   "notes": [
-    "Standard Client Core: 17 routes.",
+    "Client Core with Gosder-parity Section C expansion: 22 routes.",
     "Installed at brand-os/brands/adam-freed/output for local review.",
     "Logo not in use. Brand Signature and Personal Branding active.",
-    "Direction 2 applications rebuilding; C pages are rules-first until examples ship.",
+    "Applications include Social, Video, Website, Email, Signature, Posters, Editorial.",
     "Temporary stylescape remains art-direction-only until Stage 5b."
   ]
 }

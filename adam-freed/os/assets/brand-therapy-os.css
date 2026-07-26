@@ -39,11 +39,14 @@
 html {
   scroll-behavior: smooth;
   background: var(--paper);
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   min-width: 20rem;
+  max-width: 100%;
+  overflow-x: clip;
   color: var(--ink);
   background: var(--paper);
   font-size: 1rem;
@@ -96,7 +99,10 @@ a {
 .shell {
   display: grid;
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  min-width: 0;
+  max-width: 100%;
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 .sidebar {
@@ -293,6 +299,8 @@ a {
 
 .main {
   min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 .workspace-bar {
@@ -322,9 +330,9 @@ a {
 
 .page-header {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(17rem, 0.9fr);
-  gap: clamp(2rem, 6vw, 6rem);
-  align-items: end;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: start;
   padding-bottom: var(--space-8);
   border-bottom: 1px solid var(--ink);
 }
@@ -332,6 +340,10 @@ a {
 .page-heading,
 .page-intro {
   min-width: 0;
+}
+
+.page-intro {
+  max-width: 36rem;
 }
 
 .section-label,
@@ -357,12 +369,16 @@ p {
 }
 
 h1 {
-  max-width: 20ch;
+  max-width: 24ch;
   margin: 0;
   font-size: clamp(2.7rem, 4vw, 4.4rem);
   font-weight: 760;
   letter-spacing: -0.038em;
-  line-height: 0.96;
+  line-height: 1.12;
+}
+
+.page-heading .section-label {
+  margin-bottom: var(--space-2);
 }
 
 .page-job {
@@ -911,14 +927,15 @@ h1 {
 
 .application-doors {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-5);
 }
 
 .application-door {
-  display: grid;
-  grid-template-rows: minmax(22rem, 1fr) auto;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
+  min-height: 14rem;
   overflow: hidden;
   color: var(--ink);
   border: 1px solid var(--line-strong);
@@ -933,43 +950,52 @@ h1 {
 }
 
 .application-door-copy {
-  display: grid;
-  grid-row: 2;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: var(--space-2) var(--space-5);
-  align-items: end;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
   padding: var(--space-5);
 }
 
 .application-door-copy small {
-  grid-column: 1 / -1;
+  display: block;
+  margin: 0;
   color: var(--quiet);
   font-size: 0.75rem;
   font-weight: 760;
   letter-spacing: 0.09em;
+  line-height: 1.25;
   text-transform: uppercase;
 }
 
 .application-door-copy strong {
-  font-size: clamp(1.75rem, 3vw, 3rem);
-  line-height: 0.98;
-  letter-spacing: -0.045em;
+  display: block;
+  margin: 0;
+  max-width: 11ch;
+  font-size: clamp(1.55rem, 2.4vw, 2.2rem);
+  font-weight: 740;
+  letter-spacing: -0.04em;
+  line-height: 1.18;
 }
 
 .application-door-copy p {
-  grid-column: 1;
-  max-width: 40ch;
-  margin: var(--space-2) 0 0;
+  display: block;
+  max-width: 36ch;
+  margin: 0;
   color: var(--muted);
   font-size: 0.92rem;
+  line-height: 1.45;
 }
 
 .application-door-copy b {
-  grid-column: 2;
-  grid-row: 2 / span 2;
-  align-self: end;
+  display: inline-flex;
+  margin-top: auto;
+  padding-top: var(--space-3);
   color: var(--accent-strong);
   font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .application-door-preview {
@@ -1268,7 +1294,7 @@ h1 {
 
 .add-on-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   border-top: 1px solid var(--line);
   border-right: 1px solid var(--line);
 }
@@ -1564,6 +1590,82 @@ h1 {
   font-size: 0.98rem;
 }
 
+/* Named-client builders emit .not-in-use*; the demo emits .optional-gate*.
+   Keep both class families identical so inactive pages never concatenate
+   preview labels into one run-on string. */
+.not-in-use {
+  position: relative;
+  display: grid;
+  min-height: 22rem;
+  margin-top: var(--space-6);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.not-in-use-preview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  padding: var(--space-6);
+  background: var(--line);
+  opacity: 0.34;
+}
+
+.not-in-use-preview span {
+  display: flex;
+  align-items: flex-end;
+  min-height: 9rem;
+  padding: var(--space-4);
+  color: var(--quiet);
+  background: var(--surface);
+  font-size: 0.75rem;
+  font-weight: 720;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.not-in-use-message {
+  position: absolute;
+  inset: var(--space-6) auto var(--space-6) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: min(34rem, calc(100% - 4rem));
+  padding: var(--space-6);
+  color: var(--inverse-text);
+  background: oklch(0.2 0.025 255 / 0.96);
+}
+
+.not-in-use-label {
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: var(--space-4);
+  padding: 0.28rem 0.48rem;
+  color: var(--inverse-text);
+  border: 1px solid oklch(0.5 0.015 255);
+  font-size: 0.75rem;
+  font-weight: 720;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.not-in-use-message h2 {
+  max-width: 24ch;
+  margin: 0;
+  font-size: clamp(1.9rem, 3vw, 2.55rem);
+  font-weight: 760;
+  letter-spacing: -0.028em;
+  line-height: 1.04;
+}
+
+.not-in-use-message > p {
+  max-width: 58ch;
+  margin: var(--space-4) 0 0;
+  color: var(--inverse-muted);
+  font-size: 0.98rem;
+}
+
 .button--light {
   color: var(--inverse);
   border-color: var(--inverse-text);
@@ -1609,10 +1711,14 @@ h1 {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: var(--space-4);
   align-items: end;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .prompt-tool pre {
   min-height: 16rem;
+  min-width: 0;
+  max-width: 100%;
   margin: 0;
   padding: var(--space-5);
   overflow: auto;
@@ -1621,6 +1727,55 @@ h1 {
   background: var(--inverse);
   font: 0.88rem/1.65 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Use-with-AI starter prompts. Contain long pre lines so they never widen the page. */
+.prompt-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  min-width: 0;
+  max-width: 100%;
+}
+
+.prompt-card {
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+  min-width: 0;
+  max-width: 100%;
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.prompt-card .asset-kicker {
+  margin: 0;
+}
+
+.prompt-card h3 {
+  margin: 0;
+}
+
+.prompt-card pre {
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: var(--space-4);
+  overflow: auto;
+  color: var(--inverse-text);
+  border: 1px solid var(--ink);
+  background: var(--inverse);
+  font: 0.82rem/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.prompt-card .button {
+  justify-self: start;
 }
 
 .copy-status {
@@ -2035,11 +2190,6 @@ body[data-page-id="A-00"] .site-footer {
 }
 
 @media (max-width: 70rem) {
-  .page-header {
-    grid-template-columns: minmax(0, 1.45fr) minmax(16rem, 0.8fr);
-    gap: var(--space-7);
-  }
-
   .section-body--preview {
     grid-template-columns: 1fr;
   }
@@ -2154,7 +2304,7 @@ body[data-page-id="A-00"] .site-footer {
   }
 
   h1 {
-    max-width: 15ch;
+    max-width: 24ch;
     font-size: 3rem;
   }
 
@@ -2215,7 +2365,7 @@ body[data-page-id="A-00"] .site-footer {
   }
 
   .application-door {
-    grid-template-rows: minmax(20rem, 1fr) auto;
+    min-height: 12rem;
   }
 
   .social-specimens,
@@ -2353,7 +2503,8 @@ body[data-page-id="A-00"] .site-footer {
     font-size: 2rem;
   }
 
-  .prompt-tool {
+  .prompt-tool,
+  .prompt-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2399,17 +2550,7 @@ body[data-page-id="A-00"] .site-footer {
   }
 
   .application-door-copy {
-    grid-template-columns: 1fr;
-  }
-
-  .application-door-copy p,
-  .application-door-copy b {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .application-door-copy b {
-    margin-top: var(--space-3);
+    gap: var(--space-3);
   }
 
   .application-door-preview--social,
