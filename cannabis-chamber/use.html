@@ -1,15 +1,37 @@
 <!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noai, noimageai">
-<title>Use this OS with AI · Cannabis Chamber Of Commerce Brand OS</title>
+<title>Use this OS with AI · Cannabis Chamber Of Commerce Brand Therapy OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
   :root {
     --accent: #2D432B;
     --accent-glow: rgba(45, 67, 43, 0.22);
@@ -38,9 +60,9 @@
 <aside class="sidebar">
   <div class="brand-mark">
     <div class="name">Cannabis Chamber Of Commerce</div>
-    <div class="meta">Brand OS</div>
+    <div class="meta">Brand Therapy OS</div>
   </div>
-  <nav class="nav-section" aria-label="Brand OS sections">
+  <nav class="nav-section" aria-label="Brand Therapy OS sections">
     <div class="label">Sections</div>
     <div class="nav-list">
 <a class="" href="index.html">System Overview</a>
@@ -57,14 +79,15 @@
 <a href="identity/exploration.html">Exploration</a>
 <a href="identity/look-and-feel.html">Look &amp; Feel</a>
 <a href="identity/voice.html">Voice</a>
-<a href="identity/logo.html">Logo</a>
-<a href="identity/signature.html">Signature</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
+<a href="application/index.html">Application Overview</a>
+<a href="application/references.html">Reference Gallery</a>
 </div></details>
   </nav>
   <div class="toolbar-mini">
     <div class="row"><span>Section</span><strong>Use with AI</strong></div>
     <div class="row"><span>Use</span><strong>Operator guide</strong></div>
-    <div class="row"><span>Center</span><strong>Standards</strong></div>
+    <div class="row"><span>Brand DNA</span><strong>Standards</strong></div>
   </div>
 </aside>
 
@@ -115,7 +138,7 @@
 .qs-rules-list li::before { content: ""; position: absolute; left: 0; top: 0.52em; width: 12px; height: 3px; background: var(--accent); }
 @media (prefers-reduced-motion: reduce) { .qs-btn { transition: none; } }
 </style>
-  <section class="qs-hero">
+  <section class="qs-hero" data-os-url="https://brandtherapy.florianp.com/cannabis-chamber/" data-context-url="https://brandtherapy.florianp.com/cannabis-chamber/ai-context.md">
     <div class="qs-hero-inner">
       <div class="qs-eyebrow">Use this OS with AI</div>
       <h1>The Chamber runs on one file</h1>
@@ -125,7 +148,7 @@
         <a class="qs-btn qs-btn-ghost" href="ai-context.md" download>Open the file</a>
       </div>
     </div>
-    <div class="qs-strip"><span>AI-CONTEXT.MD</span><span>13,206 WORDS</span><span>~26K TOKENS</span><span>ONE PASTE</span><span>EVERY CHANNEL</span></div>
+    <div class="qs-strip"><span>AI-CONTEXT.MD</span><span>13,374 WORDS</span><span>~27K TOKENS</span><span>ONE PASTE</span><span>EVERY CHANNEL</span></div>
   </section>
 
   <section class="qs-loop">
@@ -161,9 +184,12 @@
       <header class="qs-prompt-head">
         <span class="qs-prompt-channel">Events</span>
         <h3>Event promotion</h3>
-        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-event-promo" data-done="Copied">Copy prompt</button>
+        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-event-promo" data-copy-include-os="true" data-done="Copied">Copy prompt</button>
       </header>
-      <pre class="qs-prompt-text" id="qs-prompt-text-event-promo">Draft event promotion copy for the Cannabis Chamber Of Commerce.
+      <pre class="qs-prompt-text" id="qs-prompt-text-event-promo">Brand Therapy OS: https://brandtherapy.florianp.com/cannabis-chamber/
+AI context: https://brandtherapy.florianp.com/cannabis-chamber/ai-context.md
+
+Draft event promotion copy for the Cannabis Chamber Of Commerce.
 
 Event: [name]
 Date and time: [confirmed details]
@@ -177,9 +203,12 @@ Follow the event and voice rules in this context. Use Cannabis Chamber Of Commer
       <header class="qs-prompt-head">
         <span class="qs-prompt-channel">Membership</span>
         <h3>Member invitation</h3>
-        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-member-invite" data-done="Copied">Copy prompt</button>
+        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-member-invite" data-copy-include-os="true" data-done="Copied">Copy prompt</button>
       </header>
-      <pre class="qs-prompt-text" id="qs-prompt-text-member-invite">Write a membership invitation.
+      <pre class="qs-prompt-text" id="qs-prompt-text-member-invite">Brand Therapy OS: https://brandtherapy.florianp.com/cannabis-chamber/
+AI context: https://brandtherapy.florianp.com/cannabis-chamber/ai-context.md
+
+Write a membership invitation.
 
 Audience: [who this is for]
 What they need from the Chamber: [access, education, sponsorship, policy insight, trusted relationships]
@@ -191,9 +220,12 @@ Follow the membership and voice rules in this context. Make connection and colla
       <header class="qs-prompt-head">
         <span class="qs-prompt-channel">Sponsorship</span>
         <h3>Sponsor outreach</h3>
-        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-sponsor-note" data-done="Copied">Copy prompt</button>
+        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-sponsor-note" data-copy-include-os="true" data-done="Copied">Copy prompt</button>
       </header>
-      <pre class="qs-prompt-text" id="qs-prompt-text-sponsor-note">Draft a sponsor outreach note.
+      <pre class="qs-prompt-text" id="qs-prompt-text-sponsor-note">Brand Therapy OS: https://brandtherapy.florianp.com/cannabis-chamber/
+AI context: https://brandtherapy.florianp.com/cannabis-chamber/ai-context.md
+
+Draft a sponsor outreach note.
 
 Sponsor: [organization or person]
 Event or program: [confirmed name]
@@ -206,9 +238,12 @@ Keep it concise and operator-led. Name the business value without overclaiming r
       <header class="qs-prompt-head">
         <span class="qs-prompt-channel">Advocacy insight</span>
         <h3>Advocacy insight brief</h3>
-        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-advocacy-insight" data-done="Copied">Copy prompt</button>
+        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-advocacy-insight" data-copy-include-os="true" data-done="Copied">Copy prompt</button>
       </header>
-      <pre class="qs-prompt-text" id="qs-prompt-text-advocacy-insight">Draft a short advocacy insight brief.
+      <pre class="qs-prompt-text" id="qs-prompt-text-advocacy-insight">Brand Therapy OS: https://brandtherapy.florianp.com/cannabis-chamber/
+AI context: https://brandtherapy.florianp.com/cannabis-chamber/ai-context.md
+
+Draft a short advocacy insight brief.
 
 Issue: [policy, regulation, market access, or business standard]
 What is at stake: [specific impact on operators or trusted business activity]
@@ -235,11 +270,29 @@ Use advocacy insight language, not unsupported lobbying claims. Cite facts that 
       btn.classList.remove("is-done", "is-fail");
     }, 1600);
   }
+  function osPrefix() {
+    var root = document.querySelector(".qs-hero[data-os-url]") || document.body;
+    var osUrl = (root.getAttribute("data-os-url") || "").trim();
+    var contextUrl = (root.getAttribute("data-context-url") || "").trim();
+    if (!osUrl) return "";
+    if (!contextUrl) {
+      contextUrl = (osUrl.slice(-1) === "/" ? osUrl : osUrl + "/") + "ai-context.md";
+    }
+    return "Brand Therapy OS: " + osUrl + "\nAI context: " + contextUrl + "\n\n";
+  }
+  function withOsPrefix(text, includeOs) {
+    var value = text || "";
+    if (!includeOs) return value;
+    if (value.indexOf("Brand Therapy OS:") === 0) return value;
+    var prefix = osPrefix();
+    return prefix ? prefix + value : value;
+  }
   document.querySelectorAll(".qs-copy[data-copy]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var el = document.querySelector(btn.getAttribute("data-copy"));
       if (!el || !navigator.clipboard) { flash(btn, false); return; }
-      navigator.clipboard.writeText(el.textContent).then(
+      var includeOs = btn.getAttribute("data-copy-include-os") !== "false";
+      navigator.clipboard.writeText(withOsPrefix(el.textContent, includeOs)).then(
         function () { flash(btn, true); },
         function () { flash(btn, false); }
       );
@@ -252,7 +305,7 @@ Use advocacy insight language, not unsupported lobbying claims. Cite facts that 
         .then(function (r) { if (!r.ok) { throw new Error("fetch failed"); } return r.text(); })
         .then(function (t) {
           if (!navigator.clipboard) { throw new Error("no clipboard"); }
-          return navigator.clipboard.writeText(t);
+          return navigator.clipboard.writeText(withOsPrefix(t, true));
         })
         .then(function () { flash(ctx, true); }, function () { flash(ctx, false); });
     });
@@ -262,11 +315,21 @@ Use advocacy insight language, not unsupported lobbying claims. Cite facts that 
 
 
   <div class="footer-nav">
-    <span>Brand OS · Use with AI</span>
+    <span>Brand Therapy OS · Use with AI</span>
     <span><a href="index.html">System Overview →</a></span>
   </div>
-  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
+  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand Therapy OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
 </div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        The Cannabis Chamber of Commerce (ccc)
+  Version:      1.2.2
+  Built at:     2026-07-26T22:09:03+00:00
+  Git SHA:      03da92f4ed296c6f3557433c17cddedf7a22c718
+  Bundle hash:  sha256:01d5c332e7ee79275b0f212e6471345c9d946efc9ff830ab89daa41079197853
+  Source:       brand-os/brands/cannabis-chamber/QUICKSTART.md + output/ai-context.md
+-->
 </body>
 </html>

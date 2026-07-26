@@ -95,20 +95,58 @@
     resetButton?.addEventListener("click", function () { setOptionalPreview(false, true); });
   }
 
+  function osCopyPrefix() {
+    const osUrl = (body.dataset.osUrl || "").trim();
+    const contextUrl = (body.dataset.contextUrl || "").trim();
+    if (!osUrl) return "";
+    const context = contextUrl || (osUrl.endsWith("/") ? osUrl + "ai-context.md" : osUrl + "/ai-context.md");
+    return "Brand Therapy OS: " + osUrl + "\nAI context: " + context + "\n\n";
+  }
+
+  function withOsCopyPrefix(text, includeOs) {
+    const value = text || "";
+    if (!includeOs) return value;
+    if (value.indexOf("Brand Therapy OS:") === 0) return value;
+    const prefix = osCopyPrefix();
+    return prefix ? prefix + value : value;
+  }
+
+  async function copyText(button, text, statusNode, doneLabel) {
+    if (!text) return;
+    try {
+      await navigator.clipboard.writeText(text);
+      if (statusNode) statusNode.textContent = doneLabel || "Copied to clipboard.";
+      if (button) {
+        const previous = button.textContent;
+        button.textContent = "Copied";
+        window.setTimeout(function () {
+          button.textContent = previous;
+        }, 1600);
+      }
+    } catch (_error) {
+      if (statusNode) statusNode.textContent = "Select the text and copy it manually.";
+    }
+  }
+
   const copyButton = document.querySelector("[data-copy-button]");
   const copySource = document.querySelector("[data-copy-source]");
   const copyStatus = document.querySelector("[data-copy-status]");
 
   copyButton?.addEventListener("click", async function () {
-    const value = copySource?.textContent || "";
-    if (!value) return;
-    try {
-      await navigator.clipboard.writeText(value);
-      if (copyStatus) copyStatus.textContent = "Prompt copied.";
-      copyButton.textContent = "Copied";
-    } catch (_error) {
-      if (copyStatus) copyStatus.textContent = "Select the prompt and copy it manually.";
-    }
+    const includeOs = copyButton.getAttribute("data-copy-include-os") !== "false";
+    const value = withOsCopyPrefix(copySource?.textContent || "", includeOs);
+    await copyText(copyButton, value, copyStatus, "Prompt copied.");
+  });
+
+  document.querySelectorAll("[data-copy-target]").forEach(function (button) {
+    button.addEventListener("click", async function () {
+      const target = document.getElementById(button.dataset.copyTarget || "");
+      const status = button.parentElement?.querySelector("[data-copy-result]");
+      if (!target) return;
+      const includeOs = button.getAttribute("data-copy-include-os") === "true";
+      const value = withOsCopyPrefix(target.textContent || "", includeOs);
+      await copyText(button, value, status, "Copied to clipboard.");
+    });
   });
 
   const search = document.querySelector("[data-library-search]");

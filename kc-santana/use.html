@@ -1,15 +1,37 @@
 <!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noai, noimageai">
-<title>Use this OS with AI · KC Brand OS</title>
+<title>Use this OS with AI · KC Brand Therapy OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
   :root {
     --accent: #4E6B46;
     --accent-glow: rgba(78, 107, 70, 0.30);
@@ -38,9 +60,9 @@
 <aside class="sidebar">
   <div class="brand-mark">
     <div class="name">KC</div>
-    <div class="meta">Brand OS</div>
+    <div class="meta">Brand Therapy OS</div>
   </div>
-  <nav class="nav-section" aria-label="Brand OS sections">
+  <nav class="nav-section" aria-label="Brand Therapy OS sections">
     <div class="label">Sections</div>
     <div class="nav-list">
 <a class="" href="index.html">System Overview</a>
@@ -67,7 +89,7 @@
   <div class="toolbar-mini">
     <div class="row"><span>Section</span><strong>Use with AI</strong></div>
     <div class="row"><span>Use</span><strong>Operator guide</strong></div>
-    <div class="row"><span>Center</span><strong>No Excuses</strong></div>
+    <div class="row"><span>Brand DNA</span><strong>No Excuses</strong></div>
   </div>
 </aside>
 
@@ -118,7 +140,7 @@
 .qs-rules-list li::before { content: ""; position: absolute; left: 0; top: 0.52em; width: 12px; height: 3px; background: var(--accent); }
 @media (prefers-reduced-motion: reduce) { .qs-btn { transition: none; } }
 </style>
-  <section class="qs-hero">
+  <section class="qs-hero" data-os-url="https://brandtherapy.florianp.com/kc-santana/" data-context-url="https://brandtherapy.florianp.com/kc-santana/ai-context.md">
     <div class="qs-hero-inner">
       <div class="qs-eyebrow">Use this OS with AI</div>
       <h1>The brand runs on one file</h1>
@@ -128,7 +150,7 @@
         <a class="qs-btn qs-btn-ghost" href="ai-context.md" download>Open the file</a>
       </div>
     </div>
-    <div class="qs-strip"><span>AI-CONTEXT.MD</span><span>11,156 WORDS</span><span>~22K TOKENS</span><span>ONE PASTE</span><span>EVERY CHANNEL</span></div>
+    <div class="qs-strip"><span>AI-CONTEXT.MD</span><span>11,200 WORDS</span><span>~22K TOKENS</span><span>ONE PASTE</span><span>EVERY CHANNEL</span></div>
   </section>
 
   <section class="qs-loop">
@@ -164,9 +186,12 @@
       <header class="qs-prompt-head">
         <span class="qs-prompt-channel">Instagram</span>
         <h3>Training-log post</h3>
-        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-training-log" data-done="Copied">Copy prompt</button>
+        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-training-log" data-copy-include-os="true" data-done="Copied">Copy prompt</button>
       </header>
-      <pre class="qs-prompt-text" id="qs-prompt-text-training-log">Write an Instagram training-log post.
+      <pre class="qs-prompt-text" id="qs-prompt-text-training-log">Brand Therapy OS: https://brandtherapy.florianp.com/kc-santana/
+AI context: https://brandtherapy.florianp.com/kc-santana/ai-context.md
+
+Write an Instagram training-log post.
 
 What happened: [today&#x27;s session in one or two lines. What you did. Where it got hard.]
 
@@ -176,9 +201,12 @@ Follow the Instagram channel rules in this context. Caption with a one-line hook
       <header class="qs-prompt-head">
         <span class="qs-prompt-channel">Email</span>
         <h3>Weekly email</h3>
-        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-weekly-email" data-done="Copied">Copy prompt</button>
+        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-weekly-email" data-copy-include-os="true" data-done="Copied">Copy prompt</button>
       </header>
-      <pre class="qs-prompt-text" id="qs-prompt-text-weekly-email">Draft this week&#x27;s email.
+      <pre class="qs-prompt-text" id="qs-prompt-text-weekly-email">Brand Therapy OS: https://brandtherapy.florianp.com/kc-santana/
+AI context: https://brandtherapy.florianp.com/kc-santana/ai-context.md
+
+Draft this week&#x27;s email.
 
 This week&#x27;s theme: [one line]
 Proof from my own week: [what you actually did, or skipped, and what it cost]
@@ -189,9 +217,12 @@ Follow the email channel rules in this context. Subject line, short sections, on
       <header class="qs-prompt-head">
         <span class="qs-prompt-channel">Podcast</span>
         <h3>Episode promo</h3>
-        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-episode-promo" data-done="Copied">Copy prompt</button>
+        <button type="button" class="qs-btn qs-copy" data-copy="#qs-prompt-text-episode-promo" data-copy-include-os="true" data-done="Copied">Copy prompt</button>
       </header>
-      <pre class="qs-prompt-text" id="qs-prompt-text-episode-promo">Write the promo kit for a new episode.
+      <pre class="qs-prompt-text" id="qs-prompt-text-episode-promo">Brand Therapy OS: https://brandtherapy.florianp.com/kc-santana/
+AI context: https://brandtherapy.florianp.com/kc-santana/ai-context.md
+
+Write the promo kit for a new episode.
 
 Episode: [title or topic]
 The moment worth repeating: [the line or story that earns the listen]
@@ -216,11 +247,29 @@ Give me one Instagram caption, one email blurb, and three short hooks. Follow ea
       btn.classList.remove("is-done", "is-fail");
     }, 1600);
   }
+  function osPrefix() {
+    var root = document.querySelector(".qs-hero[data-os-url]") || document.body;
+    var osUrl = (root.getAttribute("data-os-url") || "").trim();
+    var contextUrl = (root.getAttribute("data-context-url") || "").trim();
+    if (!osUrl) return "";
+    if (!contextUrl) {
+      contextUrl = (osUrl.slice(-1) === "/" ? osUrl : osUrl + "/") + "ai-context.md";
+    }
+    return "Brand Therapy OS: " + osUrl + "\nAI context: " + contextUrl + "\n\n";
+  }
+  function withOsPrefix(text, includeOs) {
+    var value = text || "";
+    if (!includeOs) return value;
+    if (value.indexOf("Brand Therapy OS:") === 0) return value;
+    var prefix = osPrefix();
+    return prefix ? prefix + value : value;
+  }
   document.querySelectorAll(".qs-copy[data-copy]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var el = document.querySelector(btn.getAttribute("data-copy"));
       if (!el || !navigator.clipboard) { flash(btn, false); return; }
-      navigator.clipboard.writeText(el.textContent).then(
+      var includeOs = btn.getAttribute("data-copy-include-os") !== "false";
+      navigator.clipboard.writeText(withOsPrefix(el.textContent, includeOs)).then(
         function () { flash(btn, true); },
         function () { flash(btn, false); }
       );
@@ -233,7 +282,7 @@ Give me one Instagram caption, one email blurb, and three short hooks. Follow ea
         .then(function (r) { if (!r.ok) { throw new Error("fetch failed"); } return r.text(); })
         .then(function (t) {
           if (!navigator.clipboard) { throw new Error("no clipboard"); }
-          return navigator.clipboard.writeText(t);
+          return navigator.clipboard.writeText(withOsPrefix(t, true));
         })
         .then(function () { flash(ctx, true); }, function () { flash(ctx, false); });
     });
@@ -243,11 +292,21 @@ Give me one Instagram caption, one email blurb, and three short hooks. Follow ea
 
 
   <div class="footer-nav">
-    <span>Brand OS · Use with AI</span>
+    <span>Brand Therapy OS · Use with AI</span>
     <span><a href="index.html">System Overview →</a></span>
   </div>
-  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
+  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand Therapy OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
 </div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        KC Santana (kc-santana)
+  Version:      1.0.0
+  Built at:     2026-07-26T22:08:20+00:00
+  Git SHA:      03da92f4ed296c6f3557433c17cddedf7a22c718
+  Bundle hash:  sha256:9410ff0cc8fa1dc27fb7740594230e052a366958a5afd415572b73742b695da9
+  Source:       brand-os/brands/kc-santana/QUICKSTART.md + output/ai-context.md
+-->
 </body>
 </html>
