@@ -173,19 +173,55 @@
     .light .fact b { color: var(--muted-dark); }
     .fact span { font-size: clamp(.95rem, 1.3vw, 1.15rem); line-height: 1.4; }
 
+    .persona-card {
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      max-width: 720px;
+    }
+    .light .persona-card { border-top-color: var(--line-dark); }
+    .persona-card .kicker { margin-bottom: 12px; }
+    .persona-card .statement {
+      max-width: 14ch;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+    }
     .persona-details {
-      margin-top: 28px;
+      margin-top: 22px;
       display: grid;
       gap: 0;
       max-width: 720px;
     }
     .persona-details .fact { grid-template-columns: minmax(90px, 120px) minmax(0, 1fr); }
 
+    .archetype-scene {
+      align-items: center;
+      justify-items: center;
+      overflow: hidden;
+    }
+    .archetype-scene .inner {
+      width: min(1040px, 100%);
+      margin: 0 auto;
+    }
     .archetype-embed {
-      margin-top: 28px;
-      width: min(720px, 100%);
+      margin-top: 22px;
+      width: 100%;
+      max-width: 960px;
     }
     bt-archetype-chart { display: block; width: 100%; }
+
+    .focus-lines {
+      margin-top: 34px;
+      display: grid;
+      gap: 0;
+      max-width: 820px;
+    }
+    .focus-lines .fact span b {
+      font-weight: 600;
+      color: inherit;
+      font-size: inherit;
+      letter-spacing: 0;
+      text-transform: none;
+    }
 
     .cal-shell {
       display: grid;
@@ -232,12 +268,17 @@
     }
     .grid-6 img {
       width: 100%;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
+      object-position: center top;
       display: block;
       border: 1px solid var(--line-dark);
+      background: #fff;
     }
-    .grid-6 img.tall { aspect-ratio: 4 / 5; }
+    .grid-6 img.wide {
+      aspect-ratio: 16 / 10;
+      object-position: center;
+    }
     .navy .grid-6 img, .cobalt .grid-6 img { border-color: var(--line); }
 
     .swatches {
@@ -527,7 +568,7 @@
     <button type="button" data-target="look">Look</button>
     <button type="button" data-target="alive">In the world</button>
     <button type="button" data-target="voice">Voice</button>
-    <button type="button" data-target="deeper">Go deeper</button>
+    <button type="button" data-target="deeper">Next</button>
   </nav>
 
   <!-- START -->
@@ -535,15 +576,15 @@
     <div class="inner split">
       <div>
         <p class="kicker">Gosder Cherilus</p>
-        <h1 class="display">Strive and savor.</h1>
-        <p class="body">The brand in one pass: who you are, how you look, and how we speak for you.</p>
+        <h1 class="display">Strive and savor</h1>
+        <p class="body">Your brand guidelines. Who you are, how you look, and how to speak for you.</p>
         <a class="os-pointer" href="https://brandtherapy.florianp.com/gosder/" target="_blank" rel="noopener">
           <span class="os-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h12"/><path d="M12 5l7 7-7 7"/></svg>
           </span>
           <span>
-            <strong>Brand Therapy OS</strong><br>
-            Full rules, assets, and AI context.
+            <strong>Full brand system</strong><br>
+            Rules, assets, and files when you need them.
           </span>
         </a>
       </div>
@@ -553,106 +594,94 @@
 
   <section class="scene light" data-chapter="start">
     <div class="inner">
-      <p class="kicker">How to use this</p>
-      <h2 class="statement">Keep it close. Share it when needed.</h2>
-      <p class="body">Use this for the short read when the brand needs to stay aligned. Open Brand Therapy OS when you need every rule, template, or the AI context file.</p>
-      <div class="facts">
-        <div class="fact"><b>Guidelines</b><span>The short read. Who Gosder is, how he looks, how we speak for him.</span></div>
-        <div class="fact"><b>Brand Therapy OS</b><span>The operating tool: full rules, assets, and AI context.</span></div>
-      </div>
+      <p class="kicker">These guidelines</p>
+      <h2 class="statement">A short guide for anyone speaking for Gosder</h2>
+      <p class="body">Read this when you write, design, or brief someone about the brand. It covers the strategy, the look, and the voice. Use the full brand system when you need every rule, asset, or file.</p>
     </div>
   </section>
 
   <!-- STRATEGY -->
   <section class="scene navy" id="strategy" data-chapter="strategy">
-    <div class="inner split">
-      <div>
-        <p class="kicker">Focus Star</p>
-        <h2 class="statement">The whole differentiation map.</h2>
-        <p class="body">Five lines. Product, People, Purpose, Promise, Personality. Every brand distinction fits in one of them. There is no sixth category. This is the complete map, not a shortlist.</p>
+    <div class="inner">
+      <p class="kicker">Focus Star</p>
+      <h2 class="statement">How the brand is positioned</h2>
+      <p class="body">The Focus Star is the positioning system. Five lines hold the whole strategy. Every brand choice belongs in one of them. There is no sixth line.</p>
+      <div class="focus-lines facts">
+        <div class="fact"><b>Product</b><span>What you uniquely offer</span></div>
+        <div class="fact"><b>People</b><span>Who you serve. The Persona lives here: the person you write for, not the brand owner</span></div>
+        <div class="fact"><b>Purpose</b><span>Why the work needs to exist</span></div>
+        <div class="fact"><b>Promise</b><span>What people can count on. The Brand DNA lives here</span></div>
+        <div class="fact"><b>Personality</b><span>How the brand feels and behaves</span></div>
       </div>
-      <img src="assets/imagery/notebook-map.jpg" alt="Notebook and map still life for the Focus Star">
-    </div>
-  </section>
-
-  <section class="scene light" data-chapter="strategy">
-    <div class="inner split">
-      <div>
-        <p class="kicker">Product</p>
-        <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What Gosder uniquely offers.</p>
-        <h2 class="statement">An inspiring example of resilience, devotion, and balance.</h2>
-        <p class="body">Not a single venture or piece of advice. His lived example: the practice, the work, and the life it makes possible.</p>
-      </div>
-      <img src="assets/imagery/village-lane.jpg" alt="Quiet village lane for the Product line">
-    </div>
-  </section>
-
-  <section class="scene navy" data-chapter="strategy">
-    <div class="inner split">
-      <div>
-        <p class="kicker">People</p>
-        <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">Who he is here to serve.</p>
-        <h2 class="statement">Driven people who want ambition and enjoyment in the same life.</h2>
-        <p class="body">Entrepreneurs, athletes, builders, and committed doers under pressure they chose. They need a tribe that understands the drive and makes room to enjoy life without guilt.</p>
-      </div>
-      <img src="assets/imagery/mediterranean-table.jpg" alt="Shared table for the People line">
     </div>
   </section>
 
   <section class="scene light" data-chapter="strategy">
     <div class="inner">
-      <p class="kicker">Persona</p>
-      <h2 class="statement">Meet the Doer.</h2>
-      <p class="body">A capable adult whose chosen ambition creates pressure, responsibility, and a need for peers who understand both the cost and the pleasure of achievement.</p>
-      <div class="persona-details">
-        <div class="fact"><b>Situation</b><span>Entrepreneur, athlete, builder, creator, or committed leader carrying real responsibility.</span></div>
-        <div class="fact"><b>Need</b><span>A tribe that understands the drive and makes room to enjoy life without guilt.</span></div>
-        <div class="fact"><b>Trigger</b><span>Proof that discipline, belonging, achievement, and enjoyment can coexist.</span></div>
-      </div>
+      <p class="kicker">Product</p>
+      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What Gosder uniquely offers</p>
+      <h2 class="statement">An inspiring example of resilience, devotion, and balance</h2>
+      <p class="body">Not a single venture or piece of advice. His lived example: the practice, the work, and the life it makes possible.</p>
     </div>
   </section>
 
   <section class="scene navy" data-chapter="strategy">
-    <div class="inner split">
-      <div>
-        <p class="kicker">Purpose</p>
-        <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">Why the work needs to exist.</p>
-        <h2 class="statement">Create the conditions for more people to achieve and live fully.</h2>
-        <p class="body">Not a celebration of personal success. Mentorship, access, community, and practical support that give other people a real chance to move forward.</p>
+    <div class="inner">
+      <p class="kicker">People</p>
+      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">Who he is here to serve</p>
+      <h2 class="statement">Driven people who want ambition and enjoyment in the same life</h2>
+      <p class="body">Entrepreneurs, athletes, builders, and committed people under pressure they chose. They need a tribe that understands the drive and makes room to enjoy life without guilt.</p>
+      <div class="persona-card">
+        <p class="kicker">Persona · the person we write for</p>
+        <h3 class="statement">The Doer</h3>
+        <p class="body">Not Gosder. The audience member we keep in mind when we write and design: a capable adult whose chosen ambition creates pressure, responsibility, and a need for peers who understand both the cost and the pleasure of achievement.</p>
+        <div class="persona-details">
+          <div class="fact"><b>Situation</b><span>Entrepreneur, athlete, builder, creator, or committed leader carrying real responsibility</span></div>
+          <div class="fact"><b>Need</b><span>A tribe that understands the drive and makes room to enjoy life without guilt</span></div>
+          <div class="fact"><b>Trigger</b><span>Proof that discipline, belonging, achievement, and enjoyment can coexist</span></div>
+        </div>
       </div>
-      <img src="assets/imagery/presence-walking.jpg" alt="Quiet walk through a coastal setting for the Purpose line">
     </div>
   </section>
 
   <section class="scene light" data-chapter="strategy">
     <div class="inner split">
       <div>
-        <p class="kicker">Promise</p>
-        <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What people can consistently expect.</p>
-        <h2 class="statement">Strive and savor.</h2>
-        <p class="body">Work with devotion. Enjoy without guilt. Brand DNA: Strive and savor. Never reduce this to grind, or to lifestyle alone.</p>
+        <p class="kicker">Purpose</p>
+        <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">Why the work needs to exist</p>
+        <h2 class="statement">Create the conditions for more people to achieve and live fully</h2>
+        <p class="body">Not a celebration of personal success. Mentorship, access, community, and practical support that give other people a real chance to move forward.</p>
       </div>
-      <img src="assets/imagery/piano-window.jpg" alt="Piano by a window for the Promise line">
+      <img src="assets/imagery/presence-walking.jpg" alt="Gosder walking through a coastal setting">
     </div>
   </section>
 
   <section class="scene navy" data-chapter="strategy">
     <div class="inner split">
       <div>
-        <p class="kicker">Personality</p>
-        <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">How the brand should feel and behave.</p>
-        <h2 class="statement">A stoic Renaissance man with an Epicurean appetite for life.</h2>
-        <p class="body">Quiet force, broad curiosity, understated pleasure. Calm under pressure. Serious about standards. Warm and playful up close. Restrained in public.</p>
+        <p class="kicker">Promise</p>
+        <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What people can consistently expect</p>
+        <h2 class="statement">Strive and savor</h2>
+        <p class="body">Work with devotion. Enjoy without guilt. That pairing is the Brand DNA. Never reduce it to grind, or to lifestyle alone.</p>
       </div>
-      <img src="assets/imagery/wardrobe-materials.jpg" alt="Wardrobe and materials still life for the Personality line">
+      <img src="assets/imagery/piano-window.jpg" alt="Piano by a window">
+    </div>
+  </section>
+
+  <section class="scene light" data-chapter="strategy">
+    <div class="inner">
+      <p class="kicker">Personality</p>
+      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">How the brand should feel and behave</p>
+      <h2 class="statement">A stoic Renaissance man with an Epicurean appetite for life</h2>
+      <p class="body">Quiet force, broad curiosity, understated pleasure. Calm under pressure. Serious about standards. Warm and playful up close. Restrained in public.</p>
     </div>
   </section>
 
   <section class="scene navy archetype-scene" data-chapter="strategy">
     <div class="inner">
       <p class="kicker">Brand Personality Archetype</p>
-      <h2 class="statement" style="max-width:18ch">Hero + Sage + Explorer.</h2>
-      <p class="body">The timeless roles the brand naturally embodies. Primary Hero. Sage and Explorer complete the lead read.</p>
+      <h2 class="statement" style="max-width:18ch">Hero + Sage + Explorer</h2>
+      <p class="body">The roles the brand naturally embodies. Hero leads. Sage and Explorer complete the read.</p>
       <div class="archetype-embed">
         <bt-archetype-chart id="archetype-chart" theme="reveal" presentation="compact" animate></bt-archetype-chart>
       </div>
@@ -661,9 +690,9 @@
 
   <section class="scene cobalt" data-chapter="strategy">
     <div class="inner">
-      <p class="kicker">Creative Calibration</p>
-      <h2 class="statement" style="max-width:18ch">Mature and quiet, with cultivated warmth doing the heavy lifting.</h2>
-      <p class="body">Defining poles only. The full fourteen axes live in Brand Therapy OS. Three workshop axes remain open.</p>
+      <p class="kicker">Creative direction</p>
+      <h2 class="statement" style="max-width:18ch">Mature, quiet, and warm</h2>
+      <p class="body">Lean into these poles when you make creative choices.</p>
       <div class="cal-shell">
         <div>
           <b class="kicker" style="display:block;margin-bottom:14px">Lean into</b>
@@ -680,9 +709,9 @@
         </div>
         <div class="cal-side">
           <b>Move away from</b>
-          <p class="away">Youthful styling, loud performance, showy luxury, abstract decoration, energetic spectacle, emotional theater.</p>
-          <b>Defining keywords</b>
-          <p>Humble. Determined. Resilient. Serious. Mature. Curious. Cultured.</p>
+          <p class="away">Youthful styling, loud performance, showy luxury, abstract decoration, energetic spectacle, emotional theater</p>
+          <b>Keywords</b>
+          <p>Humble. Determined. Resilient. Serious. Mature. Curious. Cultured</p>
         </div>
       </div>
     </div>
@@ -691,7 +720,7 @@
   <section class="scene navy" data-chapter="strategy">
     <div class="inner">
       <p class="kicker">Through-line</p>
-      <h2 class="statement">Discipline makes room for a full life.</h2>
+      <h2 class="statement">Discipline makes room for a full life</h2>
       <p class="body">Every story, image, and partnership should hold both halves: the work and what the work makes possible. If only one half shows up, the brand is incomplete.</p>
     </div>
   </section>
@@ -707,15 +736,15 @@
   <section class="scene light" data-chapter="look">
     <div class="inner">
       <p class="kicker">Color</p>
-      <h2 class="statement">Midnight structure. Oxblood warmth.</h2>
-      <p class="body">Navy and cobalt hold the line. Oxblood and saddle leather bring cultivated warmth. Gallery White is the paper field. Quiet confidence, never luxury theater.</p>
+      <h2 class="statement">The palette</h2>
+      <p class="body">Navy and deep red do most of the work. Warm brown softens. Off-white is the paper. Keep it quiet. Never flashy luxury.</p>
       <div class="swatches" aria-label="Palette">
-        <div class="swatch" style="background:#111D2E;color:#ECE7DE"><strong>Midnight Navy</strong><span>#111D2E</span></div>
-        <div class="swatch" style="background:#14294A;color:#ECE7DE"><strong>Cobalt</strong><span>#14294A</span></div>
-        <div class="swatch" style="background:#411B19;color:#ECE7DE"><strong>Oxblood</strong><span>#411B19</span></div>
-        <div class="swatch" style="background:#5C3622;color:#ECE7DE"><strong>Saddle Leather</strong><span>#5C3622</span></div>
-        <div class="swatch" style="background:#ECE7DE;color:#111D2E"><strong>Gallery White</strong><span>#ECE7DE</span></div>
-        <div class="swatch" style="background:#302F2F;color:#ECE7DE"><strong>Graphite</strong><span>#302F2F</span></div>
+        <div class="swatch" style="background:#111D2E;color:#ECE7DE"><strong>Navy</strong><span>#111D2E</span></div>
+        <div class="swatch" style="background:#14294A;color:#ECE7DE"><strong>Deep blue</strong><span>#14294A</span></div>
+        <div class="swatch" style="background:#411B19;color:#ECE7DE"><strong>Deep red</strong><span>#411B19</span></div>
+        <div class="swatch" style="background:#5C3622;color:#ECE7DE"><strong>Warm brown</strong><span>#5C3622</span></div>
+        <div class="swatch" style="background:#ECE7DE;color:#111D2E"><strong>Off-white</strong><span>#ECE7DE</span></div>
+        <div class="swatch" style="background:#302F2F;color:#ECE7DE"><strong>Dark gray</strong><span>#302F2F</span></div>
       </div>
     </div>
   </section>
@@ -724,8 +753,8 @@
     <div class="inner split">
       <div>
         <p class="kicker">Type</p>
-        <h2 class="statement">Direct headlines. Calm body. Cultured accent.</h2>
-        <p class="body">Fjalla One for display. Work Sans for reading. Literata when a line needs warmth.</p>
+        <h2 class="statement">The typefaces</h2>
+        <p class="body">Fjalla One for headlines. Work Sans for reading. Literata when a line needs a warmer tone.</p>
       </div>
       <div>
         <p style="font-family:'Fjalla One',sans-serif;font-size:clamp(2.4rem,5vw,4rem);line-height:.95;">Strive and savor</p>
@@ -736,62 +765,44 @@
   </section>
 
   <section class="scene light" data-chapter="look">
-    <div class="inner split">
-      <div>
-        <p class="kicker">Identity boundary</p>
-        <h2 class="statement">Recognition comes from the system.</h2>
-        <p class="body">No logo, wordmark, monogram, initials device, or signature mark is approved or in scope. Use the locked type, palette, portraiture, photography, and Life in Full direction. A future mark is a separate engagement, never a gap to fill with an invented symbol.</p>
-      </div>
-      <img src="assets/palette-type.png" alt="Gosder Cherilus palette and typography proof">
+    <div class="inner">
+      <p class="kicker">No logo yet</p>
+      <h2 class="statement">Recognition comes from the system</h2>
+      <p class="body">There is no approved logo, wordmark, or mark. Use the type, colors, portraits, and photography. Do not invent a symbol to fill the gap.</p>
     </div>
   </section>
 
   <section class="scene light" id="imagery" data-chapter="look">
     <div class="inner">
       <p class="kicker">Imagery</p>
-      <h2 class="statement">Lived-in. Cultivated. Unforced.</h2>
-      <p class="body">South of France restraint: limestone, linen, local light, music, books, markets, and a generous table. Camera: editorial 50–85mm, late-afternoon warmth. Never reuse one photograph as both banner and avatar.</p>
-      <div class="grid-6">
-        <img src="assets/imagery/presence-cultured.jpg" alt="Gosder Cherilus cultured evening presence">
-        <img src="assets/imagery/presence-walking.jpg" alt="Gosder Cherilus walking in local light">
-        <img src="assets/imagery/village-lane.jpg" alt="Sunlit stone village lane">
-        <img src="assets/imagery/mediterranean-table.jpg" alt="Generous Mediterranean table">
-        <img src="assets/imagery/piano-window.jpg" alt="Piano beside a sunlit window">
-        <img src="assets/imagery/notebook-map.jpg" alt="Notebook and map on a cultivated surface">
+      <h2 class="statement">Real places, real light</h2>
+      <p class="body">Show lived-in rooms, local light, music, books, shared tables, and purposeful walking. Keep faces whole in the frame.</p>
+      <div class="grid-2" style="margin-top:24px">
+        <img src="assets/imagery/presence-cultured.jpg" alt="Gosder Cherilus portrait" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;border:1px solid var(--line-dark)">
+        <img src="assets/imagery/presence-walking.jpg" alt="Gosder walking in local light" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;border:1px solid var(--line-dark)">
+      </div>
+      <div class="grid-3" style="margin-top:12px">
+        <img src="assets/imagery/village-lane.jpg" alt="Sunlit stone village lane" style="aspect-ratio:16/10;object-fit:cover">
+        <img src="assets/imagery/mediterranean-table.jpg" alt="Shared table by the water" style="aspect-ratio:16/10;object-fit:cover">
+        <img src="assets/imagery/piano-window.jpg" alt="Piano beside a sunlit window" style="aspect-ratio:16/10;object-fit:cover">
       </div>
       <div class="disclaimer" style="margin-top:28px">
         <p class="kicker" style="margin-bottom:8px">Likeness</p>
-        <h3>Choose the direction, not the face.</h3>
-        <div class="row"><b>Review now</b><span>The visual world, styling, color, and overall feeling.</span></div>
-        <div class="row"><b>Refine later</b><span>Exact facial likeness, before final production.</span></div>
+        <h3>Approve the world first</h3>
+        <div class="row"><b>Review now</b><span>The visual world, styling, color, and overall feeling</span></div>
+        <div class="row"><b>Refine later</b><span>Exact facial likeness, before final production</span></div>
       </div>
     </div>
   </section>
 
 
-  <section class="scene board-scene contain light" data-chapter="look">
-    <img src="assets/visual-do-dont.png" alt="Gosder Cherilus visual do and do not board">
-    <div class="board-caption">
-      <p class="kicker">Visual guardrails · Grounded, cultured, full</p>
-    </div>
-  </section>
-
-  <!-- IN THE WORLD / VISUALS -->
-  <section class="scene light proof-stage" id="alive" data-chapter="alive">
-    <div class="inner">
-      <p class="kicker">In the world</p>
-      <h2 class="statement">How Gosder shows up across channels.</h2>
-      <p class="body">Magazine concept, press brief, LinkedIn, Instagram, YouTube, social posts, and video covers. One Life in Full world on every surface.</p>
-    </div>
-  </section>
-
-  <section class="scene navy" data-chapter="alive">
+  <!-- IN THE WORLD -->
+  <section class="scene navy" id="alive" data-chapter="alive">
     <div class="inner split">
       <div>
-        <p class="kicker">Magazine</p>
-        <h2 class="statement">Life in Full on the cover.</h2>
-        <p class="body">A fictional editorial concept owned by Gosder. Never imply a real publication commissioned it.</p>
-        <p class="proof-note" style="color:var(--muted);margin-top:18px">Editorial concept · not real press coverage</p>
+        <p class="kicker">In the world</p>
+        <h2 class="statement">Magazine cover concept</h2>
+        <p class="body">A fictional editorial cover owned by Gosder. Never imply a real magazine commissioned it.</p>
       </div>
       <img src="assets/magazine-cover.png" alt="Fictional Life in Full magazine cover featuring Gosder Cherilus" style="max-height:78svh;width:auto;max-width:100%;justify-self:end;border:1px solid rgba(236,231,222,.16)">
     </div>
@@ -801,107 +812,10 @@
     <div class="inner split">
       <div>
         <p class="kicker">Press</p>
-        <h2 class="statement">How the story should read.</h2>
-        <p class="body">Headline, promise, quote, and about block. The whole man, not a grind slogan and not a lifestyle flex.</p>
+        <h2 class="statement">How the story should read</h2>
+        <p class="body">Headline, promise, quote, and about block. The whole man. Not a grind slogan. Not a lifestyle flex.</p>
       </div>
       <img src="assets/press-release.png" alt="Gosder Cherilus press release concept" style="max-height:78svh;width:auto;max-width:100%;justify-self:end;border:1px solid rgba(17,29,46,.14);background:#fff">
-    </div>
-  </section>
-
-  <section class="scene navy proof-stage" data-chapter="alive">
-    <div class="inner">
-      <p class="kicker">LinkedIn banner</p>
-      <h2 class="statement">Discipline that makes room for a full life.</h2>
-      <div class="proof-frame wide" style="max-height:72svh;overflow:auto">
-        <img src="assets/linkedin-banner.png" alt="Gosder LinkedIn banner Strive and savor">
-      </div>
-    </div>
-  </section>
-
-  <section class="scene cobalt" data-chapter="alive">
-    <div class="inner">
-      <p class="kicker">LinkedIn posts</p>
-      <h2 class="statement">Five templates. One language.</h2>
-      <p class="body">Point of view, diagnosis, framework, proof, invitation. Rotate them. Keep the promise visible without repeating it mechanically.</p>
-      <img class="board-proof" src="assets/social-strip.png" alt="Gosder Cherilus LinkedIn post system strip">
-    </div>
-  </section>
-
-  <section class="scene cobalt" data-chapter="alive">
-    <div class="inner">
-      <p class="kicker">LinkedIn templates</p>
-      <h2 class="statement">The full rotation.</h2>
-      <div class="grid-5">
-        <img src="assets/social-pov.png" alt="LinkedIn point of view post">
-        <img src="assets/li-diagnosis.png" alt="LinkedIn diagnosis post">
-        <img src="assets/li-framework.png" alt="LinkedIn framework post">
-        <img src="assets/social-proof.png" alt="LinkedIn proof post">
-        <img src="assets/li-invitation.png" alt="LinkedIn invitation post">
-      </div>
-    </div>
-  </section>
-
-  <section class="scene light" data-chapter="alive">
-    <div class="inner">
-      <p class="kicker">Instagram</p>
-      <h2 class="statement">Same system. Taller crop.</h2>
-      <p class="body">The post system adapts to Instagram without changing the voice or the world.</p>
-      <img class="board-proof" src="assets/instagram-phones.png" alt="Gosder Cherilus Instagram posts in phone frames">
-    </div>
-  </section>
-
-  <section class="scene light" data-chapter="alive">
-    <div class="inner">
-      <p class="kicker">Instagram templates</p>
-      <h2 class="statement">Five templates. Same language.</h2>
-      <div class="grid-5">
-        <img src="assets/ig-pov.png" alt="Instagram point of view post">
-        <img src="assets/ig-diagnosis.png" alt="Instagram diagnosis post">
-        <img src="assets/ig-framework.png" alt="Instagram framework post">
-        <img src="assets/ig-proof.png" alt="Instagram proof post">
-        <img src="assets/ig-invitation.png" alt="Instagram invitation post">
-      </div>
-    </div>
-  </section>
-
-  <section class="scene board-scene contain navy" data-chapter="alive">
-    <img src="assets/social-do-dont.png" alt="Gosder Cherilus social do and do not board">
-    <div class="board-caption">
-      <p class="kicker">Social guardrails · Useful before impressive</p>
-    </div>
-  </section>
-
-  <section class="scene light" data-chapter="alive">
-    <div class="inner">
-      <p class="kicker">Profiles in context</p>
-      <h2 class="statement">The system survives the platform.</h2>
-      <p class="body">Instagram and YouTube keep the same hierarchy, restraint, and editorial world. The profile, cover, and content should feel like one person speaking across formats.</p>
-      <div class="social-triptych">
-        <figure>
-          <img src="assets/linkedin-profile.png" alt="Gosder Cherilus LinkedIn profile mockup">
-          <figcaption>LinkedIn</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/instagram-profile.png" alt="Gosder Cherilus Instagram profile mockup">
-          <figcaption>Instagram</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/youtube-channel.png" alt="Gosder Cherilus YouTube channel mockup">
-          <figcaption>YouTube</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="scene light" data-chapter="alive">
-    <div class="inner">
-      <p class="kicker">Video covers</p>
-      <h2 class="statement">Quiet frames for moving work.</h2>
-      <p class="body">Concept-led and text-led covers in the Life in Full world. Face-led covers stay on approved portraits only.</p>
-      <div class="grid-2">
-        <img src="assets/video-concept.png" alt="Concept-led video cover">
-        <img src="assets/video-text.png" alt="Text-led video cover">
-      </div>
     </div>
   </section>
 
@@ -909,26 +823,26 @@
   <section class="scene navy" id="voice" data-chapter="voice">
     <div class="inner">
       <p class="kicker">Voice</p>
-      <h2 class="statement">How Gosder should sound.</h2>
+      <h2 class="statement">How Gosder should sound</h2>
       <div class="facts">
-        <div class="fact"><b>Sound like</b><span>Specific scenes, earned advice, dry warmth, cultural curiosity.</span></div>
-        <div class="fact"><b>Lead with</b><span>A real choice, practice, obstacle, or pleasure. Then name what it shows.</span></div>
-        <div class="fact"><b>Never</b><span>Guru energy, pain worship, luxury flexing, or empty motivation.</span></div>
+        <div class="fact"><b>Sound like</b><span>Specific scenes, earned advice, dry warmth, real curiosity</span></div>
+        <div class="fact"><b>Lead with</b><span>A real choice, practice, obstacle, or pleasure. Then name what it shows</span></div>
+        <div class="fact"><b>Never</b><span>Guru energy, pain worship, luxury flexing, or empty motivation</span></div>
       </div>
     </div>
   </section>
 
   <section class="scene light" data-chapter="voice">
     <div class="inner">
-      <p class="kicker">Communication</p>
-      <h2 class="statement">How to communicate Gosder.</h2>
+      <p class="kicker">For press and partners</p>
+      <h2 class="statement">How to communicate Gosder</h2>
       <div class="do-dont">
         <div>
           <b>Do</b>
           <ul>
             <li>Former NFL tackle and entrepreneur showing ambition and enjoyment can belong together</li>
             <li>Stoic Renaissance man: discipline, culture, faith, relationships, pleasure</li>
-            <li>Ventures as proof platforms under Gosder, not competing master brands</li>
+            <li>Ventures as proof under Gosder, not competing master brands</li>
             <li>Conservative language on cannabis and wellness; no medical claims without approved evidence</li>
           </ul>
         </div>
@@ -938,7 +852,7 @@
             <li>"No excuses," "the grind never stops," "crush it," "peak performance," "live your best life"</li>
             <li>Health influencer, productivity guru, or celebrity cannabis mascot framing</li>
             <li>Pain as personality, shouting toughness, or status display</li>
-            <li>Invented impact totals, unverified claims, or fictional press endorsements treated as real</li>
+            <li>Invented impact totals, unverified claims, or fictional press treated as real</li>
           </ul>
         </div>
       </div>
@@ -949,22 +863,18 @@
   <section class="scene navy" id="deeper" data-chapter="deeper">
     <div class="inner">
       <p class="kicker">Next</p>
-      <h2 class="statement">Keep these pages close. Build in Brand Therapy OS.</h2>
-      <p class="body">Keep this close when you need to speak for Gosder. Open Brand Therapy OS when you need the full rules, templates, or AI context.</p>
+      <h2 class="statement">Need the full system</h2>
+      <p class="body">These pages are the short guide. Open the full brand system for every rule, asset, and file.</p>
       <div class="doors">
         <a class="door" href="https://brandtherapy.florianp.com/gosder/" target="_blank" rel="noopener">
           <small>Full system</small>
           <strong>Open Brand Therapy OS</strong>
-          <p>Strategy pages, identity, applications, and the AI context file. The operating tool.</p>
+          <p>Strategy, identity, applications, and files.</p>
         </a>
-        <div class="door">
-          <small>Still true</small>
-          <strong>AI drafts. A person approves.</strong>
-          <p>Facts, faces, claims, and publishing stay human decisions.</p>
-        </div>
       </div>
     </div>
   </section>
+
 
   <script>
     (function () {
