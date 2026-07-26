@@ -173,79 +173,11 @@
     .light .fact b { color: var(--muted-dark); }
     .fact span { font-size: clamp(.95rem, 1.3vw, 1.15rem); line-height: 1.4; }
 
-    .focus-star {
-      margin-top: 34px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      grid-template-areas:
-        ". product ."
-        "people dna purpose"
-        "promise . personality";
-      gap: 12px;
-      max-width: 1040px;
-      align-items: stretch;
-    }
-    .star-point, .star-dna {
-      min-height: 150px;
-      padding: 18px;
-      border: 1px solid var(--line-dark);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: rgba(255,255,255,.34);
-    }
-    .star-point b, .star-dna b {
-      font-size: .64rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--muted-dark);
-      font-weight: 600;
-    }
-    .star-point span {
-      margin-top: 28px;
-      font-family: "Fjalla One", "Arial Narrow", sans-serif;
-      font-size: clamp(1.15rem, 2vw, 1.7rem);
-      line-height: 1.05;
-    }
-    .star-product { grid-area: product; }
-    .star-people { grid-area: people; }
-    .star-purpose { grid-area: purpose; }
-    .star-promise { grid-area: promise; }
-    .star-personality { grid-area: personality; }
-    .star-dna {
-      grid-area: dna;
-      background: var(--oxblood);
-      color: var(--gallery);
-      border-color: var(--oxblood);
-      justify-content: center;
-      text-align: center;
-    }
-    .star-dna b { color: rgba(236,231,222,.72); }
-    .star-dna strong {
-      margin-top: 10px;
-      font-family: "Fjalla One", "Arial Narrow", sans-serif;
-      font-size: clamp(1.6rem, 3vw, 2.7rem);
-      font-weight: 400;
-      line-height: 1;
-    }
-
-    .persona {
-      display: grid;
-      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
-      gap: clamp(24px, 5vw, 70px);
-      align-items: center;
-    }
-    .persona img {
-      width: 100%;
-      max-height: 76svh;
-      object-fit: cover;
-      object-position: center top;
-      border: 1px solid rgba(236,231,222,.16);
-    }
     .persona-details {
       margin-top: 28px;
       display: grid;
       gap: 0;
+      max-width: 720px;
     }
     .persona-details .fact { grid-template-columns: minmax(90px, 120px) minmax(0, 1fr); }
 
@@ -455,7 +387,11 @@
       align-items: center;
     }
     .split img {
-      width: 100%; display: block;
+      width: 100%;
+      max-height: 72svh;
+      object-fit: cover;
+      object-position: center;
+      display: block;
       border: 1px solid rgba(236,231,222,.14);
     }
     .light .split img { border-color: var(--line-dark); }
@@ -556,22 +492,11 @@
     .navy .board-proof, .cobalt .board-proof { border-color: var(--line); background: transparent; }
 
     @media (max-width: 900px) {
-      .swatches, .do-dont, .grid-2, .split, .persona, .cal-shell, .social-triptych, .grid-6 { grid-template-columns: 1fr; }
+      .swatches, .do-dont, .grid-2, .split, .cal-shell, .social-triptych, .grid-6 { grid-template-columns: 1fr; }
       .grid-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .grid-3 { grid-template-columns: 1fr; }
       .image-library { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .image-library figure.wide { grid-column: span 1; }
-      .focus-star {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-          "dna"
-          "product"
-          "people"
-          "purpose"
-          "promise"
-          "personality";
-      }
-      .star-point, .star-dna { min-height: 116px; }
       .fact { grid-template-columns: 1fr; gap: 6px; }
       .cross-nav { max-width: calc(100vw - 70px); overflow-x: auto; }
     }
@@ -611,7 +536,7 @@
       <div>
         <p class="kicker">Gosder Cherilus</p>
         <h1 class="display">Strive and savor.</h1>
-        <p class="body">Your brand, for you, your team, and your PR partners. Who you are. How you look. How we communicate you.</p>
+        <p class="body">The brand in one pass: who you are, how you look, and how we speak for you.</p>
         <a class="os-pointer" href="https://brandtherapy.florianp.com/gosder/" target="_blank" rel="noopener">
           <span class="os-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h12"/><path d="M12 5l7 7-7 7"/></svg>
@@ -630,89 +555,96 @@
     <div class="inner">
       <p class="kicker">How to use this</p>
       <h2 class="statement">Keep it close. Share it when needed.</h2>
-      <p class="body">These Guidelines are mainly internal: for Gosder, the team, and PR. Use them to stay aligned. Forward a section when someone needs the picture fast. Open Brand Therapy OS when you need every rule, template, or the AI context file.</p>
+      <p class="body">Use this for the short read when the brand needs to stay aligned. Open Brand Therapy OS when you need every rule, template, or the AI context file.</p>
       <div class="facts">
-        <div class="fact"><b>Guidelines</b><span>The short internal read. Who Gosder is, how he looks, how we speak for him.</span></div>
+        <div class="fact"><b>Guidelines</b><span>The short read. Who Gosder is, how he looks, how we speak for him.</span></div>
         <div class="fact"><b>Brand Therapy OS</b><span>The operating tool: full rules, assets, and AI context.</span></div>
       </div>
     </div>
   </section>
 
   <!-- STRATEGY -->
-  <section class="scene light" id="strategy" data-chapter="strategy">
-    <div class="inner">
-      <p class="kicker">Focus Star</p>
-      <h2 class="statement">The whole differentiation map.</h2>
-      <p class="body">Five lines. Product, People, Purpose, Promise, Personality. Every brand distinction fits in one of them. There is no sixth category. Persona stays inside People. Brand DNA stays inside Promise.</p>
-      <div class="focus-star" aria-label="Gosder Cherilus Focus Star">
-        <div class="star-point star-product"><b>Product</b><span>An inspiring example of resilience, devotion, and balance.</span></div>
-        <div class="star-point star-people"><b>People</b><span>Driven people looking for a tribe where ambition and enjoyment belong together.</span></div>
-        <div class="star-dna"><b>Brand DNA</b><strong>Strive and savor</strong></div>
-        <div class="star-point star-purpose"><b>Purpose</b><span>Create the conditions for more people to achieve and live fully.</span></div>
-        <div class="star-point star-promise"><b>Promise</b><span>Work with devotion. Enjoy without guilt.</span></div>
-        <div class="star-point star-personality"><b>Personality</b><span>A stoic Renaissance man with an Epicurean appetite for life.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="scene light" data-chapter="strategy">
-    <div class="inner">
-      <p class="kicker">Product</p>
-      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What Gosder uniquely offers.</p>
-      <h2 class="statement">An inspiring example of resilience, devotion, and balance.</h2>
-      <p class="body">Not a single venture or piece of advice. His lived example: the practice, the work, and the life it makes possible.</p>
-    </div>
-  </section>
-
-  <section class="scene navy" data-chapter="strategy">
-    <div class="inner">
-      <p class="kicker">People</p>
-      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">Who he is here to serve.</p>
-      <h2 class="statement">Driven people who want ambition and enjoyment in the same life.</h2>
-      <p class="body">Entrepreneurs, athletes, builders, and committed doers under pressure they chose. They need a tribe that understands the drive and makes room to enjoy life without guilt.</p>
-    </div>
-  </section>
-
-  <section class="scene navy" data-chapter="strategy">
-    <div class="inner persona">
-      <img src="assets/imagery/presence-walking.jpg" alt="Gosder Cherilus walking through a coastal stone setting">
+  <section class="scene navy" id="strategy" data-chapter="strategy">
+    <div class="inner split">
       <div>
-        <p class="kicker">People · persona inside the decision</p>
-        <h2 class="statement">Meet the Doer.</h2>
-        <p class="body">A capable adult whose chosen ambition creates pressure, responsibility, and a need for peers who understand both the cost and the pleasure of achievement.</p>
-        <div class="persona-details">
-          <div class="fact"><b>Situation</b><span>Entrepreneur, athlete, builder, creator, or committed leader carrying real responsibility.</span></div>
-          <div class="fact"><b>Need</b><span>A tribe that understands the drive and makes room to enjoy life without guilt.</span></div>
-          <div class="fact"><b>Trigger</b><span>Proof that discipline, belonging, achievement, and enjoyment can coexist.</span></div>
-        </div>
+        <p class="kicker">Focus Star</p>
+        <h2 class="statement">The whole differentiation map.</h2>
+        <p class="body">Five lines. Product, People, Purpose, Promise, Personality. Every brand distinction fits in one of them. There is no sixth category. This is the complete map, not a shortlist.</p>
       </div>
+      <img src="assets/imagery/notebook-map.jpg" alt="Notebook and map still life for the Focus Star">
     </div>
   </section>
 
   <section class="scene light" data-chapter="strategy">
-    <div class="inner">
-      <p class="kicker">Purpose</p>
-      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">Why the work needs to exist.</p>
-      <h2 class="statement">Create the conditions for more people to achieve and live fully.</h2>
-      <p class="body">Not a celebration of personal success. Mentorship, access, community, and practical support that give other people a real chance to move forward.</p>
+    <div class="inner split">
+      <div>
+        <p class="kicker">Product</p>
+        <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What Gosder uniquely offers.</p>
+        <h2 class="statement">An inspiring example of resilience, devotion, and balance.</h2>
+        <p class="body">Not a single venture or piece of advice. His lived example: the practice, the work, and the life it makes possible.</p>
+      </div>
+      <img src="assets/imagery/village-lane.jpg" alt="Quiet village lane for the Product line">
     </div>
   </section>
 
   <section class="scene navy" data-chapter="strategy">
-    <div class="inner">
-      <p class="kicker">Promise</p>
-      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What people can consistently expect.</p>
-      <h2 class="statement">Strive and savor.</h2>
-      <p class="body">Work with devotion. Enjoy without guilt. Brand DNA: Strive and savor. Never reduce this to grind, or to lifestyle alone.</p>
+    <div class="inner split">
+      <div>
+        <p class="kicker">People</p>
+        <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">Who he is here to serve.</p>
+        <h2 class="statement">Driven people who want ambition and enjoyment in the same life.</h2>
+        <p class="body">Entrepreneurs, athletes, builders, and committed doers under pressure they chose. They need a tribe that understands the drive and makes room to enjoy life without guilt.</p>
+      </div>
+      <img src="assets/imagery/mediterranean-table.jpg" alt="Shared table for the People line">
     </div>
   </section>
 
   <section class="scene light" data-chapter="strategy">
     <div class="inner">
-      <p class="kicker">Personality</p>
-      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">How the brand should feel and behave.</p>
-      <h2 class="statement">A stoic Renaissance man with an Epicurean appetite for life.</h2>
-      <p class="body">Quiet force, broad curiosity, understated pleasure. Calm under pressure. Serious about standards. Warm and playful up close. Restrained in public.</p>
+      <p class="kicker">Persona</p>
+      <h2 class="statement">Meet the Doer.</h2>
+      <p class="body">A capable adult whose chosen ambition creates pressure, responsibility, and a need for peers who understand both the cost and the pleasure of achievement.</p>
+      <div class="persona-details">
+        <div class="fact"><b>Situation</b><span>Entrepreneur, athlete, builder, creator, or committed leader carrying real responsibility.</span></div>
+        <div class="fact"><b>Need</b><span>A tribe that understands the drive and makes room to enjoy life without guilt.</span></div>
+        <div class="fact"><b>Trigger</b><span>Proof that discipline, belonging, achievement, and enjoyment can coexist.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene navy" data-chapter="strategy">
+    <div class="inner split">
+      <div>
+        <p class="kicker">Purpose</p>
+        <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">Why the work needs to exist.</p>
+        <h2 class="statement">Create the conditions for more people to achieve and live fully.</h2>
+        <p class="body">Not a celebration of personal success. Mentorship, access, community, and practical support that give other people a real chance to move forward.</p>
+      </div>
+      <img src="assets/imagery/presence-walking.jpg" alt="Quiet walk through a coastal setting for the Purpose line">
+    </div>
+  </section>
+
+  <section class="scene light" data-chapter="strategy">
+    <div class="inner split">
+      <div>
+        <p class="kicker">Promise</p>
+        <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What people can consistently expect.</p>
+        <h2 class="statement">Strive and savor.</h2>
+        <p class="body">Work with devotion. Enjoy without guilt. Brand DNA: Strive and savor. Never reduce this to grind, or to lifestyle alone.</p>
+      </div>
+      <img src="assets/imagery/piano-window.jpg" alt="Piano by a window for the Promise line">
+    </div>
+  </section>
+
+  <section class="scene navy" data-chapter="strategy">
+    <div class="inner split">
+      <div>
+        <p class="kicker">Personality</p>
+        <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">How the brand should feel and behave.</p>
+        <h2 class="statement">A stoic Renaissance man with an Epicurean appetite for life.</h2>
+        <p class="body">Quiet force, broad curiosity, understated pleasure. Calm under pressure. Serious about standards. Warm and playful up close. Restrained in public.</p>
+      </div>
+      <img src="assets/imagery/wardrobe-materials.jpg" alt="Wardrobe and materials still life for the Personality line">
     </div>
   </section>
 
@@ -988,7 +920,7 @@
 
   <section class="scene light" data-chapter="voice">
     <div class="inner">
-      <p class="kicker">For the team and PR</p>
+      <p class="kicker">Communication</p>
       <h2 class="statement">How to communicate Gosder.</h2>
       <div class="do-dont">
         <div>
@@ -1018,7 +950,7 @@
     <div class="inner">
       <p class="kicker">Next</p>
       <h2 class="statement">Keep these pages close. Build in Brand Therapy OS.</h2>
-      <p class="body">Share this with anyone on the team or PR desk who needs to speak for Gosder. Open Brand Therapy OS when you need the full rules, templates, or AI context.</p>
+      <p class="body">Keep this close when you need to speak for Gosder. Open Brand Therapy OS when you need the full rules, templates, or AI context.</p>
       <div class="doors">
         <a class="door" href="https://brandtherapy.florianp.com/gosder/" target="_blank" rel="noopener">
           <small>Full system</small>
