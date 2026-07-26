@@ -6,6 +6,18 @@
   <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
   <title>Gosder Cherilus · Brand Therapy Guidelines</title>
   <link rel="icon" href="data:,">
+  <link rel="preload" as="image" href="assets/archetype-chart/caregiver-with-background.webp">
+  <link rel="preload" as="image" href="assets/archetype-chart/creator-with-background.webp">
+  <link rel="preload" as="image" href="assets/archetype-chart/explorer-with-background.webp">
+  <link rel="preload" as="image" href="assets/archetype-chart/friend-with-background.webp">
+  <link rel="preload" as="image" href="assets/archetype-chart/hero-with-background.webp">
+  <link rel="preload" as="image" href="assets/archetype-chart/innocent-with-background.webp">
+  <link rel="preload" as="image" href="assets/archetype-chart/jester-with-background.webp">
+  <link rel="preload" as="image" href="assets/archetype-chart/lover-with-background.webp">
+  <link rel="preload" as="image" href="assets/archetype-chart/magician-with-background.webp">
+  <link rel="preload" as="image" href="assets/archetype-chart/outlaw-with-background.webp">
+  <link rel="preload" as="image" href="assets/archetype-chart/ruler-with-background.webp">
+  <link rel="preload" as="image" href="assets/archetype-chart/sage-with-background.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Literata:opsz,wght@7..72,400;7..72,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -237,126 +249,64 @@
     }
     .persona-details .fact { grid-template-columns: minmax(90px, 120px) minmax(0, 1fr); }
 
-    .archetypes {
-      margin-top: 30px;
+    .archetype-embed {
+      margin-top: 28px;
+      width: min(720px, 100%);
+    }
+    bt-archetype-chart { display: block; width: 100%; }
+
+    .cal-shell {
+      display: grid;
+      grid-template-columns: minmax(0,1.35fr) minmax(240px,.7fr);
+      gap: clamp(24px, 4vw, 48px);
+      margin-top: 28px;
+      align-items: start;
+    }
+    .cal-picks { display: flex; flex-wrap: wrap; gap: 10px; }
+    .cal-pick {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      font-family: "Fjalla One", "Arial Narrow", sans-serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      letter-spacing: .01em;
+      color: var(--gallery);
+    }
+    .light .cal-pick {
+      border-color: var(--line-dark);
+      color: var(--navy);
+    }
+    .cal-side b {
+      display: block; font-size: .66rem; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 12px;
+    }
+    .light .cal-side b { color: var(--muted-dark); }
+    .cal-side p {
+      font-size: clamp(1.2rem, 2vw, 1.7rem);
+      line-height: 1.25;
+      letter-spacing: .01em;
+      font-family: "Fjalla One", "Arial Narrow", sans-serif;
+      font-weight: 400;
+      margin-bottom: 22px;
+    }
+    .cal-side .away { color: var(--muted); }
+    .light .cal-side .away { color: var(--graphite); }
+
+    .grid-6 {
+      margin-top: 24px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
     }
-    .archetype {
-      position: relative;
-      min-height: 360px;
-      overflow: hidden;
-      border: 1px solid rgba(236,231,222,.16);
-      background: var(--cobalt);
-    }
-    .archetype img {
+    .grid-6 img {
       width: 100%;
-      height: 100%;
-      min-height: 360px;
+      aspect-ratio: 16 / 10;
       object-fit: cover;
       display: block;
-      filter: saturate(.76);
-    }
-    .archetype::after {
-      content: "";
-      position: absolute;
-      inset: 46% 0 0;
-      background: linear-gradient(to bottom, transparent, rgba(17,29,46,.94));
-    }
-    .archetype-copy {
-      position: absolute;
-      z-index: 2;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-    }
-    .archetype-copy small {
-      display: block;
-      margin-bottom: 7px;
-      color: var(--muted);
-      font-size: .62rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-    .archetype-copy strong {
-      font-family: "Fjalla One", "Arial Narrow", sans-serif;
-      font-size: clamp(1.6rem, 3vw, 2.6rem);
-      font-weight: 400;
-    }
-    .review-note {
-      margin-top: 14px;
-      max-width: 70ch;
-      font-size: .78rem;
-      line-height: 1.5;
-      color: var(--muted);
-    }
-
-    .slider-grid {
-      margin-top: 30px;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px 28px;
-      max-width: 1060px;
-    }
-    .slider-row {
-      padding: 14px 0 10px;
-      border-top: 1px solid var(--line-dark);
-    }
-    .slider-labels {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      font-size: .68rem;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-      color: var(--muted-dark);
-      font-weight: 600;
-    }
-    .slider-track {
-      position: relative;
-      height: 2px;
-      margin-top: 14px;
-      background: rgba(17,29,46,.2);
-    }
-    .slider-track::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: -4px;
-      width: 1px;
-      height: 10px;
-      background: rgba(17,29,46,.22);
-    }
-    .slider-track span {
-      position: absolute;
-      left: calc(var(--pos) * 1%);
-      top: 50%;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--oxblood);
-      border: 2px solid var(--paper);
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 0 1px var(--oxblood);
-    }
-    .open-axes {
-      margin-top: 22px;
-      padding: 16px 18px;
       border: 1px solid var(--line-dark);
-      max-width: 1060px;
-      font-size: .84rem;
-      line-height: 1.5;
-      color: var(--graphite);
     }
-    .open-axes b {
-      margin-right: 8px;
-      color: var(--navy);
-      font-size: .65rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
+    .grid-6 img.tall { aspect-ratio: 4 / 5; }
+    .navy .grid-6 img, .cobalt .grid-6 img { border-color: var(--line); }
 
     .swatches {
       display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -606,9 +556,9 @@
     .navy .board-proof, .cobalt .board-proof { border-color: var(--line); background: transparent; }
 
     @media (max-width: 900px) {
-      .swatches, .do-dont, .grid-2, .split, .persona, .slider-grid, .social-triptych { grid-template-columns: 1fr; }
+      .swatches, .do-dont, .grid-2, .split, .persona, .cal-shell, .social-triptych, .grid-6 { grid-template-columns: 1fr; }
       .grid-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .grid-3, .archetypes { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
       .image-library { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .image-library figure.wide { grid-column: span 1; }
       .focus-star {
@@ -622,7 +572,6 @@
           "personality";
       }
       .star-point, .star-dna { min-height: 116px; }
-      .archetype, .archetype img { min-height: 300px; }
       .fact { grid-template-columns: 1fr; gap: 6px; }
       .cross-nav { max-width: calc(100vw - 70px); overflow-x: auto; }
     }
@@ -660,9 +609,9 @@
   <section class="scene navy" id="start" data-chapter="start">
     <div class="inner split">
       <div>
-        <p class="kicker">Brand Therapy Guidelines</p>
-        <h1 class="display">This is Gosder Cherilus.</h1>
-        <p class="body">A short brand read for his team, partners, and press. Who he is. How he looks. How he should be communicated.</p>
+        <p class="kicker">Gosder Cherilus</p>
+        <h1 class="display">Strive and savor.</h1>
+        <p class="body">Your brand, for you, your team, and your PR partners. Who you are. How you look. How we communicate you.</p>
         <a class="os-pointer" href="https://brandtherapy.florianp.com/gosder/" target="_blank" rel="noopener">
           <span class="os-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h12"/><path d="M12 5l7 7-7 7"/></svg>
@@ -673,18 +622,18 @@
           </span>
         </a>
       </div>
-      <img src="assets/portrait-editorial.png" alt="Gosder Cherilus portrait">
+      <img src="assets/imagery/presence-cultured.jpg" alt="Gosder Cherilus portrait">
     </div>
   </section>
 
   <section class="scene light" data-chapter="start">
     <div class="inner">
-      <p class="kicker">Two layers</p>
-      <h2 class="statement">The human read, and the operating system.</h2>
-      <p class="body">Guidelines is what you forward when someone needs to understand the brand fast. Brand Therapy OS is the full system behind it: strategy pages, identity rules, templates, and an AI context file you attach when drafting content. Same brand. Same sources. AI drafts. A person still approves.</p>
+      <p class="kicker">How to use this</p>
+      <h2 class="statement">Keep it close. Share it when needed.</h2>
+      <p class="body">These Guidelines are mainly internal: for Gosder, the team, and PR. Use them to stay aligned. Forward a section when someone needs the picture fast. Open Brand Therapy OS when you need every rule, template, or the AI context file.</p>
       <div class="facts">
-        <div class="fact"><b>Guidelines</b><span>Five-minute scroll for team, PR, and partners.</span></div>
-        <div class="fact"><b>Brand Therapy OS</b><span>The tool: every rule, every asset, plus the context file for AI.</span></div>
+        <div class="fact"><b>Guidelines</b><span>The short internal read. Who Gosder is, how he looks, how we speak for him.</span></div>
+        <div class="fact"><b>Brand Therapy OS</b><span>The operating tool: full rules, assets, and AI context.</span></div>
       </div>
     </div>
   </section>
@@ -692,9 +641,9 @@
   <!-- STRATEGY -->
   <section class="scene light" id="strategy" data-chapter="strategy">
     <div class="inner">
-      <p class="kicker">Focus Star · the whole system</p>
-      <h2 class="statement">Five decisions. One life philosophy.</h2>
-      <p class="body">The brand stays coherent when every application can be traced to these five lines. Persona remains inside People. Brand DNA remains inside Promise.</p>
+      <p class="kicker">Focus Star</p>
+      <h2 class="statement">The whole differentiation map.</h2>
+      <p class="body">Five lines. Product, People, Purpose, Promise, Personality. Every brand distinction fits in one of them. There is no sixth category. Persona stays inside People. Brand DNA stays inside Promise.</p>
       <div class="focus-star" aria-label="Gosder Cherilus Focus Star">
         <div class="star-point star-product"><b>Product</b><span>An inspiring example of resilience, devotion, and balance.</span></div>
         <div class="star-point star-people"><b>People</b><span>Driven people looking for a tribe where ambition and enjoyment belong together.</span></div>
@@ -709,14 +658,16 @@
   <section class="scene light" data-chapter="strategy">
     <div class="inner">
       <p class="kicker">Product</p>
+      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What Gosder uniquely offers.</p>
       <h2 class="statement">An inspiring example of resilience, devotion, and balance.</h2>
-      <p class="body">The product is Gosder's lived example, not a single venture or piece of advice. Show the practice, the work, and the life it makes possible.</p>
+      <p class="body">Not a single venture or piece of advice. His lived example: the practice, the work, and the life it makes possible.</p>
     </div>
   </section>
 
   <section class="scene navy" data-chapter="strategy">
     <div class="inner">
       <p class="kicker">People</p>
+      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">Who he is here to serve.</p>
       <h2 class="statement">Driven people who want ambition and enjoyment in the same life.</h2>
       <p class="body">Entrepreneurs, athletes, builders, and committed doers under pressure they chose. They need a tribe that understands the drive and makes room to enjoy life without guilt.</p>
     </div>
@@ -724,7 +675,7 @@
 
   <section class="scene navy" data-chapter="strategy">
     <div class="inner persona">
-      <img src="assets/portrait-walking.png" alt="Gosder Cherilus walking through a coastal stone setting">
+      <img src="assets/imagery/presence-walking.jpg" alt="Gosder Cherilus walking through a coastal stone setting">
       <div>
         <p class="kicker">People · persona inside the decision</p>
         <h2 class="statement">Meet the Doer.</h2>
@@ -741,78 +692,75 @@
   <section class="scene light" data-chapter="strategy">
     <div class="inner">
       <p class="kicker">Purpose</p>
+      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">Why the work needs to exist.</p>
       <h2 class="statement">Create the conditions for more people to achieve and live fully.</h2>
-      <p class="body">Not a celebration of Gosder's own success. Mentorship, access, community, and practical support that give other people a real chance to move forward.</p>
+      <p class="body">Not a celebration of personal success. Mentorship, access, community, and practical support that give other people a real chance to move forward.</p>
     </div>
   </section>
 
   <section class="scene navy" data-chapter="strategy">
     <div class="inner">
       <p class="kicker">Promise</p>
+      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What people can consistently expect.</p>
       <h2 class="statement">Strive and savor.</h2>
-      <p class="body">Work with devotion. Enjoy without guilt.</p>
-      <p class="accent">Striving gives pleasure meaning. Savoring keeps achievement in service of a life worth living. Never reduce the brand to grind, or to lifestyle alone.</p>
+      <p class="body">Work with devotion. Enjoy without guilt. Brand DNA: Strive and savor. Never reduce this to grind, or to lifestyle alone.</p>
     </div>
   </section>
 
   <section class="scene light" data-chapter="strategy">
     <div class="inner">
       <p class="kicker">Personality</p>
+      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">How the brand should feel and behave.</p>
       <h2 class="statement">A stoic Renaissance man with an Epicurean appetite for life.</h2>
       <p class="body">Quiet force, broad curiosity, understated pleasure. Calm under pressure. Serious about standards. Warm and playful up close. Restrained in public.</p>
     </div>
   </section>
 
-  <section class="scene navy" data-chapter="strategy">
+  <section class="scene navy archetype-scene" data-chapter="strategy">
     <div class="inner">
-      <p class="kicker">Personality · archetype constellation</p>
-      <h2 class="statement">Hero leads. Sage and Explorer keep it whole.</h2>
-      <p class="body">Hero brings discipline and earned progress. Sage adds reflection and useful judgment. Explorer keeps curiosity, culture, travel, and the wider life visible.</p>
-      <div class="archetypes" aria-label="Current unweighted archetype selection">
-        <article class="archetype">
-          <img src="assets/archetype-hero.webp" alt="Hero archetype reference">
-          <div class="archetype-copy"><small>Current primary read</small><strong>Hero</strong></div>
-        </article>
-        <article class="archetype">
-          <img src="assets/archetype-sage.webp" alt="Sage archetype reference">
-          <div class="archetype-copy"><small>Balancing influence</small><strong>Sage</strong></div>
-        </article>
-        <article class="archetype">
-          <img src="assets/archetype-explorer.webp" alt="Explorer archetype reference">
-          <div class="archetype-copy"><small>Balancing influence</small><strong>Explorer</strong></div>
-        </article>
+      <p class="kicker">Brand Personality Archetype</p>
+      <h2 class="statement" style="max-width:18ch">Hero + Sage + Explorer.</h2>
+      <p class="body">The timeless roles the brand naturally embodies. Primary Hero. Sage and Explorer complete the lead read.</p>
+      <div class="archetype-embed">
+        <bt-archetype-chart id="archetype-chart" theme="reveal" presentation="compact" animate></bt-archetype-chart>
       </div>
-      <p class="review-note">Internal review imagery. The workshop selection is unweighted, so no percentages or numerical mix have been inferred.</p>
     </div>
   </section>
 
   <section class="scene cobalt" data-chapter="strategy">
     <div class="inner">
-      <p class="kicker">Through-line</p>
-      <h2 class="statement">Discipline makes room for a full life.</h2>
-      <p class="body">Every story, image, and partnership should hold both halves: the work and what the work makes possible. If only one half shows up, the brand is incomplete.</p>
+      <p class="kicker">Creative Calibration</p>
+      <h2 class="statement" style="max-width:18ch">Mature and quiet, with cultivated warmth doing the heavy lifting.</h2>
+      <p class="body">Defining poles only. The full fourteen axes live in Brand Therapy OS. Three workshop axes remain open.</p>
+      <div class="cal-shell">
+        <div>
+          <b class="kicker" style="display:block;margin-bottom:14px">Lean into</b>
+          <div class="cal-picks">
+            <span class="cal-pick">Mature</span>
+            <span class="cal-pick">Quiet</span>
+            <span class="cal-pick">Calm</span>
+            <span class="cal-pick">Mysterious</span>
+            <span class="cal-pick">Masculine</span>
+            <span class="cal-pick">Serious</span>
+            <span class="cal-pick">Literal</span>
+            <span class="cal-pick">Organic</span>
+          </div>
+        </div>
+        <div class="cal-side">
+          <b>Move away from</b>
+          <p class="away">Youthful styling, loud performance, showy luxury, abstract decoration, energetic spectacle, emotional theater.</p>
+          <b>Defining keywords</b>
+          <p>Humble. Determined. Resilient. Serious. Mature. Curious. Cultured.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="scene light" data-chapter="strategy">
+  <section class="scene navy" data-chapter="strategy">
     <div class="inner">
-      <p class="kicker">Creative calibration · Brand Sliders</p>
-      <h2 class="statement">Captured, visible, and never guessed.</h2>
-      <p class="body">Eleven workshop coordinates set the creative tension. Three axes remain intentionally open until a later explicit decision.</p>
-      <div class="slider-grid" aria-label="Captured Brand Slider coordinates">
-        <div class="slider-row"><div class="slider-labels"><span>Classic</span><span>Modern</span></div><div class="slider-track" style="--pos:38"><span></span></div></div>
-        <div class="slider-row"><div class="slider-labels"><span>Mature</span><span>Youthful</span></div><div class="slider-track" style="--pos:15"><span></span></div></div>
-        <div class="slider-row"><div class="slider-labels"><span>Feminine</span><span>Masculine</span></div><div class="slider-track" style="--pos:75"><span></span></div></div>
-        <div class="slider-row"><div class="slider-labels"><span>Playful</span><span>Serious</span></div><div class="slider-track" style="--pos:72"><span></span></div></div>
-        <div class="slider-row"><div class="slider-labels"><span>Economical</span><span>Luxurious</span></div><div class="slider-track" style="--pos:72"><span></span></div></div>
-        <div class="slider-row"><div class="slider-labels"><span>Abstract</span><span>Literal</span></div><div class="slider-track" style="--pos:82"><span></span></div></div>
-        <div class="slider-row"><div class="slider-labels"><span>Geometric</span><span>Organic</span></div><div class="slider-track" style="--pos:68"><span></span></div></div>
-        <div class="slider-row"><div class="slider-labels"><span>Calm</span><span>Energetic</span></div><div class="slider-track" style="--pos:15"><span></span></div></div>
-        <div class="slider-row"><div class="slider-labels"><span>Rational</span><span>Emotional</span></div><div class="slider-track" style="--pos:28"><span></span></div></div>
-        <div class="slider-row"><div class="slider-labels"><span>Mysterious</span><span>Transparent</span></div><div class="slider-track" style="--pos:15"><span></span></div></div>
-        <div class="slider-row"><div class="slider-labels"><span>Quiet</span><span>Talkative</span></div><div class="slider-track" style="--pos:15"><span></span></div></div>
-      </div>
-      <div class="open-axes"><b>Still open</b> Friendly / Professional · Innovative / Traditional · Urban / Earthy</div>
+      <p class="kicker">Through-line</p>
+      <h2 class="statement">Discipline makes room for a full life.</h2>
+      <p class="body">Every story, image, and partnership should hold both halves: the work and what the work makes possible. If only one half shows up, the brand is incomplete.</p>
     </div>
   </section>
 
@@ -866,45 +814,28 @@
     </div>
   </section>
 
-  <section class="scene navy proof-stage" data-chapter="look">
+  <section class="scene light" id="imagery" data-chapter="look">
     <div class="inner">
-      <p class="kicker">Imagery · South of France restraint</p>
+      <p class="kicker">Imagery</p>
       <h2 class="statement">Lived-in. Cultivated. Unforced.</h2>
-      <p class="body">Limestone, linen, local light, music, books, markets, and a generous table. Avoid resort luxury, tourist Provence, yacht-club codes, and rugged-workshop cosplay.</p>
-      <div class="image-library">
-        <figure><img src="assets/portrait-cultured.png" alt="Gosder Cherilus in a cultivated evening interior"><figcaption>Presence</figcaption></figure>
-        <figure><img src="assets/portrait-walking.png" alt="Gosder Cherilus walking through a coastal stone setting"><figcaption>Movement</figcaption></figure>
-        <figure><img src="assets/portrait-reflective.png" alt="Gosder Cherilus in reflective work"><figcaption>Work</figcaption></figure>
-        <figure><img src="assets/photography-village.png" alt="Sunlit stone village lane"><figcaption>Local light</figcaption></figure>
-        <figure><img src="assets/photography-table.png" alt="Generous Mediterranean table setting"><figcaption>Generous table</figcaption></figure>
-        <figure><img src="assets/photography-piano.png" alt="Piano beside a sunlit window"><figcaption>Music and quiet</figcaption></figure>
+      <p class="body">South of France restraint: limestone, linen, local light, music, books, markets, and a generous table. Camera: editorial 50–85mm, late-afternoon warmth. Never reuse one photograph as both banner and avatar.</p>
+      <div class="grid-6">
+        <img src="assets/imagery/presence-cultured.jpg" alt="Gosder Cherilus cultured evening presence">
+        <img src="assets/imagery/presence-walking.jpg" alt="Gosder Cherilus walking in local light">
+        <img src="assets/imagery/village-lane.jpg" alt="Sunlit stone village lane">
+        <img src="assets/imagery/mediterranean-table.jpg" alt="Generous Mediterranean table">
+        <img src="assets/imagery/piano-window.jpg" alt="Piano beside a sunlit window">
+        <img src="assets/imagery/notebook-map.jpg" alt="Notebook and map on a cultivated surface">
       </div>
-    </div>
-  </section>
-
-  <section class="scene navy proof-stage" data-chapter="look">
-    <div class="inner">
-      <p class="kicker">Imagery · materials and craft</p>
-      <h2 class="statement">Curiosity, materials, wardrobe.</h2>
-      <p class="body">The supporting world keeps culture, craft, and restraint visible without turning props into the personality.</p>
-      <div class="image-library">
-        <figure><img src="assets/photography-notebook.png" alt="Notebook and map on a cultivated work surface"><figcaption>Curiosity</figcaption></figure>
-        <figure><img src="assets/photography-materials.png" alt="Linen, stone, leather, and paper material study"><figcaption>Materials</figcaption></figure>
-        <figure><img src="assets/photography-wardrobe.png" alt="Restrained South of France wardrobe study"><figcaption>Wardrobe</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="scene light" data-chapter="look">
-    <div class="inner">
-      <p class="kicker">Likeness</p>
-      <h2 class="statement">Choose the direction, not the face.</h2>
-      <div class="disclaimer" style="margin-top:24px">
+      <div class="disclaimer" style="margin-top:28px">
+        <p class="kicker" style="margin-bottom:8px">Likeness</p>
+        <h3>Choose the direction, not the face.</h3>
         <div class="row"><b>Review now</b><span>The visual world, styling, color, and overall feeling.</span></div>
         <div class="row"><b>Refine later</b><span>Exact facial likeness, before final production.</span></div>
       </div>
     </div>
   </section>
+
 
   <section class="scene board-scene contain light" data-chapter="look">
     <img src="assets/visual-do-dont.png" alt="Gosder Cherilus visual do and do not board">
@@ -917,8 +848,8 @@
   <section class="scene light proof-stage" id="alive" data-chapter="alive">
     <div class="inner">
       <p class="kicker">In the world</p>
-      <h2 class="statement">This is where the brand comes to life.</h2>
-      <p class="body">Not another rules page. The surfaces people actually see: magazine, press, LinkedIn, Instagram, video.</p>
+      <h2 class="statement">How Gosder shows up across channels.</h2>
+      <p class="body">Magazine concept, press brief, LinkedIn, Instagram, YouTube, social posts, and video covers. One Life in Full world on every surface.</p>
     </div>
   </section>
 
@@ -1046,7 +977,7 @@
   <section class="scene navy" id="voice" data-chapter="voice">
     <div class="inner">
       <p class="kicker">Voice</p>
-      <h2 class="statement">Lived example. Direct calm. No pedestal.</h2>
+      <h2 class="statement">How Gosder should sound.</h2>
       <div class="facts">
         <div class="fact"><b>Sound like</b><span>Specific scenes, earned advice, dry warmth, cultural curiosity.</span></div>
         <div class="fact"><b>Lead with</b><span>A real choice, practice, obstacle, or pleasure. Then name what it shows.</span></div>
@@ -1057,8 +988,8 @@
 
   <section class="scene light" data-chapter="voice">
     <div class="inner">
-      <p class="kicker">For PR and press</p>
-      <h2 class="statement">Communicate the whole man.</h2>
+      <p class="kicker">For the team and PR</p>
+      <h2 class="statement">How to communicate Gosder.</h2>
       <div class="do-dont">
         <div>
           <b>Do</b>
@@ -1086,8 +1017,8 @@
   <section class="scene navy" id="deeper" data-chapter="deeper">
     <div class="inner">
       <p class="kicker">Next</p>
-      <h2 class="statement">Forward this. Build in the OS.</h2>
-      <p class="body">Send Guidelines when someone needs the picture. Open Brand Therapy OS when someone needs the full rules, templates, or AI context.</p>
+      <h2 class="statement">Keep these pages close. Build in Brand Therapy OS.</h2>
+      <p class="body">Share this with anyone on the team or PR desk who needs to speak for Gosder. Open Brand Therapy OS when you need the full rules, templates, or AI context.</p>
       <div class="doors">
         <a class="door" href="https://brandtherapy.florianp.com/gosder/" target="_blank" rel="noopener">
           <small>Full system</small>
@@ -1154,5 +1085,49 @@
       setActiveChapter();
     })();
   </script>
+
+  <script src="assets/archetype-chart/archetype-chart.js"></script>
+  <script>
+    (function () {
+      const chart = document.querySelector("#archetype-chart");
+      if (!chart) return;
+      // Qualitative lead read only. No scored mix is claimed in copy.
+      const weights = {
+        hero: 34, sage: 22, explorer: 22, friend: 4, caregiver: 3,
+        creator: 3, ruler: 3, magician: 3, outlaw: 2, innocent: 2,
+        lover: 1, jester: 1
+      };
+      const meta = {
+        outlaw: ["Liberation and risk", "Challenges conventions and gives people permission to break from what holds them back."],
+        magician: ["Charisma and inspiration", "Transforms what feels impossible and helps people see a new possibility."],
+        hero: ["Courage and strength", "Proves progress through courage, mastery, and determined action."],
+        lover: ["Passion and intimacy", "Builds desire and connection through intimacy, beauty, and devotion."],
+        jester: ["Humor and delight", "Uses play and surprise to make people feel lighter and more alive."],
+        friend: ["Respect and belonging", "Creates belonging through familiarity, equality, and everyday trust."],
+        caregiver: ["Altruism and empathy", "Protects and supports people through generosity, service, and reassurance."],
+        ruler: ["Control and order", "Creates confidence through leadership, standards, control, and dependable order."],
+        creator: ["Creation and innovation", "Turns imagination into original work and gives people tools for self-expression."],
+        innocent: ["Safety and honesty", "Makes life feel simpler and safer through optimism, honesty, and clarity."],
+        sage: ["Wisdom and clarity", "Helps people understand the world through knowledge, truth, and perspective."],
+        explorer: ["Freedom and adventure", "Opens new paths and protects independence, discovery, and freedom."]
+      };
+      const order = ["outlaw","magician","hero","lover","jester","friend","caregiver","ruler","creator","innocent","sage","explorer"];
+      const roles = {hero:"Primary", sage:"Secondary", explorer:"Tertiary"};
+      chart.data = {
+        schema_version: "brand-therapy-contract/v2",
+        media_base: "assets/archetype-chart",
+        media_variant: "with_background",
+        archetypes: order.map((id) => ({
+          id,
+          name: id[0].toUpperCase() + id.slice(1),
+          promise: meta[id][0],
+          description: meta[id][1],
+          weight: weights[id],
+          role: roles[id] || (weights[id] >= 5 ? "Supporting" : "Minor signal")
+        }))
+      };
+    })();
+  </script>
+
 </body>
 </html>
