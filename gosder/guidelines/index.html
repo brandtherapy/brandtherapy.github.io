@@ -388,6 +388,19 @@
       background: #fff;
     }
 
+    .true-false {
+      margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr;
+      gap: 14px; max-width: 900px;
+    }
+    .true-false div { padding: 18px 20px; border: 1px solid var(--line); }
+    .light .true-false div { border-color: var(--line-dark); }
+    .true-false b {
+      display: block; font-size: .66rem; letter-spacing: .14em; text-transform: uppercase;
+      margin-bottom: 12px; color: var(--muted); font-weight: 600;
+    }
+    .light .true-false b { color: var(--muted-dark); }
+    .true-false ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .true-false li { font-size: clamp(.9rem, 1.2vw, 1.05rem); line-height: 1.4; }
     .do-dont {
       margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr;
       gap: 14px; max-width: 900px;
@@ -533,7 +546,7 @@
     .navy .board-proof, .cobalt .board-proof { border-color: var(--line); background: transparent; }
 
     @media (max-width: 900px) {
-      .swatches, .do-dont, .grid-2, .split, .cal-shell, .social-triptych, .grid-6 { grid-template-columns: 1fr; }
+      .swatches, .do-dont, .true-false, .grid-2, .split, .cal-shell, .social-triptych, .grid-6 { grid-template-columns: 1fr; }
       .grid-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .grid-3 { grid-template-columns: 1fr; }
       .image-library { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -608,7 +621,7 @@
       <p class="body">The Focus Star is the positioning system. Five lines hold the whole strategy. Every brand choice belongs in one of them. There is no sixth line.</p>
       <div class="focus-lines facts">
         <div class="fact"><b>Product</b><span>What you uniquely offer</span></div>
-        <div class="fact"><b>People</b><span>Who you serve. The Persona lives here: the person you write for, not the brand owner</span></div>
+        <div class="fact"><b>People</b><span>Who you serve. The Persona lives here: the person you write for</span></div>
         <div class="fact"><b>Purpose</b><span>Why the work needs to exist</span></div>
         <div class="fact"><b>Promise</b><span>What people can count on. The Brand DNA lives here</span></div>
         <div class="fact"><b>Personality</b><span>How the brand feels and behaves</span></div>
@@ -617,11 +630,14 @@
   </section>
 
   <section class="scene light" data-chapter="strategy">
-    <div class="inner">
-      <p class="kicker">Product</p>
-      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What Gosder uniquely offers</p>
-      <h2 class="statement">An inspiring example of resilience, devotion, and balance</h2>
-      <p class="body">Not a single venture or piece of advice. His lived example: the practice, the work, and the life it makes possible.</p>
+    <div class="inner split">
+      <div>
+        <p class="kicker">Product</p>
+        <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What Gosder uniquely offers</p>
+        <h2 class="statement">An inspiring example of resilience, devotion, and balance</h2>
+        <p class="body">His lived example: the practice, the work, and the life it makes possible. Ventures and advice sit under that example.</p>
+      </div>
+      <img src="assets/imagery/village-lane.jpg" alt="Quiet village lane for the Product line">
     </div>
   </section>
 
@@ -634,7 +650,7 @@
       <div class="persona-card">
         <p class="kicker">Persona · the person we write for</p>
         <h3 class="statement">The Doer</h3>
-        <p class="body">Not Gosder. The audience member we keep in mind when we write and design: a capable adult whose chosen ambition creates pressure, responsibility, and a need for peers who understand both the cost and the pleasure of achievement.</p>
+        <p class="body">The audience member we keep in mind when we write and design: a capable adult whose chosen ambition creates pressure, responsibility, and a need for peers who understand both the cost and the pleasure of achievement.</p>
         <div class="persona-details">
           <div class="fact"><b>Situation</b><span>Entrepreneur, athlete, builder, creator, or committed leader carrying real responsibility</span></div>
           <div class="fact"><b>Need</b><span>A tribe that understands the drive and makes room to enjoy life without guilt</span></div>
@@ -650,7 +666,7 @@
         <p class="kicker">Purpose</p>
         <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">Why the work needs to exist</p>
         <h2 class="statement">Create the conditions for more people to achieve and live fully</h2>
-        <p class="body">Not a celebration of personal success. Mentorship, access, community, and practical support that give other people a real chance to move forward.</p>
+        <p class="body">Mentorship, access, community, and practical support that give other people a real chance to move forward.</p>
       </div>
       <img src="assets/imagery/presence-walking.jpg" alt="Gosder walking through a coastal setting">
     </div>
@@ -662,7 +678,7 @@
         <p class="kicker">Promise</p>
         <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What people can consistently expect</p>
         <h2 class="statement">Strive and savor</h2>
-        <p class="body">Work with devotion. Enjoy without guilt. That pairing is the Brand DNA. Never reduce it to grind, or to lifestyle alone.</p>
+        <p class="body">Work with devotion. Enjoy without guilt. That pairing is the Brand DNA. Both halves stay visible in every story.</p>
       </div>
       <img src="assets/imagery/piano-window.jpg" alt="Piano by a window">
     </div>
@@ -721,7 +737,7 @@
     <div class="inner">
       <p class="kicker">Through-line</p>
       <h2 class="statement">Discipline makes room for a full life</h2>
-      <p class="body">Every story, image, and partnership should hold both halves: the work and what the work makes possible. If only one half shows up, the brand is incomplete.</p>
+      <p class="body">Every story, image, and partnership should hold both halves: the work and what the work makes possible. Both halves complete the brand.</p>
     </div>
   </section>
 
@@ -736,8 +752,8 @@
   <section class="scene light" data-chapter="look">
     <div class="inner">
       <p class="kicker">Color</p>
-      <h2 class="statement">The palette</h2>
-      <p class="body">Navy and deep red do most of the work. Warm brown softens. Off-white is the paper. Keep it quiet. Never flashy luxury.</p>
+      <h2 class="statement">Why these colors</h2>
+      <p class="body">The palette comes from Life in Full: navy for structure and calm, deep red for warmth and gravity, warm brown for material moments, off-white for open paper. The read should feel quiet and cultivated.</p>
       <div class="swatches" aria-label="Palette">
         <div class="swatch" style="background:#111D2E;color:#ECE7DE"><strong>Navy</strong><span>#111D2E</span></div>
         <div class="swatch" style="background:#14294A;color:#ECE7DE"><strong>Deep blue</strong><span>#14294A</span></div>
@@ -746,38 +762,88 @@
         <div class="swatch" style="background:#ECE7DE;color:#111D2E"><strong>Off-white</strong><span>#ECE7DE</span></div>
         <div class="swatch" style="background:#302F2F;color:#ECE7DE"><strong>Dark gray</strong><span>#302F2F</span></div>
       </div>
+      <div class="true-false">
+        <div>
+          <b>True</b>
+          <ul>
+            <li>Navy and deep red as the lead pair</li>
+            <li>Warm brown on leather, wood, and material detail</li>
+            <li>Off-white as the open field for reading</li>
+            <li>Quiet contrast, restrained warmth</li>
+          </ul>
+        </div>
+        <div>
+          <b>False</b>
+          <ul>
+            <li>Bright athletic primaries</li>
+            <li>Gold luxury accents</li>
+            <li>Soft pastel wellness palettes</li>
+            <li>Neon highlights or gradient washes</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="scene navy" data-chapter="look">
-    <div class="inner split">
-      <div>
-        <p class="kicker">Type</p>
-        <h2 class="statement">The typefaces</h2>
-        <p class="body">Fjalla One for headlines. Work Sans for reading. Literata when a line needs a warmer tone.</p>
-      </div>
-      <div>
-        <p style="font-family:'Fjalla One',sans-serif;font-size:clamp(2.4rem,5vw,4rem);line-height:.95;">Strive and savor</p>
-        <p style="margin-top:18px;font-size:1.1rem;line-height:1.5;color:var(--muted);max-width:36ch;">A full life can hold discipline, curiosity, culture, connection, and responsible enjoyment at the same time.</p>
-        <p style="margin-top:16px;font-family:Literata,Georgia,serif;font-size:1.25rem;line-height:1.35;max-width:24ch;">Do the work. Then enjoy what the work made possible.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="scene light" data-chapter="look">
     <div class="inner">
-      <p class="kicker">No logo yet</p>
-      <h2 class="statement">Recognition comes from the system</h2>
-      <p class="body">There is no approved logo, wordmark, or mark. Use the type, colors, portraits, and photography. Do not invent a symbol to fill the gap.</p>
+      <p class="kicker">Type</p>
+      <h2 class="statement">Why these typefaces</h2>
+      <p class="body">Fjalla One carries short direct headlines. Work Sans keeps body copy calm and readable. Literata adds a warmer line when a sentence needs more human tone. Three families only.</p>
+      <div class="split" style="margin-top:28px">
+        <div>
+          <p style="font-family:'Fjalla One',sans-serif;font-size:clamp(2.4rem,5vw,4rem);line-height:.95;">Strive and savor</p>
+          <p style="margin-top:18px;font-size:1.1rem;line-height:1.5;color:var(--muted);max-width:36ch;">A full life can hold discipline, curiosity, culture, connection, and responsible enjoyment at the same time.</p>
+          <p style="margin-top:16px;font-family:Literata,Georgia,serif;font-size:1.25rem;line-height:1.35;max-width:24ch;">Do the work. Then enjoy what the work made possible.</p>
+        </div>
+        <div class="true-false" style="margin-top:0;grid-template-columns:1fr">
+          <div>
+            <b>True</b>
+            <ul>
+              <li>Fjalla One for headlines and short statements</li>
+              <li>Work Sans for body and UI reading</li>
+              <li>Literata for a warmer accent line</li>
+            </ul>
+          </div>
+          <div>
+            <b>False</b>
+            <ul>
+              <li>Athletic condensed display fonts</li>
+              <li>Script, brush, or luxury serif stacks</li>
+              <li>More than these three families on one surface</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="scene light" id="imagery" data-chapter="look">
     <div class="inner">
       <p class="kicker">Imagery</p>
-      <h2 class="statement">Real places, real light</h2>
-      <p class="body">Show lived-in rooms, local light, music, books, shared tables, and purposeful walking. Keep faces whole in the frame.</p>
-      <div class="grid-2" style="margin-top:24px">
+      <h2 class="statement">Imagery rules</h2>
+      <p class="body">Images are chosen to show a lived, cultivated life: local light, purposeful rooms, music, books, shared tables, and calm presence. Faces stay whole in the frame. One dominant image per surface.</p>
+      <div class="true-false">
+        <div>
+          <b>True</b>
+          <ul>
+            <li>Lived-in rooms, late-afternoon light, limestone and linen</li>
+            <li>Music, books, markets, walking, and a generous table</li>
+            <li>Full-face portraits with natural posture</li>
+            <li>Purpose-built frames for each use</li>
+          </ul>
+        </div>
+        <div>
+          <b>False</b>
+          <ul>
+            <li>Resort wealth, yacht-club, or postcard-coast luxury</li>
+            <li>Rugged workshop theater or generic motivation scenes</li>
+            <li>Cropped-out heads or approximate faces</li>
+            <li>Reusing one photo as both banner and avatar</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top:28px">
         <img src="assets/imagery/presence-cultured.jpg" alt="Gosder Cherilus portrait" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;border:1px solid var(--line-dark)">
         <img src="assets/imagery/presence-walking.jpg" alt="Gosder walking in local light" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;border:1px solid var(--line-dark)">
       </div>
@@ -795,27 +861,26 @@
     </div>
   </section>
 
-
   <!-- IN THE WORLD -->
   <section class="scene navy" id="alive" data-chapter="alive">
     <div class="inner split">
       <div>
         <p class="kicker">In the world</p>
         <h2 class="statement">Magazine cover concept</h2>
-        <p class="body">A fictional editorial cover owned by Gosder. Never imply a real magazine commissioned it.</p>
+        <p class="body">A fictional editorial cover owned by Gosder. Treat it as a concept surface for the Life in Full world.</p>
       </div>
       <img src="assets/magazine-cover.png" alt="Fictional Life in Full magazine cover featuring Gosder Cherilus" style="max-height:78svh;width:auto;max-width:100%;justify-self:end;border:1px solid rgba(236,231,222,.16)">
     </div>
   </section>
 
-  <section class="scene light" data-chapter="alive">
-    <div class="inner split">
-      <div>
-        <p class="kicker">Press</p>
-        <h2 class="statement">How the story should read</h2>
-        <p class="body">Headline, promise, quote, and about block. The whole man. Not a grind slogan. Not a lifestyle flex.</p>
+  <section class="scene light proof-stage" data-chapter="alive">
+    <div class="inner">
+      <p class="kicker">Press</p>
+      <h2 class="statement">How the story should read</h2>
+      <p class="body">A media brief with headline, promise, quote, and about block. Use this structure when partners need the story in one page.</p>
+      <div class="proof-frame wide" style="margin-top:28px;max-height:78svh;overflow:auto">
+        <img src="assets/press-release.png" alt="Gosder Cherilus media brief concept" style="width:100%;display:block">
       </div>
-      <img src="assets/press-release.png" alt="Gosder Cherilus press release concept" style="max-height:78svh;width:auto;max-width:100%;justify-self:end;border:1px solid rgba(17,29,46,.14);background:#fff">
     </div>
   </section>
 
@@ -827,7 +892,7 @@
       <div class="facts">
         <div class="fact"><b>Sound like</b><span>Specific scenes, earned advice, dry warmth, real curiosity</span></div>
         <div class="fact"><b>Lead with</b><span>A real choice, practice, obstacle, or pleasure. Then name what it shows</span></div>
-        <div class="fact"><b>Never</b><span>Guru energy, pain worship, luxury flexing, or empty motivation</span></div>
+        <div class="fact"><b>Stay away from</b><span>Guru energy, pain worship, luxury flexing, or empty motivation</span></div>
       </div>
     </div>
   </section>
@@ -836,23 +901,23 @@
     <div class="inner">
       <p class="kicker">For press and partners</p>
       <h2 class="statement">How to communicate Gosder</h2>
-      <div class="do-dont">
+      <div class="true-false">
         <div>
-          <b>Do</b>
+          <b>True</b>
           <ul>
             <li>Former NFL tackle and entrepreneur showing ambition and enjoyment can belong together</li>
             <li>Stoic Renaissance man: discipline, culture, faith, relationships, pleasure</li>
-            <li>Ventures as proof under Gosder, not competing master brands</li>
-            <li>Conservative language on cannabis and wellness; no medical claims without approved evidence</li>
+            <li>Ventures as proof under Gosder</li>
+            <li>Conservative language on cannabis and wellness, with approved evidence only</li>
           </ul>
         </div>
         <div>
-          <b>Don't</b>
+          <b>False</b>
           <ul>
             <li>"No excuses," "the grind never stops," "crush it," "peak performance," "live your best life"</li>
             <li>Health influencer, productivity guru, or celebrity cannabis mascot framing</li>
             <li>Pain as personality, shouting toughness, or status display</li>
-            <li>Invented impact totals, unverified claims, or fictional press treated as real</li>
+            <li>Invented impact totals or unverified claims</li>
           </ul>
         </div>
       </div>
