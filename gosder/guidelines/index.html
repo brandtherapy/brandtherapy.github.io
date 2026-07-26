@@ -557,10 +557,84 @@
     @media (max-width: 560px) {
       .image-library { grid-template-columns: 1fr; }
     }
+    .photo-note {
+      position: fixed;
+      z-index: 70;
+      right: max(14px, env(safe-area-inset-right));
+      bottom: max(14px, env(safe-area-inset-bottom));
+      transform: translateY(18px);
+      width: min(320px, calc(100vw - 28px));
+      padding: 14px 14px 12px;
+      display: grid;
+      gap: 12px;
+      border: 1px solid rgba(236, 231, 222, .22);
+      background: rgba(17, 29, 46, .92);
+      color: var(--gallery);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, .28);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 280ms var(--ease), opacity 280ms var(--ease);
+    }
+    .photo-note.is-visible {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .photo-note[hidden] { display: none; }
+    .photo-note-kicker {
+      margin: 0 0 6px;
+      font-size: .62rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: rgba(236, 231, 222, .72);
+    }
+    .photo-note strong {
+      display: block;
+      margin: 0 0 6px;
+      font-family: "Fjalla One", "Arial Narrow", sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.15;
+      font-weight: 400;
+    }
+    .photo-note p {
+      margin: 0;
+      font-size: .82rem;
+      line-height: 1.4;
+      color: rgba(236, 231, 222, .78);
+      max-width: 34ch;
+    }
+    .photo-note button {
+      justify-self: start;
+      border: 1px solid rgba(236, 231, 222, .34);
+      background: transparent;
+      color: inherit;
+      padding: 8px 12px;
+      cursor: pointer;
+      white-space: nowrap;
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .photo-note button:hover { border-color: rgba(236, 231, 222, .7); }
+    .photo-note button:focus-visible {
+      outline: 2px solid var(--oxblood);
+      outline-offset: 2px;
+    }
+    @media (max-width: 560px) {
+      .photo-note {
+        left: max(12px, env(safe-area-inset-left));
+        right: max(12px, env(safe-area-inset-right));
+        width: auto;
+      }
+    }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .meter span { transition: none; }
       .os-arrow { animation: none; }
+      .photo-note { transition: none; }
     }
   </style>
 </head>
@@ -818,7 +892,7 @@
     </div>
   </section>
 
-  <section class="scene light" id="imagery" data-chapter="look">
+  <section class="scene light" id="imagery" data-chapter="look" data-portrait-notice>
     <div class="inner">
       <p class="kicker">Imagery</p>
       <h2 class="statement">Imagery rules</h2>
@@ -854,9 +928,10 @@
       </div>
       <div class="disclaimer" style="margin-top:28px">
         <p class="kicker" style="margin-bottom:8px">Likeness</p>
-        <h3>Approve the world first</h3>
-        <div class="row"><b>Review now</b><span>The visual world, styling, color, and overall feeling</span></div>
-        <div class="row"><b>Refine later</b><span>Exact facial likeness, before final production</span></div>
+        <h3>Direction first. Exact face later.</h3>
+        <p class="body" style="margin:0 0 12px;max-width:52ch">AI-generated faces and images show what the brand can look and feel like. They get as close as current tools allow, and the tools keep improving. Exact facial reproduction is not the product. A real photo shoot can be a strong next step when you want that level of fidelity.</p>
+        <div class="row"><b>Review now</b><span>The visual world, styling, color, presence, and feeling</span></div>
+        <div class="row"><b>Refine later</b><span>Exact facial likeness in production. A real photo shoot can help when you want that fidelity</span></div>
       </div>
     </div>
   </section>
@@ -940,6 +1015,14 @@
     </div>
   </section>
 
+  <aside class="photo-note" id="photoNote" hidden data-notice-version="3" role="status" aria-live="polite" aria-labelledby="photo-note-title">
+    <div>
+      <p class="photo-note-kicker">About these portraits</p>
+      <strong id="photo-note-title">Direction first. Exact face later.</strong>
+      <p>AI-generated faces and images show what the brand can look and feel like. They get as close as current tools allow. Exact facial reproduction is not the product. A real photo shoot can be a strong next step when you want that level of fidelity.</p>
+    </div>
+    <button type="button" id="photoNoteDismiss">Got it</button>
+  </aside>
 
   <script>
     (function () {
@@ -948,6 +1031,33 @@
       const toggle = document.getElementById("chapterToggle");
       const chapters = document.getElementById("chapters");
       const chapterButtons = Array.from(chapters.querySelectorAll("button"));
+      const photoNote = document.getElementById("photoNote");
+      const photoNoteDismiss = document.getElementById("photoNoteDismiss");
+      const noticeVersion = photoNote && photoNote.dataset.noticeVersion || "1";
+      const noticeKey = "brand-therapy-guidelines:gosder:photo-note:" + noticeVersion;
+
+      function readDismissed() {
+        try { return sessionStorage.getItem(noticeKey) === "1"; }
+        catch (_) { return false; }
+      }
+
+      function writeDismissed() {
+        try { sessionStorage.setItem(noticeKey, "1"); }
+        catch (_) {}
+      }
+
+      function showPhotoNote() {
+        if (!photoNote || readDismissed() || photoNote.classList.contains("is-visible")) return;
+        photoNote.hidden = false;
+        requestAnimationFrame(function () { photoNote.classList.add("is-visible"); });
+      }
+
+      function hidePhotoNote() {
+        if (!photoNote) return;
+        writeDismissed();
+        photoNote.classList.remove("is-visible");
+        window.setTimeout(function () { photoNote.hidden = true; }, 280);
+      }
 
       function setMeter() {
         const max = document.documentElement.scrollHeight - window.innerHeight;
@@ -983,6 +1093,8 @@
         });
       });
 
+      if (photoNoteDismiss) photoNoteDismiss.addEventListener("click", hidePhotoNote);
+
       window.addEventListener("scroll", () => {
         setMeter();
         setActiveChapter();
@@ -990,6 +1102,7 @@
 
       setMeter();
       setActiveChapter();
+      showPhotoNote();
     })();
   </script>
 
