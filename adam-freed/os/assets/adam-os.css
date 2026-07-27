@@ -873,6 +873,26 @@
   gap: 0.65rem;
 }
 
+.linkedin-shelf-actions .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 0;
+}
+
+.linkedin-shelf-actions .button:not(.button--ghost) {
+  color: #fff;
+  border-color: #004DC2;
+  background: #004DC2;
+}
+
+.linkedin-shelf-actions .button:not(.button--ghost):hover {
+  color: #fff;
+  border-color: #1C2430;
+  background: #1C2430;
+}
+
 .button--ghost {
   color: #004DC2;
   background: transparent;
