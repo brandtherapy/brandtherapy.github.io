@@ -616,17 +616,28 @@ h2,
 
 .site-home {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  min-height: 39rem;
+  grid-template-columns: minmax(20rem, 0.92fr) minmax(0, 1.08fr);
+  min-height: 36rem;
   color: var(--inverse-text);
   background: var(--inverse);
+  overflow: hidden;
 }
 
 .site-home-copy {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1.25rem;
+  min-width: 0;
+  min-height: 0;
+  padding: clamp(1.35rem, 2.8vw, 2.75rem);
+}
+
+.site-home-copy > div {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: clamp(1.6rem, 4vw, 4rem);
+  justify-content: center;
+  gap: 0.85rem;
+  min-width: 0;
 }
 
 .site-nav {
@@ -637,23 +648,43 @@ h2,
 }
 
 .site-display {
-  max-width: 11ch;
   margin: 0;
   font-family: var(--type-display);
-  font-size: clamp(3.4rem, 6.4vw, 6.4rem);
+  font-size: clamp(2.5rem, 3.8vw, 4.6rem);
   font-weight: 500;
-  line-height: 0.92;
+  line-height: 0.96;
   letter-spacing: -0.01em;
   text-transform: none;
   overflow-wrap: normal;
-  word-break: normal;
+  word-break: keep-all;
   hyphens: none;
 }
 
+.site-home-image {
+  min-height: 100%;
+  overflow: hidden;
+}
+
 .site-home-image img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .site-home {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .site-home-image {
+    min-height: 18rem;
+  }
+
+  .site-display {
+    font-size: clamp(2.6rem, 10vw, 3.8rem);
+  }
 }
 
 .mobile-prototype {
