@@ -1,0 +1,20 @@
+{
+  "board": "direction-2-canon-stylescape-pending-review.png",
+  "moodboard": "images/moodboard/direction-2-canon-stylescape.png",
+  "hero_solo": "direction-2-canon-hero-solo-pending-review.png",
+  "status": "pending_florian_review",
+  "direction": "on-speaking-terms",
+  "method": "Photoreal faceless system board + full-bleed strict-pass solo (no face regeneration on the board).",
+  "gates": {
+    "normal": "PASS",
+    "strict_0.65": "PASS",
+    "board_best_sim": 0.682,
+    "faces_detected": 1
+  },
+  "created": "2026-07-27",
+  "notes": [
+    "Prior regenerated-face and weak composite candidates quarantined.",
+    "Temporary stylescape remains rejected as a likeness seed.",
+    "Canon stylescape approval still required from Florian before CD status becomes approved."
+  ]
+}

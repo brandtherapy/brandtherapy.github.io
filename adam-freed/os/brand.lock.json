@@ -1,0 +1,38 @@
+{
+  "brand": "adam-freed",
+  "version": "0.1.0",
+  "approved_at": "2026-06-13T21:49:10+00:00",
+  "approved_by": "Florian",
+  "source_hashes": {
+    "STRATEGY.md": "sha256:4c9764add32f23f50d10bd6b0aebc6cb7c3e6477f04abb5b2b1ac2e5ee8747f0",
+    "IDENTITY.md": "sha256:0628cab7f26d569a19daf6b743a41c800e8f1088d7a45a0fcf3d060f3c8e410d",
+    "APPLICATION.md": "sha256:536d86996dd11336e0a6351102a4aeb728cfd5fa62975ff157fedfabb8952bba",
+    "CHANNELS.md": "sha256:f08dd454a64bab27f33485dcbb73d943d8b3bc3b2117996da9d18272ac1c162b",
+    "QUICKSTART.md": "sha256:aed19a124f493e70cf23a4b410ddb90e355eae26a0e95ef85eba52172c3b467a",
+    "DIFFERENTIATION.md": "sha256:82f1387c77df49bca3eeed3b4aa493886a8e266ffb2d4d6bc95d73b556ff6bb8",
+    "references/source-map.md": "sha256:750fcd2e1278d4d396177b70b298bd5c141bd0e838be65357c22894906370c50",
+    "images_manifest": "sha256:640886ed2bb97d9b359bbc32b058a9f54b2a0377709fb730c20b845154821f50"
+  },
+  "bundle_hash": "sha256:17981991da2c529eb68e0e6bb975a5f74a5cd1816a5c626015b134c754b3adfb",
+  "outputs": {
+    "ai_context_emitted_at": "2026-06-13T21:49:10+00:00",
+    "ai_context_json_emitted_at": "2026-06-13T21:49:10+00:00",
+    "ai_context_git_sha": "8dbba6a475cf8eb05c3023e109a20315ed875533",
+    "strategy_html_emitted_at": "2026-06-13T21:49:10+00:00",
+    "identity_html_emitted_at": "2026-06-13T21:49:10+00:00",
+    "focus_star_json_emitted_at": "2026-06-13T21:49:10+00:00",
+    "application_html_emitted_at": "2026-06-13T21:49:10+00:00",
+    "channel_rules_html_emitted_at": "2026-06-13T21:49:10+00:00"
+  },
+  "validator_rules": {
+    "must_match_at_build": [
+      "source_hashes",
+      "bundle_hash"
+    ],
+    "warn_on_drift": [
+      "outputs.ai_context_git_sha"
+    ],
+    "fail_if_missing_source_file": true,
+    "fail_if_extra_source_file_without_hash": true
+  }
+}
