@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/brand-therapy-os.css">
-  <link rel="stylesheet" href="assets/adam-os.css?v=20260726j">
+  <link rel="stylesheet" href="assets/adam-os.css?v=20260727a">
   <script src="assets/brand-therapy-os.js" defer></script>
 </head>
 <body data-page-id="use-ai" data-os-url="https://brandtherapy.florianp.com/adam-freed/os/" data-context-url="https://brandtherapy.florianp.com/adam-freed/os/ai-context.md">
@@ -63,40 +63,68 @@
           </div>
         </header>
 
-        <details class="page-toc" data-page-toc open><summary><strong>On this page</strong></summary><ol><li><a href="#loop">How it works</a></li><li><a href="#prompts">Starter prompts</a></li><li><a href="#check">Final check</a></li></ol></details><section class="content-section" id="loop"><div class="section-headline"><p class="eyebrow">01</p><h2>How it works</h2></div><ol class="ai-workflow"><li><span>01</span><div><strong>Open</strong><p>Open ChatGPT or Claude. Start a new chat. One chat per task. Long chats drift off voice.</p></div></li><li><span>02</span><div><strong>Paste</strong><p>Hit Copy the brain above and paste it as your first message. Send it before you ask for anything.</p></div></li><li><span>03</span><div><strong>Ask</strong><p>Say what you need in one line. Channel, topic, goal. Or grab a starter prompt below.</p></div></li></ol></section><section class="content-section" id="prompts"><div class="section-headline"><p class="eyebrow">02</p><h2>Starter prompts</h2></div><div class="prompt-grid"><article class="prompt-card"><p class="asset-kicker">Website and speaking</p><h3>Advisory introduction</h3><pre id="prompt-1">Brand Therapy OS: https://brandtherapy.florianp.com/adam-freed/os/
+        <details class="page-toc" data-page-toc open><summary><strong>On this page</strong></summary><ol><li><a href="#loop">How it works</a></li><li><a href="#prompts">Ready-to-use prompts</a></li><li><a href="#check">Final check</a></li></ol></details><section class="content-section" id="loop"><div class="section-headline"><p class="eyebrow">01</p><h2>How it works</h2></div><p class="section-note">One focused task, the right context, one reviewable draft.</p><div class="ai-context-actions"><pre id="brand-context-payload" class="visually-hidden">Use the attached Adam Freed Brand Therapy OS context as fixed guidance.</pre><button class="button" type="button" data-copy-target="brand-context-payload" data-copy-include-os="true">Copy the brand context</button> <a class="button button-ghost" href="ai-context.md">Open the context file</a> <span data-copy-result aria-live="polite"></span><p class="section-note">Paste the brand context into the chat before you ask for the draft. Every prompt below also starts with the live OS URL.</p></div><ol class="ai-workflow"><li><span>01</span><div><strong>Open</strong><p>Start a new chat for one task. Long chats drift off voice and rules.</p></div></li><li><span>02</span><div><strong>Paste</strong><p>Give the AI the brand context first, before you ask for anything.</p></div></li><li><span>03</span><div><strong>Ask</strong><p>Name the channel, format (Finding, Handoff, Operator Note, Website, Email, or Video), topic, and goal.</p></div></li><li><span>04</span><div><strong>Review</strong><p>Check facts, voice, images, and Connection Cable behavior before using anything.</p></div></li></ol></section><section class="content-section" id="prompts"><div class="section-headline"><p class="eyebrow">02</p><h2>Ready-to-use prompts</h2></div><p class="section-note">Copy a prompt, replace the brackets, and keep the result in draft until it is reviewed.</p><div class="prompt-grid"><article class="prompt-card"><p class="asset-kicker">LinkedIn</p><h3>LinkedIn Finding</h3><pre id="prompt-1">Brand Therapy OS: https://brandtherapy.florianp.com/adam-freed/os/
 AI context: https://brandtherapy.florianp.com/adam-freed/os/ai-context.md
 
-Write a short advisory introduction for me.
+Use the attached Adam Freed Brand Therapy OS context as fixed guidance.
 
-Context: [who I am meeting with  -  a cannabis founder, a conference organizer, a journalist]
-What they need to know: [the one credential or experience most relevant to this context]
+Draft a LinkedIn Finding post.
+Observation: [what I noticed in a cannabis operation, report, or industry conversation]
+The gap it reveals: [what this says about data integrity or operations]
+Desired reader action: [fix a source, align a handoff, or stop trusting a false dashboard]
 
-Follow the speaking and advisory application rules in this context. Write in first person. This is a draft. I will review before using it.</pre><button class="button" type="button" data-copy-target="prompt-1" data-copy-include-os="true">Copy prompt</button> <span data-copy-result aria-live="polite"></span></article><article class="prompt-card"><p class="asset-kicker">LinkedIn</p><h3>LinkedIn finding post</h3><pre id="prompt-2">Brand Therapy OS: https://brandtherapy.florianp.com/adam-freed/os/
+Follow the LinkedIn Finding rules. Open with the finding. Short paragraphs. No engagement bait, invented stats, or consultant language. Draft only for human review.</pre><button class="button" type="button" data-copy-target="prompt-1" data-copy-include-os="true">Copy prompt</button> <span data-copy-result aria-live="polite"></span></article><article class="prompt-card"><p class="asset-kicker">LinkedIn</p><h3>LinkedIn Handoff</h3><pre id="prompt-2">Brand Therapy OS: https://brandtherapy.florianp.com/adam-freed/os/
 AI context: https://brandtherapy.florianp.com/adam-freed/os/ai-context.md
 
-Write a LinkedIn post based on this observation.
+Use the attached Adam Freed Brand Therapy OS context as fixed guidance.
 
-The observation: [what I noticed in a cannabis operation, a report, or an industry conversation]
-The gap it reveals: [what this says about the state of cannabis data or operations]
+Draft a LinkedIn Handoff post that moves one finding into a next step.
+The finding already made: [one clear operational judgment]
+What to hand off: [the decision, check, or action the reader should take next]
+Audience: [operators, founders, or operators who own the numbers]
 
-Follow the LinkedIn channel rules in this context. Open with the finding. Short paragraphs. No questions as hooks. No em-dash. Draft only.</pre><button class="button" type="button" data-copy-target="prompt-2" data-copy-include-os="true">Copy prompt</button> <span data-copy-result aria-live="polite"></span></article><article class="prompt-card"><p class="asset-kicker">Speaking</p><h3>Speaker bio</h3><pre id="prompt-3">Brand Therapy OS: https://brandtherapy.florianp.com/adam-freed/os/
+Keep Data Integrity voice. Separate evidence from assumption when useful. Do not invent outcomes. Draft only.</pre><button class="button" type="button" data-copy-target="prompt-2" data-copy-include-os="true">Copy prompt</button> <span data-copy-result aria-live="polite"></span></article><article class="prompt-card"><p class="asset-kicker">LinkedIn</p><h3>LinkedIn Operator Note</h3><pre id="prompt-3">Brand Therapy OS: https://brandtherapy.florianp.com/adam-freed/os/
 AI context: https://brandtherapy.florianp.com/adam-freed/os/ai-context.md
 
-Write a [short / long] speaker bio for me.
+Use the attached Adam Freed Brand Therapy OS context as fixed guidance.
 
-Format needed: [50-75 words / 200-300 words / 100-word moderator intro]
-Event context: [what kind of event, who the audience is]
+Draft a LinkedIn Operator Note.
+Working context: [floor, meeting, report review, or handoff moment]
+Practical note: [one useful operating observation]
+Why it matters now: [one sentence]
 
-Use only the credentials documented in this context. Do not inflate scope or claims. First-person for conversational contexts, third-person for formal bios. Draft only  -  I verify accuracy before submitting.</pre><button class="button" type="button" data-copy-target="prompt-3" data-copy-include-os="true">Copy prompt</button> <span data-copy-result aria-live="polite"></span></article><article class="prompt-card"><p class="asset-kicker">Writing and newsletter</p><h3>Data insights article</h3><pre id="prompt-4">Brand Therapy OS: https://brandtherapy.florianp.com/adam-freed/os/
+Keep it calm, exact, and human. No consultant jargon. Draft only for human review.</pre><button class="button" type="button" data-copy-target="prompt-3" data-copy-include-os="true">Copy prompt</button> <span data-copy-result aria-live="polite"></span></article><article class="prompt-card"><p class="asset-kicker">Website</p><h3>Website homepage line</h3><pre id="prompt-4">Brand Therapy OS: https://brandtherapy.florianp.com/adam-freed/os/
 AI context: https://brandtherapy.florianp.com/adam-freed/os/ai-context.md
 
-Draft an article on this cannabis data or operations topic.
+Use the attached Adam Freed Brand Therapy OS context as fixed guidance.
 
-Topic: [the specific finding, gap, or pattern I want to write about]
-Evidence I have: [what I have observed, what reports say, what I know from operations]
-Audience: [founders and C-suite of small to mid-size cannabis businesses]
+Draft homepage hero copy.
+Promise to hold: Data Integrity / get the systems talking
+Audience: [cannabis operators who need systems that agree]
+CTA: [start a conversation / book a working session]
 
-Follow the writing channel rules in this context. Declarative title. Open with the finding. Evidence before conclusion. One thesis. Flag any claims I need to source before this publishes. Draft only.</pre><button class="button" type="button" data-copy-target="prompt-4" data-copy-include-os="true">Copy prompt</button> <span data-copy-result aria-live="polite"></span></article></div></section><section class="content-section" id="check"><div class="section-headline"><p class="eyebrow">03</p><h2>Final check</h2></div><ul class="clean-list"><li>Use verified facts and current brand pages</li><li>Keep voice and visual rules consistent</li><li>Do not invent credentials, results, quotes, or endorsements</li><li>Never use the temporary stylescape as a face reference</li></ul></section>
+Follow website rules. One direct thesis. No unsupported performance claims. Draft only.</pre><button class="button" type="button" data-copy-target="prompt-4" data-copy-include-os="true">Copy prompt</button> <span data-copy-result aria-live="polite"></span></article><article class="prompt-card"><p class="asset-kicker">Email</p><h3>Email starter</h3><pre id="prompt-5">Brand Therapy OS: https://brandtherapy.florianp.com/adam-freed/os/
+AI context: https://brandtherapy.florianp.com/adam-freed/os/ai-context.md
+
+Use the attached Adam Freed Brand Therapy OS context as fixed guidance.
+
+Draft a short email.
+Purpose: [intro, follow-up, or working-session invite]
+Recipient context: [who they are and why this matters]
+One ask: [the next step]
+
+Keep voice exact and lightly wry. No hype. Draft only for human review.</pre><button class="button" type="button" data-copy-target="prompt-5" data-copy-include-os="true">Copy prompt</button> <span data-copy-result aria-live="polite"></span></article><article class="prompt-card"><p class="asset-kicker">Video</p><h3>Short-form video cover</h3><pre id="prompt-6">Brand Therapy OS: https://brandtherapy.florianp.com/adam-freed/os/
+AI context: https://brandtherapy.florianp.com/adam-freed/os/ai-context.md
+
+Use the attached Adam Freed Brand Therapy OS context as fixed guidance.
+
+Draft copy and a visual brief for a short-form video cover.
+Format: [concept-led / face-led / text-led]
+Hook line: [one direct operational statement]
+On-screen line: [eight words or fewer]
+Face rule: use only the approved Adam face canon if a face is required
+
+Never treat The Connection Cable as a logo. Never invent proof. Draft only.</pre><button class="button" type="button" data-copy-target="prompt-6" data-copy-include-os="true">Copy prompt</button> <span data-copy-result aria-live="polite"></span></article></div></section><section class="content-section" id="check"><div class="section-headline"><p class="eyebrow">03</p><h2>Final check</h2></div><ul class="clean-list"><li>Never invent facts, credentials, clients, outcomes, quotes, or endorsements.</li><li>Never use the temporary stylescape as a face or crop reference.</li><li>Keep The Connection Cable as one physical link with one coral connector, never a logo.</li><li>AI drafts. A person approves. Publishing, sending, and client delivery remain separate decisions.</li></ul></section>
 
         <nav class="previous-next" aria-label="Previous and next pages"><a href="index.html" data-direction="previous"><small>Previous page</small><strong>Overview</strong></a><a href="strategy/index.html" data-direction="next"><small>Next page</small><strong>Focus Star</strong></a></nav>
       </article>

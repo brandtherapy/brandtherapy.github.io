@@ -8,9 +8,9 @@
   "usage_rules": [
     "Use the approved face canon as the only image reference for Adam's identity.",
     "Dark flat cap, rectangular glasses, long dark hair, and full beard are locked appearance elements.",
-    "Use the selected navy quarter-zip outfit in Direction 1 identity imagery.",
+    "Use the selected navy quarter-zip outfit in Direction 2 identity imagery.",
     "Show Adam in active conversation or work with operators. Avoid solitary portraiture and empty rooms.",
-    "Never use the selected stylescape raster as an image-model reference because its generated face is rejected.",
+    "Never use the temporary stylescape raster as an image-model reference because its generated face is rejected.",
     "Every recognizable Adam face must pass the normal canon gate and the strict 0.65 real-source recovery gate before review.",
     "Generated founder imagery remains private identity source. It is not approved for delivery or publication."
   ],
@@ -25,14 +25,14 @@
     {
       "role": "turnaround",
       "label": "Selected primary operator outfit",
-      "description": "Navy quarter-zip, check shirt, charcoal trousers, dark flat cap, and glasses. This is the Direction 1 identity outfit.",
+      "description": "Navy quarter-zip, check shirt, charcoal trousers, dark flat cap, and glasses. This is the Direction 2 identity outfit.",
       "path": "images/likeness/adam-freed-fullbody-primary.png",
       "url": "https://brandtherapy.florianp.com/adam-freed/images/likeness/adam-freed-fullbody-primary.png"
     },
     {
       "role": "turnaround",
       "label": "Approved alternate reference",
-      "description": "Charcoal sport coat and open-collar shirt. Keep available as approved character reference, but do not use it for Direction 1 identity imagery unless separately requested.",
+      "description": "Charcoal sport coat and open-collar shirt. Keep available as approved character reference, but do not use it for Direction 2 identity imagery unless separately requested.",
       "path": "images/likeness/adam-freed-fullbody-bizcasual.png",
       "url": "https://brandtherapy.florianp.com/adam-freed/images/likeness/adam-freed-fullbody-bizcasual.png"
     }

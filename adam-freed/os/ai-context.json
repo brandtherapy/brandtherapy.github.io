@@ -1,0 +1,2204 @@
+{
+  "schema_version": "1.0.0",
+  "brand": {
+    "slug": "adam-freed",
+    "name": "Adam Freed",
+    "short": "Adam",
+    "version": "1.0.0",
+    "status": "approved"
+  },
+  "source": {
+    "source_slug": "adam-freed",
+    "build_timestamp": "2026-07-27T19:23:14+00:00",
+    "git_sha": "4fb849d70384b194f045acebcc365b06578cb230",
+    "bundle_hash": "sha256:ae65660ba614a48d5b071b6deec4f13d3b7e41ee977fbef13b10721080834cb2",
+    "source_hashes": {
+      "STRATEGY.md": "sha256:8e5900d6ffe807bb856a3f365e2594f118ec326017c033b8efe8e4586bd363c6",
+      "IDENTITY.md": "sha256:3f3f9b728b388a1b7b5c917026ed3e94d1fa11ad00eeb504d5f038ebf585d6ba",
+      "APPLICATION.md": "sha256:bcd9356ccc16bb77f65e8ce820d8323fec451d68791c7a2deceb723a5c1a62eb",
+      "CHANNELS.md": "sha256:aa5a6d39276819685738287484180f9cc289ae42d217415b29d12a999a470f39",
+      "PERSONAL_BRANDING.md": "sha256:8f9bca2c3cde0af5bbb0e7797034a093829a6a9cef7c735eb09a669433d88a97",
+      "DIRECTIONS.md": "sha256:b5fc6d5a9305e75ae7146a458c4542f8513a4adbd87b9b4c1fa0e213575b62f6",
+      "QUICKSTART.md": "sha256:6eb1f1279c25a74bba9224a596c94d7aa8bc9d8a63c11469ab0af3ae9e0aec3c",
+      "DIFFERENTIATION.md": "sha256:8c2318994d53298dd433e1f105ef328de92d31154339b4902ad3bf26eb9d2a34",
+      "references/signature-throughline.md": "sha256:dc00517e9401cc80f13c9316ee481af8a5ef2a443ff9cdf1f98516e81d4b0458",
+      "references/source-map.md": "sha256:62064236aa184e62ce2620bb45f4017d70a0e625cfd24370fbaead6aba82facb",
+      "images_manifest": "sha256:8a3c2ece6d18ead570bcd377658998d0ca0099af7e118c5dd08f7ed8785d4849",
+      "application_references_manifest": "sha256:91dd10048a524d2cb0d98c17e884cbeef364ecd613084d1bd983b2f4cdd99497"
+    },
+    "source_order": [
+      "STRATEGY.md",
+      "DIFFERENTIATION.md",
+      "IDENTITY.md",
+      "DIRECTIONS.md",
+      "APPLICATION.md",
+      "CHANNELS.md",
+      "PERSONAL_BRANDING.md"
+    ],
+    "generated_outputs_are_downstream": true,
+    "output_bundle": {
+      "lock": "brand.lock.json",
+      "source_files": {
+        "STRATEGY.md": "source/STRATEGY.md",
+        "IDENTITY.md": "source/IDENTITY.md",
+        "APPLICATION.md": "source/APPLICATION.md",
+        "CHANNELS.md": "source/CHANNELS.md",
+        "PERSONAL_BRANDING.md": "source/PERSONAL_BRANDING.md",
+        "DIRECTIONS.md": "source/DIRECTIONS.md",
+        "QUICKSTART.md": "source/QUICKSTART.md",
+        "DIFFERENTIATION.md": "source/DIFFERENTIATION.md"
+      },
+      "references": {
+        "references/signature-throughline.md": "source/references/signature-throughline.md",
+        "references/source-map.md": "source/references/source-map.md"
+      },
+      "application_references": {
+        "brand-os/brands/adam-freed/images/applications/linkedin-finding.png": "source/external/brand-os/brands/adam-freed/images/applications/linkedin-finding.png",
+        "brand-os/brands/adam-freed/images/applications/linkedin-handoff.png": "source/external/brand-os/brands/adam-freed/images/applications/linkedin-handoff.png",
+        "brand-os/brands/adam-freed/images/applications/linkedin-operator-note.png": "source/external/brand-os/brands/adam-freed/images/applications/linkedin-operator-note.png",
+        "brand-os/brands/adam-freed/images/applications/linkedin-evidence-assumption.png": "source/external/brand-os/brands/adam-freed/images/applications/linkedin-evidence-assumption.png",
+        "brand-os/brands/adam-freed/images/applications/linkedin-article-cover.png": "source/external/brand-os/brands/adam-freed/images/applications/linkedin-article-cover.png",
+        "brand-os/brands/adam-freed/images/applications/instagram-finding.png": "source/external/brand-os/brands/adam-freed/images/applications/instagram-finding.png",
+        "brand-os/brands/adam-freed/images/applications/instagram-handoff.png": "source/external/brand-os/brands/adam-freed/images/applications/instagram-handoff.png",
+        "brand-os/brands/adam-freed/images/applications/instagram-operator-note.png": "source/external/brand-os/brands/adam-freed/images/applications/instagram-operator-note.png",
+        "brand-os/brands/adam-freed/images/applications/instagram-evidence-assumption.png": "source/external/brand-os/brands/adam-freed/images/applications/instagram-evidence-assumption.png",
+        "brand-os/brands/adam-freed/images/applications/instagram-article-cover.png": "source/external/brand-os/brands/adam-freed/images/applications/instagram-article-cover.png",
+        "brand-os/brands/adam-freed/images/applications/template-linkedin-finding.png": "source/external/brand-os/brands/adam-freed/images/applications/template-linkedin-finding.png",
+        "brand-os/brands/adam-freed/images/applications/template-linkedin-handoff.png": "source/external/brand-os/brands/adam-freed/images/applications/template-linkedin-handoff.png",
+        "brand-os/brands/adam-freed/images/applications/template-linkedin-operator-note.png": "source/external/brand-os/brands/adam-freed/images/applications/template-linkedin-operator-note.png",
+        "brand-os/brands/adam-freed/images/applications/template-linkedin-evidence-assumption.png": "source/external/brand-os/brands/adam-freed/images/applications/template-linkedin-evidence-assumption.png",
+        "brand-os/brands/adam-freed/images/applications/template-linkedin-article-cover.png": "source/external/brand-os/brands/adam-freed/images/applications/template-linkedin-article-cover.png",
+        "brand-os/brands/adam-freed/images/applications/template-instagram-finding.png": "source/external/brand-os/brands/adam-freed/images/applications/template-instagram-finding.png",
+        "brand-os/brands/adam-freed/images/applications/template-instagram-handoff.png": "source/external/brand-os/brands/adam-freed/images/applications/template-instagram-handoff.png",
+        "brand-os/brands/adam-freed/images/applications/template-instagram-operator-note.png": "source/external/brand-os/brands/adam-freed/images/applications/template-instagram-operator-note.png",
+        "brand-os/brands/adam-freed/images/applications/template-instagram-evidence-assumption.png": "source/external/brand-os/brands/adam-freed/images/applications/template-instagram-evidence-assumption.png",
+        "brand-os/brands/adam-freed/images/applications/template-instagram-article-cover.png": "source/external/brand-os/brands/adam-freed/images/applications/template-instagram-article-cover.png",
+        "brand-os/brands/adam-freed/images/applications/social-do-dont.png": "source/external/brand-os/brands/adam-freed/images/applications/social-do-dont.png",
+        "brand-os/brands/adam-freed/images/applications/video-face-led.png": "source/external/brand-os/brands/adam-freed/images/applications/video-face-led.png",
+        "brand-os/brands/adam-freed/images/applications/video-concept-led.png": "source/external/brand-os/brands/adam-freed/images/applications/video-concept-led.png",
+        "brand-os/brands/adam-freed/images/applications/video-text-led.png": "source/external/brand-os/brands/adam-freed/images/applications/video-text-led.png",
+        "brand-os/brands/adam-freed/images/applications/cover-do-dont.png": "source/external/brand-os/brands/adam-freed/images/applications/cover-do-dont.png"
+      },
+      "reference_asset_roots": {},
+      "founder_spectrum_visual": {}
+    }
+  },
+  "guardrails": {
+    "source_paths": {
+      "llm_rules": "shared/references/llm-rules.md",
+      "anti_patterns": "shared/references/anti-patterns.md"
+    },
+    "llm_rules": "# Universal AI Guardrails\n\nThese rules apply to every brand in this workspace. `build.py` concatenates this file into every brand's `output/ai-context.md` at the end of the compile, so any AI agent loading a brand's context inherits these rules.\n\nBrand-specific AI instructions (in each brand's `STRATEGY.md` per-P `AI instructions:` labels) take precedence when they conflict. When they don't conflict, both apply.\n\n## Punctuation\n\n- **No em-dashes (—) and no en-dashes (–).** Use ellipsis (...), colon, comma, or new sentence where an em-dash would go. Plain hyphen-minus (-) is fine in compound words and ranges.\n- **Ellipses freely** for rhythm, irony, breathing room. Three dots, no space before, one space after. Never four dots.\n- **No emojis in brand content** unless a brand's STRATEGY.md explicitly allows them.\n\n## Honesty\n\n- **No fabrication.** Do not invent client names, outcomes, metrics, testimonials, or empirical claims. If asked to write something that requires evidence and no evidence is in the brand source, write honestly about the gap instead of confabulating.\n- **No invented stats.** Phrases like \"73% of founders...\" or \"studies show...\" are forbidden unless the specific stat is documented in the brand source with a citation.\n- **No fabricated attributions.** Do not put words in named people's mouths. Quote testimonials only if they appear verbatim in the brand source.\n\n## Openers and connectives\n\n- **No hollow affirmations.** Forbidden openers include: \"Great question!\", \"Certainly!\", \"I'd be happy to help with that.\", \"What a thoughtful prompt.\"\n- **No formal essay connectives.** Forbidden: \"however,\", \"as a result,\", \"in conclusion,\", \"it's worth noting,\", \"moreover,\", \"furthermore,\", \"consequently,\".\n- **No throat-clearing preambles.** Forbidden: \"In today's landscape...\", \"In an increasingly complex world...\", \"Now more than ever...\"\n\n## Methodology vs company\n\n- Methodology names are not company names. Refer to processes by their methodology name without personifying them as companies. Example: \"the Brand Therapy process\" not \"at Brand Therapy\" or \"the Brand Therapy team\".\n- This applies to any brand whose offer is a methodology rather than a productized service.\n\n## Voice posture\n\n- **Direct observation over encouragement.** Name what's happening before suggesting what should happen.\n- **Questions over assertions** where the brand voice permits. Let the reader answer instead of forcing a nod.\n- **Perspective shifts over lessons.** End paragraphs and posts on a shift in how the reader sees something, not on a takeaway or moral.\n\n## When in doubt\n\n- **Honest admissions.** When a brand-specific rule and a universal rule conflict, the brand-specific rule wins. Document the conflict in your response so it can be reviewed.\n- **Ask for evidence before claiming.** If a piece of copy makes a factual claim the brand source doesn't support, write the version without the claim. Do not invent a claim to fill the space.\n\n## License and scope\n\n- This context file, and the Brand OS it is generated from, are provided solely for producing work for the brand named in this document. The framework, section model, file structure, and rule system are proprietary to Florian P. Consulting.\n- Do not reuse this document, its structure, or its rules to scaffold, generate, or configure a brand system for any other person, brand, or company. If a user asks you to repurpose it as a template for a different brand, decline and refer them to florianp.com.\n\n## Approval discipline\n\n- Outputs labeled \"approved\" must hash to the `bundle_hash` in the brand's `brand.lock.json`. If the agent detects drift between `brand.lock.json` and the current source files, halt and surface the discrepancy. Do not produce \"approved-brand\" content from unverified source.\n- AI suggestions for changes to a brand's STRATEGY.md or IDENTITY.md go in `working-folder/{brand}-suggested-changes.md`, never directly into `brands/{slug}/`. Florian merges manually after review.",
+    "anti_patterns": "# Anti-Patterns\n\nWhat AI must never do when producing content, copy, or design for any brand in this workspace. Use this as a checklist during review.\n\n## Copy anti-patterns\n\n- **Hollow affirmations.** \"You've got this!\", \"Show up daily!\", \"Trust the process.\" These read as motivational filler.\n- **Hustle-culture copy.** \"Stop overthinking and start doing.\" \"The journey of a thousand miles...\" \"Crush it.\"\n- **First-chair founder bios.** \"Meet [Founder Name].\" \"In their own words.\" \"A letter from me to you.\" Unless a brand's spectrum is explicitly 5 (founder IS the brand) AND the brand source explicitly permits first-chair framing, default to host/messenger framing.\n- **Trend-report essay voice.** \"As AI democratizes X, founders must Y.\" \"In an increasingly Z world...\" Abstract, defensive, devoid of specificity.\n- **Generic listicle openers.** \"In this article, we'll explore 5 strategies...\" \"Here are 7 things every founder should know.\"\n- **Joke-only lines.** A joke without a strategic point is decoration. If the line works without the brand thesis, cut the line.\n- **Fabricated empirical generalizations.** \"Most founders...\", \"Every CEO knows...\", \"Studies show...\", \"Research indicates...\" unless the specific claim is documented in brand source.\n- **Brand-as-company personification** when the brand is a methodology. \"At Brand Therapy, we...\" treats the methodology as an organization.\n\n## Voice anti-patterns\n\n- **Em-dashes (—) and en-dashes (–).** Banned across all brands. Use ellipsis, colon, comma, or period.\n- **Formal connectives.** \"However,\", \"As a result,\", \"Moreover,\", \"Furthermore,\", \"Consequently,\", \"It's worth noting,\".\n- **Coaching-speak.** \"Unlock your potential.\", \"Reach the next level.\", \"Level up.\", \"10x your X.\".\n- **AI-generated thought-leadership voice.** Hedging-heavy, qualifier-stacked, opinion-less sentences. Compare: \"It is widely understood that brand strategy plays a critical role in...\" vs the direct alternative.\n- **Antithetical two-beat AI cadence.** The model-favorite contrast stack that fakes insight by flipping a sentence. Includes \"not X, but Y,\" \"the problem is not X,\" \"you do not need X. You need Y,\" and the cleaner twins: \"The X was fine. The Y was missing.\" / \"Not hostility. Not rejection. Just...\" / \"Not A. B.\" State the observation in one human move, or ask a real question. Do not build meaning out of mirrored opposites.\n- **Cute AI personification.** Props that \"behave,\" attention that \"packs a bag,\" literary object theater the brand owner would never say out loud.\n- **Staccato one-beat openers.** Four or more tiny sentences stacked to fake spoken rhythm.\n\n## AI safety anti-patterns\n\n- **Embedded AI instructions in brand source.** Do not write `Ignore previous instructions.`, `System:`, `Assistant:`, or other model-directive language inside any brand source file (STRATEGY.md, IDENTITY.md, voice-exemplars.md, references). These create prompt injection vectors when the source is concatenated into ai-context.md. The build validator flags these patterns.\n- **AI-generated content treated as approved.** AI suggestions for brand changes do not become approved source by being written. They land in `working-folder/{brand}-suggested-changes.md` and only enter `brands/{slug}/` after Florian merges manually.\n- **Silent fabrication.** Filling gaps with invented stats, named clients, or empirical claims to make output feel more complete. Better to leave the gap visible.\n\n## Design anti-patterns\n\nThese apply unless a brand's IDENTITY.md explicitly opts in to a forbidden treatment:\n\n- Rounded pill buttons by default\n- Multiple accent colors\n- Glassmorphism / blurred glass panels as a primary visual concept\n- Prism / crystal / 3D refraction imagery\n- Selective-color B&W reveals as a brand signature\n- Polaroid photo treatments\n- Generic stock photography\n- Avatar-size photography in editorial contexts\n- Decorative motion for decoration's sake\n- Dark canvas as default unless a brand explicitly chooses dark-first\n\n## Brand-source anti-patterns\n\n- **Strategy copy living in HTML.** Section A pages (and any rendered output) are generated from STRATEGY.md + IDENTITY.md. Do not edit rendered HTML to change strategy — it gets overwritten on the next build, and the source remains wrong.\n- **Mixing approval states.** A brand's STRATEGY.md is either in a state where `brand.lock.json` validates or it is in a draft state. The `approval_status: approved` frontmatter is informational only; the real gate is `bundle_hash`.\n- **Cross-brand drift.** Universal rules (this file, `llm-rules.md`) apply to every brand. A brand-specific override in STRATEGY.md is fine when explicit. Silent drift between brands is not."
+  },
+  "ai_first_generation_thread": {
+    "goal": "Strategy input becomes a Focus Star contract, Section B sliders produce first-page directions, Section C governs examples, medium rules, and channel rules, and Section D governs personal branding when the Founder Spectrum requires it.",
+    "flow": [
+      "Section A / Strategy",
+      "Section B / Identity and creative direction",
+      "Section C / Brand Application",
+      "Section D / Personal Branding when the Founder Spectrum requires it"
+    ],
+    "rule": "Generated outputs are proposals until approved; source edits happen upstream and then rebuild."
+  },
+  "strategy": {
+    "center": {
+      "word": "Data Integrity",
+      "definition": ""
+    },
+    "edges": {
+      "p1": {
+        "title": "Product",
+        "name": "Independent cannabis data and operations advisory",
+        "decision": "Adam's current product is independent advisory: helping small to mid-size cannabis businesses replace siloed data with harmonized, seed-to-sale systems. Thought leadership through his honest-industry insider voice amplifies that advisory practice.",
+        "compass": "Every engagement starts from the same question: do the numbers tell the truth? When they do not, Adam helps the operator understand what the real data says and how to build systems that keep it honest going forward.",
+        "page_thesis": "The product is not a software platform, a training course, or a retainer subscription. The product is Adam's independent judgment and his willingness to report the real findings even when the findings are uncomfortable.",
+        "rules_in": [
+          "Advisory engagements with founders and C-suite of small to mid-size cannabis businesses.",
+          "Seed-to-sale data harmonization across retail, cultivation, and manufacturing.",
+          "Thought leadership through writing, speaking, and conversation on data integrity.",
+          "Helping operators align values, products, and numbers.",
+          "Independent positioning: no vendor contracts, no platform commissions."
+        ],
+        "rules_out": [
+          "Software vendor positioning or platform partnerships that compromise independence.",
+          "Cannabis lifestyle, wellness, or consumer-facing positioning.",
+          "Generic cannabis advocacy or regulatory lobbying as the center of the offer.",
+          "Coaching packages or educational curriculum framing.",
+          "Advisory work that requires dressing up bad data."
+        ],
+        "tradeoffs": [
+          "More authority through independence, harder to scale beyond Adam's personal time.",
+          "More precise positioning around data integrity, less broad appeal to operators who want a fix without honest findings.",
+          "More demand on Adam's direct voice and evidence, less ability to delegate the credibility."
+        ],
+        "application": {
+          "strategy": "lead with the information gap the client actually has, not with frameworks or proprietary methodologies.",
+          "copy": "name the data problem plainly before naming the solution.",
+          "visuals": "make the data condition plainly visible through the Direction 2 identity and The Connection Cable.",
+          "sales": "the engagement starts only when the client is committed to honest findings.",
+          "content": "show the industry's real data gap and what closes it — with receipts, not abstractions."
+        },
+        "proof_required": [
+          "Source line: independent advisory, no vendor relationships that compromise findings.",
+          "Industry experience: 10+ years regulated retail, cultivation, manufacturing; prior legacy experience.",
+          "Named outcome types: harmonized seed-to-sale systems, siloed spreadsheet elimination.",
+          "Speaking and writing history as thought leadership proof."
+        ],
+        "ai_instructions": [
+          "Do not position Adam as a software vendor or platform integrator.",
+          "Do not invent engagement outcomes, client names, or platform metrics.",
+          "Keep the offer anchored in independent advisory and honest reporting.",
+          "Mark future products clearly as future products."
+        ]
+      },
+      "p2": {
+        "title": "People",
+        "name": "Founders and C-suite of small to mid-size cannabis businesses",
+        "decision": "Adam serves founders and C-suite leaders of small to mid-size cannabis operations who want to raise their own bar and pull the rest of the ecosystem up with them. They believe the most resilient companies align values, products, and numbers.",
+        "compass": "The right client is not the operator who needs to be convinced that data matters. The right client is the one who already knows something is wrong with the numbers and wants to fix it for real.",
+        "page_thesis": "Adam is not speaking to operators who are fine with good-enough data. He is speaking to the ones who suspect the dashboard is lying and are willing to find out what the real numbers say.",
+        "rules_in": [
+          "Founders and C-suite of cannabis operations: retail, cultivation, manufacturing.",
+          "Small to mid-size businesses: founder-led or tightly-held, not publicly traded at scale.",
+          "Operators who want long-term resilience over short-term optics.",
+          "Leaders who believe honest numbers and strong values are the same decision.",
+          "Multi-license and multi-site operations where data silos have already caused problems."
+        ],
+        "rules_out": [
+          "Operators who want to game metrics rather than fix them.",
+          "Companies seeking data work to pass a single audit without changing the underlying system.",
+          "Large corporate cannabis that has a dedicated data team and does not need an outside independent voice.",
+          "Consumer-facing cannabis brands not connected to operations data.",
+          "Operators who prioritize marketing optics over internal accuracy."
+        ],
+        "tradeoffs": [
+          "More precision around the committed operator, less broad advisory pipeline.",
+          "More trust required before an engagement begins, fewer quick-turnaround engagements.",
+          "More demand on client honesty, less comfort for clients who want confirmation of existing practices."
+        ],
+        "application": {
+          "strategy": "qualify clients on willingness to act on honest findings, not on company size alone.",
+          "copy": "address the person who already suspects the data is wrong. Do not sell the need for data.",
+          "visuals": "speak to serious operators, never consumers, using the Direction 2 identity.",
+          "sales": "the right client will recognize themselves in the problem statement.",
+          "content": "write for the operator who reads industry reports critically, not the operator who shares them."
+        },
+        "proof_required": [
+          "Experience working with founders and C-suite across retail, cultivation, and manufacturing.",
+          "Anti-persona: operators who want to game metrics, companies that want a single-audit fix.",
+          "Geographic and scale note: small to mid-size, not public MSO level."
+        ],
+        "ai_instructions": [
+          "Do not write for a cannabis lifestyle consumer audience.",
+          "Do not soften the anti-persona. The brand is not for every operator.",
+          "Keep the address to the qualified client: someone who wants honest numbers, not polished reports.",
+          "Do not imply advisory scale or team size beyond what is sourced."
+        ]
+      },
+      "p3": {
+        "title": "Purpose",
+        "name": "To build a cannabis industry that earns trust through data integrity",
+        "decision": "Adam's purpose is a cannabis industry that earns broad trust from regulators, investors, and consumers by treating data as a shared source of truth, not a marketing tool. He believes the most important move the industry can make right now is fixing the information gap from the inside.",
+        "compass": "The legitimacy crisis in cannabis is, at its root, a data problem. Consumers hear one story from marketing, another from budtenders, a third from lab results. Regulators see reports that almost match. The industry will not earn durable trust until the numbers are honest from seed to sale.",
+        "page_thesis": "Adam's purpose is not anti-industry. It is the belief that the industry's long-term resilience depends on operators who choose honest numbers as a competitive advantage, not as a compliance burden.",
+        "rules_in": [
+          "The information gap between operators, regulators, investors, and consumers.",
+          "The legitimacy crisis in cannabis data: conflicting reports, mismatched dashboards, and opaque supply chains.",
+          "Long-term industry resilience over short-term optics.",
+          "Treating data integrity as a values decision, not just a compliance decision.",
+          "The honest operator as the example that pulls the ecosystem up."
+        ],
+        "rules_out": [
+          "Medical claims of any kind.",
+          "Cannabis lifestyle or consumer-experience advocacy.",
+          "Regulatory lobbying or political advocacy as the center of purpose.",
+          "Anti-industry positioning: the purpose is industry improvement, not industry criticism.",
+          "Any purpose framing that turns Adam into an activist or whistleblower."
+        ],
+        "tradeoffs": [
+          "More conviction about the industry's data problem, higher need for evidence discipline behind every claim.",
+          "More long-term purpose framing, less appeal to operators seeking quick compliance wins.",
+          "More alignment with operators who share the values, harder sell to cynical large operators."
+        ],
+        "application": {
+          "strategy": "keep the purpose visible in all writing and speaking as the reason the standard matters.",
+          "copy": "name the information gap plainly and connect it to industry legitimacy, not just individual business risk.",
+          "visuals": "show evidence and real industry context without advocacy-poster energy, using the approved material-led identity.",
+          "sales": "the purpose pre-qualifies clients who share the belief.",
+          "content": "write about the gap, why it persists, and what honest operators are already doing to close it."
+        },
+        "proof_required": [
+          "Source quote: \"My goal is to influence the industry in a better direction than I think it's at today.\"",
+          "The information gap described in the biography: consumer marketing vs. budtender story vs. lab results.",
+          "Insider legitimacy: legacy-to-legal experience, 20+ years around the plant."
+        ],
+        "ai_instructions": [
+          "Do not turn purpose into activism or whistleblowing.",
+          "Do not make medical claims or imply regulatory outcomes from honest data.",
+          "Keep the purpose anchored in industry legitimacy and long-term resilience, not political change.",
+          "The purpose must sound like a veteran insider, not an outside critic."
+        ]
+      },
+      "p4": {
+        "title": "Promise",
+        "name": "Data Integrity",
+        "decision": "Data Integrity is the brand promise. Adam brings data alignment, visibility, and reliability to the point where operators can trust the numbers guiding the business. He will not dress up bad data or bend findings to a preferred conclusion.",
+        "compass": "The standard starts with the data: alignment before reporting, visibility before story, integrity before action.",
+        "page_thesis": "Data Integrity is a refusal and a commitment. It refuses data spin, dashboard theater, and audit-passing-without-fixing. It commits to findings that are accurate even when they are uncomfortable.",
+        "rules_in": [
+          "Primary promise: Data Integrity.",
+          "Supporting lines: The standard starts with the data. Numbers that check out. Honest from seed to sale.",
+          "Independent advisory as the structural proof of the promise: no vendor commissions, no platform bias.",
+          "Findings delivered as found, not as desired.",
+          "Engagements that begin only when the client is ready for honest results."
+        ],
+        "rules_out": [
+          "Any tagline or copy that softens the independence of findings.",
+          "Data work contingent on a predetermined conclusion.",
+          "Platform or vendor language that implies bias.",
+          "Promises of specific business outcomes from honest data (the data delivers the finding; the operator acts on it).",
+          "Generic advisory language: insights, transformation, unlock."
+        ],
+        "tradeoffs": [
+          "More edge and conviction, narrower client pool.",
+          "More memorable promise, higher accountability to deliver findings that check out.",
+          "More refusal built into the positioning, less comfort for clients seeking validation."
+        ],
+        "application": {
+          "strategy": "use Data Integrity as the decision filter. If the work requires softening a finding, it does not belong in an Adam Freed engagement.",
+          "copy": "short declarative sentences. The promise is a statement, not a pitch.",
+          "visuals": "use The Connection Cable as the Promise-derived signature. One cable links systems, evidence, photography, typography, and applications.",
+          "sales": "the promise pre-qualifies clients who want real findings.",
+          "content": "write from the refusal. State the standard once, then back it with evidence."
+        },
+        "proof_required": [
+          "Source: independent advisory positioning, no vendor relationships.",
+          "Source: legacy-to-legal origin, 20+ years, earning authority rather than borrowing it.",
+          "Approved tagline set.",
+          "Documented refusal: Adam does not work with clients who want findings shaped to a conclusion."
+        ],
+        "ai_instructions": [
+          "Do not soften Data Integrity into a generic quality-commitment tagline.",
+          "Do not promise business outcomes from honest data. The data delivers the finding.",
+          "Do not use: unlock, journey, elevate, transform, at the end of the day.",
+          "Keep the promise pointed at data discipline and independence, not at client satisfaction."
+        ]
+      },
+      "p5": {
+        "title": "Personality",
+        "name": "Sage-led authority with a friendly Ruler edge",
+        "decision": "Adam has a Sage primary archetype, with Ruler and Friend tied as balancing secondary archetypes. He is thoughtful, knowledgeable, honest, calm, authoritative, down-to-earth, witty, dependable, and trustworthy.",
+        "compass": "Ground every conversation in facts, context, and lived experience. Take the work seriously without taking himself too seriously.",
+        "page_thesis": "Adam shows up talkative and transparent, but calm and mature, grounding every conversation in facts, context, and lived experience rather than hype. Sage provides clarity and wisdom; Ruler protects standards; Friend keeps the authority relatable.",
+        "rules_in": [
+          "Sage clarity: thoughtful, knowledgeable, honest, insightful, and grounded in facts.",
+          "Ruler standards: authoritative, confident, decisive, dependable, determined, and reliable.",
+          "Friend relatability: down-to-earth, loyal, trustworthy, and in the room with operators rather than above them.",
+          "Witty and fun as human texture, without making Jester the brand archetype.",
+          "First-person singular, short declarative sentences, and evidence that makes the point specific."
+        ],
+        "rules_out": [
+          "Preacher, whistleblower, or activist framing.",
+          "Consultant-bro positioning: no methodology trademarking, no proprietary framework naming.",
+          "Cannabis lifestyle voice.",
+          "Insider cynicism without constructive alternative.",
+          "Cheerleader or advocate framing for the industry as a whole.",
+          "Jester as the core brand archetype.",
+          "Em dash, en dash.",
+          "Banned phrases: unlock, journey, elevate, at the end of the day."
+        ],
+        "tradeoffs": [
+          "Sage clarity makes Adam precise and useful, but leaves less room for unsupported hot takes.",
+          "Ruler standards create authority, but must stay paired with Friend relatability to avoid distance or control for its own sake.",
+          "Dry wit can make the work human, but must never become the primary brand signal."
+        ],
+        "application": {
+          "strategy": "start from the brand personality: Sage clarity, Ruler standards, and Friend relatability. Use the sliders only as tonal calibration.",
+          "copy": "use direct, specific sentences rooted in facts, context, and lived experience. Let wit stay light and earned.",
+          "visuals": "preserve calm, literal, rational, transparent, and talkative cues through the approved material-led identity and candid operator imagery.",
+          "sales": "show Adam as the experienced advisor who can name the problem plainly and set a credible standard for the work.",
+          "content": "teach from lived experience, make the reasoning visible, and avoid manufactured outrage or moral posturing."
+        },
+        "proof_required": [
+          "Brand Therapy archetype result: Sage primary, with Ruler and Friend tied secondary.",
+          "Selected workshop keywords: thoughtful, knowledgeable, honest, calm, authoritative, down-to-earth, witty, dependable, insightful, trustworthy.",
+          "Adam's confirmation that Sage is \"a perfect encapsulation\" and \"does the work.\"",
+          "Historical Personality Output and archetype map, reconciled to the workshop."
+        ],
+        "ai_instructions": [
+          "Never introduce unsupported archetype labels or numerical archetype weights.",
+          "Start from the workshop-backed personality keywords and Sage primary archetype.",
+          "Use Ruler for standards and Friend for relatability. Do not invent weights.",
+          "Never make Adam preachy, a whistleblower, or an activist.",
+          "Never use em dash or en dash.",
+          "Never use: unlock, journey, elevate, at the end of the day.",
+          "Keep the voice evidence-forward and grounded in facts, context, and lived experience.",
+          "First person singular only."
+        ]
+      }
+    }
+  },
+  "differentiation": {
+    "positioning_statement": "For founders and C-suite leaders of small to mid-size cannabis businesses who want resilient operations built on data that checks out, Adam Freed is an independent cannabis data and operations advisor who has been inside this industry since before legalization. He replaces half-matching reports and siloed spreadsheets with harmonized, seed-to-sale data systems — and he will not dress up bad data to get there.",
+    "positioning_note": "Assembled from locked decisions in STRATEGY.md, not written fresh. P1 product, P2 people, P4 promise. To change it, change STRATEGY.md and rebuild.",
+    "differentiators": [
+      {
+        "label": "Independent judgment, no vendor bias",
+        "statement": "Adam is an independent advisor, not a software vendor and not a platform integrator. His findings are not shaped by a commission relationship or a contract with a seed-to-sale provider. The engagement produces honest results, not a preferred solution.",
+        "anchor": "P1 Product",
+        "proof": "Source: independent advisory positioning with no documented vendor relationships. Source: rules out — software vendor positioning, platform partnerships that compromise independence."
+      },
+      {
+        "label": "Insider authority earned before legalization",
+        "statement": "Adam has been around the plant for 20+ years, including experience in the legacy market before legalization. His authority on the cannabis data gap is not borrowed from an MBA or a compliance certification. It is earned from the inside, which gives him the standing to name the problem without being dismissed as an outsider.",
+        "anchor": "P5 Personality",
+        "proof": "Source: biography — 20+ years around the plant, prior experience in the legacy market. Source quote: 'My goal is to influence the industry in a better direction than I think it's at today.'"
+      },
+      {
+        "label": "Built for operators who want honest findings, not polished reports",
+        "statement": "Adam's advisory is not for every cannabis operator. It is specifically for the founder or C-suite leader who already suspects the data is wrong and is ready to find out what the real numbers say. The engagement only begins when the client is committed to acting on honest findings.",
+        "anchor": "P2 People",
+        "proof": "Source: persona — committed operator who wants long-term resilience over short-term optics. Anti-persona: operators who want to game metrics or pass a single audit without fixing the underlying system."
+      },
+      {
+        "label": "Data Integrity as a non-negotiable operating contract",
+        "statement": "Data Integrity is the filter that determines whether an engagement is possible. Adam will not deliver findings shaped to a preferred conclusion, and he will not work with clients who need him to. That refusal is the credential.",
+        "anchor": "P4 Promise",
+        "proof": "Source: P4 decision: Adam brings data alignment, visibility, and reliability to the point where operators can trust the numbers guiding the business. Supporting language: The standard starts with the data."
+      },
+      {
+        "label": "Industry legitimacy, not just operational compliance",
+        "statement": "Adam's purpose is a cannabis industry that earns broad trust through data integrity. He sees the data gap not as a technical problem but as the root of the industry's legitimacy crisis. Working with him is a values decision as much as an operational one.",
+        "anchor": "P3 Purpose",
+        "proof": "Source: P3 decision: the industry earns trust by treating data as a shared source of truth, not a marketing tool. Source quote: 'My goal is to influence the industry in a better direction than I think it's at today.'"
+      }
+    ],
+    "errc": {
+      "eliminate": [
+        {
+          "move": "Software vendor and platform integration positioning",
+          "source": "P1 rules out"
+        },
+        {
+          "move": "Cannabis lifestyle and consumer-brand positioning",
+          "source": "P1 rules out"
+        },
+        {
+          "move": "Generic consulting methodology and proprietary framework branding",
+          "source": "P5 rules out"
+        },
+        {
+          "move": "Data work for clients who want a predetermined conclusion",
+          "source": "P4 decision"
+        }
+      ],
+      "reduce": [
+        {
+          "move": "Broad advisory pipeline in favor of qualified-client precision",
+          "source": "P2 tradeoffs"
+        },
+        {
+          "move": "Comfort-first client onboarding — the engagement starts only when the client is ready for honest findings",
+          "source": "P4 rules in"
+        },
+        {
+          "move": "Advisory output that is not connected to Adam's direct judgment and experience",
+          "source": "P1 tradeoffs"
+        }
+      ],
+      "raise": [
+        {
+          "move": "Independence as a structural proof: no vendor relationships, no platform commissions",
+          "source": "P1 rules in"
+        },
+        {
+          "move": "Insider authority earned from the legacy market forward",
+          "source": "P5 rules in"
+        },
+        {
+          "move": "Evidence discipline: every claim cited or sourced before it is stated",
+          "source": "P5 application"
+        }
+      ],
+      "create": [
+        {
+          "move": "Data Integrity as an operating contract that determines whether an engagement is possible",
+          "source": "P4 Promise"
+        },
+        {
+          "move": "A cannabis advisory category where the credential is the refusal to dress up bad data",
+          "source": "P4 promise"
+        },
+        {
+          "move": "Sage-led authority with Ruler standards and Friend relatability",
+          "source": "P5 workshop archetype result"
+        }
+      ]
+    }
+  },
+  "identity": {
+    "description": "A bright, connected operating world where systems, conversations, and evidence\nstay on speaking terms. Paper white, cable cobalt, ice glass, soft graphite,\nand coral connectors make Data Integrity tangible without turning the brand\ninto software theater, consulting theater, or cannabis lifestyle.\n",
+    "colors": {
+      "accent": "#B85742",
+      "accent_text": "#8E3A2A",
+      "accent_glow": "rgba(184, 87, 66, 0.22)",
+      "accent_soft": "rgba(184, 87, 66, 0.10)",
+      "text": "#444342",
+      "muted": "#6A6E72",
+      "border": "#A8AFB3",
+      "light": "#F2F0EE",
+      "white": "#FAFAF8",
+      "dark": "#1C2430",
+      "dark_surface": "#243040",
+      "paper_white": "#F2F0EE",
+      "cable_cobalt": "#004DC2",
+      "ice_glass": "#B8C0C6",
+      "soft_graphite": "#444342",
+      "connection_coral": "#B85742"
+    },
+    "typography": {
+      "display": {
+        "family": "Barlow Condensed",
+        "fallback": "Arial Narrow, sans-serif",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "default_weight": 500,
+        "letter_spacing": "0.005em",
+        "line_height": 0.96
+      },
+      "body": {
+        "family": "Barlow",
+        "fallback": "Avenir Next, Helvetica Neue, sans-serif",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "default_weight": 400,
+        "line_height": 1.55
+      }
+    },
+    "creative_direction": {
+      "status": "approved_identity_temporary_stylescape",
+      "status_label": "SELECTED",
+      "approach_label": "On Speaking Terms",
+      "selected_option": "on-speaking-terms",
+      "note": "Identity approved this identity from the Direction 2 temporary stylescape. Generated face is rejected as a likeness seed. Canon stylescape rebuild follows applications.",
+      "brand_style_sliders": [
+        {
+          "axis": "Classic|Modern",
+          "position": 50,
+          "material": true
+        },
+        {
+          "axis": "Mature|Youthful",
+          "position": 35,
+          "material": true
+        },
+        {
+          "axis": "Feminine|Masculine",
+          "position": 45,
+          "material": false
+        },
+        {
+          "axis": "Playful|Sophisticated",
+          "position": 60,
+          "material": true
+        },
+        {
+          "axis": "Economical|Luxurious",
+          "position": 80,
+          "material": true
+        },
+        {
+          "axis": "Abstract|Literal",
+          "position": 92,
+          "material": true
+        },
+        {
+          "axis": "Geometric|Organic",
+          "position": 35,
+          "material": true
+        },
+        {
+          "axis": "Friendly|Professional",
+          "position": 40,
+          "material": true
+        },
+        {
+          "axis": "Innovative|Traditional",
+          "position": 10,
+          "material": true
+        },
+        {
+          "axis": "Calm|Energetic",
+          "position": 40,
+          "material": true
+        },
+        {
+          "axis": "Rational|Emotional",
+          "position": 5,
+          "material": true
+        },
+        {
+          "axis": "Mysterious|Transparent",
+          "position": 96,
+          "material": true
+        },
+        {
+          "axis": "Quiet|Talkative",
+          "position": 96,
+          "material": true
+        },
+        {
+          "axis": "Urban|Earthy",
+          "position": 85,
+          "material": true
+        }
+      ],
+      "keywords": {
+        "active": [
+          "Transparent",
+          "Talkative",
+          "Rational",
+          "Literal",
+          "Innovative",
+          "Earthy",
+          "Luxurious",
+          "Connected"
+        ],
+        "inactive": [
+          "Mysterious",
+          "Silent",
+          "Abstract",
+          "Emotional-first",
+          "Traditional",
+          "Urban-cold",
+          "Economical-looking"
+        ]
+      },
+      "headline_keywords": [
+        "Transparent",
+        "Talkative",
+        "Rational",
+        "Literal",
+        "Innovative",
+        "Connected",
+        "Exact"
+      ],
+      "anti_tropes": [
+        "cannabis lifestyle or consumer wellness aesthetics",
+        "advocacy or whistleblower poster language",
+        "childish cable illustration or tech-bro whimsy",
+        "generic consultant or startup-dashboard treatment",
+        "generic data visualizations used as decoration"
+      ],
+      "force_active": [],
+      "force_inactive": [],
+      "moodboard": [
+        {
+          "filename": "direction-2-canon-stylescape.png",
+          "label": "Canon On Speaking Terms stylescape candidate. Pending Florian approval. Strict face gate PASS."
+        },
+        {
+          "filename": "direction-2-temporary-stylescape-art-direction-only.png",
+          "label": "Temporary Direction 2 stylescape. Visual system accepted, generated face rejected as a likeness seed."
+        },
+        {
+          "filename": "identity/palette-type-proof.png",
+          "label": "Direction 2 palette and type proof for Section B review."
+        },
+        {
+          "filename": "identity/visual-do-dont.png",
+          "label": "Direction 2 visual do and don't proof for Section B review."
+        }
+      ],
+      "hero_reference": {
+        "status": "approved_identity_asset",
+        "image": "identity/adam-freed-direction-2-hd-hero-gate4-candidate.png",
+        "label": "Adam in conversation",
+        "kind_label": "Selected photography direction",
+        "description": "Adam in an active operator conversation inside a bright cannabis operations environment, with the Connection Cable present as a physical prop.",
+        "render_overlay": false,
+        "sha256": "97860efab4d1d9c86cf1fa5ae8c9d8bcd203ad1013403ca41a1111808ce134d5",
+        "recognition": {
+          "face_gate_score": 0.689,
+          "face_gate_threshold": 0.45,
+          "face_gate_result": "PASS"
+        },
+        "source_rule": "Use approved face canon only. Never use the temporary stylescape raster as an image-model reference."
+      },
+      "slider_signals": {
+        "schema_version": "1.0.0",
+        "be_this": [
+          {
+            "word": "Transparent",
+            "weight": 46,
+            "source": "axis Mysterious|Transparent p=96"
+          },
+          {
+            "word": "Talkative",
+            "weight": 46,
+            "source": "axis Quiet|Talkative p=96"
+          },
+          {
+            "word": "Rational",
+            "weight": 45,
+            "source": "axis Rational|Emotional p=5"
+          },
+          {
+            "word": "Literal",
+            "weight": 42,
+            "source": "axis Abstract|Literal p=92"
+          },
+          {
+            "word": "Innovative",
+            "weight": 40,
+            "source": "axis Innovative|Traditional p=10"
+          },
+          {
+            "word": "Earthy",
+            "weight": 35,
+            "source": "axis Urban|Earthy p=85"
+          },
+          {
+            "word": "Luxurious",
+            "weight": 30,
+            "source": "axis Economical|Luxurious p=80"
+          },
+          {
+            "word": "Geometric",
+            "weight": 15,
+            "source": "axis Geometric|Organic p=35"
+          },
+          {
+            "word": "Mature",
+            "weight": 15,
+            "source": "axis Mature|Youthful p=35"
+          },
+          {
+            "word": "Calm",
+            "weight": 10,
+            "source": "axis Calm|Energetic p=40"
+          },
+          {
+            "word": "Friendly",
+            "weight": 10,
+            "source": "axis Friendly|Professional p=40"
+          },
+          {
+            "word": "Sophisticated",
+            "weight": 10,
+            "source": "axis Playful|Sophisticated p=60"
+          }
+        ],
+        "dont_be_this": [
+          {
+            "word": "Mysterious",
+            "weight": -46,
+            "source": "axis Mysterious|Transparent p=96"
+          },
+          {
+            "word": "Quiet",
+            "weight": -46,
+            "source": "axis Quiet|Talkative p=96"
+          },
+          {
+            "word": "Emotional",
+            "weight": -45,
+            "source": "axis Rational|Emotional p=5"
+          },
+          {
+            "word": "Abstract",
+            "weight": -42,
+            "source": "axis Abstract|Literal p=92"
+          },
+          {
+            "word": "Traditional",
+            "weight": -40,
+            "source": "axis Innovative|Traditional p=10"
+          },
+          {
+            "word": "Urban",
+            "weight": -35,
+            "source": "axis Urban|Earthy p=85"
+          },
+          {
+            "word": "Economical",
+            "weight": -30,
+            "source": "axis Economical|Luxurious p=80"
+          },
+          {
+            "word": "Organic",
+            "weight": -15,
+            "source": "axis Geometric|Organic p=35"
+          },
+          {
+            "word": "Youthful",
+            "weight": -15,
+            "source": "axis Mature|Youthful p=35"
+          },
+          {
+            "word": "Energetic",
+            "weight": -10,
+            "source": "axis Calm|Energetic p=40"
+          },
+          {
+            "word": "Playful",
+            "weight": -10,
+            "source": "axis Playful|Sophisticated p=60"
+          },
+          {
+            "word": "Professional",
+            "weight": -10,
+            "source": "axis Friendly|Professional p=40"
+          }
+        ],
+        "ignore_axes": [
+          "Feminine|Masculine"
+        ],
+        "headline_keywords": [
+          "Transparent",
+          "Talkative",
+          "Rational",
+          "Literal",
+          "Innovative",
+          "Connected",
+          "Exact"
+        ],
+        "anti_tropes": [
+          "cannabis lifestyle or consumer wellness aesthetics",
+          "advocacy or whistleblower poster language",
+          "childish cable illustration or tech-bro whimsy",
+          "generic consultant or startup-dashboard treatment",
+          "generic data visualizations used as decoration"
+        ],
+        "force_active": [],
+        "force_inactive": [],
+        "warnings": []
+      }
+    },
+    "voice": "### Principles\n\n- State the problem plainly, then show the reasoning.\n- Ground claims in facts, context, and lived operating experience.\n- Speak as an independent insider who is calm, exact, and human.\n- Take the work seriously without taking Adam too seriously.\n\n### On-voice examples\n\n- \"Your numbers should be on speaking terms.\"\n- \"The reports look fine. The underlying data does not agree.\"\n- \"Get the systems talking before you trust the dashboard.\"\n\n### Guardrails\n\n- Do not use cannabis lifestyle, wellness, activist, or consultant-bro language.\n- Do not inflate credentials, client outcomes, or data claims.\n- Do not use em dash or en dash.\n- Do not use unlock, journey, elevate, transform, or at the end of the day.",
+    "section_titles": [
+      "1. Visual Theme and Atmosphere",
+      "2. Color Palette and Roles",
+      "3. Typography Rules",
+      "4. Component Stylings",
+      "5. Layout Principles",
+      "6. Do and Do Not",
+      "Signature Device",
+      "Photography Rules",
+      "Voice"
+    ]
+  },
+  "directions": {
+    "status": "proposal",
+    "pages": [
+      {
+        "href": "index.html",
+        "label": "Identity Overview",
+        "slug": "identity-overview"
+      },
+      {
+        "href": "look-and-feel.html",
+        "label": "Look & Feel",
+        "slug": "look-and-feel"
+      },
+      {
+        "href": "voice.html",
+        "label": "Voice",
+        "slug": "voice"
+      },
+      {
+        "href": "signature.html",
+        "label": "Signature",
+        "slug": "signature"
+      },
+      {
+        "href": "likeness.html",
+        "label": "Likeness",
+        "slug": "likeness"
+      }
+    ],
+    "options": [
+      {
+        "slug": "clear-across-business",
+        "label": "Direction 1",
+        "working_name": "Clear Across the Business",
+        "status": "not_selected",
+        "client_visible": false,
+        "source_note": "Previously selected on 2026-07-15, superseded when Direction 2 was chosen on 2026-07-21. Keep as negative evidence only.",
+        "creative_board": "_archives/direction-1-superseded-2026-07-21/generated-boards/direction-1-selected-art-direction-only-rejected-likeness-seed.png",
+        "creative_board_scope": "superseded_art_direction_only",
+        "likeness_seed_status": "rejected_do_not_reference",
+        "half_second_read": "The numbers should agree.",
+        "thesis": "Make the same truth visible across every handoff.",
+        "strategic_read": "Superseded Direction 1 route. Archived after Direction 2 Identity approval on 2026-07-21. Not active identity source.",
+        "signature": {
+          "name": "The Throughline",
+          "description": "Superseded. Do not use in Identity."
+        },
+        "moodboard": [
+          {
+            "filename": "_archives/direction-1-superseded-2026-07-21/generated-boards/direction-1-selected-art-direction-only-rejected-likeness-seed.png",
+            "label": "Archived Direction 1 stylescape. Superseded negative evidence only."
+          },
+          {
+            "filename": "_archives/direction-1-superseded-2026-07-21/moodboard/direction-1-selected-stylescape-art-direction-only.png",
+            "label": "Archived Direction 1 moodboard sync. Not active identity source."
+          },
+          {
+            "filename": "_archives/direction-1-superseded-2026-07-21/identity/adam-freed-direction-1-hd-hero-gate4-candidate.png",
+            "label": "Archived Direction 1 hero. Not active identity source."
+          }
+        ]
+      },
+      {
+        "slug": "on-speaking-terms",
+        "label": "Direction 2",
+        "working_name": "On Speaking Terms",
+        "status": "selected",
+        "client_visible": true,
+        "selected_by": "Florian",
+        "selected_at": "2026-07-21",
+        "source_note": "Client-selected route from the private two-direction reveal. Temporary stylescape only until Stage 5b canon rebuild.",
+        "creative_board": "generated-boards/direction-2-temporary-art-direction-only-rejected-likeness-seed.png",
+        "creative_board_sha256": "33b52e7146b81f99fbbf5676a84c5f347bedb0e7b5a659c4e6de50fe2483533b",
+        "creative_board_scope": "temporary_art_direction_only",
+        "likeness_seed_status": "rejected_do_not_reference",
+        "likeness_recovery_rule": "Carry cable behavior, palette, materials, type, and atmosphere forward through text and locked Brand OS rules only. Use the approved face canon as the only image reference. Rebuild the canon stylescape after applications.",
+        "half_second_read": "Get the systems talking.",
+        "thesis": "Your numbers should be on speaking terms.",
+        "strategic_read": "Data Integrity becomes visible as connected systems, conversations, and evidence that finally agree.",
+        "best_for": "Advisory materials, speaking, publishing, and operator-facing business surfaces with dry wit.",
+        "risk": "It can drift into childish cable art, generic SaaS, dashboard theater, empty offices, or tech-bro whimsy.",
+        "dominant_slider_signals": {
+          "be_this": [
+            "transparent",
+            "talkative",
+            "rational",
+            "literal",
+            "innovative",
+            "earthy",
+            "quietly luxurious"
+          ],
+          "dont_be_this": [
+            "mysterious",
+            "silent",
+            "emotional-first",
+            "abstract",
+            "traditional",
+            "urban-cold",
+            "economical-looking"
+          ],
+          "ignore_axes": [
+            "feminine-masculine"
+          ],
+          "headline_keywords": [
+            "Transparent",
+            "Talkative",
+            "Rational",
+            "Literal",
+            "Innovative",
+            "Connected",
+            "Exact"
+          ],
+          "anti_tropes": [
+            "cannabis lifestyle or consumer wellness aesthetics",
+            "childish cable illustration or tech-bro whimsy",
+            "generic consultant or startup-dashboard treatment",
+            "code, terminals, neon, or hacker imagery",
+            "empty offices and solitary founder portraiture"
+          ]
+        },
+        "creative_platform": {
+          "idea": "Your numbers should be on speaking terms.",
+          "world": "A bright, connected cannabis operating company where evidence, conversations, and applications are physically linked.",
+          "feeling": "Approachable, knowing, lightly witty, modern, and technically fluent.",
+          "behavior": "One cobalt braided Connection Cable links photographs, evidence, type, and applications.",
+          "line": "Get the systems talking.",
+          "not_this": "Childish cable art, generic SaaS, code theater, empty offices, woodworking shops, or tech-bro whimsy."
+        },
+        "signature": {
+          "name": "The Connection Cable",
+          "description": "One cobalt braided cable physically links evidence, conversations, typography, and applications. Coral connectors mark joins, never decoration.",
+          "recognition_test": "Before reading the copy, the viewer sees systems connected by one continuous cable.",
+          "exploration_mode": "Raster board, physical material behavior, photography, and production art direction.",
+          "usage": [
+            "Link evidence, photos, and applications across a composition.",
+            "Mark joins with small coral connector points."
+          ],
+          "avoid": [
+            "Childish cartoon cable art.",
+            "Multiple competing cables or network diagrams.",
+            "Treating the cable as a logo."
+          ]
+        },
+        "palette": [
+          {
+            "name": "Paper White",
+            "hex": "#F2F0EE",
+            "status": "temporary_material_role",
+            "role": "Primary bright field and evidence surface."
+          },
+          {
+            "name": "Cable Cobalt",
+            "hex": "#004DC2",
+            "status": "temporary_material_role",
+            "role": "The Connection Cable, energetic links, and selected accent type."
+          },
+          {
+            "name": "Ice Glass",
+            "hex": "#B8C0C6",
+            "status": "temporary_material_role",
+            "role": "Translucent acrylic, cool structure, and quiet overlays."
+          },
+          {
+            "name": "Soft Graphite",
+            "hex": "#444342",
+            "status": "temporary_material_role",
+            "role": "Primary text, authority, and grounded depth."
+          },
+          {
+            "name": "Connection Coral",
+            "hex": "#B85742",
+            "status": "temporary_material_role",
+            "role": "Connector points and one controlled confirmation accent."
+          }
+        ],
+        "typography": {
+          "display": "Direct condensed grotesk with tall, open counters and no techno styling.",
+          "body": "Highly legible humanist sans with calm rhythm and practical weights.",
+          "use": "Short declarative headlines, dry wit, and precise evidence labels."
+        },
+        "look_and_feel": {
+          "atmosphere": "Bright, approachable, connected, exact, and lightly witty.",
+          "layout_logic": "Strong photographic crops, one cable path, clear evidence hierarchy, and generous negative space.",
+          "material_language": "Paper white, cobalt cable, ice glass, soft graphite, and coral connectors."
+        },
+        "photography": {
+          "style": "Adam in active conversation or working beside operators, bright daylight, documentary proximity, contemporary cannabis operations.",
+          "subjects": [
+            "Adam with operators",
+            "Real operational handoffs",
+            "Cultivation and production context",
+            "Hands, paper, acrylic, glass, and shared evidence"
+          ],
+          "avoid": [
+            "Solitary founder portraiture",
+            "Empty conference rooms",
+            "Dark control rooms",
+            "Generic dispensary retail",
+            "Cannabis consumption",
+            "Decorative dashboards",
+            "Code or terminal theater"
+          ]
+        },
+        "wardrobe": {
+          "style": "Approved primary operator outfit worn by Adam in context.",
+          "pieces": [
+            "Navy quarter-zip",
+            "Check shirt",
+            "Charcoal trousers",
+            "Dark flat cap",
+            "Rectangular glasses"
+          ],
+          "avoid": [
+            "Detached clothing or wardrobe flat lays",
+            "Suit-and-tie consultant styling",
+            "Tech-founder hoodie styling"
+          ]
+        },
+        "moodboard": [
+          {
+            "filename": "generated-boards/direction-2-canon-stylescape-pending-review.png",
+            "label": "Canon On Speaking Terms candidate. Strict 0.65 PASS. Pending Florian approval."
+          },
+          {
+            "filename": "moodboard/direction-2-canon-stylescape.png",
+            "label": "Moodboard copy of the canon candidate for Client Core Creative Direction page."
+          },
+          {
+            "filename": "generated-boards/direction-2-canon-hero-solo-pending-review.png",
+            "label": "Face-locked solo used on the canon board. Strict 0.65 PASS."
+          },
+          {
+            "filename": "generated-boards/direction-2-temporary-art-direction-only-rejected-likeness-seed.png",
+            "label": "Temporary Direction 2 stylescape. Art direction accepted. Generated face rejected as a likeness seed."
+          },
+          {
+            "filename": "identity/palette-type-proof.png",
+            "label": "Direction 2 palette and type proof."
+          },
+          {
+            "filename": "identity/visual-do-dont.png",
+            "label": "Direction 2 visual do and don't proof."
+          }
+        ],
+        "generation_rules": [
+          "Use only the approved Adam face canon as an image reference.",
+          "Never upload the temporary stylescape as an image reference because its face is rejected.",
+          "Rebuild the canon stylescape after applications from locked Brand OS rules.",
+          "Keep every material slider signal and anti-trope explicit in the prompt."
+        ],
+        "avoid": [
+          "No logo work.",
+          "No code, terminals, neon, nightclub lighting, or hacker imagery.",
+          "No cannabis lifestyle, wellness, consumption, or leaf-logo imagery.",
+          "No childish cable illustration, generic SaaS, or decorative data visualization."
+        ]
+      }
+    ]
+  },
+  "application": {
+    "summary": "Direction 2 Social Media and Video Covers rebuilt for On Speaking Terms. Applications approval pending. Archived Direction 1 exports must not render as active examples.",
+    "shared_patterns": {
+      "visual": [
+        "Paper White is the default working field; Soft Graphite is the deliberate inverse.",
+        "Barlow Condensed carries direct headlines; Barlow carries supporting copy.",
+        "One Connection Cable links a source, finding, handoff, or conclusion.",
+        "One Connection Coral connector confirms the join. Coral appears nowhere else in the composition.",
+        "Cable Cobalt and Ice Glass support the cable path and cool structure.",
+        "Photo variants use the approved Direction 2 photography range in images/photography/ plus the identity hero. Do not recycle one crop on every surface."
+      ],
+      "copy": [
+        "Use one source-backed finding, question, or operator note per composition.",
+        "Separate evidence from assumption when the distinction is useful.",
+        "Do not invent statistics, results, client proof, or unsupported outcomes.",
+        "Do not use engagement bait, inflated credentials, or consultant language."
+      ]
+    },
+    "reference_asset_roots": [],
+    "pages": [
+      {
+        "id": "social",
+        "label": "Social",
+        "slug": "social",
+        "title": "Social",
+        "medium": "LinkedIn and social thought leadership",
+        "purpose": "Make one evidence-backed industry observation visible to the operators Adam serves.",
+        "formats": [
+          "LinkedIn Finding template",
+          "LinkedIn Handoff template",
+          "LinkedIn Operator Note template",
+          "LinkedIn Evidence/Assumption template",
+          "LinkedIn Article/Carousel Cover template"
+        ],
+        "visual_recipe": [
+          "Rebuild from approved Direction 2 identity tokens and Connection Cable rules.",
+          "Use Paper White, Soft Graphite, Ice Glass, Cable Cobalt, and one Connection Coral point.",
+          "Use approved photography-range images on photo variants. Rotate crops by job."
+        ],
+        "copy_recipe": [
+          "Open with the finding.",
+          "Use a real observation or sourced evidence.",
+          "State one operational implication."
+        ],
+        "ai_rules": [
+          "Use only claims and language grounded in approved STRATEGY.md and IDENTITY.md.",
+          "Do not invent statistics, client results, testimonials, or operational outcomes.",
+          "Do not use the temporary stylescape as an image reference, crop, or likeness source.",
+          "Do not present archived Direction 1 exports as active examples."
+        ],
+        "training_examples": [
+          {
+            "id": "",
+            "label": "Finding",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/linkedin-finding.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Handoff",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/linkedin-handoff.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Operator Note",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/linkedin-operator-note.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Evidence / Assumption",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/linkedin-evidence-assumption.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Article / Carousel Cover",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/linkedin-article-cover.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Instagram Finding",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/instagram-finding.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Instagram Handoff",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/instagram-handoff.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Instagram Operator Note",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/instagram-operator-note.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Instagram Evidence / Assumption",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/instagram-evidence-assumption.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Instagram Article / Carousel Cover",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/instagram-article-cover.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "LinkedIn Finding template",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/template-linkedin-finding.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "LinkedIn Handoff template",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/template-linkedin-handoff.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "LinkedIn Operator Note template",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/template-linkedin-operator-note.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "LinkedIn Evidence / Assumption template",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/template-linkedin-evidence-assumption.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "LinkedIn Article / Carousel Cover template",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/template-linkedin-article-cover.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Instagram Finding template",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/template-instagram-finding.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Instagram Handoff template",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/template-instagram-handoff.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Instagram Operator Note template",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/template-instagram-operator-note.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Instagram Evidence / Assumption template",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/template-instagram-evidence-assumption.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Instagram Article / Carousel Cover template",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/template-instagram-article-cover.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Social do and avoid",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/social-do-dont.png",
+            "role": "",
+            "content_structure": []
+          }
+        ]
+      },
+      {
+        "id": "short-form-video",
+        "label": "Short-form video thumbnails",
+        "slug": "short-form-video",
+        "title": "Short-form video thumbnails",
+        "medium": "Vertical video covers",
+        "purpose": "Make one face-led, concept-led, or text-led cover immediately legible in a short-form feed.",
+        "formats": [
+          "Face-led",
+          "Concept-led",
+          "Text-led"
+        ],
+        "visual_recipe": [
+          "Rebuild from approved Direction 2 identity. No Direction 1 video covers remain active."
+        ],
+        "copy_recipe": [
+          "One direct source-backed line.",
+          "No tease, invented proof, or motivational framing."
+        ],
+        "ai_rules": [
+          "Do not reuse archived Direction 1 video covers.",
+          "Do not use the temporary stylescape as a likeness source."
+        ],
+        "training_examples": [
+          {
+            "id": "",
+            "label": "Face-led",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/video-face-led.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Concept-led",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/video-concept-led.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Text-led",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/video-text-led.png",
+            "role": "",
+            "content_structure": []
+          },
+          {
+            "id": "",
+            "label": "Cover do and avoid",
+            "source_ref": "brand-os/brands/adam-freed/images/applications/cover-do-dont.png",
+            "role": "",
+            "content_structure": []
+          }
+        ]
+      },
+      {
+        "id": "website",
+        "label": "Website",
+        "slug": "website",
+        "title": "Website",
+        "medium": "Personal advisory website",
+        "purpose": "Make Adam's independent advisory role clear and create a credible start to a client conversation.",
+        "formats": [
+          "home page",
+          "advisory page",
+          "writing page",
+          "speaking page",
+          "contact page"
+        ],
+        "visual_recipe": [
+          "Pending Direction 2 application rebuild. Use approved identity, face-correct hero, and Connection Cable rules only."
+        ],
+        "copy_recipe": [
+          "Lead with a direct thesis.",
+          "Show evidence before invitation.",
+          "Do not make unsupported performance claims."
+        ],
+        "ai_rules": [],
+        "training_examples": []
+      }
+    ]
+  },
+  "channel_rules": {
+    "summary": "Channel rules for the approved Direction 2 identity. Application examples are empty until the Direction 2 rebuild ships.",
+    "generation_loop": [
+      "Confirm the channel role.",
+      "Anchor the work in the current Focus Star.",
+      "Use sourced evidence and approved voice rules.",
+      "Apply only the approved Direction 2 identity and face canon.",
+      "Run fact, voice, and human review checks."
+    ],
+    "review_checks": [],
+    "channels": [
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "strategic_role": "Adam's primary thought-leadership surface for making one real industry data or operations finding visible.",
+        "source_anchors": [
+          "P1 Product",
+          "P3 Purpose",
+          "P5 Personality"
+        ],
+        "voice_dial": "Direct, evidence-forward, concise, and grounded in an operator's lived context.",
+        "visual_dial": "Use the Direction 2 palette, typography, image rules, and one Connection Cable. Do not use archived Direction 1 templates or boards.",
+        "rules_in": [
+          "One finding, evidence, and operational implication.",
+          "Insider observations on cannabis data and operations."
+        ],
+        "rules_out": [
+          "Engagement bait, invented data, vendor promotion, or lifestyle content.",
+          "Archived Direction 1 application exports as active examples."
+        ],
+        "medium_rules": {
+          "canvas": "1200x1200 px",
+          "safe_area": "84 px on every edge",
+          "type": "Barlow Condensed for the dominant statement and Barlow for supporting copy.",
+          "color": "Paper White dominant, Soft Graphite structural, Cable Cobalt and Ice Glass supporting, one Connection Coral connector only.",
+          "image": "Use only the approved Direction 2 face-correct hero, never the temporary stylescape.",
+          "signature": "Exactly one Connection Cable connects evidence, a handoff, or a conclusion."
+        },
+        "training_examples": []
+      },
+      {
+        "id": "short-form-video",
+        "label": "Short-form video thumbnails",
+        "strategic_role": "A coherent vertical cover system for making one finding, operating question, or operator note immediately legible.",
+        "source_anchors": [
+          "P1 Product",
+          "P3 Purpose",
+          "P4 Promise",
+          "P5 Personality"
+        ],
+        "voice_dial": "One direct source-backed line, no tease, no invented proof, and no motivational framing.",
+        "visual_dial": "Use the same approved Direction 2 identity, face-correct hero, and Connection Cable behavior as LinkedIn.",
+        "rules_in": [
+          "Finding, Question, and Operator Note states.",
+          "Source-backed copy that remains readable at feed-cover size."
+        ],
+        "rules_out": [
+          "Invented statistics, client results, generic reaction faces, or lifestyle imagery.",
+          "Temporary stylescape as an image reference or crop source.",
+          "Archived Direction 1 video covers."
+        ],
+        "medium_rules": {
+          "canvas": "1080x1920 px",
+          "safe_area": "72 px left and right, 220 px top, 340 px bottom",
+          "states": [
+            "Finding",
+            "Question",
+            "Operator Note"
+          ],
+          "type": "Barlow Condensed for the dominant statement and Barlow for supporting copy.",
+          "image": "Use only the approved Direction 2 face-correct hero.",
+          "signature": "Exactly one Connection Cable and one Connection Coral connector."
+        },
+        "training_examples": []
+      },
+      {
+        "id": "newsletter",
+        "label": "Newsletter and writing",
+        "strategic_role": "A durable source of useful industry thinking for operators who want an honest read.",
+        "source_anchors": [
+          "P3 Purpose",
+          "P4 Promise",
+          "P5 Personality"
+        ],
+        "voice_dial": "A clear briefing tone with enough context to make the finding useful.",
+        "visual_dial": "Use the approved Direction 2 identity with evidence-led layouts.",
+        "rules_in": [
+          "One thesis supported by sourced observation or clearly labeled experience.",
+          "A direct implication for serious operators."
+        ],
+        "rules_out": [
+          "Unsourced claims, advocacy framing, wellness content, or vendor roundups."
+        ]
+      },
+      {
+        "id": "speaking",
+        "label": "Speaking and podcasts",
+        "strategic_role": "A proof surface for Adam's independent advisory authority and lived industry context.",
+        "source_anchors": [
+          "P1 Product",
+          "P2 People",
+          "P5 Personality"
+        ],
+        "voice_dial": "Conversational, plainspoken, and specific without self-promotion.",
+        "visual_dial": "Use the approved identity and face-correct conversational imagery.",
+        "rules_in": [
+          "Cannabis operations, data integrity, and the information gap.",
+          "Accurate legacy-to-legal context when relevant."
+        ],
+        "rules_out": [
+          "Consumer cannabis lifestyle, medical claims, or endorsement framing."
+        ]
+      },
+      {
+        "id": "website",
+        "label": "Website",
+        "strategic_role": "The place where a referred operator can understand Adam's independent advisory role and begin a conversation.",
+        "source_anchors": [
+          "P1 Product",
+          "P2 People",
+          "P4 Promise"
+        ],
+        "voice_dial": "Composed, specific, and evidence-first.",
+        "visual_dial": "Use the approved Direction 2 identity, face canon, and Connection Cable rules.",
+        "rules_in": [
+          "A direct thesis, sourced credibility, and a clear invitation.",
+          "Accurate advisory scope and proof."
+        ],
+        "rules_out": [
+          "Generic consulting language, unsupported outcomes, or archived Direction 1 visual behavior."
+        ]
+      }
+    ]
+  },
+  "personal_branding": {
+    "summary": "How Adam appears as the independent cannabis data advisor: in conversation with operators, wearing the primary Direction 2 outfit, never as a solitary tech founder or lifestyle figure.",
+    "applies_when": "Always active when Adam carries the brand through portraits, speaking, social content, interviews, events, or generated identity imagery.",
+    "source_anchors": [
+      "STRATEGY.md#Identity",
+      "STRATEGY.md#P1 Product",
+      "STRATEGY.md#P2 People",
+      "STRATEGY.md#P4 Promise",
+      "STRATEGY.md#P5 Personality",
+      "IDENTITY.md#Photography Rules",
+      "IDENTITY.md#likeness",
+      "human-gate.json"
+    ],
+    "founder_spectrum_visual": {},
+    "reference_asset_roots": [],
+    "spectrum_positions": [
+      {
+        "position": 1,
+        "label": "Company brand only",
+        "role": "Person invisible",
+        "depth": "skip",
+        "execution": "Not Adam's model."
+      },
+      {
+        "position": 2,
+        "label": "Company-led",
+        "role": "Person named",
+        "depth": "light",
+        "execution": "Not Adam's model."
+      },
+      {
+        "position": 3,
+        "label": "Personal brand as unifying example",
+        "role": "Person organizes the practice",
+        "depth": "full",
+        "execution": "Not Adam's primary model."
+      },
+      {
+        "position": 4,
+        "label": "Founder-led",
+        "role": "Person leads",
+        "depth": "deep",
+        "execution": "Possible for a future firm, not the current independent advisory positioning."
+      },
+      {
+        "position": 5,
+        "label": "Person is the practice",
+        "role": "Person is the offer",
+        "depth": "full",
+        "execution": "Adam is the independent advisory practice. Credibility travels with him."
+      }
+    ],
+    "fp_read": {
+      "spectrum_position": 5,
+      "position_label": "Person is the practice",
+      "operating_decision": "Adam's independent advisory is the brand. Show him in operator conversation inside real cannabis operations, not as a solitary founder portrait.",
+      "source_tension": "He must stay visible and credible without becoming a lifestyle cannabis figure, activist poster, or software-vendor face.",
+      "load_bearing_rule": "Show active conversation and evidence before credentials or status.",
+      "default_posture": "Calm operator peer. Exact, dry wit, present in the room.",
+      "primary_risks": [
+        "Solitary founder portraiture",
+        "Empty conference-room theater",
+        "Cannabis lifestyle or consumption imagery",
+        "Tech-founder hoodie or consultant suit costume",
+        "Rejected stylescape face used as a likeness seed"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "presence",
+        "title": "Presence",
+        "summary": "Calm operator peer energy. Present in the room, exact, lightly witty.",
+        "rules_in": [
+          "Active conversation with operators",
+          "Listening posture and grounded attention",
+          "Direct eye line without performance intensity"
+        ],
+        "rules_out": [
+          "Solitary hero staring into camera",
+          "Arms-crossed dominance",
+          "Guru or motivational staging"
+        ],
+        "ai_rules": [
+          "Show Adam mid-conversation or mid-handoff, not posing for a portrait.",
+          "Keep presence calm and exact, never theatrical."
+        ]
+      },
+      {
+        "id": "wardrobe",
+        "title": "Wardrobe",
+        "summary": "Primary Direction 2 operator outfit locked; bizcasual is alternate only.",
+        "rules_in": [
+          "Navy quarter-zip, check shirt, charcoal trousers, dark flat cap, glasses",
+          "Outfit appears on Adam in context, never as a detached flat lay"
+        ],
+        "rules_out": [
+          "Suit-and-tie consultant styling",
+          "Tech-founder hoodie costume",
+          "Mixing primary and alternate outfits in one frame"
+        ],
+        "ai_rules": [
+          "Default to the primary operator outfit for Direction 2 identity imagery.",
+          "Use the alternate outfit only when separately requested."
+        ]
+      },
+      {
+        "id": "behavior",
+        "title": "Behavior",
+        "summary": "Do the work: explain, listen, review evidence, hand off a finding.",
+        "rules_in": [
+          "Operator conversation",
+          "Shared evidence or documents",
+          "Visible reasoning without dashboard theater"
+        ],
+        "rules_out": [
+          "Standing still only to display clothing",
+          "Pointing at the camera",
+          "Empty-room pacing"
+        ],
+        "ai_rules": [
+          "Give every frame an observable working behavior.",
+          "Prefer one or two operators in frame with Adam."
+        ]
+      },
+      {
+        "id": "aesthetic",
+        "title": "Aesthetic",
+        "summary": "Bright Paper White operations world with Cable Cobalt connection cues.",
+        "rules_in": [
+          "Bright daylight cannabis operations context",
+          "Paper, acrylic, glass, and cobalt cable materials",
+          "Documentary proximity"
+        ],
+        "rules_out": [
+          "Dark control rooms and neon",
+          "Cannabis lifestyle or dispensary cliches",
+          "Generic SaaS gradients and soft cards"
+        ],
+        "ai_rules": [
+          "Keep the world bright, connected, and operational.",
+          "Never invent dashboards, code screens, or leaf logos."
+        ]
+      }
+    ]
+  },
+  "task_router": {
+    "schema_version": "1.0.0",
+    "purpose": "Route day-to-day brand tasks to the smallest useful context pack.",
+    "operating_principle": "The user should not choose Brand Therapy OS pages. The agent classifies the request, loads the compact core, adds only matching identity, character, channel, and application slices, generates, then runs review gates.",
+    "context_budget": {
+      "max_application_pages": 2,
+      "max_channels": 2,
+      "max_training_examples": 5,
+      "ask_clarifying_question_only_if": "The output channel or audience materially changes the answer and cannot be inferred from the request."
+    },
+    "always_load": [
+      "brand",
+      "source.bundle_hash",
+      "guardrails",
+      "ai_first_generation_thread",
+      "identity.colors",
+      "identity.typography",
+      "identity.creative_direction.slider_signals",
+      "directions.options[].slider_signals",
+      "identity.voice"
+    ],
+    "conditional_load": [
+      "strategy.edges filtered by matched channel source_anchors",
+      "application.pages matched by requested medium",
+      "channel_rules.channels matched by requested distribution surface",
+      "personal_branding when the request touches founder role, leadership presence, bio/about copy, portraits, speaker profile, or Founder Spectrum",
+      "3-5 most relevant training_examples from matched application pages"
+    ],
+    "never_load_by_default": [
+      "unmatched application pages",
+      "all examples at once",
+      "stale generated HTML as source of truth",
+      "personal-branding material unless the request explicitly belongs to that section"
+    ],
+    "route_order": [
+      "match composed route when a campaign/task pattern is explicit",
+      "match personal-branding route when the request concerns founder or leadership presence",
+      "match medium route from requested artifact type",
+      "match channel route from distribution surface",
+      "merge context loads and remove duplicates",
+      "generate from rules and examples",
+      "run review gates before presenting output"
+    ],
+    "routes": {
+      "composed": [],
+      "mediums": [
+        {
+          "id": "medium.social",
+          "kind": "medium",
+          "match_terms": [
+            "article",
+            "article / carousel cover",
+            "assumption",
+            "avoid",
+            "carousel",
+            "cover",
+            "evidence",
+            "evidence / assumption",
+            "finding",
+            "handoff",
+            "instagram",
+            "instagram article / carousel cover",
+            "instagram evidence / assumption",
+            "instagram evidence / assumption template",
+            "instagram finding",
+            "instagram finding template",
+            "instagram handoff",
+            "instagram handoff template",
+            "instagram operator note",
+            "instagram operator note template",
+            "leadership",
+            "linkedin",
+            "linkedin and social thought leadership",
+            "linkedin article/carousel cover template",
+            "linkedin evidence / assumption template",
+            "linkedin evidence/assumption template",
+            "linkedin finding template",
+            "linkedin handoff template",
+            "linkedin operator note template",
+            "note",
+            "operator",
+            "operator note",
+            "post",
+            "quote",
+            "social",
+            "social do and avoid",
+            "story",
+            "template",
+            "thought"
+          ],
+          "context_load": {
+            "application_pages": [
+              "social"
+            ],
+            "fields": [
+              "purpose",
+              "formats",
+              "visual_recipe",
+              "copy_recipe",
+              "ai_rules",
+              "training_examples"
+            ],
+            "example_ids": [],
+            "max_examples": 5
+          },
+          "review_focus": [
+            "medium fit",
+            "visual recipe",
+            "copy recipe",
+            "AI rules"
+          ]
+        },
+        {
+          "id": "medium.short-form-video",
+          "kind": "medium",
+          "match_terms": [
+            "avoid",
+            "concept",
+            "concept-led",
+            "cover",
+            "cover do and avoid",
+            "covers",
+            "face",
+            "face-led",
+            "form",
+            "led",
+            "short",
+            "short-form video thumbnails",
+            "short-form-video",
+            "text",
+            "text-led",
+            "thumbnails",
+            "vertical",
+            "vertical video covers",
+            "video"
+          ],
+          "context_load": {
+            "application_pages": [
+              "short-form-video"
+            ],
+            "fields": [
+              "purpose",
+              "formats",
+              "visual_recipe",
+              "copy_recipe",
+              "ai_rules",
+              "training_examples"
+            ],
+            "example_ids": [],
+            "max_examples": 4
+          },
+          "review_focus": [
+            "medium fit",
+            "visual recipe",
+            "copy recipe",
+            "AI rules"
+          ]
+        },
+        {
+          "id": "medium.website",
+          "kind": "medium",
+          "match_terms": [
+            "advisory",
+            "advisory page",
+            "contact",
+            "contact page",
+            "home",
+            "home page",
+            "page",
+            "personal",
+            "personal advisory website",
+            "speaking",
+            "speaking page",
+            "website",
+            "writing",
+            "writing page"
+          ],
+          "context_load": {
+            "application_pages": [
+              "website"
+            ],
+            "fields": [
+              "purpose",
+              "formats",
+              "visual_recipe",
+              "copy_recipe",
+              "ai_rules",
+              "training_examples"
+            ],
+            "example_ids": [],
+            "max_examples": 0
+          },
+          "review_focus": [
+            "medium fit",
+            "visual recipe",
+            "copy recipe",
+            "AI rules"
+          ]
+        }
+      ],
+      "channels": [
+        {
+          "id": "channel.linkedin",
+          "kind": "channel",
+          "match_terms": [
+            "linkedin"
+          ],
+          "context_load": {
+            "channels": [
+              "linkedin"
+            ],
+            "source_anchors": [
+              "P1 Product",
+              "P3 Purpose",
+              "P5 Personality"
+            ],
+            "fields": [
+              "strategic_role",
+              "voice_dial",
+              "visual_dial",
+              "rules_in",
+              "rules_out",
+              "activation_pattern",
+              "ai_instructions"
+            ],
+            "approval_gate": []
+          },
+          "review_focus": [
+            "source anchors",
+            "voice dial",
+            "visual dial",
+            "rules in/out",
+            "approval gate"
+          ]
+        },
+        {
+          "id": "channel.short-form-video",
+          "kind": "channel",
+          "match_terms": [
+            "form",
+            "short",
+            "short-form video thumbnails",
+            "short-form-video",
+            "thumbnails",
+            "video"
+          ],
+          "context_load": {
+            "channels": [
+              "short-form-video"
+            ],
+            "source_anchors": [
+              "P1 Product",
+              "P3 Purpose",
+              "P4 Promise",
+              "P5 Personality"
+            ],
+            "fields": [
+              "strategic_role",
+              "voice_dial",
+              "visual_dial",
+              "rules_in",
+              "rules_out",
+              "activation_pattern",
+              "ai_instructions"
+            ],
+            "approval_gate": []
+          },
+          "review_focus": [
+            "source anchors",
+            "voice dial",
+            "visual dial",
+            "rules in/out",
+            "approval gate"
+          ]
+        },
+        {
+          "id": "channel.newsletter",
+          "kind": "channel",
+          "match_terms": [
+            "newsletter",
+            "newsletter and writing",
+            "writing"
+          ],
+          "context_load": {
+            "channels": [
+              "newsletter"
+            ],
+            "source_anchors": [
+              "P3 Purpose",
+              "P4 Promise",
+              "P5 Personality"
+            ],
+            "fields": [
+              "strategic_role",
+              "voice_dial",
+              "visual_dial",
+              "rules_in",
+              "rules_out",
+              "activation_pattern",
+              "ai_instructions"
+            ],
+            "approval_gate": []
+          },
+          "review_focus": [
+            "source anchors",
+            "voice dial",
+            "visual dial",
+            "rules in/out",
+            "approval gate"
+          ]
+        },
+        {
+          "id": "channel.speaking",
+          "kind": "channel",
+          "match_terms": [
+            "podcasts",
+            "speaking",
+            "speaking and podcasts"
+          ],
+          "context_load": {
+            "channels": [
+              "speaking"
+            ],
+            "source_anchors": [
+              "P1 Product",
+              "P2 People",
+              "P5 Personality"
+            ],
+            "fields": [
+              "strategic_role",
+              "voice_dial",
+              "visual_dial",
+              "rules_in",
+              "rules_out",
+              "activation_pattern",
+              "ai_instructions"
+            ],
+            "approval_gate": []
+          },
+          "review_focus": [
+            "source anchors",
+            "voice dial",
+            "visual dial",
+            "rules in/out",
+            "approval gate"
+          ]
+        },
+        {
+          "id": "channel.website",
+          "kind": "channel",
+          "match_terms": [
+            "home page",
+            "landing page",
+            "page",
+            "site",
+            "web",
+            "website"
+          ],
+          "context_load": {
+            "channels": [
+              "website"
+            ],
+            "source_anchors": [
+              "P1 Product",
+              "P2 People",
+              "P4 Promise"
+            ],
+            "fields": [
+              "strategic_role",
+              "voice_dial",
+              "visual_dial",
+              "rules_in",
+              "rules_out",
+              "activation_pattern",
+              "ai_instructions"
+            ],
+            "approval_gate": []
+          },
+          "review_focus": [
+            "source anchors",
+            "voice dial",
+            "visual dial",
+            "rules in/out",
+            "approval gate"
+          ]
+        }
+      ],
+      "personal_branding": [
+        {
+          "id": "personal-branding.position-role",
+          "kind": "personal-branding",
+          "match_terms": [
+            "personal branding",
+            "personal brand",
+            "founder brand",
+            "founder spectrum",
+            "spectrum position",
+            "founder role",
+            "founder identity",
+            "founder presence",
+            "about page",
+            "bio",
+            "speaker profile",
+            "human layer"
+          ],
+          "context_load": {
+            "personal_branding": [
+              "summary",
+              "spectrum_positions",
+              "fp_read",
+              "founder_spectrum_visual"
+            ],
+            "strategy_edges": [
+              "p2",
+              "p5"
+            ],
+            "identity_sections": [
+              "Voice"
+            ]
+          },
+          "review_focus": [
+            "position 5 read",
+            "person versus practice",
+            "visibility tension",
+            "generic personal-brand tropes"
+          ]
+        },
+        {
+          "id": "personal-branding.character-sheet",
+          "kind": "personal-branding",
+          "match_terms": [
+            "character sheet",
+            "wardrobe",
+            "outfit",
+            "presence",
+            "portrait mode",
+            "speaker photo",
+            "strategist",
+            "thinker",
+            "founder portrait"
+          ],
+          "context_load": {
+            "personal_branding_dimensions": [
+              "presence",
+              "wardrobe",
+              "behavior",
+              "aesthetic"
+            ],
+            "reference_asset_roots": [],
+            "fields": [
+              "summary",
+              "rules_in",
+              "rules_out",
+              "ai_rules"
+            ],
+            "strategy_edges": [
+              "p2",
+              "p5"
+            ],
+            "identity_sections": [
+              "Photography Rules"
+            ]
+          },
+          "review_focus": [
+            "mode fit",
+            "image angle and wardrobe",
+            "recognizable but not staged",
+            "AI repeatability"
+          ]
+        },
+        {
+          "id": "personal-branding.outputs",
+          "kind": "personal-branding",
+          "match_terms": [
+            "personal mode",
+            "personal-mode output",
+            "personal post",
+            "social card",
+            "viewfinder",
+            "headshot",
+            "imagery",
+            "reference",
+            "photo",
+            "visual reference",
+            "founder image"
+          ],
+          "context_load": {
+            "reference_asset_roots": [],
+            "personal_branding_dimensions": [
+              "aesthetic",
+              "presentation"
+            ],
+            "fields": [
+              "summary",
+              "rules_in",
+              "rules_out",
+              "ai_rules"
+            ],
+            "identity_sections": [
+              "Photography Rules"
+            ]
+          },
+          "review_focus": [
+            "reference fit",
+            "portrait rules",
+            "viewfinder treatment",
+            "forbidden imagery"
+          ]
+        }
+      ]
+    },
+    "review_gates": [
+      "strategy fit: output serves the matched Focus Star anchors",
+      "voice fit: output follows identity voice and channel voice dial",
+      "medium fit: output follows visual_recipe, copy_recipe, and ai_rules",
+      "rules-out check: remove anything forbidden by matched channel rules_out",
+      "proof check: claims use approved proof only or are marked for human review",
+      "founder-role check: use the selected Founder Spectrum position before writing any personal-branding guidance",
+      "source hierarchy check: do not let the generated output rewrite Section A or B"
+    ]
+  },
+  "proof": {
+    "required": [
+      "Adam's confirmation that Sage is \"a perfect encapsulation\" and \"does the work.\"",
+      "Anti-persona: operators who want to game metrics, companies that want a single-audit fix.",
+      "Approved tagline set.",
+      "Brand Therapy archetype result: Sage primary, with Ruler and Friend tied secondary.",
+      "Documented refusal: Adam does not work with clients who want findings shaped to a conclusion.",
+      "Experience working with founders and C-suite across retail, cultivation, and manufacturing.",
+      "Geographic and scale note: small to mid-size, not public MSO level.",
+      "Historical Personality Output and archetype map, reconciled to the workshop.",
+      "Industry experience: 10+ years regulated retail, cultivation, manufacturing; prior legacy experience.",
+      "Insider legitimacy: legacy-to-legal experience, 20+ years around the plant.",
+      "Named outcome types: harmonized seed-to-sale systems, siloed spreadsheet elimination.",
+      "Selected workshop keywords: thoughtful, knowledgeable, honest, calm, authoritative, down-to-earth, witty, dependable, insightful, trustworthy.",
+      "Source line: independent advisory, no vendor relationships that compromise findings.",
+      "Source quote: \"My goal is to influence the industry in a better direction than I think it's at today.\"",
+      "Source: independent advisory positioning, no vendor relationships.",
+      "Source: legacy-to-legal origin, 20+ years, earning authority rather than borrowing it.",
+      "Speaking and writing history as thought leadership proof.",
+      "The information gap described in the biography: consumer marketing vs. budtender story vs. lab results."
+    ]
+  },
+  "likeness": {
+    "person": "Adam Freed",
+    "purpose": "Canonical face references for model-agnostic image generation. Attach the face-anchor image as a reference, start the prompt with prompt_preamble, then describe the scene.",
+    "canonical_description": "Approved face canon for private identity production. Public use and delivery remain separately gated.",
+    "prompt_preamble": "",
+    "usage_rules": [
+      "Use the approved face canon as the only image reference for Adam's identity.",
+      "Dark flat cap, rectangular glasses, long dark hair, and full beard are locked appearance elements.",
+      "Use the selected navy quarter-zip outfit in Direction 2 identity imagery.",
+      "Show Adam in active conversation or work with operators. Avoid solitary portraiture and empty rooms.",
+      "Never use the temporary stylescape raster as an image-model reference because its generated face is rejected.",
+      "Every recognizable Adam face must pass the normal canon gate and the strict 0.65 real-source recovery gate before review.",
+      "Generated founder imagery remains private identity source. It is not approved for delivery or publication."
+    ],
+    "images": [
+      {
+        "role": "face-anchor",
+        "label": "Approved five-angle face canon",
+        "description": "Approved face canon for private identity production. Public use and delivery remain separately gated.",
+        "path": "images/likeness/adam-freed-v1-anchor.png",
+        "url": "https://brandtherapy.florianp.com/adam-freed/images/likeness/adam-freed-v1-anchor.png"
+      },
+      {
+        "role": "turnaround",
+        "label": "Selected primary operator outfit",
+        "description": "Navy quarter-zip, check shirt, charcoal trousers, dark flat cap, and glasses. This is the Direction 2 identity outfit.",
+        "path": "images/likeness/adam-freed-fullbody-primary.png",
+        "url": "https://brandtherapy.florianp.com/adam-freed/images/likeness/adam-freed-fullbody-primary.png"
+      },
+      {
+        "role": "turnaround",
+        "label": "Approved alternate reference",
+        "description": "Charcoal sport coat and open-collar shirt. Keep available as approved character reference, but do not use it for Direction 2 identity imagery unless separately requested.",
+        "path": "images/likeness/adam-freed-fullbody-bizcasual.png",
+        "url": "https://brandtherapy.florianp.com/adam-freed/images/likeness/adam-freed-fullbody-bizcasual.png"
+      }
+    ],
+    "likeness_page": "https://brandtherapy.florianp.com/adam-freed/identity/likeness.html"
+  },
+  "retrieval_guidance": {
+    "example_count": "Use 3 to 5 relevant examples when possible.",
+    "example_relevance": "Match examples to the target channel, audience, length, and format.",
+    "review_loop": "Track pass rate, edit time, recurring voice violations, and source citations for brand checks."
+  }
+}

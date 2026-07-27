@@ -1,0 +1,521 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Route day-to-day brand tasks to the smallest useful context pack.",
+  "operating_principle": "The user should not choose Brand Therapy OS pages. The agent classifies the request, loads the compact core, adds only matching identity, character, channel, and application slices, generates, then runs review gates.",
+  "context_budget": {
+    "max_application_pages": 2,
+    "max_channels": 2,
+    "max_training_examples": 5,
+    "ask_clarifying_question_only_if": "The output channel or audience materially changes the answer and cannot be inferred from the request."
+  },
+  "always_load": [
+    "brand",
+    "source.bundle_hash",
+    "guardrails",
+    "ai_first_generation_thread",
+    "identity.colors",
+    "identity.typography",
+    "identity.creative_direction.slider_signals",
+    "directions.options[].slider_signals",
+    "identity.voice"
+  ],
+  "conditional_load": [
+    "strategy.edges filtered by matched channel source_anchors",
+    "application.pages matched by requested medium",
+    "channel_rules.channels matched by requested distribution surface",
+    "personal_branding when the request touches founder role, leadership presence, bio/about copy, portraits, speaker profile, or Founder Spectrum",
+    "3-5 most relevant training_examples from matched application pages"
+  ],
+  "never_load_by_default": [
+    "unmatched application pages",
+    "all examples at once",
+    "stale generated HTML as source of truth",
+    "personal-branding material unless the request explicitly belongs to that section"
+  ],
+  "route_order": [
+    "match composed route when a campaign/task pattern is explicit",
+    "match personal-branding route when the request concerns founder or leadership presence",
+    "match medium route from requested artifact type",
+    "match channel route from distribution surface",
+    "merge context loads and remove duplicates",
+    "generate from rules and examples",
+    "run review gates before presenting output"
+  ],
+  "routes": {
+    "composed": [],
+    "mediums": [
+      {
+        "id": "medium.social",
+        "kind": "medium",
+        "match_terms": [
+          "article",
+          "article / carousel cover",
+          "assumption",
+          "avoid",
+          "carousel",
+          "cover",
+          "evidence",
+          "evidence / assumption",
+          "finding",
+          "handoff",
+          "instagram",
+          "instagram article / carousel cover",
+          "instagram evidence / assumption",
+          "instagram evidence / assumption template",
+          "instagram finding",
+          "instagram finding template",
+          "instagram handoff",
+          "instagram handoff template",
+          "instagram operator note",
+          "instagram operator note template",
+          "leadership",
+          "linkedin",
+          "linkedin and social thought leadership",
+          "linkedin article/carousel cover template",
+          "linkedin evidence / assumption template",
+          "linkedin evidence/assumption template",
+          "linkedin finding template",
+          "linkedin handoff template",
+          "linkedin operator note template",
+          "note",
+          "operator",
+          "operator note",
+          "post",
+          "quote",
+          "social",
+          "social do and avoid",
+          "story",
+          "template",
+          "thought"
+        ],
+        "context_load": {
+          "application_pages": [
+            "social"
+          ],
+          "fields": [
+            "purpose",
+            "formats",
+            "visual_recipe",
+            "copy_recipe",
+            "ai_rules",
+            "training_examples"
+          ],
+          "example_ids": [],
+          "max_examples": 5
+        },
+        "review_focus": [
+          "medium fit",
+          "visual recipe",
+          "copy recipe",
+          "AI rules"
+        ]
+      },
+      {
+        "id": "medium.short-form-video",
+        "kind": "medium",
+        "match_terms": [
+          "avoid",
+          "concept",
+          "concept-led",
+          "cover",
+          "cover do and avoid",
+          "covers",
+          "face",
+          "face-led",
+          "form",
+          "led",
+          "short",
+          "short-form video thumbnails",
+          "short-form-video",
+          "text",
+          "text-led",
+          "thumbnails",
+          "vertical",
+          "vertical video covers",
+          "video"
+        ],
+        "context_load": {
+          "application_pages": [
+            "short-form-video"
+          ],
+          "fields": [
+            "purpose",
+            "formats",
+            "visual_recipe",
+            "copy_recipe",
+            "ai_rules",
+            "training_examples"
+          ],
+          "example_ids": [],
+          "max_examples": 4
+        },
+        "review_focus": [
+          "medium fit",
+          "visual recipe",
+          "copy recipe",
+          "AI rules"
+        ]
+      },
+      {
+        "id": "medium.website",
+        "kind": "medium",
+        "match_terms": [
+          "advisory",
+          "advisory page",
+          "contact",
+          "contact page",
+          "home",
+          "home page",
+          "page",
+          "personal",
+          "personal advisory website",
+          "speaking",
+          "speaking page",
+          "website",
+          "writing",
+          "writing page"
+        ],
+        "context_load": {
+          "application_pages": [
+            "website"
+          ],
+          "fields": [
+            "purpose",
+            "formats",
+            "visual_recipe",
+            "copy_recipe",
+            "ai_rules",
+            "training_examples"
+          ],
+          "example_ids": [],
+          "max_examples": 0
+        },
+        "review_focus": [
+          "medium fit",
+          "visual recipe",
+          "copy recipe",
+          "AI rules"
+        ]
+      }
+    ],
+    "channels": [
+      {
+        "id": "channel.linkedin",
+        "kind": "channel",
+        "match_terms": [
+          "linkedin"
+        ],
+        "context_load": {
+          "channels": [
+            "linkedin"
+          ],
+          "source_anchors": [
+            "P1 Product",
+            "P3 Purpose",
+            "P5 Personality"
+          ],
+          "fields": [
+            "strategic_role",
+            "voice_dial",
+            "visual_dial",
+            "rules_in",
+            "rules_out",
+            "activation_pattern",
+            "ai_instructions"
+          ],
+          "approval_gate": []
+        },
+        "review_focus": [
+          "source anchors",
+          "voice dial",
+          "visual dial",
+          "rules in/out",
+          "approval gate"
+        ]
+      },
+      {
+        "id": "channel.short-form-video",
+        "kind": "channel",
+        "match_terms": [
+          "form",
+          "short",
+          "short-form video thumbnails",
+          "short-form-video",
+          "thumbnails",
+          "video"
+        ],
+        "context_load": {
+          "channels": [
+            "short-form-video"
+          ],
+          "source_anchors": [
+            "P1 Product",
+            "P3 Purpose",
+            "P4 Promise",
+            "P5 Personality"
+          ],
+          "fields": [
+            "strategic_role",
+            "voice_dial",
+            "visual_dial",
+            "rules_in",
+            "rules_out",
+            "activation_pattern",
+            "ai_instructions"
+          ],
+          "approval_gate": []
+        },
+        "review_focus": [
+          "source anchors",
+          "voice dial",
+          "visual dial",
+          "rules in/out",
+          "approval gate"
+        ]
+      },
+      {
+        "id": "channel.newsletter",
+        "kind": "channel",
+        "match_terms": [
+          "newsletter",
+          "newsletter and writing",
+          "writing"
+        ],
+        "context_load": {
+          "channels": [
+            "newsletter"
+          ],
+          "source_anchors": [
+            "P3 Purpose",
+            "P4 Promise",
+            "P5 Personality"
+          ],
+          "fields": [
+            "strategic_role",
+            "voice_dial",
+            "visual_dial",
+            "rules_in",
+            "rules_out",
+            "activation_pattern",
+            "ai_instructions"
+          ],
+          "approval_gate": []
+        },
+        "review_focus": [
+          "source anchors",
+          "voice dial",
+          "visual dial",
+          "rules in/out",
+          "approval gate"
+        ]
+      },
+      {
+        "id": "channel.speaking",
+        "kind": "channel",
+        "match_terms": [
+          "podcasts",
+          "speaking",
+          "speaking and podcasts"
+        ],
+        "context_load": {
+          "channels": [
+            "speaking"
+          ],
+          "source_anchors": [
+            "P1 Product",
+            "P2 People",
+            "P5 Personality"
+          ],
+          "fields": [
+            "strategic_role",
+            "voice_dial",
+            "visual_dial",
+            "rules_in",
+            "rules_out",
+            "activation_pattern",
+            "ai_instructions"
+          ],
+          "approval_gate": []
+        },
+        "review_focus": [
+          "source anchors",
+          "voice dial",
+          "visual dial",
+          "rules in/out",
+          "approval gate"
+        ]
+      },
+      {
+        "id": "channel.website",
+        "kind": "channel",
+        "match_terms": [
+          "home page",
+          "landing page",
+          "page",
+          "site",
+          "web",
+          "website"
+        ],
+        "context_load": {
+          "channels": [
+            "website"
+          ],
+          "source_anchors": [
+            "P1 Product",
+            "P2 People",
+            "P4 Promise"
+          ],
+          "fields": [
+            "strategic_role",
+            "voice_dial",
+            "visual_dial",
+            "rules_in",
+            "rules_out",
+            "activation_pattern",
+            "ai_instructions"
+          ],
+          "approval_gate": []
+        },
+        "review_focus": [
+          "source anchors",
+          "voice dial",
+          "visual dial",
+          "rules in/out",
+          "approval gate"
+        ]
+      }
+    ],
+    "personal_branding": [
+      {
+        "id": "personal-branding.position-role",
+        "kind": "personal-branding",
+        "match_terms": [
+          "personal branding",
+          "personal brand",
+          "founder brand",
+          "founder spectrum",
+          "spectrum position",
+          "founder role",
+          "founder identity",
+          "founder presence",
+          "about page",
+          "bio",
+          "speaker profile",
+          "human layer"
+        ],
+        "context_load": {
+          "personal_branding": [
+            "summary",
+            "spectrum_positions",
+            "fp_read",
+            "founder_spectrum_visual"
+          ],
+          "strategy_edges": [
+            "p2",
+            "p5"
+          ],
+          "identity_sections": [
+            "Voice"
+          ]
+        },
+        "review_focus": [
+          "position 5 read",
+          "person versus practice",
+          "visibility tension",
+          "generic personal-brand tropes"
+        ]
+      },
+      {
+        "id": "personal-branding.character-sheet",
+        "kind": "personal-branding",
+        "match_terms": [
+          "character sheet",
+          "wardrobe",
+          "outfit",
+          "presence",
+          "portrait mode",
+          "speaker photo",
+          "strategist",
+          "thinker",
+          "founder portrait"
+        ],
+        "context_load": {
+          "personal_branding_dimensions": [
+            "presence",
+            "wardrobe",
+            "behavior",
+            "aesthetic"
+          ],
+          "reference_asset_roots": [],
+          "fields": [
+            "summary",
+            "rules_in",
+            "rules_out",
+            "ai_rules"
+          ],
+          "strategy_edges": [
+            "p2",
+            "p5"
+          ],
+          "identity_sections": [
+            "Photography Rules"
+          ]
+        },
+        "review_focus": [
+          "mode fit",
+          "image angle and wardrobe",
+          "recognizable but not staged",
+          "AI repeatability"
+        ]
+      },
+      {
+        "id": "personal-branding.outputs",
+        "kind": "personal-branding",
+        "match_terms": [
+          "personal mode",
+          "personal-mode output",
+          "personal post",
+          "social card",
+          "viewfinder",
+          "headshot",
+          "imagery",
+          "reference",
+          "photo",
+          "visual reference",
+          "founder image"
+        ],
+        "context_load": {
+          "reference_asset_roots": [],
+          "personal_branding_dimensions": [
+            "aesthetic",
+            "presentation"
+          ],
+          "fields": [
+            "summary",
+            "rules_in",
+            "rules_out",
+            "ai_rules"
+          ],
+          "identity_sections": [
+            "Photography Rules"
+          ]
+        },
+        "review_focus": [
+          "reference fit",
+          "portrait rules",
+          "viewfinder treatment",
+          "forbidden imagery"
+        ]
+      }
+    ]
+  },
+  "review_gates": [
+    "strategy fit: output serves the matched Focus Star anchors",
+    "voice fit: output follows identity voice and channel voice dial",
+    "medium fit: output follows visual_recipe, copy_recipe, and ai_rules",
+    "rules-out check: remove anything forbidden by matched channel rules_out",
+    "proof check: claims use approved proof only or are marked for human review",
+    "founder-role check: use the selected Founder Spectrum position before writing any personal-branding guidance",
+    "source hierarchy check: do not let the generated output rewrite Section A or B"
+  ]
+}

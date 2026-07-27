@@ -1212,3 +1212,187 @@ h2,
 }
 
 .button:hover,
+
+/* Gosder/Michael-parity overview + task map */
+.overview-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(22rem, 1.1fr);
+  min-height: min(40rem, 70vh);
+  margin-top: 1.5rem;
+  color: #f2f0ee;
+  background: #444342;
+}
+
+.overview-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding: clamp(2rem, 5vw, 4.5rem);
+}
+
+.overview-copy .display {
+  max-width: 11ch;
+  margin: 0;
+  font-family: var(--type-display);
+  font-size: clamp(3.6rem, 6.5vw, 6.4rem);
+  font-weight: 500;
+  line-height: 0.9;
+  text-transform: uppercase;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.overview-copy .display em {
+  display: block;
+  color: #7eb0ff;
+  font-family: var(--type-display);
+  font-size: 0.72em;
+  font-style: normal;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.overview-copy p {
+  max-width: 34rem;
+  color: rgba(242, 240, 238, 0.78);
+}
+
+.overview-image {
+  position: relative;
+  min-height: 32rem;
+  overflow: hidden;
+  background: #004dc2;
+}
+
+.overview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overview-image--portrait img {
+  object-position: 35% center;
+}
+
+.overview-image figcaption {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  max-width: 22rem;
+  padding: 0.7rem 0.9rem;
+  color: #f2f0ee;
+  background: rgba(68, 67, 66, 0.86);
+  font-size: 0.76rem;
+}
+
+.quick-actions,
+.section-map {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line, #d9d5d0);
+  background: var(--line, #d9d5d0);
+}
+
+.quick-actions a,
+.section-map a {
+  min-height: 11rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  background: var(--surface, #fff);
+  color: inherit;
+}
+
+.quick-actions a:hover,
+.section-map a:hover {
+  color: #f2f0ee;
+  background: #004dc2;
+}
+
+.quick-actions span,
+.section-map span {
+  color: var(--quiet, #7a7672);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.quick-actions a:hover span,
+.section-map a:hover span {
+  color: rgba(242, 240, 238, 0.7);
+}
+
+.quick-actions strong,
+.section-map strong {
+  font-family: var(--type-display);
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.section-map p {
+  margin: 0.85rem 0 0;
+  color: var(--muted, #5c5854);
+  font-size: 0.95rem;
+}
+
+.section-map a:hover p {
+  color: rgba(242, 240, 238, 0.82);
+}
+
+.ai-context-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ai-context-actions .section-note {
+  flex: 1 1 100%;
+  margin: 0.25rem 0 0;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .overview-hero,
+  .quick-actions,
+  .section-map {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-image {
+    min-height: 24rem;
+  }
+}
+
+.button.button-ghost,
+a.button.button-ghost {
+  background: transparent;
+  color: #444342;
+  border: 1px solid #b8c0c6;
+}
+
+.button.button-ghost:hover,
+a.button.button-ghost:hover {
+  background: #f2f0ee;
+  color: #004dc2;
+  border-color: #004dc2;
+}
