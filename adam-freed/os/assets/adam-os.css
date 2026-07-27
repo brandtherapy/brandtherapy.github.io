@@ -1,6 +1,55 @@
-/* Adam Freed Brand Therapy OS application expansion styles.
-   Adapted from the Gosder OS application surface; tokens follow IDENTITY.md.
+/* Adam Freed Brand Therapy OS styles.
+   IDENTITY.md is the authority: Barlow Condensed display, Barlow body,
+   Cable Cobalt accent. FP type/heading locks (Bricolage, purple period,
+   ALL CAPS heroes) do not apply here.
 */
+:root {
+  --type-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --type-body: "Barlow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--type-body);
+}
+
+html,
+body,
+.main,
+.sidebar,
+.button,
+.page-job,
+.section-note,
+.kit-copy-text {
+  font-family: var(--type-body);
+}
+
+h1,
+h2,
+h3,
+.section-headline h2,
+.page-heading h1,
+.product-lockup strong,
+.nav-section-code,
+.not-in-use-message h2,
+.optional-gate h2,
+.page-nav strong,
+.page-toc summary strong,
+.kit-copy-head h3,
+.linkedin-shelf-identity strong {
+  font-family: var(--type-display);
+}
+
+h1,
+.page-heading h1 {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+h2,
+.section-headline h2 {
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  text-transform: none;
+}
+
 .application-showcase {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
