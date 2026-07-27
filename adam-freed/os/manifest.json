@@ -26,12 +26,9 @@
     "application/social.html",
     "application/video-covers.html",
     "application/website-ux.html",
-    "application/email.html",
-    "application/email-signature.html",
-    "application/posters.html",
-    "application/editorial-covers.html"
+    "application/email.html"
   ],
-  "routeCount": 22,
+  "routeCount": 19,
   "reviewUrl": "/brand-os/brands/adam-freed/output/",
   "approval": {
     "strategy": "approved",
@@ -42,10 +39,9 @@
     "publishing": false
   },
   "notes": [
-    "Client Core with Gosder-parity Section C expansion: 22 routes.",
-    "Installed at brand-os/brands/adam-freed/output for local review.",
-    "Logo not in use. Brand Signature and Personal Branding active.",
-    "Applications include Social, Video, Website, Email, Signature, Posters, Editorial.",
+    "Option C lean applications kit: 19 routes.",
+    "Section C: Social, Video, Website proof, Email + signature.",
+    "Posters and Editorial deferred. Logo not in use.",
     "Temporary stylescape remains art-direction-only until Stage 5b."
   ]
 }
