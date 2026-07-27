@@ -2,7 +2,7 @@
 
 Status: private Client Core review
 
-Shared template: 0.5.0 (ce2d0a7120b4d6bf046a178ee60b1e253b9b10bbb2baaf4f6ff98e807e034fc0)
+Shared template: 0.5.1 (51e991dfbc07923740413bd1fbec13aebf2ee7c925a31c899c2b0d2e36badb2a)
 
 Review URL: http://127.0.0.1:8771/brand-os/brands/adam-freed/output/
 

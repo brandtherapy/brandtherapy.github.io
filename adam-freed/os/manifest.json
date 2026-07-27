@@ -4,9 +4,9 @@
   "status": "private_review",
   "brand": "adam-freed",
   "generated": "2026-07-21",
-  "templateVersion": "0.5.0",
+  "templateVersion": "0.5.1",
   "templateReleaseStatus": "review_pending",
-  "templateReleaseSha256": "ce2d0a7120b4d6bf046a178ee60b1e253b9b10bbb2baaf4f6ff98e807e034fc0",
+  "templateReleaseSha256": "51e991dfbc07923740413bd1fbec13aebf2ee7c925a31c899c2b0d2e36badb2a",
   "routes": [
     "index.html",
     "use.html",

@@ -802,46 +802,157 @@
   border-radius: 0;
 }
 
-.kit-profile-row {
-  display: grid;
-  grid-template-columns: minmax(10rem, 14rem) minmax(0, 1fr);
-  gap: 1.25rem;
-  align-items: stretch;
-  margin-bottom: 1.25rem;
+/* Use-today LinkedIn shelf */
+.content-section--kit {
+  padding-top: 1.25rem;
 }
 
-.kit-profile-preview,
-.kit-banner-preview {
-  margin: 0;
-  padding: 1rem;
+.content-section--visual-first .section-headline {
+  margin-bottom: 1.1rem;
+}
+
+.linkedin-shelf {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 52rem;
+}
+
+.linkedin-shelf-stage {
+  position: relative;
+  margin-bottom: 3.4rem;
+  overflow: visible;
   border: 1px solid var(--line);
   background: #fff;
 }
 
-.kit-profile-preview img,
-.kit-banner-preview img {
+.linkedin-shelf-banner {
   display: block;
   width: 100%;
-  height: auto;
+  aspect-ratio: 1584 / 396;
+  object-fit: cover;
+  background: #E8E4E0;
 }
 
-.kit-profile-preview img {
-  max-width: 12rem;
-  margin: 0 auto;
+.linkedin-shelf-avatar {
+  position: absolute;
+  left: 1.25rem;
+  bottom: -3.25rem;
+  width: 7.5rem;
+  height: 7.5rem;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(28, 36, 48, 0.12);
+  background: #F2F0EE;
 }
 
-.kit-profile-preview figcaption,
-.kit-banner-preview figcaption {
-  margin-top: 0.75rem;
-  font-size: 0.78rem;
-  color: var(--muted);
-}
-
-.kit-download-grid,
-.kit-next-grid {
+.linkedin-shelf-identity {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 0.25rem;
+  padding-left: 9.4rem;
+  color: #1C2430;
+}
+
+.linkedin-shelf-identity strong {
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.linkedin-shelf-identity span {
+  max-width: 42ch;
+  color: #444342;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.linkedin-shelf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.button--ghost {
+  color: #004DC2;
+  background: transparent;
+  border: 1px solid #004DC2;
+}
+
+.button--ghost:hover {
+  color: #fff;
+  background: #004DC2;
+}
+
+.kit-size-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.kit-size-note a {
+  color: #004DC2;
+}
+
+.kit-copy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.kit-copy-block {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1rem 1.1rem 1.1rem;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.kit-copy-block--primary {
+  grid-column: span 1;
+  border-color: rgba(0, 77, 194, 0.28);
+  background: rgba(0, 77, 194, 0.04);
+}
+
+.kit-copy-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.kit-copy-head h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.kit-copy-text {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #1C2430;
+  white-space: pre-wrap;
+  font-family: "Barlow", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.kit-download-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 0.85rem;
+}
+
+.kit-download-grid--posts .kit-download-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.kit-download-grid--posts .kit-download-card {
+  grid-template-columns: 1fr;
+  align-items: start;
 }
 
 .kit-download-card {
@@ -861,6 +972,12 @@
   height: 4.5rem;
   object-fit: cover;
   background: #F2F0EE;
+}
+
+.kit-download-card--wide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 1;
 }
 
 .kit-download-card span {
@@ -888,6 +1005,32 @@
 
 .kit-download-card:hover {
   border-color: #004DC2;
+}
+
+.kit-next-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.kit-next-list a {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+}
+
+.kit-next-list a:hover strong {
+  color: #004DC2;
+}
+
+.kit-next-list span {
+  color: var(--muted);
+  font-size: 0.84rem;
 }
 
 .email-signature--photo {
@@ -935,8 +1078,29 @@
 }
 
 @media (max-width: 800px) {
-  .kit-profile-row {
+  .linkedin-shelf-stage {
+    margin-bottom: 2.6rem;
+  }
+
+  .linkedin-shelf-avatar {
+    width: 5.5rem;
+    height: 5.5rem;
+    left: 0.9rem;
+    bottom: -2.5rem;
+  }
+
+  .linkedin-shelf-identity {
+    padding-left: 0;
+    padding-top: 0.35rem;
+  }
+
+  .kit-copy-grid {
     grid-template-columns: 1fr;
+  }
+
+  .linkedin-shelf-actions .button {
+    width: 100%;
+    text-align: center;
   }
 }
 
