@@ -417,7 +417,7 @@
   min-height: 36rem;
   color: #1C2430;
   border: 1px solid var(--line);
-  background: #F2F0EE;
+  background: #FAFAF8;
 }
 
 .email-chrome {
@@ -426,34 +426,66 @@
   padding: 1rem;
   color: #4e5660;
   border-bottom: 1px solid var(--line);
-  background: #E8E4E0;
+  background: #F2F0EE;
   font-size: 0.72rem;
 }
 
-.email-body {
-  padding: 2rem;
+.email-hero {
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+  background: #E8E4E0;
 }
 
-.email-masthead {
-  padding-bottom: 1.5rem;
-  color: #1C2430;
-  border-bottom: 0.25rem solid #B85742;
-  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
-  font-size: 1.4rem;
+.email-hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.email-inline-photo {
+  margin: 1.25rem 0 0.25rem;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #E8E4E0;
+}
+
+.email-inline-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.email-body {
+  padding: 1.6rem 1.75rem 2rem;
+}
+
+.email-kicker {
+  margin: 0 0 0.85rem;
+  color: #004DC2;
+  font-family: "Barlow", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .email-body h3 {
-  margin: 2.4rem 0 1rem;
+  margin: 0 0 1rem;
   font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
-  font-size: 2.6rem;
-  font-weight: 400;
-  line-height: 0.95;
-  text-transform: uppercase;
+  font-size: 2.1rem;
+  font-weight: 500;
+  line-height: 1.02;
+  text-transform: none;
+  color: #1C2430;
 }
 
 .email-body p {
   font-size: 0.9rem;
+  line-height: 1.45;
 }
 
 .email-cta {
@@ -461,10 +493,22 @@
   margin-top: 1rem;
   padding: 0.75rem 1rem;
   color: #F2F0EE;
-  background: #1C2430;
+  background: #004DC2;
   font-size: 0.78rem;
   font-weight: 700;
   text-decoration: none;
+}
+
+.photo-range-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(12rem, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .photo-range-grid {
+    grid-template-columns: repeat(2, minmax(10rem, 1fr));
+  }
 }
 
 .signature-gallery {
@@ -490,7 +534,7 @@
 .email-signature .signature-role {
   display: block;
   margin: 0.2rem 0 1rem;
-  color: #B85742;
+  color: #004DC2;
   font-size: 0.78rem;
   font-weight: 700;
 }
