@@ -3178,8 +3178,8 @@ document.getElementById('btn-open-submit').addEventListener('click',()=>{
 /* =========================================================================
    VIEW AS CLIENT (Florian only) - open with #viewas=<sid>[&vt=<ticket>]
    Preferred path: Nova/admin open https://bt-api.florianp.com/view-as?sid=
-   which mints a 90s ticket after the admin cookie session. Legacy key paste
-   remains only as a fallback for old bookmarks.
+   which mints a 90s ticket after the password cookie session. Missing tickets
+   redirect back to that password login — never prompt for a raw admin key.
    Loads a client's live record through the admin endpoint and renders it on
    the demo chassis: session.demo=true means saveSession, snapshots, media
    sync, exercise sync, and lead submit are all no-ops, and no writeToken
@@ -3210,42 +3210,23 @@ async function startViewAs(sid){
   if(ticket){
     try{history.replaceState(null,'',location.pathname+location.search+'#viewas='+encodeURIComponent(sid));}catch(e){}
   }
-  let key='';
-  let prompted=false;
+  // Never ask Florian to paste a raw admin key. Unauthenticated / old
+  // #viewas= bookmarks go through bt-api password login, which mints a ticket.
   if(!ticket){
-    key=(sessionStorage.getItem('bt_viewas_key')||'').trim();
-    prompted=!key;
-    if(!key){
-      key=(window.prompt('Florian only. Paste the bt-api admin key for this browser tab.')||'').trim();
-      if(!key){toast('View as client cancelled.');return;}
-    }
+    const launchBase=API_BASE||'https://bt-api.florianp.com';
+    location.replace(launchBase+'/view-as?sid='+encodeURIComponent(sid));
+    return;
   }
   let rec=null;
   try{
-    const load=candidate=>{
-      const auth=ticket
-        ?('&vt='+encodeURIComponent(ticket))
-        :('&key='+encodeURIComponent(candidate));
-      return fetch(API_BASE+'/api/admin/session?sid='+encodeURIComponent(sid)+auth,{cache:'no-store'});
-    };
-    let r=await load(key);
-    if(r.status===404&&!ticket&&!prompted){
-      sessionStorage.removeItem('bt_viewas_key');
-      const replacement=(window.prompt('The saved admin key was not accepted. Paste the current key, or cancel if the session id may be wrong.')||'').trim();
-      prompted=true;
-      if(replacement&&replacement!==key){key=replacement;r=await load(key);}
-    }
+    const r=await fetch(API_BASE+'/api/admin/session?sid='+encodeURIComponent(sid)+'&vt='+encodeURIComponent(ticket),{cache:'no-store'});
     if(r.status===404){
-      if(!ticket)sessionStorage.removeItem('bt_viewas_key');
-      toast(ticket?'View-as ticket expired. Re-open from Nova or admin.':'Not found: wrong admin key or unknown session id.');
+      toast('View-as ticket expired. Re-open from Nova or admin.');
       return;
     }
     if(!r.ok){toast('Could not load the client session ('+r.status+').');return;}
     rec=await r.json();
   }catch(err){toast('Network error loading the client session.');return;}
-  if(!ticket&&key){
-    try{sessionStorage.setItem('bt_viewas_key',key);}catch(e){}
-  }
 
   stopDemoPlayback();
   const msgs=(Array.isArray(rec.transcript)?rec.transcript:[])
