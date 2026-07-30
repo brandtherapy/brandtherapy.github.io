@@ -2010,6 +2010,22 @@ document.querySelectorAll('[data-conversation-focus]').forEach(button=>button.ad
 /* =========================================================================
    SESSION BOOTSTRAP (real session)
    ========================================================================= */
+/* Static opening from data/conversation-spec.json. Never wait on /api/chat
+   for the first assistant turn: that call only exists for real client answers. */
+const SESSION_OPENING_MESSAGE="I'm going to ask you questions the way a strategist would in a real session, one at a time. No forms, no dropdowns. Just answer like you're talking to someone who actually wants to know. Some questions will feel obvious. Answer them anyway, the obvious answer is usually where the real one is hiding. This takes 25 to 45 minutes. At the end, Florian reviews what we build together before it becomes anything real. Ready when you are. First: when people pay you, are they paying for you specifically, or for a company or offer that would still work if you stepped back?";
+
+function seedOpeningMessage(){
+  session.messages=[
+    {role:'user',content:'__START__'},
+    {role:'assistant',content:SESSION_OPENING_MESSAGE}
+  ];
+  session.star=emptyStar();
+  session.started=true;
+  chatScroll.innerHTML='';
+  appendMsg('assistant',SESSION_OPENING_MESSAGE);
+  renderStarFull();
+}
+
 function startRealSession(resumed){
   session.demo=false;
   document.getElementById('state-session').classList.remove('has-session-banner','viewas-mode','is-readonly');
@@ -2044,13 +2060,9 @@ function startRealSession(resumed){
     return;
   }
 
-  // fresh session
-  chatScroll.innerHTML='';
-  session.messages=[{role:'user',content:'__START__'}];
-  session.star=null;
-  session.started=true;
+  // fresh session: opening is already on screen, no model round-trip
+  seedOpeningMessage();
   saveSession('session_started',true);
-  doSendTurn(session.messages);
 }
 
 /* T-348: Florian's human feedback. Served only after session verification;
@@ -2898,7 +2910,7 @@ document.getElementById('btn-confirm-close').addEventListener('click',closeConfi
 const DEMO_TURNS=[
   {
     user:'__START__',
-    reply:"I'm going to ask you questions the way a strategist would in a real session, one at a time. No forms, no dropdowns. Just answer like you're talking to someone who actually wants to know. This takes 25 to 45 minutes. At the end, Florian reviews what we build together before it becomes anything real. Ready when you are. First: when people pay you, are they paying for you specifically, or for a company or offer that would still work if you stepped back?",
+    reply:SESSION_OPENING_MESSAGE,
     star: (()=>{const s=emptyStar();return s;})()
   },
   {
@@ -3157,7 +3169,11 @@ function playDemoTurn(idx){
   }
 
   if(isFirst){
-    showUserThenReply();
+    // Opening is static: show it immediately, same as a live session.
+    appendMsg('assistant',turn.reply);
+    session.star=turn.star;
+    renderStarFull();
+    demoTimer=setTimeout(()=>{ if(demoRunning) playDemoTurn(idx+1); },1100+Math.random()*900);
   }else{
     demoTimer=setTimeout(showUserThenReply, 700+Math.random()*700);
   }
