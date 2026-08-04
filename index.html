@@ -751,7 +751,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
           <div id="world"><svg id="star" viewBox="-700 -700 1400 1400"></svg></div>
           <svg id="wire"><path/><circle r="3.5"/></svg>
         </div>
-        <div class="hud spectrum-badge" id="spectrum-badge">Spectrum &middot; TBD</div>
+        <div class="hud spectrum-badge" id="spectrum-badge">Founder role &middot; TBD</div>
         <div class="hud comp" id="comp"></div>
         <div class="hud pane" id="pane" hidden inert aria-hidden="true"></div>
         <div class="ctrls">
@@ -797,7 +797,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
                     <button class="ex-card" id="ex-card-sliders" data-ex="sliders"><span class="xt">Brand Sliders</span><span class="xs">Open&nbsp; &#8250;</span></button>
                     <button class="ex-card" id="ex-card-archetype" data-ex="archetype"><span class="xt">Personality Attributes</span><span class="xs">Open&nbsp; &#8250;</span></button>
                     <button class="ex-card" id="ex-card-taste" data-conversation-focus="taste"><span class="xt">Design Taste</span><span class="xs">Continue&nbsp; &#8250;</span></button>
-                    <button class="ex-card" id="ex-card-spectrum" data-conversation-focus="spectrum"><span class="xt">Founder Spectrum</span><span class="xs">Continue&nbsp; &#8250;</span></button>
+                    <button class="ex-card" id="ex-card-spectrum" data-conversation-focus="spectrum"><span class="xt">Founder involvement</span><span class="xs">Continue&nbsp; &#8250;</span></button>
                   </div>
                   <div class="taste-chat-track" id="taste-chat-track" hidden>
                     <div class="taste-chat-copy"><b>Design Taste</b><span>Visual references, what pulls you in, and hard nos.</span></div>
@@ -865,7 +865,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
   <div class="setup-group">
     <div class="setup-group-label">Optional</div>
     <button type="button" class="setup-item" data-setup="taste"><span class="si-check" aria-hidden="true">&#10003;</span><span class="si-body"><span class="si-name">Design Taste</span></span><span class="si-go">Talk</span></button>
-    <button type="button" class="setup-item" data-setup="spectrum"><span class="si-check" aria-hidden="true">&#10003;</span><span class="si-body"><span class="si-name">Founder Spectrum</span></span><span class="si-go">Talk</span></button>
+    <button type="button" class="setup-item" data-setup="spectrum"><span class="si-check" aria-hidden="true">&#10003;</span><span class="si-body"><span class="si-name">Founder involvement</span></span><span class="si-go">Talk</span></button>
     <button type="button" class="setup-item" data-setup="board"><span class="si-check" aria-hidden="true">&#10003;</span><span class="si-body"><span class="si-name">Whiteboard</span></span><span class="si-go">Open</span></button>
     <button type="button" class="setup-item" data-setup="profile"><span class="si-check" aria-hidden="true">&#10003;</span><span class="si-body"><span class="si-name">Profile and links</span></span><span class="si-go">Add</span></button>
   </div>
@@ -929,7 +929,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
     <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" placeholder="you@yourbrand.com" /></div>
     <div class="field"><label for="f-brand">Brand name</label><input id="f-brand" type="text" placeholder="What you go by" /></div>
     <div class="subex" id="subex-rows"></div>
-    <div class="subex-warn" id="subex-warn" style="display:none">Brand Sliders and Personality Attributes are required before Florian can review. Design Taste, Founder Spectrum, and Whiteboard stay optional.</div>
+    <div class="subex-warn" id="subex-warn" style="display:none">Brand Sliders and Personality Attributes are required before Florian can review. Design Taste, Founder involvement, and Whiteboard stay optional.</div>
     <div class="modal-err" id="submit-err" role="alert" style="display:none"></div>
     <div class="modal-actions">
       <button class="btn btn-ghost" id="btn-cancel-submit">Cancel</button>
@@ -1062,6 +1062,7 @@ function emptyStar(){
   const edges={};
   ORDER.forEach(id=>edges[id]={offer_name:'',position:'',compass:'',rules_in:[],rules_out:[],tradeoffs:[],proof:[],filled:0});
   return {
+    business:{stage:'',validation:''},
     spectrum:{position:null,note:''},
     center:{word:'',candidates:[]},
     persona:{role:'',context:'',need:'',trigger:''},
@@ -1520,7 +1521,7 @@ function updateStarContent(star){
   if(focused){const pane=document.getElementById('pane');pane.innerHTML=paneHTML(focused,em[focused]||{filled:0});pane.classList.add('show');}
   const badge=document.getElementById('spectrum-badge');
   const pos=star.spectrum&&star.spectrum.position;
-  badge.textContent='Spectrum · '+((pos==null||pos<1||pos>5)?'TBD':('P'+pos+' of 5'));
+  badge.textContent='Founder role · '+((pos==null||pos<1||pos>5)?'TBD':(pos+' of 5'));
 }
 function buildComp(star){
   const em=edgesObj(star),c=document.getElementById('comp');
@@ -1862,11 +1863,28 @@ function renderSetupChecklist(){
     else go.textContent='Start';
   });
 }
-function appendWorkshopCtaCard(content,options){
-  const d=appendMsg('assistant',content);
-  d.classList.add('has-cta');
-  const actions=document.createElement('div');
-  actions.className='msg-cta';
+function openSendForReview(fromEl){
+  const btn=document.getElementById('btn-open-submit');
+  if(!btn)return;
+  if(!requiredExercisesDone()){
+    toast('Finish Brand Sliders and Personality Attributes first.');
+    const status=workshopStatus();
+    if(!status.sliders){openExercise('sliders');return;}
+    if(!status.archetype){openExercise('archetype');return;}
+    return;
+  }
+  // Reuse the existing submit opener by synthesizing a click with return focus.
+  submitReturnFocus=fromEl||btn;
+  document.getElementById('submit-err').style.display='none';
+  const p=session.profile||{};
+  if(p.name&&!document.getElementById('f-name').value)document.getElementById('f-name').value=p.name;
+  if(p.email&&!document.getElementById('f-email').value)document.getElementById('f-email').value=p.email;
+  renderSubmitExStatus();
+  setPageInert(true);
+  submitOverlay.classList.add('show');
+  requestAnimationFrame(()=>document.getElementById('btn-cancel-submit').focus());
+}
+function buildCloseCtaActions(actions){
   const mk=(label,fn,ghost)=>{
     const b=document.createElement('button');
     b.type='button';
@@ -1875,13 +1893,45 @@ function appendWorkshopCtaCard(content,options){
     b.addEventListener('click',fn);
     return b;
   };
-  if(!ensureExercises().sliders.done)actions.appendChild(mk('Start Brand Sliders',()=>openExercise('sliders')));
-  if(!ensureExercises().archetype.done)actions.appendChild(mk('Start Personality Attributes',()=>openExercise('archetype')));
-  actions.appendChild(mk('Open checklist',()=>setSetupPanelOpen(true),true));
+  const status=workshopStatus();
+  if(!status.sliders)actions.appendChild(mk('Brand Sliders',()=>openExercise('sliders')));
+  if(!status.archetype)actions.appendChild(mk('Personality Attributes',()=>openExercise('archetype')));
+  if(!status.board)actions.appendChild(mk('Whiteboard',()=>openExercise('board'),true));
+  actions.appendChild(mk('Profile & links',()=>openDetails(),true));
+  if(requiredExercisesDone()){
+    actions.appendChild(mk('Send for review',(e)=>openSendForReview(e.currentTarget)));
+  }else{
+    actions.appendChild(mk('Open checklist',()=>setSetupPanelOpen(true),true));
+  }
+}
+function appendWorkshopCtaCard(content,options){
+  const d=appendMsg('assistant',content);
+  d.classList.add('has-cta');
+  const actions=document.createElement('div');
+  actions.className='msg-cta';
+  buildCloseCtaActions(actions);
   d.appendChild(actions);
   chatScroll.scrollTop=chatScroll.scrollHeight;
   return d;
 }
+function appendCloseCtaCard(content){
+  return appendWorkshopCtaCard(content);
+}
+function shouldAttachCloseCta(star,priorStar){
+  if(!(star&&star.ready_for_review))return false;
+  // Attach buttons once, on the first ready flip. Later thank-yous stay short
+  // text; the close card already on screen keeps the action buttons.
+  if(session.closeCtaAttached)return false;
+  return !(priorStar&&priorStar.ready_for_review);
+}
+function refreshCloseCtaCards(){
+  if(!session.closeCtaAttached)return;
+  document.querySelectorAll('.msg.assistant.has-cta .msg-cta').forEach(actions=>{
+    actions.innerHTML='';
+    buildCloseCtaActions(actions);
+  });
+}
+
 function renderReviewBanner(){
   const banner=document.getElementById('review-banner');
   const ready=!!(session.star&&session.star.ready_for_review&&tasteProgress(session.star)===3);
@@ -1906,6 +1956,7 @@ function renderReviewBanner(){
   submitBtn.classList.toggle('blocked',!requiredDone);
   submitBtn.textContent=requiredDone?'Review & send':'Finish required workshops';
   renderSetupChecklist();
+  refreshCloseCtaCards();
 }
 
 function renderStarFull(){
@@ -1938,6 +1989,7 @@ async function callChatAPI(messages,star,retried){
 function doSendTurn(afterMessages){
   setPending(true);
   showTyping();
+  const priorStar=session.star?JSON.parse(JSON.stringify({ready_for_review:!!session.star.ready_for_review})):null;
   callChatAPI(afterMessages,session.star)
     .then(data=>{
       hideTyping();
@@ -1946,8 +1998,16 @@ function doSendTurn(afterMessages){
       session.star.quote_edits=Object.assign({},session.star.quote_edits||{},priorQuoteEdits);
       if(!session.star.edges) session.star.edges=emptyStar().edges;
       ensureTasteState(session.star);
-      session.messages.push({role:'assistant',content:data.reply||''});
-      appendMsg('assistant',data.reply||'');
+      const reply=data.reply||'';
+      const attachClose=shouldAttachCloseCta(session.star,priorStar);
+      if(attachClose){
+        session.closeCtaAttached=true;
+        session.messages.push({role:'assistant',content:reply,cta:'close'});
+        appendCloseCtaCard(reply);
+      }else{
+        session.messages.push({role:'assistant',content:reply});
+        appendMsg('assistant',reply);
+      }
       renderStarFull();
       setPending(false);
       saveSession('assistant_response',true);
@@ -2004,7 +2064,7 @@ const chatWordsShortcut=document.getElementById('chat-words-shortcut');
 if(chatWordsShortcut)chatWordsShortcut.addEventListener('click',e=>{showBrand({returnFocus:e.currentTarget,preserveFocus:true});requestAnimationFrame(()=>setContextOpen(true,true));});
 document.querySelectorAll('[data-conversation-focus]').forEach(button=>button.addEventListener('click',()=>{
   showConversation(true);
-  toast(button.dataset.conversationFocus==='taste'?'Continue here with the visual references and hard nos that shape your Design Taste.':'Continue here to place your Founder Spectrum.');
+  toast(button.dataset.conversationFocus==='taste'?'Continue here with the visual references and hard nos that shape your Design Taste.':'Continue here to place your founder involvement.');
 }));
 
 /* =========================================================================
@@ -2012,7 +2072,7 @@ document.querySelectorAll('[data-conversation-focus]').forEach(button=>button.ad
    ========================================================================= */
 /* Static opening from data/conversation-spec.json. Never wait on /api/chat
    for the first assistant turn: that call only exists for real client answers. */
-const SESSION_OPENING_MESSAGE="I'm going to ask you questions the way a strategist would in a real session, one at a time. No forms, no dropdowns. Just answer like you're talking to someone who actually wants to know. Some questions will feel obvious. Answer them anyway, the obvious answer is usually where the real one is hiding. This takes 25 to 45 minutes. At the end, Florian reviews what we build together before it becomes anything real. Ready when you are. First: when people pay you, are they paying for you specifically, or for a company or offer that would still work if you stepped back?";
+const SESSION_OPENING_MESSAGE="I'm going to ask you questions the way a strategist would in a real session, one at a time. No forms, no dropdowns. Just answer like you're talking to someone who actually wants to know. Some questions will feel obvious. Answer them anyway, the obvious answer is usually where the real one is hiding. This takes 25 to 45 minutes. At the end, Florian reviews what we build together before it becomes anything real. Ready when you are. First: where is the business right now? Idea, building, pre-revenue, early customers, paying customers, revenue, or mostly an audience so far?";
 
 function seedOpeningMessage(){
   session.messages=[
@@ -2046,7 +2106,7 @@ function startRealSession(resumed){
     chatScroll.innerHTML='';
     session.messages.forEach(m=>{
       if(m.content==='__START__')return;
-      if(m.role==='assistant'&&m.cta==='workshops')appendWorkshopCtaCard(m.content);
+      if(m.role==='assistant'&&(m.cta==='workshops'||m.cta==='close')){session.closeCtaAttached=true;appendCloseCtaCard(m.content);} 
       else appendMsg(m.role,m.content);
     });
     chatScroll.setAttribute('aria-live','polite');
@@ -2095,7 +2155,7 @@ function addWorkshopResumePrompt(){
   if(!session.star||(session.star.completeness||0)<60)return;
   if(tasteProgress(session.star)<3)return;
   if(requiredExercisesDone())return;
-  const content='Before Florian can review, finish Brand Sliders and Personality Attributes. Use the buttons below, or open the checklist in the header anytime. Design Taste and Founder Spectrum stay in this conversation.';
+  const content='Before Florian can review, finish Brand Sliders and Personality Attributes. Use the buttons below, or open the checklist in the header anytime. Design Taste and founder involvement stay in this conversation.';
   session.messages.push({role:'assistant',content,cta:'workshops'});
   session.workshopResumeNoticeShown=true;
   appendWorkshopCtaCard(content);
@@ -2511,7 +2571,7 @@ document.getElementById('btn-nudge-ex').addEventListener('click',()=>{
   if(!status.sliders){openExercise('sliders');return;}
   if(!status.archetype){openExercise('archetype');return;}
   if(!status.taste){showConversation(true);toast('Continue here with the visual references and hard nos that shape your Design Taste.');return;}
-  if(!status.spectrum){showConversation(true);toast('Continue here to place your Founder Spectrum.');return;}
+  if(!status.spectrum){showConversation(true);toast('Continue here to place your founder involvement.');return;}
   showBrand();
 });
 document.getElementById('rb-gate-sliders').addEventListener('click',()=>openExercise('sliders'));
@@ -2537,7 +2597,7 @@ document.querySelectorAll('.setup-item[data-setup]').forEach(item=>{
     if(key==='profile'){showBrand();requestAnimationFrame(()=>{setContextOpen(true,false);openDetails();});return;}
     if(key==='taste'||key==='spectrum'){
       showConversation(true);
-      toast(key==='taste'?'Keep talking here about references, specifics, and hard nos.':'Keep talking here to place your Founder Spectrum.');
+      toast(key==='taste'?'Keep talking here about references, specifics, and hard nos.':'Keep talking here to place your founder involvement.');
     }
   });
 });
