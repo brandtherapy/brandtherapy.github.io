@@ -2004,6 +2004,7 @@ function doSendTurn(afterMessages){
         session.closeCtaAttached=true;
         session.messages.push({role:'assistant',content:reply,cta:'close'});
         appendCloseCtaCard(reply);
+        chatInput.placeholder='Ask a question, or leave a note for Florian...';
       }else{
         session.messages.push({role:'assistant',content:reply});
         appendMsg('assistant',reply);
@@ -2106,7 +2107,7 @@ function startRealSession(resumed){
     chatScroll.innerHTML='';
     session.messages.forEach(m=>{
       if(m.content==='__START__')return;
-      if(m.role==='assistant'&&(m.cta==='workshops'||m.cta==='close')){session.closeCtaAttached=true;appendCloseCtaCard(m.content);} 
+      if(m.role==='assistant'&&(m.cta==='workshops'||m.cta==='close')){session.closeCtaAttached=true;appendCloseCtaCard(m.content);chatInput.placeholder='Ask a question, or leave a note for Florian...';} 
       else appendMsg(m.role,m.content);
     });
     chatScroll.setAttribute('aria-live','polite');
@@ -2953,6 +2954,9 @@ document.getElementById('btn-do-submit').addEventListener('click',async ()=>{
     }
     await res.json();
     session.submitted=true;
+    chatInput.disabled=false;
+    sendBtn.disabled=false;
+    chatInput.placeholder='Ask a question, or leave a note for Florian...';
     showConfirmation();
     btn.textContent='Sent';
   }catch(e){
