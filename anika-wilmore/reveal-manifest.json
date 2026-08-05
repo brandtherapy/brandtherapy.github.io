@@ -1,0 +1,53 @@
+{
+  "schema_version": "brand-therapy-reveal/v2",
+  "state": "private_delivery",
+  "generation": "94bd75f1f6ffd555",
+  "source": {
+    "brand_slug": "anika-wilmore",
+    "brand_version": "0.1.0",
+    "reveal_standard_version": "2.1.3",
+    "preview_generation": "b60e0af57629ba4b"
+  },
+  "standard": {
+    "schema_version": "brand-therapy-reveal-standard/v1",
+    "version": "2.1.3",
+    "status": "approved",
+    "approved_at": "2026-08-04",
+    "approval_reference": {
+      "approved_by": "Florian",
+      "generation": "one-brand-spectrum-overlap-fix",
+      "scope": "Fix one-brand relationship scene overlap; Carries/Extends verbs"
+    },
+    "registry_sha256": "88edb2ca8d16fd2ae6f75ffba9e5225e0abef3d635455c2c81b9271a51762ff6"
+  },
+  "hashes": {
+    "template": "c5be983600c3eb10ae45a122a5371a3368a66dfb0ab93aecba75a3c8a4e4cd5d",
+    "contract": "a75d108663db8a0522d7efb5fe2cb8dbab991b630eb776c2d2231f5830fc6d14",
+    "configuration": "800ca0e0212a58ea49099e991619e3daa29cce6a2c465b44cfa15351cf47e3e5",
+    "direction_assets": {
+      "media/direction-1-intro.jpg": "8ba6a483c0574f6948d5c895f20745251c5e9cbe261466236d93879b9cf809bf",
+      "media/direction-1-stylescape.jpg": "fd31a48520b610008c509ce30cc16c253c00c5bc2aec2454153bda4b3313f7a3",
+      "media/direction-2-intro.jpg": "d1546903354079ae45c30b3625d12d2c115ffe48bfeaf14e0eec1e42a1f5965c",
+      "media/direction-2-stylescape.jpg": "fb41b821effd15e4954d5fa2e3156aaba6177ee3a2744846761ec7da109c9509"
+    },
+    "component_package": "dcbbfde8996df5094d99b8627e0771781668ca0c144e49fcf639fd30cb960d3b",
+    "component_javascript": "b78651676da71dae8a7b4303c67879b8fb4353c0fab827c6716948c3445804b4",
+    "asset_manifest": "a9ba5de1838756ea60f815c0937a433a7a33bbcbd1eb494869506826268ead04",
+    "runtime_derivatives": "5e24e4cdb350cf95dc822628ece45da5db81ee3f05d86d5bef56c73c6fd468be",
+    "data": "94bd75f1f6ffd5557dd65d4e1d580b4612c1b7324db2703d23bba624c80ee491"
+  },
+  "asset_policy": {
+    "rights_status": "internal_only",
+    "runtime_mode": "local_preview_only",
+    "publishable": false
+  },
+  "submissions_enabled": true,
+  "published": true,
+  "delivery": {
+    "endpoint": "https://bt-api.florianp.com/api/reveal-response",
+    "submission_id": "anika-wilmore-reveal-20260804",
+    "capability_sha256": "11455f963873c26fcb22e59bad00dec173861255e096f5623797ac2a6ca6c7ba"
+  },
+  "published_at": "2026-08-05T00:50:54.559559+00:00",
+  "published_url": "https://brandtherapy.florianp.com/anika-wilmore/"
+}
