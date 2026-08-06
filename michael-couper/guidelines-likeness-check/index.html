@@ -1,0 +1,1092 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+  <title>Michael Couper · Brand Therapy Guidelines</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --carbon: #17171A;
+      --ink: #1E1D2B;
+      --bone: #E9E4D8;
+      --seam: #6E4CFF;
+      --silver: #B8BCC6;
+      --paper: #F2EEE6;
+      --muted: rgba(233, 228, 216, .72);
+      --muted-dark: #5C5A63;
+      --line: rgba(233, 228, 216, .18);
+      --line-dark: rgba(23, 23, 26, .16);
+      --ease: cubic-bezier(.16, 1, .3, 1);
+    }
+    * { box-sizing: border-box; }
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      background: var(--carbon);
+      color: var(--bone);
+      font-family: Archivo, Arial, Helvetica, sans-serif;
+    }
+    body { margin: 0; overflow-x: hidden; background: var(--carbon); }
+    a { color: inherit; }
+    button { font: inherit; }
+    .scene {
+      min-height: 100svh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      position: relative;
+      display: grid;
+      align-items: center;
+      padding: clamp(88px, 11vh, 130px) clamp(22px, 6vw, 96px) clamp(56px, 8vh, 90px);
+      overflow: hidden;
+    }
+    .scene.light { background: var(--paper); color: var(--carbon); }
+    .scene.carbon { background: var(--carbon); color: var(--bone); }
+    .scene.ink { background: var(--ink); color: var(--bone); }
+    .inner { width: min(1180px, 100%); margin: 0 auto; }
+    .kicker {
+      margin: 0 0 18px;
+      font-size: .7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .light .kicker { color: var(--muted-dark); }
+    h1, h2, h3, p { margin: 0; }
+    .display {
+      font-family: "Archivo Narrow", "Arial Narrow", sans-serif;
+      font-weight: 600;
+      max-width: 13ch;
+      font-size: clamp(3rem, 8.5vw, 7.2rem);
+      line-height: .92;
+      letter-spacing: -.02em;
+    }
+    .statement {
+      font-family: "Archivo Narrow", "Arial Narrow", sans-serif;
+      font-weight: 600;
+      max-width: 16ch;
+      font-size: clamp(2.1rem, 5.8vw, 5.1rem);
+      line-height: .96;
+      letter-spacing: -.02em;
+    }
+    .body {
+      max-width: 46ch;
+      margin-top: 24px;
+      font-size: clamp(1rem, 1.45vw, 1.25rem);
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .light .body { color: var(--ink); }
+    .meter {
+      position: fixed; z-index: 40; left: 0; right: 0; top: 0; height: 2px;
+      background: rgba(233, 228, 216, .1);
+    }
+    .meter span {
+      display: block; width: 0; height: 100%; background: var(--seam);
+      transition: width 420ms var(--ease);
+    }
+    .cross-nav {
+      position: fixed; z-index: 45;
+      right: clamp(12px, 2vw, 24px);
+      top: max(12px, env(safe-area-inset-top));
+      display: flex; gap: 4px; padding: 5px;
+      border: 1px solid rgba(233,228,216,.2);
+      background: rgba(23,23,26,.82);
+      backdrop-filter: blur(10px);
+      font-size: .64rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600;
+    }
+    .cross-nav a { text-decoration: none; padding: 10px 12px; color: var(--muted); }
+    .cross-nav a.is-here { background: var(--bone); color: var(--carbon); }
+    .chapter-toggle {
+      position: fixed; z-index: 46;
+      left: clamp(12px, 2vw, 24px);
+      top: max(12px, env(safe-area-inset-top));
+      width: 42px; height: 42px;
+      display: grid; place-items: center;
+      border: 1px solid rgba(233,228,216,.2);
+      background: rgba(23,23,26,.82);
+      color: var(--bone); cursor: pointer;
+    }
+    .chapter-toggle span,
+    .chapter-toggle span::before,
+    .chapter-toggle span::after {
+      display: block; width: 15px; height: 1px; background: currentColor; position: relative;
+    }
+    .chapter-toggle span::before,
+    .chapter-toggle span::after { content: ""; position: absolute; left: 0; }
+    .chapter-toggle span::before { top: -5px; }
+    .chapter-toggle span::after { top: 5px; }
+    .chapters {
+      position: fixed; z-index: 44;
+      left: clamp(12px, 2vw, 24px);
+      top: calc(max(12px, env(safe-area-inset-top)) + 50px);
+      width: min(220px, calc(100vw - 24px));
+      padding: 12px; border: 1px solid rgba(233,228,216,.16);
+      background: rgba(23,23,26,.94); display: none;
+    }
+    .chapters.is-open { display: grid; gap: 2px; }
+    .chapters button {
+      appearance: none; border: 0; background: transparent; color: var(--muted);
+      text-align: left; padding: 9px 8px; cursor: pointer;
+      letter-spacing: .1em; text-transform: uppercase; font-size: .64rem; font-weight: 600;
+    }
+    .chapters button.is-active, .chapters button:hover { color: var(--bone); }
+
+    .facts { margin-top: 32px; max-width: 820px; }
+    .fact {
+      padding: 16px 0; border-top: 1px solid var(--line);
+      display: grid; grid-template-columns: minmax(110px, 160px) minmax(0, 1fr);
+      gap: 18px; align-items: baseline;
+    }
+    .light .fact { border-top-color: var(--line-dark); }
+    .fact b {
+      font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600;
+    }
+    .light .fact b { color: var(--muted-dark); }
+    .fact span { font-size: clamp(.95rem, 1.3vw, 1.15rem); line-height: 1.4; }
+
+    .swatches {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px; margin-top: 32px; max-width: 720px;
+    }
+    .swatch {
+      min-height: 104px; padding: 14px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      border: 1px solid rgba(23,23,26,.1);
+    }
+    .swatch strong { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; }
+    .swatch span { margin-top: 4px; font-size: .7rem; opacity: .75; }
+
+    .board-scene { padding: 0; align-items: stretch; }
+    .board-scene img { width: 100%; height: 100svh; object-fit: cover; display: block; }
+    .board-caption {
+      position: absolute; left: clamp(22px, 5vw, 64px); bottom: clamp(24px, 5vh, 52px);
+      z-index: 2; max-width: 28ch; color: var(--bone);
+      text-shadow: 0 1px 18px rgba(0,0,0,.4);
+    }
+
+    .proof-stage { align-items: start; padding-top: clamp(92px, 10vh, 120px); }
+    .proof-frame {
+      margin-top: 28px; width: min(920px, 100%);
+      border: 1px solid var(--line-dark);
+      background: #fff;
+      box-shadow: 0 24px 60px rgba(23,23,26,.12);
+    }
+    .proof-frame img { width: 100%; display: block; }
+    .proof-frame.tall { width: min(680px, 100%); }
+    .proof-frame.wide { width: min(1100px, 100%); }
+    .proof-note {
+      margin-top: 14px; font-size: .78rem; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--muted-dark);
+    }
+    .grid-5 {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .grid-5 img, .grid-3 img {
+      width: 100%; aspect-ratio: 1; object-fit: cover; display: block;
+      border: 1px solid var(--line-dark);
+    }
+    .grid-6 {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .grid-6 img {
+      width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block;
+      border: 1px solid var(--line-dark);
+    }
+    .carbon .grid-6 img { border-color: var(--line); }
+    .grid-6 img.wide { aspect-ratio: 16/10; }
+    .img-caption {
+      margin-top: 8px;
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .light .img-caption { color: var(--muted-dark); }
+    .rule-chip {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      font-size: .85rem;
+      line-height: 1.4;
+      max-width: 52ch;
+      color: var(--muted);
+    }
+    .light .rule-chip { border-color: var(--line-dark); color: var(--ink); }
+    .grid-3 {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .grid-3.portrait img { aspect-ratio: 4/5; }
+    .grid-2 {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .grid-2.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 img {
+      width: 100%; display: block;
+      border: 1px solid var(--line-dark);
+      background: #fff;
+    }
+
+    .do-dont {
+      margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr;
+      gap: 14px; max-width: 900px;
+    }
+    .do-dont div { padding: 18px 20px; border: 1px solid var(--line); }
+    .light .do-dont div { border-color: var(--line-dark); }
+    .do-dont b {
+      display: block; font-size: .66rem; letter-spacing: .14em; text-transform: uppercase;
+      margin-bottom: 12px; color: var(--muted); font-weight: 600;
+    }
+    .light .do-dont b { color: var(--muted-dark); }
+    .do-dont ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .do-dont li { font-size: clamp(.9rem, 1.2vw, 1.05rem); line-height: 1.4; }
+
+    .doors { display: grid; gap: 12px; margin-top: 32px; max-width: 720px; }
+    .door {
+      display: grid; gap: 8px; padding: 22px 24px;
+      border: 1px solid var(--line); text-decoration: none;
+      transition: background 240ms var(--ease), color 240ms var(--ease);
+    }
+    .door:hover { background: var(--bone); color: var(--carbon); }
+    .door small {
+      font-size: .64rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600;
+    }
+    .door:hover small { color: var(--muted-dark); }
+    .door strong {
+      font-family: "Archivo Narrow", sans-serif; font-weight: 600;
+      font-size: clamp(1.3rem, 2.2vw, 1.8rem); letter-spacing: -.02em;
+    }
+    .door p { color: var(--muted); font-size: .95rem; line-height: 1.45; max-width: 48ch; }
+    .door:hover p { color: var(--ink); }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+      gap: clamp(24px, 4vw, 48px);
+      align-items: center;
+    }
+    .split img {
+      width: 100%; display: block;
+      border: 1px solid rgba(233,228,216,.14);
+    }
+    .light .split img { border-color: var(--line-dark); }
+
+    @media (max-width: 900px) {
+      .swatches, .do-dont, .grid-2, .split, .grid-6 { grid-template-columns: 1fr; }
+      .grid-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-3 { grid-template-columns: 1fr; }
+      .fact { grid-template-columns: 1fr; gap: 6px; }
+      .cross-nav { max-width: calc(100vw - 70px); overflow-x: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .meter span { transition: none; }
+    }
+
+    .os-pointer {
+      margin-top: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--bone);
+      border-bottom: 1px solid transparent;
+      transition: border-color 240ms var(--ease), transform 240ms var(--ease);
+    }
+    .os-pointer:hover { border-color: var(--seam); transform: translateX(2px); }
+    .os-pointer strong {
+      font-family: "Archivo Narrow", sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+      letter-spacing: -.02em;
+    }
+    .os-pointer span { color: var(--muted); font-size: .95rem; max-width: 28ch; line-height: 1.4; }
+    .os-arrow {
+      width: 42px; height: 42px; border-radius: 50%;
+      border: 1px solid rgba(233,228,216,.28);
+      display: grid; place-items: center;
+      color: var(--seam);
+      animation: osPulse 2.4s var(--ease) infinite;
+    }
+    .os-arrow svg { width: 18px; height: 18px; }
+    @keyframes osPulse {
+      0%, 100% { transform: translateY(0); border-color: rgba(233,228,216,.28); }
+      50% { transform: translateY(-3px); border-color: rgba(110,76,255,.7); }
+    }
+    .nav-hint {
+      position: fixed; z-index: 50;
+      right: clamp(18px, 3vw, 36px);
+      top: calc(max(12px, env(safe-area-inset-top)) + 52px);
+      display: flex; align-items: center; gap: 8px;
+      color: var(--muted); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+      pointer-events: none; opacity: 0;
+      animation: hintIn 700ms 600ms var(--ease) forwards;
+    }
+    .nav-hint svg { width: 28px; height: 18px; color: var(--seam); }
+    @keyframes hintIn { to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .os-arrow, .nav-hint { animation: none; opacity: 1; }
+    }
+    .persona-card {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 22px;
+      padding: 22px;
+      border: 1px solid var(--line-dark);
+      background: #fff;
+      max-width: 620px;
+    }
+    .persona-card img {
+      width: 160px; height: 200px; object-fit: cover; display: block;
+      border: 0 !important;
+    }
+    .persona-card .meta { display: grid; gap: 10px; align-content: start; }
+    .persona-card h3 {
+      font-family: "Archivo Narrow", sans-serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+      font-weight: 600; letter-spacing: -.02em; line-height: 1;
+    }
+    .persona-card .role { color: var(--muted-dark); font-size: .95rem; }
+    .persona-stats {
+      display: grid; grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 10px; margin-top: 4px;
+    }
+    .persona-stats div {
+      padding-top: 8px; border-top: 1px solid var(--line-dark);
+    }
+    .persona-stats b {
+      display: block; font-size: .62rem; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--muted-dark); margin-bottom: 4px;
+    }
+    .persona-stats span { font-size: .92rem; font-weight: 600; }
+    .persona-need { font-size: .95rem; line-height: 1.45; color: var(--ink); max-width: 36ch; }
+    .cal-shell {
+      display: grid;
+      grid-template-columns: minmax(0,1.35fr) minmax(240px,.7fr);
+      gap: clamp(24px, 4vw, 48px);
+      margin-top: 28px;
+      align-items: start;
+    }
+    .cal-picks { display: flex; flex-wrap: wrap; gap: 10px; }
+    .cal-pick {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      font-family: "Archivo Narrow", sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: -.01em;
+    }
+    .cal-pick.is-away {
+      color: var(--muted);
+      border-color: rgba(233,228,216,.12);
+      font-weight: 500;
+    }
+    .cal-side b {
+      display: block; font-size: .66rem; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 12px;
+    }
+    .cal-side p {
+      font-size: clamp(1.2rem, 2vw, 1.7rem);
+      line-height: 1.25;
+      letter-spacing: -.02em;
+      font-family: "Archivo Narrow", sans-serif;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+    .cal-side .away { color: var(--muted); font-weight: 500; }
+    .disclaimer {
+      margin-top: 22px; padding: 18px 20px;
+      border: 1px solid var(--line-dark);
+      background: #fff;
+      max-width: 640px;
+    }
+    .disclaimer .row {
+      display: grid; grid-template-columns: 110px 1fr;
+      gap: 14px; padding: 10px 0; border-top: 1px solid var(--line-dark);
+      font-size: .95rem; line-height: 1.4;
+    }
+    .disclaimer .row:first-of-type { border-top: 0; padding-top: 0; }
+    .disclaimer .row b {
+      font-size: .62rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--muted-dark); padding-top: 3px;
+    }
+    .type-stage {
+      display: grid; gap: 28px; margin-top: 8px;
+    }
+    .type-stage .specimen-display {
+      font-family: "Archivo Narrow", sans-serif;
+      font-weight: 600;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: .92;
+      letter-spacing: -.03em;
+      max-width: 12ch;
+    }
+    .type-stage .specimen-body {
+      font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+      line-height: 1.55;
+      max-width: 38ch;
+      color: var(--muted);
+    }
+    .type-meta {
+      display: grid; grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px; max-width: 720px; margin-top: 8px;
+    }
+    .type-meta div { padding-top: 12px; border-top: 1px solid var(--line); }
+    .type-meta b {
+      display: block; font-size: .66rem; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+    }
+    .social-triptych {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      align-items: start;
+    }
+    .social-triptych figure { margin: 0; }
+    .social-triptych img {
+      width: 100%; display: block;
+      border: 1px solid var(--line-dark);
+      background: #fff;
+      max-height: 58svh;
+      object-fit: contain;
+      object-position: top center;
+    }
+    .social-triptych figcaption {
+      margin-top: 10px;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted-dark);
+      font-weight: 600;
+    }
+    .archetype-embed {
+      margin-top: 8px;
+      min-height: 420px;
+    }
+    bt-archetype-chart { display: block; width: 100%; }
+    @media (max-width: 900px) {
+      .persona-card, .cal-shell, .social-triptych, .type-meta { grid-template-columns: 1fr; }
+      .persona-card img { width: 100%; height: auto; aspect-ratio: 4/5; }
+      .nav-hint { display: none; }
+    }
+    .photo-note {
+      position: fixed;
+      z-index: 70;
+      right: max(14px, env(safe-area-inset-right));
+      bottom: max(14px, env(safe-area-inset-bottom));
+      transform: translateY(18px);
+      width: min(320px, calc(100vw - 28px));
+      padding: 14px 14px 12px;
+      display: grid;
+      gap: 12px;
+      border: 1px solid rgba(233, 228, 216, .22);
+      background: rgba(23, 23, 26, .92);
+      color: var(--bone);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, .28);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 280ms var(--ease), opacity 280ms var(--ease);
+    }
+    .photo-note.is-visible {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .photo-note[hidden] { display: none; }
+    .photo-note-kicker {
+      margin: 0 0 6px;
+      font-size: .62rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: rgba(233, 228, 216, .72);
+    }
+    .photo-note strong {
+      display: block;
+      margin: 0 0 6px;
+      font-family: "Archivo Narrow", "Arial Narrow", sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.15;
+      font-weight: 600;
+    }
+    .photo-note p {
+      margin: 0;
+      font-size: .82rem;
+      line-height: 1.4;
+      color: rgba(233, 228, 216, .78);
+      max-width: 34ch;
+    }
+    .photo-note button {
+      justify-self: start;
+      border: 1px solid rgba(233, 228, 216, .34);
+      background: transparent;
+      color: inherit;
+      padding: 8px 12px;
+      cursor: pointer;
+      white-space: nowrap;
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .photo-note button:hover { border-color: rgba(233, 228, 216, .7); }
+    .photo-note button:focus-visible {
+      outline: 2px solid var(--seam);
+      outline-offset: 2px;
+    }
+    @media (max-width: 560px) {
+      .photo-note {
+        left: max(12px, env(safe-area-inset-left));
+        right: max(12px, env(safe-area-inset-right));
+        width: auto;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .photo-note { transition: none; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="meter" aria-hidden="true"><span id="meter"></span></div>
+
+  <nav class="cross-nav" aria-label="Brand Therapy surfaces">
+    <a class="is-here" href="#start">Guidelines</a>
+    <a href="https://brandtherapy.florianp.com/michael-couper/os/" target="_blank" rel="noopener">Brand Therapy OS</a>
+  </nav>
+
+  <button class="chapter-toggle" id="chapterToggle" type="button" aria-expanded="false" aria-controls="chapters" aria-label="Open chapters">
+    <span></span>
+  </button>
+  <nav class="chapters" id="chapters" aria-label="Chapters">
+    <button type="button" data-target="start">Start</button>
+    <button type="button" data-target="strategy">Strategy</button>
+    <button type="button" data-target="look">Look</button>
+    <button type="button" data-target="alive">In the world</button>
+    <button type="button" data-target="voice">Voice</button>
+    <button type="button" data-target="deeper">Go deeper</button>
+  </nav>
+
+  <!-- START -->
+  <section class="scene carbon" id="start" data-chapter="start">
+    <div class="inner split">
+      <div>
+        <p class="kicker">Michael Couper</p>
+        <h1 class="display">Follow the question.</h1>
+        <p class="body">The brand in one pass: who Michael is, how he looks, and how to speak for him.</p>
+        <a class="os-pointer" href="https://brandtherapy.florianp.com/michael-couper/os/" target="_blank" rel="noopener">
+          <span class="os-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h12"/><path d="M12 5l7 7-7 7"/></svg>
+          </span>
+          <span>
+            <strong>Brand Therapy OS</strong><br>
+            Full rules, assets, and AI context.
+          </span>
+        </a>
+      </div>
+      <img src="assets/imagery/desk-hero.jpg" alt="Michael Couper at the inquiry desk">
+    </div>
+  </section>
+
+  <!-- STRATEGY -->
+  <section class="scene carbon" id="strategy" data-chapter="strategy">
+    <div class="inner split">
+      <div>
+        <p class="kicker">Focus Star</p>
+        <h2 class="statement">The whole differentiation map.</h2>
+        <p class="body">Five lines. Product, People, Purpose, Promise, Personality. Every brand distinction fits in one of them. There is no sixth category. This is the complete map, not a shortlist.</p>
+      </div>
+      <img src="assets/imagery/focus-star-inquiry.jpg" alt="Faceless inquiry still life for the Focus Star">
+    </div>
+  </section>
+
+  <section class="scene light" data-chapter="strategy">
+    <div class="inner">
+      <p class="kicker">Product</p>
+      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What Michael uniquely offers.</p>
+      <h2 class="statement">The context and tools to see the whole picture.</h2>
+      <p class="body">Not one profession, company, or opinion. Michael connects evidence, systems, art, business, technology, and civic reality so a difficult choice can be understood in full.</p>
+    </div>
+  </section>
+
+  <section class="scene carbon" data-chapter="strategy">
+    <div class="inner">
+      <p class="kicker">People</p>
+      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">Who he is here to serve.</p>
+      <h2 class="statement">Independent thinkers.</h2>
+      <p class="body">People who want to form their own judgment, can change their minds when the evidence changes, and know consequential choices rarely fit inside one discipline or ideology.</p>
+      <div class="persona-card" style="margin-top:28px;background:rgba(233,228,216,.04);border-color:var(--line);">
+        <img src="assets/imagery/persona-independent-decision-maker.jpg" alt="Persona portrait for the Independent Decision-Maker">
+        <div class="meta">
+          <h3 style="color:var(--bone)">Alex Rivera</h3>
+          <p class="role" style="color:var(--muted)">The Independent Decision-Maker</p>
+          <div class="persona-stats">
+            <div><b style="color:var(--muted)">Age</b><span style="color:var(--bone)">42</span></div>
+            <div><b style="color:var(--muted)">Income</b><span style="color:var(--bone)">$210k</span></div>
+            <div><b style="color:var(--muted)">Role</b><span style="color:var(--bone)">Founder / builder</span></div>
+          </div>
+          <p class="persona-need" style="color:var(--muted)">Facing a consequential choice with incomplete or oversimplified information. Needs enough context and competing perspective to see the whole picture before choosing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="scene light" data-chapter="strategy">
+    <div class="inner">
+      <p class="kicker">Purpose</p>
+      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">Why the work needs to exist.</p>
+      <h2 class="statement">To move society forward through better-informed human choices.</h2>
+      <p class="body">Not truth as a trophy. Fuller understanding that improves what people build, protect, and pass forward when misinformation, tribal certainty, or automated conclusions try to remove judgment.</p>
+    </div>
+  </section>
+
+  <section class="scene carbon" data-chapter="strategy">
+    <div class="inner split">
+      <div>
+        <p class="kicker">Promise</p>
+        <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">What people can consistently expect.</p>
+        <h2 class="statement">Follow the question.</h2>
+        <p class="body">Question first. Gather the fuller picture. Let evidence and human judgment close the inquiry into a choice. Brand DNA: Question First. Never reduce this to endless curiosity or a question-mark slogan.</p>
+      </div>
+      <img src="assets/imagery/media-studio-empty.jpg" alt="Quiet empty media studio brand world">
+    </div>
+  </section>
+
+    <section class="scene light" data-chapter="strategy">
+    <div class="inner">
+      <p class="kicker">Personality</p>
+      <p class="body" style="margin-top:0;margin-bottom:18px;max-width:42ch">How the brand should feel and behave.</p>
+      <h2 class="statement">A serious, playful polymath: rational, artistic, independent, with a mystical edge.</h2>
+      <p class="body">Erudite but unpretentious. Serious about ideas without being solemn. Dry humor, quiet confidence, and restrained mystery when a question cannot be flattened.</p>
+    </div>
+  </section>
+
+  <section class="scene carbon archetype-scene" data-chapter="strategy">
+    <div class="inner">
+      <p class="kicker">Brand Personality Archetype</p>
+      <h2 class="statement" style="max-width:18ch">Sage + Creator + Innocent.</h2>
+      <p class="body">The timeless roles the brand naturally embodies. Primary Sage. Creator and Innocent complete the lead read.</p>
+      <div class="archetype-embed">
+        <bt-archetype-chart id="archetype-chart" theme="reveal" presentation="compact" animate></bt-archetype-chart>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene ink" data-chapter="strategy">
+    <div class="inner">
+      <p class="kicker">Creative Calibration</p>
+      <h2 class="statement" style="max-width:18ch">Modern and inventive, with quiet structure doing the heavy lifting.</h2>
+      <p class="body">Defining poles only. The full fourteen axes live in Brand Therapy OS.</p>
+      <div class="cal-shell">
+        <div>
+          <b class="kicker" style="display:block;margin-bottom:14px">Lean into</b>
+          <div class="cal-picks">
+            <span class="cal-pick">Modern</span>
+            <span class="cal-pick">Inventive</span>
+            <span class="cal-pick">Geometric</span>
+            <span class="cal-pick">Rational</span>
+            <span class="cal-pick">Urban</span>
+            <span class="cal-pick">Quiet</span>
+            <span class="cal-pick">Masculine</span>
+            <span class="cal-pick">Literal</span>
+          </div>
+        </div>
+        <div class="cal-side">
+          <b>Move away from</b>
+          <p class="away">Traditional, Ornamental, Emotional noise, Earthy softness, Talkative performance.</p>
+          <b>Defining keywords</b>
+          <p>Analytical. Artistic. Calm. Curious. Honest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="scene ink" data-chapter="strategy">
+    <div class="inner">
+      <p class="kicker">Through-line</p>
+      <h2 class="statement">Inquiry that lands in a usable judgment.</h2>
+      <p class="body">Every story, image, and partnership should open the premise, hold competing perspectives, and close into a clearer choice. If only curiosity shows up, or only a canned answer shows up, the brand is incomplete.</p>
+    </div>
+  </section>
+
+  <!-- LOOK -->
+  <section class="scene board-scene carbon" id="look" data-chapter="look">
+    <img src="assets/stylescape.png" alt="Counterpoint stylescape for Michael Couper">
+    <div class="board-caption">
+      <p class="kicker">Creative direction · Counterpoint</p>
+    </div>
+  </section>
+
+  <section class="scene light" data-chapter="look">
+    <div class="inner">
+      <p class="kicker">Color</p>
+      <h2 class="statement">Carbon, Ink Violet, Bone, Seam Violet, Oxidized Silver.</h2>
+      <p class="body">Seam Violet leads as translucent purple glass. Carbon and Bone hold contrast. Oxidized Silver structures evidence. Cobalt and Civic Red stay retired from the active palette.</p>
+      <div class="swatches" aria-label="Palette">
+        <div class="swatch" style="background:#17171A;color:#E9E4D8"><strong>Carbon</strong><span>#17171A</span></div>
+        <div class="swatch" style="background:#1E1D2B;color:#E9E4D8"><strong>Ink Violet</strong><span>#1E1D2B</span></div>
+        <div class="swatch" style="background:#E9E4D8;color:#17171A"><strong>Bone</strong><span>#E9E4D8</span></div>
+        <div class="swatch" style="background:#6E4CFF;color:#E9E4D8"><strong>Seam Violet</strong><span>#6E4CFF</span></div>
+        <div class="swatch" style="background:#B8BCC6;color:#17171A"><strong>Oxidized Silver</strong><span>#B8BCC6</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene carbon" data-chapter="look">
+    <div class="inner">
+      <p class="kicker">Type</p>
+      <div class="type-stage">
+        <p class="specimen-display">Follow the question</p>
+        <p class="specimen-body">Archivo Narrow for short exact statements. Archivo for calm readable reasoning. Two families only.</p>
+        <div class="type-meta">
+          <div>
+            <b>Display</b>
+            <span style="font-family:'Archivo Narrow',sans-serif;font-weight:600;font-size:1.6rem;letter-spacing:-.02em;">Archivo Narrow</span>
+          </div>
+          <div>
+            <b>Body</b>
+            <span style="font-family:Archivo,sans-serif;font-size:1.15rem;">Archivo · Question First</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene light" data-chapter="look">
+    <div class="inner split">
+      <div>
+        <p class="kicker">Signature</p>
+        <h2 class="statement">The Seam.</h2>
+        <p class="body">Translucent purple glass that adapts to a host line: a jacket seam, a UI edge, a frame rule. Small. Subtle. Never a logo, ring, disc, or Venn.</p>
+      </div>
+      <img src="assets/signature-board.png" alt="The Seam signature construction board">
+    </div>
+  </section>
+
+  <!-- IMAGERY -->
+  <section class="scene light" id="imagery" data-chapter="look">
+    <div class="inner">
+      <p class="kicker">Imagery</p>
+      <h2 class="statement">Inquiry desk. Glass teaching. Quiet media. Dusk. Bone evidence.</h2>
+      <p class="body">Grade: cool Ink Violet depth, Bone highlights, Seam Violet only as a tiny glass edge. Camera: editorial 50–85mm, soft evening light. Never reuse one photograph as both banner and avatar.</p>
+      <div class="grid-6">
+        <img class="wide" src="assets/imagery/banner-desk-evidence.jpg" alt="Inquiry desk evidence world">
+        <img class="wide" src="assets/imagery/banner-city-glass.jpg" alt="Glass atrium world">
+        <img class="wide" src="assets/imagery/countryside-thinking.jpg" alt="Dusk thinking landscape">
+        <img class="wide" src="assets/imagery/media-studio-empty.jpg" alt="Empty quiet media studio">
+        <img class="wide" src="assets/imagery/desk-hero.jpg" alt="Inquiry at the desk">
+        <img class="wide" src="assets/imagery/studio-polo.jpg" alt="Quiet media face context">
+      </div>
+      <div class="disclaimer" style="margin-top:28px">
+        <p class="kicker" style="color:var(--muted-dark);margin-bottom:8px">Likeness</p>
+        <h3 style="font-family:'Archivo Narrow',sans-serif;font-size:1.5rem;margin-bottom:12px;letter-spacing:-.02em;">Direction first. Exact face later.</h3>
+        <p class="body" style="margin-top:0;margin-bottom:14px;max-width:46ch;color:var(--muted-dark)">AI-generated faces and images show what the brand can look and feel like. They get as close as current tools allow, and the tools keep improving. Exact facial reproduction is not the product. A real photo shoot can be a strong next step when you want that level of fidelity.</p>
+        <div class="row"><b>Review now</b><span>The visual world, styling, color, presence, and feeling</span></div>
+        <div class="row"><b>Refine later</b><span>Exact facial likeness in production. A real photo shoot can help when you want that fidelity</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IN THE WORLD -->
+  <section class="scene carbon proof-stage" id="alive" data-chapter="alive">
+    <div class="inner">
+      <p class="kicker">In the world</p>
+      <h2 class="statement">How Michael shows up across channels.</h2>
+      <p class="body">Editorial concept, media kit, LinkedIn, Instagram, YouTube, social posts, and video covers. One Counterpoint world on every surface. Banner worlds stay faceless; avatars stay distinct.</p>
+    </div>
+  </section>
+
+  <section class="scene ink" data-chapter="alive">
+    <div class="inner split">
+      <div>
+        <p class="kicker">Magazine</p>
+        <h2 class="statement">Counterpoint cover concept.</h2>
+        <p class="body">A fictional editorial concept owned by Michael. Never imply a real publication commissioned it.</p>
+        <p class="proof-note" style="color:var(--muted);margin-top:18px">Editorial concept · not real press coverage</p>
+      </div>
+      <img src="assets/magazine-cover.png" alt="Fictional Counterpoint magazine cover featuring Michael Couper" style="max-height:78svh;width:auto;max-width:100%;justify-self:end;border:1px solid rgba(233,228,216,.16)">
+    </div>
+  </section>
+
+  <section class="scene light" data-chapter="alive">
+    <div class="inner split">
+      <div>
+        <p class="kicker">Press</p>
+        <h2 class="statement">Media kit.</h2>
+        <p class="body">Three distinct frames up front: face in context, faceless inquiry world, quiet media. Partners get the story without a single recycled portrait.</p>
+      </div>
+      <img src="assets/press-release.png" alt="Michael Couper press brief concept" style="max-height:78svh;width:auto;max-width:100%;justify-self:end;border:1px solid rgba(23,23,26,.14);background:#fff">
+    </div>
+  </section>
+
+  <section class="scene light proof-stage" data-chapter="alive">
+    <div class="inner">
+      <p class="kicker">Profiles</p>
+      <h2 class="statement">LinkedIn. Instagram. YouTube.</h2>
+      <p class="body">Banner worlds stay faceless. Avatars stay distinct. One Counterpoint system across shells.</p>
+      <div class="social-triptych">
+        <figure>
+          <img src="assets/linkedin-profile.png" alt="LinkedIn profile mock">
+          <figcaption>LinkedIn</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/instagram-profile.png" alt="Instagram profile mock">
+          <figcaption>Instagram</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/youtube-channel.png" alt="YouTube channel mock">
+          <figcaption>YouTube</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene ink" data-chapter="alive">
+    <div class="inner">
+      <p class="kicker">Social posts</p>
+      <h2 class="statement">LinkedIn and Instagram post system.</h2>
+      <p class="body">Five templates for both channels: Finding, Handoff, Operator Note, Evidence / Assumption, and Article Cover. Rotate them. Keep Follow the question visible without repeating it in every caption.</p>
+      <div class="grid-5">
+        <img src="assets/li-finding.png" alt="LinkedIn Finding post">
+        <img src="assets/li-handoff.png" alt="LinkedIn Handoff post">
+        <img src="assets/li-operator-note.png" alt="LinkedIn Operator Note post">
+        <img src="assets/li-evidence.png" alt="LinkedIn Evidence Assumption post">
+        <img src="assets/li-article-cover.png" alt="LinkedIn Article Cover">
+      </div>
+      <div class="grid-3 portrait" style="margin-top:18px">
+        <img src="assets/ig-finding.png" alt="Instagram Finding post">
+        <img src="assets/ig-handoff.png" alt="Instagram Handoff post">
+        <img src="assets/ig-operator-note.png" alt="Instagram Operator Note post">
+      </div>
+    </div>
+  </section>
+
+  <section class="scene light" data-chapter="alive">
+    <div class="inner">
+      <p class="kicker">Video covers</p>
+      <h2 class="statement">Cover frames for video.</h2>
+      <p class="body">Face-led, concept-led, and text-led covers in the Counterpoint world. Face-led covers stay on approved portraits only.</p>
+      <div class="grid-2 three">
+        <img src="assets/video-face.png" alt="Face-led video cover">
+        <img src="assets/video-concept.png" alt="Concept-led video cover">
+        <img src="assets/video-text.png" alt="Text-led video cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICE -->
+  <section class="scene carbon" id="voice" data-chapter="voice">
+    <div class="inner">
+      <p class="kicker">Voice</p>
+      <h2 class="statement">How Michael should sound.</h2>
+      <div class="facts">
+        <div class="fact"><b>Sound like</b><span>Exact, curious, calm. Question first, then a grounded judgment.</span></div>
+        <div class="fact"><b>Lead with</b><span>The incomplete picture or hidden assumption. Then what becomes clearer.</span></div>
+        <div class="fact"><b>Never</b><span>Certainty theater, guru framing, salesy founder performance, or endless curiosity with no landing.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene light" data-chapter="voice">
+    <div class="inner">
+      <p class="kicker">For PR and press</p>
+      <h2 class="statement">How to communicate Michael.</h2>
+      <div class="do-dont">
+        <div>
+          <b>Do</b>
+          <ul>
+            <li>Composer-engineer helping independent thinkers see the whole picture before consequential choices</li>
+            <li>Serious, playful polymath: rational, artistic, independent, restrained mystical edge</li>
+            <li>Ventures as proof platforms under Michael, not competing master brands</li>
+            <li>Separate evidence, inference, intuition, and opinion when the distinction matters</li>
+          </ul>
+        </div>
+        <div>
+          <b>Don't</b>
+          <ul>
+            <li>Guru energy, certainty theater, or "thought leadership" without a usable judgment</li>
+            <li>Professor cosplay, music-only reduction, or marketer / founder performance</li>
+            <li>Question-mark symbolism, purple mysticism wash, or The Seam treated as a logo</li>
+            <li>Invented credentials, clients, outcomes, or automated answers sold as judgment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSE -->
+  <section class="scene carbon" id="deeper" data-chapter="deeper">
+    <div class="inner">
+      <p class="kicker">Next</p>
+      <h2 class="statement">Share these pages. Build in Brand Therapy OS.</h2>
+      <p class="body">Give this to anyone who needs to speak for Michael. Open Brand Therapy OS when you need the full rules, templates, or AI context.</p>
+      <div class="doors">
+        <a class="door" href="https://brandtherapy.florianp.com/michael-couper/os/" target="_blank" rel="noopener">
+          <small>Full system</small>
+          <strong>Open Brand Therapy OS</strong>
+          <p>Strategy pages, identity, applications, and the AI context file.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <aside class="photo-note" id="photoNote" hidden data-notice-version="3" role="status" aria-live="polite" aria-labelledby="photo-note-title">
+    <div>
+      <p class="photo-note-kicker">About these portraits</p>
+      <strong id="photo-note-title">Direction first. Exact face later.</strong>
+      <p>AI-generated faces and images show what the brand can look and feel like. They get as close as current tools allow, and the tools keep improving. Exact facial reproduction is not the product. A real photo shoot can be a strong next step when you want that level of fidelity.</p>
+    </div>
+    <button type="button" id="photoNoteDismiss">Got it</button>
+  </aside>
+
+  <script>
+    (function () {
+      const scenes = Array.from(document.querySelectorAll(".scene"));
+      const meter = document.getElementById("meter");
+      const toggle = document.getElementById("chapterToggle");
+      const chapters = document.getElementById("chapters");
+      const chapterButtons = Array.from(chapters.querySelectorAll("button"));
+      const photoNote = document.getElementById("photoNote");
+      const photoNoteDismiss = document.getElementById("photoNoteDismiss");
+      const noticeVersion = (photoNote && photoNote.dataset.noticeVersion) || "1";
+      const noticeKey = "brand-therapy-guidelines:michael-couper:photo-note:" + noticeVersion;
+
+      function readDismissed() {
+        try { return sessionStorage.getItem(noticeKey) === "1"; }
+        catch (_) { return false; }
+      }
+
+      function writeDismissed() {
+        try { sessionStorage.setItem(noticeKey, "1"); }
+        catch (_) {}
+      }
+
+      function showPhotoNote() {
+        if (!photoNote || readDismissed() || photoNote.classList.contains("is-visible")) return;
+        photoNote.hidden = false;
+        requestAnimationFrame(function () { photoNote.classList.add("is-visible"); });
+      }
+
+      function hidePhotoNote() {
+        if (!photoNote) return;
+        writeDismissed();
+        photoNote.classList.remove("is-visible");
+        window.setTimeout(function () { photoNote.hidden = true; }, 280);
+      }
+
+      function setMeter() {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = max > 0 ? window.scrollY / max : 0;
+        meter.style.width = (progress * 100).toFixed(2) + "%";
+      }
+
+      function setActiveChapter() {
+        let active = "start";
+        for (const scene of scenes) {
+          const rect = scene.getBoundingClientRect();
+          if (rect.top <= window.innerHeight * 0.45) {
+            active = scene.dataset.chapter || active;
+          }
+        }
+        chapterButtons.forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.target === active);
+        });
+      }
+
+      toggle.addEventListener("click", () => {
+        const open = !chapters.classList.contains("is-open");
+        chapters.classList.toggle("is-open", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+
+      chapterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const target = document.getElementById(button.dataset.target);
+          if (target) target.scrollIntoView({ behavior: "smooth" });
+          chapters.classList.remove("is-open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      if (photoNoteDismiss) photoNoteDismiss.addEventListener("click", hidePhotoNote);
+
+      window.addEventListener("scroll", () => {
+        setMeter();
+        setActiveChapter();
+      }, { passive: true });
+
+      setMeter();
+      setActiveChapter();
+      showPhotoNote();
+    })();
+  </script>
+
+  <script src="assets/archetype-chart/archetype-chart.js"></script>
+  <script>
+    (function () {
+      const chart = document.querySelector("#archetype-chart");
+      if (!chart) return;
+      const weights = {
+        sage: 42, creator: 18, innocent: 8, explorer: 6, friend: 5,
+        hero: 5, ruler: 5, outlaw: 4, magician: 4, caregiver: 3,
+        lover: 0, jester: 0
+      };
+      const meta = {
+        outlaw: ["Liberation and risk", "Challenges conventions and gives people permission to break from what holds them back."],
+        magician: ["Charisma and inspiration", "Transforms what feels impossible and helps people see a new possibility."],
+        hero: ["Courage and strength", "Proves progress through courage, mastery, and determined action."],
+        lover: ["Passion and intimacy", "Builds desire and connection through intimacy, beauty, and devotion."],
+        jester: ["Humor and delight", "Uses play and surprise to make people feel lighter and more alive."],
+        friend: ["Respect and belonging", "Creates belonging through familiarity, equality, and everyday trust."],
+        caregiver: ["Altruism and empathy", "Protects and supports people through generosity, service, and reassurance."],
+        ruler: ["Control and order", "Creates confidence through leadership, standards, control, and dependable order."],
+        creator: ["Creation and innovation", "Turns imagination into original work and gives people tools for self-expression."],
+        innocent: ["Safety and honesty", "Makes life feel simpler and safer through optimism, honesty, and clarity."],
+        sage: ["Wisdom and clarity", "Helps people understand the world through knowledge, truth, and perspective."],
+        explorer: ["Freedom and adventure", "Opens new paths and protects independence, discovery, and freedom."]
+      };
+      const order = ["outlaw","magician","hero","lover","jester","friend","caregiver","ruler","creator","innocent","sage","explorer"];
+      const roles = {sage:"Primary", creator:"Secondary", innocent:"Tertiary"};
+      chart.data = {
+        schema_version: "brand-therapy-contract/v2",
+        media_base: "assets/archetype-chart",
+        media_variant: "with_background",
+        archetypes: order.map((id) => ({
+          id,
+          name: id[0].toUpperCase() + id.slice(1),
+          promise: meta[id][0],
+          description: meta[id][1],
+          weight: weights[id],
+          role: roles[id] || (weights[id] >= 5 ? "Supporting" : "Minor signal")
+        }))
+      };
+    })();
+  </script>
+
+</body>
+</html>
