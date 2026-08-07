@@ -1,224 +1,565 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-release="7542cade5817">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noai, noimageai">
-<title>Images · FP Brand OS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css">
-<style>
-  :root {
-    --accent: #5A5CF9;
-    --accent-glow: rgba(90, 92, 249, 0.35);
-    --accent-soft: rgba(90, 92, 249, 0.06);
-    --text: #1A1A2E;
-    --muted: #8888A0;
-    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
-    --border: #E5E7EB;
-    --light: #F5F5F7;
-    --white: #FFFFFF;
-    --dark: #18181B;
-    --dark-surface: #1D1D1D;
-    --ff-h: "Bricolage Grotesque", system-ui, sans-serif;
-    --ff-b: "Poppins", system-ui, sans-serif;
-    --ff-accent: "Bricolage Grotesque", system-ui, sans-serif;
-    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
-    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-  
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noai, noimageai">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'">
+  <title>Approved Photo Library · Florian P. Consulting · Brand Therapy OS</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="approved-photo-library/photo-library.css">
+  <script src="approved-photo-library/photo-library.js" defer></script>
 </head>
-<body class="grain">
-<div class="shell">
-
-<aside class="sidebar">
-  <div class="brand-mark">
-    <div class="name">FP<span class="dot">.</span></div>
-    <div class="meta">Brand OS</div>
-  </div>
-  <nav class="nav-section" aria-label="Brand OS sections">
-    <div class="label">Sections</div>
-    <style>.nav-list a .nav-badge{display:inline-block;margin-left:7px;padding:1px 6px;border-radius:999px;font-family:var(--ff-b);font-size:9px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;vertical-align:middle;border:1px solid var(--border);color:var(--muted);}.nav-list a .nav-badge--add_on{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent);}.nav-list a .nav-badge--in_review,.nav-list a .nav-badge--in_development{color:var(--accent);}</style><div class="nav-list">
-<a class="" href="../index.html">System Overview</a>
-<a href="../use.html">Use with AI</a>
-</div><details class="nav-group"><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
-<a href="../strategy/index.html">Focus Star</a>
-<a href="../strategy/product.html">Product</a>
-<a href="../strategy/people.html">People</a>
-<a href="../strategy/purpose.html">Purpose</a>
-<a href="../strategy/promise.html">Promise</a>
-<a href="../strategy/personality.html">Personality</a>
-<a href="../strategy/differentiation.html">Differentiation</a>
-</div></details><details class="nav-group"><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
-<a href="../identity/index.html">Creative Direction</a>
-<a href="../identity/visual-rules.html">Visual Rules</a>
-<a href="../identity/logo.html">Logo</a>
-<a href="../identity/signature.html">Signature</a>
-<a href="../identity/voice.html">Voice Rules</a>
-<a href="../identity/personal-branding.html">Personal Branding</a>
-</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
-<a href="index.html">Overview</a>
-<a class="active" href="images.html">Images</a>
-<a href="social.html">Social</a>
-<a href="slides.html">Slides &amp; Deck</a>
-<a href="email.html">Email &amp; Newsletter</a>
-<a href="stationery.html">Stationery</a>
-</div></details>
-  </nav>
-  <div class="toolbar-mini">
-    <div class="row"><span>Section</span><strong>Application</strong></div>
-    <div class="row"><span>Use</span><strong>References + rules</strong></div>
-    <div class="row"><span>Center</span><strong>Curiosity</strong></div>
-  </div>
-</aside>
-
-<main class="content">
-
-<style>
-.app-hero { margin: 0 0 72px; padding: 64px 0 40px; border-bottom: 1px solid var(--border); }
-.app-hero .eyebrow { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
-.app-hero h1 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(52px, 8vw, 104px); line-height: 0.92; letter-spacing: -0.04em; color: var(--text); margin: 0 0 24px; }
-.app-hero h1 .dot { color: var(--accent); }
-.app-hero p { font-family: var(--ff-b); font-size: clamp(16px, 1.5vw, 19px); line-height: 1.65; color: var(--text); max-width: 760px; margin: 0; }
-.app-section { margin: 0 0 88px; }
-.app-section-head { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; padding-top: 20px; border-top: 1px solid var(--text); margin-bottom: 36px; }
-.app-section-num { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--accent); padding-top: 12px; }
-.app-section-kicker { font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
-.app-section h2 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.02; letter-spacing: -0.025em; color: var(--text); margin: 0 0 10px; }
-.app-section h2 .dot { color: var(--accent); }
-.app-section-desc { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 680px; margin: 0; }
-.app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0; border-left: 1px solid var(--border); border-top: 1px solid var(--border); }
-.app-card { display: flex; flex-direction: column; min-height: 220px; padding: 28px 24px 24px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--white); color: var(--text); text-decoration: none; }
-.app-card:hover { background: var(--accent-soft); }
-.app-card .code, .app-example .code { font-family: var(--ff-b); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
-.app-card h3 { font-family: var(--ff-h); font-weight: 800; font-size: 22px; line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 12px; color: var(--text); }
-.app-card p, .app-example p, .app-rule p { font-family: var(--ff-b); font-size: 13px; line-height: 1.6; color: var(--muted); margin: 0; }
-.app-chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-.app-chip { font-family: var(--ff-b); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); border: 1px solid var(--border); padding: 6px 10px; background: var(--white); }
-.app-example-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-.app-example, .app-rule { padding: 28px 24px; border: 1px solid var(--border); background: var(--white); }
-.app-example h3, .app-rule h3 { font-family: var(--ff-h); font-weight: 800; font-size: 20px; line-height: 1.15; color: var(--text); margin: 0 0 10px; }
-.app-example-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 18px; }
-.app-ref-link { display: inline-flex; align-items: center; min-height: 34px; padding: 8px 12px; border: 1px solid var(--text); color: var(--text); text-decoration: none; font-family: var(--ff-b); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
-.app-ref-link:hover { background: var(--text); color: var(--white); }
-.app-ref-source { font-family: var(--ff-b); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-.app-ref-preview { margin-top: 22px; border: 1px solid var(--border); background: var(--light); height: clamp(340px, 54vw, 620px); overflow: hidden; }
-.app-ref-preview iframe { width: 100%; height: 100%; border: 0; background: var(--white); }
-.app-ref-preview.image { height: auto; background: var(--white); }
-.app-ref-preview.image img { display: block; width: 100%; max-height: 620px; object-fit: contain; background: var(--white); }
-.app-rule-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border-left: 1px solid var(--border); border-top: 1px solid var(--border); }
-.app-rule-list .app-rule { border-left: 0; border-top: 0; }
-.app-note { padding: 28px 32px; border: 1px solid var(--border); background: var(--light); font-family: var(--ff-b); font-size: 14px; line-height: 1.7; color: var(--text); }
-.pb-spectrum-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-left: 1px solid var(--border); border-top: 1px solid var(--border); }
-.pb-spectrum-card { min-height: 240px; padding: 24px 18px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--white); }
-.pb-spectrum-card.active { background: var(--accent-soft); box-shadow: inset 0 0 0 2px var(--accent); }
-.pb-spectrum-card .num { font-family: var(--ff-b); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent); margin-bottom: 12px; }
-.pb-spectrum-card h3 { font-family: var(--ff-h); font-size: 18px; line-height: 1.1; margin: 0 0 10px; color: var(--text); }
-.pb-spectrum-card p { font-family: var(--ff-b); font-size: 12px; line-height: 1.6; color: var(--muted); margin: 0; }
-.pb-spectrum-stack { width: 100%; max-width: 860px; border-top: 1px solid var(--text); }
-.pb-spectrum-row { display: grid; grid-template-columns: 56px minmax(0,1fr) minmax(150px,220px); gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--border); position: relative; }
-.pb-spectrum-num { font-family: var(--ff-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; color: var(--muted); }
-.pb-spectrum-title { font-family: var(--ff-h); font-weight: 700; font-size: 15px; color: var(--muted); letter-spacing: -0.01em; }
-.pb-spectrum-tag { font-family: var(--ff-b); font-size: 10px; font-weight: 500; letter-spacing: 0.08em; color: var(--muted); text-align: right; opacity: 0.65; }
-.pb-spectrum-row.passed .pb-spectrum-num { color: var(--accent); opacity: 0.55; }
-.pb-spectrum-row.passed .pb-spectrum-title { color: var(--text); opacity: 0.48; }
-.pb-spectrum-row.future .pb-spectrum-num, .pb-spectrum-row.future .pb-spectrum-title, .pb-spectrum-row.future .pb-spectrum-tag { opacity: 0.35; }
-.pb-spectrum-row.active { display: block; padding: 0; background: var(--white); overflow: hidden; }
-.pb-spectrum-active-header { display: grid; grid-template-columns: 56px minmax(0,1fr) auto; gap: 20px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--border-soft); position: relative; z-index: 1; }
-.pb-spectrum-active-header .pb-spectrum-num { color: var(--accent); font-size: 11px; }
-.pb-spectrum-active-header .pb-spectrum-title { color: var(--text); font-size: 18px; font-weight: 800; }
-.pb-spectrum-badge { font-family: var(--ff-b); font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 5px 12px; border: 1px solid var(--accent); }
-.pb-spectrum-active-content { display: grid; grid-template-columns: 56px minmax(0,1fr) minmax(240px,340px); gap: 20px; padding: 28px 0 36px; position: relative; z-index: 1; }
-.pb-spectrum-rail { width: 2px; min-height: 140px; background: linear-gradient(180deg, var(--accent) 0%, transparent 100%); margin: 4px auto 0; }
-.pb-spectrum-detail p { font-family: var(--ff-b); font-size: 13.5px; line-height: 1.65; color: var(--text); max-width: 380px; margin: 0 0 24px; }
-.pb-spectrum-insight { font-family: var(--ff-b); font-size: 11px !important; color: var(--muted) !important; line-height: 1.55 !important; padding-left: 16px; border-left: 2px solid var(--accent); max-width: 330px !important; }
-.pb-spectrum-visual { position: relative; display: flex; align-items: flex-end; justify-content: center; min-height: 250px; }
-.pb-spectrum-person { position: relative; z-index: 1; max-height: 270px; width: auto; display: block; filter: drop-shadow(0 4px 20px rgba(0,0,0,0.08)); }
-.pb-spectrum-logo { position: absolute; right: 0; top: 48%; transform: translateY(-50%); z-index: 2; width: 106px; height: 106px; background: var(--white); padding: 8px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
-.pb-spectrum-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
-.pb-vf-corner { position: absolute; width: 24px; height: 24px; pointer-events: none; z-index: 2; }
-.pb-vf-corner.tl { top: -1px; left: -16px; border-top: 2px solid var(--accent); border-left: 2px solid var(--accent); }
-.pb-vf-corner.br { bottom: -1px; right: -16px; border-bottom: 2px solid var(--accent); border-right: 2px solid var(--accent); }
-.pb-callout { padding: 32px; border: 1px solid var(--text); background: var(--white); display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; }
-.pb-callout h3 { font-family: var(--ff-h); font-size: 28px; line-height: 1.05; margin: 0 0 14px; color: var(--text); }
-.pb-callout p { font-family: var(--ff-b); font-size: 14px; line-height: 1.7; color: var(--text); margin: 0 0 12px; }
-.pb-mode-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-left: 1px solid var(--border); border-top: 1px solid var(--border); }
-.pb-mode { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--white); }
-.pb-mode h3 { font-family: var(--ff-h); font-size: 24px; line-height: 1.05; margin: 0 0 10px; padding: 24px 22px 0; color: var(--text); }
-.pb-mode p { font-family: var(--ff-b); font-size: 13px; line-height: 1.6; color: var(--muted); margin: 0; padding: 0 22px 20px; }
-.pb-mode-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(92px, 1fr)); gap: 0; border-top: 1px solid var(--border); }
-.pb-mode-images img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: var(--light); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.pb-mode-images img:last-child { border-right: 0; }
-.pb-asset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
-.pb-asset-card { border: 1px solid var(--border); background: var(--white); overflow: hidden; }
-.pb-asset-card img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: var(--light); }
-.pb-asset-card span { display: block; padding: 10px 12px; font-family: var(--ff-b); font-size: 10px; line-height: 1.4; color: var(--muted); overflow-wrap: anywhere; }
-@media (max-width: 980px) { .pb-spectrum-grid, .pb-callout, .pb-spectrum-active-content, .pb-mode-grid { grid-template-columns: 1fr; } .pb-spectrum-active-header, .pb-spectrum-row { grid-template-columns: 44px minmax(0,1fr); } .pb-spectrum-tag, .pb-spectrum-badge { grid-column: 2; text-align: left; justify-self: start; } .pb-spectrum-rail { display: none; } .pb-spectrum-logo { width: 88px; height: 88px; right: 24px; } }
-</style><style>.img-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}.img-cell{position:relative;margin:0;border:1px solid var(--border);background:var(--light);overflow:hidden;}.img-cell img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--light);}.img-dl{position:absolute;top:8px;right:8px;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:999px;background:var(--white);color:var(--text);border:1px solid var(--border);box-shadow:0 1px 6px rgba(0,0,0,0.12);text-decoration:none;opacity:0;transition:opacity .15s ease,color .15s ease,border-color .15s ease;}.img-cell:hover .img-dl,.img-dl:focus{opacity:1;}.img-dl:hover{color:var(--accent);border-color:var(--accent);}.img-filterbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;}.img-filter{font-family:var(--ff-b);font-size:12px;font-weight:600;letter-spacing:0.02em;color:var(--muted);background:var(--white);border:1px solid var(--border);border-radius:999px;padding:7px 14px;cursor:pointer;transition:color .15s ease,background .15s ease,border-color .15s ease;}.img-filter span{color:var(--muted);font-weight:500;margin-left:5px;}.img-filter:hover{color:var(--text);border-color:var(--text);}.img-filter.is-active{color:#fff;background:var(--accent);border-color:var(--accent);}.img-filter.is-active span{color:rgba(255,255,255,0.78);}@media (max-width:640px){.img-gallery{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}.img-dl{opacity:1;}}</style>
-  <section class="app-hero">
-    <div class="eyebrow">Section C · Images</div>
-    <h1>Images<span class="dot">.</span></h1>
-    <p>The approved image library: photography and reference imagery the brand pulls from across every output. Filter by set, and download any asset directly.</p>
-  </section>
-  <div class="img-filterbar"><button type="button" class="img-filter is-active" data-target="all">All <span>43</span></button><button type="button" class="img-filter" data-target="imgrp-1">Founder photography <span>23</span></button><button type="button" class="img-filter" data-target="imgrp-2">Founder portraits <span>7</span></button><button type="button" class="img-filter" data-target="imgrp-3">Personal-branding examples <span>4</span></button><button type="button" class="img-filter" data-target="imgrp-4">Social evergreen <span>9</span></button></div>
-  <div class="img-group" data-group="imgrp-1">
-  <section class="app-section" aria-labelledby="app-section-1">
-    <div class="app-section-head">
-      <div class="app-section-num">01</div>
-      <div>
-        <div class="app-section-kicker">Founder photography</div>
-        <h2 id="app-section-1">23 approved assets<span class="dot">.</span></h2>
-        <p class="app-section-desc">Approved photography of Florian: workshop, editorial, and lifestyle frames. The first place to pull a real photo before generating anything new.</p>
-      </div>
+<body>
+  <a class="skip-link" href="#approved-gallery">Skip to approved photos</a>
+  <header class="page-header">
+    <div>
+      <a class="back-link" href="../index.html">FP Brand Therapy OS</a>
+      <span class="eyebrow">Applications · Approved asset source</span>
+      <h1>Approved Photo Library<span>.</span></h1>
+      <p>Final public-use photos only. Authentic camera moments remain authentic after enhancement. Fully synthetic scenes retain an AI-generated label.</p>
     </div>
-    <div class="img-gallery"><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-about-seated-lounge.jpg" alt="florian about seated lounge"><a class="img-dl" href="../references/collateral/florian-photos/florian-about-seated-lounge.jpg" download="florian-about-seated-lounge.jpg" title="Download" aria-label="Download florian about seated lounge"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-brand-therapy-book-with-fabian-geyrhalter.jpg" alt="florian brand therapy book with fabian geyrhalter"><a class="img-dl" href="../references/collateral/florian-photos/florian-brand-therapy-book-with-fabian-geyrhalter.jpg" download="florian-brand-therapy-book-with-fabian-geyrhalter.jpg" title="Download" aria-label="Download florian brand therapy book with fabian geyrhalter"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-consulting-session-mountain.jpg" alt="florian consulting session mountain"><a class="img-dl" href="../references/collateral/florian-photos/florian-consulting-session-mountain.jpg" download="florian-consulting-session-mountain.jpg" title="Download" aria-label="Download florian consulting session mountain"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-editorial-atrium-blue.jpg" alt="florian editorial atrium blue"><a class="img-dl" href="../references/collateral/florian-photos/florian-editorial-atrium-blue.jpg" download="florian-editorial-atrium-blue.jpg" title="Download" aria-label="Download florian editorial atrium blue"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-editorial-lens-bw-v2.jpg" alt="florian editorial lens bw v2"><a class="img-dl" href="../references/collateral/florian-photos/florian-editorial-lens-bw-v2.jpg" download="florian-editorial-lens-bw-v2.jpg" title="Download" aria-label="Download florian editorial lens bw v2"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-editorial-lens-bw-wide.jpg" alt="florian editorial lens bw wide"><a class="img-dl" href="../references/collateral/florian-photos/florian-editorial-lens-bw-wide.jpg" download="florian-editorial-lens-bw-wide.jpg" title="Download" aria-label="Download florian editorial lens bw wide"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-editorial-lens-bw.jpg" alt="florian editorial lens bw"><a class="img-dl" href="../references/collateral/florian-photos/florian-editorial-lens-bw.jpg" download="florian-editorial-lens-bw.jpg" title="Download" aria-label="Download florian editorial lens bw"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-editorial-purple-gradient.jpg" alt="florian editorial purple gradient"><a class="img-dl" href="../references/collateral/florian-photos/florian-editorial-purple-gradient.jpg" download="florian-editorial-purple-gradient.jpg" title="Download" aria-label="Download florian editorial purple gradient"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-lifestyle-cafe-coffee.jpg" alt="florian lifestyle cafe coffee"><a class="img-dl" href="../references/collateral/florian-photos/florian-lifestyle-cafe-coffee.jpg" download="florian-lifestyle-cafe-coffee.jpg" title="Download" aria-label="Download florian lifestyle cafe coffee"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-lifestyle-coffee-contemplative.jpg" alt="florian lifestyle coffee contemplative"><a class="img-dl" href="../references/collateral/florian-photos/florian-lifestyle-coffee-contemplative.jpg" download="florian-lifestyle-coffee-contemplative.jpg" title="Download" aria-label="Download florian lifestyle coffee contemplative"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-lifestyle-desk-warmlight.jpg" alt="florian lifestyle desk warmlight"><a class="img-dl" href="../references/collateral/florian-photos/florian-lifestyle-desk-warmlight.jpg" download="florian-lifestyle-desk-warmlight.jpg" title="Download" aria-label="Download florian lifestyle desk warmlight"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-lifestyle-sofa-lobby.jpg" alt="florian lifestyle sofa lobby"><a class="img-dl" href="../references/collateral/florian-photos/florian-lifestyle-sofa-lobby.jpg" download="florian-lifestyle-sofa-lobby.jpg" title="Download" aria-label="Download florian lifestyle sofa lobby"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-portrait-formal-dark.jpg" alt="florian portrait formal dark"><a class="img-dl" href="../references/collateral/florian-photos/florian-portrait-formal-dark.jpg" download="florian-portrait-formal-dark.jpg" title="Download" aria-label="Download florian portrait formal dark"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-portrait-vest-studio.jpg" alt="florian portrait vest studio"><a class="img-dl" href="../references/collateral/florian-photos/florian-portrait-vest-studio.jpg" download="florian-portrait-vest-studio.jpg" title="Download" aria-label="Download florian portrait vest studio"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-speaking-abaie-branding.jpg" alt="florian speaking abaie branding"><a class="img-dl" href="../references/collateral/florian-photos/florian-speaking-abaie-branding.jpg" download="florian-speaking-abaie-branding.jpg" title="Download" aria-label="Download florian speaking abaie branding"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-speaking-brand-touchpoints-square.jpg" alt="florian speaking brand touchpoints square"><a class="img-dl" href="../references/collateral/florian-photos/florian-speaking-brand-touchpoints-square.jpg" download="florian-speaking-brand-touchpoints-square.jpg" title="Download" aria-label="Download florian speaking brand touchpoints square"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-working-laptop-casual.jpg" alt="florian working laptop casual"><a class="img-dl" href="../references/collateral/florian-photos/florian-working-laptop-casual.jpg" download="florian-working-laptop-casual.jpg" title="Download" aria-label="Download florian working laptop casual"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-working-laptop-guitar.jpg" alt="florian working laptop guitar"><a class="img-dl" href="../references/collateral/florian-photos/florian-working-laptop-guitar.jpg" download="florian-working-laptop-guitar.jpg" title="Download" aria-label="Download florian working laptop guitar"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-working-laptop-sunlit.jpg" alt="florian working laptop sunlit"><a class="img-dl" href="../references/collateral/florian-photos/florian-working-laptop-sunlit.jpg" download="florian-working-laptop-sunlit.jpg" title="Download" aria-label="Download florian working laptop sunlit"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-working-office-desk.jpg" alt="florian working office desk"><a class="img-dl" href="../references/collateral/florian-photos/florian-working-office-desk.jpg" download="florian-working-office-desk.jpg" title="Download" aria-label="Download florian working office desk"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-working-office-night.jpg" alt="florian working office night"><a class="img-dl" href="../references/collateral/florian-photos/florian-working-office-night.jpg" download="florian-working-office-night.jpg" title="Download" aria-label="Download florian working office night"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-workshop-chapman-wide.jpg" alt="florian workshop chapman wide"><a class="img-dl" href="../references/collateral/florian-photos/florian-workshop-chapman-wide.jpg" download="florian-workshop-chapman-wide.jpg" title="Download" aria-label="Download florian workshop chapman wide"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/florian-photos/florian-workshop-customer-connection.jpg" alt="florian workshop customer connection"><a class="img-dl" href="../references/collateral/florian-photos/florian-workshop-customer-connection.jpg" download="florian-workshop-customer-connection.jpg" title="Download" aria-label="Download florian workshop customer connection"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure></div>
-  </section></div><div class="img-group" data-group="imgrp-2">
-  <section class="app-section" aria-labelledby="app-section-2">
-    <div class="app-section-head">
-      <div class="app-section-num">02</div>
-      <div>
-        <div class="app-section-kicker">Founder portraits</div>
-        <h2 id="app-section-2">7 approved assets<span class="dot">.</span></h2>
-        <p class="app-section-desc">Portrait references across settings: desk, cafe, stage, home office. Pull from these for context, wardrobe, and lighting in personal-mode imagery.</p>
-      </div>
+    <div class="snapshot" aria-label="Library summary">
+      <strong>25 approved photos</strong>
+      <span>13 authentic · AI-enhanced</span>
+      <span>12 AI-generated</span>
+      <small>Release 7542cade5817</small>
     </div>
-    <div class="img-gallery"><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/pb-portraits/florian-speaker-mic-stage.png" alt="florian speaker mic stage"><a class="img-dl" href="../references/collateral/pb-portraits/florian-speaker-mic-stage.png" download="florian-speaker-mic-stage.png" title="Download" aria-label="Download florian speaker mic stage"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/pb-portraits/florian-speaker-vest-meeting.png" alt="florian speaker vest meeting"><a class="img-dl" href="../references/collateral/pb-portraits/florian-speaker-vest-meeting.png" download="florian-speaker-vest-meeting.png" title="Download" aria-label="Download florian speaker vest meeting"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/pb-portraits/florian-strategist-home-office.png" alt="florian strategist home office"><a class="img-dl" href="../references/collateral/pb-portraits/florian-strategist-home-office.png" download="florian-strategist-home-office.png" title="Download" aria-label="Download florian strategist home office"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/pb-portraits/florian-strategist-night-office.png" alt="florian strategist night office"><a class="img-dl" href="../references/collateral/pb-portraits/florian-strategist-night-office.png" download="florian-strategist-night-office.png" title="Download" aria-label="Download florian strategist night office"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/pb-portraits/florian-thinker-cafe-coffee.png" alt="florian thinker cafe coffee"><a class="img-dl" href="../references/collateral/pb-portraits/florian-thinker-cafe-coffee.png" download="florian-thinker-cafe-coffee.png" title="Download" aria-label="Download florian thinker cafe coffee"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/pb-portraits/florian-thinker-desk-sweater.png" alt="florian thinker desk sweater"><a class="img-dl" href="../references/collateral/pb-portraits/florian-thinker-desk-sweater.png" download="florian-thinker-desk-sweater.png" title="Download" aria-label="Download florian thinker desk sweater"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/pb-portraits/florian-thinker-laptop-casual.png" alt="florian thinker laptop casual"><a class="img-dl" href="../references/collateral/pb-portraits/florian-thinker-laptop-casual.png" download="florian-thinker-laptop-casual.png" title="Download" aria-label="Download florian thinker laptop casual"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure></div>
-  </section></div><div class="img-group" data-group="imgrp-3">
-  <section class="app-section" aria-labelledby="app-section-3">
-    <div class="app-section-head">
-      <div class="app-section-num">03</div>
-      <div>
-        <div class="app-section-kicker">Personal-branding examples</div>
-        <h2 id="app-section-3">4 approved assets<span class="dot">.</span></h2>
-        <p class="app-section-desc">Finished example posts that show the personal-branding system fully composed. Reference compositions, not stock to reuse verbatim.</p>
+  </header>
+  <main>
+    <aside aria-label="Photo filters">
+      <p class="boundary"><strong>Read-only approved snapshot.</strong> Review candidates, edit requests, rejected photos, and designed assets are excluded. Applications and AI generation use these stable asset IDs.</p>
+      <div class="filter-block">
+        <label for="photo-search">Search context</label>
+        <input id="photo-search" type="search" placeholder="Workshop, coffee, speaking…" autocomplete="off">
       </div>
-    </div>
-    <div class="img-gallery"><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/pb-finished/pb-brand-costume.png" alt="pb brand costume"><a class="img-dl" href="../references/collateral/pb-finished/pb-brand-costume.png" download="pb-brand-costume.png" title="Download" aria-label="Download pb brand costume"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/pb-finished/pb-clarity-from-fewer.png" alt="pb clarity from fewer"><a class="img-dl" href="../references/collateral/pb-finished/pb-clarity-from-fewer.png" download="pb-clarity-from-fewer.png" title="Download" aria-label="Download pb clarity from fewer"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/pb-finished/pb-outsource-pov.png" alt="pb outsource pov"><a class="img-dl" href="../references/collateral/pb-finished/pb-outsource-pov.png" download="pb-outsource-pov.png" title="Download" aria-label="Download pb outsource pov"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/pb-finished/pb-tweaking-not-building.png" alt="pb tweaking not building"><a class="img-dl" href="../references/collateral/pb-finished/pb-tweaking-not-building.png" download="pb-tweaking-not-building.png" title="Download" aria-label="Download pb tweaking not building"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure></div>
-  </section></div><div class="img-group" data-group="imgrp-4">
-  <section class="app-section" aria-labelledby="app-section-4">
-    <div class="app-section-head">
-      <div class="app-section-num">04</div>
-      <div>
-        <div class="app-section-kicker">Social evergreen</div>
-        <h2 id="app-section-4">9 approved assets<span class="dot">.</span></h2>
-        <p class="app-section-desc">Evergreen social and profile assets: LinkedIn banners, Substack banners, and reusable post graphics. Download and use as-is, or treat as layout references.</p>
+      <fieldset class="filter-block">
+        <legend>Origin</legend>
+        <div class="filter-buttons">
+          <button type="button" data-origin-filter="all" aria-pressed="true">All <span>25</span></button>
+          <button type="button" data-origin-filter="authentic" aria-pressed="false">Authentic · AI-enhanced <span>13</span></button>
+          <button type="button" data-origin-filter="ai_generated" aria-pressed="false">AI-generated <span>12</span></button>
+        </div>
+      </fieldset>
+      <div class="filter-block">
+        <label for="use-filter">Intended use</label>
+        <select id="use-filter"><option value="all">All approved uses</option><option value="media_kit">Media Kit</option><option value="newsletter">Newsletter</option><option value="pr">PR</option><option value="presentation">Presentation</option><option value="social_feed">Social Feed</option><option value="social_story">Social Story</option><option value="speaker_materials">Speaker Materials</option><option value="website">Website</option></select>
       </div>
-    </div>
-    <div class="img-gallery"><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/social-evergreen/linkedin-banner-biggest-asset-lens-cta.jpg" alt="linkedin banner biggest asset lens cta"><a class="img-dl" href="../references/collateral/social-evergreen/linkedin-banner-biggest-asset-lens-cta.jpg" download="linkedin-banner-biggest-asset-lens-cta.jpg" title="Download" aria-label="Download linkedin banner biggest asset lens cta"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/social-evergreen/linkedin-banner-define-edge-ai.jpg" alt="linkedin banner define edge ai"><a class="img-dl" href="../references/collateral/social-evergreen/linkedin-banner-define-edge-ai.jpg" download="linkedin-banner-define-edge-ai.jpg" title="Download" aria-label="Download linkedin banner define edge ai"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/social-evergreen/linkedin-banner-establish-who-you-are.jpg" alt="linkedin banner establish who you are"><a class="img-dl" href="../references/collateral/social-evergreen/linkedin-banner-establish-who-you-are.jpg" download="linkedin-banner-establish-who-you-are.jpg" title="Download" aria-label="Download linkedin banner establish who you are"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/social-evergreen/linkedin-banner-focus-star-process.jpg" alt="linkedin banner focus star process"><a class="img-dl" href="../references/collateral/social-evergreen/linkedin-banner-focus-star-process.jpg" download="linkedin-banner-focus-star-process.jpg" title="Download" aria-label="Download linkedin banner focus star process"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/social-evergreen/linkedin-banner-name-brandtherapy.jpg" alt="linkedin banner name brandtherapy"><a class="img-dl" href="../references/collateral/social-evergreen/linkedin-banner-name-brandtherapy.jpg" download="linkedin-banner-name-brandtherapy.jpg" title="Download" aria-label="Download linkedin banner name brandtherapy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/social-evergreen/social-confusing-better-great-positioning.png" alt="social confusing better great positioning"><a class="img-dl" href="../references/collateral/social-evergreen/social-confusing-better-great-positioning.png" download="social-confusing-better-great-positioning.png" title="Download" aria-label="Download social confusing better great positioning"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/social-evergreen/social-post-data-driven-brand-strategy.png" alt="social post data driven brand strategy"><a class="img-dl" href="../references/collateral/social-evergreen/social-post-data-driven-brand-strategy.png" download="social-post-data-driven-brand-strategy.png" title="Download" aria-label="Download social post data driven brand strategy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/social-evergreen/substack-banner-lens-cta.png" alt="substack banner lens cta"><a class="img-dl" href="../references/collateral/social-evergreen/substack-banner-lens-cta.png" download="substack-banner-lens-cta.png" title="Download" aria-label="Download substack banner lens cta"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure><figure class="img-cell"><img loading="lazy" decoding="async" src="../references/collateral/social-evergreen/substack-email-banner-small.png" alt="substack email banner small"><a class="img-dl" href="../references/collateral/social-evergreen/substack-email-banner-small.png" download="substack-email-banner-small.png" title="Download" aria-label="Download substack email banner small"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 4 5-4"/><path d="M5 20h14"/></svg></a></figure></div>
-  </section></div>
-  <script>(function(){var bar=document.querySelector('.img-filterbar');if(!bar)return;var groups=Array.prototype.slice.call(document.querySelectorAll('.img-group'));bar.addEventListener('click',function(e){var b=e.target.closest('.img-filter');if(!b)return;var t=b.getAttribute('data-target');Array.prototype.forEach.call(bar.querySelectorAll('.img-filter'),function(x){x.classList.toggle('is-active',x===b);});groups.forEach(function(g){g.style.display=(t==='all'||g.getAttribute('data-group')===t)?'':'none';});});})();</script>
+      <a class="manifest-link" href="approved-photo-library/manifest.json">Machine-readable approved manifest ↗</a>
+    </aside>
+    <section class="results" id="approved-gallery" aria-labelledby="results-title">
+      <div class="results-head">
+        <div><span class="eyebrow">Approved selection</span><h2 id="results-title">Context-ready assets</h2></div>
+        <p id="result-status" role="status" aria-live="polite">Showing 25 approved photos</p>
+      </div>
+      <div class="gallery">
+      <article class="photo" data-asset-id="fp-auth-001" data-origin="authentic" data-uses="social_feed social_story newsletter" data-search="dinner laugh restaurant dinner warm, relaxed, social personality lifestyle community celebration social_feed social_story newsletter" aria-labelledby="title-fp-auth-001">
+        <a class="photo-visual" href="approved-photo-library/images/fp-auth-001-4ca57fcc0ca7-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Dinner laugh (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-auth-001-4ca57fcc0ca7-small.webp" srcset="approved-photo-library/images/fp-auth-001-4ca57fcc0ca7-small.webp 525w, approved-photo-library/images/fp-auth-001-4ca57fcc0ca7-display.webp 1050w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1050" height="1400" loading="eager" decoding="async" fetchpriority="high" alt="Dinner laugh. restaurant dinner. warm, relaxed, social.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-authentic">Authentic</span><span class="ai-label">AI-enhanced</span></div>
+          <span class="asset-id">fp-auth-001</span>
+          <h3 id="title-fp-auth-001">Dinner laugh</h3>
+          <p class="scene">restaurant dinner · warm, relaxed, social</p>
+          <div class="context-tags" aria-label="Context"><span>Personality</span><span>Lifestyle</span><span>Community</span><span>Celebration</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Social Story, Newsletter</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit, Speaker Materials</dd></div>
+            <div><dt>Format</dt><dd>Candid · 1086x1448 · Portrait</dd></div>
+          </dl>
+        </div>
+      </article>
 
+      <article class="photo" data-asset-id="fp-auth-002" data-origin="authentic" data-uses="social_feed website newsletter presentation" data-search="workshop discussion small group workshop facilitating, conversational, active workshop collaboration facilitation strategy social_feed website newsletter presentation" aria-labelledby="title-fp-auth-002">
+        <a class="photo-visual" href="approved-photo-library/images/fp-auth-002-ba2e9ecb0b5c-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Workshop discussion (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-auth-002-ba2e9ecb0b5c-small.webp" srcset="approved-photo-library/images/fp-auth-002-ba2e9ecb0b5c-small.webp 700w, approved-photo-library/images/fp-auth-002-ba2e9ecb0b5c-display.webp 1400w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1400" height="933" loading="lazy" decoding="async" alt="Workshop discussion. small group workshop. facilitating, conversational, active.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-authentic">Authentic</span><span class="ai-label">AI-enhanced</span></div>
+          <span class="asset-id">fp-auth-002</span>
+          <h3 id="title-fp-auth-002">Workshop discussion</h3>
+          <p class="scene">small group workshop · facilitating, conversational, active</p>
+          <div class="context-tags" aria-label="Context"><span>Workshop</span><span>Collaboration</span><span>Facilitation</span><span>Strategy</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Website, Newsletter, Presentation</dd></div>
+            <div><dt>Avoid</dt><dd>Formal Pr Headshot</dd></div>
+            <div><dt>Format</dt><dd>Event · 1536x1024 · Landscape</dd></div>
+          </dl>
+        </div>
+      </article>
 
-  <div class="footer-nav">
-    <span>Section C · Images</span>
-    <span><a href="social.html">Social →</a></span>
-  </div>
-  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
-</main>
+      <article class="photo" data-asset-id="fp-auth-003" data-origin="authentic" data-uses="social_feed social_story newsletter" data-search="working session side angle workshop laptop station focused, candid, technical working process strategy behind_the_scenes social_feed social_story newsletter" aria-labelledby="title-fp-auth-003">
+        <a class="photo-visual" href="approved-photo-library/images/fp-auth-003-d15054ec9ccb-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Working session side angle (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-auth-003-d15054ec9ccb-small.webp" srcset="approved-photo-library/images/fp-auth-003-d15054ec9ccb-small.webp 467w, approved-photo-library/images/fp-auth-003-d15054ec9ccb-display.webp 933w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="933" height="1400" loading="lazy" decoding="async" alt="Working session side angle. workshop laptop station. focused, candid, technical.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-authentic">Authentic</span><span class="ai-label">AI-enhanced</span></div>
+          <span class="asset-id">fp-auth-003</span>
+          <h3 id="title-fp-auth-003">Working session side angle</h3>
+          <p class="scene">workshop laptop station · focused, candid, technical</p>
+          <div class="context-tags" aria-label="Context"><span>Working</span><span>Process</span><span>Strategy</span><span>Behind The Scenes</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Social Story, Newsletter</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit</dd></div>
+            <div><dt>Format</dt><dd>Working · 1024x1536 · Portrait</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-auth-004" data-origin="authentic" data-uses="social_feed social_story website newsletter presentation" data-search="working at the laptop technical workspace focused, capable, candid strategy working process problem_solving expertise social_feed social_story website newsletter presentation" aria-labelledby="title-fp-auth-004">
+        <a class="photo-visual" href="approved-photo-library/images/fp-auth-004-cfb95cb85e6d-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Working at the laptop (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-auth-004-cfb95cb85e6d-small.webp" srcset="approved-photo-library/images/fp-auth-004-cfb95cb85e6d-small.webp 466w, approved-photo-library/images/fp-auth-004-cfb95cb85e6d-display.webp 932w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="932" height="1400" loading="lazy" decoding="async" alt="Working at the laptop. technical workspace. focused, capable, candid.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-authentic">Authentic</span><span class="ai-label">AI-enhanced</span></div>
+          <span class="asset-id">fp-auth-004</span>
+          <h3 id="title-fp-auth-004">Working at the laptop</h3>
+          <p class="scene">technical workspace · focused, capable, candid</p>
+          <div class="context-tags" aria-label="Context"><span>Strategy</span><span>Working</span><span>Process</span><span>Problem Solving</span><span>Expertise</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Social Story, Website, Newsletter, Presentation</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit</dd></div>
+            <div><dt>Format</dt><dd>Working · 1023x1537 · Portrait</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-auth-005" data-origin="authentic" data-uses="social_feed newsletter presentation speaker_materials" data-search="branding talk silhouette projected branding talk documentary, authoritative, atmospheric speaking branding education strategy social_feed newsletter presentation speaker_materials" aria-labelledby="title-fp-auth-005">
+        <a class="photo-visual" href="approved-photo-library/images/fp-auth-005-fb9c1856728f-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Branding talk silhouette (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-auth-005-fb9c1856728f-small.webp" srcset="approved-photo-library/images/fp-auth-005-fb9c1856728f-small.webp 700w, approved-photo-library/images/fp-auth-005-fb9c1856728f-display.webp 1254w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1254" height="1254" loading="lazy" decoding="async" alt="Branding talk silhouette. projected branding talk. documentary, authoritative, atmospheric.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-authentic">Authentic</span><span class="ai-label">AI-enhanced</span></div>
+          <span class="asset-id">fp-auth-005</span>
+          <h3 id="title-fp-auth-005">Branding talk silhouette</h3>
+          <p class="scene">projected branding talk · documentary, authoritative, atmospheric</p>
+          <div class="context-tags" aria-label="Context"><span>Speaking</span><span>Branding</span><span>Education</span><span>Strategy</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Newsletter, Presentation, Speaker Materials</dd></div>
+            <div><dt>Avoid</dt><dd>Formal Pr Headshot</dd></div>
+            <div><dt>Format</dt><dd>Speaker · 1254x1254 · Square</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-auth-006" data-origin="authentic" data-uses="social_feed social_story" data-search="guitar room selfie home guitar room relaxed, personal, creative creativity music personality lifestyle home social_feed social_story" aria-labelledby="title-fp-auth-006">
+        <a class="photo-visual" href="approved-photo-library/images/fp-auth-006-7b6695e95194-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Guitar room selfie (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-auth-006-7b6695e95194-small.webp" srcset="approved-photo-library/images/fp-auth-006-7b6695e95194-small.webp 525w, approved-photo-library/images/fp-auth-006-7b6695e95194-display.webp 1050w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1050" height="1400" loading="lazy" decoding="async" alt="Guitar room selfie. home guitar room. relaxed, personal, creative.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-authentic">Authentic</span><span class="ai-label">AI-enhanced</span></div>
+          <span class="asset-id">fp-auth-006</span>
+          <h3 id="title-fp-auth-006">Guitar room selfie</h3>
+          <p class="scene">home guitar room · relaxed, personal, creative</p>
+          <div class="context-tags" aria-label="Context"><span>Creativity</span><span>Music</span><span>Personality</span><span>Lifestyle</span><span>Home</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Social Story</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit, Speaker Materials, Presentation</dd></div>
+            <div><dt>Format</dt><dd>Selfie · 1086x1448 · Portrait</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-auth-007" data-origin="authentic" data-uses="social_feed social_story newsletter" data-search="guitar room candid home guitar room observant, relaxed, thoughtful working creativity music home personality social_feed social_story newsletter" aria-labelledby="title-fp-auth-007">
+        <a class="photo-visual" href="approved-photo-library/images/fp-auth-007-6b85f6fc99f4-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Guitar room candid (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-auth-007-6b85f6fc99f4-small.webp" srcset="approved-photo-library/images/fp-auth-007-6b85f6fc99f4-small.webp 700w, approved-photo-library/images/fp-auth-007-6b85f6fc99f4-display.webp 1400w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1400" height="1050" loading="lazy" decoding="async" alt="Guitar room candid. home guitar room. observant, relaxed, thoughtful.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-authentic">Authentic</span><span class="ai-label">AI-enhanced</span></div>
+          <span class="asset-id">fp-auth-007</span>
+          <h3 id="title-fp-auth-007">Guitar room candid</h3>
+          <p class="scene">home guitar room · observant, relaxed, thoughtful</p>
+          <div class="context-tags" aria-label="Context"><span>Working</span><span>Creativity</span><span>Music</span><span>Home</span><span>Personality</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Social Story, Newsletter</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit</dd></div>
+            <div><dt>Format</dt><dd>Lifestyle · 1448x1086 · Landscape</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-auth-008" data-origin="authentic" data-uses="social_feed social_story newsletter" data-search="coffee at the home desk home desk with guitars casual, reflective, personal coffee creativity home working lifestyle social_feed social_story newsletter" aria-labelledby="title-fp-auth-008">
+        <a class="photo-visual" href="approved-photo-library/images/fp-auth-008-89523fae8a09-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Coffee at the home desk (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-auth-008-89523fae8a09-small.webp" srcset="approved-photo-library/images/fp-auth-008-89523fae8a09-small.webp 700w, approved-photo-library/images/fp-auth-008-89523fae8a09-display.webp 1400w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1400" height="1050" loading="lazy" decoding="async" alt="Coffee at the home desk. home desk with guitars. casual, reflective, personal.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-authentic">Authentic</span><span class="ai-label">AI-enhanced</span></div>
+          <span class="asset-id">fp-auth-008</span>
+          <h3 id="title-fp-auth-008">Coffee at the home desk</h3>
+          <p class="scene">home desk with guitars · casual, reflective, personal</p>
+          <div class="context-tags" aria-label="Context"><span>Coffee</span><span>Creativity</span><span>Home</span><span>Working</span><span>Lifestyle</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Social Story, Newsletter</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit</dd></div>
+            <div><dt>Format</dt><dd>Lifestyle · 1448x1086 · Landscape</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-auth-013" data-origin="authentic" data-uses="social_feed newsletter presentation" data-search="seated workshop discussion innovation hub workshop listening, collaborative, candid workshop listening collaboration facilitation social_feed newsletter presentation" aria-labelledby="title-fp-auth-013">
+        <a class="photo-visual" href="approved-photo-library/images/fp-auth-013-2d02f4c8ea77-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Seated workshop discussion (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-auth-013-2d02f4c8ea77-small.webp" srcset="approved-photo-library/images/fp-auth-013-2d02f4c8ea77-small.webp 525w, approved-photo-library/images/fp-auth-013-2d02f4c8ea77-display.webp 1050w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1050" height="1400" loading="lazy" decoding="async" alt="Seated workshop discussion. innovation hub workshop. listening, collaborative, candid.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-authentic">Authentic</span><span class="ai-label">AI-enhanced</span></div>
+          <span class="asset-id">fp-auth-013</span>
+          <h3 id="title-fp-auth-013">Seated workshop discussion</h3>
+          <p class="scene">innovation hub workshop · listening, collaborative, candid</p>
+          <div class="context-tags" aria-label="Context"><span>Workshop</span><span>Listening</span><span>Collaboration</span><span>Facilitation</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Newsletter, Presentation</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit</dd></div>
+            <div><dt>Format</dt><dd>Event · 1086x1448 · Portrait</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-auth-014" data-origin="authentic" data-uses="social_feed website newsletter presentation speaker_materials media_kit" data-search="chapman workshop chapman entrepreneurship workshop facilitating, credible, documentary workshop entrepreneurship strategy facilitation social_feed website newsletter presentation speaker_materials media_kit" aria-labelledby="title-fp-auth-014">
+        <a class="photo-visual" href="approved-photo-library/images/fp-auth-014-dffd5e6f412a-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Chapman workshop (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-auth-014-dffd5e6f412a-small.webp" srcset="approved-photo-library/images/fp-auth-014-dffd5e6f412a-small.webp 700w, approved-photo-library/images/fp-auth-014-dffd5e6f412a-display.webp 1400w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1400" height="1050" loading="lazy" decoding="async" alt="Chapman workshop. Chapman entrepreneurship workshop. facilitating, credible, documentary.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-authentic">Authentic</span><span class="ai-label">AI-enhanced</span></div>
+          <span class="asset-id">fp-auth-014</span>
+          <h3 id="title-fp-auth-014">Chapman workshop</h3>
+          <p class="scene">Chapman entrepreneurship workshop · facilitating, credible, documentary</p>
+          <div class="context-tags" aria-label="Context"><span>Workshop</span><span>Entrepreneurship</span><span>Strategy</span><span>Facilitation</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Website, Newsletter, Presentation, Speaker Materials, Media Kit</dd></div>
+            <div><dt>Avoid</dt><dd>Formal Pr Headshot</dd></div>
+            <div><dt>Format</dt><dd>Event · 1448x1086 · Landscape</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-auth-016" data-origin="authentic" data-uses="social_feed website presentation speaker_materials pr media_kit" data-search="brand touchpoints talk presentation room authoritative, engaged, explanatory speaking strategy education brand_therapy expertise social_feed website presentation speaker_materials pr media_kit" aria-labelledby="title-fp-auth-016">
+        <a class="photo-visual" href="approved-photo-library/images/fp-auth-016-0046764509df-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Brand touchpoints talk (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-auth-016-0046764509df-small.webp" srcset="approved-photo-library/images/fp-auth-016-0046764509df-small.webp 700w, approved-photo-library/images/fp-auth-016-0046764509df-display.webp 1254w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1254" height="1254" loading="lazy" decoding="async" alt="Brand touchpoints talk. presentation room. authoritative, engaged, explanatory.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-authentic">Authentic</span><span class="ai-label">AI-enhanced</span></div>
+          <span class="asset-id">fp-auth-016</span>
+          <h3 id="title-fp-auth-016">Brand touchpoints talk</h3>
+          <p class="scene">presentation room · authoritative, engaged, explanatory</p>
+          <div class="context-tags" aria-label="Context"><span>Speaking</span><span>Strategy</span><span>Education</span><span>Brand Therapy</span><span>Expertise</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Website, Presentation, Speaker Materials, PR, Media Kit</dd></div>
+            <div><dt>Avoid</dt><dd>No specific restriction</dd></div>
+            <div><dt>Format</dt><dd>Speaker · 1254x1254 · Square</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-auth-017" data-origin="authentic" data-uses="social_feed social_story website speaker_materials media_kit" data-search="trade-show portrait trade show approachable, professional, distinctive events networking speaking community personal_style social_feed social_story website speaker_materials media_kit" aria-labelledby="title-fp-auth-017">
+        <a class="photo-visual" href="approved-photo-library/images/fp-auth-017-26abfbfc477b-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Trade-show portrait (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-auth-017-26abfbfc477b-small.webp" srcset="approved-photo-library/images/fp-auth-017-26abfbfc477b-small.webp 560w, approved-photo-library/images/fp-auth-017-26abfbfc477b-display.webp 1120w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1120" height="1400" loading="lazy" decoding="async" alt="Trade-show portrait. trade show. approachable, professional, distinctive.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-authentic">Authentic</span><span class="ai-label">AI-enhanced</span></div>
+          <span class="asset-id">fp-auth-017</span>
+          <h3 id="title-fp-auth-017">Trade-show portrait</h3>
+          <p class="scene">trade show · approachable, professional, distinctive</p>
+          <div class="context-tags" aria-label="Context"><span>Events</span><span>Networking</span><span>Speaking</span><span>Community</span><span>Personal Style</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Social Story, Website, Speaker Materials, Media Kit</dd></div>
+            <div><dt>Avoid</dt><dd>Formal Pr Headshot</dd></div>
+            <div><dt>Format</dt><dd>Event · 1122x1402 · Portrait</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-auth-019" data-origin="authentic" data-uses="social_feed website newsletter presentation" data-search="brand therapy book with fabian restaurant with fabian geyrhalter credible, personal, celebratory brand_therapy book mentorship community founder_story social_feed website newsletter presentation" aria-labelledby="title-fp-auth-019">
+        <a class="photo-visual" href="approved-photo-library/images/fp-auth-019-a884acb32b92-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Brand Therapy book with Fabian (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-auth-019-a884acb32b92-small.webp" srcset="approved-photo-library/images/fp-auth-019-a884acb32b92-small.webp 700w, approved-photo-library/images/fp-auth-019-a884acb32b92-display.webp 1400w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1400" height="1400" loading="lazy" decoding="async" alt="Brand Therapy book with Fabian. restaurant with Fabian Geyrhalter. credible, personal, celebratory.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-authentic">Authentic</span><span class="ai-label">AI-enhanced</span></div>
+          <span class="asset-id">fp-auth-019</span>
+          <h3 id="title-fp-auth-019">Brand Therapy book with Fabian</h3>
+          <p class="scene">restaurant with Fabian Geyrhalter · credible, personal, celebratory</p>
+          <div class="context-tags" aria-label="Context"><span>Brand Therapy</span><span>Book</span><span>Mentorship</span><span>Community</span><span>Founder Story</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Website, Newsletter, Presentation</dd></div>
+            <div><dt>Avoid</dt><dd>Ai Generation Reference, Formal Pr Headshot</dd></div>
+            <div><dt>Format</dt><dd>Candid · 4096x4096 · Square</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-ai-001" data-origin="ai_generated" data-uses="social_feed website presentation" data-search="seated lounge portrait modern office lounge calm, composed, approachable leadership strategy portrait social_feed website presentation" aria-labelledby="title-fp-ai-001">
+        <a class="photo-visual" href="approved-photo-library/images/fp-ai-001-f959e06ed4a5-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Seated lounge portrait (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-ai-001-f959e06ed4a5-small.webp" srcset="approved-photo-library/images/fp-ai-001-f959e06ed4a5-small.webp 700w, approved-photo-library/images/fp-ai-001-f959e06ed4a5-display.webp 1400w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1400" height="1050" loading="lazy" decoding="async" alt="Seated lounge portrait. modern office lounge. calm, composed, approachable.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-ai_generated">AI-generated</span><span class="ai-label">Fully AI-generated</span></div>
+          <span class="asset-id">fp-ai-001</span>
+          <h3 id="title-fp-ai-001">Seated lounge portrait</h3>
+          <p class="scene">modern office lounge · calm, composed, approachable</p>
+          <div class="context-tags" aria-label="Context"><span>Leadership</span><span>Strategy</span><span>Portrait</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Website, Presentation</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit, Documentary Claim</dd></div>
+            <div><dt>Format</dt><dd>Professional Portrait · 2304x1728 · Landscape</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-ai-002" data-origin="ai_generated" data-uses="social_feed website presentation" data-search="mountain consulting session mountain-view meeting consultative, engaged, polished consulting strategy meeting social_feed website presentation" aria-labelledby="title-fp-ai-002">
+        <a class="photo-visual" href="approved-photo-library/images/fp-ai-002-5f71fcea98a9-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Mountain consulting session (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-ai-002-5f71fcea98a9-small.webp" srcset="approved-photo-library/images/fp-ai-002-5f71fcea98a9-small.webp 700w, approved-photo-library/images/fp-ai-002-5f71fcea98a9-display.webp 1400w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1400" height="1400" loading="lazy" decoding="async" alt="Mountain consulting session. mountain-view meeting. consultative, engaged, polished.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-ai_generated">AI-generated</span><span class="ai-label">Fully AI-generated</span></div>
+          <span class="asset-id">fp-ai-002</span>
+          <h3 id="title-fp-ai-002">Mountain consulting session</h3>
+          <p class="scene">mountain-view meeting · consultative, engaged, polished</p>
+          <div class="context-tags" aria-label="Context"><span>Consulting</span><span>Strategy</span><span>Meeting</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Website, Presentation</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit, Documentary Claim</dd></div>
+            <div><dt>Format</dt><dd>Working · 1503x1503 · Square</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-ai-006" data-origin="ai_generated" data-uses="social_feed newsletter website" data-search="cafe coffee moment sunlit cafe observed, casual, reflective coffee thinking lifestyle creativity social_feed newsletter website" aria-labelledby="title-fp-ai-006">
+        <a class="photo-visual" href="approved-photo-library/images/fp-ai-006-1a0c9ca01583-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Cafe coffee moment (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-ai-006-1a0c9ca01583-small.webp" srcset="approved-photo-library/images/fp-ai-006-1a0c9ca01583-small.webp 700w, approved-photo-library/images/fp-ai-006-1a0c9ca01583-display.webp 1400w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1400" height="958" loading="lazy" decoding="async" alt="Cafe coffee moment. sunlit cafe. observed, casual, reflective.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-ai_generated">AI-generated</span><span class="ai-label">Fully AI-generated</span></div>
+          <span class="asset-id">fp-ai-006</span>
+          <h3 id="title-fp-ai-006">Cafe coffee moment</h3>
+          <p class="scene">sunlit cafe · observed, casual, reflective</p>
+          <div class="context-tags" aria-label="Context"><span>Coffee</span><span>Thinking</span><span>Lifestyle</span><span>Creativity</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Newsletter, Website</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit, Documentary Claim</dd></div>
+            <div><dt>Format</dt><dd>Lifestyle · 2400x1642 · Landscape</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-ai-008" data-origin="ai_generated" data-uses="social_feed website presentation" data-search="warm strategy table warm meeting table strategic, collaborative, cinematic strategy working consulting social_feed website presentation" aria-labelledby="title-fp-ai-008">
+        <a class="photo-visual" href="approved-photo-library/images/fp-ai-008-a855e45b5ba4-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Warm strategy table (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-ai-008-a855e45b5ba4-small.webp" srcset="approved-photo-library/images/fp-ai-008-a855e45b5ba4-small.webp 700w, approved-photo-library/images/fp-ai-008-a855e45b5ba4-display.webp 1400w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1400" height="1050" loading="lazy" decoding="async" alt="Warm strategy table. warm meeting table. strategic, collaborative, cinematic.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-ai_generated">AI-generated</span><span class="ai-label">Fully AI-generated</span></div>
+          <span class="asset-id">fp-ai-008</span>
+          <h3 id="title-fp-ai-008">Warm strategy table</h3>
+          <p class="scene">warm meeting table · strategic, collaborative, cinematic</p>
+          <div class="context-tags" aria-label="Context"><span>Strategy</span><span>Working</span><span>Consulting</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Website, Presentation</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit, Documentary Claim</dd></div>
+            <div><dt>Format</dt><dd>Working · 2400x1800 · Landscape</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-ai-009" data-origin="ai_generated" data-uses="social_feed website presentation" data-search="sofa lobby portrait minimal lobby relaxed, approachable, contemporary portrait lifestyle leadership social_feed website presentation" aria-labelledby="title-fp-ai-009">
+        <a class="photo-visual" href="approved-photo-library/images/fp-ai-009-ddf5975625c9-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Sofa lobby portrait (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-ai-009-ddf5975625c9-small.webp" srcset="approved-photo-library/images/fp-ai-009-ddf5975625c9-small.webp 700w, approved-photo-library/images/fp-ai-009-ddf5975625c9-display.webp 1238w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1238" height="1238" loading="lazy" decoding="async" alt="Sofa lobby portrait. minimal lobby. relaxed, approachable, contemporary.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-ai_generated">AI-generated</span><span class="ai-label">Fully AI-generated</span></div>
+          <span class="asset-id">fp-ai-009</span>
+          <h3 id="title-fp-ai-009">Sofa lobby portrait</h3>
+          <p class="scene">minimal lobby · relaxed, approachable, contemporary</p>
+          <div class="context-tags" aria-label="Context"><span>Portrait</span><span>Lifestyle</span><span>Leadership</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Website, Presentation</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit, Documentary Claim</dd></div>
+            <div><dt>Format</dt><dd>Lifestyle · 1238x1238 · Square</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-ai-010" data-origin="ai_generated" data-uses="website presentation" data-search="formal dark portrait dark studio formal, direct, controlled portrait leadership formal website presentation" aria-labelledby="title-fp-ai-010">
+        <a class="photo-visual" href="approved-photo-library/images/fp-ai-010-905b46aa4720-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Formal dark portrait (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-ai-010-905b46aa4720-small.webp" srcset="approved-photo-library/images/fp-ai-010-905b46aa4720-small.webp 700w, approved-photo-library/images/fp-ai-010-905b46aa4720-display.webp 1400w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1400" height="1400" loading="lazy" decoding="async" alt="Formal dark portrait. dark studio. formal, direct, controlled.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-ai_generated">AI-generated</span><span class="ai-label">Fully AI-generated</span></div>
+          <span class="asset-id">fp-ai-010</span>
+          <h3 id="title-fp-ai-010">Formal dark portrait</h3>
+          <p class="scene">dark studio · formal, direct, controlled</p>
+          <div class="context-tags" aria-label="Context"><span>Portrait</span><span>Leadership</span><span>Formal</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Website, Presentation</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit, Documentary Claim</dd></div>
+            <div><dt>Format</dt><dd>Professional Portrait · 2048x2048 · Square</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-ai-011" data-origin="ai_generated" data-uses="social_feed website presentation" data-search="vest studio portrait neutral studio thoughtful, tailored, authoritative portrait speaking personal_style social_feed website presentation" aria-labelledby="title-fp-ai-011">
+        <a class="photo-visual" href="approved-photo-library/images/fp-ai-011-069153ed6c50-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Vest studio portrait (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-ai-011-069153ed6c50-small.webp" srcset="approved-photo-library/images/fp-ai-011-069153ed6c50-small.webp 700w, approved-photo-library/images/fp-ai-011-069153ed6c50-display.webp 1400w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1400" height="1400" loading="lazy" decoding="async" alt="Vest studio portrait. neutral studio. thoughtful, tailored, authoritative.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-ai_generated">AI-generated</span><span class="ai-label">Fully AI-generated</span></div>
+          <span class="asset-id">fp-ai-011</span>
+          <h3 id="title-fp-ai-011">Vest studio portrait</h3>
+          <p class="scene">neutral studio · thoughtful, tailored, authoritative</p>
+          <div class="context-tags" aria-label="Context"><span>Portrait</span><span>Speaking</span><span>Personal Style</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Website, Presentation</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit, Documentary Claim</dd></div>
+            <div><dt>Format</dt><dd>Professional Portrait · 2048x2048 · Square</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-ai-012" data-origin="ai_generated" data-uses="social_feed newsletter website" data-search="laptop on the sofa bright home workspace focused, informal, capable working process home social_feed newsletter website" aria-labelledby="title-fp-ai-012">
+        <a class="photo-visual" href="approved-photo-library/images/fp-ai-012-5a3e6122e31e-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Laptop on the sofa (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-ai-012-5a3e6122e31e-small.webp" srcset="approved-photo-library/images/fp-ai-012-5a3e6122e31e-small.webp 544w, approved-photo-library/images/fp-ai-012-5a3e6122e31e-display.webp 1089w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1089" height="1400" loading="lazy" decoding="async" alt="Laptop on the sofa. bright home workspace. focused, informal, capable.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-ai_generated">AI-generated</span><span class="ai-label">Fully AI-generated</span></div>
+          <span class="asset-id">fp-ai-012</span>
+          <h3 id="title-fp-ai-012">Laptop on the sofa</h3>
+          <p class="scene">bright home workspace · focused, informal, capable</p>
+          <div class="context-tags" aria-label="Context"><span>Working</span><span>Process</span><span>Home</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Newsletter, Website</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit, Documentary Claim</dd></div>
+            <div><dt>Format</dt><dd>Working · 1593x2048 · Portrait</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-ai-013" data-origin="ai_generated" data-uses="social_feed newsletter website" data-search="laptop with guitar home office with guitar creative, focused, relaxed working creativity music home social_feed newsletter website" aria-labelledby="title-fp-ai-013">
+        <a class="photo-visual" href="approved-photo-library/images/fp-ai-013-2bea2f5078eb-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Laptop with guitar (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-ai-013-2bea2f5078eb-small.webp" srcset="approved-photo-library/images/fp-ai-013-2bea2f5078eb-small.webp 544w, approved-photo-library/images/fp-ai-013-2bea2f5078eb-display.webp 1089w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1089" height="1400" loading="lazy" decoding="async" alt="Laptop with guitar. home office with guitar. creative, focused, relaxed.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-ai_generated">AI-generated</span><span class="ai-label">Fully AI-generated</span></div>
+          <span class="asset-id">fp-ai-013</span>
+          <h3 id="title-fp-ai-013">Laptop with guitar</h3>
+          <p class="scene">home office with guitar · creative, focused, relaxed</p>
+          <div class="context-tags" aria-label="Context"><span>Working</span><span>Creativity</span><span>Music</span><span>Home</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Newsletter, Website</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit, Documentary Claim</dd></div>
+            <div><dt>Format</dt><dd>Working · 1593x2048 · Portrait</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-ai-014" data-origin="ai_generated" data-uses="social_feed newsletter website" data-search="sunlit laptop session sunlit home table quiet, focused, naturalistic working thinking process social_feed newsletter website" aria-labelledby="title-fp-ai-014">
+        <a class="photo-visual" href="approved-photo-library/images/fp-ai-014-f4294ab7af87-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Sunlit laptop session (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-ai-014-f4294ab7af87-small.webp" srcset="approved-photo-library/images/fp-ai-014-f4294ab7af87-small.webp 544w, approved-photo-library/images/fp-ai-014-f4294ab7af87-display.webp 1089w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1089" height="1400" loading="lazy" decoding="async" alt="Sunlit laptop session. sunlit home table. quiet, focused, naturalistic.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-ai_generated">AI-generated</span><span class="ai-label">Fully AI-generated</span></div>
+          <span class="asset-id">fp-ai-014</span>
+          <h3 id="title-fp-ai-014">Sunlit laptop session</h3>
+          <p class="scene">sunlit home table · quiet, focused, naturalistic</p>
+          <div class="context-tags" aria-label="Context"><span>Working</span><span>Thinking</span><span>Process</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Newsletter, Website</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit, Documentary Claim</dd></div>
+            <div><dt>Format</dt><dd>Working · 1593x2048 · Portrait</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-ai-015" data-origin="ai_generated" data-uses="social_feed newsletter website" data-search="warm office desk warm desktop office focused, productive, cinematic working process technology social_feed newsletter website" aria-labelledby="title-fp-ai-015">
+        <a class="photo-visual" href="approved-photo-library/images/fp-ai-015-900043a75bb9-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Warm office desk (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-ai-015-900043a75bb9-small.webp" srcset="approved-photo-library/images/fp-ai-015-900043a75bb9-small.webp 700w, approved-photo-library/images/fp-ai-015-900043a75bb9-display.webp 1400w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1400" height="958" loading="lazy" decoding="async" alt="Warm office desk. warm desktop office. focused, productive, cinematic.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-ai_generated">AI-generated</span><span class="ai-label">Fully AI-generated</span></div>
+          <span class="asset-id">fp-ai-015</span>
+          <h3 id="title-fp-ai-015">Warm office desk</h3>
+          <p class="scene">warm desktop office · focused, productive, cinematic</p>
+          <div class="context-tags" aria-label="Context"><span>Working</span><span>Process</span><span>Technology</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Newsletter, Website</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit, Documentary Claim</dd></div>
+            <div><dt>Format</dt><dd>Working · 2400x1642 · Landscape</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="photo" data-asset-id="fp-ai-016" data-origin="ai_generated" data-uses="social_feed newsletter website" data-search="night office night city office focused, serious, cinematic working strategy technology night social_feed newsletter website" aria-labelledby="title-fp-ai-016">
+        <a class="photo-visual" href="approved-photo-library/images/fp-ai-016-9c4dfec89069-full.webp" target="_blank" rel="noreferrer" aria-label="Open high-resolution photo: Night office (opens in a new tab)">
+          <img src="approved-photo-library/images/fp-ai-016-9c4dfec89069-small.webp" srcset="approved-photo-library/images/fp-ai-016-9c4dfec89069-small.webp 700w, approved-photo-library/images/fp-ai-016-9c4dfec89069-display.webp 1400w" sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1120px) calc((100vw - 350px) / 2), calc((100vw - 390px) / 3)" width="1400" height="1400" loading="lazy" decoding="async" alt="Night office. night city office. focused, serious, cinematic.">
+          <span class="open-cue" aria-hidden="true">Open high resolution ↗</span>
+          <span class="image-error" hidden>Preview unavailable. Open the high-resolution file.</span>
+        </a>
+        <div class="photo-body">
+          <div class="origin-row"><span class="origin origin-ai_generated">AI-generated</span><span class="ai-label">Fully AI-generated</span></div>
+          <span class="asset-id">fp-ai-016</span>
+          <h3 id="title-fp-ai-016">Night office</h3>
+          <p class="scene">night city office · focused, serious, cinematic</p>
+          <div class="context-tags" aria-label="Context"><span>Working</span><span>Strategy</span><span>Technology</span><span>Night</span></div>
+          <dl>
+            <div><dt>Best for</dt><dd>Social Feed, Newsletter, Website</dd></div>
+            <div><dt>Avoid</dt><dd>PR, Media Kit, Documentary Claim</dd></div>
+            <div><dt>Format</dt><dd>Working · 2048x2048 · Square</dd></div>
+          </dl>
+        </div>
+      </article>
 </div>
+      <div class="empty-state" hidden><h3>No approved photo matches.</h3><p>Clear a filter or search for another context.</p></div>
+    </section>
+  </main>
+  <footer><a href="index.html">Applications overview</a><span>Approved Photo Library · Brand Therapy OS</span></footer>
 </body>
 </html>

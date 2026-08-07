@@ -1,0 +1,1062 @@
+{
+  "schema_version": 1,
+  "release_id": "7542cade5817",
+  "brand": {
+    "slug": "fp",
+    "name": "Florian P."
+  },
+  "library": {
+    "version": "0.2.0-review",
+    "mode": "approved_public_photo_snapshot",
+    "application_consumption": "approved_only",
+    "approved_count": 25,
+    "origin_counts": {
+      "authentic": 13,
+      "ai_generated": 12
+    }
+  },
+  "assets": [
+    {
+      "id": "fp-auth-001",
+      "title": "Dinner laugh",
+      "origin_class": "authentic",
+      "ai_involvement": "enhancement_only",
+      "origin_label": "Authentic",
+      "ai_label": "AI-enhanced",
+      "asset_type": "candid",
+      "setting": "restaurant dinner",
+      "mood": "warm, relaxed, social",
+      "orientation": "portrait",
+      "dimensions": "1086x1448",
+      "context_tags": [
+        "personality",
+        "lifestyle",
+        "community",
+        "celebration"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "social_story",
+        "newsletter"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit",
+        "speaker_materials"
+      ],
+      "alt_text": "Dinner laugh. restaurant dinner. warm, relaxed, social.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-auth-001-4ca57fcc0ca7-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-auth-001-4ca57fcc0ca7-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-auth-001-4ca57fcc0ca7-full.webp",
+        "small_width": 525,
+        "small_height": 700,
+        "display_width": 1050,
+        "display_height": 1400,
+        "full_width": 1086,
+        "full_height": 1448,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-auth-002",
+      "title": "Workshop discussion",
+      "origin_class": "authentic",
+      "ai_involvement": "enhancement_only",
+      "origin_label": "Authentic",
+      "ai_label": "AI-enhanced",
+      "asset_type": "event",
+      "setting": "small group workshop",
+      "mood": "facilitating, conversational, active",
+      "orientation": "landscape",
+      "dimensions": "1536x1024",
+      "context_tags": [
+        "workshop",
+        "collaboration",
+        "facilitation",
+        "strategy"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "website",
+        "newsletter",
+        "presentation"
+      ],
+      "prohibited_uses": [
+        "formal_pr_headshot"
+      ],
+      "alt_text": "Workshop discussion. small group workshop. facilitating, conversational, active.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-auth-002-ba2e9ecb0b5c-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-auth-002-ba2e9ecb0b5c-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-auth-002-ba2e9ecb0b5c-full.webp",
+        "small_width": 700,
+        "small_height": 467,
+        "display_width": 1400,
+        "display_height": 933,
+        "full_width": 1536,
+        "full_height": 1024,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-auth-003",
+      "title": "Working session side angle",
+      "origin_class": "authentic",
+      "ai_involvement": "enhancement_only",
+      "origin_label": "Authentic",
+      "ai_label": "AI-enhanced",
+      "asset_type": "working",
+      "setting": "workshop laptop station",
+      "mood": "focused, candid, technical",
+      "orientation": "portrait",
+      "dimensions": "1024x1536",
+      "context_tags": [
+        "working",
+        "process",
+        "strategy",
+        "behind_the_scenes"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "social_story",
+        "newsletter"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit"
+      ],
+      "alt_text": "Working session side angle. workshop laptop station. focused, candid, technical.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-auth-003-d15054ec9ccb-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-auth-003-d15054ec9ccb-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-auth-003-d15054ec9ccb-full.webp",
+        "small_width": 467,
+        "small_height": 700,
+        "display_width": 933,
+        "display_height": 1400,
+        "full_width": 1024,
+        "full_height": 1536,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-auth-004",
+      "title": "Working at the laptop",
+      "origin_class": "authentic",
+      "ai_involvement": "enhancement_only",
+      "origin_label": "Authentic",
+      "ai_label": "AI-enhanced",
+      "asset_type": "working",
+      "setting": "technical workspace",
+      "mood": "focused, capable, candid",
+      "orientation": "portrait",
+      "dimensions": "1023x1537",
+      "context_tags": [
+        "strategy",
+        "working",
+        "process",
+        "problem_solving",
+        "expertise"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "social_story",
+        "website",
+        "newsletter",
+        "presentation"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit"
+      ],
+      "alt_text": "Working at the laptop. technical workspace. focused, capable, candid.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-auth-004-cfb95cb85e6d-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-auth-004-cfb95cb85e6d-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-auth-004-cfb95cb85e6d-full.webp",
+        "small_width": 466,
+        "small_height": 700,
+        "display_width": 932,
+        "display_height": 1400,
+        "full_width": 1023,
+        "full_height": 1537,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-auth-005",
+      "title": "Branding talk silhouette",
+      "origin_class": "authentic",
+      "ai_involvement": "enhancement_only",
+      "origin_label": "Authentic",
+      "ai_label": "AI-enhanced",
+      "asset_type": "speaker",
+      "setting": "projected branding talk",
+      "mood": "documentary, authoritative, atmospheric",
+      "orientation": "square",
+      "dimensions": "1254x1254",
+      "context_tags": [
+        "speaking",
+        "branding",
+        "education",
+        "strategy"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "newsletter",
+        "presentation",
+        "speaker_materials"
+      ],
+      "prohibited_uses": [
+        "formal_pr_headshot"
+      ],
+      "alt_text": "Branding talk silhouette. projected branding talk. documentary, authoritative, atmospheric.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-auth-005-fb9c1856728f-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-auth-005-fb9c1856728f-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-auth-005-fb9c1856728f-full.webp",
+        "small_width": 700,
+        "small_height": 700,
+        "display_width": 1254,
+        "display_height": 1254,
+        "full_width": 1254,
+        "full_height": 1254,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-auth-006",
+      "title": "Guitar room selfie",
+      "origin_class": "authentic",
+      "ai_involvement": "enhancement_only",
+      "origin_label": "Authentic",
+      "ai_label": "AI-enhanced",
+      "asset_type": "selfie",
+      "setting": "home guitar room",
+      "mood": "relaxed, personal, creative",
+      "orientation": "portrait",
+      "dimensions": "1086x1448",
+      "context_tags": [
+        "creativity",
+        "music",
+        "personality",
+        "lifestyle",
+        "home"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "social_story"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit",
+        "speaker_materials",
+        "presentation"
+      ],
+      "alt_text": "Guitar room selfie. home guitar room. relaxed, personal, creative.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-auth-006-7b6695e95194-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-auth-006-7b6695e95194-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-auth-006-7b6695e95194-full.webp",
+        "small_width": 525,
+        "small_height": 700,
+        "display_width": 1050,
+        "display_height": 1400,
+        "full_width": 1086,
+        "full_height": 1448,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-auth-007",
+      "title": "Guitar room candid",
+      "origin_class": "authentic",
+      "ai_involvement": "enhancement_only",
+      "origin_label": "Authentic",
+      "ai_label": "AI-enhanced",
+      "asset_type": "lifestyle",
+      "setting": "home guitar room",
+      "mood": "observant, relaxed, thoughtful",
+      "orientation": "landscape",
+      "dimensions": "1448x1086",
+      "context_tags": [
+        "working",
+        "creativity",
+        "music",
+        "home",
+        "personality"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "social_story",
+        "newsletter"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit"
+      ],
+      "alt_text": "Guitar room candid. home guitar room. observant, relaxed, thoughtful.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-auth-007-6b85f6fc99f4-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-auth-007-6b85f6fc99f4-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-auth-007-6b85f6fc99f4-full.webp",
+        "small_width": 700,
+        "small_height": 525,
+        "display_width": 1400,
+        "display_height": 1050,
+        "full_width": 1448,
+        "full_height": 1086,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-auth-008",
+      "title": "Coffee at the home desk",
+      "origin_class": "authentic",
+      "ai_involvement": "enhancement_only",
+      "origin_label": "Authentic",
+      "ai_label": "AI-enhanced",
+      "asset_type": "lifestyle",
+      "setting": "home desk with guitars",
+      "mood": "casual, reflective, personal",
+      "orientation": "landscape",
+      "dimensions": "1448x1086",
+      "context_tags": [
+        "coffee",
+        "creativity",
+        "home",
+        "working",
+        "lifestyle"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "social_story",
+        "newsletter"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit"
+      ],
+      "alt_text": "Coffee at the home desk. home desk with guitars. casual, reflective, personal.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-auth-008-89523fae8a09-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-auth-008-89523fae8a09-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-auth-008-89523fae8a09-full.webp",
+        "small_width": 700,
+        "small_height": 525,
+        "display_width": 1400,
+        "display_height": 1050,
+        "full_width": 1448,
+        "full_height": 1086,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-auth-013",
+      "title": "Seated workshop discussion",
+      "origin_class": "authentic",
+      "ai_involvement": "enhancement_only",
+      "origin_label": "Authentic",
+      "ai_label": "AI-enhanced",
+      "asset_type": "event",
+      "setting": "innovation hub workshop",
+      "mood": "listening, collaborative, candid",
+      "orientation": "portrait",
+      "dimensions": "1086x1448",
+      "context_tags": [
+        "workshop",
+        "listening",
+        "collaboration",
+        "facilitation"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "newsletter",
+        "presentation"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit"
+      ],
+      "alt_text": "Seated workshop discussion. innovation hub workshop. listening, collaborative, candid.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-auth-013-2d02f4c8ea77-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-auth-013-2d02f4c8ea77-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-auth-013-2d02f4c8ea77-full.webp",
+        "small_width": 525,
+        "small_height": 700,
+        "display_width": 1050,
+        "display_height": 1400,
+        "full_width": 1086,
+        "full_height": 1448,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-auth-014",
+      "title": "Chapman workshop",
+      "origin_class": "authentic",
+      "ai_involvement": "enhancement_only",
+      "origin_label": "Authentic",
+      "ai_label": "AI-enhanced",
+      "asset_type": "event",
+      "setting": "Chapman entrepreneurship workshop",
+      "mood": "facilitating, credible, documentary",
+      "orientation": "landscape",
+      "dimensions": "1448x1086",
+      "context_tags": [
+        "workshop",
+        "entrepreneurship",
+        "strategy",
+        "facilitation"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "website",
+        "newsletter",
+        "presentation",
+        "speaker_materials",
+        "media_kit"
+      ],
+      "prohibited_uses": [
+        "formal_pr_headshot"
+      ],
+      "alt_text": "Chapman workshop. Chapman entrepreneurship workshop. facilitating, credible, documentary.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-auth-014-dffd5e6f412a-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-auth-014-dffd5e6f412a-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-auth-014-dffd5e6f412a-full.webp",
+        "small_width": 700,
+        "small_height": 525,
+        "display_width": 1400,
+        "display_height": 1050,
+        "full_width": 1448,
+        "full_height": 1086,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-auth-016",
+      "title": "Brand touchpoints talk",
+      "origin_class": "authentic",
+      "ai_involvement": "enhancement_only",
+      "origin_label": "Authentic",
+      "ai_label": "AI-enhanced",
+      "asset_type": "speaker",
+      "setting": "presentation room",
+      "mood": "authoritative, engaged, explanatory",
+      "orientation": "square",
+      "dimensions": "1254x1254",
+      "context_tags": [
+        "speaking",
+        "strategy",
+        "education",
+        "brand_therapy",
+        "expertise"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "website",
+        "presentation",
+        "speaker_materials",
+        "pr",
+        "media_kit"
+      ],
+      "prohibited_uses": [],
+      "alt_text": "Brand touchpoints talk. presentation room. authoritative, engaged, explanatory.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-auth-016-0046764509df-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-auth-016-0046764509df-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-auth-016-0046764509df-full.webp",
+        "small_width": 700,
+        "small_height": 700,
+        "display_width": 1254,
+        "display_height": 1254,
+        "full_width": 1254,
+        "full_height": 1254,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-auth-017",
+      "title": "Trade-show portrait",
+      "origin_class": "authentic",
+      "ai_involvement": "enhancement_only",
+      "origin_label": "Authentic",
+      "ai_label": "AI-enhanced",
+      "asset_type": "event",
+      "setting": "trade show",
+      "mood": "approachable, professional, distinctive",
+      "orientation": "portrait",
+      "dimensions": "1122x1402",
+      "context_tags": [
+        "events",
+        "networking",
+        "speaking",
+        "community",
+        "personal_style"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "social_story",
+        "website",
+        "speaker_materials",
+        "media_kit"
+      ],
+      "prohibited_uses": [
+        "formal_pr_headshot"
+      ],
+      "alt_text": "Trade-show portrait. trade show. approachable, professional, distinctive.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-auth-017-26abfbfc477b-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-auth-017-26abfbfc477b-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-auth-017-26abfbfc477b-full.webp",
+        "small_width": 560,
+        "small_height": 700,
+        "display_width": 1120,
+        "display_height": 1400,
+        "full_width": 1122,
+        "full_height": 1402,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-auth-019",
+      "title": "Brand Therapy book with Fabian",
+      "origin_class": "authentic",
+      "ai_involvement": "enhancement_only",
+      "origin_label": "Authentic",
+      "ai_label": "AI-enhanced",
+      "asset_type": "candid",
+      "setting": "restaurant with Fabian Geyrhalter",
+      "mood": "credible, personal, celebratory",
+      "orientation": "square",
+      "dimensions": "4096x4096",
+      "context_tags": [
+        "brand_therapy",
+        "book",
+        "mentorship",
+        "community",
+        "founder_story"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "website",
+        "newsletter",
+        "presentation"
+      ],
+      "prohibited_uses": [
+        "ai_generation_reference",
+        "formal_pr_headshot"
+      ],
+      "alt_text": "Brand Therapy book with Fabian. restaurant with Fabian Geyrhalter. credible, personal, celebratory.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-auth-019-a884acb32b92-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-auth-019-a884acb32b92-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-auth-019-a884acb32b92-full.webp",
+        "small_width": 700,
+        "small_height": 700,
+        "display_width": 1400,
+        "display_height": 1400,
+        "full_width": 4096,
+        "full_height": 4096,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-ai-001",
+      "title": "Seated lounge portrait",
+      "origin_class": "ai_generated",
+      "ai_involvement": "full_generation",
+      "origin_label": "AI-generated",
+      "ai_label": "Fully AI-generated",
+      "asset_type": "professional_portrait",
+      "setting": "modern office lounge",
+      "mood": "calm, composed, approachable",
+      "orientation": "landscape",
+      "dimensions": "2304x1728",
+      "context_tags": [
+        "leadership",
+        "strategy",
+        "portrait"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "website",
+        "presentation"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit",
+        "documentary_claim"
+      ],
+      "alt_text": "Seated lounge portrait. modern office lounge. calm, composed, approachable.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-ai-001-f959e06ed4a5-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-ai-001-f959e06ed4a5-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-ai-001-f959e06ed4a5-full.webp",
+        "small_width": 700,
+        "small_height": 525,
+        "display_width": 1400,
+        "display_height": 1050,
+        "full_width": 2304,
+        "full_height": 1728,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-ai-002",
+      "title": "Mountain consulting session",
+      "origin_class": "ai_generated",
+      "ai_involvement": "full_generation",
+      "origin_label": "AI-generated",
+      "ai_label": "Fully AI-generated",
+      "asset_type": "working",
+      "setting": "mountain-view meeting",
+      "mood": "consultative, engaged, polished",
+      "orientation": "square",
+      "dimensions": "1503x1503",
+      "context_tags": [
+        "consulting",
+        "strategy",
+        "meeting"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "website",
+        "presentation"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit",
+        "documentary_claim"
+      ],
+      "alt_text": "Mountain consulting session. mountain-view meeting. consultative, engaged, polished.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-ai-002-5f71fcea98a9-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-ai-002-5f71fcea98a9-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-ai-002-5f71fcea98a9-full.webp",
+        "small_width": 700,
+        "small_height": 700,
+        "display_width": 1400,
+        "display_height": 1400,
+        "full_width": 1503,
+        "full_height": 1503,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-ai-006",
+      "title": "Cafe coffee moment",
+      "origin_class": "ai_generated",
+      "ai_involvement": "full_generation",
+      "origin_label": "AI-generated",
+      "ai_label": "Fully AI-generated",
+      "asset_type": "lifestyle",
+      "setting": "sunlit cafe",
+      "mood": "observed, casual, reflective",
+      "orientation": "landscape",
+      "dimensions": "2400x1642",
+      "context_tags": [
+        "coffee",
+        "thinking",
+        "lifestyle",
+        "creativity"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "newsletter",
+        "website"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit",
+        "documentary_claim"
+      ],
+      "alt_text": "Cafe coffee moment. sunlit cafe. observed, casual, reflective.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-ai-006-1a0c9ca01583-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-ai-006-1a0c9ca01583-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-ai-006-1a0c9ca01583-full.webp",
+        "small_width": 700,
+        "small_height": 479,
+        "display_width": 1400,
+        "display_height": 958,
+        "full_width": 2400,
+        "full_height": 1642,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-ai-008",
+      "title": "Warm strategy table",
+      "origin_class": "ai_generated",
+      "ai_involvement": "full_generation",
+      "origin_label": "AI-generated",
+      "ai_label": "Fully AI-generated",
+      "asset_type": "working",
+      "setting": "warm meeting table",
+      "mood": "strategic, collaborative, cinematic",
+      "orientation": "landscape",
+      "dimensions": "2400x1800",
+      "context_tags": [
+        "strategy",
+        "working",
+        "consulting"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "website",
+        "presentation"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit",
+        "documentary_claim"
+      ],
+      "alt_text": "Warm strategy table. warm meeting table. strategic, collaborative, cinematic.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-ai-008-a855e45b5ba4-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-ai-008-a855e45b5ba4-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-ai-008-a855e45b5ba4-full.webp",
+        "small_width": 700,
+        "small_height": 525,
+        "display_width": 1400,
+        "display_height": 1050,
+        "full_width": 2400,
+        "full_height": 1800,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-ai-009",
+      "title": "Sofa lobby portrait",
+      "origin_class": "ai_generated",
+      "ai_involvement": "full_generation",
+      "origin_label": "AI-generated",
+      "ai_label": "Fully AI-generated",
+      "asset_type": "lifestyle",
+      "setting": "minimal lobby",
+      "mood": "relaxed, approachable, contemporary",
+      "orientation": "square",
+      "dimensions": "1238x1238",
+      "context_tags": [
+        "portrait",
+        "lifestyle",
+        "leadership"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "website",
+        "presentation"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit",
+        "documentary_claim"
+      ],
+      "alt_text": "Sofa lobby portrait. minimal lobby. relaxed, approachable, contemporary.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-ai-009-ddf5975625c9-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-ai-009-ddf5975625c9-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-ai-009-ddf5975625c9-full.webp",
+        "small_width": 700,
+        "small_height": 700,
+        "display_width": 1238,
+        "display_height": 1238,
+        "full_width": 1238,
+        "full_height": 1238,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-ai-010",
+      "title": "Formal dark portrait",
+      "origin_class": "ai_generated",
+      "ai_involvement": "full_generation",
+      "origin_label": "AI-generated",
+      "ai_label": "Fully AI-generated",
+      "asset_type": "professional_portrait",
+      "setting": "dark studio",
+      "mood": "formal, direct, controlled",
+      "orientation": "square",
+      "dimensions": "2048x2048",
+      "context_tags": [
+        "portrait",
+        "leadership",
+        "formal"
+      ],
+      "intended_uses": [
+        "website",
+        "presentation"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit",
+        "documentary_claim"
+      ],
+      "alt_text": "Formal dark portrait. dark studio. formal, direct, controlled.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-ai-010-905b46aa4720-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-ai-010-905b46aa4720-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-ai-010-905b46aa4720-full.webp",
+        "small_width": 700,
+        "small_height": 700,
+        "display_width": 1400,
+        "display_height": 1400,
+        "full_width": 2048,
+        "full_height": 2048,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-ai-011",
+      "title": "Vest studio portrait",
+      "origin_class": "ai_generated",
+      "ai_involvement": "full_generation",
+      "origin_label": "AI-generated",
+      "ai_label": "Fully AI-generated",
+      "asset_type": "professional_portrait",
+      "setting": "neutral studio",
+      "mood": "thoughtful, tailored, authoritative",
+      "orientation": "square",
+      "dimensions": "2048x2048",
+      "context_tags": [
+        "portrait",
+        "speaking",
+        "personal_style"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "website",
+        "presentation"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit",
+        "documentary_claim"
+      ],
+      "alt_text": "Vest studio portrait. neutral studio. thoughtful, tailored, authoritative.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-ai-011-069153ed6c50-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-ai-011-069153ed6c50-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-ai-011-069153ed6c50-full.webp",
+        "small_width": 700,
+        "small_height": 700,
+        "display_width": 1400,
+        "display_height": 1400,
+        "full_width": 2048,
+        "full_height": 2048,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-ai-012",
+      "title": "Laptop on the sofa",
+      "origin_class": "ai_generated",
+      "ai_involvement": "full_generation",
+      "origin_label": "AI-generated",
+      "ai_label": "Fully AI-generated",
+      "asset_type": "working",
+      "setting": "bright home workspace",
+      "mood": "focused, informal, capable",
+      "orientation": "portrait",
+      "dimensions": "1593x2048",
+      "context_tags": [
+        "working",
+        "process",
+        "home"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "newsletter",
+        "website"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit",
+        "documentary_claim"
+      ],
+      "alt_text": "Laptop on the sofa. bright home workspace. focused, informal, capable.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-ai-012-5a3e6122e31e-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-ai-012-5a3e6122e31e-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-ai-012-5a3e6122e31e-full.webp",
+        "small_width": 544,
+        "small_height": 700,
+        "display_width": 1089,
+        "display_height": 1400,
+        "full_width": 1593,
+        "full_height": 2048,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-ai-013",
+      "title": "Laptop with guitar",
+      "origin_class": "ai_generated",
+      "ai_involvement": "full_generation",
+      "origin_label": "AI-generated",
+      "ai_label": "Fully AI-generated",
+      "asset_type": "working",
+      "setting": "home office with guitar",
+      "mood": "creative, focused, relaxed",
+      "orientation": "portrait",
+      "dimensions": "1593x2048",
+      "context_tags": [
+        "working",
+        "creativity",
+        "music",
+        "home"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "newsletter",
+        "website"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit",
+        "documentary_claim"
+      ],
+      "alt_text": "Laptop with guitar. home office with guitar. creative, focused, relaxed.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-ai-013-2bea2f5078eb-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-ai-013-2bea2f5078eb-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-ai-013-2bea2f5078eb-full.webp",
+        "small_width": 544,
+        "small_height": 700,
+        "display_width": 1089,
+        "display_height": 1400,
+        "full_width": 1593,
+        "full_height": 2048,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-ai-014",
+      "title": "Sunlit laptop session",
+      "origin_class": "ai_generated",
+      "ai_involvement": "full_generation",
+      "origin_label": "AI-generated",
+      "ai_label": "Fully AI-generated",
+      "asset_type": "working",
+      "setting": "sunlit home table",
+      "mood": "quiet, focused, naturalistic",
+      "orientation": "portrait",
+      "dimensions": "1593x2048",
+      "context_tags": [
+        "working",
+        "thinking",
+        "process"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "newsletter",
+        "website"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit",
+        "documentary_claim"
+      ],
+      "alt_text": "Sunlit laptop session. sunlit home table. quiet, focused, naturalistic.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-ai-014-f4294ab7af87-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-ai-014-f4294ab7af87-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-ai-014-f4294ab7af87-full.webp",
+        "small_width": 544,
+        "small_height": 700,
+        "display_width": 1089,
+        "display_height": 1400,
+        "full_width": 1593,
+        "full_height": 2048,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-ai-015",
+      "title": "Warm office desk",
+      "origin_class": "ai_generated",
+      "ai_involvement": "full_generation",
+      "origin_label": "AI-generated",
+      "ai_label": "Fully AI-generated",
+      "asset_type": "working",
+      "setting": "warm desktop office",
+      "mood": "focused, productive, cinematic",
+      "orientation": "landscape",
+      "dimensions": "2400x1642",
+      "context_tags": [
+        "working",
+        "process",
+        "technology"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "newsletter",
+        "website"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit",
+        "documentary_claim"
+      ],
+      "alt_text": "Warm office desk. warm desktop office. focused, productive, cinematic.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-ai-015-900043a75bb9-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-ai-015-900043a75bb9-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-ai-015-900043a75bb9-full.webp",
+        "small_width": 700,
+        "small_height": 479,
+        "display_width": 1400,
+        "display_height": 958,
+        "full_width": 2400,
+        "full_height": 1642,
+        "format": "webp"
+      }
+    },
+    {
+      "id": "fp-ai-016",
+      "title": "Night office",
+      "origin_class": "ai_generated",
+      "ai_involvement": "full_generation",
+      "origin_label": "AI-generated",
+      "ai_label": "Fully AI-generated",
+      "asset_type": "working",
+      "setting": "night city office",
+      "mood": "focused, serious, cinematic",
+      "orientation": "square",
+      "dimensions": "2048x2048",
+      "context_tags": [
+        "working",
+        "strategy",
+        "technology",
+        "night"
+      ],
+      "intended_uses": [
+        "social_feed",
+        "newsletter",
+        "website"
+      ],
+      "prohibited_uses": [
+        "pr",
+        "media_kit",
+        "documentary_claim"
+      ],
+      "alt_text": "Night office. night city office. focused, serious, cinematic.",
+      "image": {
+        "small": "/fp/application/approved-photo-library/images/fp-ai-016-9c4dfec89069-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-ai-016-9c4dfec89069-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-ai-016-9c4dfec89069-full.webp",
+        "small_width": 700,
+        "small_height": 700,
+        "display_width": 1400,
+        "display_height": 1400,
+        "full_width": 2048,
+        "full_height": 2048,
+        "format": "webp"
+      }
+    }
+  ]
+}
