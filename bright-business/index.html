@@ -113,55 +113,76 @@
     .scene.is-visible .reveal { opacity: 1; transform: none; }
     .scene.is-visible .reveal.delay { transition-delay: 120ms; }
 
-    /* Focus Star: five-piece rail + the line as the speech */
-    .star-scene {
-      align-items: stretch;
-      padding-top: clamp(88px, 11vh, 128px);
-      padding-bottom: clamp(48px, 7vh, 72px);
-    }
-    .star-frame {
+    /* Focus Star: sticky left rail, scroll-scrubbed progression + color */
+    .star-pin {
+      --star-t: 0;
+      --star-ink: #070709;
+      --star-paper: #efede7;
       display: grid;
-      grid-template-columns: minmax(196px, .34fr) 1px minmax(0, 1fr);
-      gap: 0 clamp(28px, 4.5vw, 64px);
-      align-items: stretch;
-      width: min(1280px, 100%);
-      margin: 0 auto;
-      min-height: calc(100svh - 200px);
+      grid-template-columns: minmax(200px, .30fr) 1px minmax(0, 1fr);
+      background: color-mix(in srgb, var(--star-ink) calc((1 - var(--star-t)) * 100%), var(--star-paper) calc(var(--star-t) * 100%));
+      color: var(--star-paper);
+      scroll-snap-align: none;
+      scroll-snap-stop: normal;
     }
-    .star-rule { align-self: stretch; background: var(--line); }
-    .light .star-rule { background: rgba(12, 12, 15, .16); }
+    .star-pin.is-paper { color: var(--star-ink); }
+    .star-rail-sticky {
+      position: sticky;
+      top: 0;
+      height: 100svh;
+      align-self: start;
+      padding: clamp(88px, 11vh, 128px) clamp(18px, 2.4vw, 36px) clamp(48px, 7vh, 72px) clamp(24px, 5vw, 72px);
+      z-index: 3;
+    }
+    .star-rule-sticky {
+      position: sticky;
+      top: clamp(88px, 11vh, 128px);
+      height: calc(100svh - clamp(88px, 11vh, 128px) - clamp(48px, 7vh, 72px));
+      align-self: start;
+      background: currentColor;
+      opacity: .2;
+    }
+    .star-rule-sticky i {
+      display: block;
+      width: 100%;
+      height: calc(var(--star-t) * 100%);
+      background: currentColor;
+      opacity: 1;
+    }
     .star-rail {
       list-style: none;
       margin: 0;
-      padding: clamp(8px, 1vh, 18px) 0;
+      padding: 0;
+      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 100%;
     }
     .star-rail li {
       display: grid;
       grid-template-columns: 2.4ch 1fr;
       gap: 10px;
       align-items: baseline;
-      font-size: clamp(1.08rem, 1.55vw, 1.28rem);
-      letter-spacing: -.02em;
-      color: #7a776f;
-    }
-    .light .star-rail li { color: #8a877f; }
-    .star-rail li b { font-weight: 500; font-variant-numeric: tabular-nums; }
-    .star-rail .is-current {
-      color: var(--paper);
-      font-size: clamp(1.85rem, 3vw, 2.55rem);
+      font-size: calc(1.05rem + (var(--hot, 0) * 1.35rem));
+      letter-spacing: calc(-.02em - var(--hot, 0) * .02em);
       font-weight: 500;
-      letter-spacing: -.04em;
+      color: color-mix(in srgb, currentColor calc((38 + var(--hot, 0) * 62) * 1%), transparent);
+      transition: none;
     }
-    .light .star-rail .is-current { color: var(--ink); }
+    .star-rail li b { font-weight: 500; font-variant-numeric: tabular-nums; }
+    .star-pin .star-scene {
+      align-items: stretch;
+      padding: clamp(88px, 11vh, 128px) clamp(24px, 6vw, 96px) clamp(48px, 7vh, 72px) clamp(28px, 4.2vw, 64px);
+      background: transparent;
+      color: inherit;
+      min-height: 100svh;
+    }
     .star-copy {
       min-width: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      min-height: calc(100svh - 200px);
       padding: 8px 0;
     }
     .star-def {
@@ -169,7 +190,7 @@
       max-width: 36ch;
       font-size: clamp(.95rem, 1.25vw, 1.08rem);
       line-height: 1.4;
-      color: var(--muted);
+      color: color-mix(in srgb, currentColor 62%, transparent);
     }
     .star-scene .statement {
       max-width: 13ch;
@@ -177,8 +198,14 @@
       line-height: .98;
       letter-spacing: -.055em;
     }
-    .star-scene .body { margin-top: 22px; max-width: 38ch; }
-    .light .star-def { color: #605f5a; }
+    .star-scene .body {
+      margin-top: 22px;
+      max-width: 38ch;
+      color: color-mix(in srgb, currentColor 62%, transparent);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .star-rail li { transition: font-size 200ms linear, color 200ms linear; }
+    }
 
     /* Archetype */
     .archetype-scene { align-items: start; padding-top: clamp(82px, 9vh, 116px); }
@@ -298,7 +325,7 @@
     }
     .scape img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .scape-portrait { grid-row: 1 / span 2; }
-    .scape-portrait img { object-position: 50% 18%; }
+    .scape-portrait img { object-position: 50% 28%; }
     .scape-room img { object-position: 50% 40%; }
     .scape article.scape-mark {
       background: var(--charcoal);
@@ -393,7 +420,7 @@
     }
     .li-nav-item svg { width: 24px; height: 24px; fill: #666; }
     .li-nav-item.is-me img {
-      width: 24px; height: 24px; border-radius: 50%; object-fit: cover; object-position: 50% 18%;
+      width: 24px; height: 24px; border-radius: 50%; object-fit: cover; object-position: 50% 28%;
     }
     .li-nav-item .caret { width: 12px; height: 12px; fill: #666; }
     .li-nav-item .me-label, .li-nav-item .biz-label {
@@ -449,7 +476,7 @@
       z-index: 2;
     }
     .li-photo-slot img {
-      width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%;
+      width: 100%; height: 100%; object-fit: cover; object-position: 54% 26%;
       display: block; border-radius: 17px;
     }
     .li-name-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-top: 12px; }
@@ -477,7 +504,7 @@
     .li-section p { margin: 0; font-size: 14px; line-height: 1.45; color: rgba(0,0,0,.8); max-width: 62ch; }
     .li-featured { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
     .li-feat { border: 1px solid #e6e6e6; border-radius: 8px; overflow: hidden; background: #fff; }
-    .li-feat img { width: 100%; height: 72px; object-fit: cover; display: block; }
+    .li-feat img { width: 100%; height: 72px; object-fit: cover; object-position: 50% 22%; display: block; }
     .li-feat .brand-tile { height: 72px; padding: 8px; }
     .li-feat .brand-tile h3 { font-size: 15px; margin: 0; }
     .li-feat .brand-tile .pill { display: none; }
@@ -485,7 +512,7 @@
     .li-feat span { display: block; padding: 8px 10px 10px; font-size: 13px; font-weight: 600; line-height: 1.3; color: #191919; }
     .li-activity-meta { margin: -4px 0 10px !important; font-size: 13px !important; color: var(--li-muted); }
     .li-activity { display: grid; grid-template-columns: 48px 1fr; gap: 10px; align-items: start; }
-    .li-activity img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: 50% 18%; }
+    .li-activity img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: 50% 28%; }
     .li-activity strong { display: block; font-size: 14px; }
     .li-activity span { display: block; font-size: 12px; color: var(--li-muted); }
     .li-activity p { margin: 6px 0 0; font-size: 14px; line-height: 1.4; }
@@ -495,14 +522,14 @@
     .li-side-logo img { width: 48px; height: 48px; object-fit: contain; border-radius: 8px; background: var(--charcoal); filter: brightness(0) invert(1); padding: 8px; }
 
     /* Posts */
-    .posts-scene { align-items: start; padding-top: clamp(64px, 6vh, 80px); padding-bottom: 24px; background: var(--paper); color: var(--ink); }
-    .posts-scene .kicker { color: #7a776f; }
-    .posts-scene .statement { max-width: 16ch; font-size: clamp(1.7rem, 3.2vw, 2.6rem); }
+    .posts-scene { align-items: start; padding-top: clamp(48px, 5vh, 64px); padding-bottom: 16px; background: var(--paper); color: var(--ink); }
+    .posts-scene .kicker { color: #7a776f; margin-bottom: 8px; }
+    .posts-scene .statement { max-width: 16ch; font-size: clamp(1.45rem, 2.6vw, 2.1rem); margin-bottom: 0; }
     .feed {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 18px;
+      gap: 10px;
+      margin-top: 12px;
     }
     .post {
       background: #fff;
@@ -518,17 +545,64 @@
       display: flex; align-items: center; gap: 10px;
       padding: 8px 10px 6px;
     }
-    .post-head img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; object-position: 50% 18%; }
+    .post-head img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; object-position: 50% 28%; }
     .post-head strong { display: block; font-size: 13px; font-weight: 650; color: #191919; }
     .post-head span { display: block; font-size: 11px; color: rgba(0,0,0,.55); }
     .post-copy {
       padding: 0 10px 8px;
       font-size: 13px; line-height: 1.35; color: #191919;
     }
-    .post-media { aspect-ratio: 16 / 9; background: var(--page); overflow: hidden; }
-    .post-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .post-club img { object-position: 50% 18%; }
-    .post-studio img { object-position: 50% 8%; }
+    .post-media { aspect-ratio: 1 / 1; background: var(--page); overflow: hidden; position: relative; }
+    .post-media > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .post-club > img { object-position: 50% 22%; }
+    .post-peers > img { object-position: 50% 40%; }
+    .stamp {
+      position: absolute;
+      color: #fff;
+      font-family: "Familjen Grotesk", sans-serif;
+      pointer-events: none;
+    }
+    .stamp img.lockup {
+      width: 28px; height: 28px; object-fit: contain;
+      filter: brightness(0) invert(1);
+      flex: 0 0 auto;
+    }
+    .stamp b {
+      display: block;
+      font-size: 1.05rem;
+      line-height: .95;
+      letter-spacing: -.03em;
+      font-weight: 600;
+    }
+    .stamp-bar {
+      left: 0; right: 0; bottom: 0;
+      background: var(--charcoal);
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 14px 14px;
+    }
+    .stamp-side {
+      left: 0; top: 0; bottom: 0; width: 34%;
+      background: var(--charcoal);
+      display: flex; flex-direction: column; justify-content: space-between;
+      padding: 14px 12px;
+    }
+    .post-studio > img { object-position: 78% 28%; }
+    .stamp-side .pill { align-self: flex-start; margin-top: 0; padding: 7px 12px; font-size: .68rem; }
+    .stamp-corner {
+      top: 12px; left: 12px;
+      display: flex; align-items: center; gap: 8px;
+      background: var(--charcoal);
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+    .post-quote > img { object-position: 50% 46%; }
+    .stamp-quote {
+      inset: 0;
+      background: linear-gradient(180deg, transparent 48%, rgba(66,65,78,.94) 100%);
+      display: flex; flex-direction: column; justify-content: flex-end; gap: 10px;
+      padding: 16px;
+    }
+    .stamp-quote b { font-size: 1.35rem; max-width: 12ch; }
     .brand-tile {
       height: 100%;
       display: flex; flex-direction: column; justify-content: space-between;
@@ -544,7 +618,12 @@
       font-size: clamp(1.45rem, 1.8vw, 1.85rem);
       line-height: .95; letter-spacing: -.03em; font-weight: 600; max-width: 10ch;
     }
-    .brand-tile .pill { align-self: flex-start; margin-top: 12px; }
+    .post-media .brand-tile {
+      position: absolute;
+      inset: 0;
+      height: auto;
+    }
+    .post-media .brand-tile h3 { font-size: 1.4rem; max-width: 11ch; }
     .post-foot {
       display: flex; gap: 16px; padding: 7px 10px 9px;
       font-size: 11px; color: rgba(0,0,0,.55); border-top: 1px solid #eee;
@@ -595,23 +674,26 @@
       .li-nav-item:nth-child(n+5) { display: none; }
       .li-nav-split { display: none; }
       .feed { grid-template-columns: 1fr 1fr; }
-      .star-frame {
+      .star-pin {
         grid-template-columns: 1fr;
-        min-height: 0;
-        gap: 28px;
       }
-      .star-rule { display: none; }
+      .star-rule-sticky { display: none; }
+      .star-rail-sticky {
+        position: sticky;
+        top: 0;
+        height: auto;
+        padding: 16px 16px 8px;
+        background: color-mix(in srgb, var(--star-ink) calc((1 - var(--star-t)) * 100%), var(--star-paper) calc(var(--star-t) * 100%));
+      }
       .star-rail {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
         gap: 10px 18px;
-        min-height: 0;
-        padding: 0;
+        height: auto;
       }
       .star-rail li { grid-template-columns: auto; font-size: .82rem; }
       .star-rail li b { display: none; }
-      .star-rail .is-current { font-size: 1.05rem; }
       .star-scene .statement { font-size: clamp(2.4rem, 11vw, 4.2rem); }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -654,92 +736,52 @@
       </div>
     </section>
 
-    <section class="scene black star-scene" data-chapter="strategy">
-      <div class="star-frame">
-        <ol class="star-rail reveal" aria-label="Focus Star">
+    <div class="star-pin" data-chapter="strategy">
+      <aside class="star-rail-sticky">
+        <ol class="star-rail" aria-label="Focus Star">
           <li class="is-current" aria-current="true"><b>01</b>Product</li>
           <li><b>02</b>People</li>
           <li><b>03</b>Purpose</li>
           <li><b>04</b>Promise</li>
           <li><b>05</b>Personality</li>
         </ol>
-        <div class="star-rule" aria-hidden="true"></div>
-        <div class="star-copy">
-          <p class="star-def reveal">What you uniquely offer.</p>
-          <h2 class="statement reveal delay">A peer community that accelerates ethical growth</h2>
-        </div>
+      </aside>
+      <div class="star-rule-sticky" aria-hidden="true"><i></i></div>
+      <div class="star-panels">
+        <section class="scene star-scene" data-chapter="strategy">
+          <div class="star-copy">
+            <p class="star-def reveal">What you uniquely offer.</p>
+            <h2 class="statement reveal delay">A peer community that accelerates ethical growth</h2>
+          </div>
+        </section>
+        <section class="scene star-scene" data-chapter="strategy">
+          <div class="star-copy">
+            <p class="star-def reveal">Who you are here to serve.</p>
+            <h2 class="statement reveal delay">Driven experts who love their craft and feel professionally isolated</h2>
+            <p class="body reveal delay">Persona: Anna. A skilled advisor whose expertise stays invisible when she works alone.</p>
+          </div>
+        </section>
+        <section class="scene star-scene" data-chapter="strategy">
+          <div class="star-copy">
+            <p class="star-def reveal">Why your work needs to exist.</p>
+            <h2 class="statement reveal delay">Build the community of peers and experts you wish you'd had</h2>
+          </div>
+        </section>
+        <section class="scene star-scene" data-chapter="strategy">
+          <div class="star-copy">
+            <p class="star-def reveal">What people can consistently expect from you.</p>
+            <h2 class="statement reveal delay">Collaboration over transaction</h2>
+            <p class="body reveal delay">Brand DNA: Growth</p>
+          </div>
+        </section>
+        <section class="scene star-scene" data-chapter="strategy">
+          <div class="star-copy">
+            <p class="star-def reveal">How your brand should feel and behave.</p>
+            <h2 class="statement reveal delay">Professional like a peer board, warm like a social club</h2>
+          </div>
+        </section>
       </div>
-    </section>
-
-    <section class="scene light star-scene" data-chapter="strategy">
-      <div class="star-frame">
-        <ol class="star-rail reveal" aria-label="Focus Star">
-          <li><b>01</b>Product</li>
-          <li class="is-current" aria-current="true"><b>02</b>People</li>
-          <li><b>03</b>Purpose</li>
-          <li><b>04</b>Promise</li>
-          <li><b>05</b>Personality</li>
-        </ol>
-        <div class="star-rule" aria-hidden="true"></div>
-        <div class="star-copy">
-          <p class="star-def reveal">Who you are here to serve.</p>
-          <h2 class="statement reveal delay">Driven experts who love their craft and feel professionally isolated</h2>
-          <p class="body reveal delay">Persona: Anna. A skilled advisor whose expertise stays invisible when she works alone.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="scene black star-scene" data-chapter="strategy">
-      <div class="star-frame">
-        <ol class="star-rail reveal" aria-label="Focus Star">
-          <li><b>01</b>Product</li>
-          <li><b>02</b>People</li>
-          <li class="is-current" aria-current="true"><b>03</b>Purpose</li>
-          <li><b>04</b>Promise</li>
-          <li><b>05</b>Personality</li>
-        </ol>
-        <div class="star-rule" aria-hidden="true"></div>
-        <div class="star-copy">
-          <p class="star-def reveal">Why your work needs to exist.</p>
-          <h2 class="statement reveal delay">Build the community of peers and experts you wish you'd had</h2>
-        </div>
-      </div>
-    </section>
-
-    <section class="scene light star-scene" data-chapter="strategy">
-      <div class="star-frame">
-        <ol class="star-rail reveal" aria-label="Focus Star">
-          <li><b>01</b>Product</li>
-          <li><b>02</b>People</li>
-          <li><b>03</b>Purpose</li>
-          <li class="is-current" aria-current="true"><b>04</b>Promise</li>
-          <li><b>05</b>Personality</li>
-        </ol>
-        <div class="star-rule" aria-hidden="true"></div>
-        <div class="star-copy">
-          <p class="star-def reveal">What people can consistently expect from you.</p>
-          <h2 class="statement reveal delay">Collaboration over transaction</h2>
-          <p class="body reveal delay">Brand DNA: Growth</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="scene black star-scene" data-chapter="strategy">
-      <div class="star-frame">
-        <ol class="star-rail reveal" aria-label="Focus Star">
-          <li><b>01</b>Product</li>
-          <li><b>02</b>People</li>
-          <li><b>03</b>Purpose</li>
-          <li><b>04</b>Promise</li>
-          <li class="is-current" aria-current="true"><b>05</b>Personality</li>
-        </ol>
-        <div class="star-rule" aria-hidden="true"></div>
-        <div class="star-copy">
-          <p class="star-def reveal">How your brand should feel and behave.</p>
-          <h2 class="statement reveal delay">Professional like a peer board, warm like a social club</h2>
-        </div>
-      </div>
-    </section>
+    </div>
 
     <section class="scene black archetype-scene" data-chapter="strategy">
       <div class="inner archetype-layout">
@@ -913,7 +955,7 @@
                     <div class="li-name-row">
                       <div>
                         <div class="li-name">Florin Diumea <small>He/Him</small></div>
-                        <p class="li-headline">Founder, Bright Business Club | The peer community that accelerates ethical growth</p>
+                        <p class="li-headline">Not a mixer. A room. | Founder, Bright Business Club</p>
                         <p class="li-meta">Los Angeles Metropolitan Area · <b>Contact info</b></p>
                         <p class="li-stats"><b>10,288 followers</b> · <b>500+ connections</b></p>
                       </div>
@@ -967,7 +1009,7 @@
                       <img src="media/florin-square.jpg" alt="">
                       <div>
                         <strong>Florin Diumea</strong>
-                        <span>Founder, Bright Business Club</span>
+                        <span>Not a mixer. A room.</span>
                         <p>Not a mixer. A room. Bright Business Club is the peer community that accelerates ethical growth.</p>
                       </div>
                     </article>
@@ -1005,34 +1047,55 @@
           <article class="post">
             <div class="post-head">
               <img src="media/florin-square.jpg" alt="">
-              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
+              <div><strong>Florin Diumea</strong><span>Not a mixer. A room.</span></div>
             </div>
             <p class="post-copy">I started my first business at 19. No playbook. This is the peer community I needed then.</p>
-            <div class="post-media post-club"><img src="media/florin-club.jpg" alt="Florin at the club table"></div>
-            <div class="post-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
-          </article>
-          <article class="post">
-            <div class="post-head">
-              <img src="media/florin-square.jpg" alt="">
-              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
+            <div class="post-media post-club">
+              <img src="media/florin-club.jpg" alt="Florin at the club table">
+              <div class="stamp stamp-bar">
+                <img class="lockup" src="media/shield.png" alt="">
+                <b>Not a mixer. A room.</b>
+              </div>
             </div>
-            <p class="post-copy">The room you wish you'd had when you started. Not a mixer. A room.</p>
-            <div class="post-media post-studio"><img src="media/florin.jpg" alt="Florin studio portrait"></div>
             <div class="post-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
           </article>
           <article class="post">
             <div class="post-head">
               <img src="media/florin-square.jpg" alt="">
-              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
+              <div><strong>Florin Diumea</strong><span>Not a mixer. A room.</span></div>
+            </div>
+            <p class="post-copy">The room you wish you'd had when you started.</p>
+            <div class="post-media post-studio">
+              <img src="media/florin.jpg" alt="Florin studio portrait">
+              <div class="stamp stamp-side">
+                <img class="lockup" src="media/shield.png" alt="">
+                <div>
+                  <b>Not a mixer. A room.</b>
+                  <span class="pill">Apply to Join a Club</span>
+                </div>
+              </div>
+            </div>
+            <div class="post-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
+          </article>
+          <article class="post">
+            <div class="post-head">
+              <img src="media/florin-square.jpg" alt="">
+              <div><strong>Florin Diumea</strong><span>Not a mixer. A room.</span></div>
             </div>
             <p class="post-copy">Driven experts who love their craft shouldn't have to grow alone.</p>
-            <div class="post-media"><img src="media/stock-peers.jpg" alt="Peers at a working table"></div>
+            <div class="post-media post-peers">
+              <img src="media/stock-peers.jpg" alt="Peers at a working table">
+              <div class="stamp stamp-corner">
+                <img class="lockup" src="media/shield.png" alt="">
+                <b>Bright Business Club</b>
+              </div>
+            </div>
             <div class="post-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
           </article>
           <article class="post">
             <div class="post-head">
               <img src="media/florin-square.jpg" alt="">
-              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
+              <div><strong>Florin Diumea</strong><span>Not a mixer. A room.</span></div>
             </div>
             <p class="post-copy">Not a mixer. A room.</p>
             <div class="post-media">
@@ -1047,7 +1110,7 @@
           <article class="post">
             <div class="post-head">
               <img src="media/florin-square.jpg" alt="">
-              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
+              <div><strong>Florin Diumea</strong><span>Not a mixer. A room.</span></div>
             </div>
             <p class="post-copy">Collaboration over transaction. Growth is the outcome.</p>
             <div class="post-media">
@@ -1062,10 +1125,17 @@
           <article class="post">
             <div class="post-head">
               <img src="media/florin-square.jpg" alt="">
-              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
+              <div><strong>Florin Diumea</strong><span>Not a mixer. A room.</span></div>
             </div>
             <p class="post-copy">A peer community that accelerates ethical growth.</p>
-            <div class="post-media"><img src="media/banner-palm.jpg" alt="Palm campus"></div>
+            <div class="post-media post-club post-quote">
+              <img src="media/florin-club.jpg" alt="The Bright Business Club room">
+              <div class="stamp stamp-quote">
+                <img class="lockup" src="media/shield.png" alt="">
+                <b>Collaboration over transaction</b>
+                <span class="pill">Apply to Join a Club</span>
+              </div>
+            </div>
             <div class="post-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
           </article>
         </div>
@@ -1089,7 +1159,9 @@
       document.querySelectorAll('.chapter-nav button').forEach(button => button.setAttribute('aria-current', button.dataset.chapterTarget === chapter ? 'true' : 'false'));
       const atStart = i === 0;
       document.body.classList.toggle('at-start', atStart);
-      document.body.classList.toggle('on-light', entry.target.classList.contains('light'));
+      if (!entry.target.classList.contains('star-scene')) {
+        document.body.classList.toggle('on-light', entry.target.classList.contains('light'));
+      }
       if (atStart) setNavOpen(false);
     }), { threshold: .24 });
     scenes.forEach(s => observer.observe(s));
@@ -1119,6 +1191,32 @@
       setNavOpen(false);
       document.querySelector(`.scene[data-chapter="${button.dataset.chapterTarget}"]`)?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     }));
+    const starPin = document.querySelector('.star-pin');
+    const starItems = starPin ? [...starPin.querySelectorAll('.star-rail li')] : [];
+    const updateStar = () => {
+      if (!starPin) return;
+      const rect = starPin.getBoundingClientRect();
+      const total = Math.max(1, starPin.offsetHeight - innerHeight);
+      const raw = Math.min(1, Math.max(0, -rect.top / total));
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const t = reduced ? Math.round(raw * 4) / 4 : raw;
+      starPin.style.setProperty('--star-t', t.toFixed(4));
+      starItems.forEach((li, i) => {
+        const hot = Math.max(0, 1 - Math.abs(t * 4 - i));
+        li.style.setProperty('--hot', hot.toFixed(3));
+        const current = Math.round(t * 4) === i;
+        li.classList.toggle('is-current', current);
+        if (current) li.setAttribute('aria-current', 'true');
+        else li.removeAttribute('aria-current');
+      });
+      if (raw > 0.04 && raw < 0.98) {
+        const paper = t > 0.52;
+        starPin.classList.toggle('is-paper', paper);
+        document.body.classList.toggle('on-light', paper);
+      }
+    };
+    addEventListener('scroll', updateStar, { passive: true });
+    updateStar();
     const chart = document.querySelector('bt-archetype-chart');
     if (chart && d.archetypeProfile) {
       customElements.whenDefined('bt-archetype-chart').then(() => { chart.data = d.archetypeProfile; });
