@@ -1,0 +1,2227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+  <meta name="description" content="Your private Brand Therapy reveal is ready.">
+  <meta property="og:title" content="Bright Business · Brand Therapy">
+  <meta property="og:url" content="https://brandtherapy.florianp.com/bright-business/">
+  <meta property="og:description" content="Your private Brand Therapy reveal is ready.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Brand Therapy">
+  <!-- Local-preview default. On Pages publish: screenshot a simple HTML
+       Reveal-token card (ink/paper, Helvetica Neue, name + Brand Therapy)
+       to /{slug}/og-image.png. No AI-textured marketing PNG.
+       Lesson: L-reveal-client-og-image-on-publish-2026-08-04 -->
+  <meta property="og:image" content="https://brandtherapy.florianp.com/bright-business/og-image.png">
+  <meta property="og:image:secure_url" content="https://brandtherapy.florianp.com/bright-business/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bright Business · Brand Therapy">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bright Business · Brand Therapy">
+  <meta name="twitter:description" content="Your private Brand Therapy reveal is ready.">
+  <meta name="twitter:image" content="https://brandtherapy.florianp.com/bright-business/og-image.png">
+  <meta name="twitter:image:alt" content="Bright Business · Brand Therapy">
+  <title>Bright Business · Brand Therapy Reveal</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      --ink: #0c0c0f;
+      --paper: #efede7;
+      --muted: #aaa7a0;
+      --line: rgba(239, 237, 231, .18);
+      --accent: #c9c5ba;
+      --ease: cubic-bezier(.16, 1, .3, 1);
+    }
+    * { box-sizing: border-box; }
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    body { margin: 0; background: var(--ink); overflow-x: hidden; }
+    button { font: inherit; }
+    .scene {
+      min-height: 100svh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      position: relative;
+      display: grid;
+      align-items: center;
+      padding: clamp(76px, 10vh, 120px) clamp(24px, 7vw, 112px) clamp(62px, 8vh, 96px);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .scene.light { background: var(--paper); color: var(--ink); }
+    .scene.black { background: #070709; }
+    .inner { width: min(1120px, 100%); margin: 0 auto; }
+    .inner.narrow { width: min(820px, 100%); }
+    .kicker {
+      margin: 0 0 22px;
+      font-size: .72rem;
+      line-height: 1;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .framework-definition {
+      max-width: 38ch;
+      margin: -7px 0 22px;
+      font-size: clamp(.9rem, 1.25vw, 1.05rem);
+      line-height: 1.4;
+      color: var(--muted);
+    }
+    h1, h2, h3, p { margin: 0; }
+    .display {
+      max-width: 14ch;
+      font-size: clamp(3.3rem, 10vw, 9.6rem);
+      line-height: .88;
+      letter-spacing: -.065em;
+      font-weight: 500;
+    }
+    .statement {
+      max-width: 20ch;
+      font-size: clamp(2.35rem, 7vw, 7.3rem);
+      line-height: .95;
+      letter-spacing: -.052em;
+      font-weight: 500;
+    }
+    .body {
+      max-width: 48ch;
+      margin-top: 30px;
+      font-size: clamp(1rem, 1.6vw, 1.35rem);
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .light .body, .light .kicker, .light .framework-definition { color: #605f5a; }
+    .accent { color: var(--accent); }
+    .index {
+      position: absolute;
+      top: max(22px, env(safe-area-inset-top));
+      right: clamp(20px, 3vw, 42px);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      color: var(--muted);
+      z-index: 20;
+    }
+    .meter {
+      position: fixed;
+      z-index: 40;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 2px;
+      background: rgba(239, 237, 231, .08);
+    }
+    .meter span { display: block; width: 0; height: 100%; background: var(--paper); transition: width 420ms var(--ease); }
+    .wordfield { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 34px; max-width: 900px; }
+    .wordfield span { font-size: clamp(.88rem, 1.6vw, 1.15rem); color: var(--muted); }
+    .sliderline { display: grid; gap: 13px; margin-top: 36px; max-width: 720px; }
+    .sliderline div { display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid var(--line); padding-bottom: 11px; }
+    .sliderline strong { min-width: 92px; color: var(--paper); font-weight: 500; }
+    .sliderline span { color: var(--muted); }
+    .calibration-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(250px, .34fr);
+      gap: clamp(30px, 5vw, 72px);
+      align-items: start;
+      margin-top: 34px;
+    }
+    .calibration-scene { align-items: start; overflow: visible; padding-top: clamp(82px, 8vh, 104px); padding-bottom: clamp(72px, 8vh, 100px); }
+    .calibration-scene .statement { max-width: 17ch; font-size: clamp(2.5rem, 5.2vw, 5.7rem); }
+    .calibration-legend { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 24px; color: var(--muted); font-size: .78rem; line-height: 1.4; }
+    .calibration-legend span { display: inline-flex; align-items: center; gap: 8px; }
+    .calibration-legend i { width: 10px; height: 10px; border: 1px solid var(--muted); border-radius: 50%; }
+    .calibration-legend .defining-key { border-color: var(--paper); background: var(--paper); }
+    .calibration-legend p { flex-basis: 100%; max-width: 58ch; }
+    .calibration-axes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px 28px; }
+    .calibration-axis {
+      display: grid;
+      grid-template-columns: minmax(62px, auto) minmax(96px, 1fr) minmax(62px, auto);
+      gap: 10px;
+      align-items: center;
+      min-height: 28px;
+      opacity: .18;
+      transform: translateY(9px);
+      transition: opacity 420ms var(--ease), transform 520ms var(--ease);
+      transition-delay: calc(70ms + var(--axis-order) * 38ms);
+    }
+    .calibration-axis:focus-visible { outline: 1px solid rgba(239, 237, 231, .62); outline-offset: 5px; }
+    .calibration-axis > span { color: var(--muted); font-size: clamp(.7rem, .9vw, .84rem); transition: color 180ms ease; }
+    .calibration-axis > span:last-child { text-align: right; }
+    .calibration-axis > span.is-lean { color: var(--paper); font-weight: 500; }
+    .calibration-track { position: relative; height: 1px; background: var(--line); transition: background 180ms ease; }
+    .calibration-track::before { content: ''; position: absolute; left: 50%; top: -4px; width: 1px; height: 9px; background: var(--muted); opacity: .7; }
+    .calibration-fill {
+      position: absolute;
+      top: -1px;
+      height: 3px;
+      background: var(--paper);
+      transform: scaleX(0);
+      transition: transform 620ms var(--ease);
+      transition-delay: calc(110ms + var(--axis-order) * 38ms);
+    }
+    .calibration-axis.leans-left .calibration-fill { left: var(--position); right: 50%; transform-origin: right; }
+    .calibration-axis.leans-right .calibration-fill { left: 50%; right: calc(100% - var(--position)); transform-origin: left; }
+    .calibration-axis.is-centered .calibration-fill { left: calc(50% - 1px); width: 2px; transform-origin: center; }
+    .calibration-dot {
+      position: absolute;
+      left: var(--position);
+      top: 50%;
+      width: 12px;
+      height: 12px;
+      border: 2px solid var(--paper);
+      border-radius: 50%;
+      background: var(--ink);
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(.45);
+      transition: opacity 240ms ease, transform 520ms var(--ease);
+      transition-delay: calc(210ms + var(--axis-order) * 38ms);
+    }
+    .calibration-axis.is-defining .calibration-dot { background: var(--paper); }
+    .calibration-axis.is-supporting .calibration-dot { border-color: var(--muted); }
+    .calibration-axis.is-supporting .calibration-fill { background: var(--muted); }
+    .calibration-axis.is-supporting > span.is-lean { color: var(--muted); font-weight: 400; }
+    .scene.is-visible .calibration-axis { opacity: 1; transform: none; }
+    .scene.is-visible .calibration-fill { transform: scaleX(1); }
+    .scene.is-visible .calibration-dot { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    .calibration-axis:focus-visible .calibration-track { background: rgba(239, 237, 231, .42); }
+    .calibration-axis:focus-visible > span { color: var(--paper); }
+    .calibration-axis:focus-visible .calibration-dot { transform: translate(-50%, -50%) scale(1.28); }
+    @media (hover: hover) {
+      .calibration-axis:hover .calibration-track { background: rgba(239, 237, 231, .42); }
+      .calibration-axis:hover > span { color: var(--paper); }
+      .calibration-axis:hover .calibration-dot { transform: translate(-50%, -50%) scale(1.28); }
+    }
+    .calibration-keywords { display: grid; gap: 28px; padding: 20px 0 4px; border-top: 1px solid var(--line); }
+    .calibration-keywords b { display: block; margin-bottom: 10px; color: var(--muted); font-size: .68rem; letter-spacing: .13em; text-transform: uppercase; }
+    .calibration-keywords p { font-size: clamp(1.15rem, 2.2vw, 2rem); line-height: 1.18; letter-spacing: -.025em; }
+    .archetype-scene { align-items: start; padding-top: clamp(82px, 9vh, 116px); }
+    .archetype-layout { display: grid; grid-template-columns: minmax(250px, .68fr) minmax(420px, 1.32fr); gap: clamp(28px, 5vw, 78px); align-items: center; }
+    .archetype-summary { align-self: center; }
+    .archetype-summary .statement { font-size: clamp(2.4rem, 5vw, 5.8rem); }
+    .archetype-summary-list { display: grid; gap: 10px; margin-top: 28px; }
+    .archetype-summary-list p { display: flex; justify-content: space-between; gap: 20px; padding-top: 10px; border-top: 1px solid var(--line); color: var(--muted); }
+    .archetype-summary-list strong { color: var(--paper); font-weight: 500; }
+    bt-archetype-chart { display: block; min-width: 0; }
+    .relationship-scene { align-items: start; overflow: visible; padding-top: clamp(82px, 8vh, 104px); padding-bottom: clamp(72px, 8vh, 100px); }
+    .relationship-scene .statement { max-width: 16ch; font-size: clamp(2.8rem, 6.4vw, 6.6rem); }
+    .relationship-position { margin-top: clamp(40px, 6vh, 68px); }
+    .relationship-system {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(128px, .34fr) minmax(0, 1fr);
+      align-items: stretch;
+      min-height: 206px;
+    }
+    .relationship-brand {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: clamp(22px, 3vw, 34px);
+      border: 1px solid rgba(12, 12, 15, .28);
+      background: transparent;
+      color: var(--ink);
+      opacity: 0;
+      transition: opacity 460ms ease, transform 720ms var(--ease), background 460ms ease, color 460ms ease;
+    }
+    .relationship-personal { transform: translateX(-28px); }
+    .relationship-company { transform: translateX(28px); }
+    .scene.is-visible .relationship-brand { opacity: 1; transform: none; }
+    .relationship-brand > span {
+      font-size: .69rem;
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      opacity: .64;
+    }
+    .relationship-brand strong {
+      display: block;
+      margin-top: auto;
+      padding-top: 34px;
+      font-size: clamp(2.2rem, 4.3vw, 4.9rem);
+      font-weight: 500;
+      line-height: .9;
+      letter-spacing: -.055em;
+    }
+    .relationship-brand p { max-width: 31ch; margin-top: 18px; font-size: clamp(.86rem, 1.2vw, 1.02rem); line-height: 1.42; opacity: .7; }
+    .relationship-bridge {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: 13px;
+      padding: 18px 10px;
+      color: #605f5a;
+      font-size: .7rem;
+      line-height: 1.35;
+      text-align: center;
+    }
+    .relationship-bridge::before {
+      content: '';
+      width: calc(100% + 34px);
+      height: 1px;
+      background: rgba(12, 12, 15, .34);
+      transform: scaleX(0);
+      transition: transform 760ms 280ms var(--ease);
+    }
+    .scene.is-visible .relationship-bridge::before { transform: scaleX(1); }
+    .relationship-bridge span {
+      max-width: 18ch;
+      font-weight: 600;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(5px);
+      transition: opacity 360ms 540ms ease, transform 520ms 540ms var(--ease);
+    }
+    .scene.is-visible .relationship-bridge span { opacity: 1; transform: none; }
+    .relationship-position[data-relationship="company-led"] .relationship-company,
+    .relationship-position[data-relationship="company-led-founder-supported"] .relationship-company,
+    .relationship-position[data-relationship="personal-led-company-scaled"] .relationship-personal {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .relationship-position[data-relationship="company-led-founder-supported"] .relationship-personal,
+    .relationship-position[data-relationship="personal-led-company-scaled"] .relationship-company {
+      box-shadow: inset 0 0 0 5px var(--paper), inset 0 0 0 6px rgba(12, 12, 15, .28);
+    }
+    .relationship-position[data-relationship="shared-visibility"] .relationship-brand { background: rgba(12, 12, 15, .06); }
+    /* one-brand: two panes with a readable bridge — never overlap into the bridge text */
+    .relationship-position[data-relationship="one-brand"] .relationship-system {
+      grid-template-columns: minmax(0, 1fr) minmax(132px, 180px) minmax(0, 1fr);
+      gap: clamp(14px, 2vw, 28px);
+    }
+    .relationship-position[data-relationship="one-brand"] .relationship-brand { background: var(--ink); color: var(--paper); }
+    .relationship-position[data-relationship="one-brand"] .relationship-personal,
+    .relationship-position[data-relationship="one-brand"] .relationship-company { margin: 0; transform: none; }
+    .board-scene { padding: 0; background: #08080a; }
+    .board-stage {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .board-scene img {
+      width: 100%;
+      height: 100svh;
+      object-fit: contain;
+      display: block;
+    }
+    .board-actions {
+      position: absolute;
+      z-index: 30;
+      right: clamp(18px, 3vw, 42px);
+      bottom: max(20px, env(safe-area-inset-bottom));
+      display: flex;
+      align-items: stretch;
+      gap: 8px;
+    }
+    .board-action,
+    .variant-switch button {
+      min-height: 46px;
+      border: 1px solid rgba(239, 237, 231, .5);
+      border-radius: 0;
+      background: var(--ink);
+      color: var(--paper);
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+    .board-action {
+      padding: 12px 17px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .24);
+      font-size: .76rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .board-action:hover,
+    .board-action:focus-visible,
+    .variant-switch button:hover,
+    .variant-switch button:focus-visible,
+    .variant-switch button.is-active {
+      outline: none;
+      background: var(--paper);
+      color: var(--ink);
+      border-color: var(--paper);
+    }
+    .variant-switch {
+      display: flex;
+      padding: 3px;
+      border: 1px solid rgba(239, 237, 231, .5);
+      background: var(--ink);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .24);
+    }
+    .variant-switch button {
+      min-width: 46px;
+      min-height: 38px;
+      padding: 8px 12px;
+      display: grid;
+      place-items: center;
+      border-color: transparent;
+    }
+    .variant-chip {
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .28);
+    }
+    .chapter-toggle {
+      position: fixed;
+      z-index: 46;
+      left: clamp(14px, 2vw, 28px);
+      top: max(14px, env(safe-area-inset-top));
+      width: 44px;
+      height: 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      opacity: .34;
+      transition: opacity 200ms ease, visibility 0s linear;
+    }
+    .chapter-toggle span {
+      display: block;
+      width: 16px;
+      height: 1px;
+      background: var(--paper);
+      transition: transform 260ms var(--ease), opacity 160ms ease, background 200ms ease;
+    }
+    body.on-light .chapter-toggle span { background: #3f3e39; }
+    .chapter-toggle:hover,
+    .chapter-toggle:focus-visible { outline: none; opacity: 1; }
+    .chapter-toggle:focus-visible { outline: 1px solid var(--paper); outline-offset: 5px; }
+    body.nav-open .chapter-toggle { opacity: 1; }
+    body.nav-open .chapter-toggle span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+    body.nav-open .chapter-toggle span:nth-child(2) { opacity: 0; }
+    body.nav-open .chapter-toggle span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+    body.at-start .chapter-toggle {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 200ms ease, visibility 0s linear 200ms;
+    }
+    .chapter-nav {
+      position: fixed;
+      z-index: 45;
+      left: clamp(14px, 2vw, 28px);
+      top: calc(max(14px, env(safe-area-inset-top)) + 52px);
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      border: 1px solid rgba(239, 237, 231, .28);
+      background: var(--ink);
+      box-shadow: 0 12px 38px rgba(0, 0, 0, .28);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity 200ms ease, transform 320ms var(--ease), visibility 0s linear 200ms;
+    }
+    body.nav-open .chapter-nav {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: none;
+      transition: opacity 200ms ease, transform 320ms var(--ease), visibility 0s linear;
+    }
+    .chapter-nav button {
+      min-height: 44px;
+      padding: 9px 14px;
+      border: 0;
+      border-right: 1px solid rgba(239, 237, 231, .16);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      text-align: left;
+      transition: background 180ms ease, color 180ms ease;
+    }
+    .chapter-nav button:last-child { border-right: 0; }
+    .chapter-nav button:hover,
+    .chapter-nav button:focus-visible,
+    .chapter-nav button[aria-current="true"] {
+      outline: none;
+      background: var(--paper);
+      color: var(--ink);
+    }
+    .chapter-nav small {
+      display: block;
+      margin-bottom: 2px;
+      font-size: .58rem;
+      letter-spacing: .1em;
+      opacity: .62;
+    }
+    .chapter-nav span {
+      display: block;
+      font-size: .7rem;
+      letter-spacing: .04em;
+    }
+    body.ack-open .chapter-nav,
+    body.viewer-open .chapter-nav {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-10px);
+    }
+    body.ack-open .chapter-toggle,
+    body.viewer-open .chapter-toggle {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 200ms ease, visibility 0s linear 200ms;
+    }
+    .stylescape-viewer {
+      width: 100vw;
+      max-width: none;
+      height: 100dvh;
+      max-height: none;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: #070709;
+      color: var(--paper);
+      overflow: hidden;
+    }
+    .stylescape-viewer::backdrop { background: #070709; }
+    .viewer-toolbar {
+      position: absolute;
+      z-index: 4;
+      top: 0;
+      left: 0;
+      right: 0;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: max(10px, env(safe-area-inset-top)) clamp(14px, 3vw, 34px) 10px;
+      border-bottom: 1px solid var(--line);
+      background: #070709;
+    }
+    .viewer-title {
+      overflow: hidden;
+      font-size: .76rem;
+      letter-spacing: .1em;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .viewer-toolbar > div { min-width: 0; display: flex; align-items: center; gap: 14px; }
+    .viewer-variants .variant-switch { box-shadow: none; }
+    .viewer-close {
+      min-width: 46px;
+      min-height: 44px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      color: var(--paper);
+      cursor: pointer;
+    }
+    .viewer-close:hover,
+    .viewer-close:focus-visible { outline: none; border-color: var(--paper); background: var(--paper); color: var(--ink); }
+    .viewer-stage {
+      position: absolute;
+      inset: 64px 0 70px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      touch-action: none;
+      cursor: zoom-in;
+    }
+    .viewer-stage.is-zoomed { cursor: grab; }
+    .viewer-stage.is-dragging { cursor: grabbing; }
+    .viewer-stage:focus-visible { outline: 2px solid var(--paper); outline-offset: -4px; }
+    .viewer-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform-origin: center;
+      user-select: none;
+      will-change: transform;
+    }
+    .viewer-footer {
+      position: absolute;
+      z-index: 4;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 10px 18px max(10px, env(safe-area-inset-bottom));
+      border-top: 1px solid var(--line);
+      background: #070709;
+    }
+    .viewer-footer button {
+      min-width: 48px;
+      min-height: 44px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      color: var(--paper);
+      cursor: pointer;
+    }
+    .viewer-footer button:hover,
+    .viewer-footer button:focus-visible { outline: none; border-color: var(--paper); background: var(--paper); color: var(--ink); }
+    .direction-intro {
+      padding: 0;
+      background: var(--direction-bg, #101014);
+      color: var(--direction-text, var(--paper));
+      align-items: stretch;
+    }
+    .direction-visual {
+      position: absolute;
+      inset: 0 0 0 46%;
+      width: 54%;
+      height: 100%;
+      object-fit: cover;
+      object-position: var(--portrait-position, center);
+      display: block;
+    }
+    .direction-intro-copy {
+      position: relative;
+      z-index: 2;
+      width: 46%;
+      min-height: 100svh;
+      margin: 0;
+      padding: clamp(78px, 11vh, 124px) clamp(32px, 6vw, 94px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--direction-bg, #101014);
+      border-right: 1px solid color-mix(in srgb, var(--direction-accent) 46%, transparent);
+    }
+    .direction-intro .display { max-width: 7ch; }
+    .direction-intro .body { max-width: 30ch; color: color-mix(in srgb, var(--direction-text, var(--paper)) 68%, transparent); }
+    .direction-number { color: var(--direction-accent); }
+    .direction-detail { background: #111115; }
+    .direction-grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: clamp(34px, 7vw, 110px); align-items: center; }
+    .direction-detail .statement { max-width: 15ch; font-size: clamp(2.35rem, 3.8vw, 3.9rem); }
+    .fact { padding: 20px 0; border-top: 1px solid var(--line); }
+    .fact:first-child { border-top: 0; padding-top: 0; }
+    .fact b { display: block; margin-bottom: 8px; font-size: .72rem; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); }
+    .fact span { font-size: clamp(1rem, 1.45vw, 1.25rem); line-height: 1.38; }
+    .decision-scene {
+      align-items: start;
+      overflow: visible;
+      padding-top: clamp(82px, 8vh, 104px);
+      padding-bottom: clamp(76px, 8vh, 104px);
+      background: #070709;
+    }
+    .decision-scene .inner { width: min(1380px, 100%); max-width: none; }
+    .decision-scene .statement { max-width: 18ch; font-size: clamp(2.5rem, 4.5vw, 4.8rem); }
+    .decision-prompt { margin-top: 18px; }
+    .choices { margin-top: 40px; }
+    .decision-options { display: block; }
+    .stylescape-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 24px); }
+    .choice {
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--paper);
+      text-align: left;
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 220ms var(--ease);
+    }
+    .choice:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
+    .stylescape-card {
+      position: relative;
+      min-width: 0;
+      margin: 0;
+      padding: 0;
+      appearance: none;
+      overflow: hidden;
+      background: #111115;
+    }
+    .stylescape-card-media { display: block; position: relative; }
+    .stylescape-card img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #070709; transition: opacity 180ms ease; }
+    .stylescape-card-caption { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px; align-items: start; padding: 16px 18px 18px; }
+    .stylescape-card-title { display: block; font-size: clamp(1rem, 1.5vw, 1.3rem); font-weight: 500; letter-spacing: -.025em; }
+    .stylescape-card-copy { display: block; color: var(--muted); font-size: clamp(.78rem, .9vw, .92rem); line-height: 1.45; }
+    .stylescape-card::after {
+      content: 'Selected';
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      padding: 7px 9px;
+      border: 1px solid var(--paper);
+      background: var(--paper);
+      color: var(--ink);
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(-5px);
+      transition: opacity 180ms ease, transform 220ms var(--ease);
+    }
+    .stylescape-card.is-selected { border-color: var(--paper); box-shadow: inset 0 0 0 1px var(--paper); }
+    .stylescape-card.is-selected::after { opacity: 1; transform: none; }
+    .stylescape-card.is-selected img { opacity: .9; }
+    .choice--revision {
+      width: 100%;
+      min-height: 74px;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+      gap: 22px;
+      margin-top: 12px;
+      padding: 18px 22px;
+    }
+    .choice small { display: block; letter-spacing: .12em; text-transform: uppercase; opacity: .62; }
+    .choice strong { font-size: clamp(1rem, 1.8vw, 1.35rem); font-weight: 500; }
+    .choice--revision.is-selected { background: var(--paper); color: var(--ink); }
+    @media (hover: hover) {
+      .stylescape-card:hover { border-color: rgba(239, 237, 231, .62); transform: translateY(-3px); }
+      .choice--revision:hover { background: var(--paper); color: var(--ink); transform: translateY(-2px); }
+    }
+    .decision-scene .choices { margin-top: clamp(24px, 3vh, 34px); }
+    .decision-scene .response-form { margin-top: 24px; padding-top: 22px; }
+    .decision-scene .response-form textarea { min-height: 104px; }
+    .selection { min-height: 1.5em; margin-top: 24px; color: var(--muted); }
+    .response-form {
+      width: min(760px, 100%);
+      margin-top: 30px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+    .response-form label {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+      font-size: .76rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--paper);
+    }
+    .response-form label span { color: var(--muted); }
+    .response-form textarea {
+      display: block;
+      width: 100%;
+      min-height: 126px;
+      resize: vertical;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      color: var(--paper);
+      font: inherit;
+      font-size: 1rem;
+      line-height: 1.5;
+      transition: border-color 180ms ease, background 180ms ease;
+    }
+    .response-form textarea::placeholder { color: #85827c; }
+    .response-form textarea:focus { outline: none; border-color: var(--paper); background: rgba(239, 237, 231, .035); }
+    .guided-feedback-fields { margin-top: 4px; }
+    .guided-prompt + .guided-prompt {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+    .guided-prompt textarea { min-height: 112px; }
+    .feedback-save-status {
+      min-height: 1.5em;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.45;
+    }
+    .feedback-save-status[data-state="saved"],
+    .feedback-save-status[data-state="recovered"] { color: var(--paper); }
+    .feedback-save-status[data-state="error"] { color: #f1b7ae; }
+    .feedback-error {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border: 1px solid color-mix(in srgb, #f1b7ae 58%, transparent);
+      color: #f1b7ae;
+      font-size: .9rem;
+      line-height: 1.45;
+    }
+    .feedback-error[hidden] { display: none; }
+    .feedback-recover {
+      display: block;
+      margin-top: 10px;
+      padding: 0;
+      border: 0;
+      border-bottom: 1px solid currentColor;
+      background: transparent;
+      color: var(--paper);
+      font: inherit;
+      font-size: .82rem;
+      cursor: pointer;
+    }
+    .feedback-recover:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px; }
+    .response-actions { display: grid; grid-template-columns: minmax(190px, 260px) 1fr; gap: 20px; align-items: center; margin-top: 14px; }
+    .response-submit {
+      min-height: 54px;
+      padding: 14px 20px;
+      border: 1px solid var(--paper);
+      border-radius: 0;
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease, opacity 180ms ease;
+    }
+    .response-submit:hover:not(:disabled), .response-submit:focus-visible { background: transparent; color: var(--paper); }
+    .response-submit:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
+    .response-submit:disabled { cursor: default; opacity: .34; }
+    .response-status { min-height: 1.5em; color: var(--muted); line-height: 1.45; }
+    .response-status[data-state="error"] { color: #f1b7ae; }
+    .response-status[data-state="success"] { color: var(--paper); }
+    .feedback-confirmation {
+      width: min(760px, 100%);
+      margin-top: 30px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+    .feedback-confirmation[hidden] { display: none; }
+    .feedback-confirmation h3 {
+      max-width: 21ch;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 500;
+      line-height: 1.04;
+      letter-spacing: -.04em;
+    }
+    .feedback-confirmation h3:focus { outline: none; }
+    .feedback-confirmation p {
+      max-width: 52ch;
+      margin-top: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .voice-feedback {
+      width: min(760px, 100%);
+      margin-top: 30px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+    .voice-feedback[hidden], .voice-stage[hidden] { display: none; }
+    .voice-feedback h3 {
+      font-size: clamp(1.45rem, 2.6vw, 2.2rem);
+      font-weight: 500;
+      letter-spacing: -.035em;
+    }
+    .voice-lead, .voice-privacy, .voice-helper {
+      max-width: 62ch;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .voice-lead { margin-top: 10px; }
+    .voice-privacy { margin-top: 18px; font-size: .82rem; }
+    .voice-helper { margin-top: 10px; font-size: .86rem; }
+    .voice-primary, .voice-control, .voice-text-action {
+      min-height: 48px;
+      padding: 12px 16px;
+      border: 1px solid var(--paper);
+      border-radius: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: inherit;
+      cursor: pointer;
+    }
+    .voice-primary { margin-top: 18px; }
+    .voice-primary:hover:not(:disabled), .voice-primary:focus-visible,
+    .voice-control:hover:not(:disabled), .voice-control:focus-visible {
+      background: transparent;
+      color: var(--paper);
+    }
+    .voice-primary:focus-visible, .voice-control:focus-visible, .voice-text-action:focus-visible {
+      outline: 2px solid var(--paper);
+      outline-offset: 3px;
+    }
+    .voice-primary:disabled, .voice-control:disabled { cursor: default; opacity: .34; }
+    .voice-recording {
+      display: grid;
+      grid-template-columns: minmax(110px, 1fr) repeat(3, auto);
+      gap: 10px;
+      align-items: center;
+      margin-top: 18px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .voice-timer {
+      font-variant-numeric: tabular-nums;
+      font-size: 1.05rem;
+      letter-spacing: .05em;
+    }
+    .voice-review { margin-top: 18px; }
+    .voice-review audio { display: block; width: 100%; max-width: 520px; }
+    .voice-review-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .voice-review-actions .voice-primary { margin-top: 0; }
+    .voice-text-action { min-height: 42px; padding: 8px 12px; background: transparent; color: var(--paper); }
+    .voice-status { min-height: 1.5em; margin-top: 14px; color: var(--muted); line-height: 1.45; }
+    .voice-status[data-state="error"] { color: #f1b7ae; }
+    .voice-status[data-state="success"] { color: var(--paper); }
+    .local-choice-note {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.45;
+    }
+    .likeness-note {
+      --likeness-accent: #4c5d74;
+      --likeness-accent-soft: #dce1e5;
+      width: min(620px, calc(100vw - 40px));
+      max-height: calc(100svh - 40px);
+      overflow: auto;
+      padding: 0;
+      border: 1px solid rgba(12, 12, 15, .18);
+      border-top: 4px solid var(--likeness-accent);
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .36);
+    }
+    .likeness-note[open] { animation: likeness-note-enter 180ms var(--ease) both; }
+    .likeness-note::backdrop {
+      background: rgba(7, 7, 9, .84);
+      animation: likeness-backdrop-enter 180ms ease both;
+    }
+    .likeness-note-inner { padding: clamp(32px, 5vw, 48px); }
+    .likeness-note-header {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .likeness-note-icon {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border: 1px solid color-mix(in srgb, var(--likeness-accent) 42%, transparent);
+      background: var(--likeness-accent-soft);
+      color: var(--likeness-accent);
+    }
+    .likeness-note-icon svg { width: 30px; height: 30px; }
+    .likeness-note-icon .unfinished { stroke-dasharray: 2.5 3.5; }
+    .likeness-note .kicker { margin-bottom: 12px; color: var(--likeness-accent); font-weight: 600; }
+    .likeness-note h2 {
+      max-width: 14ch;
+      font-size: clamp(2.2rem, 5vw, 3.7rem);
+      line-height: .96;
+      letter-spacing: -.05em;
+      font-weight: 500;
+    }
+    .likeness-note h2:focus { outline: none; }
+    .likeness-note-lead {
+      max-width: 47ch;
+      margin-top: 26px;
+      color: #4f504e;
+      font-size: clamp(1rem, 1.5vw, 1.12rem);
+      line-height: 1.5;
+    }
+    .likeness-note-summary {
+      margin: 28px 0 0;
+      border-top: 1px solid rgba(12, 12, 15, .2);
+    }
+    .likeness-note-summary div {
+      display: grid;
+      grid-template-columns: 108px minmax(0, 1fr);
+      gap: 20px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(12, 12, 15, .2);
+    }
+    .likeness-note-summary dt {
+      font-size: .68rem;
+      line-height: 1.35;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--likeness-accent);
+    }
+    .likeness-note-summary dd {
+      margin: 0;
+      font-size: .98rem;
+      line-height: 1.4;
+    }
+    .likeness-acknowledgment {
+      display: grid;
+      grid-template-columns: 22px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      margin-top: 28px;
+      padding: 18px;
+      border: 1px solid rgba(12, 12, 15, .26);
+      cursor: pointer;
+      transition: border-color 180ms ease, background 180ms ease;
+    }
+    .likeness-acknowledgment:hover { border-color: rgba(12, 12, 15, .52); }
+    .likeness-acknowledgment:has(input:focus-visible) {
+      outline: 1px solid var(--ink);
+      outline-offset: 2px;
+      border-color: var(--ink);
+    }
+    .likeness-acknowledgment:has(input:checked) { border-color: var(--likeness-accent); background: color-mix(in srgb, var(--likeness-accent) 10%, transparent); }
+    .likeness-acknowledgment input {
+      width: 20px;
+      height: 20px;
+      margin: 1px 0 0;
+      appearance: none;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--ink);
+      border-radius: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+    .likeness-acknowledgment input::after {
+      content: "";
+      width: 9px;
+      height: 5px;
+      border-left: 2px solid var(--paper);
+      border-bottom: 2px solid var(--paper);
+      transform: translateY(-1px) rotate(-45deg) scale(0);
+      transition: transform 120ms ease;
+    }
+    .likeness-acknowledgment input:checked { border-color: var(--likeness-accent); background: var(--likeness-accent); }
+    .likeness-acknowledgment input:checked::after { transform: translateY(-1px) rotate(-45deg) scale(1); }
+    .likeness-acknowledgment input:focus { outline: none; }
+    .likeness-acknowledgment span {
+      font-size: .98rem;
+      line-height: 1.45;
+    }
+    .likeness-note-helper {
+      margin: 9px 0 0;
+      color: #605f5a;
+      font-size: .78rem;
+      line-height: 1.35;
+    }
+    .likeness-note button {
+      width: 100%;
+      min-height: 54px;
+      margin-top: 20px;
+      padding: 15px 20px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease, opacity 180ms ease;
+    }
+    .likeness-note button:hover:not(:disabled) {
+      background: transparent;
+      color: var(--ink);
+    }
+    .likeness-note button:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+    .likeness-note button:disabled { cursor: not-allowed; opacity: .32; }
+    @keyframes likeness-note-enter {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes likeness-backdrop-enter {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    body.ack-open, body.viewer-open { overflow: hidden; }
+    .hint { position: absolute; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translateX(-50%); color: var(--muted); font-size: .7rem; letter-spacing: .13em; text-transform: uppercase; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 800ms var(--ease), transform 800ms var(--ease); }
+    .scene.is-visible .reveal { opacity: 1; transform: none; }
+    .scene.is-visible .reveal.delay { transition-delay: 120ms; }
+    @media (max-width: 1040px) {
+      .calibration-grid { grid-template-columns: 1fr; }
+      .calibration-keywords { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 760px) {
+      .scene { padding-left: 24px; padding-right: 24px; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .display { font-size: clamp(3.2rem, 17vw, 5.6rem); }
+      .statement { font-size: clamp(2.55rem, 12vw, 4.7rem); }
+      .archetype-summary-list { display: none; }
+      .direction-grid, .stylescape-compare, .choices { grid-template-columns: 1fr; }
+      .calibration-grid, .archetype-layout { grid-template-columns: 1fr; }
+      .calibration-axes, .calibration-keywords, .relationship-system { grid-template-columns: 1fr; }
+      .calibration-scene { padding-top: 84px; padding-bottom: 84px; }
+      .archetype-scene { padding-top: 84px; padding-bottom: 84px; }
+      .archetype-layout { gap: 24px; }
+      .calibration-axis { grid-template-columns: 64px minmax(110px, 1fr) 64px; gap: 9px; }
+      .relationship-system { min-height: 0; }
+      .relationship-brand { min-height: 178px; }
+      .relationship-personal, .relationship-company { transform: translateY(14px); }
+      .relationship-bridge { min-height: 88px; padding: 12px 18px; }
+      .relationship-bridge::before { width: 1px; height: 56px; transform: scaleY(0); }
+      .scene.is-visible .relationship-bridge::before { transform: scaleY(1); }
+      .relationship-position[data-relationship="one-brand"] .relationship-system { grid-template-columns: 1fr; }
+      .relationship-position[data-relationship="one-brand"] .relationship-personal,
+      .relationship-position[data-relationship="one-brand"] .relationship-company { margin: 0; }
+      .direction-detail { align-items: start; }
+      .direction-detail .inner { padding-top: 3vh; }
+      .direction-detail .statement { font-size: clamp(2rem, 9.5vw, 3.35rem); }
+      .fact { padding: 15px 0; }
+      .choices { margin-top: 28px; }
+      .choice { min-height: 92px; }
+      .response-actions { grid-template-columns: 1fr; gap: 12px; }
+      .response-submit { width: 100%; }
+      .guided-prompt + .guided-prompt { margin-top: 20px; padding-top: 20px; }
+      .guided-prompt textarea { min-height: 104px; }
+      .voice-recording { grid-template-columns: 1fr 1fr; }
+      .voice-timer { grid-column: 1 / -1; }
+      .voice-control { width: 100%; }
+      .board-scene img { object-fit: contain; }
+      .board-actions { right: 18px; left: 18px; justify-content: flex-end; }
+      .chapter-nav { width: calc(100vw - 48px); grid-template-columns: repeat(4, 1fr); }
+      .chapter-nav button { padding: 8px 7px; text-align: center; }
+      .chapter-nav small { margin-bottom: 1px; }
+      .chapter-nav span { font-size: .62rem; }
+      .viewer-toolbar { min-height: 58px; }
+      .viewer-stage { inset: 58px 0 70px; }
+      .viewer-title { display: none; }
+      .direction-visual {
+        inset: 0 0 auto;
+        width: 100%;
+        height: 56%;
+        object-position: var(--portrait-position-mobile, var(--portrait-position, center));
+      }
+      .direction-intro-copy {
+        width: 100%;
+        min-height: 48svh;
+        margin-top: 52svh;
+        padding: 40px 24px 56px;
+        justify-content: flex-start;
+        border-top: 1px solid color-mix(in srgb, var(--direction-accent) 46%, transparent);
+        border-right: 0;
+      }
+      .direction-intro .display { font-size: clamp(3.8rem, 18vw, 6.2rem); }
+      .direction-intro .body { margin-top: 22px; }
+      .decision-scene {
+        align-items: start;
+        padding-top: 84px;
+        padding-bottom: 84px;
+      }
+      .decision-scene .statement { font-size: clamp(2.35rem, 10.5vw, 3.55rem); }
+      .decision-scene .stylescape-compare { margin-top: 0; }
+      .decision-scene .choices { margin-top: 24px; }
+      .stylescape-card-caption { grid-template-columns: 1fr; gap: 8px; }
+      .likeness-note {
+        width: calc(100vw - 24px);
+        max-height: calc(100svh - 24px);
+      }
+      .likeness-note-inner { padding: 24px; }
+      .likeness-note-header { grid-template-columns: 38px minmax(0, 1fr); gap: 14px; }
+      .likeness-note-icon { width: 38px; height: 38px; }
+      .likeness-note-icon svg { width: 26px; height: 26px; }
+      .likeness-note h2 { font-size: clamp(2rem, 10vw, 3rem); }
+      .likeness-note-summary div { grid-template-columns: 92px minmax(0, 1fr); gap: 14px; }
+      .likeness-acknowledgment { padding: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .calibration-axis,
+      .calibration-fill,
+      .calibration-dot,
+      .relationship-brand,
+      .relationship-bridge::before,
+      .relationship-bridge span { opacity: 1; transform: none; transition: none; }
+      .likeness-note[open], .likeness-note::backdrop { animation: none; }
+      .likeness-acknowledgment, .likeness-note button { transition: none; }
+      .likeness-acknowledgment input::after { transition: none; }
+    }
+    @media (forced-colors: active) {
+      .likeness-acknowledgment input {
+        appearance: auto;
+        background: Canvas;
+      }
+      .likeness-acknowledgment input:checked { background: Canvas; }
+      .likeness-acknowledgment input::after { content: none; }
+      .likeness-acknowledgment:has(input:focus-visible) {
+        outline: 2px solid Highlight;
+        outline-offset: 2px;
+      }
+    }
+  </style>
+</head>
+<body class="at-start">
+  <div class="meter" aria-hidden="true"><span></span></div>
+  <button class="chapter-toggle" type="button" aria-label="Open chapters" aria-controls="chapter-nav" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="chapter-nav" id="chapter-nav" aria-label="Reveal chapters">
+    <button type="button" data-chapter-target="intro" aria-current="true"><small>01</small><span>Start</span></button>
+    <button type="button" data-chapter-target="strategy"><small>02</small><span>Strategy</span></button>
+    <button type="button" data-chapter-target="directions"><small>03</small><span>Directions</span></button>
+    <button type="button" data-chapter-target="decide"><small>04</small><span>Choose</span></button>
+  </nav>
+  <main id="story"></main>
+  <dialog class="likeness-note" id="likeness-note" aria-labelledby="likeness-note-title" aria-describedby="likeness-note-body likeness-note-summary" data-notice-version="4">
+    <form class="likeness-note-inner" id="likeness-note-form">
+      <div class="likeness-note-header">
+        <span class="likeness-note-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="12" r="4"></circle>
+            <path d="M9 24c1.4-4 4-6 7-6s5.6 2 7 6"></path>
+            <path d="M7 5H5v7M25 5h2v7M5 20v7h7"></path>
+            <path class="unfinished" d="M20 27h7v-7"></path>
+          </svg>
+        </span>
+        <div>
+          <p class="kicker">Portrait in progress</p>
+          <h2 id="likeness-note-title" tabindex="-1">Choose the direction, not the face</h2>
+        </div>
+      </div>
+      <p class="likeness-note-lead" id="likeness-note-body">AI-generated portraits show what the brand can become. Exact facial match is not the job at this stage.</p>
+      <dl class="likeness-note-summary" id="likeness-note-summary">
+        <div>
+          <dt>Review now</dt>
+          <dd>The visual world, styling, color, presence, and feeling.</dd>
+        </div>
+        <div>
+          <dt>Refine later</dt>
+          <dd>Exact facial likeness in production. A real photo shoot can help when you want that fidelity.</dd>
+        </div>
+      </dl>
+      <label class="likeness-acknowledgment" for="likeness-note-checkbox">
+        <input type="checkbox" id="likeness-note-checkbox" required>
+        <span>I understand I am reviewing creative direction, not approving final facial likeness.</span>
+      </label>
+      <p class="likeness-note-helper" id="likeness-note-helper">Check the box to continue.</p>
+      <button type="submit" id="likeness-note-confirm" aria-describedby="likeness-note-helper" disabled>Continue to the directions</button>
+    </form>
+  </dialog>
+  <dialog class="stylescape-viewer" id="stylescape-viewer" aria-labelledby="viewer-title">
+    <div class="viewer-toolbar">
+      <div>
+        <div class="viewer-title" id="viewer-title">Stylescape</div>
+        <div class="viewer-variants" aria-label="Color version"></div>
+      </div>
+      <button class="viewer-close" type="button" aria-label="Close zoom view">Close</button>
+    </div>
+    <div class="viewer-stage" tabindex="0" aria-label="Zoomed stylescape. Use the arrow keys to pan when zoomed in.">
+      <img class="viewer-image" alt="" draggable="false">
+    </div>
+    <div class="viewer-footer" aria-label="Zoom controls">
+      <button type="button" data-viewer-zoom="out" aria-label="Zoom out">−</button>
+      <button type="button" data-viewer-zoom="reset" aria-label="Reset zoom">100%</button>
+      <button type="button" data-viewer-zoom="in" aria-label="Zoom in">+</button>
+    </div>
+  </dialog>
+  <script src="reveal-data.da57d7c690dd213e.js"></script>
+  <script src="assets/archetype-chart/archetype-chart.js"></script>
+  <script>
+    const d = window.REVEAL_DATA;
+    const story = document.getElementById('story');
+    const submissionsEnabled = d.submission?.enabled === true &&
+      typeof d.submission?.capability === 'string' && d.submission.capability.length > 40 &&
+      typeof d.submission?.endpoint === 'string' && d.submission.endpoint.startsWith('https://') &&
+      typeof d.submission?.submissionId === 'string' && /^[A-Za-z0-9-]{8,80}$/.test(d.submission.submissionId) &&
+      d.localOnly !== true;
+    const guidedFeedbackEnabled = d.guidedFeedback?.enabled === true;
+    const voiceFeedbackEnabled = d.voice?.enabled === true;
+    const guidedDraftId = typeof d.submission?.submissionId === 'string' && /^[A-Za-z0-9-]{8,80}$/.test(d.submission.submissionId)
+      ? d.submission.submissionId
+      : '';
+    const guidedFeedbackTransportEnabled = guidedFeedbackEnabled && submissionsEnabled && !!guidedDraftId;
+    const esc = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
+    const frameworkDefinitions = {
+      product: 'What you uniquely offer.',
+      people: 'Who you are here to serve.',
+      purpose: 'Why your work needs to exist.',
+      promise: 'What people can consistently expect from you.',
+      personality: 'How your brand should feel and behave.',
+      archetype: 'The timeless roles your brand naturally embodies.',
+      founderSpectrum: 'Who leads attention, and what the company must own beyond one person.',
+      brandSliders: 'All 14 creative tensions that calibrate how your brand should feel.'
+    };
+    Object.assign(frameworkDefinitions, d.frameworkDefinitions || {});
+    const scene = (content, cls='black', chapter='intro') => `<section class="scene ${cls}" data-chapter="${esc(chapter)}"><div class="inner">${content}</div></section>`;
+    const line = (kicker, title, body='', cls='black', chapter='intro') => scene(`<p class="kicker reveal">${esc(kicker)}</p><h2 class="statement reveal delay">${esc(title)}</h2>${body ? `<p class="body reveal delay">${esc(body)}</p>` : ''}`, cls, chapter);
+    let html = '';
+    html += scene(`<h1 class="display reveal">Hello,<br>${esc(d.firstName)}.</h1><span class="hint">Scroll to begin</span>`);
+    html += line('Brand Therapy', 'Your Brand Therapy is ready.', `For your approval, before we build your Brand Therapy OS.`);
+    html += line('My read', `Here is what I see in you, ${d.firstName}.`, d.opening.read);
+    d.strategy.forEach((item, i) => {
+      const nested = item.persona?.label
+        ? `<p class="body reveal delay">Persona: ${esc(item.persona.label)}</p>`
+        : item.brand_dna ? `<p class="body reveal delay">Brand DNA: ${esc(item.brand_dna)}</p>` : '';
+      const definition = item.definition || frameworkDefinitions[item.label.toLowerCase()] || '';
+      html += scene(`<p class="kicker reveal">0${i + 1} / ${esc(item.label)}</p>${definition ? `<p class="framework-definition reveal">${esc(definition)}</p>` : ''}<h2 class="statement reveal delay">${esc(item.title)}</h2><p class="body reveal delay">${esc(item.body)}</p>${nested}`, i % 2 ? 'light' : 'black', 'strategy');
+    });
+    if (d.archetypeProfile?.archetypes) {
+      const leaders = [...d.archetypeProfile.archetypes].filter(item => item.weight > 0).sort((a, b) => b.weight - a.weight).slice(0, 3);
+      const leadTitle = leaders.map(item => item.name).join(' + ');
+      const summary = leaders.map(item => `<p><strong>${esc(item.name)}</strong><span>${esc(item.weight)}%</span></p>`).join('');
+      html += `<section class="scene black archetype-scene" data-chapter="strategy"><div class="inner archetype-layout"><div class="archetype-summary"><p class="kicker reveal">Brand personality archetype</p><p class="framework-definition reveal">${esc(frameworkDefinitions.archetype)}</p><h2 class="statement reveal delay">${esc(leadTitle)}</h2><div class="archetype-summary-list reveal delay">${summary}</div></div><bt-archetype-chart class="reveal delay" theme="reveal" presentation="compact" media-variant="transparent" aria-label="Interactive brand archetype profile"></bt-archetype-chart></div></section>`;
+    } else {
+      html += scene(`<p class="kicker reveal">Brand archetype</p><p class="framework-definition reveal">${esc(frameworkDefinitions.archetype)}</p><h2 class="statement reveal delay">${esc(d.archetype || '')}</h2><div class="wordfield reveal delay">${(d.personalityWords || []).map(w => `<span>${esc(w)}</span>`).join('')}</div>`, 'black', 'strategy');
+    }
+    const relationshipVerbs = {
+      'company-led': ['Supports', 'Leads'],
+      'company-led-founder-supported': ['Endorses', 'Owns'],
+      'shared-visibility': ['Co-leads', 'Co-leads'],
+      'personal-led-company-scaled': ['Leads', 'Scales'],
+      'one-brand': ['Carries', 'Extends']
+    };
+    const [personalVerb, companyVerb] = relationshipVerbs[d.spectrum.id] || ['Personal role', 'Company role'];
+    const relationshipAccessibility = `${d.spectrum.headline} Personal brand: ${d.spectrum.personal_role} ${d.spectrum.bridge} company brand: ${d.spectrum.company_role}`;
+    html += scene(`<p class="kicker reveal">Personal brand and company brand</p><p class="framework-definition reveal">${esc(frameworkDefinitions.founderSpectrum)}</p><h2 class="statement reveal delay">${esc(d.spectrum.headline)}</h2><p class="body reveal delay">${esc(d.spectrum.body)}</p><div class="relationship-position reveal delay" data-relationship="${esc(d.spectrum.id)}" role="img" aria-label="${esc(relationshipAccessibility)}"><div class="relationship-system" aria-hidden="true"><div class="relationship-brand relationship-personal"><span>Personal brand</span><strong>${esc(personalVerb)}</strong><p>${esc(d.spectrum.personal_role)}</p></div><div class="relationship-bridge"><span>${esc(d.spectrum.bridge)}</span></div><div class="relationship-brand relationship-company"><span>Company brand</span><strong>${esc(companyVerb)}</strong><p>${esc(d.spectrum.company_role)}</p></div></div></div>`, 'light relationship-scene', 'strategy');
+    if (Array.isArray(d.sliders?.axes)) {
+      const definingCount = d.sliders.axes.filter(axis => axis.material).length;
+      const axisRows = d.sliders.axes.map((axis, index) => {
+        const kind = axis.material ? 'is-defining' : 'is-supporting';
+        const leftLean = axis.position < 50 ? 'is-lean' : '';
+        const rightLean = axis.position > 50 ? 'is-lean' : '';
+        const direction = axis.position < 50 ? 'leans-left' : axis.position > 50 ? 'leans-right' : 'is-centered';
+        const accessibility = `${axis.left} ${100 - axis.position} percent, ${axis.right} ${axis.position} percent. ${axis.material ? 'Defining' : 'Supporting'} choice.`;
+        return `<div class="calibration-axis ${kind} ${direction}" data-axis-id="${esc(axis.id)}" role="img" tabindex="0" aria-label="${esc(accessibility)}" style="--axis-order:${index};--position:${esc(axis.position)}%"><span class="${leftLean}">${esc(axis.left)}</span><div class="calibration-track" aria-hidden="true"><i class="calibration-fill"></i><i class="calibration-dot"></i></div><span class="${rightLean}">${esc(axis.right)}</span></div>`;
+      }).join('');
+      const activeWords = (d.sliders.keywords?.active || []).join(', ');
+      const inactiveWords = (d.sliders.keywords?.inactive || []).join(', ');
+      html += scene(`<p class="kicker reveal">Creative calibration</p><p class="framework-definition reveal">${esc(frameworkDefinitions.brandSliders)}</p><h2 class="statement reveal delay">${esc(d.sliders.title)}</h2><div class="calibration-legend reveal delay"><span><i class="defining-key"></i>Defining choice</span><span><i></i>Supporting choice</span><p>All ${d.sliders.axes.length} decisions are visible. ${definingCount} are emphasized because they most directly shape this creative direction.</p></div><div class="calibration-grid reveal delay"><div class="calibration-axes">${axisRows}</div><div class="calibration-keywords"><div><b>Lean into</b><p>${esc(activeWords)}</p></div><div><b>Move away from</b><p>${esc(inactiveWords)}</p></div></div></div>`, 'black calibration-scene', 'strategy');
+    } else {
+      html += scene(`<p class="kicker reveal">Brand Sliders</p><p class="framework-definition reveal">${esc(frameworkDefinitions.brandSliders)}</p><h2 class="statement reveal delay">${esc(d.sliders?.title || '')}</h2><div class="sliderline reveal delay">${(d.sliders?.lines || []).map(row => `<div><strong>${esc(row[0])}</strong><span>${esc(row[1])}</span></div>`).join('')}</div>`, 'black', 'strategy');
+    }
+    html += line('The through-line', d.synthesis.title, d.synthesis.body, 'light', 'strategy');
+    html += line('Creative Direction', 'One strategy. Two possible worlds.', 'Both are true to you. They choose a different way to make that truth visible.', 'black', 'directions');
+    d.directions.forEach((dir, i) => {
+      const directionName = dir.name || `Direction ${i + 1}`;
+      const variants = Array.isArray(dir.variants) && dir.variants.length ? dir.variants : [{ id: 'default', label: '', image: dir.image }];
+      const activeVariant = variants.find(variant => variant.default) || variants[0];
+      const variantSwitch = variants.length > 1 ? `<div class="variant-switch" role="group" aria-label="${esc(directionName)} color version">${variants.map(variant => `<button type="button" data-variant-id="${esc(variant.id)}" data-variant-image="${esc(variant.image)}" data-variant-color="${esc(variant.color || '')}" aria-label="${esc(variant.label || variant.id)} version" aria-pressed="${variant.id === activeVariant.id}" class="${variant.id === activeVariant.id ? 'is-active' : ''}"><span class="variant-chip" style="background:${esc(variant.color || 'currentColor')}"></span></button>`).join('')}</div>` : '';
+      const directionVisual = dir.introImage ? `<img class="direction-visual" src="${esc(dir.introImage)}" alt="${esc(dir.introAlt || `${directionName} visual introduction`)}" draggable="false">` : '';
+      html += `<section class="scene direction-intro" data-chapter="directions" style="--direction-bg:${esc(dir.bg)};--direction-accent:${esc(dir.accent)};--direction-text:${esc(dir.text || '#EFEDE7')};--portrait-position:${esc(dir.introPosition || 'center')};--portrait-position-mobile:${esc(dir.introPositionMobile || dir.introPosition || 'center')}">${directionVisual}<div class="direction-intro-copy"><p class="kicker reveal direction-number">Visual direction</p><h2 class="display reveal delay">${esc(directionName)}</h2><p class="body reveal delay">${esc(dir.premise)}</p></div></section>`;
+      html += `<section class="scene board-scene" data-chapter="directions" data-board-id="${esc(dir.id)}" data-board-name="${esc(directionName)}"><div class="board-stage"><img class="board-image" src="${esc(activeVariant.image)}" alt="${esc(directionName)} creative direction stylescape" draggable="false"><div class="board-actions">${variantSwitch}<button class="board-action" type="button" data-open-viewer>Zoom</button></div></div></section>`;
+      html += `<section class="scene direction-detail" data-chapter="directions"><div class="inner direction-grid"><div><p class="kicker reveal">Direction ${i + 1}</p><h2 class="statement reveal delay">${esc(dir.emotionalRead)}</h2></div><div class="reveal delay"><div class="fact"><b>Signature</b><span>${esc(dir.signature)}</span></div><div class="fact"><b>Outfit</b><span>${esc(dir.outfit)}</span></div><div class="fact"><b>Risk to guard</b><span>${esc(dir.risk)}</span></div></div></div></section>`;
+    });
+    const comparisonCards = d.directions.map((dir, i) => {
+      const directionName = dir.name || `Direction ${i + 1}`;
+      const variants = Array.isArray(dir.variants) && dir.variants.length ? dir.variants : [{ image: dir.image }];
+      const activeVariant = variants.find(variant => variant.default) || variants[0];
+      return `<button type="button" class="choice stylescape-card" data-choice="${esc(dir.id)}" aria-pressed="false"><span class="stylescape-card-media"><img src="${esc(activeVariant.image)}" alt="${esc(directionName)} creative direction stylescape" data-compare-image-id="${esc(dir.id)}" draggable="false"></span><span class="stylescape-card-caption"><strong class="stylescape-card-title">${esc(directionName)}</strong><span class="stylescape-card-copy">${esc(dir.compare)}</span></span></button>`;
+    }).join('');
+    const revise = d.choices.find(choice => choice.id === 'revise');
+    const reviseIndex = revise ? d.choices.indexOf(revise) : -1;
+    const revisionChoice = revise ? `<button type="button" class="choice choice--revision" data-choice="${esc(revise.id)}" aria-pressed="false"><small>0${reviseIndex + 1}</small><strong>${esc(revise.label)}</strong></button>` : '';
+    const localPreviewNote = d.localOnly
+      ? `<p class="local-choice-note">${guidedFeedbackEnabled ? 'Private local preview. Nothing is stored or sent from this build.' : 'Private local preview. Your choice stays in this browser. No response can be sent from this build.'}</p>`
+      : '';
+    const responseLabel = submissionsEnabled ? 'Send with a note' : 'Add a private note';
+    const responseAction = submissionsEnabled ? 'Send response' : 'Sending disabled';
+    const guidedPromptPanel = `<form class="response-form guided-feedback-form reveal delay" novalidate data-guided-feedback><div class="guided-feedback-fields"><div class="guided-prompt"><label for="feedback-most-like">What feels most like you? <span>Optional</span></label><textarea id="feedback-most-like" name="mostLike" maxlength="1200"></textarea></div><div class="guided-prompt"><label for="feedback-least-like">What feels least like you? <span>Optional</span></label><textarea id="feedback-least-like" name="leastLike" maxlength="1200"></textarea></div><div class="guided-prompt"><label for="feedback-change-before">What should change before we build the identity? <span>Optional</span></label><textarea id="feedback-change-before" name="changeBeforeIdentity" maxlength="1200"></textarea></div></div><p id="feedback-save-status" class="feedback-save-status" role="status" aria-live="polite">${guidedFeedbackTransportEnabled ? 'Restoring your saved feedback...' : ''}</p><div id="feedback-error" class="feedback-error" role="alert" hidden><span></span><button class="feedback-recover" type="button" hidden>Use the saved version</button></div><div class="response-actions"><button class="response-submit" type="submit" disabled>${guidedFeedbackTransportEnabled ? 'Submit direction and feedback' : 'Sending disabled'}</button><p class="response-status" role="status" aria-live="polite">${guidedFeedbackTransportEnabled ? 'Your saved draft is not final until you submit it.' : ''}</p></div>${localPreviewNote}</form><section id="feedback-confirmation" class="feedback-confirmation" hidden aria-labelledby="feedback-confirmation-title"><h3 id="feedback-confirmation-title" tabindex="-1">Thank you. Florian will personally read this.</h3><p>Nothing moves into identity until he reviews your direction and feedback.</p></section>`;
+    const legacyResponsePanel = `<form class="response-form reveal delay" novalidate><label for="response-note">${responseLabel} <span>Optional</span></label><textarea id="response-note" name="note" maxlength="2000" placeholder="Anything you want Florian to know."></textarea><div class="response-actions"><button class="response-submit" type="submit" disabled>${responseAction}</button><p class="response-status" role="status" aria-live="polite"></p></div>${localPreviewNote}</form>`;
+    const responsePanel = guidedFeedbackEnabled ? guidedPromptPanel : legacyResponsePanel;
+    const voicePanel = voiceFeedbackEnabled ? `<section class="voice-feedback reveal delay" hidden aria-labelledby="voice-feedback-title"><h3 id="voice-feedback-title">Talk it out</h3><p class="voice-lead">Say what is pulling you toward this direction, what feels off, or what you want us to protect. Up to 90 seconds.</p><div class="voice-stage voice-idle"><button type="button" class="voice-primary" data-voice-action="start">Start recording</button></div><div class="voice-stage voice-recording" hidden><p class="voice-timer" role="timer" aria-live="off">00:00 / 01:30</p><button type="button" class="voice-control" data-voice-action="pause">Pause</button><button type="button" class="voice-control" data-voice-action="stop">Stop</button><button type="button" class="voice-control" data-voice-action="cancel">Cancel</button></div><div class="voice-stage voice-review" hidden><audio class="voice-playback" controls preload="metadata"></audio><div class="voice-review-actions"><button type="button" class="voice-text-action" data-voice-action="redo">Redo</button><button type="button" class="voice-text-action" data-voice-action="delete">Delete</button><button type="button" class="voice-primary voice-attach" data-voice-action="attach" disabled>Attach voice note</button></div><p class="voice-helper">Submit your direction and feedback before attaching this recording.</p></div><p class="voice-privacy">Private to Florian. We transcribe it privately to make review easier. Audio is kept for 12 months. The transcript stays with your feedback unless you ask us to delete it.</p><p class="voice-status" role="status" aria-live="polite"></p></section>` : '';
+    const choiceGroupAttributes = ' role="group" aria-label="Choose a direction"';
+    html += `<section class="scene black comparison-scene decision-scene" data-chapter="decide" id="decision"><div class="inner"><p class="kicker reveal">Your decision</p><h2 class="statement reveal delay">Which world makes you feel most seen?</h2><p class="body decision-prompt reveal delay">Select the full stylescape that feels most like you, or revise completely.</p><div class="choices decision-options reveal delay"${choiceGroupAttributes}><div class="stylescape-compare">${comparisonCards}</div>${revisionChoice}</div><p class="selection reveal delay" role="status"></p>${responsePanel}${voicePanel}</div></section>`;
+    story.innerHTML = html;
+    const archetypeChart = document.querySelector('bt-archetype-chart');
+    if (archetypeChart && d.archetypeProfile) {
+      customElements.whenDefined('bt-archetype-chart').then(() => { archetypeChart.data = d.archetypeProfile; });
+    }
+    const scenes = [...document.querySelectorAll('.scene')];
+    scenes.forEach((s, i) => s.insertAdjacentHTML('afterbegin', `<span class="index">${String(i + 1).padStart(2,'0')} / ${String(scenes.length).padStart(2,'0')}</span>`));
+    const meter = document.querySelector('.meter span');
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      entry.target.querySelector('bt-archetype-chart')?.setAttribute('animate', '');
+      const i = scenes.indexOf(entry.target);
+      meter.style.width = `${((i + 1) / scenes.length) * 100}%`;
+      const chapter = entry.target.dataset.chapter;
+      document.querySelectorAll('.chapter-nav button').forEach(button => button.setAttribute('aria-current', button.dataset.chapterTarget === chapter ? 'true' : 'false'));
+      const atStart = i === 0;
+      document.body.classList.toggle('at-start', atStart);
+      document.body.classList.toggle('on-light', entry.target.classList.contains('light'));
+      if (atStart) setNavOpen(false);
+    }), { threshold: .24 });
+    scenes.forEach(s => observer.observe(s));
+    const chapterToggle = document.querySelector('.chapter-toggle');
+    const setNavOpen = open => {
+      document.body.classList.toggle('nav-open', open);
+      chapterToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      chapterToggle.setAttribute('aria-label', open ? 'Close chapters' : 'Open chapters');
+    };
+    chapterToggle.addEventListener('click', () => setNavOpen(!document.body.classList.contains('nav-open')));
+    document.addEventListener('click', event => {
+      if (!document.body.classList.contains('nav-open')) return;
+      if (event.target.closest('.chapter-nav') || event.target.closest('.chapter-toggle')) return;
+      setNavOpen(false);
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && document.body.classList.contains('nav-open')) setNavOpen(false);
+    });
+    document.querySelectorAll('.chapter-nav button').forEach(button => button.addEventListener('click', () => {
+      setNavOpen(false);
+      document.querySelector(`.scene[data-chapter="${button.dataset.chapterTarget}"]`)?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    }));
+    document.querySelectorAll('.board-image').forEach(image => image.addEventListener('contextmenu', event => event.preventDefault()));
+    const viewer = document.getElementById('stylescape-viewer');
+    const viewerImage = viewer.querySelector('.viewer-image');
+    const viewerStage = viewer.querySelector('.viewer-stage');
+    const viewerTitle = viewer.querySelector('.viewer-title');
+    const viewerVariants = viewer.querySelector('.viewer-variants');
+    const viewerPercent = viewer.querySelector('[data-viewer-zoom="reset"]');
+    let activeBoard = null;
+    let zoom = { scale: 1, x: 0, y: 0 };
+    let drag = null;
+    const updateViewer = () => {
+      viewerImage.style.transform = `translate3d(${zoom.x}px, ${zoom.y}px, 0) scale(${zoom.scale})`;
+      viewerPercent.textContent = `${Math.round(zoom.scale * 100)}%`;
+      viewerStage.classList.toggle('is-zoomed', zoom.scale > 1);
+    };
+    const resetViewer = () => { zoom = { scale: 1, x: 0, y: 0 }; updateViewer(); };
+    const setViewerZoom = scale => {
+      zoom.scale = Math.max(1, Math.min(4, scale));
+      if (zoom.scale === 1) { zoom.x = 0; zoom.y = 0; }
+      updateViewer();
+    };
+    const setBoardVariant = (board, id) => {
+      const button = board.querySelector(`[data-variant-id="${id}"]`);
+      if (!button) return;
+      board.querySelector('.board-image').src = button.dataset.variantImage;
+      document.querySelector(`[data-compare-image-id="${board.dataset.boardId}"]`)?.setAttribute('src', button.dataset.variantImage);
+      board.querySelectorAll('[data-variant-id]').forEach(item => {
+        const active = item.dataset.variantId === id;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      if (viewer.open && activeBoard === board) {
+        viewerImage.src = button.dataset.variantImage;
+        viewerVariants.querySelectorAll('[data-viewer-variant]').forEach(item => {
+          const active = item.dataset.viewerVariant === id;
+          item.classList.toggle('is-active', active);
+          item.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        resetViewer();
+      }
+    };
+    document.querySelectorAll('.board-scene').forEach(board => {
+      board.querySelectorAll('[data-variant-id]').forEach(button => button.addEventListener('click', () => setBoardVariant(board, button.dataset.variantId)));
+      board.querySelector('[data-open-viewer]').addEventListener('click', () => {
+        activeBoard = board;
+        const boardImage = board.querySelector('.board-image');
+        viewerTitle.textContent = board.dataset.boardName;
+        viewerImage.src = boardImage.getAttribute('src');
+        viewerImage.alt = boardImage.alt;
+        const variants = [...board.querySelectorAll('[data-variant-id]')];
+        viewerVariants.innerHTML = variants.length ? `<div class="variant-switch" role="group" aria-label="Color version">${variants.map(button => `<button type="button" data-viewer-variant="${esc(button.dataset.variantId)}" aria-label="${esc(button.getAttribute('aria-label') || button.dataset.variantId)}" aria-pressed="${button.getAttribute('aria-pressed')}" class="${button.classList.contains('is-active') ? 'is-active' : ''}"><span class="variant-chip" style="background:${esc(button.dataset.variantColor || 'currentColor')}"></span></button>`).join('')}</div>` : '';
+        viewerVariants.querySelectorAll('[data-viewer-variant]').forEach(button => button.addEventListener('click', () => setBoardVariant(board, button.dataset.viewerVariant)));
+        resetViewer();
+        document.body.classList.add('viewer-open');
+        viewer.showModal();
+        viewer.querySelector('.viewer-close').focus();
+      });
+    });
+    viewer.querySelector('.viewer-close').addEventListener('click', () => viewer.close());
+    viewer.addEventListener('close', () => { document.body.classList.remove('viewer-open'); activeBoard = null; resetViewer(); });
+    viewerImage.addEventListener('contextmenu', event => event.preventDefault());
+    viewer.querySelector('[data-viewer-zoom="in"]').addEventListener('click', () => setViewerZoom(zoom.scale + .25));
+    viewer.querySelector('[data-viewer-zoom="out"]').addEventListener('click', () => setViewerZoom(zoom.scale - .25));
+    viewerPercent.addEventListener('click', resetViewer);
+    viewerStage.addEventListener('dblclick', () => setViewerZoom(zoom.scale === 1 ? 2 : 1));
+    viewerStage.addEventListener('wheel', event => { event.preventDefault(); setViewerZoom(zoom.scale + (event.deltaY < 0 ? .25 : -.25)); }, { passive: false });
+    viewerStage.addEventListener('keydown', event => {
+      if (zoom.scale === 1 || !['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key)) return;
+      event.preventDefault();
+      const step = event.shiftKey ? 80 : 32;
+      if (event.key === 'ArrowLeft') zoom.x -= step;
+      if (event.key === 'ArrowRight') zoom.x += step;
+      if (event.key === 'ArrowUp') zoom.y -= step;
+      if (event.key === 'ArrowDown') zoom.y += step;
+      updateViewer();
+    });
+    viewerStage.addEventListener('pointerdown', event => {
+      if (zoom.scale === 1) return;
+      drag = { pointerId: event.pointerId, startX: event.clientX, startY: event.clientY, x: zoom.x, y: zoom.y };
+      viewerStage.setPointerCapture(event.pointerId);
+      viewerStage.classList.add('is-dragging');
+    });
+    viewerStage.addEventListener('pointermove', event => {
+      if (!drag || drag.pointerId !== event.pointerId) return;
+      zoom.x = drag.x + event.clientX - drag.startX;
+      zoom.y = drag.y + event.clientY - drag.startY;
+      updateViewer();
+    });
+    const endDrag = event => {
+      if (!drag || drag.pointerId !== event.pointerId) return;
+      drag = null;
+      viewerStage.classList.remove('is-dragging');
+    };
+    viewerStage.addEventListener('pointerup', endDrag);
+    viewerStage.addEventListener('pointercancel', endDrag);
+    const likenessNote = document.getElementById('likeness-note');
+    const readSessionFlag = key => {
+      try {
+        return sessionStorage.getItem(key) === '1';
+      } catch (error) {
+        return false;
+      }
+    };
+    const writeSessionFlag = key => {
+      try {
+        sessionStorage.setItem(key, '1');
+      } catch (error) {
+        // The in-memory acknowledgment still lets this review continue.
+      }
+    };
+    const initializeLikenessAcknowledgment = () => {
+      const likenessForm = document.getElementById('likeness-note-form');
+      const likenessTitle = document.getElementById('likeness-note-title');
+      const likenessCheckbox = document.getElementById('likeness-note-checkbox');
+      const likenessConfirm = document.getElementById('likeness-note-confirm');
+      const notice = d.likenessNotice;
+      const noticeEnabled = notice === true || (notice && typeof notice === 'object' && notice.enabled !== false);
+      if (!noticeEnabled) return;
+      const noticeVersion = likenessNote.dataset.noticeVersion || '1';
+      const likenessStorageKey = `brand-therapy-reveal:${d.slug}:${d.version || 'unversioned'}:likeness-notice:${noticeVersion}`;
+      let likenessAcknowledged = readSessionFlag(likenessStorageKey);
+      likenessNote.addEventListener('cancel', event => event.preventDefault());
+      likenessNote.addEventListener('click', event => {
+        if (event.target !== likenessNote) return;
+        event.preventDefault();
+        likenessTitle.focus({ preventScroll: true });
+      });
+      likenessCheckbox.addEventListener('change', () => {
+        likenessConfirm.disabled = !likenessCheckbox.checked;
+      });
+      let noticeObserver;
+      const firstDirection = document.querySelector('.direction-intro');
+      const firstDirectionHeading = firstDirection?.querySelector('h2');
+      if (firstDirectionHeading) firstDirectionHeading.tabIndex = -1;
+      likenessForm.addEventListener('submit', event => {
+        event.preventDefault();
+        if (!likenessForm.reportValidity()) return;
+        likenessAcknowledged = true;
+        writeSessionFlag(likenessStorageKey);
+        noticeObserver?.disconnect();
+        document.body.classList.remove('ack-open');
+        likenessNote.close();
+        requestAnimationFrame(() => firstDirectionHeading?.focus({ preventScroll: true }));
+      });
+      noticeObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        likenessNote.dataset.triggerEvaluated = 'true';
+        if (likenessAcknowledged || likenessNote.open) return;
+        document.body.classList.add('ack-open');
+        likenessCheckbox.checked = false;
+        likenessConfirm.disabled = true;
+        likenessNote.showModal();
+        likenessNote.scrollTop = 0;
+        likenessTitle.focus({ preventScroll: true });
+      }), { threshold: .55 });
+      if (firstDirection) noticeObserver.observe(firstDirection);
+    };
+    initializeLikenessAcknowledgment();
+    const selection = document.querySelector('.selection');
+    const responseForm = document.querySelector('.response-form');
+    const responseNote = document.getElementById('response-note');
+    const responseSubmit = document.querySelector('.response-submit');
+    const responseStatus = document.querySelector('.response-status');
+    const feedbackSaveStatus = document.getElementById('feedback-save-status');
+    const feedbackError = document.getElementById('feedback-error');
+    const feedbackErrorText = feedbackError?.querySelector('span');
+    const feedbackRecover = feedbackError?.querySelector('.feedback-recover');
+    const feedbackConfirmation = document.getElementById('feedback-confirmation');
+    const feedbackConfirmationTitle = document.getElementById('feedback-confirmation-title');
+    const voicePanelElement = document.querySelector('.voice-feedback');
+    const voiceAttachButton = document.querySelector('.voice-attach');
+    const voiceHelper = document.querySelector('.voice-helper');
+    const feedbackFields = guidedFeedbackEnabled ? {
+      mostLike: document.getElementById('feedback-most-like'),
+      leastLike: document.getElementById('feedback-least-like'),
+      changeBeforeIdentity: document.getElementById('feedback-change-before')
+    } : {};
+    let selectedChoice = '';
+    let responseSent = false;
+    let voiceUploadGrant = null;
+    let lastFinalPayload = null;
+    const voiceMaxBytes = 3 * 1024 * 1024;
+    const setResponseStatus = (message='', state='') => {
+      responseStatus.textContent = message;
+      if (state) responseStatus.dataset.state = state;
+      else delete responseStatus.dataset.state;
+    };
+    const markResponseChanged = () => {
+      if (!responseSent) return;
+      setResponseStatus('Your final response has already been received.', 'success');
+    };
+    const applyChoice = id => {
+      selectedChoice = id;
+      document.querySelectorAll('.choice').forEach(button => {
+        const isSelected = button.dataset.choice === id;
+        button.classList.toggle('is-selected', isSelected);
+        button.setAttribute('aria-pressed', String(isSelected));
+      });
+      const item = d.choices.find(c => c.id === id);
+      selection.textContent = item ? `Selected: ${item.label}` : '';
+      if (voicePanelElement) voicePanelElement.hidden = !item;
+      responseSubmit.disabled = responseSent || !item || !(guidedFeedbackEnabled ? guidedFeedbackTransportEnabled : submissionsEnabled);
+      if (item && !(guidedFeedbackEnabled ? guidedFeedbackTransportEnabled : submissionsEnabled)) setResponseStatus('Private preview only. Sending is not connected.');
+    };
+    const acceptVoiceUploadGrant = result => {
+      if (!voiceFeedbackEnabled) return false;
+      const grant = result;
+      const valid = grant && typeof grant.capability === 'string' && grant.capability.length > 40 &&
+        typeof grant.expiresAt === 'string' && !!grant.expiresAt &&
+        grant.maxBytes === voiceMaxBytes && grant.endpoint === '/api/reveal-voice' &&
+        typeof d.submission?.endpoint === 'string' && d.submission.endpoint.startsWith('https://');
+      voiceUploadGrant = valid ? {
+        capability: grant.capability,
+        expiresAt: grant.expiresAt,
+        maxBytes: grant.maxBytes,
+        endpoint: new URL(grant.endpoint, d.submission.endpoint).href
+      } : null;
+      if (voiceAttachButton) voiceAttachButton.disabled = !voiceUploadGrant;
+      if (voiceHelper) voiceHelper.textContent = voiceUploadGrant
+        ? 'Your written feedback is safe. Attach when you are ready.'
+        : 'Your written feedback is safe. Voice attachment is not available yet.';
+      return !!voiceUploadGrant;
+    };
+    const requestVoiceUploadGrant = async () => {
+      if (!voiceFeedbackEnabled || !responseSent || !submissionsEnabled) return false;
+      try {
+        const response = await fetch(new URL('/api/reveal-voice-capability', d.submission.endpoint).href, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Reveal-Capability': d.submission.capability
+          },
+          body: JSON.stringify({
+            slug: d.slug,
+            submissionId: d.submission.submissionId,
+            deliveryId: d.voice.deliveryId,
+            voiceId: d.voice.voiceId,
+            deliveryAccessKey: d.voice.deliveryAccessKey
+          })
+        });
+        const result = await response.json().catch(() => ({}));
+        return response.ok && result.ok === true && acceptVoiceUploadGrant(result);
+      } catch (error) {
+        return false;
+      }
+    };
+    if (guidedFeedbackEnabled) {
+      const feedbackEndpoint = guidedFeedbackTransportEnabled
+        ? new URL('/api/reveal-feedback-draft', d.submission.endpoint).href
+        : '';
+      const feedbackState = {
+        clientRevision: 0,
+        acknowledgedClientRevision: 0,
+        serverRevision: 0,
+        conflict: null,
+        autosaveTimer: null
+      };
+      const feedbackSnapshot = () => ({
+        mostLike: feedbackFields.mostLike.value.trim(),
+        leastLike: feedbackFields.leastLike.value.trim(),
+        changeBeforeIdentity: feedbackFields.changeBeforeIdentity.value.trim()
+      });
+      const selectedItem = () => d.choices.find(choice => choice.id === selectedChoice) || null;
+      const setSaveStatus = (message='', state='') => {
+        feedbackSaveStatus.textContent = message;
+        if (state) feedbackSaveStatus.dataset.state = state;
+        else delete feedbackSaveStatus.dataset.state;
+      };
+      const clearFeedbackError = () => {
+        feedbackError.hidden = true;
+        feedbackErrorText.textContent = '';
+        feedbackRecover.hidden = true;
+      };
+      const showFeedbackError = (message, recoverableSnapshot=null) => {
+        feedbackErrorText.textContent = message;
+        feedbackError.hidden = false;
+        feedbackRecover.hidden = !recoverableSnapshot;
+        feedbackState.conflict = recoverableSnapshot;
+      };
+      const validateDurableAck = (result, acceptedClientRevision) => {
+        const serverRevision = Number(result?.serverRevision);
+        return result?.durable === true &&
+          Number(result.acceptedClientRevision) === acceptedClientRevision &&
+          Number.isInteger(serverRevision) && serverRevision > 0 &&
+          typeof result.savedAt === 'string' && !!result.savedAt &&
+          typeof result.eventId === 'string' && !!result.eventId;
+      };
+      const markGuidedChanged = () => {
+        if (responseSent) return;
+        feedbackState.clientRevision += 1;
+        if (!feedbackState.conflict) {
+          clearFeedbackError();
+          setSaveStatus(guidedFeedbackTransportEnabled ? 'Changes save privately as you type.' : '', '');
+        }
+        setResponseStatus(guidedFeedbackTransportEnabled ? 'Your saved draft is not final until you submit it.' : '');
+      };
+      const buildDraftPayload = revision => ({
+        contractVersion: 'reveal-guided-feedback.v1',
+        type: 'reveal_feedback_draft',
+        intent: 'autosave',
+        draftId: guidedDraftId,
+        slug: d.slug,
+        client: d.client,
+        revealVersion: d.version || '',
+        choice: { id: selectedItem().id, label: selectedItem().label },
+        feedback: feedbackSnapshot(),
+        clientRevision: revision,
+        idempotencyKey: `${guidedDraftId}:${revision}`
+      });
+      const flushAutosave = async () => {
+        clearTimeout(feedbackState.autosaveTimer);
+        feedbackState.autosaveTimer = null;
+        if (!guidedFeedbackTransportEnabled || responseSent || feedbackState.conflict || !selectedItem()) return;
+        const revision = feedbackState.clientRevision;
+        const payload = buildDraftPayload(revision);
+        setSaveStatus('Saving privately...', 'saving');
+        try {
+          const response = await fetch(feedbackEndpoint, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-Reveal-Capability': d.submission.capability
+            },
+            body: JSON.stringify(payload)
+          });
+          const result = await response.json().catch(() => ({}));
+          if (response.status === 409) {
+            showFeedbackError('A newer saved version exists. Review it before continuing.', result.snapshot || result.current || null);
+            setSaveStatus('', '');
+            return;
+          }
+          if (!response.ok || !validateDurableAck(result, revision)) throw new Error('draft acknowledgment was not durable');
+          if (Number(result.serverRevision) < feedbackState.serverRevision) return;
+          feedbackState.acknowledgedClientRevision = Math.max(feedbackState.acknowledgedClientRevision, revision);
+          feedbackState.serverRevision = Number(result.serverRevision);
+          if (revision === feedbackState.clientRevision) setSaveStatus('Saved privately.', 'saved');
+          else setSaveStatus('Changes save privately as you type.', '');
+        } catch (error) {
+          if (revision !== feedbackState.clientRevision) return;
+          setSaveStatus('We could not save this yet. Keep this page open and try again.', 'error');
+        }
+      };
+      const scheduleAutosave = () => {
+        clearTimeout(feedbackState.autosaveTimer);
+        if (!guidedFeedbackTransportEnabled || responseSent || feedbackState.conflict || !selectedItem()) return;
+        feedbackState.autosaveTimer = setTimeout(flushAutosave, 700);
+      };
+      const restoreSnapshot = snapshot => {
+        if (!snapshot || snapshot.durable !== true) return false;
+        const accepted = Number(snapshot.acceptedClientRevision);
+        const serverRevision = Number(snapshot.serverRevision);
+        const choice = d.choices.find(item => item.id === snapshot.choice?.id);
+        if (!choice || !Number.isInteger(accepted) || accepted < 0 || !Number.isInteger(serverRevision) || serverRevision < 1) return false;
+        applyChoice(choice.id);
+        Object.keys(feedbackFields).forEach(key => {
+          feedbackFields[key].value = typeof snapshot.feedback?.[key] === 'string' ? snapshot.feedback[key].slice(0, 1200) : '';
+        });
+        feedbackState.clientRevision = accepted;
+        feedbackState.acknowledgedClientRevision = accepted;
+        feedbackState.serverRevision = serverRevision;
+        feedbackState.conflict = null;
+        clearFeedbackError();
+        setSaveStatus('Your saved feedback is back.', 'recovered');
+        return true;
+      };
+      const recoverDraft = async () => {
+        if (!guidedFeedbackTransportEnabled) return;
+        const startingRevision = feedbackState.clientRevision;
+        setSaveStatus('Restoring your saved feedback...', 'recovering');
+        try {
+          const response = await fetch(feedbackEndpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-Reveal-Capability': d.submission.capability
+            },
+            body: JSON.stringify({
+              contractVersion: 'reveal-guided-feedback.v1',
+              type: 'reveal_feedback_draft_recovery',
+              intent: 'recover',
+              draftId: guidedDraftId,
+              slug: d.slug,
+              revealVersion: d.version || ''
+            })
+          });
+          if (response.status === 404 || response.status === 204) {
+            if (feedbackState.clientRevision === startingRevision) setSaveStatus('Changes save privately as you type.');
+            return;
+          }
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error('draft recovery failed');
+          if (feedbackState.clientRevision !== startingRevision) return;
+          if (!restoreSnapshot(result.snapshot || result)) setSaveStatus('Changes save privately as you type.');
+        } catch (error) {
+          if (feedbackState.clientRevision === startingRevision)
+            setSaveStatus('We could not save this yet. Keep this page open and try again.', 'error');
+        }
+      };
+      document.querySelectorAll('.choice').forEach(button => button.addEventListener('click', () => {
+        if (responseSent) return;
+        applyChoice(button.dataset.choice);
+        markGuidedChanged();
+        flushAutosave();
+      }));
+      Object.values(feedbackFields).forEach(field => {
+        field.addEventListener('input', () => {
+          markGuidedChanged();
+          scheduleAutosave();
+        });
+        field.addEventListener('blur', flushAutosave);
+      });
+      feedbackRecover.addEventListener('click', () => {
+        if (restoreSnapshot(feedbackState.conflict)) feedbackFields.mostLike.focus();
+      });
+      responseForm.addEventListener('submit', async event => {
+        event.preventDefault();
+        if (!guidedFeedbackTransportEnabled) {
+          showFeedbackError('Private preview only. Sending is not connected.');
+          return;
+        }
+        const item = selectedItem();
+        if (!item) {
+          showFeedbackError('Choose one direction, or revise completely, before sending.');
+          document.querySelector('.choice')?.focus();
+          return;
+        }
+        clearTimeout(feedbackState.autosaveTimer);
+        responseSubmit.disabled = true;
+        responseSubmit.textContent = 'Submitting...';
+        setResponseStatus('Submitting your feedback...');
+        clearFeedbackError();
+        const payload = {
+          contractVersion: 'reveal-guided-feedback.v1',
+          type: 'reveal_feedback_submission',
+          intent: 'final_submit',
+          explicitSubmit: true,
+          submissionId: d.submission.submissionId,
+          draftId: guidedDraftId,
+          slug: d.slug,
+          client: d.client,
+          revealVersion: d.version || '',
+          choice: { id: item.id, label: item.label },
+          feedback: feedbackSnapshot(),
+          clientRevision: feedbackState.clientRevision,
+          lastAcknowledgedServerRevision: feedbackState.serverRevision || null,
+          idempotencyKey: d.submission.submissionId
+        };
+        if (voiceFeedbackEnabled) {
+          payload.deliveryId = d.voice.deliveryId;
+          payload.voiceId = d.voice.voiceId;
+          payload.deliveryAccessKey = d.voice.deliveryAccessKey;
+        }
+        lastFinalPayload = payload;
+        try {
+          const response = await fetch(d.submission.endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-Reveal-Capability': d.submission.capability
+            },
+            body: JSON.stringify(payload)
+          });
+          const result = await response.json().catch(() => ({}));
+          if (response.status === 409) {
+            responseSubmit.disabled = false;
+            responseSubmit.textContent = 'Submit direction and feedback';
+            setResponseStatus('');
+            showFeedbackError('A newer saved version exists. Review it before continuing.', result.current || result.snapshot || null);
+            return;
+          }
+          const finalRevision = Number(result.serverRevision);
+          if (!response.ok || result.durable !== true || result.final !== true ||
+            result.submissionId !== d.submission.submissionId || !Number.isInteger(finalRevision) || finalRevision < 1 ||
+            typeof result.submittedAt !== 'string' || !result.submittedAt || typeof result.eventId !== 'string' || !result.eventId)
+            throw new Error('final acknowledgment was not durable');
+          responseSent = true;
+          await requestVoiceUploadGrant();
+          document.querySelectorAll('.choice').forEach(button => { button.disabled = true; });
+          Object.values(feedbackFields).forEach(field => { field.disabled = true; });
+          responseForm.hidden = true;
+          feedbackConfirmation.hidden = false;
+          feedbackConfirmationTitle.focus({ preventScroll: true });
+        } catch (error) {
+          responseSubmit.disabled = false;
+          responseSubmit.textContent = 'Try submitting again';
+          setResponseStatus('');
+          showFeedbackError('Your feedback was not submitted. Review the message and try again.');
+        }
+      });
+      recoverDraft();
+    } else {
+      const saved = voiceFeedbackEnabled ? null : localStorage.getItem(`brand-therapy-reveal:${d.slug}:choice`);
+      if (saved) applyChoice(saved);
+      document.querySelectorAll('.choice').forEach(button => button.addEventListener('click', () => {
+        if (responseSent) return;
+        if (!voiceFeedbackEnabled) localStorage.setItem(`brand-therapy-reveal:${d.slug}:choice`, button.dataset.choice);
+        markResponseChanged();
+        applyChoice(button.dataset.choice);
+      }));
+      responseNote.addEventListener('input', markResponseChanged);
+      responseForm.addEventListener('submit', async event => {
+        event.preventDefault();
+        if (!submissionsEnabled) {
+          setResponseStatus('Private preview only. Sending is not connected.', 'error');
+          return;
+        }
+        const item = d.choices.find(choice => choice.id === selectedChoice);
+        if (!item) {
+          setResponseStatus('Choose one direction, or revise completely, before sending.', 'error');
+          document.querySelector('.choice')?.focus();
+          return;
+        }
+        responseSubmit.disabled = true;
+        responseSubmit.textContent = 'Sending...';
+        setResponseStatus('Recording your response.');
+        const submissionId = d.submission.submissionId;
+        try {
+          lastFinalPayload = {
+            slug: d.slug,
+            version: d.version || '',
+            choice: item.id,
+            note: responseNote.value.trim(),
+            submissionId
+          };
+          if (voiceFeedbackEnabled) {
+            lastFinalPayload.deliveryId = d.voice.deliveryId;
+            lastFinalPayload.voiceId = d.voice.voiceId;
+            lastFinalPayload.deliveryAccessKey = d.voice.deliveryAccessKey;
+          }
+          const response = await fetch(d.submission.endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-Reveal-Capability': d.submission.capability
+            },
+            body: JSON.stringify(lastFinalPayload)
+          });
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok || !result.ok || result.stored !== true) throw new Error(result.error || 'response storage is still pending');
+          responseSent = true;
+          await requestVoiceUploadGrant();
+          document.querySelectorAll('.choice').forEach(button => { button.disabled = true; });
+          responseNote.disabled = true;
+          responseSubmit.disabled = true;
+          responseSubmit.textContent = 'Response sent';
+          setResponseStatus('Received. Florian will review your response before anything moves forward.', 'success');
+        } catch (error) {
+          responseSubmit.disabled = false;
+          responseSubmit.textContent = 'Try sending again';
+          setResponseStatus('That did not reach Florian. Your choice is still saved here. Try again.', 'error');
+        }
+      });
+    }
+    if (voiceFeedbackEnabled) {
+      const voiceIdle = document.querySelector('.voice-idle');
+      const voiceRecording = document.querySelector('.voice-recording');
+      const voiceReview = document.querySelector('.voice-review');
+      const voicePlayback = document.querySelector('.voice-playback');
+      const voiceTimer = document.querySelector('.voice-timer');
+      const voicePause = document.querySelector('[data-voice-action="pause"]');
+      const voiceStatus = document.querySelector('.voice-status');
+      const VOICE_MAX_SECONDS = 90;
+      const VOICE_SAMPLE_RATE = 16000;
+      const VOICE_MAX_BYTES = voiceMaxBytes;
+      let voiceStream = null;
+      let voiceRecorder = null;
+      let voiceChunks = [];
+      let voiceRawBlob = null;
+      let voiceWavBlob = null;
+      let voicePlaybackUrl = '';
+      let voiceElapsedMs = 0;
+      let voiceTimerId = null;
+      let voicePhase = 'idle';
+      let discardRecording = false;
+      let voiceAttached = false;
+
+      const setVoiceStatus = (message='', state='') => {
+        voiceStatus.textContent = message;
+        if (state) voiceStatus.dataset.state = state;
+        else delete voiceStatus.dataset.state;
+      };
+      const setVoiceStage = stage => {
+        voiceIdle.hidden = stage !== 'idle';
+        voiceRecording.hidden = !['recording', 'paused'].includes(stage);
+        voiceReview.hidden = stage !== 'review';
+        voicePhase = stage;
+      };
+      const updateVoiceTimer = () => {
+        const seconds = Math.min(VOICE_MAX_SECONDS, Math.floor(voiceElapsedMs / 1000));
+        voiceTimer.textContent = `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')} / 01:30`;
+      };
+      const stopVoiceTracks = () => {
+        voiceStream?.getTracks().forEach(track => track.stop());
+        voiceStream = null;
+      };
+      const clearVoiceTimer = () => {
+        clearInterval(voiceTimerId);
+        voiceTimerId = null;
+      };
+      const revokeVoicePlayback = () => {
+        if (voicePlaybackUrl) URL.revokeObjectURL(voicePlaybackUrl);
+        voicePlaybackUrl = '';
+        voicePlayback.removeAttribute('src');
+        voicePlayback.load();
+      };
+      const clearVoiceMemory = () => {
+        clearVoiceTimer();
+        stopVoiceTracks();
+        revokeVoicePlayback();
+        voiceChunks = [];
+        voiceRawBlob = null;
+        voiceWavBlob = null;
+        voiceElapsedMs = 0;
+        updateVoiceTimer();
+      };
+      const encodePcmWav = audioBuffer => {
+        const samples = audioBuffer.getChannelData(0);
+        const output = new ArrayBuffer(44 + samples.length * 2);
+        const view = new DataView(output);
+        const writeAscii = (offset, text) => [...text].forEach((character, index) => view.setUint8(offset + index, character.charCodeAt(0)));
+        writeAscii(0, 'RIFF');
+        view.setUint32(4, output.byteLength - 8, true);
+        writeAscii(8, 'WAVE');
+        writeAscii(12, 'fmt ');
+        view.setUint32(16, 16, true);
+        view.setUint16(20, 1, true);
+        view.setUint16(22, 1, true);
+        view.setUint32(24, VOICE_SAMPLE_RATE, true);
+        view.setUint32(28, VOICE_SAMPLE_RATE * 2, true);
+        view.setUint16(32, 2, true);
+        view.setUint16(34, 16, true);
+        writeAscii(36, 'data');
+        view.setUint32(40, samples.length * 2, true);
+        for (let index = 0; index < samples.length; index += 1) {
+          const sample = Math.max(-1, Math.min(1, samples[index]));
+          view.setInt16(44 + index * 2, sample < 0 ? sample * 0x8000 : sample * 0x7fff, true);
+        }
+        return new Blob([output], { type: 'audio/wav' });
+      };
+      const normalizeVoiceBlob = async blob => {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        const OfflineContextClass = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+        if (!AudioContextClass || !OfflineContextClass) throw new Error('unsupported');
+        const context = new AudioContextClass();
+        try {
+          const decoded = await context.decodeAudioData((await blob.arrayBuffer()).slice(0));
+          if (!Number.isFinite(decoded.duration) || decoded.duration <= 0 || decoded.duration > 90.25) throw new Error('too_long');
+          const sampleCount = Math.ceil(decoded.duration * VOICE_SAMPLE_RATE);
+          const offline = new OfflineContextClass(1, sampleCount, VOICE_SAMPLE_RATE);
+          const source = offline.createBufferSource();
+          source.buffer = decoded;
+          source.connect(offline.destination);
+          source.start(0);
+          const rendered = await offline.startRendering();
+          const wav = encodePcmWav(rendered);
+          if (wav.size > VOICE_MAX_BYTES) throw new Error('too_large');
+          return wav;
+        } finally {
+          await context.close?.();
+        }
+      };
+      const showVoiceReview = async () => {
+        try {
+          setVoiceStatus('Preparing your private recording.');
+          voiceWavBlob = await normalizeVoiceBlob(voiceRawBlob);
+          voiceRawBlob = null;
+          voiceChunks = [];
+          voicePlaybackUrl = URL.createObjectURL(voiceWavBlob);
+          voicePlayback.src = voicePlaybackUrl;
+          voiceAttachButton.disabled = !voiceUploadGrant;
+          voiceHelper.textContent = voiceUploadGrant
+            ? 'Your written feedback is safe. Attach when you are ready.'
+            : 'Submit your direction and feedback before attaching this recording.';
+          setVoiceStage('review');
+          setVoiceStatus('Review your recording. Nothing uploads until you attach it.');
+          voicePlayback.focus({ preventScroll: true });
+        } catch (error) {
+          clearVoiceMemory();
+          setVoiceStage('idle');
+          setVoiceStatus('We could not prepare this recording. You can try again or continue with written feedback.', 'error');
+        }
+      };
+      const finishVoiceRecording = () => {
+        if (!voiceRecorder || !['recording', 'paused'].includes(voiceRecorder.state)) return;
+        clearVoiceTimer();
+        voiceRecorder.stop();
+      };
+      const startVoiceRecording = async () => {
+        if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) {
+          setVoiceStatus('Voice recording is not supported here. You can still send written feedback.', 'error');
+          return;
+        }
+        clearVoiceMemory();
+        voiceAttached = false;
+        discardRecording = false;
+        setVoiceStatus('Requesting microphone access.');
+        try {
+          voiceStream = await navigator.mediaDevices.getUserMedia({
+            audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true },
+            video: false
+          });
+          const preferredTypes = ['audio/webm;codecs=opus', 'audio/ogg;codecs=opus', 'audio/mp4'];
+          const mimeType = preferredTypes.find(type => MediaRecorder.isTypeSupported?.(type)) || '';
+          voiceRecorder = new MediaRecorder(voiceStream, mimeType ? { mimeType } : undefined);
+          voiceChunks = [];
+          voiceRecorder.addEventListener('dataavailable', event => {
+            if (event.data?.size) voiceChunks.push(event.data);
+          });
+          voiceRecorder.addEventListener('stop', async () => {
+            stopVoiceTracks();
+            if (discardRecording) {
+              clearVoiceMemory();
+              setVoiceStage('idle');
+              setVoiceStatus('Recording discarded.');
+              return;
+            }
+            voiceRawBlob = new Blob(voiceChunks, { type: voiceRecorder.mimeType || 'application/octet-stream' });
+            await showVoiceReview();
+          }, { once: true });
+          voiceRecorder.addEventListener('error', () => {
+            clearVoiceMemory();
+            setVoiceStage('idle');
+            setVoiceStatus('Recording stopped unexpectedly. You can try again or continue with written feedback.', 'error');
+          }, { once: true });
+          voiceElapsedMs = 0;
+          voicePause.textContent = 'Pause';
+          updateVoiceTimer();
+          voiceRecorder.start(250);
+          setVoiceStage('recording');
+          setVoiceStatus('Recording.');
+          voiceTimerId = setInterval(() => {
+            if (voicePhase !== 'recording') return;
+            voiceElapsedMs += 250;
+            updateVoiceTimer();
+            if (voiceElapsedMs >= VOICE_MAX_SECONDS * 1000) finishVoiceRecording();
+          }, 250);
+        } catch (error) {
+          clearVoiceMemory();
+          setVoiceStage('idle');
+          setVoiceStatus(error?.name === 'NotAllowedError'
+            ? 'Microphone access was denied. You can still send written feedback.'
+            : 'We could not start recording. You can still send written feedback.', 'error');
+        }
+      };
+      const sha256Base64Url = async blob => {
+        const digest = new Uint8Array(await crypto.subtle.digest('SHA-256', await blob.arrayBuffer()));
+        let binary = '';
+        digest.forEach(byte => { binary += String.fromCharCode(byte); });
+        return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
+      };
+      const renewVoiceGrant = async () => {
+        if (!lastFinalPayload || !submissionsEnabled) return false;
+        return requestVoiceUploadGrant();
+      };
+      const attachVoice = async () => {
+        if (!voiceWavBlob || voiceAttached) return;
+        if (!voiceUploadGrant && !await renewVoiceGrant()) {
+          setVoiceStatus('Your written feedback is safe. Voice attachment is not available yet.', 'error');
+          return;
+        }
+        voiceAttachButton.disabled = true;
+        voiceAttachButton.textContent = 'Attaching...';
+        setVoiceStatus('Attaching your private voice note.');
+        const digest = await sha256Base64Url(voiceWavBlob);
+        const delays = [0, 2000, 5000, 15000];
+        for (let attempt = 0; attempt < delays.length; attempt += 1) {
+          if (delays[attempt]) await new Promise(resolve => setTimeout(resolve, delays[attempt]));
+          try {
+            let response = await fetch(voiceUploadGrant.endpoint, {
+              method: 'PUT',
+              headers: {
+                'Authorization': `Bearer ${voiceUploadGrant.capability}`,
+                'Content-Type': 'audio/wav',
+                'X-Content-SHA256': digest
+              },
+              body: voiceWavBlob
+            });
+            if ((response.status === 401 || response.status === 403) && await renewVoiceGrant()) {
+              response = await fetch(voiceUploadGrant.endpoint, {
+                method: 'PUT',
+                headers: {
+                  'Authorization': `Bearer ${voiceUploadGrant.capability}`,
+                  'Content-Type': 'audio/wav',
+                  'X-Content-SHA256': digest
+                },
+                body: voiceWavBlob
+              });
+            }
+            const result = await response.json().catch(() => ({}));
+            if (!response.ok || result.ok !== true || result.stored !== true) throw new Error(result.error || 'upload failed');
+            voiceAttached = true;
+            clearVoiceMemory();
+            setVoiceStage('idle');
+            voiceIdle.hidden = true;
+            voiceAttachButton.textContent = 'Attach voice note';
+            setVoiceStatus('Private voice note attached. Florian can listen from your feedback record.', 'success');
+            return;
+          } catch (error) {
+            if (attempt === delays.length - 1) {
+              voiceAttachButton.disabled = false;
+              voiceAttachButton.textContent = 'Try attaching again';
+              setVoiceStatus('Your voice note was not attached. Keep this page open and try again.', 'error');
+            }
+          }
+        }
+      };
+
+      voicePanelElement.addEventListener('click', event => {
+        const action = event.target.closest('[data-voice-action]')?.dataset.voiceAction;
+        if (!action) return;
+        if (action === 'start') startVoiceRecording();
+        if (action === 'pause' && voiceRecorder?.state === 'recording') {
+          voiceRecorder.pause();
+          setVoiceStage('paused');
+          voicePause.textContent = 'Resume';
+          setVoiceStatus('Recording paused.');
+        } else if (action === 'pause' && voiceRecorder?.state === 'paused') {
+          voiceRecorder.resume();
+          setVoiceStage('recording');
+          voicePause.textContent = 'Pause';
+          setVoiceStatus('Recording.');
+        }
+        if (action === 'stop') finishVoiceRecording();
+        if (action === 'cancel') {
+          discardRecording = true;
+          finishVoiceRecording();
+        }
+        if (action === 'redo') {
+          clearVoiceMemory();
+          setVoiceStage('idle');
+          startVoiceRecording();
+        }
+        if (action === 'delete') {
+          clearVoiceMemory();
+          setVoiceStage('idle');
+          setVoiceStatus('Recording deleted.');
+        }
+        if (action === 'attach') attachVoice();
+      });
+      window.addEventListener('beforeunload', event => {
+        if (voiceAttached || (!voiceWavBlob && !voiceRawBlob && !['recording', 'paused'].includes(voicePhase))) return;
+        event.preventDefault();
+        event.returnValue = '';
+      });
+      window.addEventListener('pagehide', () => {
+        clearVoiceTimer();
+        stopVoiceTracks();
+        revokeVoicePlayback();
+      });
+    }
+    document.addEventListener('keydown', event => {
+      if (viewer.open || likenessNote.open) return;
+      if (event.target.closest?.('button, input, textarea, select, a[href], [contenteditable="true"], .calibration-axis')) return;
+      if (event.target.closest?.('bt-archetype-chart')) return;
+      const current = scenes.findIndex(s => {
+        const r = s.getBoundingClientRect();
+        return r.top <= innerHeight * .45 && r.bottom >= innerHeight * .45;
+      });
+      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') scenes[Math.min(scenes.length - 1, current + 1)]?.scrollIntoView();
+      if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') scenes[Math.max(0, current - 1)]?.scrollIntoView();
+    });
+  </script>
+</body>
+</html>
