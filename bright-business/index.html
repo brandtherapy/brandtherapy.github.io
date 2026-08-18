@@ -6,8 +6,7 @@
   <meta name="color-scheme" content="dark">
   <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
   <meta name="description" content="Your private Brand Therapy reveal is ready.">
-  <meta property="og:title" content="Bright Business · Brand Therapy">
-  <meta property="og:url" content="https://brandtherapy.florianp.com/bright-business/">
+  <meta property="og:title" content="Brand Therapy.">
   <meta property="og:description" content="Your private Brand Therapy reveal is ready.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Brand Therapy">
@@ -15,18 +14,18 @@
        Reveal-token card (ink/paper, Helvetica Neue, name + Brand Therapy)
        to /{slug}/og-image.png. No AI-textured marketing PNG.
        Lesson: L-reveal-client-og-image-on-publish-2026-08-04 -->
-  <meta property="og:image" content="https://brandtherapy.florianp.com/bright-business/og-share.png">
-  <meta property="og:image:secure_url" content="https://brandtherapy.florianp.com/bright-business/og-share.png">
+  <meta property="og:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
+  <meta property="og:image:secure_url" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Bright Business · Brand Therapy">
+  <meta property="og:image:alt" content="Brand Therapy">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bright Business · Brand Therapy">
+  <meta name="twitter:title" content="Brand Therapy.">
   <meta name="twitter:description" content="Your private Brand Therapy reveal is ready.">
-  <meta name="twitter:image" content="https://brandtherapy.florianp.com/bright-business/og-share.png">
-  <meta name="twitter:image:alt" content="Bright Business · Brand Therapy">
-  <title>Bright Business · Brand Therapy Reveal</title>
+  <meta name="twitter:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
+  <meta name="twitter:image:alt" content="Brand Therapy">
+  <title>Brand Therapy Reveal</title>
   <link rel="icon" href="data:,">
   <style>
     :root {
@@ -1213,7 +1212,7 @@
       <button type="button" data-viewer-zoom="in" aria-label="Zoom in">+</button>
     </div>
   </dialog>
-  <script src="reveal-data.live.js"></script>
+  <script src="reveal-data.d1end.js"></script>
   <script src="assets/archetype-chart/archetype-chart.js"></script>
   <script>
     const d = window.REVEAL_DATA;
@@ -1320,6 +1319,8 @@
     const voicePanel = voiceFeedbackEnabled ? `<section class="voice-feedback reveal delay" hidden aria-labelledby="voice-feedback-title"><h3 id="voice-feedback-title">Talk it out</h3><p class="voice-lead">Say what is pulling you toward this direction, what feels off, or what you want us to protect. Up to 90 seconds.</p><div class="voice-stage voice-idle"><button type="button" class="voice-primary" data-voice-action="start">Start recording</button></div><div class="voice-stage voice-recording" hidden><p class="voice-timer" role="timer" aria-live="off">00:00 / 01:30</p><button type="button" class="voice-control" data-voice-action="pause">Pause</button><button type="button" class="voice-control" data-voice-action="stop">Stop</button><button type="button" class="voice-control" data-voice-action="cancel">Cancel</button></div><div class="voice-stage voice-review" hidden><audio class="voice-playback" controls preload="metadata"></audio><div class="voice-review-actions"><button type="button" class="voice-text-action" data-voice-action="redo">Redo</button><button type="button" class="voice-text-action" data-voice-action="delete">Delete</button><button type="button" class="voice-primary voice-attach" data-voice-action="attach" disabled>Attach voice note</button></div><p class="voice-helper">Submit your direction and feedback before attaching this recording.</p></div><p class="voice-privacy">Private to Florian. We transcribe it privately to make review easier. Audio is kept for 12 months. The transcript stays with your feedback unless you ask us to delete it.</p><p class="voice-status" role="status" aria-live="polite"></p></section>` : '';
     const choiceGroupAttributes = ' role="group" aria-label="Choose a direction"';
     html += `<section class="scene black comparison-scene decision-scene" data-chapter="decide" id="decision"><div class="inner"><p class="kicker reveal">Your decision</p><h2 class="statement reveal delay">Which world makes you feel most seen?</h2><p class="body decision-prompt reveal delay">Select the full stylescape that feels most like you, or revise completely.</p><div class="choices decision-options reveal delay"${choiceGroupAttributes}><div class="stylescape-compare">${comparisonCards}</div>${revisionChoice}</div><p class="selection reveal delay" role="status"></p>${responsePanel}${voicePanel}</div></section>`;
+    html += `<section class="scene board-scene" data-chapter="decide"><div class="board-stage"><img class="board-image" src="media/linkedin-now-after.png" alt="LinkedIn before and after for Florin Diumea" draggable="false"><div class="board-actions"><button class="board-action" type="button" data-open-viewer>Zoom</button></div></div></section>`;
+    html += `<section class="scene board-scene" data-chapter="decide"><div class="board-stage"><img class="board-image" src="media/first-posts.png" alt="Four Bright Business social posts" draggable="false"><div class="board-actions"><button class="board-action" type="button" data-open-viewer>Zoom</button></div></div></section>`;
     story.innerHTML = html;
     const archetypeChart = document.querySelector('bt-archetype-chart');
     if (archetypeChart && d.archetypeProfile) {
