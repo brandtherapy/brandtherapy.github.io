@@ -113,31 +113,71 @@
     .scene.is-visible .reveal { opacity: 1; transform: none; }
     .scene.is-visible .reveal.delay { transition-delay: 120ms; }
 
-    /* Focus Star: the point name is the slide */
-    .star-scene { align-items: end; }
-    .star-label {
-      margin: 0 0 10px;
-      font-size: clamp(4.6rem, 13vw, 10.4rem);
-      line-height: .8;
-      letter-spacing: -.07em;
+    /* Focus Star: five-piece rail + the line as the speech */
+    .star-scene {
+      align-items: stretch;
+      padding-top: clamp(88px, 11vh, 128px);
+      padding-bottom: clamp(48px, 7vh, 72px);
+    }
+    .star-frame {
+      display: grid;
+      grid-template-columns: minmax(196px, .34fr) 1px minmax(0, 1fr);
+      gap: 0 clamp(28px, 4.5vw, 64px);
+      align-items: stretch;
+      width: min(1280px, 100%);
+      margin: 0 auto;
+      min-height: calc(100svh - 200px);
+    }
+    .star-rule { align-self: stretch; background: var(--line); }
+    .light .star-rule { background: rgba(12, 12, 15, .16); }
+    .star-rail {
+      list-style: none;
+      margin: 0;
+      padding: clamp(8px, 1vh, 18px) 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+    }
+    .star-rail li {
+      display: grid;
+      grid-template-columns: 2.4ch 1fr;
+      gap: 10px;
+      align-items: baseline;
+      font-size: clamp(1.08rem, 1.55vw, 1.28rem);
+      letter-spacing: -.02em;
+      color: #7a776f;
+    }
+    .light .star-rail li { color: #8a877f; }
+    .star-rail li b { font-weight: 500; font-variant-numeric: tabular-nums; }
+    .star-rail .is-current {
+      color: var(--paper);
+      font-size: clamp(1.85rem, 3vw, 2.55rem);
       font-weight: 500;
-      text-transform: uppercase;
-    }
-    .star-def {
-      margin: 0 0 28px;
-      max-width: 36ch;
-      font-size: clamp(.95rem, 1.35vw, 1.12rem);
-      line-height: 1.4;
-      color: var(--muted);
-      letter-spacing: .01em;
-    }
-    .star-scene .statement {
-      max-width: 18ch;
-      font-size: clamp(1.9rem, 4.4vw, 3.55rem);
-      line-height: 1.04;
       letter-spacing: -.04em;
     }
-    .star-scene .body { margin-top: 18px; max-width: 42ch; }
+    .light .star-rail .is-current { color: var(--ink); }
+    .star-copy {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8px 0;
+    }
+    .star-def {
+      margin: 0 0 18px;
+      max-width: 36ch;
+      font-size: clamp(.95rem, 1.25vw, 1.08rem);
+      line-height: 1.4;
+      color: var(--muted);
+    }
+    .star-scene .statement {
+      max-width: 13ch;
+      font-size: clamp(2.8rem, 6.8vw, 7.2rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+    .star-scene .body { margin-top: 22px; max-width: 38ch; }
     .light .star-def { color: #605f5a; }
 
     /* Archetype */
@@ -486,7 +526,24 @@
       .li-cover-right { min-height: 120px; }
       .li-nav-items span:nth-child(n+4) { display: none; }
       .feed { grid-template-columns: 1fr 1fr; }
-      .star-label { font-size: clamp(3.6rem, 18vw, 6.2rem); }
+      .star-frame {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        gap: 28px;
+      }
+      .star-rule { display: none; }
+      .star-rail {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 10px 18px;
+        min-height: 0;
+        padding: 0;
+      }
+      .star-rail li { grid-template-columns: auto; font-size: .82rem; }
+      .star-rail li b { display: none; }
+      .star-rail .is-current { font-size: 1.05rem; }
+      .star-scene .statement { font-size: clamp(2.4rem, 11vw, 4.2rem); }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -529,49 +586,89 @@
     </section>
 
     <section class="scene black star-scene" data-chapter="strategy">
-      <div class="inner">
-        <p class="kicker reveal">Focus Star</p>
-        <p class="star-label reveal">Product</p>
-        <p class="star-def reveal">What you uniquely offer.</p>
-        <h2 class="statement reveal delay">A peer community that accelerates ethical growth</h2>
+      <div class="star-frame">
+        <ol class="star-rail reveal" aria-label="Focus Star">
+          <li class="is-current" aria-current="true"><b>01</b>Product</li>
+          <li><b>02</b>People</li>
+          <li><b>03</b>Purpose</li>
+          <li><b>04</b>Promise</li>
+          <li><b>05</b>Personality</li>
+        </ol>
+        <div class="star-rule" aria-hidden="true"></div>
+        <div class="star-copy">
+          <p class="star-def reveal">What you uniquely offer.</p>
+          <h2 class="statement reveal delay">A peer community that accelerates ethical growth</h2>
+        </div>
       </div>
     </section>
 
     <section class="scene light star-scene" data-chapter="strategy">
-      <div class="inner">
-        <p class="kicker reveal">Focus Star</p>
-        <p class="star-label reveal">People</p>
-        <p class="star-def reveal">Who you are here to serve.</p>
-        <h2 class="statement reveal delay">Driven experts who love their craft and feel professionally isolated</h2>
-        <p class="body reveal delay">Persona: Anna. A skilled advisor whose expertise stays invisible when she works alone.</p>
+      <div class="star-frame">
+        <ol class="star-rail reveal" aria-label="Focus Star">
+          <li><b>01</b>Product</li>
+          <li class="is-current" aria-current="true"><b>02</b>People</li>
+          <li><b>03</b>Purpose</li>
+          <li><b>04</b>Promise</li>
+          <li><b>05</b>Personality</li>
+        </ol>
+        <div class="star-rule" aria-hidden="true"></div>
+        <div class="star-copy">
+          <p class="star-def reveal">Who you are here to serve.</p>
+          <h2 class="statement reveal delay">Driven experts who love their craft and feel professionally isolated</h2>
+          <p class="body reveal delay">Persona: Anna. A skilled advisor whose expertise stays invisible when she works alone.</p>
+        </div>
       </div>
     </section>
 
     <section class="scene black star-scene" data-chapter="strategy">
-      <div class="inner">
-        <p class="kicker reveal">Focus Star</p>
-        <p class="star-label reveal">Purpose</p>
-        <p class="star-def reveal">Why your work needs to exist.</p>
-        <h2 class="statement reveal delay">Build the community of peers and experts you wish you'd had</h2>
+      <div class="star-frame">
+        <ol class="star-rail reveal" aria-label="Focus Star">
+          <li><b>01</b>Product</li>
+          <li><b>02</b>People</li>
+          <li class="is-current" aria-current="true"><b>03</b>Purpose</li>
+          <li><b>04</b>Promise</li>
+          <li><b>05</b>Personality</li>
+        </ol>
+        <div class="star-rule" aria-hidden="true"></div>
+        <div class="star-copy">
+          <p class="star-def reveal">Why your work needs to exist.</p>
+          <h2 class="statement reveal delay">Build the community of peers and experts you wish you'd had</h2>
+        </div>
       </div>
     </section>
 
     <section class="scene light star-scene" data-chapter="strategy">
-      <div class="inner">
-        <p class="kicker reveal">Focus Star</p>
-        <p class="star-label reveal">Promise</p>
-        <p class="star-def reveal">What people can consistently expect from you.</p>
-        <h2 class="statement reveal delay">Collaboration over transaction</h2>
-        <p class="body reveal delay">Brand DNA: Growth</p>
+      <div class="star-frame">
+        <ol class="star-rail reveal" aria-label="Focus Star">
+          <li><b>01</b>Product</li>
+          <li><b>02</b>People</li>
+          <li><b>03</b>Purpose</li>
+          <li class="is-current" aria-current="true"><b>04</b>Promise</li>
+          <li><b>05</b>Personality</li>
+        </ol>
+        <div class="star-rule" aria-hidden="true"></div>
+        <div class="star-copy">
+          <p class="star-def reveal">What people can consistently expect from you.</p>
+          <h2 class="statement reveal delay">Collaboration over transaction</h2>
+          <p class="body reveal delay">Brand DNA: Growth</p>
+        </div>
       </div>
     </section>
 
     <section class="scene black star-scene" data-chapter="strategy">
-      <div class="inner">
-        <p class="kicker reveal">Focus Star</p>
-        <p class="star-label reveal">Personality</p>
-        <p class="star-def reveal">How your brand should feel and behave.</p>
-        <h2 class="statement reveal delay">Professional like a peer board, warm like a social club</h2>
+      <div class="star-frame">
+        <ol class="star-rail reveal" aria-label="Focus Star">
+          <li><b>01</b>Product</li>
+          <li><b>02</b>People</li>
+          <li><b>03</b>Purpose</li>
+          <li><b>04</b>Promise</li>
+          <li class="is-current" aria-current="true"><b>05</b>Personality</li>
+        </ol>
+        <div class="star-rule" aria-hidden="true"></div>
+        <div class="star-copy">
+          <p class="star-def reveal">How your brand should feel and behave.</p>
+          <h2 class="statement reveal delay">Professional like a peer board, warm like a social club</h2>
+        </div>
       </div>
     </section>
 
