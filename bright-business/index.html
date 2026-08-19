@@ -432,10 +432,9 @@
     .li-nav-split { width: 1px; height: 28px; margin: 12px 4px; background: #e0e0e0; }
     .li-body {
       padding: 12px 16px 16px;
-      max-height: calc(100svh - 168px);
-      overflow: auto;
+      overflow: visible;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 280px;
+      grid-template-columns: minmax(0, 1fr) 260px;
       gap: 12px;
       align-items: start;
     }
@@ -443,11 +442,20 @@
     .li-card { background: #fff; border-radius: 8px; border: 1px solid #dadce0; overflow: hidden; }
     .li-cover {
       height: 168px;
+      display: grid;
+      grid-template-columns: minmax(250px, .40fr) 1fr;
       position: relative;
-      background: #8aa3b8 center 40%/cover no-repeat;
     }
-    .li-cover-left { display: none; }
-    .li-cover-right { display: none; }
+    .li-cover-left {
+      background: var(--charcoal); color: #fff;
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 18px 20px calc(var(--li-photo) / 2 + 8px) var(--li-inset);
+    }
+    .li-cover-left img { height: 42px; width: 42px; object-fit: contain; filter: brightness(0) invert(1); flex: 0 0 auto; }
+    .li-cover-copy { font-family: "Familjen Grotesk", sans-serif; padding-top: 2px; }
+    .li-cover-copy span { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; opacity: .7; margin-bottom: 6px; }
+    .li-cover-copy strong { display: block; font-size: 26px; line-height: .95; letter-spacing: -.03em; }
+    .li-cover-right { position: relative; background: #8aa3b8 center 38%/cover no-repeat; }
     .li-pill {
       position: absolute; right: 16px; bottom: 16px;
       background: var(--red); color: #fff; border-radius: 40px;
@@ -458,9 +466,9 @@
       width: var(--li-photo);
       height: var(--li-photo);
       margin: calc(var(--li-photo) / -2) 0 0;
-      padding: 5px;
+      padding: 4px;
       box-sizing: border-box;
-      border-radius: 22px;
+      border-radius: 50%;
       background: #fff;
       box-shadow: 0 0 0 1px rgba(0,0,0,.08);
       overflow: hidden;
@@ -469,7 +477,7 @@
     }
     .li-photo-slot img {
       width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%;
-      display: block; border-radius: 17px;
+      display: block; border-radius: 50%;
     }
     .li-name-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-top: 12px; }
     .li-name { font-size: 24px; font-weight: 650; line-height: 1.15; }
@@ -496,12 +504,14 @@
     .li-section p { margin: 0; font-size: 14px; line-height: 1.45; color: rgba(0,0,0,.8); max-width: 62ch; }
     .li-featured { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
     .li-feat { border: 1px solid #e6e6e6; border-radius: 8px; overflow: hidden; background: #fff; }
-    .li-feat img { width: 100%; height: 72px; object-fit: cover; object-position: 50% 22%; display: block; }
-    .li-feat .brand-tile { height: 72px; padding: 8px; }
-    .li-feat .brand-tile h3 { font-size: 15px; margin: 0; }
-    .li-feat .brand-tile .pill { display: none; }
-    .li-feat .brand-tile img.lockup { width: 22px; height: 22px; }
-    .li-feat span { display: block; padding: 8px 10px 10px; font-size: 13px; font-weight: 600; line-height: 1.3; color: #191919; }
+    .li-feat .sq { aspect-ratio: 1 / 1; position: relative; overflow: hidden; background: var(--page); }
+    .li-feat .sq > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .li-feat .sq .brand-tile { position: absolute; inset: 0; padding: 14px; }
+    .li-feat .sq .brand-tile h3 { font-size: 1.15rem; margin: 0; max-width: 10ch; color: inherit; }
+    .li-feat .sq .brand-tile.dark h3 { color: #fff; }
+    .li-feat .sq .brand-tile .pill { margin-top: auto; padding: 7px 12px; font-size: .68rem; }
+    .li-feat .sq .brand-tile img.lockup { width: 28px; height: 28px; }
+    .li-feat span { display: none; }
     .li-activity-meta { margin: -4px 0 10px !important; font-size: 13px !important; color: var(--li-muted); }
     .li-activity { display: grid; grid-template-columns: 48px 1fr; gap: 10px; align-items: start; }
     .li-activity img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: 50% 28%; }
@@ -817,8 +827,8 @@
       .scape { grid-template-rows: none; height: auto; }
       .scape-portrait { grid-column: auto; grid-row: auto; }
       .scape-portrait { min-height: 420px; }
-      .li-cover { grid-template-columns: 1fr; height: 160px; }
-      .li-cover-right { min-height: 80px; }
+      .li-cover { height: 148px; }
+      .li-cover-right { min-height: 0; }
       .li-body { grid-template-columns: 1fr; max-height: none; }
       .li-nav-item:nth-child(n+5) { display: none; }
       .li-nav-split { display: none; }
@@ -1104,7 +1114,7 @@
                 <span class="li-nav-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 6V5a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v1H2v4a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V6zM9 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H9zm10 9a4 4 0 0 0 3-1.38V17a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-4.38A4 4 0 0 0 5 14z"/></svg>Jobs</span>
                 <span class="li-nav-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 4H8a7 7 0 0 0 0 14h4v4l8.16-5.39A7 7 0 0 0 16 4z"/></svg>Messaging</span>
                 <span class="li-nav-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19h-8.28a2 2 0 1 1-3.44 0H2v-1a4.52 4.52 0 0 1 1.17-2.83l1-1.17h15.7l1 1.17A4.42 4.42 0 0 1 22 18zM18.21 7.44A6.27 6.27 0 0 0 12 2a6.27 6.27 0 0 0-6.21 5.44L5 13h14z"/></svg>Notifications</span>
-                <span class="li-nav-item is-me is-current"><img src="media/florin-square.jpg" alt=""><span class="me-label">Me <svg class="caret" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11 3 6h10z"/></svg></span></span>
+                <span class="li-nav-item is-me is-current"><img src="media/florin-square.jpg?v=li4" alt=""><span class="me-label">Me <svg class="caret" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11 3 6h10z"/></svg></span></span>
                 <span class="li-nav-split" aria-hidden="true"></span>
                 <span class="li-nav-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z"/></svg><span class="biz-label">For Business <svg class="caret" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11 3 6h10z"/></svg></span></span>
               </div>
@@ -1112,10 +1122,19 @@
             <div class="li-body">
               <div class="li-main">
                 <div class="li-card">
-                  <div class="li-cover" style="background-image:url('media/banner-skyline.jpg')"></div>
+                  <div class="li-cover">
+                    <div class="li-cover-left">
+                      <img src="media/shield.png" alt="">
+                      <div class="li-cover-copy">
+                        <span>Los Angeles</span>
+                        <strong>Bright<br>Business Club</strong>
+                      </div>
+                    </div>
+                    <div class="li-cover-right" style="background-image:url('media/banner-skyline.jpg')"></div>
+                  </div>
                   <div class="li-identity">
                     <div class="li-photo-slot">
-                      <img src="media/florin-square.jpg" alt="Florin Diumea">
+                      <img src="media/florin-square.jpg?v=li4" alt="Florin Diumea">
                     </div>
                     <div class="li-name-row">
                       <div>
@@ -1135,49 +1154,34 @@
                       <span class="btn btn-line">Visit website</span>
                       <span class="btn btn-line">More</span>
                     </div>
-                  </div>
-                </div>
-                <div class="li-card">
-                  <div class="li-section">
-                    <h3>About</h3>
-                    <p>I started my first business at 19 with no playbook. I built Bright Business Club so driven experts would not have to grow alone.</p>
-                  </div>
-                </div>
-                <div class="li-card">
-                  <div class="li-section">
-                    <h3>Featured</h3>
-                    <div class="li-featured">
-                      <article class="li-feat">
-                        <img src="media/banner-skyline.jpg" alt="" style="object-position:50% 40%">
-                        <span>Los Angeles. The work continues.</span>
-                      </article>
-                      <article class="li-feat">
-                        <div class="brand-tile dark">
-                          <img class="lockup" src="media/shield.png" alt="">
-                          <h3>Not a mixer. A room.</h3>
-                          <span class="pill">Apply to Join a Club</span>
-                        </div>
-                        <span>Not a mixer. A room.</span>
-                      </article>
-                      <article class="li-feat">
-                        <img src="media/stock-peers.jpg" alt="">
-                        <span>You shouldn't have to grow alone</span>
-                      </article>
-                    </div>
-                  </div>
-                </div>
-                <div class="li-card">
-                  <div class="li-section">
-                    <h3>Activity</h3>
-                    <p class="li-activity-meta">10,288 followers</p>
-                    <article class="li-activity">
-                      <img src="media/florin-square.jpg" alt="">
-                      <div>
-                        <strong>Florin Diumea</strong>
-                        <span>Founder, Bright Business Club</span>
-                        <p>I started my first business at 19. This is the peer community I needed then.</p>
+                    <div class="li-section" style="padding: 16px 0 0">
+                      <h3>Featured</h3>
+                      <div class="li-featured">
+                        <article class="li-feat">
+                          <div class="sq">
+                            <img src="media/florin-mentor.jpg" alt="">
+                          </div>
+                        </article>
+                        <article class="li-feat">
+                          <div class="sq">
+                            <div class="brand-tile dark">
+                              <img class="lockup" src="media/shield.png" alt="">
+                              <h3>Not a mixer. A room.</h3>
+                              <span class="pill">Apply to Join a Club</span>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="li-feat">
+                          <div class="sq">
+                            <img src="media/club-room.jpg" alt="">
+                            <div class="stamp stamp-bar">
+                              <img class="lockup" src="media/shield.png" alt="">
+                              <b>Not a mixer. A room.</b>
+                            </div>
+                          </div>
+                        </article>
                       </div>
-                    </article>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1211,7 +1215,7 @@
         <div class="feed reveal delay">
           <article class="post">
             <div class="post-head">
-              <img src="media/florin-square.jpg" alt="">
+              <img src="media/florin-square.jpg?v=li4" alt="">
               <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
             </div>
             <p class="post-copy">I started my first business at 19. No playbook. This is the peer community I needed then.</p>
@@ -1222,7 +1226,7 @@
           </article>
           <article class="post">
             <div class="post-head">
-              <img src="media/florin-square.jpg" alt="">
+              <img src="media/florin-square.jpg?v=li4" alt="">
               <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
             </div>
             <p class="post-copy">Los Angeles. The work continues.</p>
@@ -1233,7 +1237,7 @@
           </article>
           <article class="post">
             <div class="post-head">
-              <img src="media/florin-square.jpg" alt="">
+              <img src="media/florin-square.jpg?v=li4" alt="">
               <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
             </div>
             <p class="post-copy">Driven experts who love their craft shouldn't have to grow alone.</p>
@@ -1248,7 +1252,7 @@
           </article>
           <article class="post">
             <div class="post-head">
-              <img src="media/florin-square.jpg" alt="">
+              <img src="media/florin-square.jpg?v=li4" alt="">
               <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
             </div>
             <p class="post-copy">Bright Business Club is not a mixer. It is a room.</p>
@@ -1263,7 +1267,7 @@
           </article>
           <article class="post">
             <div class="post-head">
-              <img src="media/florin-square.jpg" alt="">
+              <img src="media/florin-square.jpg?v=li4" alt="">
               <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
             </div>
             <p class="post-copy">Collaboration over transaction. Growth is the outcome.</p>
@@ -1278,7 +1282,7 @@
           </article>
           <article class="post">
             <div class="post-head">
-              <img src="media/florin-square.jpg" alt="">
+              <img src="media/florin-square.jpg?v=li4" alt="">
               <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
             </div>
             <p class="post-copy">A peer community that accelerates ethical growth.</p>
