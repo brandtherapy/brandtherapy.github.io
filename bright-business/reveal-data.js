@@ -2,8 +2,7 @@ window.REVEAL_DATA = {
   "client": "Bright Business",
   "firstName": "Florin",
   "slug": "bright-business",
-  "version": "delivery-2026-08-18",
-  "likenessNotice": true,
+  "version": "delivery-2026-08-19-approved-photos",
   "schema_version": "brand-therapy-reveal/v2",
   "archetypeProfile": {
     "schema_version": "brand-therapy-contract/v2",

@@ -10,7 +10,9 @@
   <meta property="og:description" content="Your private Brand Therapy reveal is ready.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Brand Therapy">
-  <meta property="og:image" content="https://brandtherapy.florianp.com/bright-business/og-share.png">
+  <meta property="og:image" content="https://brandtherapy.florianp.com/bright-business/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://brandtherapy.florianp.com/bright-business/og-image.png">
   <title>Bright Business · Brand Therapy</title>
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -634,6 +636,1203 @@
       font-size: 11px; color: rgba(0,0,0,.55); border-top: 1px solid #eee;
     }
 
+    /* Founder campaign system */
+    .campaign-hero {
+      min-height: 100svh;
+      padding: 0;
+      align-items: stretch;
+      background: #070709;
+      color: #f7f8fa;
+    }
+    .campaign-hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: #070709;
+    }
+    .campaign-hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 44% 50%;
+      filter: contrast(1.08) brightness(.74);
+    }
+    .campaign-hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(7,7,9,.12) 0 40%, rgba(7,7,9,.76) 66%, rgba(7,7,9,.96) 100%),
+        linear-gradient(0deg, rgba(7,7,9,.72), transparent 34%);
+    }
+    .campaign-hero .inner {
+      width: min(1320px, 100%);
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr);
+      align-items: end;
+      padding: clamp(92px, 12vh, 132px) 0 clamp(72px, 9vh, 104px);
+    }
+    .campaign-hero-copy {
+      grid-column: 2;
+      align-self: end;
+      padding-left: clamp(28px, 5vw, 72px);
+      border-top: 6px solid var(--red);
+      padding-top: 22px;
+    }
+    .campaign-hero .kicker { color: #d5d7dc; }
+    .campaign-hero .statement {
+      max-width: 9ch;
+      font-family: "Familjen Grotesk", sans-serif;
+      font-size: clamp(3.6rem, 7.5vw, 8rem);
+      font-weight: 700;
+      letter-spacing: -.055em;
+      line-height: .88;
+    }
+    .campaign-hero .body { color: #d5d7dc; max-width: 34ch; }
+    .campaign-principle {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: center;
+      width: fit-content;
+      margin-top: 34px;
+      font-family: "Poppins", sans-serif;
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #e6e8eb;
+    }
+    .campaign-principle::before {
+      content: "";
+      width: 46px;
+      height: 6px;
+      background: var(--red);
+    }
+
+    .identity-system-scene {
+      align-items: stretch;
+      padding: clamp(64px, 7vh, 84px) clamp(24px, 5vw, 72px) clamp(28px, 4vh, 44px);
+      background: var(--page);
+      color: var(--heading);
+    }
+    .identity-system-scene .inner {
+      width: min(1320px, 100%);
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      gap: 18px;
+    }
+    .identity-system-scene .kicker { color: #626572; }
+    .identity-board {
+      min-height: 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(380px, .92fr);
+      border: 1px solid #d6d9dd;
+      background: #f7f8fa;
+      overflow: hidden;
+    }
+    .identity-origin {
+      position: relative;
+      min-height: 0;
+      overflow: hidden;
+      background: #0a0a0c;
+    }
+    .identity-origin > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 36% 50%;
+      filter: contrast(1.08);
+    }
+    .identity-origin::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 38%;
+      background: linear-gradient(0deg, rgba(7,7,9,.82), transparent);
+    }
+    .identity-origin-label {
+      position: absolute;
+      z-index: 2;
+      left: clamp(20px, 3vw, 36px);
+      right: clamp(20px, 3vw, 36px);
+      bottom: clamp(20px, 3vw, 34px);
+      color: #fff;
+    }
+    .identity-origin-label span {
+      display: block;
+      margin-bottom: 10px;
+      font: 500 .68rem/1 "Poppins", sans-serif;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #d8dbe0;
+    }
+    .identity-origin-label strong {
+      display: block;
+      max-width: 13ch;
+      font: 700 clamp(2.2rem, 4vw, 4.6rem)/.9 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.045em;
+    }
+    .identity-architecture {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-width: 0;
+      background: #f7f8fa;
+    }
+    .identity-wordmark {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: clamp(22px, 3vw, 34px);
+      border-bottom: 1px solid #d6d9dd;
+      font: 700 clamp(1.35rem, 2.4vw, 2.4rem)/1 "Familjen Grotesk", sans-serif;
+      white-space: nowrap;
+    }
+    .identity-wordmark img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      background: #fff;
+      filter: none;
+      padding: 5px;
+    }
+    .identity-message {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(28px, 5vw, 64px);
+      overflow: hidden;
+    }
+    .identity-message::before {
+      content: "";
+      position: absolute;
+      left: clamp(28px, 5vw, 64px);
+      top: clamp(28px, 5vw, 64px);
+      width: min(160px, 28%);
+      height: 7px;
+      background: var(--red);
+    }
+    .identity-message h3 {
+      max-width: 9ch;
+      margin-top: 34px;
+      font: 700 clamp(2.6rem, 5vw, 5.6rem)/.88 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.055em;
+    }
+    .identity-message p {
+      max-width: 36ch;
+      margin-top: 22px;
+      color: #4f5562;
+      font: 400 clamp(.9rem, 1.2vw, 1.08rem)/1.5 "Poppins", sans-serif;
+    }
+    .identity-join {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 20px clamp(24px, 3vw, 34px);
+      background: var(--charcoal);
+      color: #fff;
+      font: 600 .9rem/1.2 "Poppins", sans-serif;
+    }
+    .identity-join .pill { flex: 0 0 auto; }
+
+    .real-evidence-scene {
+      align-items: start;
+      padding-top: clamp(64px, 7vh, 84px);
+      padding-bottom: 28px;
+      background: #edf0f3;
+      color: var(--heading);
+    }
+    .real-evidence-scene .inner { width: min(1320px, 100%); }
+    .real-evidence-scene .kicker { color: #666a75; }
+    .real-evidence-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 36px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+    .real-evidence-head .statement {
+      max-width: 11ch;
+      font: 700 clamp(2.5rem, 4.8vw, 5rem)/.9 "Familjen Grotesk", sans-serif;
+    }
+    .real-evidence-head .body {
+      max-width: 48ch;
+      color: #555b67;
+      font-size: .86rem;
+    }
+    .real-evidence-grid {
+      display: grid;
+      grid-template-columns: 1.25fr repeat(3, .72fr);
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      height: min(59vh, 540px);
+    }
+    .real-evidence-card {
+      position: relative;
+      min-width: 0;
+      min-height: 0;
+      overflow: hidden;
+      background: #1a1b20;
+      border: 1px solid #d4d7dc;
+    }
+    .real-evidence-card.primary { grid-row: 1 / -1; }
+    .real-evidence-card.wide { grid-column: span 1; }
+    .real-evidence-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.78) contrast(1.04);
+    }
+    .real-evidence-card.primary img { object-position: 36% 50%; filter: grayscale(1) contrast(1.08); }
+    .real-evidence-card figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 22px 16px 14px;
+      background: linear-gradient(0deg, rgba(7,7,9,.92), rgba(7,7,9,0));
+      color: #fff;
+    }
+    .real-evidence-card figcaption::before {
+      content: "";
+      display: block;
+      width: 54px;
+      height: 5px;
+      margin-bottom: 9px;
+      background: var(--red);
+    }
+    .real-evidence-card figcaption strong,
+    .real-evidence-card figcaption span { display: block; }
+    .real-evidence-card figcaption strong { font: 700 1rem/1.05 "Familjen Grotesk", sans-serif; }
+    .real-evidence-card figcaption span { margin-top: 4px; color: #d0d3d9; font: 400 .72rem/1.3 "Poppins", sans-serif; }
+
+    .enhancement-scene {
+      align-items: start;
+      padding-top: clamp(64px, 7vh, 84px);
+      padding-bottom: 28px;
+      background: #0a0a0c;
+    }
+    .enhancement-scene .inner { width: min(1320px, 100%); }
+    .enhancement-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 36px;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+    .enhancement-head .statement {
+      max-width: 11ch;
+      font: 700 clamp(2.5rem, 4.8vw, 5rem)/.9 "Familjen Grotesk", sans-serif;
+    }
+    .enhancement-head .body {
+      max-width: 48ch;
+      color: #b9bdc5;
+      font-size: .86rem;
+    }
+    .enhancement-pairs {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 12px;
+      height: min(58vh, 520px);
+    }
+    .enhancement-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      min-width: 0;
+      overflow: hidden;
+      border-top: 7px solid var(--red);
+      background: #24252b;
+    }
+    .enhancement-pair figure {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      background: #17181d;
+    }
+    .enhancement-pair img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.8) contrast(1.04);
+    }
+    .enhancement-pair:first-child img { object-position: 36% 50%; filter: grayscale(1) contrast(1.08); }
+    .enhancement-pair figcaption {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 8px 10px;
+      background: rgba(10,10,12,.82);
+      color: #fff;
+      font: 500 .7rem/1.25 "Poppins", sans-serif;
+    }
+
+    .image-system-scene {
+      align-items: start;
+      padding-top: clamp(68px, 8vh, 92px);
+      padding-bottom: 28px;
+      background: #0a0a0c;
+    }
+    .image-system-scene .inner { width: min(1320px, 100%); }
+    .image-system-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+    .image-system-header .statement {
+      max-width: 12ch;
+      font: 700 clamp(2.4rem, 4.8vw, 5.2rem)/.9 "Familjen Grotesk", sans-serif;
+    }
+    .image-system-note {
+      max-width: 42ch;
+      padding-left: 16px;
+      border-left: 1px solid rgba(239,237,231,.28);
+      color: #aaaeb6;
+      font: 400 .82rem/1.5 "Poppins", sans-serif;
+    }
+    .campaign-shots {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(3, 1fr);
+      gap: 10px;
+      min-height: min(60vh, 560px);
+    }
+    .campaign-shot {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      background: #23242a;
+      border: 1px solid rgba(239,237,231,.14);
+    }
+    .campaign-shot > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(.72) contrast(1.04);
+    }
+    .campaign-shot.origin > img { object-position: 36% 50%; }
+    .campaign-shot.future > img {
+      opacity: .9;
+      filter: saturate(.68) contrast(1.05) brightness(.82);
+    }
+    .campaign-shot.future::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 32%, rgba(10,10,12,.9) 100%),
+        linear-gradient(90deg, transparent 0 48%, rgba(255,0,0,.88) 48% calc(48% + 4px), transparent calc(48% + 4px));
+    }
+    .shot-label {
+      position: absolute;
+      z-index: 2;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      color: #fff;
+    }
+    .shot-label small {
+      display: block;
+      margin-bottom: 8px;
+      color: #c0c3c9;
+      font: 500 .7rem/1.2 "Poppins", sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .shot-label strong {
+      display: block;
+      max-width: 12ch;
+      font: 700 clamp(1.4rem, 2.3vw, 2.5rem)/.92 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.035em;
+    }
+    .shot-label em {
+      display: block;
+      margin-top: 9px;
+      color: #b5b8c0;
+      font: normal 400 .74rem/1.35 "Poppins", sans-serif;
+    }
+    .campaign-shot.origin .shot-label {
+      padding-top: 12px;
+      border-top: 5px solid var(--red);
+    }
+
+    .campaign-li .li-cover {
+      height: 184px;
+      grid-template-columns: minmax(430px, .58fr) 1fr;
+      background: var(--charcoal);
+    }
+    .campaign-li .li-cover-left {
+      position: relative;
+      align-items: center;
+      padding: 28px 24px calc(var(--li-photo) / 2 + 8px) var(--li-inset);
+      background: var(--charcoal);
+    }
+    .campaign-li .li-cover-left::after {
+      content: "";
+      position: absolute;
+      left: var(--li-inset);
+      right: 0;
+      bottom: calc(var(--li-photo) / 2 + 18px);
+      height: 5px;
+      background: var(--red);
+    }
+    .campaign-li .li-cover-copy span { display: none; }
+    .campaign-li .li-cover-copy strong {
+      font-size: 22px;
+      white-space: nowrap;
+    }
+    .campaign-li .li-cover-right {
+      background-position: center 38%;
+      filter: saturate(.55) contrast(1.08);
+    }
+    .campaign-li .li-photo-slot img { object-position: 36% 50%; }
+    .campaign-li .li-feat .sq > img { object-position: 36% 50%; }
+    .campaign-li .li-side-logo img { border-radius: 0; }
+    .campaign-li .li-section p { max-width: 52ch; }
+    .campaign-li .li-card { box-shadow: 0 12px 28px rgba(0,0,0,.07); }
+    .li-proof-label {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      padding: 5px 8px;
+      background: rgba(10,10,12,.82);
+      color: #fff;
+      font: 500 .58rem/1 "Poppins", sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .spotlight-scene {
+      align-items: start;
+      padding-top: clamp(64px, 7vh, 84px);
+      padding-bottom: 28px;
+      background: var(--charcoal);
+    }
+    .spotlight-scene .inner { width: min(1320px, 100%); }
+    .spotlight-scene .statement {
+      max-width: 12ch;
+      font: 700 clamp(2.4rem, 4.8vw, 5rem)/.9 "Familjen Grotesk", sans-serif;
+    }
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(330px, .75fr);
+      gap: 12px;
+      margin-top: 20px;
+      min-height: min(58vh, 520px);
+    }
+    .speaker-reel {
+      position: relative;
+      overflow: hidden;
+      background: #0a0a0c;
+      border: 1px solid rgba(255,255,255,.18);
+    }
+    .speaker-reel > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(1) contrast(1.08) brightness(.58);
+    }
+    .speaker-reel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(7,7,9,.88), transparent 62%);
+    }
+    .speaker-reel-copy {
+      position: absolute;
+      z-index: 2;
+      left: clamp(24px, 4vw, 54px);
+      right: clamp(24px, 4vw, 54px);
+      bottom: clamp(24px, 4vw, 48px);
+    }
+    .speaker-reel-copy::before {
+      content: "";
+      display: block;
+      width: 96px;
+      height: 7px;
+      margin-bottom: 18px;
+      background: var(--red);
+    }
+    .speaker-reel-copy small {
+      display: block;
+      margin-bottom: 9px;
+      color: #c5c8ce;
+      font: 500 .65rem/1 "Poppins", sans-serif;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .speaker-reel-copy strong {
+      display: block;
+      max-width: 12ch;
+      color: #fff;
+      font: 700 clamp(2.4rem, 4.5vw, 5rem)/.88 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.045em;
+    }
+    .speaker-reel-copy span {
+      display: block;
+      margin-top: 14px;
+      color: #d5d7dc;
+      font: 400 .88rem/1.4 "Poppins", sans-serif;
+    }
+    .speaker-stack {
+      display: grid;
+      grid-template-rows: 1.1fr .9fr;
+      gap: 12px;
+    }
+    .speaker-sheet {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      overflow: hidden;
+      background: #f7f8fa;
+      color: var(--heading);
+      border-top: 7px solid var(--red);
+    }
+    .speaker-sheet-photo {
+      position: relative;
+      overflow: hidden;
+      background: #0a0a0c;
+    }
+    .speaker-sheet-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 36% 50%;
+      filter: contrast(1.08);
+    }
+    .speaker-sheet-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(18px, 2vw, 28px);
+    }
+    .speaker-sheet-copy small {
+      color: #676b76;
+      font: 500 .58rem/1.2 "Poppins", sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .speaker-sheet-copy h3 {
+      margin: 14px 0;
+      font: 700 clamp(1.6rem, 2.6vw, 2.7rem)/.9 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.04em;
+    }
+    .speaker-sheet-copy p {
+      color: #555b67;
+      font: 400 .74rem/1.5 "Poppins", sans-serif;
+    }
+    .speaker-thumbnails {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .video-thumb {
+      position: relative;
+      overflow: hidden;
+      background: #0a0a0c;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.16);
+    }
+    .video-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(1) brightness(.42) contrast(1.08);
+    }
+    .video-thumb .thumb-copy {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px;
+      background: linear-gradient(180deg, rgba(10,10,12,.18), rgba(10,10,12,.88));
+    }
+    .video-thumb .thumb-copy::before {
+      content: "";
+      width: 58px;
+      height: 5px;
+      background: var(--red);
+    }
+    .video-thumb b {
+      max-width: 10ch;
+      font: 700 clamp(1.1rem, 1.8vw, 1.7rem)/.94 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.03em;
+    }
+
+    .press-scene {
+      align-items: start;
+      padding-top: clamp(64px, 7vh, 84px);
+      padding-bottom: 28px;
+      background: #edf0f3;
+      color: var(--heading);
+    }
+    .press-scene .inner { width: min(1320px, 100%); }
+    .press-scene .kicker { color: #666a75; }
+    .press-scene .statement {
+      max-width: 12ch;
+      font: 700 clamp(2.4rem, 4.8vw, 5rem)/.9 "Familjen Grotesk", sans-serif;
+    }
+    .press-grid {
+      display: grid;
+      grid-template-columns: 1.22fr .78fr;
+      gap: 12px;
+      margin-top: 20px;
+      min-height: min(58vh, 520px);
+    }
+    .press-article {
+      display: grid;
+      grid-template-columns: 1fr .82fr;
+      background: #fff;
+      border: 1px solid #d6d9dd;
+      overflow: hidden;
+    }
+    .press-article-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(24px, 4vw, 48px);
+    }
+    .press-masthead {
+      padding-bottom: 16px;
+      border-bottom: 1px solid #d6d9dd;
+      font: 700 1rem/1 "Familjen Grotesk", sans-serif;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .press-article h3 {
+      max-width: 10ch;
+      margin: 28px 0 16px;
+      font: 700 clamp(2.1rem, 4.2vw, 4.6rem)/.9 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.05em;
+    }
+    .press-article p {
+      max-width: 42ch;
+      color: #555b67;
+      font: 400 .82rem/1.55 "Poppins", sans-serif;
+    }
+    .press-byline {
+      margin-top: 26px;
+      padding-top: 14px;
+      border-top: 5px solid var(--red);
+      color: #555b67;
+      font: 500 .72rem/1.35 "Poppins", sans-serif;
+      letter-spacing: .01em;
+    }
+    .press-article-photo { overflow: hidden; background: #0a0a0c; }
+    .press-article-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 36% 50%;
+      filter: contrast(1.08);
+    }
+    .press-kit {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: clamp(24px, 4vw, 44px);
+      background: var(--charcoal);
+      color: #fff;
+    }
+    .press-kit-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255,255,255,.24);
+    }
+    .press-kit-head img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+    .press-kit-head span {
+      font: 600 .72rem/1.2 "Poppins", sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .press-kit h3 {
+      align-self: center;
+      max-width: 9ch;
+      font: 700 clamp(2.4rem, 4.4vw, 4.8rem)/.88 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.05em;
+    }
+    .press-kit-foot {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.24);
+      color: #d5d7dc;
+      font: 400 .72rem/1.4 "Poppins", sans-serif;
+    }
+    .press-kit-foot .pill { flex: 0 0 auto; }
+
+    /* Approved-photo reveal rebuild, 2026-08-19 */
+    .approved-hero .campaign-hero-media img {
+      object-position: 36% 50%;
+      filter: saturate(.72) contrast(1.08) brightness(.78);
+    }
+    .approved-hero .campaign-hero-media::after {
+      background:
+        linear-gradient(90deg, rgba(7,7,9,.08) 0 38%, rgba(7,7,9,.8) 66%, rgba(7,7,9,.98) 100%),
+        linear-gradient(0deg, rgba(7,7,9,.68), transparent 34%);
+    }
+    .approved-identity .identity-origin > img { object-position: 42% 50%; }
+    .approved-identity .identity-wordmark img {
+      width: 62px;
+      height: 62px;
+      padding: 0;
+      background: transparent;
+    }
+
+    .founder-system-scene,
+    .social-system-scene,
+    .community-scene,
+    .editorial-scene,
+    .finale-scene {
+      align-items: start;
+      padding-top: clamp(64px, 7vh, 84px);
+      padding-bottom: 28px;
+    }
+    .founder-system-scene .inner,
+    .social-system-scene .inner,
+    .community-scene .inner,
+    .editorial-scene .inner,
+    .finale-scene .inner { width: min(1320px, 100%); }
+    .system-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 36px;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+    .system-head .statement {
+      max-width: 12ch;
+      font: 700 clamp(2.5rem, 4.8vw, 5.1rem)/.9 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.05em;
+    }
+    .system-head .body {
+      max-width: 46ch;
+      font-size: .84rem;
+    }
+
+    .founder-system-scene {
+      background: #e9edf1;
+      color: var(--heading);
+    }
+    .founder-system-scene .kicker,
+    .social-system-scene .kicker,
+    .community-scene .kicker { color: #666a75; }
+    .founder-system-scene .system-head .body,
+    .social-system-scene .system-head .body,
+    .community-scene .system-head .body { color: #555b67; }
+    .founder-photo-grid {
+      display: grid;
+      grid-template-columns: 1.28fr repeat(3, minmax(0, .76fr));
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      height: min(62vh, 570px);
+    }
+    .founder-photo-card {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      background: #17181c;
+      border: 1px solid #cfd3d8;
+    }
+    .founder-photo-card.lead { grid-row: 1 / -1; }
+    .founder-photo-card.wide { grid-column: span 2; }
+    .founder-photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.78) contrast(1.04);
+    }
+    .founder-photo-card.lead img { object-position: 48% 50%; }
+    .founder-photo-card figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 48px 18px 16px;
+      background: linear-gradient(0deg, rgba(8,8,10,.94), transparent);
+      color: #fff;
+    }
+    .founder-photo-card figcaption::before {
+      content: "";
+      display: block;
+      width: 52px;
+      height: 5px;
+      margin-bottom: 10px;
+      background: var(--red);
+    }
+    .founder-photo-card figcaption strong,
+    .founder-photo-card figcaption span { display: block; }
+    .founder-photo-card figcaption strong {
+      font: 700 clamp(1.15rem, 1.8vw, 1.8rem)/.95 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.03em;
+    }
+    .founder-photo-card figcaption span {
+      margin-top: 5px;
+      color: #d0d3d9;
+      font: 400 .67rem/1.3 "Poppins", sans-serif;
+    }
+
+    .social-system-scene {
+      background: #f5f6f7;
+      color: var(--heading);
+    }
+    .fixed-application-scene {
+      align-items: start;
+      padding-top: clamp(52px, 7vh, 74px);
+      padding-bottom: clamp(36px, 5vh, 56px);
+    }
+    .fixed-application-scene .statement {
+      max-width: 18ch;
+      font-size: clamp(2.2rem, 4vw, 4.5rem);
+    }
+    .fixed-application {
+      width: 100%;
+      margin: 24px 0 0;
+      overflow: hidden;
+      border: 1px solid #d6d9dd;
+      background: #fff;
+      box-shadow: 0 18px 46px rgba(24,25,29,.10);
+    }
+    .fixed-application.linkedin-application {
+      width: min(100%, 1000px);
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 12px;
+      background: #f4f2ee;
+    }
+    .fixed-application img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .social-grid {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(3, minmax(0, .85fr));
+      gap: 12px;
+      height: min(60vh, 550px);
+    }
+    .social-card {
+      position: relative;
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+      min-width: 0;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #d6d9dd;
+      box-shadow: 0 16px 34px rgba(24,25,29,.08);
+    }
+    .social-card-media { position: relative; min-height: 0; overflow: hidden; background: #16171b; }
+    .social-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.82) contrast(1.04);
+    }
+    .social-card-media::after {
+      content: "";
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      width: 58px;
+      height: 5px;
+      background: var(--red);
+    }
+    .social-card-copy { padding: 16px 16px 18px; }
+    .social-card-copy small {
+      color: #6c707b;
+      font: 500 .61rem/1 "Poppins", sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .social-card-copy h3 {
+      max-width: 14ch;
+      margin-top: 9px;
+      font: 700 clamp(1.35rem, 2vw, 2rem)/.94 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.035em;
+    }
+    .social-card.join .social-card-copy { background: var(--charcoal); color: #fff; }
+    .social-card.join .social-card-copy small { color: #d0d3d9; }
+    .social-card .pill { display: inline-flex; margin-top: 12px; }
+    .social-card.perspective {
+      display: block;
+    }
+    .social-card.perspective .social-card-media { height: 100%; }
+    .social-card.perspective .social-card-copy {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 54px 18px 18px;
+      background: linear-gradient(0deg, rgba(66,65,78,.98) 0 72%, transparent);
+    }
+    .social-card.perspective .social-card-copy h3 { max-width: 12ch; }
+    .social-card.perspective .social-card-media::after { left: 18px; bottom: 148px; }
+    .social-card.candid {
+      grid-template-rows: 42% 58%;
+      background: var(--charcoal);
+      color: #fff;
+    }
+    .social-card.candid .social-card-copy {
+      grid-row: 1;
+      padding: 22px 18px;
+      background: var(--charcoal);
+    }
+    .social-card.candid .social-card-copy::before {
+      content: "";
+      display: block;
+      width: 58px;
+      height: 5px;
+      margin-bottom: 18px;
+      background: var(--red);
+    }
+    .social-card.candid .social-card-copy small { color: #d0d3d9; }
+    .social-card.candid .social-card-media { grid-row: 2; }
+    .social-card.candid .social-card-media::after { content: none; }
+    .social-card.notes .social-card-copy {
+      border-top: 5px solid var(--red);
+    }
+    .social-card.notes .social-card-media::after { content: none; }
+
+    .community-scene {
+      background: #edf0f3;
+      color: var(--heading);
+    }
+    .community-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .82fr .82fr .82fr;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      height: min(62vh, 570px);
+    }
+    .community-card {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      background: #17181c;
+    }
+    .community-card.lead { grid-row: 1 / -1; }
+    .community-card.wide { grid-column: span 2; }
+    .community-card img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.74) contrast(1.06); }
+    .community-card figcaption {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      padding: 12px 14px;
+      background: rgba(10,10,12,.84);
+      color: #fff;
+      font: 700 1rem/1 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.02em;
+    }
+    .community-card figcaption::before {
+      content: "";
+      display: block;
+      width: 44px;
+      height: 4px;
+      margin-bottom: 8px;
+      background: var(--red);
+    }
+
+    .editorial-scene { background: #0a0a0c; color: #fff; }
+    .editorial-scene .system-head .body { color: #b9bdc5; }
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 12px;
+      height: min(61vh, 560px);
+    }
+    .editorial-lead {
+      position: relative;
+      min-height: 0;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.18);
+    }
+    .editorial-lead img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1) brightness(.64); }
+    .editorial-lead::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(8,8,10,.94), transparent 60%);
+    }
+    .editorial-lead-copy {
+      position: absolute;
+      z-index: 2;
+      left: clamp(24px, 4vw, 52px);
+      right: clamp(24px, 4vw, 52px);
+      bottom: clamp(24px, 4vw, 48px);
+    }
+    .editorial-lead-copy::before {
+      content: "";
+      display: block;
+      width: 82px;
+      height: 6px;
+      margin-bottom: 17px;
+      background: var(--red);
+    }
+    .editorial-lead-copy small {
+      color: #d0d3d9;
+      font: 500 .65rem/1 "Poppins", sans-serif;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .editorial-lead-copy h3 {
+      max-width: 18ch;
+      margin: 12px 0 0;
+      font: 700 clamp(2.25rem, 3.2vw, 3.6rem)/.92 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.045em;
+    }
+    .editorial-stack { display: grid; min-height: 0; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .editorial-card {
+      display: grid;
+      min-height: 0;
+      grid-template-columns: .9fr 1.1fr;
+      overflow: hidden;
+      background: #f7f8fa;
+      color: var(--heading);
+    }
+    .editorial-card img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.78) contrast(1.04); }
+    .editorial-card-copy { display: flex; flex-direction: column; justify-content: space-between; padding: 22px; }
+    .editorial-card-copy small {
+      color: #6d717c;
+      font: 500 .61rem/1 "Poppins", sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .editorial-card-copy h3 {
+      max-width: 12ch;
+      font: 700 clamp(1.45rem, 2.3vw, 2.5rem)/.94 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.035em;
+    }
+    .editorial-card-copy span { color: #5c616d; font: 400 .68rem/1.35 "Poppins", sans-serif; }
+
+    .finale-scene {
+      min-height: 100svh;
+      padding: 0;
+      align-items: stretch;
+      background: var(--charcoal);
+      color: #fff;
+    }
+    .finale-scene .inner {
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(440px, .82fr) minmax(0, 1.18fr);
+      padding: 0;
+    }
+    .finale-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(72px, 8vw, 126px);
+    }
+    .finale-copy .kicker { color: #d1d4da; }
+    .finale-copy h2 {
+      max-width: 8ch;
+      font: 700 clamp(3.6rem, 7vw, 7.8rem)/.86 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.06em;
+    }
+    .finale-copy p { max-width: 38ch; margin-top: 24px; color: #d1d4da; font: 400 .92rem/1.55 "Poppins", sans-serif; }
+    .finale-apps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 32px;
+    }
+    .finale-apps span {
+      padding: 8px 11px;
+      border: 1px solid rgba(255,255,255,.28);
+      font: 500 .64rem/1 "Poppins", sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .finale-media { position: relative; min-height: 100svh; overflow: hidden; }
+    .finale-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: saturate(.72) contrast(1.06); }
+    .finale-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(66,65,78,.74), transparent 22%);
+      pointer-events: none;
+    }
+    .finale-join {
+      position: absolute;
+      z-index: 2;
+      right: clamp(30px, 5vw, 72px);
+      bottom: clamp(30px, 5vw, 64px);
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: var(--red);
+      color: #fff;
+      font: 700 .82rem/1 "Poppins", sans-serif;
+    }
+
+    @media (max-width: 960px) {
+      .campaign-hero .inner {
+        grid-template-columns: 1fr;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .campaign-hero-media img { object-position: 35% 50%; }
+      .campaign-hero-media::after {
+        background: linear-gradient(0deg, rgba(7,7,9,.96) 0 42%, rgba(7,7,9,.24) 78%);
+      }
+      .campaign-hero-copy { grid-column: 1; max-width: 620px; padding-left: 0; }
+      .identity-board, .press-grid, .press-article, .spotlight-grid { grid-template-columns: 1fr; }
+      .identity-origin { min-height: 46svh; }
+      .real-evidence-head, .enhancement-head { display: block; }
+      .real-evidence-head .body, .enhancement-head .body { margin-top: 16px; }
+      .real-evidence-grid { grid-template-columns: 1fr 1fr; height: auto; }
+      .real-evidence-card { min-height: 280px; }
+      .real-evidence-card.primary { grid-row: auto; }
+      .real-evidence-card.wide { grid-column: span 1; }
+      .enhancement-pairs { grid-template-columns: 1fr; height: auto; }
+      .enhancement-pair { min-height: 420px; }
+      .campaign-shots { grid-template-columns: 1fr 1fr; min-height: 760px; }
+      .campaign-li .li-cover { grid-template-columns: minmax(300px, .62fr) 1fr; }
+      .spotlight-grid, .press-grid { min-height: 760px; }
+      .speaker-stack { min-height: 520px; }
+      .press-article-photo { min-height: 360px; }
+      .system-head { display: block; }
+      .system-head .body { margin-top: 16px; }
+      .founder-photo-grid,
+      .social-grid,
+      .community-grid,
+      .editorial-grid { height: auto; }
+      .founder-photo-grid { grid-template-columns: 1fr 1fr; }
+      .founder-photo-card { min-height: 320px; }
+      .founder-photo-card.lead { grid-row: auto; }
+      .founder-photo-card.wide { grid-column: span 1; }
+      .social-grid { grid-template-columns: 1fr 1fr; }
+      .social-card { min-height: 420px; }
+      .community-grid { grid-template-columns: 1fr 1fr; }
+      .community-card { min-height: 320px; }
+      .community-card.lead { grid-row: auto; }
+      .community-card.wide { grid-column: span 1; }
+      .editorial-grid { grid-template-columns: 1fr; }
+      .editorial-lead { min-height: 560px; }
+      .editorial-stack { min-height: 620px; }
+      .finale-scene .inner { grid-template-columns: 1fr; }
+      .finale-copy { min-height: 62svh; }
+      .finale-media { min-height: 70svh; }
+    }
+
     .chapter-toggle {
       position: fixed; z-index: 46; left: clamp(14px, 2vw, 28px);
       top: max(14px, env(safe-area-inset-top));
@@ -668,162 +1867,142 @@
     .chapter-nav small { display: block; margin-bottom: 2px; font-size: .58rem; letter-spacing: .1em; opacity: .62; }
     .chapter-nav span { display: block; font-size: .7rem; letter-spacing: .04em; }
 
-    .likeness-note {
-      --likeness-accent: #4c5d74;
-      --likeness-accent-soft: #dce1e5;
-      width: min(620px, calc(100vw - 40px));
-      max-height: calc(100svh - 40px);
-      overflow: auto;
+    .inspiration-note {
+      width: min(1040px, calc(100vw - 48px));
+      max-width: none;
+      max-height: min(760px, calc(100svh - 48px));
+      margin: auto;
       padding: 0;
-      border: 1px solid rgba(12, 12, 15, .18);
-      border-top: 4px solid var(--likeness-accent);
-      background: var(--paper);
-      color: var(--ink);
-      box-shadow: 0 30px 90px rgba(0, 0, 0, .36);
+      overflow: hidden;
+      border: 1px solid rgba(30, 33, 50, .16);
+      border-radius: 10px;
+      background: var(--page);
+      color: var(--heading);
+      box-shadow: 0 28px 90px rgba(7, 7, 9, .38);
     }
-    .likeness-note[open] { animation: likeness-note-enter 180ms var(--ease) both; }
-    .likeness-note::backdrop {
-      background: rgba(7, 7, 9, .84);
-      animation: likeness-backdrop-enter 180ms ease both;
+    .inspiration-note[open] { animation: inspiration-note-in 420ms var(--ease) both; }
+    .inspiration-note::backdrop {
+      background: rgba(7, 7, 9, .82);
+      animation: inspiration-backdrop-in 280ms ease both;
     }
-    .likeness-note-inner { padding: clamp(32px, 5vw, 48px); }
-    .likeness-note-header {
+    .inspiration-note-layout {
       display: grid;
-      grid-template-columns: 44px minmax(0, 1fr);
-      gap: 20px;
-      align-items: start;
+      grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr);
+      min-height: 620px;
     }
-    .likeness-note-icon {
-      display: grid;
-      width: 44px;
-      height: 44px;
-      place-items: center;
-      border: 1px solid color-mix(in srgb, var(--likeness-accent) 42%, transparent);
-      background: var(--likeness-accent-soft);
-      color: var(--likeness-accent);
+    .inspiration-note-visual {
+      position: relative;
+      min-height: 0;
+      overflow: hidden;
+      background: var(--charcoal);
     }
-    .likeness-note-icon svg { width: 30px; height: 30px; }
-    .likeness-note-icon .unfinished { stroke-dasharray: 2.5 3.5; }
-    .likeness-note .kicker { margin-bottom: 12px; color: var(--likeness-accent); font-weight: 600; }
-    .likeness-note h2 {
-      max-width: 14ch;
-      font-size: clamp(2.2rem, 5vw, 3.7rem);
-      line-height: .96;
-      letter-spacing: -.05em;
-      font-weight: 500;
-    }
-    .likeness-note h2:focus { outline: none; }
-    .likeness-note-lead {
-      max-width: 47ch;
-      margin-top: 26px;
-      color: #4f504e;
-      font-size: clamp(1rem, 1.5vw, 1.12rem);
-      line-height: 1.5;
-    }
-    .likeness-note-summary {
-      margin: 28px 0 0;
-      border-top: 1px solid rgba(12, 12, 15, .2);
-    }
-    .likeness-note-summary div {
-      display: grid;
-      grid-template-columns: 108px minmax(0, 1fr);
-      gap: 20px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(12, 12, 15, .2);
-    }
-    .likeness-note-summary dt {
-      font-size: .68rem;
-      line-height: 1.35;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-      color: var(--likeness-accent);
-    }
-    .likeness-note-summary dd {
-      margin: 0;
-      font-size: .98rem;
-      line-height: 1.4;
-    }
-    .likeness-acknowledgment {
-      display: grid;
-      grid-template-columns: 22px minmax(0, 1fr);
-      gap: 14px;
-      align-items: start;
-      margin-top: 28px;
-      padding: 18px;
-      border: 1px solid rgba(12, 12, 15, .26);
-      cursor: pointer;
-      transition: border-color 180ms ease, background 180ms ease;
-    }
-    .likeness-acknowledgment:hover { border-color: rgba(12, 12, 15, .52); }
-    .likeness-acknowledgment:has(input:focus-visible) {
-      outline: 1px solid var(--ink);
-      outline-offset: 2px;
-      border-color: var(--ink);
-    }
-    .likeness-acknowledgment:has(input:checked) { border-color: var(--likeness-accent); background: color-mix(in srgb, var(--likeness-accent) 10%, transparent); }
-    .likeness-acknowledgment input {
-      width: 20px;
-      height: 20px;
-      margin: 1px 0 0;
-      appearance: none;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--ink);
-      border-radius: 0;
-      background: transparent;
-      cursor: pointer;
-    }
-    .likeness-acknowledgment input::after {
-      content: "";
-      width: 9px;
-      height: 5px;
-      border-left: 2px solid var(--paper);
-      border-bottom: 2px solid var(--paper);
-      transform: translateY(-1px) rotate(-45deg) scale(0);
-      transition: transform 120ms ease;
-    }
-    .likeness-acknowledgment input:checked { border-color: var(--likeness-accent); background: var(--likeness-accent); }
-    .likeness-acknowledgment input:checked::after { transform: translateY(-1px) rotate(-45deg) scale(1); }
-    .likeness-acknowledgment input:focus { outline: none; }
-    .likeness-acknowledgment span {
-      font-size: .98rem;
-      line-height: 1.45;
-    }
-    .likeness-note-helper {
-      margin: 9px 0 0;
-      color: #605f5a;
-      font-size: .78rem;
-      line-height: 1.35;
-    }
-    .likeness-note button {
+    .inspiration-note-visual img {
       width: 100%;
-      min-height: 54px;
-      margin-top: 20px;
-      padding: 15px 20px;
-      border: 1px solid var(--ink);
-      background: var(--ink);
-      color: var(--paper);
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 36%;
+      filter: contrast(1.04);
+    }
+    .inspiration-note-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(30, 33, 50, .9), transparent 42%);
+      pointer-events: none;
+    }
+    .inspiration-note-credit {
+      position: absolute;
+      z-index: 1;
+      left: 28px;
+      right: 28px;
+      bottom: 24px;
+      color: #f7f8fa;
+      font: 600 .72rem/1.35 "Poppins", sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .inspiration-note-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      padding: clamp(40px, 5vw, 72px);
+    }
+    .inspiration-note-copy:focus { outline: none; }
+    .inspiration-note-kicker {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 24px;
+      color: #676b75;
+      font: 600 .68rem/1 "Poppins", sans-serif;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .inspiration-note-kicker::before {
+      content: "";
+      width: 54px;
+      height: 5px;
+      flex: 0 0 auto;
+      background: var(--red);
+    }
+    .inspiration-note h2 {
+      max-width: 11ch;
+      font: 700 clamp(3rem, 5vw, 5.4rem)/.9 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.055em;
+    }
+    .inspiration-note-body {
+      max-width: 53ch;
+      margin-top: 28px;
+      color: #555a66;
+      font: 400 clamp(.92rem, 1.2vw, 1.05rem)/1.62 "Poppins", sans-serif;
+    }
+    .inspiration-note-body + .inspiration-note-body { margin-top: 14px; }
+    .inspiration-note-emphasis {
+      margin-top: 22px;
+      color: var(--heading);
+      font: 600 clamp(.95rem, 1.25vw, 1.08rem)/1.45 "Poppins", sans-serif;
+    }
+    .inspiration-note-enter {
+      align-self: flex-start;
+      min-height: 48px;
+      margin-top: 32px;
+      padding: 14px 24px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--red);
+      color: #f7f8fa;
+      font: 700 .82rem/1 "Poppins", sans-serif;
       cursor: pointer;
-      transition: background 180ms ease, color 180ms ease, opacity 180ms ease;
+      transition: transform 220ms var(--ease), background-color 220ms ease;
     }
-    .likeness-note button:hover:not(:disabled) {
-      background: transparent;
-      color: var(--ink);
+    .inspiration-note-enter:hover { transform: translateY(-2px); background: #db0000; }
+    .inspiration-note-enter:focus-visible,
+    .inspiration-note-close:focus-visible { outline: 3px solid var(--ice); outline-offset: 3px; }
+    .inspiration-note-close {
+      position: absolute;
+      z-index: 3;
+      top: 18px;
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: 1px solid rgba(30, 33, 50, .18);
+      border-radius: 50%;
+      background: rgba(250, 251, 253, .92);
+      color: var(--heading);
+      font: 400 1.45rem/1 "Helvetica Neue", sans-serif;
+      cursor: pointer;
     }
-    .likeness-note button:focus-visible {
-      outline: 2px solid var(--ink);
-      outline-offset: 3px;
-    }
-    .likeness-note button:disabled { cursor: not-allowed; opacity: .32; }
-    @keyframes likeness-note-enter {
-      from { opacity: 0; transform: translateY(6px); }
+    @keyframes inspiration-note-in {
+      from { opacity: 0; transform: translateY(18px) scale(.985); }
       to { opacity: 1; transform: none; }
     }
-    @keyframes likeness-backdrop-enter {
+    @keyframes inspiration-backdrop-in {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    body.ack-open { overflow: hidden; }
+
 
     @media (max-width: 960px) {
       .archetype-layout, .calibration-grid, .vs-grid, .feed, .scape { grid-template-columns: 1fr; }
@@ -857,36 +2036,29 @@
       .star-rail li { grid-template-columns: auto; font-size: .82rem; }
       .star-rail li b { display: none; }
       .star-scene .statement { font-size: clamp(2.4rem, 11vw, 4.2rem); }
-      .likeness-note {
-        width: calc(100vw - 24px);
+      .inspiration-note {
+        width: min(100vw - 24px, 560px);
         max-height: calc(100svh - 24px);
       }
-      .likeness-note-inner { padding: 24px; }
-      .likeness-note-header { grid-template-columns: 38px minmax(0, 1fr); gap: 14px; }
-      .likeness-note-icon { width: 38px; height: 38px; }
-      .likeness-note-icon svg { width: 26px; height: 26px; }
-      .likeness-note h2 { font-size: clamp(2rem, 10vw, 3rem); }
-      .likeness-note-summary div { grid-template-columns: 92px minmax(0, 1fr); gap: 14px; }
-      .likeness-acknowledgment { padding: 16px; }
+      .inspiration-note-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(138px, 24svh) auto;
+        min-height: 0;
+      }
+      .inspiration-note-visual img { object-position: 50% 28%; }
+      .inspiration-note-credit { left: 20px; bottom: 16px; }
+      .inspiration-note-copy { padding: 24px 22px 26px; }
+      .inspiration-note-kicker { margin-bottom: 16px; }
+      .inspiration-note h2 { max-width: 12ch; font-size: clamp(2.2rem, 11vw, 3.35rem); }
+      .inspiration-note-body { margin-top: 18px; font-size: .88rem; line-height: 1.52; }
+      .inspiration-note-body + .inspiration-note-body { margin-top: 10px; }
+      .inspiration-note-emphasis { margin-top: 14px; font-size: .9rem; }
+      .inspiration-note-enter { margin-top: 20px; }
+      .inspiration-note-close { top: 10px; right: 10px; }
     }
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .reveal, .calibration-axis, .calibration-fill, .calibration-dot { opacity: 1; transform: none; transition: none; }
-      .likeness-note[open], .likeness-note::backdrop { animation: none; }
-      .likeness-acknowledgment, .likeness-note button { transition: none; }
-      .likeness-acknowledgment input::after { transition: none; }
-    }
-    @media (forced-colors: active) {
-      .likeness-acknowledgment input {
-        appearance: auto;
-        background: Canvas;
-      }
-      .likeness-acknowledgment input:checked { background: Canvas; }
-      .likeness-acknowledgment input::after { content: none; }
-      .likeness-acknowledgment:has(input:focus-visible) {
-        outline: 2px solid Highlight;
-        outline-offset: 2px;
-      }
+      .inspiration-note[open], .inspiration-note::backdrop { animation: none; }
+      .inspiration-note-enter { transition: none; }
     }
   </style>
 </head>
@@ -900,10 +2072,27 @@
     <button type="button" data-chapter-target="strategy"><small>02</small><span>Strategy</span></button>
     <button type="button" data-chapter-target="brand"><small>03</small><span>Brand</span></button>
   </nav>
+  <dialog class="inspiration-note" id="inspiration-note" aria-labelledby="inspiration-note-title" aria-describedby="inspiration-note-body">
+    <div class="inspiration-note-layout">
+      <div class="inspiration-note-visual">
+        <img src="media/fp-brand-image.jpg" alt="Florian P. in an FP brand portrait">
+        <span class="inspiration-note-credit">Brand Therapy by Florian P.</span>
+      </div>
+      <div class="inspiration-note-copy" tabindex="-1">
+        <button class="inspiration-note-close" type="button" aria-label="Close this note">×</button>
+        <p class="inspiration-note-kicker">Before you enter</p>
+        <h2 id="inspiration-note-title">See the possibility, then make it yours</h2>
+        <p class="inspiration-note-body" id="inspiration-note-body">The portraits and scenes ahead make the creative direction tangible. They show the presence, range, and visual world the brand can grow into. They are not a synthetic replacement for you.</p>
+        <p class="inspiration-note-body">Final photography can elevate your strongest real images or give a photographer a precise brief for recreating the ideas that feel most true.</p>
+        <p class="inspiration-note-emphasis">You are choosing the visual world. The finished work should still feel unmistakably yours.</p>
+        <button class="inspiration-note-enter" type="button">Enter the reveal</button>
+      </div>
+    </div>
+  </dialog>
   <main id="story">
     <section class="scene black" data-chapter="intro">
       <div class="inner">
-        <h1 class="display reveal">Hello,<br>Florin.</h1>
+        <h1 class="display reveal">Hello,<br>Florin</h1>
       </div>
       <span class="hint">Scroll to begin</span>
     </section>
@@ -911,7 +2100,7 @@
     <section class="scene black" data-chapter="intro">
       <div class="inner">
         <p class="kicker reveal">Brand Therapy</p>
-        <h2 class="statement reveal delay">Your Brand Therapy is ready.</h2>
+        <h2 class="statement reveal delay">Your Brand Therapy is ready</h2>
         <p class="body reveal delay">Strategy first. Then the look of Bright Business Club, ready to use.</p>
       </div>
     </section>
@@ -919,7 +2108,7 @@
     <section class="scene black" data-chapter="intro">
       <div class="inner">
         <p class="kicker reveal">My read</p>
-        <h2 class="statement reveal delay">Here is what I see in you, Florin.</h2>
+        <h2 class="statement reveal delay">Here is what I see in you, Florin</h2>
         <p class="body reveal delay">You built the room of reliable peers you wished you had when you started. Growth is the outcome. Collaboration is the rule that keeps you in it.</p>
       </div>
     </section>
@@ -989,7 +2178,7 @@
     <section class="scene light vs-scene" data-chapter="strategy">
       <div class="inner">
         <p class="kicker reveal">Personal versus company brand</p>
-        <h2 class="statement reveal delay">You and the club.</h2>
+        <h2 class="statement reveal delay">You and the club</h2>
         <p class="body reveal delay">People join Bright Business for the club, not a founder performance. Club leads can run most of the room. You keep the last 20 percent: who gets in, the ethics line, and whether it stays collaborative.</p>
         <div class="vs-grid reveal delay" role="img" aria-label="Your brand is 20 percent. Your company, Bright Business Club, is 80 percent.">
           <article class="vs-card vs-you">
@@ -1011,7 +2200,7 @@
     <section class="scene black calibration-scene" data-chapter="strategy">
       <div class="inner">
         <p class="kicker reveal">Creative calibration</p>
-        <h2 class="statement reveal delay">Charcoal. Red join. The room they already run.</h2>
+        <h2 class="statement reveal delay">Charcoal, ice, and red when it is time to join</h2>
         <div class="calibration-grid reveal delay">
           <div class="calibration-axes">
             <div class="calibration-axis leans-right" style="--axis-order:0;--position:78%"><span>Classic</span><div class="calibration-track" aria-hidden="true"><i class="calibration-fill"></i><i class="calibration-dot"></i></div><span class="is-lean">Modern</span></div>
@@ -1034,7 +2223,7 @@
             <div>
               <b>Move away from</b>
               <div class="chips">
-                <span class="chip chip-out">BNI mixer</span>
+                <span class="chip chip-out">Transactional networking</span>
                 <span class="chip chip-out">Hustle red</span>
                 <span class="chip chip-out">Costume boardroom</span>
               </div>
@@ -1052,366 +2241,195 @@
       </div>
     </section>
 
-    <section class="scene black direction-intro" data-chapter="brand">
-      <div class="inner">
-        <p class="kicker reveal">Creative Direction</p>
-        <h2 class="statement reveal delay">The club, in the world.</h2>
-        <p class="body reveal delay">Charcoal shield, red join, palms, and the room. The look members already meet, held still so it can travel.</p>
+    <section class="scene black direction-intro campaign-hero approved-hero" data-chapter="brand">
+      <div class="campaign-hero-media" aria-hidden="true">
+        <img src="media/approved/hero-outdoor.png" alt="">
       </div>
-    </section>
-
-    <section class="scene scape-scene" data-chapter="brand">
       <div class="inner">
-        <p class="kicker reveal">Creative Direction</p>
-        <div class="scape reveal delay">
-          <figure class="scape-portrait">
-            <img src="media/florin.jpg" alt="Florin Diumea, author portrait.">
-          </figure>
-          <figure class="scape-room">
-            <img src="media/club-room.jpg" alt="Bright Business Club meeting room.">
-          </figure>
-          <article class="scape-mark">
-            <img src="media/shield.png" alt="Bright Business shield">
-            <div>
-              <h3>The peers you wish you'd had.</h3>
-              <span class="pill">Apply to Join a Club</span>
-            </div>
-          </article>
-          <figure>
-            <img src="media/stock-peers.jpg" alt="Peers around a working table.">
-          </figure>
-          <article class="scape-type">
-            <p>Familjen Grotesk + Poppins. Charcoal shield. Red join.</p>
-            <h3>Collaboration over transaction</h3>
-            <div>
-              <span class="pill">Apply to Join a Club</span>
-              <div class="inline-swatches" aria-hidden="true">
-                <i style="background:#FF0000"></i>
-                <i style="background:#42414E"></i>
-                <i style="background:#B6C9DB"></i>
-                <i style="background:#1E2132"></i>
-                <i style="background:#FAFBFD"></i>
-              </div>
-            </div>
-          </article>
+        <div class="campaign-hero-copy">
+          <p class="kicker reveal">Creative Direction</p>
+          <h2 class="statement reveal delay">The club, in the world.</h2>
+          <p class="body reveal delay">Florin is the origin. Bright Business is the platform. Together they show up with the authority, warmth, and consistency of a world-class founder brand.</p>
+          <p class="campaign-principle reveal delay">Charcoal carries authority. Red moves people to join.</p>
         </div>
       </div>
     </section>
 
-    <section class="scene li-scene" data-chapter="brand">
+    <section class="scene identity-system-scene approved-identity" data-chapter="brand">
       <div class="inner">
-        <p class="kicker reveal">Creative Direction</p>
-        <h2 class="statement reveal delay">On LinkedIn</h2>
-        <div class="device reveal delay">
-          <div class="device-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="li">
-            <div class="li-nav">
-              <div class="li-logo">in</div>
-              <div class="li-search">
-                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M14.7 13.3 11.6 10.2A5.5 5.5 0 1 0 10.2 11.6l3.1 3.1a1 1 0 0 0 1.4-1.4zM3 7a4 4 0 1 1 8 0A4 4 0 0 1 3 7z"/></svg>
-                I'm looking for...
-              </div>
-              <div class="li-nav-items">
-                <span class="li-nav-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 9v2h-2v7c0 1.7-1.3 3-3 3h-4v-6h-4v6H6c-1.7 0-3-1.3-3-3v-7H1V9l11-7 11 7z"/></svg>Home</span>
-                <span class="li-nav-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16v6H3v-6a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3zm5.5-3A3.5 3.5 0 1 0 14 9.5a3.5 3.5 0 0 0 3.5 3.5zm1 2h-2.34A4 4 0 0 1 16 16v6h7v-6a3 3 0 0 0-3-3zM7.5 2A3.5 3.5 0 1 0 11 5.5 3.5 3.5 0 0 0 7.5 2z"/></svg>My Network</span>
-                <span class="li-nav-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 6V5a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v1H2v4a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V6zM9 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H9zm10 9a4 4 0 0 0 3-1.38V17a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-4.38A4 4 0 0 0 5 14z"/></svg>Jobs</span>
-                <span class="li-nav-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 4H8a7 7 0 0 0 0 14h4v4l8.16-5.39A7 7 0 0 0 16 4z"/></svg>Messaging</span>
-                <span class="li-nav-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19h-8.28a2 2 0 1 1-3.44 0H2v-1a4.52 4.52 0 0 1 1.17-2.83l1-1.17h15.7l1 1.17A4.42 4.42 0 0 1 22 18zM18.21 7.44A6.27 6.27 0 0 0 12 2a6.27 6.27 0 0 0-6.21 5.44L5 13h14z"/></svg>Notifications</span>
-                <span class="li-nav-item is-me is-current"><img src="media/florin-square.jpg?v=cmo1" alt=""><span class="me-label">Me <svg class="caret" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11 3 6h10z"/></svg></span></span>
-                <span class="li-nav-split" aria-hidden="true"></span>
-                <span class="li-nav-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z"/></svg><span class="biz-label">For Business <svg class="caret" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11 3 6h10z"/></svg></span></span>
-              </div>
+        <p class="kicker reveal">Identity system</p>
+        <div class="identity-board reveal delay">
+          <figure class="identity-origin">
+            <img src="media/approved/hero-outdoor.png" alt="Florin Diumea in an outdoor founder portrait">
+            <figcaption class="identity-origin-label">
+              <span>Florin is the origin</span>
+              <strong>Founder, Bright Business Club</strong>
+            </figcaption>
+          </figure>
+          <div class="identity-architecture">
+            <div class="identity-wordmark">
+              <img src="media/shield.png" alt="Bright Business Club shield">
+              <span>Bright Business Club</span>
             </div>
-            <div class="li-body">
-              <div class="li-main">
-                <div class="li-card">
-                  <div class="li-cover">
-                    <div class="li-cover-left">
-                      <img src="media/shield.png" alt="">
-                      <div class="li-cover-copy">
-                        <span>Los Angeles</span>
-                        <strong>Bright Business Club</strong>
-                      </div>
-                    </div>
-                    <div class="li-cover-right" style="background-image:url('media/banner-skyline.jpg')">
-                      <span class="li-pill">Apply to Join a Club</span>
-                    </div>
-                  </div>
-                  <div class="li-identity">
-                    <div class="li-photo-slot">
-                      <img src="media/florin-square.jpg?v=cmo1" alt="Florin Diumea">
-                    </div>
-                    <div class="li-name-row">
-                      <div>
-                        <div class="li-name">Florin Diumea <small>He/Him</small></div>
-                        <p class="li-headline">Founder, Bright Business Club</p>
-                        <p class="li-meta">Los Angeles Metropolitan Area · <b>Contact info</b></p>
-                        <p class="li-stats"><b>10,288 followers</b> · <b>500+ connections</b></p>
-                      </div>
-                      <div class="li-company">
-                        <img src="media/shield.png" alt="">
-                        Bright Business Club
-                      </div>
-                    </div>
-                    <div class="li-actions">
-                      <span class="btn btn-fill">Follow</span>
-                      <span class="btn btn-line">Message</span>
-                      <span class="btn btn-line">Visit website</span>
-                      <span class="btn btn-line">More</span>
-                    </div>
-                    <div class="li-section" style="padding: 16px 0 0">
-                      <h3>Featured</h3>
-                      <div class="li-featured">
-                        <article class="li-feat">
-                          <div class="sq">
-                            <img src="media/florin-mentor.jpg" alt="">
-                            <div class="stamp stamp-corner stamp-red">
-                              <img class="lockup" src="media/shield.png" alt="">
-                              <b>Bright Business Club</b>
-                            </div>
-                          </div>
-                        </article>
-                        <article class="li-feat">
-                          <div class="sq">
-                            <div class="brand-tile dark">
-                              <img class="lockup" src="media/shield.png" alt="">
-                              <h3>The peers you wish you'd had.</h3>
-                              <span class="pill">Apply to Join a Club</span>
-                            </div>
-                          </div>
-                        </article>
-                        <article class="li-feat">
-                          <div class="sq">
-                            <img src="media/club-room.jpg" alt="">
-                            <div class="stamp stamp-bar">
-                              <img class="lockup" src="media/shield.png" alt="">
-                              <b>The peers you wish you'd had.</b>
-                              <span class="pill">Apply</span>
-                            </div>
-                          </div>
-                        </article>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <aside class="li-side">
-                <div class="li-card">
-                  <div class="li-section">
-                    <div class="li-side-logo">
-                      <img src="media/shield.png" alt="">
-                      <div>
-                        <h3>Bright Business Club</h3>
-                        <p>Peer community</p>
-                      </div>
-                    </div>
-                    <p>The peers you wish you'd had. A peer community that accelerates ethical growth. Professional like a peer board, warm like a social club.</p>
-                    <div class="li-actions">
-                      <span class="btn btn-line">gobrightbusiness.com</span>
-                    </div>
-                  </div>
-                </div>
-              </aside>
+            <div class="identity-message">
+              <h3>The peers you wish you'd had.</h3>
+              <p>Familjen Grotesk carries the decisive voice. Poppins carries the detail. Charcoal and ice build authority. Red signals the moment to act.</p>
+            </div>
+            <div class="identity-join">
+              <span>A peer community that accelerates ethical growth.</span>
+              <span class="pill">Apply to Join a Club</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="scene light posts-scene" data-chapter="brand">
-      <div class="inner wide">
-        <p class="kicker reveal">Creative Direction</p>
-        <h2 class="statement reveal delay">First posts</h2>
-        <div class="feed reveal delay">
-          <article class="post">
-            <div class="post-head">
-              <img src="media/florin-square.jpg?v=cmo1" alt="">
-              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
-            </div>
-            <p class="post-copy">This is the peer community I needed when I started.</p>
-            <div class="post-media">
-              <img src="media/florin-mentor.jpg" alt="Florin, author photo, mentor workbook">
-              <div class="stamp stamp-corner stamp-red">
-                <img class="lockup" src="media/shield.png" alt="">
-                <b>Bright Business Club</b>
-              </div>
-            </div>
-            <div class="post-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
-          </article>
-          <article class="post">
-            <div class="post-head">
-              <img src="media/florin-square.jpg?v=cmo1" alt="">
-              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
-            </div>
-            <p class="post-copy">Los Angeles. The work continues.</p>
-            <div class="post-media">
-              <img src="media/banner-skyline.jpg" alt="Los Angeles skyline from an office window">
-              <div class="stamp stamp-corner stamp-red">
-                <img class="lockup" src="media/shield.png" alt="">
-                <b>Bright Business Club</b>
-              </div>
-            </div>
-            <div class="post-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
-          </article>
-          <article class="post">
-            <div class="post-head">
-              <img src="media/florin-square.jpg?v=cmo1" alt="">
-              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
-            </div>
-            <p class="post-copy">Driven experts who love their craft shouldn't have to grow alone.</p>
-            <div class="post-media post-peers">
-              <img src="media/stock-peers.jpg" alt="Peers at a working table">
-              <div class="stamp stamp-corner">
-                <img class="lockup" src="media/shield.png" alt="">
-                <b>Bright Business Club</b>
-              </div>
-            </div>
-            <div class="post-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
-          </article>
-          <article class="post">
-            <div class="post-head">
-              <img src="media/florin-square.jpg?v=cmo1" alt="">
-              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
-            </div>
-            <p class="post-copy">This is the community of peers I wish I'd had.</p>
-            <div class="post-media">
-              <div class="brand-tile page">
-                <img class="lockup" src="media/shield.png" alt="">
-                <h3>The peers you wish you'd had.</h3>
-                <span class="pill">Apply to Join a Club</span>
-              </div>
-            </div>
-            <div class="post-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
-          </article>
-          <article class="post">
-            <div class="post-head">
-              <img src="media/florin-square.jpg?v=cmo1" alt="">
-              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
-            </div>
-            <p class="post-copy">Collaboration over transaction. Growth is the outcome.</p>
-            <div class="post-media">
-              <div class="brand-tile dark">
-                <img class="lockup" src="media/shield.png" alt="">
-                <h3>Collaboration over transaction</h3>
-                <span class="pill">Apply to Join a Club</span>
-              </div>
-            </div>
-            <div class="post-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
-          </article>
-          <article class="post">
-            <div class="post-head">
-              <img src="media/florin-square.jpg?v=cmo1" alt="">
-              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
-            </div>
-            <p class="post-copy">A peer community that accelerates ethical growth.</p>
-            <div class="post-media post-club">
-              <img src="media/club-room.jpg" alt="The Bright Business Club room, empty">
-              <div class="stamp stamp-bar">
-                <img class="lockup" src="media/shield.png" alt="">
-                <b>The peers you wish you'd had.</b>
-                <span class="pill">Apply</span>
-              </div>
-            </div>
-            <div class="post-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
-          </article>
+    <section class="scene founder-system-scene" data-chapter="brand">
+      <div class="inner">
+        <div class="system-head">
+          <div>
+            <p class="kicker reveal">Founder image system</p>
+            <h2 class="statement reveal delay">A founder with range</h2>
+          </div>
+          <p class="body reveal delay">One visual world now covers authority, warmth, expertise, community, and the quieter moments behind the work. Each image has a job, not just a look.</p>
+        </div>
+        <div class="founder-photo-grid reveal delay">
+          <figure class="founder-photo-card lead">
+            <img src="media/approved/seated-founder.png" alt="Florin Diumea seated in a founder portrait">
+            <figcaption><strong>Founder authority</strong><span>Profile, keynote, executive biography</span></figcaption>
+          </figure>
+          <figure class="founder-photo-card">
+            <img src="media/approved/press-portrait.png" alt="Florin Diumea in a press portrait">
+            <figcaption><strong>Press ready</strong><span>Editorial, PR, speaker assets</span></figcaption>
+          </figure>
+          <figure class="founder-photo-card wide">
+            <img src="media/approved/workshop-breakout.png" alt="Florin Diumea leading a workshop">
+            <figcaption><strong>Expert in action</strong><span>Workshops, teaching, member value</span></figcaption>
+          </figure>
+          <figure class="founder-photo-card">
+            <img src="media/approved/networking-host.png" alt="Florin Diumea welcoming people at an event">
+            <figcaption><strong>Club host</strong><span>Warm, present, connected</span></figcaption>
+          </figure>
+          <figure class="founder-photo-card">
+            <img src="media/approved/social-candid.png" alt="A candid portrait of Florin Diumea at a social event">
+            <figcaption><strong>Social presence</strong><span>Direct, close, human</span></figcaption>
+          </figure>
+          <figure class="founder-photo-card">
+            <img src="media/approved/artistic-reflection.png" alt="An editorial profile portrait of Florin Diumea">
+            <figcaption><strong>Editorial depth</strong><span>Features, essays, campaign moments</span></figcaption>
+          </figure>
         </div>
       </div>
     </section>
-  </main>
-  <dialog class="likeness-note" id="likeness-note" aria-labelledby="likeness-note-title" aria-describedby="likeness-note-body likeness-note-summary" data-notice-version="4">
-    <form class="likeness-note-inner" id="likeness-note-form">
-      <div class="likeness-note-header">
-        <span class="likeness-note-icon" aria-hidden="true">
-          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="16" cy="12" r="4"></circle>
-            <path d="M9 24c1.4-4 4-6 7-6s5.6 2 7 6"></path>
-            <path d="M7 5H5v7M25 5h2v7M5 20v7h7"></path>
-            <path class="unfinished" d="M20 27h7v-7"></path>
-          </svg>
-        </span>
-        <div>
-          <p class="kicker">Portrait in progress</p>
-          <h2 id="likeness-note-title" tabindex="-1">Choose the direction, not the face</h2>
+
+    <section class="scene li-scene campaign-li fixed-application-scene" data-chapter="brand">
+      <div class="inner">
+        <p class="kicker reveal">LinkedIn system</p>
+        <h2 class="statement reveal delay">A keynote reveal in profile</h2>
+        <figure class="fixed-application linkedin-application reveal delay">
+          <img src="media/fixed/linkedin-profile.png" alt="LinkedIn profile concept for Florin Diumea and Bright Business Club">
+        </figure>
+      </div>
+    </section>
+    <section class="scene social-system-scene fixed-application-scene" data-chapter="brand">
+      <div class="inner">
+        <div class="system-head">
+          <div>
+            <p class="kicker reveal">Social content system</p>
+            <h2 class="statement reveal delay">Authority with a pulse</h2>
+          </div>
+          <p class="body reveal delay">Four formats create range across founder stories, perspective, candid moments, and working notes.</p>
+        </div>
+        <figure class="fixed-application reveal delay">
+          <img src="media/fixed/social-system.png" alt="Four fixed social media artwork formats for Bright Business Club">
+        </figure>
+      </div>
+    </section>
+    <section class="scene spotlight-scene fixed-application-scene" data-chapter="brand">
+      <div class="inner">
+        <p class="kicker reveal">Stage and video system</p>
+        <h2 class="statement reveal delay">Built for the spotlight</h2>
+        <figure class="fixed-application reveal delay">
+          <img src="media/fixed/stage-video-system.png" alt="Fixed stage, speaker, and video artwork system for Florin Diumea">
+        </figure>
+      </div>
+    </section>
+
+    <section class="scene press-scene fixed-application-scene" data-chapter="brand">
+      <div class="inner">
+        <p class="kicker reveal">Press and PR system</p>
+        <h2 class="statement reveal delay">Ready for the next question</h2>
+        <figure class="fixed-application reveal delay">
+          <img src="media/fixed/press-pr-system.png" alt="Fixed press article and press kit artwork for Florin Diumea and Bright Business Club">
+        </figure>
+      </div>
+    </section>
+
+    <section class="scene community-scene fixed-application-scene" data-chapter="brand">
+      <div class="inner">
+        <div class="system-head">
+          <div>
+            <p class="kicker reveal">Community and event system</p>
+            <h2 class="statement reveal delay">The club comes alive through people</h2>
+          </div>
+          <p class="body reveal delay">Workshops, introductions, conversations, and club settings make the value visible.</p>
+        </div>
+        <figure class="fixed-application reveal delay">
+          <img src="media/fixed/community-system.png" alt="Fixed community and event image system for Bright Business Club">
+        </figure>
+      </div>
+    </section>
+    <section class="scene editorial-scene fixed-application-scene" data-chapter="brand">
+      <div class="inner">
+        <div class="system-head">
+          <div>
+            <p class="kicker reveal">Founder editorial system</p>
+            <h2 class="statement reveal delay">Always on, never overproduced</h2>
+          </div>
+          <p class="body reveal delay">A thought-leader brand needs more than podium photographs. Reflection, working notes, and candid moments create a publishing rhythm that feels authoritative without feeling staged.</p>
+        </div>
+        <figure class="fixed-application reveal delay">
+          <img src="media/fixed/editorial-system.png" alt="Fixed editorial feature, working note, and candid artwork system for Florin Diumea">
+        </figure>
+      </div>
+    </section>
+
+    <section class="scene finale-scene" data-chapter="brand">
+      <div class="inner">
+        <div class="finale-copy">
+          <p class="kicker reveal">Bright Business in the world</p>
+          <h2 class="reveal delay">Ready for the spotlight</h2>
+          <p class="reveal delay">The strategy is intact. The identity now extends across a founder profile, social, stage, press, workshops, and the club itself. Every touchpoint points back to a peer community that accelerates ethical growth.</p>
+          <div class="finale-apps reveal delay"><span>LinkedIn</span><span>Social</span><span>Video</span><span>Speaker</span><span>Press</span><span>Workshops</span><span>Community</span></div>
+        </div>
+        <div class="finale-media">
+          <img src="media/approved/executive-seated.png" alt="Executive portrait of Florin Diumea">
+          <span class="finale-join">Apply to Join a Club</span>
         </div>
       </div>
-      <p class="likeness-note-lead" id="likeness-note-body">AI-generated portraits show what the brand can become. Exact facial match is not the job at this stage.</p>
-      <dl class="likeness-note-summary" id="likeness-note-summary">
-        <div>
-          <dt>Review now</dt>
-          <dd>The visual world, styling, color, presence, and feeling.</dd>
-        </div>
-        <div>
-          <dt>Refine later</dt>
-          <dd>Exact facial likeness in production. A real photo shoot can help when you want that fidelity.</dd>
-        </div>
-      </dl>
-      <label class="likeness-acknowledgment" for="likeness-note-checkbox">
-        <input type="checkbox" id="likeness-note-checkbox" required>
-        <span>I understand I am reviewing creative direction, not approving final facial likeness.</span>
-      </label>
-      <p class="likeness-note-helper" id="likeness-note-helper">Check the box to continue.</p>
-      <button type="submit" id="likeness-note-confirm" aria-describedby="likeness-note-helper" disabled>Continue to the directions</button>
-    </form>
-  </dialog>
+    </section>
+
+  </main>
   <script src="reveal-data.js"></script>
   <script src="assets/archetype-chart/archetype-chart.js"></script>
   <script>
     const d = window.REVEAL_DATA;
-    const likenessNote = document.getElementById('likeness-note');
-    const readSessionFlag = key => {
-      try { return sessionStorage.getItem(key) === '1'; } catch (error) { return false; }
+    const inspirationNote = document.getElementById('inspiration-note');
+    const closeInspirationNote = () => {
+      if (!inspirationNote?.open) return;
+      inspirationNote.close();
     };
-    const writeSessionFlag = key => {
-      try { sessionStorage.setItem(key, '1'); } catch (error) {}
-    };
-    const initializeLikenessAcknowledgment = () => {
-      const likenessForm = document.getElementById('likeness-note-form');
-      const likenessTitle = document.getElementById('likeness-note-title');
-      const likenessCheckbox = document.getElementById('likeness-note-checkbox');
-      const likenessConfirm = document.getElementById('likeness-note-confirm');
-      const notice = d.likenessNotice;
-      const noticeEnabled = notice === true || (notice && typeof notice === 'object' && notice.enabled !== false);
-      if (!noticeEnabled || !likenessNote) return;
-      const noticeVersion = likenessNote.dataset.noticeVersion || '1';
-      const likenessStorageKey = `brand-therapy-reveal:${d.slug}:${d.version || 'unversioned'}:likeness-notice:${noticeVersion}`;
-      let likenessAcknowledged = readSessionFlag(likenessStorageKey);
-      likenessNote.addEventListener('cancel', event => event.preventDefault());
-      likenessNote.addEventListener('click', event => {
-        if (event.target !== likenessNote) return;
-        event.preventDefault();
-        likenessTitle.focus({ preventScroll: true });
+    if (inspirationNote) {
+      inspirationNote.addEventListener('close', () => document.body.classList.remove('inspiration-open'));
+      inspirationNote.querySelector('.inspiration-note-enter')?.addEventListener('click', closeInspirationNote);
+      inspirationNote.querySelector('.inspiration-note-close')?.addEventListener('click', closeInspirationNote);
+      inspirationNote.addEventListener('click', event => {
+        if (event.target === inspirationNote) closeInspirationNote();
       });
-      likenessCheckbox.addEventListener('change', () => {
-        likenessConfirm.disabled = !likenessCheckbox.checked;
-      });
-      let noticeObserver;
-      const firstDirection = document.querySelector('.direction-intro');
-      const firstDirectionHeading = firstDirection?.querySelector('h2');
-      if (firstDirectionHeading) firstDirectionHeading.tabIndex = -1;
-      likenessForm.addEventListener('submit', event => {
-        event.preventDefault();
-        if (!likenessForm.reportValidity()) return;
-        likenessAcknowledged = true;
-        writeSessionFlag(likenessStorageKey);
-        noticeObserver?.disconnect();
-        document.body.classList.remove('ack-open');
-        likenessNote.close();
-        requestAnimationFrame(() => firstDirectionHeading?.focus({ preventScroll: true }));
-      });
-      noticeObserver = new IntersectionObserver(entries => entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        likenessNote.dataset.triggerEvaluated = 'true';
-        if (likenessAcknowledged || likenessNote.open) return;
-        document.body.classList.add('ack-open');
-        likenessCheckbox.checked = false;
-        likenessConfirm.disabled = true;
-        likenessNote.showModal();
-        likenessNote.scrollTop = 0;
-        likenessTitle.focus({ preventScroll: true });
-      }), { threshold: .55 });
-      if (firstDirection) noticeObserver.observe(firstDirection);
-    };
-    initializeLikenessAcknowledgment();
+      document.body.classList.add('inspiration-open');
+      inspirationNote.showModal();
+      inspirationNote.querySelector('.inspiration-note-copy')?.focus({ preventScroll: true });
+    }
     const scenes = [...document.querySelectorAll('.scene')];
     scenes.forEach((s, i) => s.insertAdjacentHTML('afterbegin', `<span class="index">${String(i + 1).padStart(2,'0')} / ${String(scenes.length).padStart(2,'0')}</span>`));
     const meter = document.querySelector('.meter span');
@@ -1445,7 +2463,6 @@
     });
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape' && document.body.classList.contains('nav-open')) setNavOpen(false);
-      if (likenessNote?.open) return;
       if (event.target.closest?.('button, input, textarea, select, a[href], [contenteditable="true"], .calibration-axis, bt-archetype-chart')) return;
       const current = scenes.findIndex(s => {
         const r = s.getBoundingClientRect();
