@@ -6,12 +6,12 @@
   <meta name="color-scheme" content="dark">
   <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
   <meta name="description" content="Your private Brand Therapy reveal is ready.">
-  <meta property="og:title" content="Brand Therapy.">
+  <meta property="og:title" content="Bright Business · Brand Therapy">
   <meta property="og:description" content="Your private Brand Therapy reveal is ready.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Brand Therapy">
-  <meta property="og:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
-  <title>Brand Therapy Reveal</title>
+  <meta property="og:image" content="https://brandtherapy.florianp.com/bright-business/og-share.png">
+  <title>Bright Business · Brand Therapy</title>
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -326,7 +326,7 @@
     .scape img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .scape-portrait { grid-row: 1 / span 2; }
     .scape-portrait img { object-position: 50% 28%; }
-    .scape-room img { object-position: 50% 40%; }
+    .scape-room img { object-position: 50% 50%; }
     .scape article.scape-mark {
       background: var(--charcoal);
       color: #fff;
@@ -420,7 +420,7 @@
     }
     .li-nav-item svg { width: 24px; height: 24px; fill: #666; }
     .li-nav-item.is-me img {
-      width: 24px; height: 24px; border-radius: 50%; object-fit: cover; object-position: 50% 28%;
+      width: 24px; height: 24px; border-radius: 50%; object-fit: cover; object-position: 50% 50%;
     }
     .li-nav-item .caret { width: 12px; height: 12px; fill: #666; }
     .li-nav-item .me-label, .li-nav-item .biz-label {
@@ -443,19 +443,11 @@
     .li-card { background: #fff; border-radius: 8px; border: 1px solid #dadce0; overflow: hidden; }
     .li-cover {
       height: 168px;
-      display: grid;
-      grid-template-columns: minmax(280px, .42fr) 1fr;
       position: relative;
+      background: #8aa3b8 center 40%/cover no-repeat;
     }
-    .li-cover-left {
-      background: var(--charcoal); color: #fff;
-      display: flex; align-items: flex-start; gap: 12px;
-      padding: 18px 24px calc(var(--li-photo) / 2 + 10px) var(--li-inset);
-    }
-    .li-cover-left img { height: 44px; width: 44px; object-fit: contain; filter: brightness(0) invert(1); flex: 0 0 auto; }
-    .li-cover-copy { font-family: "Familjen Grotesk", sans-serif; padding-top: 2px; }
-    .li-cover-copy strong { display: block; font-size: 26px; line-height: .95; letter-spacing: -.03em; }
-    .li-cover-right { position: relative; background: #9bb3c6 center/cover no-repeat; }
+    .li-cover-left { display: none; }
+    .li-cover-right { display: none; }
     .li-pill {
       position: absolute; right: 16px; bottom: 16px;
       background: var(--red); color: #fff; border-radius: 40px;
@@ -476,7 +468,7 @@
       z-index: 2;
     }
     .li-photo-slot img {
-      width: 100%; height: 100%; object-fit: cover; object-position: 54% 26%;
+      width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%;
       display: block; border-radius: 17px;
     }
     .li-name-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-top: 12px; }
@@ -545,7 +537,7 @@
       display: flex; align-items: center; gap: 10px;
       padding: 8px 10px 6px;
     }
-    .post-head img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; object-position: 50% 28%; }
+    .post-head img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; object-position: 50% 40%; }
     .post-head strong { display: block; font-size: 13px; font-weight: 650; color: #191919; }
     .post-head span { display: block; font-size: 11px; color: rgba(0,0,0,.55); }
     .post-copy {
@@ -554,7 +546,7 @@
     }
     .post-media { aspect-ratio: 1 / 1; background: var(--page); overflow: hidden; position: relative; }
     .post-media > img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .post-club > img { object-position: 50% 22%; }
+    .post-club > img { object-position: 50% 50%; }
     .post-peers > img { object-position: 50% 40%; }
     .stamp {
       position: absolute;
@@ -877,10 +869,10 @@
         <p class="kicker reveal">Creative Direction</p>
         <div class="scape reveal delay">
           <figure class="scape-portrait">
-            <img src="media/florin.jpg" alt="Florin Diumea, glasses on, charcoal blazer over a light grey crew.">
+            <img src="media/florin.jpg" alt="Florin Diumea, author portrait.">
           </figure>
           <figure class="scape-room">
-            <img src="media/florin-club.jpg" alt="Florin at the club table, palms outside the window.">
+            <img src="media/club-room.jpg" alt="Bright Business Club meeting room.">
           </figure>
           <article class="scape-mark">
             <img src="media/shield.png" alt="Bright Business shield">
@@ -937,17 +929,7 @@
             <div class="li-body">
               <div class="li-main">
                 <div class="li-card">
-                  <div class="li-cover">
-                    <div class="li-cover-left">
-                      <img src="media/shield.png" alt="">
-                      <div class="li-cover-copy">
-                        <strong>Not a mixer.<br>A room.</strong>
-                      </div>
-                    </div>
-                    <div class="li-cover-right" style="background-image:url('media/banner-palm.jpg')">
-                      <span class="li-pill">Apply to Join a Club</span>
-                    </div>
-                  </div>
+                  <div class="li-cover" style="background-image:url('media/banner-skyline.jpg')"></div>
                   <div class="li-identity">
                     <div class="li-photo-slot">
                       <img src="media/florin-square.jpg" alt="Florin Diumea">
@@ -955,7 +937,7 @@
                     <div class="li-name-row">
                       <div>
                         <div class="li-name">Florin Diumea <small>He/Him</small></div>
-                        <p class="li-headline">Not a mixer. A room. | Founder, Bright Business Club</p>
+                        <p class="li-headline">Founder, Bright Business Club | Building the peer community I wish I'd had</p>
                         <p class="li-meta">Los Angeles Metropolitan Area · <b>Contact info</b></p>
                         <p class="li-stats"><b>10,288 followers</b> · <b>500+ connections</b></p>
                       </div>
@@ -975,7 +957,7 @@
                 <div class="li-card">
                   <div class="li-section">
                     <h3>About</h3>
-                    <p>I started my first business at 19 with no playbook. Bright Business Club is the peer community I needed then: a room of reliable experts, not a hunt for leads. Collaboration over transaction.</p>
+                    <p>I started my first business at 19 with no playbook. I built Bright Business Club so driven experts would not have to grow alone.</p>
                   </div>
                 </div>
                 <div class="li-card">
@@ -983,8 +965,8 @@
                     <h3>Featured</h3>
                     <div class="li-featured">
                       <article class="li-feat">
-                        <img src="media/florin-club.jpg" alt="">
-                        <span>The room I needed at 19</span>
+                        <img src="media/banner-skyline.jpg" alt="" style="object-position:50% 40%">
+                        <span>Los Angeles. The work continues.</span>
                       </article>
                       <article class="li-feat">
                         <div class="brand-tile dark">
@@ -1009,8 +991,8 @@
                       <img src="media/florin-square.jpg" alt="">
                       <div>
                         <strong>Florin Diumea</strong>
-                        <span>Not a mixer. A room.</span>
-                        <p>Not a mixer. A room. Bright Business Club is the peer community that accelerates ethical growth.</p>
+                        <span>Founder, Bright Business Club</span>
+                        <p>I started my first business at 19. This is the peer community I needed then.</p>
                       </div>
                     </article>
                   </div>
@@ -1026,7 +1008,7 @@
                         <p>Peer community</p>
                       </div>
                     </div>
-                    <p>A peer community that accelerates ethical growth. Professional like a peer board, warm like a social club.</p>
+                    <p>Not a mixer. A room. A peer community that accelerates ethical growth. Professional like a peer board, warm like a social club.</p>
                     <div class="li-actions">
                       <span class="btn btn-line">gobrightbusiness.com</span>
                     </div>
@@ -1047,40 +1029,29 @@
           <article class="post">
             <div class="post-head">
               <img src="media/florin-square.jpg" alt="">
-              <div><strong>Florin Diumea</strong><span>Not a mixer. A room.</span></div>
+              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
             </div>
             <p class="post-copy">I started my first business at 19. No playbook. This is the peer community I needed then.</p>
-            <div class="post-media post-club">
-              <img src="media/florin-club.jpg" alt="Florin at the club table">
-              <div class="stamp stamp-bar">
-                <img class="lockup" src="media/shield.png" alt="">
-                <b>Not a mixer. A room.</b>
-              </div>
+            <div class="post-media">
+              <img src="media/florin-mentor.jpg" alt="Florin, author photo, mentor workbook">
             </div>
             <div class="post-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
           </article>
           <article class="post">
             <div class="post-head">
               <img src="media/florin-square.jpg" alt="">
-              <div><strong>Florin Diumea</strong><span>Not a mixer. A room.</span></div>
+              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
             </div>
-            <p class="post-copy">The room you wish you'd had when you started.</p>
-            <div class="post-media post-studio">
-              <img src="media/florin.jpg" alt="Florin studio portrait">
-              <div class="stamp stamp-side">
-                <img class="lockup" src="media/shield.png" alt="">
-                <div>
-                  <b>Not a mixer. A room.</b>
-                  <span class="pill">Apply to Join a Club</span>
-                </div>
-              </div>
+            <p class="post-copy">Los Angeles. The work continues.</p>
+            <div class="post-media">
+              <img src="media/banner-skyline.jpg" alt="Los Angeles skyline from an office window">
             </div>
             <div class="post-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
           </article>
           <article class="post">
             <div class="post-head">
               <img src="media/florin-square.jpg" alt="">
-              <div><strong>Florin Diumea</strong><span>Not a mixer. A room.</span></div>
+              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
             </div>
             <p class="post-copy">Driven experts who love their craft shouldn't have to grow alone.</p>
             <div class="post-media post-peers">
@@ -1095,9 +1066,9 @@
           <article class="post">
             <div class="post-head">
               <img src="media/florin-square.jpg" alt="">
-              <div><strong>Florin Diumea</strong><span>Not a mixer. A room.</span></div>
+              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
             </div>
-            <p class="post-copy">Not a mixer. A room.</p>
+            <p class="post-copy">Bright Business Club is not a mixer. It is a room.</p>
             <div class="post-media">
               <div class="brand-tile page">
                 <img class="lockup" src="media/shield.png" alt="">
@@ -1110,7 +1081,7 @@
           <article class="post">
             <div class="post-head">
               <img src="media/florin-square.jpg" alt="">
-              <div><strong>Florin Diumea</strong><span>Not a mixer. A room.</span></div>
+              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
             </div>
             <p class="post-copy">Collaboration over transaction. Growth is the outcome.</p>
             <div class="post-media">
@@ -1125,15 +1096,14 @@
           <article class="post">
             <div class="post-head">
               <img src="media/florin-square.jpg" alt="">
-              <div><strong>Florin Diumea</strong><span>Not a mixer. A room.</span></div>
+              <div><strong>Florin Diumea</strong><span>Founder, Bright Business Club</span></div>
             </div>
             <p class="post-copy">A peer community that accelerates ethical growth.</p>
-            <div class="post-media post-club post-quote">
-              <img src="media/florin-club.jpg" alt="The Bright Business Club room">
-              <div class="stamp stamp-quote">
+            <div class="post-media post-club">
+              <img src="media/club-room.jpg" alt="The Bright Business Club room, empty">
+              <div class="stamp stamp-bar">
                 <img class="lockup" src="media/shield.png" alt="">
-                <b>Collaboration over transaction</b>
-                <span class="pill">Apply to Join a Club</span>
+                <b>Not a mixer. A room.</b>
               </div>
             </div>
             <div class="post-foot"><span>Like</span><span>Comment</span><span>Repost</span></div>
