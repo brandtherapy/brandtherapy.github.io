@@ -2427,10 +2427,13 @@
   <script>
     const d = window.REVEAL_DATA;
     const inspirationNote = document.getElementById('inspiration-note');
+    let inspirationAcknowledged = false;
+    let inspirationOpened = false;
     const closeInspirationNote = () => {
       if (!inspirationNote?.open) return;
       inspirationNote.close();
     };
+    let openInspirationNote = () => {};
     if (inspirationNote) {
       const inspirationApproval = inspirationNote.querySelector('#inspiration-note-approval');
       const inspirationEnter = inspirationNote.querySelector('.inspiration-note-enter');
@@ -2441,11 +2444,19 @@
       inspirationNote.addEventListener('close', () => document.body.classList.remove('inspiration-open'));
       inspirationNote.addEventListener('cancel', event => event.preventDefault());
       inspirationApproval?.addEventListener('change', syncInspirationApproval);
-      inspirationEnter?.addEventListener('click', closeInspirationNote);
+      inspirationEnter?.addEventListener('click', () => {
+        if (!inspirationApproval?.checked) return;
+        inspirationAcknowledged = true;
+        closeInspirationNote();
+      });
       syncInspirationApproval();
-      document.body.classList.add('inspiration-open');
-      inspirationNote.showModal();
-      inspirationApproval?.focus({ preventScroll: true });
+      openInspirationNote = () => {
+        if (inspirationAcknowledged || inspirationOpened || inspirationNote.open) return;
+        inspirationOpened = true;
+        document.body.classList.add('inspiration-open');
+        inspirationNote.showModal();
+        inspirationApproval?.focus({ preventScroll: true });
+      };
     }
     const scenes = [...document.querySelectorAll('.scene')];
     scenes.forEach((s, i) => s.insertAdjacentHTML('afterbegin', `<span class="index">${String(i + 1).padStart(2,'0')} / ${String(scenes.length).padStart(2,'0')}</span>`));
@@ -2455,6 +2466,7 @@
       entry.target.classList.add('is-visible');
       entry.target.querySelector('bt-archetype-chart')?.setAttribute('animate', '');
       const i = scenes.indexOf(entry.target);
+      if (i === 12) openInspirationNote();
       meter.style.width = `${((i + 1) / scenes.length) * 100}%`;
       const chapter = entry.target.dataset.chapter;
       document.querySelectorAll('.chapter-nav button').forEach(button => button.setAttribute('aria-current', button.dataset.chapterTarget === chapter ? 'true' : 'false'));
