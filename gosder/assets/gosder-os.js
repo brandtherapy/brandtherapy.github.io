@@ -22,10 +22,7 @@
     var dialog = gallery.querySelector("[data-gallery-dialog]");
     var dialogImage = dialog.querySelector("[data-gallery-dialog-image]");
     var dialogTitle = dialog.querySelector("[data-gallery-dialog-title]");
-    var dialogLabel = dialog.querySelector("[data-gallery-dialog-label]");
     var dialogCount = dialog.querySelector("[data-gallery-dialog-count]");
-    var dialogSetting = dialog.querySelector("[data-gallery-dialog-setting]");
-    var dialogTags = dialog.querySelector("[data-gallery-dialog-tags]");
     var dialogLink = dialog.querySelector("[data-gallery-dialog-link]");
     var previousButton = dialog.querySelector("[data-gallery-prev]");
     var nextButton = dialog.querySelector("[data-gallery-next]");
@@ -33,10 +30,32 @@
     var activeCollection = "all";
     var activeItem = null;
     var lastTrigger = null;
+    var priorityFrame = 0;
+    var requestedSubject = new URLSearchParams(window.location.search).get("subject");
+
+    if (
+      requestedSubject &&
+      Array.from(subjectSelect.options).some(function (option) {
+        return option.value === requestedSubject;
+      })
+    ) {
+      subjectSelect.value = requestedSubject;
+    }
 
     function visibleItems() {
       return items.filter(function (item) {
         return !item.hidden;
+      });
+    }
+
+    function prioritizeVisibleImages() {
+      var preloadMargin = window.innerHeight * 0.75;
+
+      visibleItems().forEach(function (item) {
+        var rect = item.getBoundingClientRect();
+        if (rect.bottom < -preloadMargin || rect.top > window.innerHeight + preloadMargin) return;
+        var image = item.querySelector("img[loading='lazy']");
+        if (image) image.loading = "eager";
       });
     }
 
@@ -56,6 +75,14 @@
         if (visible) count += 1;
       });
 
+      if (priorityFrame) window.cancelAnimationFrame(priorityFrame);
+      if (activeCollection !== "all" || subject !== "all" || orientation !== "all" || search) {
+        priorityFrame = window.requestAnimationFrame(function () {
+          priorityFrame = 0;
+          prioritizeVisibleImages();
+        });
+      }
+
       countOutput.textContent = count + (count === 1 ? " image" : " images");
       emptyState.hidden = count !== 0;
       resetButton.hidden = activeCollection === "all" && subject === "all" && orientation === "all" && !search;
@@ -71,10 +98,7 @@
       dialogImage.alt = item.dataset.title;
       dialog.dataset.orientation = item.dataset.orientation;
       dialogTitle.textContent = item.dataset.title;
-      dialogLabel.textContent = item.dataset.label;
       dialogCount.textContent = index + 1 + " of " + currentItems.length;
-      dialogSetting.textContent = item.dataset.setting;
-      dialogTags.textContent = item.dataset.tags;
       dialogLink.href = item.dataset.src;
       previousButton.disabled = currentItems.length < 2;
       nextButton.disabled = currentItems.length < 2;
