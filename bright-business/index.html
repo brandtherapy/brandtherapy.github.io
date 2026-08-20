@@ -1612,6 +1612,336 @@
     }
     .social-card.notes .social-card-media::after { content: none; }
 
+    .social-media-artboard {
+      width: 1600px;
+      height: 900px;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 24px;
+      padding: 36px;
+      overflow: hidden;
+      background: #e9edf1;
+      color: var(--heading);
+    }
+    .social-media-posts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      min-width: 0;
+    }
+    .social-media-post {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #d6d9dd;
+      box-shadow: 0 18px 38px rgba(24,25,29,.10);
+    }
+    .social-media-post:nth-child(2) { background: var(--charcoal); color: #fff; }
+    .social-media-post img {
+      width: 100%;
+      height: 62%;
+      object-fit: cover;
+      filter: saturate(.8) contrast(1.04);
+    }
+    .social-media-post:nth-child(2) img { height: 100%; filter: saturate(.72) brightness(.64); }
+    .social-media-post-copy {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 24px 24px 28px;
+      background: #fff;
+    }
+    .social-media-post:nth-child(2) .social-media-post-copy {
+      padding-top: 80px;
+      background: linear-gradient(0deg, rgba(66,65,78,.98) 0 68%, transparent);
+    }
+    .social-media-post-copy::before,
+    .social-video-copy::before {
+      content: "";
+      display: block;
+      width: 72px;
+      height: 7px;
+      margin-bottom: 18px;
+      background: var(--red);
+    }
+    .social-media-post small,
+    .social-video-copy small {
+      display: block;
+      margin-bottom: 12px;
+      color: #68707d;
+      font: 600 15px/1 "Poppins", sans-serif;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .social-media-post:nth-child(2) small,
+    .social-video-copy small { color: #d6d8de; }
+    .social-media-post h3 {
+      max-width: 11ch;
+      font: 700 48px/.92 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.045em;
+    }
+    .social-media-video {
+      display: grid;
+      grid-template-rows: 1.1fr .9fr;
+      min-width: 0;
+      overflow: hidden;
+      background: var(--charcoal);
+      color: #fff;
+      border-top: 9px solid var(--red);
+      box-shadow: 0 18px 38px rgba(24,25,29,.16);
+    }
+    .social-video-frame {
+      position: relative;
+      min-height: 0;
+      overflow: hidden;
+      background: #0c0c0f;
+    }
+    .social-video-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 48% 50%;
+      filter: grayscale(1) contrast(1.08) brightness(.72);
+    }
+    .social-video-frame::after {
+      content: "▶";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      display: grid;
+      width: 88px;
+      height: 88px;
+      place-items: center;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      font: 700 32px/1 system-ui, sans-serif;
+      text-indent: 5px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.32);
+    }
+    .social-video-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 46px 48px;
+    }
+    .social-video-copy h3 {
+      max-width: 13ch;
+      font: 700 64px/.9 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.05em;
+    }
+    .social-video-copy .pill { align-self: flex-start; margin-top: 28px; }
+
+    .web-ux-artboard {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      padding: 30px;
+      overflow: hidden;
+      background: #dfe7ee;
+      color: var(--heading);
+    }
+    .web-browser {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid #c9ced5;
+      border-radius: 18px;
+      background: #f9fafb;
+      box-shadow: 0 26px 70px rgba(24,25,29,.16);
+    }
+    .web-browser-bar {
+      height: 58px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 24px;
+      background: #2c2c33;
+    }
+    .web-browser-bar i {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #72747d;
+    }
+    .web-browser-address {
+      width: 420px;
+      height: 30px;
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      border-radius: 16px;
+      background: #414149;
+      color: #d7d9de;
+      font: 500 13px/1 "Poppins", sans-serif;
+    }
+    .web-site-nav {
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 54px;
+      background: #fff;
+      border-bottom: 1px solid #d6d9dd;
+    }
+    .web-wordmark {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font: 700 28px/1 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.03em;
+    }
+    .web-wordmark img { width: 48px; height: 48px; object-fit: contain; }
+    .web-site-links { display: flex; align-items: center; gap: 32px; font: 500 15px/1 "Poppins", sans-serif; }
+    .web-site-links .pill { padding: 14px 22px; }
+    .web-hero {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      height: calc(100% - 144px);
+      min-height: 0;
+    }
+    .web-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 62px 48px 62px 64px;
+      background: var(--charcoal);
+      color: #fff;
+    }
+    .web-hero-copy::before {
+      content: "";
+      display: block;
+      width: 96px;
+      height: 8px;
+      margin-bottom: 30px;
+      background: var(--red);
+    }
+    .web-hero-copy h3 {
+      max-width: 8ch;
+      font: 700 84px/.86 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.06em;
+    }
+    .web-hero-copy p {
+      max-width: 34ch;
+      margin-top: 28px;
+      color: #dde0e5;
+      font: 400 21px/1.45 "Poppins", sans-serif;
+    }
+    .web-hero-copy .pill { align-self: flex-start; margin-top: 34px; padding: 18px 26px; font-size: 17px; }
+    .web-hero-media { position: relative; min-width: 0; overflow: hidden; background: #15161a; }
+    .web-hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 46% 50%; filter: saturate(.78) contrast(1.05); }
+    .web-hero-media::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 28%;
+      background: linear-gradient(0deg, rgba(10,10,12,.5), transparent);
+    }
+
+    .physical-artboard {
+      width: 1600px;
+      height: 900px;
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      overflow: hidden;
+      background: #17181c;
+      color: #fff;
+      box-shadow: inset 0 0 0 1px #34353d;
+    }
+    .physical-stage {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      background: #0b0b0d;
+    }
+    .physical-stage > img { width: 100%; height: 100%; object-fit: cover; object-position: 44% 50%; filter: saturate(.72) contrast(1.06) brightness(.66); }
+    .physical-stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(8,8,10,.12) 42%, rgba(8,8,10,.78) 100%);
+    }
+    .physical-stage-brand {
+      position: absolute;
+      z-index: 2;
+      top: 64px;
+      right: 52px;
+      width: 340px;
+      text-align: right;
+    }
+    .physical-stage-brand .brand-row { display: flex; justify-content: flex-end; align-items: center; gap: 14px; }
+    .physical-stage-brand img { width: 54px; height: 54px; object-fit: contain; filter: brightness(0) invert(1); }
+    .physical-stage-brand strong { font: 700 30px/1 "Familjen Grotesk", sans-serif; }
+    .physical-stage-brand h3 { margin-top: 28px; font: 500 28px/1.28 "Poppins", sans-serif; letter-spacing: -.02em; }
+    .physical-stage-brand h3::before { content: ""; display: block; width: 82px; height: 7px; margin: 0 0 20px auto; background: var(--red); }
+    .physical-event-kit {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 34px;
+      padding: 70px 46px 54px;
+      overflow: hidden;
+      background: #eef1f4;
+    }
+    .physical-event-kit::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 24%;
+      background: linear-gradient(0deg, #c8cdd2, #e7eaee);
+      clip-path: polygon(0 28%, 100% 0, 100% 100%, 0 100%);
+    }
+    .event-rollup,
+    .event-welcome {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 34px rgba(24,25,29,.24);
+    }
+    .event-rollup {
+      width: 285px;
+      height: 700px;
+      padding: 48px 34px 38px;
+      background: var(--charcoal);
+      color: #fff;
+    }
+    .event-rollup::after {
+      content: "";
+      position: absolute;
+      left: -16px;
+      right: -16px;
+      bottom: -18px;
+      height: 18px;
+      border-radius: 4px;
+      background: #25262b;
+    }
+    .event-rollup img { width: 58px; height: 58px; object-fit: contain; filter: brightness(0) invert(1); }
+    .event-rollup h3 { margin-top: auto; font: 700 54px/.88 "Familjen Grotesk", sans-serif; letter-spacing: -.05em; }
+    .event-rollup h3::before { content: ""; display: block; width: 72px; height: 7px; margin-bottom: 22px; background: var(--red); }
+    .event-rollup span { margin-top: 28px; font: 500 15px/1.35 "Poppins", sans-serif; }
+    .event-welcome {
+      width: 220px;
+      height: 430px;
+      margin-bottom: 40px;
+      padding: 30px 26px;
+      background: #fff;
+      color: var(--heading);
+      border-top: 10px solid var(--red);
+    }
+    .event-welcome img { width: 48px; height: 48px; object-fit: contain; filter: brightness(.33); }
+    .event-welcome small { margin-top: auto; color: #676c77; font: 600 13px/1 "Poppins", sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+    .event-welcome strong { margin-top: 14px; font: 700 38px/.92 "Familjen Grotesk", sans-serif; letter-spacing: -.04em; }
+    .event-welcome .pill { align-self: flex-start; margin-top: 24px; padding: 12px 16px; font-size: 12px; }
+
     .community-scene {
       background: #edf0f3;
       color: var(--heading);
@@ -2315,46 +2645,9 @@
       </div>
     </section>
 
-    <section class="scene founder-system-scene" data-chapter="brand">
-      <div class="inner">
-        <div class="system-head">
-          <div>
-            <p class="kicker reveal">Photography</p>
-            <h2 class="statement reveal delay">The photographs Florin will need</h2>
-          </div>
-        </div>
-        <div class="founder-photo-grid reveal delay">
-          <figure class="founder-photo-card lead">
-            <img src="media/approved/seated-founder.png" alt="Florin Diumea seated in a founder portrait">
-            <figcaption><strong>Executive portrait</strong><span>Profile, keynote, biography</span></figcaption>
-          </figure>
-          <figure class="founder-photo-card">
-            <img src="media/approved/press-portrait.png" alt="Florin Diumea in a press portrait">
-            <figcaption><strong>Press portrait</strong><span>Articles, interviews, speaker assets</span></figcaption>
-          </figure>
-          <figure class="founder-photo-card wide">
-            <img src="media/approved/workshop-breakout.png" alt="Florin Diumea leading a workshop">
-            <figcaption><strong>Workshop</strong><span>Teaching and member work</span></figcaption>
-          </figure>
-          <figure class="founder-photo-card">
-            <img src="media/approved/networking-host.png" alt="Florin Diumea welcoming people at an event">
-            <figcaption><strong>Host</strong><span>Welcoming members and guests</span></figcaption>
-          </figure>
-          <figure class="founder-photo-card">
-            <img src="media/approved/social-candid.png" alt="A candid portrait of Florin Diumea at a social event">
-            <figcaption><strong>Candid</strong><span>Social and behind the scenes</span></figcaption>
-          </figure>
-          <figure class="founder-photo-card">
-            <img src="media/approved/artistic-reflection.png" alt="An editorial profile portrait of Florin Diumea">
-            <figcaption><strong>Editorial</strong><span>Essays, features, campaigns</span></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
     <section class="scene li-scene campaign-li fixed-application-scene" data-chapter="brand">
       <div class="inner">
-        <p class="kicker reveal">LinkedIn system</p>
+        <p class="kicker reveal">LinkedIn</p>
         <h2 class="statement reveal delay">Florin Diumea on LinkedIn</h2>
         <figure class="fixed-application linkedin-application reveal delay">
           <img src="media/fixed/linkedin-profile.png" alt="LinkedIn profile concept for Florin Diumea and Bright Business Club">
@@ -2363,31 +2656,26 @@
     </section>
     <section class="scene social-system-scene fixed-application-scene" data-chapter="brand">
       <div class="inner">
-        <div class="system-head">
-          <div>
-            <p class="kicker reveal">Social content system</p>
-            <h2 class="statement reveal delay">Four repeatable social formats</h2>
-          </div>
-          <p class="body reveal delay">Founder stories, perspective, candid moments, and working notes give Florin a clear publishing rhythm.</p>
-        </div>
+        <p class="kicker reveal">Social media</p>
+        <h2 class="statement reveal delay">Posts, video, and speaker clips</h2>
         <figure class="fixed-application reveal delay">
-          <img src="media/fixed/social-system.png" alt="Four fixed social media artwork formats for Bright Business Club">
+          <img src="media/fixed/social-media.png" alt="Social posts and speaker video mockups for Florin Diumea and Bright Business Club">
         </figure>
       </div>
     </section>
-    <section class="scene spotlight-scene fixed-application-scene" data-chapter="brand">
+    <section class="scene web-scene fixed-application-scene" data-chapter="brand">
       <div class="inner">
-        <p class="kicker reveal">Stage and video system</p>
-        <h2 class="statement reveal delay">Speaker reel, one-sheet, and video</h2>
+        <p class="kicker reveal">Web / UX</p>
+        <h2 class="statement reveal delay">Website hero and member journey</h2>
         <figure class="fixed-application reveal delay">
-          <img src="media/fixed/stage-video-system.png" alt="Fixed stage, speaker, and video artwork system for Florin Diumea">
+          <img src="media/fixed/web-ux.png" alt="Bright Business Club website hero and member journey mockup">
         </figure>
       </div>
     </section>
 
     <section class="scene press-scene fixed-application-scene" data-chapter="brand">
       <div class="inner">
-        <p class="kicker reveal">Press and PR system</p>
+        <p class="kicker reveal">PR</p>
         <h2 class="statement reveal delay">Articles, interviews, and press kit</h2>
         <figure class="fixed-application reveal delay">
           <img src="media/fixed/press-pr-system.png" alt="Fixed press article and press kit artwork for Florin Diumea and Bright Business Club">
@@ -2395,27 +2683,13 @@
       </div>
     </section>
 
-    <section class="scene community-scene fixed-application-scene" data-chapter="brand">
+    <section class="scene physical-scene fixed-application-scene" data-chapter="brand">
       <div class="inner">
-        <div class="system-head">
-          <div>
-            <p class="kicker reveal">Community and events</p>
-            <h2 class="statement reveal delay">Workshops, introductions, and club events</h2>
-          </div>
-        </div>
+        <p class="kicker reveal">Physical</p>
+        <h2 class="statement reveal delay">Event stage, backdrop, and banners</h2>
         <figure class="fixed-application reveal delay">
-          <img src="media/fixed/community-system.png" alt="Workshop, member introduction, and club event photography for Bright Business Club">
+          <img src="media/fixed/physical-events.png" alt="Bright Business Club stage backdrop and event banner mockups">
         </figure>
-      </div>
-    </section>
-    <section class="scene editorial-scene editorial-portrait-scene" data-chapter="brand">
-      <img src="media/approved/artistic-reflection.png" alt="Editorial portrait of Florin Diumea">
-      <div class="inner">
-        <div class="editorial-portrait-copy">
-          <p class="kicker reveal">Editorial</p>
-          <h2 class="statement reveal delay">Florin, between events</h2>
-          <p class="body reveal delay">Working notes. Essays. Candid photographs.</p>
-        </div>
       </div>
     </section>
 
