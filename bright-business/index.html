@@ -1956,6 +1956,11 @@
       color: #555568;
       font: 400 clamp(.86rem, 1.05vw, .94rem)/1.52 "Poppins", sans-serif;
     }
+    .inspiration-note-body + .inspiration-note-body {
+      margin-top: 7px;
+      color: #17172c;
+      font-weight: 700;
+    }
     .inspiration-note-enter {
       align-self: flex-start;
       min-height: 44px;
@@ -2063,7 +2068,7 @@
     <button type="button" data-chapter-target="strategy"><small>02</small><span>Strategy</span></button>
     <button type="button" data-chapter-target="brand"><small>03</small><span>Brand</span></button>
   </nav>
-  <dialog class="inspiration-note" id="inspiration-note" aria-labelledby="inspiration-note-title" aria-describedby="inspiration-note-body">
+  <dialog class="inspiration-note" id="inspiration-note" aria-labelledby="inspiration-note-title" aria-describedby="inspiration-note-body inspiration-note-purpose">
     <div class="inspiration-note-layout">
       <figure class="inspiration-note-visual">
         <img src="media/fp-warning-abstract-mask.png" alt="A translucent sculptural mask with a glass lens">
@@ -2071,14 +2076,13 @@
       <div class="inspiration-note-copy" tabindex="-1">
         <button class="inspiration-note-close" type="button" aria-label="Close this note">×</button>
         <span class="inspiration-note-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 3.5 21 20H3L12 3.5Z"></path>
-            <path d="M12 9v4.5"></path>
-            <path d="M12 17h.01"></path>
+          <svg viewBox="0 0 24 24" data-icon="check">
+            <path d="m5 12.5 4.2 4.2L19 7"></path>
           </svg>
         </span>
         <h2 id="inspiration-note-title">Photography direction<span aria-hidden="true">.</span></h2>
-        <p class="inspiration-note-body" id="inspiration-note-body">These images are creative references. Final production can enhance your real photos or give a photographer a clear brief for recreating the strongest ideas.</p>
+        <p class="inspiration-note-body" id="inspiration-note-body">These AI images are creative references.</p>
+        <p class="inspiration-note-body" id="inspiration-note-purpose">The goal is inspiration, not face accuracy.</p>
         <button class="inspiration-note-enter" type="button">View the reveal</button>
       </div>
     </div>
