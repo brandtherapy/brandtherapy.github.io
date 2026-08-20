@@ -1916,24 +1916,6 @@
       background: linear-gradient(180deg, transparent 48%, rgba(24, 24, 27, .4));
       pointer-events: none;
     }
-    .inspiration-note-icon {
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      border-radius: 0;
-      background: #5a5cf9;
-      color: #fff;
-    }
-    .inspiration-note-icon svg {
-      width: 26px;
-      height: 26px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
     .inspiration-note-copy {
       display: flex;
       flex-direction: column;
@@ -1944,8 +1926,7 @@
     .inspiration-note-copy:focus { outline: none; }
     .inspiration-note h2 {
       max-width: 17ch;
-      margin-top: 24px;
-      padding-right: 28px;
+      margin-top: 0;
       font: 800 clamp(2.2rem, 4vw, 3.1rem)/.94 "Bricolage Grotesque", system-ui, sans-serif;
       letter-spacing: -.04em;
     }
@@ -1961,10 +1942,54 @@
       color: #17172c;
       font-weight: 700;
     }
+    .inspiration-note-approval {
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr);
+      align-items: center;
+      gap: 11px;
+      margin-top: 19px;
+      color: #17172c;
+      font: 600 .84rem/1.35 "Poppins", sans-serif;
+      cursor: pointer;
+    }
+    .inspiration-note-approval input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .inspiration-note-check {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border: 2px solid #343447;
+      background: #fff;
+      color: #fff;
+      transition: background-color 160ms ease, border-color 160ms ease;
+    }
+    .inspiration-note-check svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0;
+    }
+    .inspiration-note-approval input:checked + .inspiration-note-check {
+      border-color: #5a5cf9;
+      background: #5a5cf9;
+    }
+    .inspiration-note-approval input:checked + .inspiration-note-check svg { opacity: 1; }
+    .inspiration-note-approval input:focus-visible + .inspiration-note-check {
+      outline: 3px solid rgba(90, 92, 249, .35);
+      outline-offset: 3px;
+    }
     .inspiration-note-enter {
       align-self: flex-start;
       min-height: 44px;
-      margin-top: 20px;
+      margin-top: 16px;
       padding: 12px 20px;
       border: 0;
       border-radius: 0;
@@ -1974,23 +1999,13 @@
       cursor: pointer;
       transition: transform 220ms var(--ease), background-color 220ms ease;
     }
-    .inspiration-note-enter:hover { transform: translateY(-2px); background: #484ade; }
-    .inspiration-note-enter:focus-visible,
-    .inspiration-note-close:focus-visible { outline: 3px solid #5a5cf9; outline-offset: 3px; }
-    .inspiration-note-close {
-      position: absolute;
-      z-index: 3;
-      top: 14px;
-      right: 14px;
-      width: 36px;
-      height: 36px;
-      padding: 0;
-      border: 1px solid rgba(26, 26, 46, .2);
-      border-radius: 0;
-      background: #fff;
-      color: #1a1a2e;
-      font: 400 1.45rem/1 "Helvetica Neue", sans-serif;
-      cursor: pointer;
+    .inspiration-note-enter:hover:not(:disabled) { transform: translateY(-2px); background: #484ade; }
+    .inspiration-note-enter:focus-visible { outline: 3px solid #5a5cf9; outline-offset: 3px; }
+    .inspiration-note-enter:disabled {
+      background: #c4c4cb;
+      color: #fff;
+      cursor: not-allowed;
+      transform: none;
     }
     @keyframes inspiration-note-in {
       from { opacity: 0; transform: translateY(18px) scale(.985); }
@@ -2045,12 +2060,10 @@
       .inspiration-note-visual { min-height: 220px; }
       .inspiration-note-visual img { object-position: 50% 47%; }
       .inspiration-note-copy { padding: 22px 20px 22px; }
-      .inspiration-note-icon { width: 42px; height: 42px; }
-      .inspiration-note-icon svg { width: 24px; height: 24px; }
-      .inspiration-note h2 { max-width: 15ch; margin-top: 18px; padding-right: 24px; font-size: clamp(2rem, 9vw, 2.35rem); }
+      .inspiration-note h2 { max-width: 15ch; margin-top: 0; font-size: clamp(2rem, 9vw, 2.35rem); }
       .inspiration-note-body { margin-top: 12px; font-size: .86rem; line-height: 1.48; }
-      .inspiration-note-enter { margin-top: 18px; }
-      .inspiration-note-close { top: 22px; right: 20px; }
+      .inspiration-note-approval { margin-top: 16px; }
+      .inspiration-note-enter { margin-top: 14px; }
     }
     @media (prefers-reduced-motion: reduce) {
       .inspiration-note[open], .inspiration-note::backdrop { animation: none; }
@@ -2074,16 +2087,17 @@
         <img src="media/fp-warning-abstract-mask.png" alt="A translucent sculptural mask with a glass lens">
       </figure>
       <div class="inspiration-note-copy" tabindex="-1">
-        <button class="inspiration-note-close" type="button" aria-label="Close this note">×</button>
-        <span class="inspiration-note-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" data-icon="check">
-            <path d="m5 12.5 4.2 4.2L19 7"></path>
-          </svg>
-        </span>
         <h2 id="inspiration-note-title">Photography direction<span aria-hidden="true">.</span></h2>
         <p class="inspiration-note-body" id="inspiration-note-body">These AI images are creative references.</p>
         <p class="inspiration-note-body" id="inspiration-note-purpose">The goal is inspiration, not face accuracy.</p>
-        <button class="inspiration-note-enter" type="button">View the reveal</button>
+        <label class="inspiration-note-approval">
+          <input id="inspiration-note-approval" type="checkbox">
+          <span class="inspiration-note-check" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 7"></path></svg>
+          </span>
+          <span>I understand and want to continue.</span>
+        </label>
+        <button class="inspiration-note-enter" type="button" disabled>View the reveal</button>
       </div>
     </div>
   </dialog>
@@ -2418,15 +2432,20 @@
       inspirationNote.close();
     };
     if (inspirationNote) {
+      const inspirationApproval = inspirationNote.querySelector('#inspiration-note-approval');
+      const inspirationEnter = inspirationNote.querySelector('.inspiration-note-enter');
+      const syncInspirationApproval = () => {
+        if (!inspirationEnter) return;
+        inspirationEnter.disabled = !inspirationApproval?.checked;
+      };
       inspirationNote.addEventListener('close', () => document.body.classList.remove('inspiration-open'));
-      inspirationNote.querySelector('.inspiration-note-enter')?.addEventListener('click', closeInspirationNote);
-      inspirationNote.querySelector('.inspiration-note-close')?.addEventListener('click', closeInspirationNote);
-      inspirationNote.addEventListener('click', event => {
-        if (event.target === inspirationNote) closeInspirationNote();
-      });
+      inspirationNote.addEventListener('cancel', event => event.preventDefault());
+      inspirationApproval?.addEventListener('change', syncInspirationApproval);
+      inspirationEnter?.addEventListener('click', closeInspirationNote);
+      syncInspirationApproval();
       document.body.classList.add('inspiration-open');
       inspirationNote.showModal();
-      inspirationNote.querySelector('.inspiration-note-copy')?.focus({ preventScroll: true });
+      inspirationApproval?.focus({ preventScroll: true });
     }
     const scenes = [...document.querySelectorAll('.scene')];
     scenes.forEach((s, i) => s.insertAdjacentHTML('afterbegin', `<span class="index">${String(i + 1).padStart(2,'0')} / ${String(scenes.length).padStart(2,'0')}</span>`));
