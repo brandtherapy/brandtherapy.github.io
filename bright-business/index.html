@@ -1618,8 +1618,8 @@
     }
     .community-grid {
       display: grid;
-      grid-template-columns: 1.2fr .82fr .82fr .82fr;
-      grid-template-rows: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1.45fr 1fr 1fr;
+      grid-template-rows: minmax(0, 1fr);
       gap: 10px;
       height: min(62vh, 570px);
     }
@@ -1629,8 +1629,6 @@
       overflow: hidden;
       background: #17181c;
     }
-    .community-card.lead { grid-row: 1 / -1; }
-    .community-card.wide { grid-column: span 2; }
     .community-card img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.74) contrast(1.06); }
     .community-card figcaption {
       position: absolute;
@@ -1724,6 +1722,52 @@
     }
     .editorial-card-copy span { color: #5c616d; font: 400 .68rem/1.35 "Poppins", sans-serif; }
 
+    .editorial-portrait-scene {
+      position: relative;
+      min-height: 100svh;
+      padding: 0;
+      align-items: stretch;
+      overflow: hidden;
+    }
+    .editorial-portrait-scene > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 50%;
+      filter: contrast(1.04);
+    }
+    .editorial-portrait-scene::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(7,7,9,.9) 0 31%, rgba(7,7,9,.32) 56%, transparent 78%);
+      pointer-events: none;
+    }
+    .editorial-portrait-scene .inner {
+      position: relative;
+      z-index: 1;
+      width: min(1320px, 100%);
+      display: flex;
+      align-items: flex-end;
+      padding-top: 88px;
+      padding-bottom: clamp(72px, 9vh, 110px);
+    }
+    .editorial-portrait-copy { max-width: 560px; }
+    .editorial-portrait-copy .kicker { color: #d0d3d9; }
+    .editorial-portrait-copy .statement {
+      max-width: 9ch;
+      margin-top: 16px;
+      font-size: clamp(3.5rem, 7vw, 7.7rem);
+      line-height: .88;
+    }
+    .editorial-portrait-copy .body {
+      max-width: 36ch;
+      margin-top: 24px;
+      color: #d0d3d9;
+    }
+
     .finale-scene {
       min-height: 100svh;
       padding: 0;
@@ -1733,11 +1777,13 @@
     }
     .finale-scene .inner {
       width: 100%;
-      display: grid;
-      grid-template-columns: minmax(440px, .82fr) minmax(0, 1.18fr);
+      min-height: 100svh;
+      display: flex;
+      align-items: stretch;
       padding: 0;
     }
     .finale-copy {
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -1749,34 +1795,10 @@
       font: 700 clamp(3.6rem, 7vw, 7.8rem)/.86 "Familjen Grotesk", sans-serif;
       letter-spacing: -.06em;
     }
-    .finale-copy p { max-width: 38ch; margin-top: 24px; color: #d1d4da; font: 400 .92rem/1.55 "Poppins", sans-serif; }
-    .finale-apps {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 32px;
-    }
-    .finale-apps span {
-      padding: 8px 11px;
-      border: 1px solid rgba(255,255,255,.28);
-      font: 500 .64rem/1 "Poppins", sans-serif;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-    .finale-media { position: relative; min-height: 100svh; overflow: hidden; }
-    .finale-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: saturate(.72) contrast(1.06); }
-    .finale-media::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(66,65,78,.74), transparent 22%);
-      pointer-events: none;
-    }
     .finale-join {
-      position: absolute;
-      z-index: 2;
-      right: clamp(30px, 5vw, 72px);
-      bottom: clamp(30px, 5vw, 64px);
+      display: inline-flex;
+      align-self: flex-start;
+      margin-top: 36px;
       padding: 14px 22px;
       border-radius: 999px;
       background: var(--red);
@@ -1824,14 +1846,10 @@
       .social-card { min-height: 420px; }
       .community-grid { grid-template-columns: 1fr 1fr; }
       .community-card { min-height: 320px; }
-      .community-card.lead { grid-row: auto; }
-      .community-card.wide { grid-column: span 1; }
       .editorial-grid { grid-template-columns: 1fr; }
       .editorial-lead { min-height: 560px; }
       .editorial-stack { min-height: 620px; }
-      .finale-scene .inner { grid-template-columns: 1fr; }
-      .finale-copy { min-height: 62svh; }
-      .finale-media { min-height: 70svh; }
+      .finale-copy { min-height: 100svh; }
     }
 
     .chapter-toggle {
@@ -2036,7 +2054,8 @@
         position: sticky;
         top: 0;
         height: auto;
-        padding: 16px 16px 8px;
+        min-height: 72px;
+        padding: 16px 16px 8px 72px;
         background: color-mix(in srgb, var(--star-ink) calc((1 - var(--star-t)) * 100%), var(--star-paper) calc(var(--star-t) * 100%));
       }
       .star-rail {
@@ -2112,7 +2131,7 @@
     <section class="scene black" data-chapter="intro">
       <div class="inner">
         <p class="kicker reveal">Brand Therapy</p>
-        <h2 class="statement reveal delay">A new direction for Bright Business</h2>
+        <h2 class="statement reveal delay">Your Brand Therapy is ready</h2>
         <p class="body reveal delay">The strategy comes first. Then a visual system for how Florin and Bright Business show up everywhere.</p>
       </div>
     </section>
@@ -2300,10 +2319,9 @@
       <div class="inner">
         <div class="system-head">
           <div>
-            <p class="kicker reveal">Founder image system</p>
-            <h2 class="statement reveal delay">One image system across six roles</h2>
+            <p class="kicker reveal">Photography</p>
+            <h2 class="statement reveal delay">The photographs Florin will need</h2>
           </div>
-          <p class="body reveal delay">Portrait, press, workshop, host, social, and editorial images give each channel the right view of Florin without changing the visual language.</p>
         </div>
         <div class="founder-photo-grid reveal delay">
           <figure class="founder-photo-card lead">
@@ -2381,42 +2399,32 @@
       <div class="inner">
         <div class="system-head">
           <div>
-            <p class="kicker reveal">Community and event system</p>
-            <h2 class="statement reveal delay">Show the work inside the club</h2>
+            <p class="kicker reveal">Community and events</p>
+            <h2 class="statement reveal delay">Workshops, introductions, and club events</h2>
           </div>
-          <p class="body reveal delay">Workshops, introductions, peer conversations, and club settings make the member experience visible.</p>
         </div>
         <figure class="fixed-application reveal delay">
-          <img src="media/fixed/community-system.png" alt="Fixed community and event image system for Bright Business Club">
+          <img src="media/fixed/community-system.png" alt="Workshop, member introduction, and club event photography for Bright Business Club">
         </figure>
       </div>
     </section>
-    <section class="scene editorial-scene fixed-application-scene" data-chapter="brand">
+    <section class="scene editorial-scene editorial-portrait-scene" data-chapter="brand">
+      <img src="media/approved/artistic-reflection.png" alt="Editorial portrait of Florin Diumea">
       <div class="inner">
-        <div class="system-head">
-          <div>
-            <p class="kicker reveal">Founder editorial system</p>
-            <h2 class="statement reveal delay">A publishing system between events</h2>
-          </div>
-          <p class="body reveal delay">Working notes, reflections, and candid images let Florin stay visible without turning every post into a campaign.</p>
+        <div class="editorial-portrait-copy">
+          <p class="kicker reveal">Editorial</p>
+          <h2 class="statement reveal delay">Florin, between events</h2>
+          <p class="body reveal delay">Working notes. Essays. Candid photographs.</p>
         </div>
-        <figure class="fixed-application reveal delay">
-          <img src="media/fixed/editorial-system.png" alt="Fixed editorial feature, working note, and candid artwork system for Florin Diumea">
-        </figure>
       </div>
     </section>
 
     <section class="scene finale-scene" data-chapter="brand">
       <div class="inner">
         <div class="finale-copy">
-          <p class="kicker reveal">The complete system</p>
+          <p class="kicker reveal">Bright Business Club</p>
           <h2 class="reveal delay">The club, in the world.</h2>
-          <p class="reveal delay">LinkedIn, social, video, speaking, press, workshops, and community now share one visual system. Florin is the origin. The club is what people join.</p>
-          <div class="finale-apps reveal delay"><span>LinkedIn</span><span>Social</span><span>Video</span><span>Speaker</span><span>Press</span><span>Workshops</span><span>Community</span></div>
-        </div>
-        <div class="finale-media">
-          <img src="media/approved/executive-seated.png" alt="Executive portrait of Florin Diumea">
-          <span class="finale-join">Apply to Join a Club</span>
+          <span class="finale-join reveal delay">Apply to Join a Club</span>
         </div>
       </div>
     </section>
