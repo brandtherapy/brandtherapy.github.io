@@ -1901,12 +1901,13 @@
     }
     .inspiration-note-visual img {
       position: absolute;
-      top: -30%;
-      left: -14%;
-      width: auto;
+      inset: 0;
+      width: 100%;
       max-width: none;
-      height: 225%;
-      filter: saturate(.78) contrast(1.06);
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 48%;
+      filter: saturate(.92) contrast(1.03);
     }
     .inspiration-note-visual::after {
       content: "";
@@ -1914,31 +1915,6 @@
       inset: 0;
       background: linear-gradient(180deg, transparent 48%, rgba(24, 24, 27, .4));
       pointer-events: none;
-    }
-    .inspiration-note-frame {
-      position: absolute;
-      z-index: 2;
-      inset: 28px;
-      pointer-events: none;
-    }
-    .inspiration-note-frame::before,
-    .inspiration-note-frame::after {
-      content: "";
-      position: absolute;
-      width: 52px;
-      height: 52px;
-    }
-    .inspiration-note-frame::before {
-      top: 0;
-      right: 0;
-      border-top: 5px solid #5a5cf9;
-      border-right: 5px solid #5a5cf9;
-    }
-    .inspiration-note-frame::after {
-      bottom: 0;
-      left: 0;
-      border-bottom: 5px solid #5a5cf9;
-      border-left: 5px solid #5a5cf9;
     }
     .inspiration-note-icon {
       width: 46px;
@@ -2062,10 +2038,7 @@
         padding: 0;
       }
       .inspiration-note-visual { min-height: 220px; }
-      .inspiration-note-visual img { top: -39%; left: 0; height: 280%; }
-      .inspiration-note-frame { inset: 18px; }
-      .inspiration-note-frame::before,
-      .inspiration-note-frame::after { width: 42px; height: 42px; border-width: 4px; }
+      .inspiration-note-visual img { object-position: 50% 47%; }
       .inspiration-note-copy { padding: 22px 20px 22px; }
       .inspiration-note-icon { width: 42px; height: 42px; }
       .inspiration-note-icon svg { width: 24px; height: 24px; }
@@ -2093,8 +2066,7 @@
   <dialog class="inspiration-note" id="inspiration-note" aria-labelledby="inspiration-note-title" aria-describedby="inspiration-note-body">
     <div class="inspiration-note-layout">
       <figure class="inspiration-note-visual">
-        <img src="media/fp-brand-clarity-stylescape.png" alt="An abstract face seen through a glass lens">
-        <span class="inspiration-note-frame" aria-hidden="true"></span>
+        <img src="media/fp-warning-abstract-mask.png" alt="A translucent sculptural mask with a glass lens">
       </figure>
       <div class="inspiration-note-copy" tabindex="-1">
         <button class="inspiration-note-close" type="button" aria-label="Close this note">×</button>
