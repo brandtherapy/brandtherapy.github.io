@@ -1868,13 +1868,14 @@
     .chapter-nav span { display: block; font-size: .7rem; letter-spacing: .04em; }
 
     .inspiration-note {
-      width: min(1040px, calc(100vw - 48px));
+      width: min(620px, calc(100vw - 32px));
       max-width: none;
-      max-height: min(760px, calc(100svh - 48px));
+      max-height: calc(100svh - 32px);
       margin: auto;
       padding: 0;
       overflow: hidden;
       border: 1px solid rgba(30, 33, 50, .16);
+      border-top: 6px solid var(--red);
       border-radius: 10px;
       background: var(--page);
       color: var(--heading);
@@ -1887,87 +1888,52 @@
     }
     .inspiration-note-layout {
       display: grid;
-      grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr);
-      min-height: 620px;
+      grid-template-columns: 56px minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+      padding: 32px;
     }
-    .inspiration-note-visual {
-      position: relative;
-      min-height: 0;
-      overflow: hidden;
-      background: var(--charcoal);
+    .inspiration-note-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(182, 201, 219, .34);
+      color: var(--red);
     }
-    .inspiration-note-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 36%;
-      filter: contrast(1.04);
-    }
-    .inspiration-note-visual::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg, rgba(30, 33, 50, .9), transparent 42%);
-      pointer-events: none;
-    }
-    .inspiration-note-credit {
-      position: absolute;
-      z-index: 1;
-      left: 28px;
-      right: 28px;
-      bottom: 24px;
-      color: #f7f8fa;
-      font: 600 .72rem/1.35 "Poppins", sans-serif;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+    .inspiration-note-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
     .inspiration-note-copy {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       min-width: 0;
-      padding: clamp(40px, 5vw, 72px);
     }
     .inspiration-note-copy:focus { outline: none; }
-    .inspiration-note-kicker {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin: 0 0 24px;
-      color: #676b75;
-      font: 600 .68rem/1 "Poppins", sans-serif;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-    .inspiration-note-kicker::before {
-      content: "";
-      width: 54px;
-      height: 5px;
-      flex: 0 0 auto;
-      background: var(--red);
-    }
     .inspiration-note h2 {
-      max-width: 11ch;
-      font: 700 clamp(3rem, 5vw, 5.4rem)/.9 "Familjen Grotesk", sans-serif;
-      letter-spacing: -.055em;
+      max-width: 18ch;
+      padding-right: 34px;
+      font: 700 clamp(2.05rem, 4.4vw, 2.8rem)/.96 "Familjen Grotesk", sans-serif;
+      letter-spacing: -.04em;
     }
     .inspiration-note-body {
-      max-width: 53ch;
-      margin-top: 28px;
+      max-width: 50ch;
+      margin-top: 14px;
       color: #555a66;
-      font: 400 clamp(.92rem, 1.2vw, 1.05rem)/1.62 "Poppins", sans-serif;
-    }
-    .inspiration-note-body + .inspiration-note-body { margin-top: 14px; }
-    .inspiration-note-emphasis {
-      margin-top: 22px;
-      color: var(--heading);
-      font: 600 clamp(.95rem, 1.25vw, 1.08rem)/1.45 "Poppins", sans-serif;
+      font: 400 clamp(.88rem, 1.15vw, .96rem)/1.5 "Poppins", sans-serif;
     }
     .inspiration-note-enter {
       align-self: flex-start;
-      min-height: 48px;
-      margin-top: 32px;
-      padding: 14px 24px;
+      min-height: 44px;
+      margin-top: 20px;
+      padding: 12px 20px;
       border: 0;
       border-radius: 999px;
       background: var(--red);
@@ -1982,10 +1948,10 @@
     .inspiration-note-close {
       position: absolute;
       z-index: 3;
-      top: 18px;
-      right: 18px;
-      width: 42px;
-      height: 42px;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
       padding: 0;
       border: 1px solid rgba(30, 33, 50, .18);
       border-radius: 50%;
@@ -2037,23 +2003,19 @@
       .star-rail li b { display: none; }
       .star-scene .statement { font-size: clamp(2.4rem, 11vw, 4.2rem); }
       .inspiration-note {
-        width: min(100vw - 24px, 560px);
+        width: calc(100vw - 24px);
         max-height: calc(100svh - 24px);
       }
       .inspiration-note-layout {
         grid-template-columns: 1fr;
-        grid-template-rows: minmax(138px, 24svh) auto;
-        min-height: 0;
+        gap: 16px;
+        padding: 24px 20px 22px;
       }
-      .inspiration-note-visual img { object-position: 50% 28%; }
-      .inspiration-note-credit { left: 20px; bottom: 16px; }
-      .inspiration-note-copy { padding: 24px 22px 26px; }
-      .inspiration-note-kicker { margin-bottom: 16px; }
-      .inspiration-note h2 { max-width: 12ch; font-size: clamp(2.2rem, 11vw, 3.35rem); }
-      .inspiration-note-body { margin-top: 18px; font-size: .88rem; line-height: 1.52; }
-      .inspiration-note-body + .inspiration-note-body { margin-top: 10px; }
-      .inspiration-note-emphasis { margin-top: 14px; font-size: .9rem; }
-      .inspiration-note-enter { margin-top: 20px; }
+      .inspiration-note-icon { width: 48px; height: 48px; }
+      .inspiration-note-icon svg { width: 26px; height: 26px; }
+      .inspiration-note h2 { max-width: none; padding-right: 0; font-size: clamp(2rem, 9vw, 2.35rem); }
+      .inspiration-note-body { margin-top: 12px; font-size: .86rem; line-height: 1.48; }
+      .inspiration-note-enter { margin-top: 18px; }
       .inspiration-note-close { top: 10px; right: 10px; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -2074,18 +2036,18 @@
   </nav>
   <dialog class="inspiration-note" id="inspiration-note" aria-labelledby="inspiration-note-title" aria-describedby="inspiration-note-body">
     <div class="inspiration-note-layout">
-      <div class="inspiration-note-visual">
-        <img src="media/fp-brand-image.jpg" alt="Florian P. in an FP brand portrait">
-        <span class="inspiration-note-credit">Brand Therapy by Florian P.</span>
-      </div>
+      <span class="inspiration-note-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 3.5 21 20H3L12 3.5Z"></path>
+          <path d="M12 9v4.5"></path>
+          <path d="M12 17h.01"></path>
+        </svg>
+      </span>
       <div class="inspiration-note-copy" tabindex="-1">
         <button class="inspiration-note-close" type="button" aria-label="Close this note">×</button>
-        <p class="inspiration-note-kicker">Before you enter</p>
-        <h2 id="inspiration-note-title">See the possibility, then make it yours</h2>
-        <p class="inspiration-note-body" id="inspiration-note-body">The portraits and scenes ahead make the creative direction tangible. They show the presence, range, and visual world the brand can grow into. They are not a synthetic replacement for you.</p>
-        <p class="inspiration-note-body">Final photography can elevate your strongest real images or give a photographer a precise brief for recreating the ideas that feel most true.</p>
-        <p class="inspiration-note-emphasis">You are choosing the visual world. The finished work should still feel unmistakably yours.</p>
-        <button class="inspiration-note-enter" type="button">Enter the reveal</button>
+        <h2 id="inspiration-note-title">Image inspiration only</h2>
+        <p class="inspiration-note-body" id="inspiration-note-body">These images show the creative direction. Final photography can enhance real photos or recreate the strongest ideas with a photographer. This is brand inspiration, not an AI face service.</p>
+        <button class="inspiration-note-enter" type="button">View the reveal</button>
       </div>
     </div>
   </dialog>
