@@ -21,7 +21,7 @@ Use this file as the working context for any AI tool that drafts, edits, or plan
 
 ### Brand archetype mix
 
-Built from the eight words Jenina chose for her brand: caring, authoritative, confident, desirable, knowledgeable, loyal, trustworthy, safe.
+Eight words define the brand: caring, authoritative, confident, desirable, knowledgeable, loyal, trustworthy, safe. The mix follows from them.
 
 - Caregiver 26 (leads): protection for the family, starting with the mom.
 - Friend 18: loyal, relatable, English y Español. Easy to call.
@@ -32,9 +32,9 @@ Built from the eight words Jenina chose for her brand: caring, authoritative, co
 - Hero 4: a little resilience in the voice, never a battle cry.
 - Not in the mix: Outlaw, Magician, Jester, Creator, Explorer. No shock, no jokes about money, no promises that sound like magic.
 
-### Brand sliders
+### Brand dials
 
-Positions are 0 to 100 from the left word to the right word, set by Jenina.
+Positions are 0 to 100 from the left word to the right word. The further from 50, the stronger the brand leans that way.
 
 - Classic 14 Modern (classic)
 - Mature 3 Youthful (mature)
@@ -56,7 +56,7 @@ Positions are 0 to 100 from the left word to the right word, set by Jenina.
 - Wardrobe: tasteful dress or blazer, earrings, clean lines. Classy Latina, not corporate, not casual.
 - Expression: warm and engaged, with the person, not posing for the camera. A soft smile, no stiff headshot.
 - Not this: stock families, quote cards in a template font, neon, urgency graphics.
-- Colors, type, and a logo are not decided here. Until they are, the photos and the restraint carry the look.
+- Colors, type, and a logo come later. Until then, the photos and the restraint carry the look.
 
 ### Focus Star
 
