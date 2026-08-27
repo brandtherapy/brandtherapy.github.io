@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "brand-therapy-sprint-demo.v1",
+  "status": "client-review",
+  "identity": {
+    "name": "Jenina Ramirez",
+    "company": "Jenina Ramirez",
+    "category": "Life insurance, retirement, and living trust advisor for families",
+    "positioning": "Jenina helps Latina single moms who run the household alone build financial security and peace of mind for the family, starting with the mom herself.",
+    "distinctiveIdea": "Put yourself first. The mom who is covered is the one who can keep everyone else covered.",
+    "personality": {
+      "line": "Approachable and caring. Latina, classy, quiet luxury. Classic, feminine, serious.",
+      "archetypeMix": {
+        "caregiver": 26,
+        "friend": 18,
+        "ruler": 16,
+        "sage": 14,
+        "innocent": 12,
+        "lover": 10,
+        "hero": 4
+      },
+      "archetypeSource": "Eight brand words (caring, authoritative, confident, desirable, knowledgeable, loyal, trustworthy, safe) read against the strategy",
+      "sliders": [
+        {
+          "left": "Classic",
+          "position": 14,
+          "right": "Modern",
+          "defining": true
+        },
+        {
+          "left": "Mature",
+          "position": 3,
+          "right": "Youthful",
+          "defining": true
+        },
+        {
+          "left": "Feminine",
+          "position": 0,
+          "right": "Masculine",
+          "defining": true
+        },
+        {
+          "left": "Playful",
+          "position": 100,
+          "right": "Serious",
+          "defining": true
+        },
+        {
+          "left": "Economical",
+          "position": 64,
+          "right": "Luxurious",
+          "defining": false
+        },
+        {
+          "left": "Abstract",
+          "position": 100,
+          "right": "Literal",
+          "defining": true
+        },
+        {
+          "left": "Geometric",
+          "position": 62,
+          "right": "Organic",
+          "defining": false
+        },
+        {
+          "left": "Calm",
+          "position": 83,
+          "right": "Energetic",
+          "defining": false
+        },
+        {
+          "left": "Rational",
+          "position": 92,
+          "right": "Emotional",
+          "defining": true
+        },
+        {
+          "left": "Mysterious",
+          "position": 99,
+          "right": "Transparent",
+          "defining": true
+        },
+        {
+          "left": "Quiet",
+          "position": 85,
+          "right": "Talkative",
+          "defining": true
+        }
+      ],
+      "leanInto": [
+        "Classic",
+        "Feminine",
+        "Serious",
+        "Literal",
+        "Transparent",
+        "Warm",
+        "Tasteful"
+      ],
+      "moveAwayFrom": [
+        "Trendy",
+        "Youthful",
+        "Playful",
+        "Abstract",
+        "Mysterious",
+        "Cold",
+        "Flashy"
+      ],
+      "voicePrincipleCount": 4,
+      "visualIdentity": "photo direction only; colors, type, and logo not decided in this Sprint"
+    }
+  },
+  "focusStar": [
+    {
+      "line": "Product",
+      "decision": "Financial security and peace of mind for the family"
+    },
+    {
+      "line": "People",
+      "decision": "Latina single moms running the household alone",
+      "persona": "The mom carrying it all alone"
+    },
+    {
+      "line": "Purpose",
+      "decision": "End living one emergency away from collapse"
+    },
+    {
+      "line": "Promise",
+      "decision": "Put yourself first",
+      "brandDNA": "Her first"
+    },
+    {
+      "line": "Personality",
+      "decision": "Approachable and caring. Latina, classy, quiet luxury. Classic, feminine, serious."
+    }
+  ],
+  "profile": {
+    "platform": "Instagram",
+    "handle": "@jenina.ramirez",
+    "nameField": "Jenina Ramirez | Financial Security for Moms",
+    "bioLines": [
+      "Put yourself first.",
+      "Financial security for Latina single moms",
+      "Life insurance, retirement, living trusts",
+      "Inland Empire | English y Español"
+    ],
+    "highlights": [
+      "Start here",
+      "Moms first",
+      "Retirement",
+      "Living trusts",
+      "Workshops"
+    ],
+    "pinnedCount": 3,
+    "callToAction": "Message me the word FIRST and I will tell you what to bring."
+  },
+  "linkedin": {
+    "platform": "LinkedIn",
+    "headline": "Financial security for Latina single moms | Life insurance with living benefits, retirement plans, living trusts | Inland Empire",
+    "location": "Inland Empire, California",
+    "banner": "Put yourself first. Peace of mind follows.",
+    "bannerCanvas": "1584 x 396 px",
+    "featuredCount": 3,
+    "prioritySkills": [
+      "Life insurance",
+      "Living benefits",
+      "Retirement planning",
+      "Living trusts",
+      "Financial education",
+      "Spanish"
+    ],
+    "callToAction": "Message me the word FIRST and I will tell you what to bring."
+  },
+  "thirtyDayPlan": {
+    "objective": "Start ten real conversations with single moms who have never sat with anyone on their money, and fill the next workshop with them.",
+    "primarySignal": "Ten first conversations booked from Instagram, LinkedIn, workshops, or referrals in thirty days.",
+    "priorityMoves": [
+      "Rebuild the Instagram profile around Put Yourself First and pin three posts",
+      "Book and fill the next single-mom workshop",
+      "Send ten warm messages to people who fit the audience or know someone who does"
+    ],
+    "contentTerritories": [
+      "Put Yourself First",
+      "One Emergency Away",
+      "Things We Do Not Talk About"
+    ],
+    "recommendationTypes": [
+      "Campaign",
+      "PR",
+      "Collaboration",
+      "Pro bono",
+      "Email and outreach"
+    ]
+  },
+  "aiPack": {
+    "file": "brand-context.md",
+    "requiredSections": [
+      "Identity",
+      "Instructions",
+      "Context",
+      "Examples",
+      "Factual boundaries",
+      "Starter prompts"
+    ],
+    "starterPromptCount": 6
+  },
+  "sections": [
+    "strategy",
+    "identity",
+    "instagram",
+    "linkedin",
+    "plan",
+    "ai"
+  ]
+}
