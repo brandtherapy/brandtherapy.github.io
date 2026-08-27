@@ -221,6 +221,9 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 .msg-cta button:hover{background:var(--accent);color:var(--white)}
 .msg-cta button.ghost{border-color:var(--border);color:var(--muted);font-weight:500}
 .msg-cta button.ghost:hover{border-color:var(--accent);color:var(--accent);background:var(--white)}
+.suggest-row{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 4px}
+.suggest-row button{min-height:36px;padding:8px 12px;border:1px solid var(--accent);background:var(--white);color:var(--accent);font-family:var(--ff-b);font-size:12px;font-weight:600;cursor:pointer}
+.suggest-row button:hover{background:var(--accent);color:var(--white)}
 .msg.assistant.has-cta{background:var(--accent-soft);border:1px solid rgba(90,92,249,.28);border-left:2px solid var(--accent)}
 .ex-required-note{font-size:12px;line-height:1.45;color:var(--text);background:var(--accent-soft);border-left:2px solid var(--accent);padding:8px 12px;margin:0 0 8px}
 .ex-card.needed .xt::after{content:" · Required";color:var(--accent);font-weight:600;font-size:11px}
@@ -1076,7 +1079,7 @@ function emptyStar(){
   const edges={};
   ORDER.forEach(id=>edges[id]={offer_name:'',position:'',compass:'',rules_in:[],rules_out:[],tradeoffs:[],proof:[],filled:0});
   return {
-    business:{stage:'',validation:''},
+    business:{context:'',stage:'',validation:''},
     spectrum:{position:null,note:''},
     center:{word:'',candidates:[]},
     persona:{role:'',context:'',need:'',trigger:''},
@@ -1702,6 +1705,29 @@ function showTyping(){
 }
 function hideTyping(){ if(typingEl){typingEl.remove();typingEl=null;} }
 
+/* Tappable answer options under the latest assistant question. The tapped
+   text goes through sendUserMessage like any typed reply; typing instead is
+   always allowed, so chips are a shortcut, never a gate. */
+function clearSuggestions(){document.querySelectorAll('.suggest-row').forEach(r=>r.remove());}
+function renderSuggestions(list){
+  clearSuggestions();
+  if(!Array.isArray(list)||!list.length||isReadOnly())return;
+  const row=document.createElement('div');
+  row.className='suggest-row';
+  list.slice(0,4).forEach(label=>{
+    const text=String(label||'').trim();
+    if(!text)return;
+    const b=document.createElement('button');
+    b.type='button';
+    b.textContent=text;
+    b.addEventListener('click',()=>{if(pending)return;sendUserMessage(text);});
+    row.appendChild(b);
+  });
+  if(!row.children.length)return;
+  chatScroll.appendChild(row);
+  chatScroll.scrollTop=chatScroll.scrollHeight;
+}
+
 function setPending(v){
   pending=v;
   chatInput.disabled=v;
@@ -2042,15 +2068,19 @@ function doSendTurn(afterMessages){
       if(!session.star.edges) session.star.edges=emptyStar().edges;
       ensureTasteState(session.star);
       const reply=data.reply||'';
+      const sugs=Array.isArray(data.suggestions)?data.suggestions.filter(s=>typeof s==='string'&&s.trim()).slice(0,4):[];
       const attachClose=shouldAttachCloseCta(session.star,priorStar);
       if(attachClose){
         session.closeCtaAttached=true;
-        session.messages.push({role:'assistant',content:reply,cta:'close'});
+        session.messages.push({role:'assistant',content:reply,cta:'close',at:new Date().toISOString()});
         appendCloseCtaCard(reply);
         chatInput.placeholder='Ask a question, or leave a note for Florian...';
       }else{
-        session.messages.push({role:'assistant',content:reply});
+        const rec={role:'assistant',content:reply,at:new Date().toISOString()};
+        if(sugs.length)rec.suggestions=sugs;
+        session.messages.push(rec);
         appendMsg('assistant',reply);
+        renderSuggestions(sugs);
       }
       renderStarFull();
       setPending(false);
@@ -2069,7 +2099,8 @@ function sendUserMessage(text){
   if(pending||isReadOnly())return;
   const trimmed=text.trim();
   if(!trimmed)return;
-  session.messages.push({role:'user',content:trimmed});
+  clearSuggestions();
+  session.messages.push({role:'user',content:trimmed,at:new Date().toISOString()});
   appendMsg('user',trimmed);
   chatInput.value='';
   chatInput.style.height='auto';
@@ -2116,17 +2147,19 @@ document.querySelectorAll('[data-conversation-focus]').forEach(button=>button.ad
    ========================================================================= */
 /* Static opening from data/conversation-spec.json. Never wait on /api/chat
    for the first assistant turn: that call only exists for real client answers. */
-const SESSION_OPENING_MESSAGE="I'm going to ask you questions the way a strategist would in a real session, one at a time. No forms, no dropdowns. Just answer like you're talking to someone who actually wants to know. Some questions will feel obvious. Answer them anyway, the obvious answer is usually where the real one is hiding. This takes 25 to 45 minutes. At the end, Florian reviews what we build together before it becomes anything real. Ready when you are. First: where is the business right now? Idea, building, pre-revenue, early customers, paying customers, revenue, or mostly an audience so far?";
+const SESSION_OPENING_MESSAGE="I'm going to ask you questions the way a strategist would in a real session, one at a time. No forms, no dropdowns. Just answer like you're talking to someone who actually wants to know. Some questions will feel obvious. Answer them anyway, the obvious answer is usually where the real one is hiding. This takes 25 to 45 minutes. At the end, Florian reviews what we build together before it becomes anything real. Ready when you are. First, some context so I read everything else right: what kind of brand are we working on? A personal brand around you, a service business you run, a company or product, or something else?";
+const OPENING_SUGGESTIONS=["A personal brand","A service business","A company or product","Something else"];
 
 function seedOpeningMessage(){
   session.messages=[
-    {role:'user',content:'__START__'},
-    {role:'assistant',content:SESSION_OPENING_MESSAGE}
+    {role:'user',content:'__START__',at:new Date().toISOString()},
+    {role:'assistant',content:SESSION_OPENING_MESSAGE,suggestions:OPENING_SUGGESTIONS.slice(),at:new Date().toISOString()}
   ];
   session.star=emptyStar();
   session.started=true;
   chatScroll.innerHTML='';
   appendMsg('assistant',SESSION_OPENING_MESSAGE);
+  renderSuggestions(OPENING_SUGGESTIONS);
   renderStarFull();
 }
 
@@ -2161,6 +2194,12 @@ function startRealSession(resumed){
     addTasteResumePrompt();
     addWorkshopResumePrompt();
     applyCoachFeedback();
+    // Re-offer chips only when the question they belong to is still the last
+    // thing on screen; resume prompts above push newer messages past it.
+    const last=session.messages[session.messages.length-1];
+    if(last&&last.role==='assistant'&&!last.cta&&Array.isArray(last.suggestions)&&!session.closeCtaAttached){
+      renderSuggestions(last.suggestions);
+    }
     return;
   }
 
@@ -2175,7 +2214,7 @@ let pendingCoachFeedback=null;
 function applyCoachFeedback(){
   const fb=pendingCoachFeedback;
   if(!fb||!fb.message||session.coachFeedbackSeenId===fb.id)return;
-  session.messages.push({role:'florian',content:fb.message});
+  session.messages.push({role:'florian',content:fb.message,at:fb.updated||fb.delivered||new Date().toISOString()});
   session.coachFeedbackSeenId=fb.id;
   appendMsg('florian',fb.message);
   saveSession('coach_feedback',true);
