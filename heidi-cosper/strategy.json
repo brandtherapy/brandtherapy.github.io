@@ -1,0 +1,182 @@
+{
+  "schemaVersion": "brand-therapy-sprint-demo.v1",
+  "status": "client-review",
+  "identity": {
+    "name": "Heidi Cosper",
+    "company": "Exponential Impact",
+    "category": "Executive communication coach for VPs and emerging executives",
+    "positioning": "Heidi helps capable VPs and emerging executives close the gap between the quality of their thinking and the impact of their communication.",
+    "distinctiveIdea": "Leading with intention: influence is already there, and the work is to use it on purpose instead of by default.",
+    "personality": {
+      "line": "Warm, grounded, sharp, and substantial. She gets it, she will not waste the hour, and she will make him think.",
+      "archetypeMix": {
+        "sage": 34,
+        "friend": 20,
+        "ruler": 16,
+        "caregiver": 12,
+        "innocent": 10,
+        "hero": 8
+      },
+      "archetypeSource": "Warm, grounded, sharp, and substantial, read against the strategy",
+      "sliders": [
+        {
+          "left": "Classic",
+          "position": 60,
+          "right": "Modern",
+          "defining": false
+        },
+        {
+          "left": "Mature",
+          "position": 13,
+          "right": "Youthful",
+          "defining": true
+        },
+        {
+          "left": "Feminine",
+          "position": 65,
+          "right": "Masculine",
+          "defining": false
+        },
+        {
+          "left": "Playful",
+          "position": 74,
+          "right": "Serious",
+          "defining": true
+        },
+        {
+          "left": "Economical",
+          "position": 74,
+          "right": "Luxurious",
+          "defining": true
+        },
+        {
+          "left": "Abstract",
+          "position": 68,
+          "right": "Literal",
+          "defining": false
+        },
+        {
+          "left": "Geometric",
+          "position": 54,
+          "right": "Organic",
+          "defining": false
+        },
+        {
+          "left": "Calm",
+          "position": 19,
+          "right": "Energetic",
+          "defining": true
+        },
+        {
+          "left": "Rational",
+          "position": 32,
+          "right": "Emotional",
+          "defining": true
+        },
+        {
+          "left": "Mysterious",
+          "position": 73,
+          "right": "Transparent",
+          "defining": true
+        },
+        {
+          "left": "Quiet",
+          "position": 35,
+          "right": "Talkative",
+          "defining": false
+        }
+      ],
+      "leanInto": [
+        "Mature",
+        "Calm",
+        "Serious",
+        "Luxurious",
+        "Transparent",
+        "Rational"
+      ],
+      "moveAwayFrom": [
+        "Youthful",
+        "Energetic",
+        "Playful",
+        "Cheap",
+        "Mysterious",
+        "Theater",
+        "Clutter"
+      ],
+      "voicePrincipleCount": 4,
+      "visualIdentity": "Deep ink, bronze, warm ivory, and deep olive. Gold water-drop mark already in use. Editorial serif with a clean sans. Photography of genuine engagement. This Sprint does not redesign the logo"
+    }
+  },
+  "focusStar": [
+    {
+      "line": "Product",
+      "decision": "Close the gap between a leader's thinking and the impact of their communication"
+    },
+    {
+      "line": "People",
+      "decision": "Capable VPs and emerging executives whose responsibilities have outgrown how they currently communicate",
+      "persona": "The VP whose thinking is stronger than how it lands"
+    },
+    {
+      "line": "Purpose",
+      "decision": "Steward influence so one leader's growth multiplies through the people they lead"
+    },
+    {
+      "line": "Promise",
+      "decision": "Leading with intention",
+      "brandDNA": "Leading with intention"
+    },
+    {
+      "line": "Personality",
+      "decision": "Warm, grounded, sharp, and substantial"
+    }
+  ],
+  "linkedin": {
+    "platform": "LinkedIn",
+    "headline": "Executive communication for VPs and emerging executives | Exponential Impact",
+    "location": "Prescott Valley, Arizona",
+    "banner": "Leading with intention Make the thinking land",
+    "bannerCanvas": "1584 x 396 px",
+    "featuredCount": 3
+  },
+  "thirtyDayPlan": {
+    "objective": "Rebuild LinkedIn around Leading with intention, start ten warm conversations, and book five first meetings from people who already know the work or fit the persona.",
+    "primarySignal": "Five first conversations booked from LinkedIn or warm outreach in thirty days.",
+    "priorityMoves": [
+      "Rebuild the LinkedIn profile around Leading with intention and pin three featured pieces",
+      "Send ten warm messages to people who already know the work or know a VP with the gap",
+      "Publish three posts that make the judgment distinction without sounding like a presentation coach"
+    ],
+    "contentTerritories": [
+      "The gap",
+      "Judgment in the room",
+      "Leading with intention"
+    ],
+    "recommendationTypes": [
+      "Campaign",
+      "Collaboration",
+      "Outreach",
+      "Speaking",
+      "Content"
+    ]
+  },
+  "aiPack": {
+    "file": "brand-context.md",
+    "requiredSections": [
+      "Identity",
+      "Instructions",
+      "Context",
+      "Examples",
+      "Factual boundaries",
+      "Starter prompts"
+    ],
+    "starterPromptCount": 6
+  },
+  "sections": [
+    "strategy",
+    "identity",
+    "linkedin",
+    "plan",
+    "ai"
+  ]
+}
