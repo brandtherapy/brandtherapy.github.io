@@ -23,6 +23,7 @@ const styles = `
     background: var(--bt-chart-paper);
     border: 1px solid color-mix(in srgb, var(--bt-chart-ink) 12%, transparent);
     border-radius: var(--bt-chart-radius);
+    container-type: inline-size;
     margin: 0;
     overflow: hidden;
     padding: clamp(1rem, 2.5vw, 2rem);
@@ -238,7 +239,7 @@ const styles = `
     border-top: 1px solid color-mix(in srgb, var(--bt-chart-ink) 12%, transparent);
     display: grid;
     gap: clamp(.75rem, 2vw, 1.4rem);
-    grid-template-columns: minmax(8rem, .5fr) minmax(12rem, 1.35fr) auto;
+    grid-template-columns: minmax(8rem, max-content) minmax(10rem, 1.35fr) auto;
     margin-top: .75rem;
     padding-top: 1rem;
   }
@@ -258,6 +259,7 @@ const styles = `
 
   .inspector-name {
     font-size: clamp(1.35rem, 3vw, 2.2rem);
+    font-size: clamp(1.35rem, 5.5cqi, 2.2rem);
     font-weight: 600;
     letter-spacing: -.035em;
     line-height: 1;
@@ -371,6 +373,15 @@ const styles = `
     color: #7d1515;
     font-weight: 650;
     padding: 1rem;
+  }
+
+  /* Narrow chart (any viewport): stack the inspector so a long archetype
+     name never collides with its description. */
+  @container (max-width: 26rem) {
+    .inspector { grid-template-columns: 1fr auto; }
+    .inspector-copy { grid-column: 1 / -1; grid-row: 2; }
+    .inspector-score { grid-column: 2; grid-row: 1; }
+    .interaction-hint { grid-row: 3; }
   }
 
   @media (max-width: 36rem) {
