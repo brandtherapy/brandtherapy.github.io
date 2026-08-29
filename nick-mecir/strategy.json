@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "brand-therapy-sprint-demo.v1",
+  "status": "client-review",
+  "identity": {
+    "name": "Nick Mecir",
+    "company": "Interface Systems",
+    "category": "Commercial security consultant, perimeter protection for yards, lots, and job sites",
+    "positioning": "Nick is the first line of defense against threats to life's assets: the local expert who designs the perimeter, stands behind it, and answers the phone himself.",
+    "distinctiveIdea": "Be unbreakable: a defense that holds because the person behind it stays clean, honest, and reachable.",
+    "personality": {
+      "line": "Precise and polished, with a sharp rock-and-roll edge.",
+      "archetypeMix": {
+        "caregiver": 32,
+        "ruler": 22,
+        "sage": 14,
+        "friend": 12,
+        "outlaw": 8,
+        "hero": 8,
+        "innocent": 4
+      },
+      "archetypeSource": "Precise and polished with a sharp rock-and-roll edge, read against the strategy",
+      "sliders": [
+        {
+          "left": "Classic",
+          "position": 42,
+          "right": "Modern",
+          "defining": false
+        },
+        {
+          "left": "Mature",
+          "position": 22,
+          "right": "Youthful",
+          "defining": true
+        },
+        {
+          "left": "Playful",
+          "position": 84,
+          "right": "Serious",
+          "defining": true
+        },
+        {
+          "left": "Economical",
+          "position": 64,
+          "right": "Luxurious",
+          "defining": false
+        },
+        {
+          "left": "Geometric",
+          "position": 20,
+          "right": "Organic",
+          "defining": true
+        },
+        {
+          "left": "Calm",
+          "position": 32,
+          "right": "Energetic",
+          "defining": false
+        },
+        {
+          "left": "Rational",
+          "position": 30,
+          "right": "Emotional",
+          "defining": true
+        },
+        {
+          "left": "Mysterious",
+          "position": 82,
+          "right": "Transparent",
+          "defining": true
+        }
+      ],
+      "leanInto": [
+        "Mature",
+        "Serious",
+        "Geometric",
+        "Transparent",
+        "Rational",
+        "Luxurious"
+      ],
+      "moveAwayFrom": [
+        "Youthful",
+        "Playful",
+        "Casual",
+        "Grungy",
+        "Domineering",
+        "Cheap",
+        "Mysterious",
+        "Fear-selling"
+      ],
+      "voicePrincipleCount": 4,
+      "visualIdentity": "Graphite, steel blue, cool white, and badge silver. Geometric display type with a clean neutral sans. Photography of the perimeter at dusk and the consultant on site. This Sprint does not design a logo"
+    }
+  },
+  "focusStar": [
+    {
+      "line": "Product",
+      "decision": "First line of defense against threats to life's assets"
+    },
+    {
+      "line": "People",
+      "decision": "Operators who trust one local expert over a corporate name",
+      "persona": "Danny, yard owner"
+    },
+    {
+      "line": "Purpose",
+      "decision": "Operators run their businesses with complete peace of mind"
+    },
+    {
+      "line": "Promise",
+      "decision": "Be the clean, just, righteous, uncorruptible, unbreakable first line of defense people trust without question.",
+      "brandDNA": "Be unbreakable"
+    },
+    {
+      "line": "Personality",
+      "decision": "Precise and polished, with a sharp rock-and-roll edge."
+    }
+  ],
+  "linkedin": {
+    "platform": "LinkedIn",
+    "headline": "Commercial security consultant | Perimeter protection for yards, lots, and job sites | Inland Empire",
+    "location": "Upland, California",
+    "banner": "First line of defense Be unbreakable",
+    "bannerCanvas": "1584 x 396 px",
+    "featuredCount": 3
+  },
+  "growthOpportunities": {
+    "headline": "Five ways to grow from here",
+    "levers": [
+      "Offer development",
+      "Warm partnership",
+      "Referral network",
+      "Category authority",
+      "Content system"
+    ],
+    "opportunityCount": 5,
+    "contentTerritories": [
+      "After six",
+      "Deterrence over documentation",
+      "The honest no"
+    ]
+  },
+  "aiPack": {
+    "file": "brand-context.md",
+    "requiredSections": [
+      "Identity",
+      "Instructions",
+      "Context",
+      "Examples",
+      "Factual boundaries",
+      "Starter prompts"
+    ],
+    "starterPromptCount": 6
+  },
+  "sections": [
+    "strategy",
+    "identity",
+    "linkedin",
+    "ai",
+    "growth"
+  ]
+}

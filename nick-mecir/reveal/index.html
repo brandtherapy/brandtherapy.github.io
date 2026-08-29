@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+  <meta name="description" content="Your private Brand Therapy reveal is ready.">
+  <meta property="og:title" content="Nick Mecir · Brand Therapy">
+  <meta property="og:description" content="Your private Brand Therapy reveal is ready.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Brand Therapy">
+  <meta property="og:url" content="https://brandtherapy.florianp.com/nick-mecir/reveal/">
+  <meta property="og:image" content="https://brandtherapy.florianp.com/nick-mecir/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://brandtherapy.florianp.com/nick-mecir/og-image.png">
+  <title>Nick Mecir · Brand Therapy</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0c0c0f;
+      --paper: #f2f1fc;
+      --muted: #aaa7a0;
+      --line: rgba(239, 237, 231, .18);
+      --ease: cubic-bezier(.16, 1, .3, 1);
+      --fp-accent: #3f6d8e;
+      --fp-accent-deep: #2f546d;
+    }
+    * { box-sizing: border-box; }
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .display,
+    .statement,
+    .star-scene .statement,
+    .claim-scene .statement,
+    .turn-scene .statement,
+    h1,
+    h2 {
+      font-family: "Jost", "Futura", "Century Gothic", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+    }
+    body { margin: 0; background: var(--ink); overflow-x: hidden; }
+    button { font: inherit; }
+    .scene {
+      min-height: 100svh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      position: relative;
+      display: grid;
+      align-items: center;
+      padding: clamp(76px, 10vh, 120px) clamp(24px, 7vw, 112px) clamp(62px, 8vh, 96px);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .scene.light { background: var(--paper); color: var(--ink); }
+    .scene.black { background: #070709; }
+    .inner { width: min(1120px, 100%); margin: 0 auto; }
+    .inner.wide { width: min(1280px, 100%); }
+    .kicker {
+      margin: 0 0 22px;
+      font-size: .72rem;
+      line-height: 1;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    h1, h2, h3, p { margin: 0; }
+    .display {
+      max-width: 14ch;
+      font-size: clamp(3.3rem, 10vw, 9.6rem);
+      line-height: .88;
+      letter-spacing: -.065em;
+      font-weight: 500;
+    }
+    .statement {
+      max-width: 20ch;
+      font-size: clamp(2.35rem, 7vw, 7.3rem);
+      line-height: .95;
+      letter-spacing: -.052em;
+      font-weight: 500;
+    }
+    .body {
+      max-width: 48ch;
+      margin-top: 30px;
+      font-size: clamp(1rem, 1.6vw, 1.35rem);
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .light .body, .light .kicker { color: #605f5a; }
+    .body strong { font-weight: 600; color: var(--fp-accent); }
+    .light .body strong { color: var(--fp-accent-deep); }
+    .index {
+      position: absolute;
+      top: max(22px, env(safe-area-inset-top));
+      right: clamp(20px, 3vw, 42px);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      color: var(--muted);
+      z-index: 20;
+    }
+    .meter {
+      position: fixed; z-index: 40; left: 0; right: 0; top: 0; height: 2px;
+      background: rgba(239, 237, 231, .08);
+    }
+    .meter span { display: block; width: 0; height: 100%; background: var(--fp-accent); transition: width 420ms var(--ease); }
+    .hint {
+      position: absolute; left: 50%; bottom: max(20px, env(safe-area-inset-bottom));
+      transform: translateX(-50%); color: var(--muted);
+      font-size: .7rem; letter-spacing: .13em; text-transform: uppercase;
+    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 800ms var(--ease), transform 800ms var(--ease); }
+    .scene.is-visible .reveal { opacity: 1; transform: none; }
+    .scene.is-visible .reveal.delay { transition-delay: 120ms; }
+
+    /* Portrait scene */
+    .portrait-scene no-photo { background: #070709; }
+    .portrait-media {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: #070709;
+    }
+    .portrait-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 22%;
+      filter: contrast(1.05) brightness(.6);
+    }
+    .portrait-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(7,7,9,.86) 0 34%, rgba(7,7,9,.4) 60%, rgba(7,7,9,.18) 100%),
+        linear-gradient(0deg, rgba(7,7,9,.78), transparent 40%);
+    }
+
+    /* Focus Star: sticky left rail, scroll-scrubbed progression + color */
+    .star-pin {
+      --star-t: 0;
+      --star-ink: #070709;
+      --star-mineral: #141428;
+      --star-clay: #2a2868;
+      --star-water: #3f6d8e;
+      --star-paper: #f2f1fc;
+      --star-seg-a: var(--star-ink);
+      --star-seg-b: var(--star-mineral);
+      --star-seg-t: 0;
+      display: grid;
+      grid-template-columns: minmax(200px, .30fr) 1px minmax(0, 1fr);
+      background: color-mix(in oklch, var(--star-seg-a) calc((1 - var(--star-seg-t)) * 100%), var(--star-seg-b) calc(var(--star-seg-t) * 100%));
+      color: var(--star-paper);
+      scroll-snap-align: none;
+      scroll-snap-stop: normal;
+    }
+    .star-pin.is-paper { color: var(--star-ink); }
+    .star-rail-sticky {
+      position: sticky;
+      top: 0;
+      height: 100svh;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(18px, 3vh, 34px);
+      padding: clamp(88px, 11vh, 128px) clamp(18px, 2.4vw, 36px) clamp(48px, 7vh, 72px) clamp(24px, 5vw, 72px);
+      z-index: 3;
+    }
+    .star-compass {
+      flex: 0 0 auto;
+      width: min(100%, clamp(148px, 21vh, 222px));
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+    .compass-ring { fill: none; stroke: currentColor; stroke-width: .75; opacity: .14; }
+    .compass-ticks line { stroke: currentColor; }
+    .compass-star {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linejoin: miter;
+      stroke-dasharray: 100;
+      stroke-dashoffset: calc(100 - var(--star-t, 0) * 100);
+    }
+    .compass-dot { fill: currentColor; opacity: .16; transition: opacity 260ms ease; }
+    .compass-dot.is-lit { opacity: .95; }
+    .compass-needle {
+      transform-box: view-box;
+      transform-origin: 50% 50%;
+      transform: rotate(calc(var(--star-t, 0) * 288deg));
+    }
+    .compass-needle line { stroke: currentColor; }
+    .compass-hub { fill: currentColor; }
+    .star-rule-sticky {
+      position: sticky;
+      top: clamp(88px, 11vh, 128px);
+      height: calc(100svh - clamp(88px, 11vh, 128px) - clamp(48px, 7vh, 72px));
+      align-self: start;
+      background: currentColor;
+      opacity: .2;
+    }
+    .star-rule-sticky i {
+      display: block;
+      width: 100%;
+      height: calc(var(--star-t) * 100%);
+      background: currentColor;
+      opacity: 1;
+    }
+    .star-rail {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex: 1 1 auto;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .star-rail li {
+      display: grid;
+      grid-template-columns: 2.4ch 1fr;
+      gap: 10px;
+      align-items: baseline;
+      font-size: calc(1.05rem + (var(--hot, 0) * 1.35rem));
+      letter-spacing: calc(-.02em - var(--hot, 0) * .02em);
+      font-weight: 500;
+      color: color-mix(in srgb, currentColor calc((38 + var(--hot, 0) * 62) * 1%), transparent);
+      transition: none;
+    }
+    .star-rail li b { font-weight: 500; font-variant-numeric: tabular-nums; }
+    .star-pin .star-scene {
+      align-items: stretch;
+      padding: clamp(88px, 11vh, 128px) clamp(24px, 6vw, 96px) clamp(48px, 7vh, 72px) clamp(28px, 4.2vw, 64px);
+      background: transparent;
+      color: inherit;
+      min-height: 100svh;
+    }
+    .star-copy {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: calc(100svh - 200px);
+      padding: 8px 0;
+    }
+    .star-def {
+      margin: 0 0 18px;
+      max-width: 36ch;
+      font-size: clamp(.95rem, 1.25vw, 1.08rem);
+      line-height: 1.4;
+      color: color-mix(in srgb, currentColor 62%, transparent);
+    }
+    .star-scene .statement {
+      max-width: 13ch;
+      font-size: clamp(2.8rem, 6.8vw, 7.2rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+    .star-scene .body {
+      margin-top: 22px;
+      max-width: 38ch;
+      color: color-mix(in srgb, currentColor 62%, transparent);
+    }
+
+    /* Focus Star assembly + north-star claim */
+    .assembly-layout {
+      display: grid;
+      grid-template-columns: minmax(300px, .92fr) minmax(0, 1.08fr);
+      gap: clamp(30px, 5.5vw, 84px);
+      align-items: center;
+    }
+    .assembly-copy .statement { max-width: 12ch; }
+    .assembly-star {
+      width: min(100%, 68svh);
+      height: auto;
+      justify-self: center;
+      overflow: visible;
+    }
+    .assembly-star .star-outline {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linejoin: miter;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+    }
+    .scene.is-visible .assembly-star .star-outline {
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 1900ms var(--ease) 260ms;
+    }
+    .assembly-star .star-vertex { fill: currentColor; opacity: 0; }
+    .assembly-star .star-point-label {
+      fill: currentColor;
+      font-size: 13.5px;
+      font-weight: 500;
+      letter-spacing: 2.4px;
+      opacity: 0;
+    }
+    .scene.is-visible .assembly-star .star-vertex,
+    .scene.is-visible .assembly-star .star-point-label { transition: opacity 560ms ease; }
+    .scene.is-visible .assembly-star .star-vertex { opacity: 1; }
+    .scene.is-visible .assembly-star .star-point-label { opacity: .8; }
+    .scene.is-visible .assembly-star .star-vertex:nth-child(1),
+    .scene.is-visible .assembly-star .star-point-label:nth-child(1) { transition-delay: 500ms; }
+    .scene.is-visible .assembly-star .star-vertex:nth-child(2),
+    .scene.is-visible .assembly-star .star-point-label:nth-child(2) { transition-delay: 850ms; }
+    .scene.is-visible .assembly-star .star-vertex:nth-child(3),
+    .scene.is-visible .assembly-star .star-point-label:nth-child(3) { transition-delay: 1200ms; }
+    .scene.is-visible .assembly-star .star-vertex:nth-child(4),
+    .scene.is-visible .assembly-star .star-point-label:nth-child(4) { transition-delay: 1550ms; }
+    .scene.is-visible .assembly-star .star-vertex:nth-child(5),
+    .scene.is-visible .assembly-star .star-point-label:nth-child(5) { transition-delay: 1900ms; }
+    .assembly-star .star-spoke { stroke: currentColor; stroke-width: 1; opacity: 0; }
+    .scene.is-visible .assembly-star .star-spoke { opacity: .2; transition: opacity 700ms ease 2150ms; }
+    .assembly-star .star-dna-kicker {
+      fill: currentColor;
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 2.6px;
+      opacity: 0;
+    }
+    .assembly-star .star-dna {
+      fill: currentColor;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -.2px;
+      opacity: 0;
+    }
+    .scene.is-visible .assembly-star .star-dna-kicker { opacity: .5; transition: opacity 700ms ease 2350ms; }
+    .scene.is-visible .assembly-star .star-dna { opacity: 1; transition: opacity 700ms ease 2450ms; }
+    .claim-scene .statement {
+      max-width: 13ch;
+      font-size: clamp(2.9rem, 8.6vw, 8.8rem);
+      line-height: .9;
+    }
+
+    /* The turn + kit door */
+    .turn-scene .statement { max-width: 14ch; }
+    .kit-scene { align-items: center; }
+    .kit-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(190px, .26fr);
+      gap: clamp(30px, 5vw, 72px);
+      align-items: start;
+    }
+    .kit-emblem {
+      width: min(100%, 190px);
+      height: auto;
+      justify-self: end;
+      margin-top: 10px;
+      overflow: visible;
+    }
+    .kit-rows { margin-top: clamp(30px, 5vh, 48px); display: grid; }
+    .kit-row {
+      display: grid;
+      grid-template-columns: 3.4ch minmax(150px, .42fr) 1fr auto;
+      gap: clamp(14px, 2.4vw, 30px);
+      align-items: baseline;
+      padding: clamp(16px, 2.6vh, 24px) 0;
+      border-top: 1px solid rgba(12, 12, 15, .22);
+    }
+    .kit-row:last-of-type { border-bottom: 1px solid rgba(12, 12, 15, .22); }
+    .kit-row b {
+      font-size: clamp(.95rem, 1.4vw, 1.2rem);
+      font-weight: 500;
+      color: #7a776f;
+      font-variant-numeric: tabular-nums;
+    }
+    .kit-row strong {
+      font-size: clamp(1.35rem, 2.6vw, 2.2rem);
+      font-weight: 500;
+      letter-spacing: -.035em;
+      line-height: 1;
+    }
+    .kit-row p {
+      font-size: clamp(.92rem, 1.3vw, 1.1rem);
+      line-height: 1.45;
+      color: #605f5a;
+      max-width: 42ch;
+    }
+    .kit-row span {
+      font-size: .68rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: #8a877e;
+      white-space: nowrap;
+    }
+    .kit-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: clamp(28px, 4.5vh, 44px);
+      padding: 18px 30px;
+      background: var(--fp-accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      font-weight: 500;
+      letter-spacing: -.02em;
+      transition: transform 260ms var(--ease);
+    }
+    .kit-cta:hover { transform: translateY(-2px); }
+    .kit-cta svg { width: 18px; height: 18px; flex: 0 0 auto; }
+
+    .chapter-toggle {
+      position: fixed; z-index: 46; left: clamp(14px, 2vw, 28px);
+      top: max(14px, env(safe-area-inset-top));
+      width: 44px; height: 44px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 4px;
+      padding: 0; border: 0; background: transparent; cursor: pointer; opacity: .34;
+    }
+    .chapter-toggle span { display: block; width: 16px; height: 1px; background: var(--paper); }
+    body.on-light .chapter-toggle span { background: #3f3e39; }
+    .chapter-toggle:hover, .chapter-toggle:focus-visible { outline: none; opacity: 1; }
+    body.nav-open .chapter-toggle { opacity: 1; }
+    body.nav-open .chapter-toggle span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+    body.nav-open .chapter-toggle span:nth-child(2) { opacity: 0; }
+    body.nav-open .chapter-toggle span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+    body.at-start .chapter-toggle { opacity: 0; visibility: hidden; pointer-events: none; }
+    .chapter-nav {
+      position: fixed; z-index: 45;
+      left: clamp(14px, 2vw, 28px);
+      top: calc(max(14px, env(safe-area-inset-top)) + 52px);
+      display: grid; grid-template-columns: repeat(3, auto);
+      border: 1px solid rgba(239, 237, 231, .28); background: var(--ink);
+      opacity: 0; visibility: hidden; pointer-events: none;
+    }
+    body.nav-open .chapter-nav { opacity: 1; visibility: visible; pointer-events: auto; }
+    .chapter-nav button {
+      min-height: 44px; padding: 9px 14px; border: 0;
+      border-right: 1px solid rgba(239, 237, 231, .16);
+      background: transparent; color: var(--muted); cursor: pointer; text-align: left;
+    }
+    .chapter-nav button:last-child { border-right: 0; }
+    .chapter-nav button[aria-current="true"], .chapter-nav button:hover { background: var(--paper); color: var(--ink); }
+    .chapter-nav small { display: block; margin-bottom: 2px; font-size: .58rem; letter-spacing: .1em; opacity: .62; }
+    .chapter-nav span { display: block; font-size: .7rem; letter-spacing: .04em; }
+
+    @media (max-width: 960px) {
+      .portrait-media img { object-position: 50% 14%; }
+      .portrait-media::after {
+        background: linear-gradient(0deg, rgba(7,7,9,.94) 0 46%, rgba(7,7,9,.3) 78%);
+      }
+      .star-pin { grid-template-columns: 1fr; }
+      .star-rule-sticky { display: none; }
+      .star-compass { display: none; }
+      .star-rail { height: 100%; }
+      .assembly-layout { grid-template-columns: 1fr; gap: clamp(26px, 6vh, 44px); }
+      .assembly-star { width: min(100%, 46svh); justify-self: start; }
+      .star-rail-sticky {
+        display: block;
+        position: sticky;
+        top: 0;
+        height: 112px;
+        min-height: 112px;
+        padding: max(14px, env(safe-area-inset-top)) 16px 12px 72px;
+        background: color-mix(in oklch, var(--star-seg-a) calc((1 - var(--star-seg-t)) * 100%), var(--star-seg-b) calc(var(--star-seg-t) * 100%));
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        z-index: 35;
+      }
+      .star-rail {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: stretch;
+        align-items: stretch;
+        gap: 6px;
+        width: 100%;
+        height: 100%;
+      }
+      .star-rail li {
+        flex: .78 1 0;
+        min-width: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        align-content: end;
+        align-items: end;
+        gap: 7px;
+        padding: 10px 8px 9px;
+        overflow: hidden;
+        border-bottom: 2px solid color-mix(in srgb, currentColor 18%, transparent);
+        font-size: .72rem;
+        line-height: 1;
+        letter-spacing: -.01em;
+        color: color-mix(in srgb, currentColor 44%, transparent);
+        transition: color 240ms ease, border-color 240ms ease;
+      }
+      .star-rail li b {
+        display: block;
+        font-size: .58rem;
+        letter-spacing: .08em;
+        opacity: .62;
+      }
+      .star-rail li span {
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        opacity: .72;
+      }
+      .star-rail li.is-current {
+        flex: 2.4 1 0;
+        border-bottom-color: currentColor;
+        color: currentColor;
+      }
+      .star-rail li.is-current b { opacity: .76; }
+      .star-rail li.is-current span {
+        font-size: clamp(1.12rem, 2.7vw, 1.5rem);
+        font-weight: 600;
+        letter-spacing: -.035em;
+        opacity: 1;
+      }
+      .star-pin .star-scene {
+        padding-top: 112px;
+        padding-bottom: 48px;
+      }
+      .star-copy {
+        min-height: calc(100svh - 160px);
+        justify-content: flex-start;
+        padding-top: clamp(72px, 13svh, 132px);
+      }
+      .star-scene .statement { font-size: clamp(2.4rem, 11vw, 4.2rem); }
+      .kit-layout { grid-template-columns: 1fr; }
+      .kit-emblem { display: none; }
+      .kit-row {
+        grid-template-columns: 3.4ch 1fr;
+        grid-template-rows: auto auto;
+        row-gap: 8px;
+      }
+      .kit-row strong { grid-column: 2; }
+      .kit-row p { grid-column: 2; }
+      .kit-row span { display: none; }
+    }
+    @media (max-width: 520px) {
+      .star-rail-sticky {
+        height: 96px;
+        min-height: 96px;
+        padding: max(10px, env(safe-area-inset-top)) 12px 9px 68px;
+      }
+      .star-rail { gap: 4px; }
+      .star-rail li {
+        flex: .5 1 0;
+        gap: 5px;
+        padding: 8px 4px 7px;
+      }
+      .star-rail li span { display: none; }
+      .star-rail li.is-current {
+        flex: 3 1 0;
+        padding-left: 8px;
+      }
+      .star-rail li.is-current span {
+        display: block;
+        font-size: clamp(1.08rem, 5vw, 1.28rem);
+      }
+      .star-pin .star-scene { padding-top: 96px; }
+      .star-copy {
+        min-height: calc(100svh - 144px);
+        padding-top: clamp(64px, 12svh, 104px);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .star-rail li { transition: font-size 200ms linear, color 200ms linear; }
+      .compass-needle { transition: transform 240ms linear; }
+      .compass-star { transition: stroke-dashoffset 240ms linear; }
+      .assembly-star .star-outline,
+      .scene.is-visible .assembly-star .star-outline { stroke-dashoffset: 0; transition: none; }
+      .assembly-star .star-spoke,
+      .scene.is-visible .assembly-star .star-spoke { opacity: .2; transition: none; }
+      .assembly-star .star-vertex,
+      .scene.is-visible .assembly-star .star-vertex { opacity: 1; transition: none; }
+      .assembly-star .star-point-label,
+      .scene.is-visible .assembly-star .star-point-label { opacity: .8; transition: none; }
+      .assembly-star .star-dna-kicker,
+      .scene.is-visible .assembly-star .star-dna-kicker { opacity: .5; transition: none; }
+      .assembly-star .star-dna,
+      .scene.is-visible .assembly-star .star-dna { opacity: 1; transition: none; }
+    }
+  </style>
+</head>
+<body class="at-start">
+  <div class="meter" aria-hidden="true"><span></span></div>
+  <button class="chapter-toggle" type="button" aria-label="Open chapters" aria-controls="chapter-nav" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="chapter-nav" id="chapter-nav" aria-label="Reveal chapters">
+    <button type="button" data-chapter-target="intro" aria-current="true"><small>01</small><span>Start</span></button>
+    <button type="button" data-chapter-target="strategy"><small>02</small><span>Strategy</span></button>
+    <button type="button" data-chapter-target="kit"><small>03</small><span>Your kit</span></button>
+  </nav>
+  <main id="story">
+    <section class="scene black" data-chapter="intro">
+      <div class="inner">
+        <h1 class="display reveal">Hello,<br>Nick</h1>
+      </div>
+      <span class="hint">Scroll to begin</span>
+    </section>
+
+    <section class="scene black" data-chapter="intro">
+      <div class="inner">
+        <p class="kicker reveal">Brand Therapy</p>
+        <h2 class="statement reveal delay">Your Brand Therapy is ready</h2>
+        <p class="body reveal delay">One position, told once, from the beginning. At the end, the kit that puts it to work.</p>
+      </div>
+    </section>
+
+    <section class="scene black portrait-scene no-photo" data-chapter="intro">
+      <div class="portrait-media" aria-hidden="true">
+        
+      </div>
+      <div class="inner">
+        <p class="kicker reveal">My read</p>
+        <h2 class="statement reveal delay">Here is what I see in you, Nick</h2>
+        <p class="body reveal delay">You are the <strong>first line of defense</strong> for operators who will not leave their sites to a call center. Clean, just, uncorruptible. Everything that follows is built from that.</p>
+      </div>
+    </section>
+
+    <section class="scene black" data-chapter="strategy">
+      <div class="inner">
+        <p class="kicker reveal">The foundation</p>
+        <h2 class="statement reveal delay">Your whole brand comes down to five answers</h2>
+        <p class="body reveal delay">What it offers, who it serves, why it exists, what it promises, and how it feels. Five answers, one standard, ready to run.</p>
+      </div>
+    </section>
+
+    <div class="star-pin" data-chapter="strategy">
+      <aside class="star-rail-sticky">
+        <svg class="star-compass" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+          <circle class="compass-ring" cx="100" cy="100" r="96"></circle>
+          <g class="compass-ticks"></g>
+          <path class="compass-star" pathLength="100" d="M 100 22 L 117.63 75.73 L 174.18 75.9 L 128.53 109.27 L 145.85 163.1 L 100 130 L 54.15 163.1 L 71.47 109.27 L 25.82 75.9 L 82.37 75.73 Z"></path>
+          <g class="compass-dots">
+            <circle class="compass-dot" cx="100" cy="22" r="2.6"></circle>
+            <circle class="compass-dot" cx="174.18" cy="75.9" r="2.6"></circle>
+            <circle class="compass-dot" cx="145.85" cy="163.1" r="2.6"></circle>
+            <circle class="compass-dot" cx="54.15" cy="163.1" r="2.6"></circle>
+            <circle class="compass-dot" cx="25.82" cy="75.9" r="2.6"></circle>
+          </g>
+          <g class="compass-needle">
+            <line x1="100" y1="100" x2="100" y2="38" stroke-width="1.5"></line>
+            <line x1="100" y1="100" x2="100" y2="118" stroke-width="1.5" opacity=".38"></line>
+          </g>
+          <circle class="compass-hub" cx="100" cy="100" r="2.8"></circle>
+        </svg>
+        <ol class="star-rail" aria-label="Focus Star">
+          <li class="is-current" aria-current="true"><b>01</b><span>Product</span></li>
+          <li><b>02</b><span>People</span></li>
+          <li><b>03</b><span>Purpose</span></li>
+          <li><b>04</b><span>Promise</span></li>
+          <li><b>05</b><span>Personality</span></li>
+        </ol>
+      </aside>
+      <div class="star-rule-sticky" aria-hidden="true"><i></i></div>
+      <div class="star-panels">
+        <section class="scene star-scene" data-chapter="strategy">
+          <div class="star-copy">
+            <p class="star-def reveal">What you uniquely offer.</p>
+            <h2 class="statement reveal delay">First line of defense against threats to life's assets</h2>
+            <p class="body reveal delay">Protection for the property, the inventory, the crew, and the deliveries that have to leave in the morning. The product is the person who stands between that and whoever comes looking.</p>
+          </div>
+        </section>
+        <section class="scene star-scene" data-chapter="strategy">
+          <div class="star-copy">
+            <p class="star-def reveal">Who you are here to serve.</p>
+            <h2 class="statement reveal delay">Operators who trust one local expert over a corporate name</h2>
+            <p class="body reveal delay">Persona: Danny, yard owner. Second generation, two yards. He needs one local expert who knows both sites and answers after hours.</p>
+          </div>
+        </section>
+        <section class="scene star-scene" data-chapter="strategy">
+          <div class="star-copy">
+            <p class="star-def reveal">Why your work needs to exist.</p>
+            <h2 class="statement reveal delay">Operators run their businesses with complete peace of mind</h2>
+            <p class="body reveal delay">So an owner can lock the gate, drive home, and stop carrying the next hit into the evening.</p>
+          </div>
+        </section>
+        <section class="scene star-scene" data-chapter="strategy">
+          <div class="star-copy">
+            <p class="star-def reveal">What people can consistently expect from you.</p>
+            <h2 class="statement reveal delay">Be the clean, just, righteous, uncorruptible, unbreakable first line of defense people trust without question.</h2>
+            <p class="body reveal delay">Brand DNA: Be unbreakable. The center of the star. Everything else aims here.</p>
+          </div>
+        </section>
+        <section class="scene star-scene" data-chapter="strategy">
+          <div class="star-copy">
+            <p class="star-def reveal">How your brand should feel and behave.</p>
+            <h2 class="statement reveal delay">Precise and polished, with a sharp rock-and-roll edge</h2>
+            <p class="body reveal delay">Main Brand Archetype: Caregiver. Calm authority on site. Sharp lines, cool light, nothing for sale. The edge shows as bluntness about what will actually stop a threat.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="scene black assembly-scene" data-chapter="strategy">
+      <div class="inner wide assembly-layout">
+        <div class="assembly-copy">
+          <p class="kicker reveal">The shape of the strategy</p>
+          <h2 class="statement reveal delay">This is your Focus Star</h2>
+          <p class="body reveal delay">The five answers you just read make one shape. Each answer holds a point, and three words hold the center: <strong>Be unbreakable</strong>. <strong>Every point aims at them.</strong></p>
+        </div>
+        <svg class="assembly-star reveal delay" viewBox="0 0 520 520" role="img" aria-label="The Focus Star: product, people, purpose, promise, and personality as five points around Be unbreakable.">
+          <g class="star-spokes" aria-hidden="true">
+            <line class="star-spoke" x1="260" y1="166" x2="260" y2="50"></line>
+            <line class="star-spoke" x1="349.4" y1="230.95" x2="459.72" y2="195.11"></line>
+            <line class="star-spoke" x1="315.25" y1="336.05" x2="383.43" y2="429.89"></line>
+            <line class="star-spoke" x1="204.75" y1="336.05" x2="136.57" y2="429.89"></line>
+            <line class="star-spoke" x1="170.6" y1="230.95" x2="60.28" y2="195.11"></line>
+          </g>
+          <path class="star-outline" pathLength="100" d="M 260 50 L 307.02 195.28 L 459.72 195.11 L 336.09 284.72 L 383.43 429.89 L 260 340 L 136.57 429.89 L 183.91 284.72 L 60.28 195.11 L 212.98 195.28 Z"></path>
+          <g class="star-vertices" aria-hidden="true">
+            <circle class="star-vertex" cx="260" cy="50" r="3.4"></circle>
+            <circle class="star-vertex" cx="459.72" cy="195.11" r="3.4"></circle>
+            <circle class="star-vertex" cx="383.43" cy="429.89" r="3.4"></circle>
+            <circle class="star-vertex" cx="136.57" cy="429.89" r="3.4"></circle>
+            <circle class="star-vertex" cx="60.28" cy="195.11" r="3.4"></circle>
+          </g>
+          <g class="star-labels" aria-hidden="true">
+            <text class="star-point-label" x="260" y="28" text-anchor="middle">PRODUCT</text>
+            <text class="star-point-label" x="460" y="170" text-anchor="middle">PEOPLE</text>
+            <text class="star-point-label" x="383" y="466" text-anchor="middle">PURPOSE</text>
+            <text class="star-point-label" x="137" y="466" text-anchor="middle">PROMISE</text>
+            <text class="star-point-label" x="60" y="170" text-anchor="middle">PERSONALITY</text>
+          </g>
+          <g class="star-hub" aria-hidden="true">
+            <text class="star-dna-kicker" x="260" y="246" text-anchor="middle">BRAND DNA</text>
+            <text class="star-dna" x="260" y="276" text-anchor="middle">Be unbreakable</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="scene black claim-scene" data-chapter="strategy">
+      <div class="inner">
+        <p class="kicker reveal">Your north star</p>
+        <h2 class="statement reveal delay">Nobody else can claim this</h2>
+        <p class="body reveal delay">Plenty of security reps sell the same hardware. This star names who the work is for, why it exists, <strong>what it refuses to trade</strong>, and how it feels to walk a property with you. That combination fits one person. When a post, a partner, or a plan feels off, hold it against the star. <strong>It points the same way every time.</strong></p>
+      </div>
+    </section>
+
+    <section class="scene light turn-scene" data-chapter="kit">
+      <div class="inner">
+        <p class="kicker reveal">What happens now</p>
+        <h2 class="statement reveal delay">A star is for navigating</h2>
+        <p class="body reveal delay">You never have to memorize this page. The star does its work when you steer by it: every profile, every post, every plan, held against the same five answers.</p>
+      </div>
+    </section>
+
+    <section class="scene light kit-scene" data-chapter="kit">
+      <div class="inner wide kit-layout">
+        <div>
+          <p class="kicker reveal">One link, three parts</p>
+          <h2 class="statement reveal delay">Your brand kit</h2>
+          <div class="kit-rows reveal delay">
+            <div class="kit-row">
+              <b>01</b>
+              <strong>Check it is you</strong>
+              <p>Five lines and one core belief. Read them slowly, once. If a single word feels off, tell me.</p>
+              <span>Read once</span>
+            </div>
+            <div class="kit-row">
+              <b>02</b>
+              <strong>Paste it in</strong>
+              <p>Your Instagram and LinkedIn, finished and ready to go live. Open the app, paste, done.</p>
+              <span>This week</span>
+            </div>
+            <div class="kit-row">
+              <b>03</b>
+              <strong>Ask for anything</strong>
+              <p>Your whole strategy in one copy button. Any AI writes in your voice, on your position.</p>
+              <span>Whenever you post</span>
+            </div>
+          </div>
+          <a class="kit-cta reveal delay" href="../">
+            Open your kit
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </a>
+        </div>
+        <svg class="kit-emblem reveal delay" viewBox="0 0 200 200" aria-hidden="true" focusable="false" style="--star-t:1">
+          <circle class="compass-ring" cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-width=".75" opacity=".2"></circle>
+          <g class="compass-ticks"></g>
+          <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="miter" d="M 100 22 L 117.63 75.73 L 174.18 75.9 L 128.53 109.27 L 145.85 163.1 L 100 130 L 54.15 163.1 L 71.47 109.27 L 25.82 75.9 L 82.37 75.73 Z"></path>
+          <circle fill="currentColor" cx="100" cy="100" r="2.8"></circle>
+        </svg>
+      </div>
+    </section>
+  </main>
+  <script>
+    const scenes = [...document.querySelectorAll('.scene')];
+    scenes.forEach((s, i) => s.insertAdjacentHTML('afterbegin', `<span class="index">${String(i + 1).padStart(2,'0')} / ${String(scenes.length).padStart(2,'0')}</span>`));
+    const meter = document.querySelector('.meter span');
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      const i = scenes.indexOf(entry.target);
+      meter.style.width = `${((i + 1) / scenes.length) * 100}%`;
+      const chapter = entry.target.dataset.chapter;
+      document.querySelectorAll('.chapter-nav button').forEach(button => button.setAttribute('aria-current', button.dataset.chapterTarget === chapter ? 'true' : 'false'));
+      const atStart = i === 0;
+      document.body.classList.toggle('at-start', atStart);
+      if (!entry.target.classList.contains('star-scene')) {
+        document.body.classList.toggle('on-light', entry.target.classList.contains('light'));
+      }
+      if (atStart) setNavOpen(false);
+    }), { threshold: .24 });
+    scenes.forEach(s => observer.observe(s));
+    const chapterToggle = document.querySelector('.chapter-toggle');
+    const setNavOpen = open => {
+      document.body.classList.toggle('nav-open', open);
+      chapterToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      chapterToggle.setAttribute('aria-label', open ? 'Close chapters' : 'Open chapters');
+    };
+    chapterToggle.addEventListener('click', () => setNavOpen(!document.body.classList.contains('nav-open')));
+    document.addEventListener('click', event => {
+      if (!document.body.classList.contains('nav-open')) return;
+      if (event.target.closest('.chapter-nav') || event.target.closest('.chapter-toggle')) return;
+      setNavOpen(false);
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && document.body.classList.contains('nav-open')) setNavOpen(false);
+      if (event.target.closest?.('button, input, textarea, select, a[href], [contenteditable="true"]')) return;
+      const current = scenes.findIndex(s => {
+        const r = s.getBoundingClientRect();
+        return r.top <= innerHeight * .45 && r.bottom >= innerHeight * .45;
+      });
+      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') scenes[Math.min(scenes.length - 1, current + 1)]?.scrollIntoView();
+      if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') scenes[Math.max(0, current - 1)]?.scrollIntoView();
+    });
+    document.querySelectorAll('.chapter-nav button').forEach(button => button.addEventListener('click', () => {
+      setNavOpen(false);
+      document.querySelector(`.scene[data-chapter="${button.dataset.chapterTarget}"]`)?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    }));
+    const starPin = document.querySelector('.star-pin');
+    const starItems = starPin ? [...starPin.querySelectorAll('.star-rail li')] : [];
+    const starDots = starPin ? [...starPin.querySelectorAll('.compass-dot')] : [];
+    const starStopVars = ['--star-ink', '--star-mineral', '--star-clay', '--star-water', '--star-paper'];
+    document.querySelectorAll('.compass-ticks').forEach(g => {
+      const ticks = [];
+      for (let deg = 0; deg < 360; deg += 6) {
+        const pillar = deg % 72 === 0;
+        const major = !pillar && deg % 18 === 0;
+        const len = pillar ? 13 : major ? 8.5 : 4.5;
+        const a = (deg - 90) * Math.PI / 180;
+        const cos = Math.cos(a), sin = Math.sin(a);
+        ticks.push(`<line x1="${(100 + cos * 92).toFixed(2)}" y1="${(100 + sin * 92).toFixed(2)}" x2="${(100 + cos * (92 - len)).toFixed(2)}" y2="${(100 + sin * (92 - len)).toFixed(2)}" stroke-width="${pillar ? 1.5 : major ? 1 : 0.75}" opacity="${pillar ? .9 : major ? .48 : .24}" stroke="currentColor"></line>`);
+      }
+      g.innerHTML = ticks.join('');
+    });
+    const updateStar = () => {
+      if (!starPin) return;
+      const rect = starPin.getBoundingClientRect();
+      const total = Math.max(1, starPin.offsetHeight - innerHeight);
+      const raw = Math.min(1, Math.max(0, -rect.top / total));
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const t = reduced ? Math.round(raw * 4) / 4 : raw;
+      starPin.style.setProperty('--star-t', t.toFixed(4));
+      const scaled = t * 4;
+      const segIndex = Math.min(3, Math.floor(scaled));
+      const segT = scaled - segIndex;
+      starPin.style.setProperty('--star-seg-a', `var(${starStopVars[segIndex]})`);
+      starPin.style.setProperty('--star-seg-b', `var(${starStopVars[segIndex + 1]})`);
+      starPin.style.setProperty('--star-seg-t', segT.toFixed(4));
+      starItems.forEach((li, i) => {
+        const hot = Math.max(0, 1 - Math.abs(scaled - i));
+        li.style.setProperty('--hot', hot.toFixed(3));
+        const current = Math.round(scaled) === i;
+        li.classList.toggle('is-current', current);
+        if (current) li.setAttribute('aria-current', 'true');
+        else li.removeAttribute('aria-current');
+      });
+      starDots.forEach((dot, i) => dot.classList.toggle('is-lit', scaled >= i - 0.04));
+      if (raw > 0.04 && raw < 0.98) {
+        // Flip when the Promise-to-Personality blend reaches the light paper stop.
+        const paper = scaled >= 3.2;
+        starPin.classList.toggle('is-paper', paper);
+        document.body.classList.toggle('on-light', paper);
+      }
+    };
+    addEventListener('scroll', updateStar, { passive: true });
+    updateStar();
+  </script>
+</body>
+</html>
