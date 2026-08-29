@@ -18,16 +18,16 @@
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #1b1512;
-      --paper: #f2ede7;
+      --ink: #0c0c0f;
+      --paper: #f2f1fc;
       --muted: #aaa7a0;
       --line: rgba(239, 237, 231, .18);
       --ease: cubic-bezier(.16, 1, .3, 1);
-      --fp-accent: #a47d45;
-      --fp-accent-deep: #836437;
+      --fp-accent: #5A5CF9;
+      --fp-accent-deep: #4547d4;
     }
     * { box-sizing: border-box; }
     html {
@@ -35,7 +35,7 @@
       scroll-behavior: smooth;
       background: var(--ink);
       color: var(--paper);
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     .display,
     .statement,
@@ -44,7 +44,7 @@
     .turn-scene .statement,
     h1,
     h2 {
-      font-family: "Jost", "Futura", "Century Gothic", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      font-family: "Bricolage Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     body { margin: 0; background: var(--ink); overflow-x: hidden; }
     button { font: inherit; }
@@ -120,7 +120,7 @@
     .scene.is-visible .reveal.delay { transition-delay: 120ms; }
 
     /* Portrait scene */
-    .portrait-scene no-photo { background: #070709; }
+    .portrait-scene { background: #070709; }
     .portrait-media {
       position: absolute;
       inset: 0;
@@ -146,11 +146,11 @@
     /* Focus Star: sticky left rail, scroll-scrubbed progression + color */
     .star-pin {
       --star-t: 0;
-      --star-ink: #1b1512;
-      --star-mineral: #1b1512;
-      --star-clay: #780000;
-      --star-water: #a47d45;
-      --star-paper: #f2ede7;
+      --star-ink: #070709;
+      --star-mineral: #141428;
+      --star-clay: #2a2868;
+      --star-water: #5A5CF9;
+      --star-paper: #f2f1fc;
       --star-seg-a: var(--star-ink);
       --star-seg-b: var(--star-mineral);
       --star-seg-t: 0;
@@ -610,9 +610,9 @@
       </div>
     </section>
 
-    <section class="scene black portrait-scene no-photo" data-chapter="intro">
+    <section class="scene black portrait-scene" data-chapter="intro">
       <div class="portrait-media" aria-hidden="true">
-        
+        <img src="../assets/nick-hero.jpg" alt="">
       </div>
       <div class="inner">
         <p class="kicker reveal">My read</p>
@@ -624,8 +624,8 @@
     <section class="scene black" data-chapter="strategy">
       <div class="inner">
         <p class="kicker reveal">The foundation</p>
-        <h2 class="statement reveal delay">Your whole brand comes down to five answers</h2>
-        <p class="body reveal delay">What it offers, who it serves, why it exists, what it promises, and how it feels. Five answers, one standard, ready to run.</p>
+        <h2 class="statement reveal delay">Five lines hold the position</h2>
+        <p class="body reveal delay">What it offers, who it serves, why it exists, what it promises, and how it feels.</p>
       </div>
     </section>
 
@@ -701,7 +701,7 @@
         <div class="assembly-copy">
           <p class="kicker reveal">The shape of the strategy</p>
           <h2 class="statement reveal delay">This is your Focus Star</h2>
-          <p class="body reveal delay">The five answers you just read make one shape. Each answer holds a point, and three words hold the center: <strong>Be unbreakable</strong>. <strong>Every point aims at them.</strong></p>
+          <p class="body reveal delay">The five lines make one shape. Each line holds a point, and three words hold the center: <strong>Be unbreakable</strong>.</p>
         </div>
         <svg class="assembly-star reveal delay" viewBox="0 0 520 520" role="img" aria-label="The Focus Star: product, people, purpose, promise, and personality as five points around Be unbreakable.">
           <g class="star-spokes" aria-hidden="true">
@@ -737,16 +737,16 @@
     <section class="scene black claim-scene" data-chapter="strategy">
       <div class="inner">
         <p class="kicker reveal">Your north star</p>
-        <h2 class="statement reveal delay">Nobody else can claim this</h2>
-        <p class="body reveal delay">Plenty of security reps sell the same hardware. This star names who the work is for, why it exists, <strong>what it refuses to trade</strong>, and how it feels to walk a property with you. That combination fits one person. When a post, a partner, or a plan feels off, hold it against the star. <strong>It points the same way every time.</strong></p>
+        <h2 class="statement reveal delay">This position is specific</h2>
+        <p class="body reveal delay">Plenty of security reps sell the same hardware. This position names who the work is for, why it exists, <strong>what it refuses to trade</strong>, and how it feels to walk a property with you.</p>
       </div>
     </section>
 
     <section class="scene light turn-scene" data-chapter="kit">
       <div class="inner">
         <p class="kicker reveal">What happens now</p>
-        <h2 class="statement reveal delay">A star is for navigating</h2>
-        <p class="body reveal delay">You never have to memorize this page. The star does its work when you steer by it: every profile, every post, every plan, held against the same five answers.</p>
+        <h2 class="statement reveal delay">The star is for navigating</h2>
+        <p class="body reveal delay">Use it when you write a profile, a post, or a plan. Hold that work against the same five lines.</p>
       </div>
     </section>
 
