@@ -8,7 +8,7 @@
 
   const ARCHETYPE_MIX = {
     "schema_version": "brand-therapy-contract/v2",
-    "media_base": "",
+    "media_base": "assets/archetype-chart/portraits/male",
     "archetypes": [
       {
         "id": "outlaw",
@@ -106,7 +106,8 @@
         "weight": 0,
         "role": "none"
       }
-    ]
+    ],
+    "media_variant": "with_background"
   };
 
   function announce(message, state) {
