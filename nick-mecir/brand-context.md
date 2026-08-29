@@ -17,7 +17,7 @@ Use this file as the working context for any AI tool that drafts, edits, or plan
 - In one line: Precise and polished, with a sharp rock-and-roll edge.
 - On site: calm authority, zero swagger. Walks the fence line, asks what happens after six, and names the two zones that matter. Genial and easy to talk to, and completely unwilling to sell a system that does not fit.
 - On the page: one threat, one answer. Plain language about a real risk, then the practical move. No fear-selling, no crime statistics, no wall of product names. The reader leaves knowing what to check tonight.
-- In the picture: polished at the perimeter. Black polo tucked, charcoal trousers, ID badge on the hip, boots on gravel. Shot at dusk against gates, fence lines, and loading yards. Cool light, graphite shadows, one steel blue accent.
+- In the picture: polished at the perimeter. Black polo tucked, charcoal trousers, ID badge on the hip, boots on gravel. Shot at dusk against gates, fence lines, and loading yards. Warm low light, espresso shadows, one bronze accent.
 
 ### Brand archetype mix
 
@@ -49,11 +49,11 @@ Positions are 0 to 100 from the left word to the right word. The further from 50
 
 ### How it looks
 
-- Shell: graphite, cool white type, cool white reading field. Steel blue used once per screen. Badge silver for small labels.
+- Shell: espresso black, bone white type, bone reading field. Badge bronze for numerals and small labels. Deep red once per page.
 - Photography: perimeters at dusk, gates and fence lines and loading yards, Nick on site in the black polo and badge.
-- Type: geometric display plus a clean neutral sans, without stencil or distressed lettering.
+- Type: serif display plus a clean humanist sans, without stencil or distressed lettering.
 - Leave out: crime-scene tape, red alert graphics, night-vision green, silhouetted burglars, stock cameras on white.
-- No logo is designed in this Sprint. The name is set in the geometric display face and the palette stays graphite, steel blue, cool white, and badge silver. Warm colors stay out so the work never reads as an emergency.
+- No logo is designed in this Sprint. The name is set in the serif display face and the palette stays espresso black, badge bronze, bone white, and one deep red. The red appears once per page and never flashes, so the work never reads as an emergency.
 
 ### Focus Star
 
@@ -153,7 +153,7 @@ Nick is the brand. Operators are hiring his judgment, his standard, and his avai
 
 - Headline: Commercial security consultant | Perimeter protection for yards, lots, and job sites | Inland Empire
 - Location: Upland, California
-- Banner: a graphite field with a low-contrast dusk fence line, the line First line of defense. Be unbreakable. in a geometric display face, audience above and Perimeter protection, Inland Empire below. 1584 by 396 px. No red alert graphics, no night-vision green, no silhouetted burglars.
+- Banner: an espresso black field with a low-contrast dusk fence line, the line First line of defense. Be unbreakable. in a serif display face, audience above and Perimeter protection, Inland Empire below. 1584 by 396 px. No red alert graphics, no night-vision green, no silhouetted burglars.
 - About: I protect commercial sites at the perimeter. Yards, contractor lots, equipment storage, and active job sites, where the risk starts the minute the gate closes at six. The work is proactive deterrence rather than a record of what happened. We set external zones around the areas that actually matter, and when someone crosses one, strobes fire, a live voice comes over the speaker, and the person walks back to the road. A camera can tell you what you lost. A perimeter keeps you from losing it. Over a decade across commercial fire, alarm, camera, and access control systems is why I can tell you where this belongs and where it does not. It is wrong for unpowered remote acreage and wrong for temporary setups, and I will say so and point you to someone better. I have referred jobs to competitors and I will do it again. You will have my number, and I am the one who picks up. If your gates close at six and you are still thinking about the yard at midnight, message me the word PERIMETER and we will walk your fence line.
 - Featured, in order:
   1. The First line of defense position post, with the PERIMETER close
@@ -316,4 +316,4 @@ Using the brand context above, write a short LinkedIn note Nick can send to a ge
 
 ### Banner direction
 
-Using the brand context above, write art direction for a 1584 by 396 LinkedIn banner: graphite field, a low-contrast dusk fence line held far back, cool white type, steel blue on a single thin rule, lower-left kept clear for the profile photo. Include the exact two lines. No red alert graphics, no night-vision green, no silhouetted intruders, and no logo design.
+Using the brand context above, write art direction for a 1584 by 396 LinkedIn banner: espresso black field, a low-contrast dusk fence line held far back, bone white type, badge bronze on a single thin rule, lower-left kept clear for the profile photo. Include the exact two lines. No red alert graphics, no night-vision green, no silhouetted intruders, and no logo design.
