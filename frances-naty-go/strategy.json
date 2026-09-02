@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "brand-therapy-sprint-demo.v1",
+  "status": "client-review",
+  "identity": {
+    "name": "Frances Naty Go",
+    "company": "Goldlilys Media",
+    "category": "Website systems for museums, cultural nonprofits, and mission-driven institutions",
+    "positioning": "Frances builds website systems for museums and cultural nonprofits that staff can keep current after launch.",
+    "distinctiveIdea": "The site is built around the institution's real publishing work, so staff can keep it current after launch.",
+    "personality": {
+      "line": "Calm, human, and sure with technical complexity.",
+      "archetypeMix": {
+        "creator": 34,
+        "sage": 26,
+        "caregiver": 20,
+        "magician": 12,
+        "friend": 8
+      },
+      "archetypeSource": "Calm, human, and sure with technical complexity, read against the strategy",
+      "sliders": [
+        {
+          "left": "Classic",
+          "position": 71,
+          "right": "Modern",
+          "defining": true
+        },
+        {
+          "left": "Mature",
+          "position": 41,
+          "right": "Youthful",
+          "defining": false
+        },
+        {
+          "left": "Playful",
+          "position": 45,
+          "right": "Serious",
+          "defining": false
+        },
+        {
+          "left": "Economical",
+          "position": 64,
+          "right": "Luxurious",
+          "defining": true
+        },
+        {
+          "left": "Geometric",
+          "position": 57,
+          "right": "Organic",
+          "defining": false
+        },
+        {
+          "left": "Calm",
+          "position": 42,
+          "right": "Energetic",
+          "defining": false
+        },
+        {
+          "left": "Rational",
+          "position": 56,
+          "right": "Emotional",
+          "defining": false
+        },
+        {
+          "left": "Mysterious",
+          "position": 55,
+          "right": "Transparent",
+          "defining": false
+        }
+      ],
+      "leanInto": [
+        "Modern",
+        "Luxurious",
+        "Organic",
+        "Calm",
+        "Transparent"
+      ],
+      "moveAwayFrom": [
+        "Black-slick",
+        "Template-same",
+        "Stoic-techy",
+        "Youthful-startup",
+        "Cheap",
+        "Mysterious"
+      ],
+      "voicePrincipleCount": 4,
+      "visualIdentity": "Deep teal, clear cool paper, a restrained gold accent, and burnt clay for conviction. A clean geometric sans keeps the system contemporary. Photography shows cared-for cultural rooms in daylight. This Sprint does not redesign the existing studio mark."
+    }
+  },
+  "focusStar": [
+    {
+      "line": "Product",
+      "decision": "A website their staff can keep alive for years"
+    },
+    {
+      "line": "People",
+      "decision": "Cultural institutions whose site must match the work",
+      "persona": "The new director whose site lags the collection"
+    },
+    {
+      "line": "Purpose",
+      "decision": "Give people hope and belonging through culture they can find"
+    },
+    {
+      "line": "Promise",
+      "decision": "Build from the inside out",
+      "brandDNA": "Connection"
+    },
+    {
+      "line": "Personality",
+      "decision": "Calm, human, and sure with technical complexity"
+    }
+  ],
+  "linkedin": {
+    "platform": "LinkedIn",
+    "headline": "Web Systems Architect for museums and cultural nonprofits | San Diego",
+    "location": "San Diego, California",
+    "banner": "Website systems museum teams can keep current.",
+    "bannerCanvas": "1584 x 396 px",
+    "featuredCount": 3
+  },
+  "growthOpportunities": {
+    "headline": "Five ways to grow from here",
+    "levers": [
+      "Offer development",
+      "Offer development",
+      "Timed outreach",
+      "Category authority",
+      "Content system"
+    ],
+    "opportunityCount": 5,
+    "contentTerritories": [
+      "The living site",
+      "Inside out",
+      "The honest no"
+    ]
+  },
+  "aiPack": {
+    "file": "brand-context.md",
+    "requiredSections": [
+      "Identity",
+      "Instructions",
+      "Context",
+      "Examples",
+      "Factual boundaries",
+      "Starter prompts"
+    ],
+    "starterPromptCount": 6
+  },
+  "sections": [
+    "strategy",
+    "identity",
+    "profiles",
+    "ai",
+    "growth"
+  ]
+}
