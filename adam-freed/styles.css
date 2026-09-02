@@ -280,6 +280,7 @@ main {
   position: relative;
   z-index: 2;
   min-width: 0;
+  container-type: inline-size;
 }
 
 .eyebrow,
@@ -298,12 +299,14 @@ main {
 }
 
 .hero h1 {
-  max-width: min(16ch, 100%);
+  max-width: 100%;
   margin: 0;
-  font-size: clamp(54px, 7.4vw, 116px);
+  font-size: clamp(44px, 10cqw, 116px);
   font-weight: 750;
   letter-spacing: -0.075em;
   line-height: 0.86;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .hero h1 span {
@@ -2072,7 +2075,8 @@ footer p {
   }
 
   .hero h1 {
-    font-size: clamp(48px, 14.8vw, 65px);
+    max-width: 100%;
+    font-size: clamp(42px, 13cqw, 65px);
   }
 
   .hero-lead {
