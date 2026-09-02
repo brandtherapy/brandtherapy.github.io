@@ -1189,7 +1189,7 @@ function syncEventId(prefix,seq){
   return prefix+'-'+Date.now().toString(36)+'-'+seq.toString(36)+'-'+Math.random().toString(36).slice(2,8);
 }
 function sessionSnapshotBody(reason){
-  const messageReasons=new Set(['session_started','taste_resume_prompt','user_message','assistant_response','resume_recovery','coach_feedback']);
+  const messageReasons=new Set(['session_started','taste_resume_prompt','user_message','assistant_response','resume_recovery','coach_feedback','email_optin_ask','email_optin_answer']);
   const recentMessages=(session.messages||[]).slice(-2);
   return {
     sid:ensureSid(),
@@ -1966,10 +1966,79 @@ function shouldAttachCloseCta(star,priorStar){
 }
 function refreshCloseCtaCards(){
   if(!session.closeCtaAttached)return;
-  document.querySelectorAll('.msg.assistant.has-cta .msg-cta').forEach(actions=>{
+  document.querySelectorAll('.msg.assistant.has-cta:not(.has-email-optin) .msg-cta').forEach(actions=>{
     actions.innerHTML='';
     buildCloseCtaActions(actions);
   });
+}
+
+const EMAIL_OPTIN_ASK='Your draft is with Florian. You\'ll hear from him directly.\n\nHey, by the way, would you like a few emails from Florian about Brand Therapy sometimes?';
+const EMAIL_OPTIN_YES='Done. Florian will send occasional notes on this kind of work. You can leave anytime.';
+const EMAIL_OPTIN_NO='All good.';
+function chatMessagesForModel(messages){
+  return (messages||[]).filter(m=>!(m&&(m.cta==='email-optin'||m.cta==='email-optin-ack')));
+}
+function appendEmailOptInCard(content){
+  const d=appendMsg('assistant',content);
+  d.classList.add('has-cta','has-email-optin');
+  if(isReadOnly()||(session.emailOptIn&&session.emailOptIn.choice))return d;
+  const actions=document.createElement('div');
+  actions.className='msg-cta';
+  const yes=document.createElement('button');
+  yes.type='button';
+  yes.textContent='Yes, send them';
+  yes.addEventListener('click',()=>answerEmailOptIn('yes'));
+  const no=document.createElement('button');
+  no.type='button';
+  no.className='ghost';
+  no.textContent='No thanks';
+  no.addEventListener('click',()=>answerEmailOptIn('no'));
+  actions.appendChild(yes);
+  actions.appendChild(no);
+  d.appendChild(actions);
+  chatScroll.scrollTop=chatScroll.scrollHeight;
+  return d;
+}
+function offerEmailFollowup(){
+  if(isReadOnly()||session.demo||!session.submitted)return;
+  if(session.emailOptIn&&session.emailOptIn.choice)return;
+  if((session.messages||[]).some(m=>m&&m.cta==='email-optin'))return;
+  session.messages.push({role:'assistant',content:EMAIL_OPTIN_ASK,cta:'email-optin',at:new Date().toISOString()});
+  appendEmailOptInCard(EMAIL_OPTIN_ASK);
+  saveSession('email_optin_ask',true);
+}
+async function answerEmailOptIn(choice){
+  if(isReadOnly()||session.demo||!session.submitted)return;
+  if(session.emailOptIn&&session.emailOptIn.choice)return;
+  const normalized=choice==='yes'?'yes':'no';
+  const buttons=document.querySelectorAll('.msg.has-email-optin .msg-cta button');
+  buttons.forEach(b=>{b.disabled=true;});
+  try{
+    await ensureSessionCapability(false);
+    const res=await fetch(API_BASE+'/api/email-optin',{
+      method:'POST',
+      headers:writeHeaders(),
+      body:JSON.stringify({sid:ensureSid(),choice:normalized,email:(session.profile||{}).email||''})
+    });
+    if(res.status===401){
+      await ensureSessionCapability(true);
+      const retry=await fetch(API_BASE+'/api/email-optin',{
+        method:'POST',
+        headers:writeHeaders(),
+        body:JSON.stringify({sid:ensureSid(),choice:normalized,email:(session.profile||{}).email||''})
+      });
+      if(!retry.ok)throw new Error('email opt-in '+retry.status);
+    }else if(!res.ok)throw new Error('email opt-in '+res.status);
+    session.emailOptIn={choice:normalized,at:new Date().toISOString(),source:'workshop-post-submit'};
+    const ack=normalized==='yes'?EMAIL_OPTIN_YES:EMAIL_OPTIN_NO;
+    session.messages.push({role:'assistant',content:ack,cta:'email-optin-ack',at:new Date().toISOString()});
+    document.querySelectorAll('.msg.has-email-optin .msg-cta').forEach(el=>el.remove());
+    appendMsg('assistant',ack);
+    saveSession('email_optin_answer',true);
+  }catch(e){
+    buttons.forEach(b=>{b.disabled=false;});
+    toast('Could not save that choice just now. Try once more.');
+  }
 }
 
 function renderReviewBanner(){
@@ -2014,7 +2083,7 @@ async function callChatAPI(messages,star,retried){
   const res=await fetch(API_BASE+'/api/chat',{
     method:'POST',
     headers:writeHeaders(),
-    body:JSON.stringify({messages,star,sid:ensureSid(),
+    body:JSON.stringify({messages:chatMessagesForModel(messages),star,sid:ensureSid(),
       name:(session.profile||{}).name||'',email:(session.profile||{}).email||'',
       profile:session.profile||{}})
   });
@@ -2183,6 +2252,8 @@ function startRealSession(resumed){
     chatScroll.innerHTML='';
     session.messages.forEach(m=>{
       if(m.content==='__START__')return;
+      if(m.role==='assistant'&&m.cta==='email-optin'){appendEmailOptInCard(m.content);return;}
+      if(m.role==='assistant'&&m.cta==='email-optin-ack'){appendMsg('assistant',m.content);return;}
       if(m.role==='assistant'&&(m.cta==='workshops'||m.cta==='close')){session.closeCtaAttached=true;appendCloseCtaCard(m.content);chatInput.placeholder='Ask a question, or leave a note for Florian...';} 
       else appendMsg(m.role,m.content);
     });
@@ -2194,6 +2265,7 @@ function startRealSession(resumed){
     addTasteResumePrompt();
     addWorkshopResumePrompt();
     applyCoachFeedback();
+    offerEmailFollowup();
     // Re-offer chips only when the question they belong to is still the last
     // thing on screen; resume prompts above push newer messages past it.
     const last=session.messages[session.messages.length-1];
@@ -2969,6 +3041,7 @@ function closeConfirmation(){
   setPageInert(false);
   if(submitReturnFocus&&submitReturnFocus.focus)submitReturnFocus.focus({preventScroll:true});
   confirmOverlay.classList.remove('show');
+  offerEmailFollowup();
 }
 
 document.getElementById('btn-open-submit').addEventListener('click',e=>{
@@ -3040,6 +3113,7 @@ document.getElementById('btn-do-submit').addEventListener('click',async ()=>{
     sendBtn.disabled=false;
     chatInput.placeholder='Ask a question, or leave a note for Florian...';
     showConfirmation();
+    offerEmailFollowup();
     btn.textContent='Sent';
   }catch(e){
     errEl.textContent=(e&&e.message&&!String(e.message).startsWith('submit failed'))?e.message:'Could not send right now. Check your connection and try again.';
