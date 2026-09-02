@@ -1,0 +1,158 @@
+{
+  "schemaVersion": "brand-therapy-sprint-demo.v1",
+  "status": "client-review",
+  "identity": {
+    "name": "KC Santana",
+    "company": null,
+    "category": "Discipline-first women's health and fitness mentor, thought leader, and event host",
+    "positioning": "KC Santana is the mentor for high-earning women who have not built discipline, and she proves the point by living the standard herself rather than selling a program.",
+    "distinctiveIdea": "No excuses: a standard that holds because the woman setting it refuses every shortcut on offer.",
+    "personality": {
+      "line": "Disciplined badassness in a Southern California voice.",
+      "archetypeMix": {
+        "hero": 35,
+        "ruler": 35,
+        "magician": 20,
+        "outlaw": 10
+      },
+      "archetypeSource": "Disciplined badassness, read against the strategy",
+      "sliders": [
+        {
+          "left": "Classic",
+          "position": 56,
+          "right": "Modern",
+          "defining": false
+        },
+        {
+          "left": "Mature",
+          "position": 70,
+          "right": "Youthful",
+          "defining": true
+        },
+        {
+          "left": "Playful",
+          "position": 84,
+          "right": "Serious",
+          "defining": true
+        },
+        {
+          "left": "Economical",
+          "position": 66,
+          "right": "Luxurious",
+          "defining": false
+        },
+        {
+          "left": "Geometric",
+          "position": 18,
+          "right": "Organic",
+          "defining": true
+        },
+        {
+          "left": "Calm",
+          "position": 84,
+          "right": "Energetic",
+          "defining": true
+        },
+        {
+          "left": "Rational",
+          "position": 8,
+          "right": "Emotional",
+          "defining": true
+        },
+        {
+          "left": "Mysterious",
+          "position": 90,
+          "right": "Transparent",
+          "defining": true
+        }
+      ],
+      "leanInto": [
+        "Serious",
+        "Literal",
+        "Geometric",
+        "Rational",
+        "Transparent",
+        "Energetic"
+      ],
+      "moveAwayFrom": [
+        "Cute",
+        "Mystical",
+        "Soft-wellness",
+        "Pastel",
+        "Sentimental",
+        "Guru",
+        "Shortcut",
+        "Stoner"
+      ],
+      "voicePrincipleCount": 4,
+      "visualIdentity": "Trail black, sun bone daylight, performance green, and one heat clay for effort. Geometric sans display with a humanist sans for reading. Photography of training, recovery, and the room in hard daylight. This Sprint does not design a logo"
+    }
+  },
+  "focusStar": [
+    {
+      "line": "Product",
+      "decision": "Thought leadership with proof"
+    },
+    {
+      "line": "People",
+      "decision": "High-earning women who need the standard",
+      "persona": "Alina, 35, Southern California"
+    },
+    {
+      "line": "Purpose",
+      "decision": "Women's health through discipline"
+    },
+    {
+      "line": "Promise",
+      "decision": "No excuses",
+      "brandDNA": "No excuses"
+    },
+    {
+      "line": "Personality",
+      "decision": "Disciplined badassness"
+    }
+  ],
+  "linkedin": {
+    "platform": "LinkedIn",
+    "headline": "Discipline-first women's health | Events, mastermind dinners, and speaking | Southern California",
+    "location": "Southern California",
+    "banner": "Discipline-first women's health for high-earning women.",
+    "bannerCanvas": "1584 x 396 px",
+    "featuredCount": 3
+  },
+  "growthOpportunities": {
+    "headline": "Five ways to grow from here",
+    "levers": [
+      "Offer development",
+      "Category authority",
+      "Owned audience",
+      "Referral network",
+      "Content system"
+    ],
+    "opportunityCount": 5,
+    "contentTerritories": [
+      "The daily standard",
+      "The stack",
+      "The refusal"
+    ]
+  },
+  "aiPack": {
+    "file": "brand-context.md",
+    "requiredSections": [
+      "Identity",
+      "Instructions",
+      "Context",
+      "Examples",
+      "Factual boundaries",
+      "Starter prompts"
+    ],
+    "starterPromptCount": 6
+  },
+  "sections": [
+    "strategy",
+    "identity",
+    "profiles",
+    "ai",
+    "growth"
+  ]
+}
