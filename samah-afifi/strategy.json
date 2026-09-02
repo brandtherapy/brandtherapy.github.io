@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "brand-therapy-sprint-demo.v1",
+  "status": "client-review",
+  "identity": {
+    "name": "Samah Afifi",
+    "company": "Samah Afifi",
+    "category": "Product and leadership advisor, fractional CTO",
+    "positioning": "Samah helps early-stage and funded startups turn product complexity into aligned execution, working where product strategy, leadership clarity, and team performance meet.",
+    "distinctiveIdea": "We only win if we all win. Alignment is the competitive edge rather than a culture initiative applied after the work is done.",
+    "personality": {
+      "line": "The coach who believes in you and demands your best.",
+      "archetypeMix": {
+        "caregiver": 40,
+        "hero": 35,
+        "creator": 25
+      },
+      "archetypeSource": "Archetype mix read from the strategy: Caregiver, Hero, and Creator.",
+      "sliders": [
+        {
+          "left": "Classic",
+          "position": 85,
+          "right": "Modern",
+          "defining": true
+        },
+        {
+          "left": "Mature",
+          "position": 65,
+          "right": "Youthful",
+          "defining": false
+        },
+        {
+          "left": "Feminine",
+          "position": 45,
+          "right": "Masculine",
+          "defining": false
+        },
+        {
+          "left": "Playful",
+          "position": 65,
+          "right": "Serious",
+          "defining": true
+        },
+        {
+          "left": "Economical",
+          "position": 55,
+          "right": "Luxurious",
+          "defining": false
+        },
+        {
+          "left": "Abstract",
+          "position": 60,
+          "right": "Literal",
+          "defining": true
+        },
+        {
+          "left": "Geometric",
+          "position": 55,
+          "right": "Organic",
+          "defining": true
+        },
+        {
+          "left": "Calm",
+          "position": 72,
+          "right": "Energetic",
+          "defining": true
+        },
+        {
+          "left": "Rational",
+          "position": 42,
+          "right": "Emotional",
+          "defining": false
+        },
+        {
+          "left": "Mysterious",
+          "position": 80,
+          "right": "Transparent",
+          "defining": true
+        },
+        {
+          "left": "Quiet",
+          "position": 65,
+          "right": "Talkative",
+          "defining": true
+        }
+      ],
+      "leanInto": [
+        "Modern",
+        "Energetic",
+        "Transparent",
+        "Geometric",
+        "Talkative",
+        "Literal",
+        "Serious"
+      ],
+      "moveAwayFrom": [
+        "Luxurious",
+        "Playful",
+        "Mysterious",
+        "Soft",
+        "Corporate-cold",
+        "Hustle-driven",
+        "Abstract-innovation"
+      ],
+      "voicePrincipleCount": 4,
+      "visualIdentity": "Photo direction only. The existing colors, type, and signature stay exactly as they are."
+    }
+  },
+  "focusStar": [
+    {
+      "line": "Product",
+      "decision": "Product and team alignment as performance engine"
+    },
+    {
+      "line": "People",
+      "decision": "Early-stage founders and funded startups building with intention",
+      "persona": "The founder whose team has stopped moving together"
+    },
+    {
+      "line": "Purpose",
+      "decision": "Role clarity so people can do meaningful work"
+    },
+    {
+      "line": "Promise",
+      "decision": "We Only Win If We All Win: alignment as competitive advantage",
+      "brandDNA": "All Win"
+    },
+    {
+      "line": "Personality",
+      "decision": "The coach who believes in you and demands your best"
+    }
+  ],
+  "linkedin": {
+    "platform": "LinkedIn",
+    "headline": "Product and leadership advisor, fractional CTO | Team alignment for early-stage and funded startups | We only win if we all win",
+    "location": "",
+    "banner": "Product and leadership alignment for early-stage teams.",
+    "bannerCanvas": "1584 x 396 px",
+    "featuredCount": 3
+  },
+  "thirtyDayPlan": {
+    "objective": "Start real conversations with founders whose teams have stopped moving together, and get in front of the audiences who influence them: LinkedIn, podcasts, and speaking stages.",
+    "primarySignal": "Real conversations started with founders at an alignment inflection point, from LinkedIn, referrals, or a speaking or podcast appearance.",
+    "priorityMoves": [
+      "Rebuild the LinkedIn profile around We Only Win If We All Win and set the three featured items",
+      "Publish the position post and the five alignment questions as a document",
+      "Pitch one podcast or conference slot using the short bio and the core quote"
+    ],
+    "contentTerritories": [
+      "Alignment as Performance",
+      "The System, Not the Star",
+      "Role Clarity"
+    ],
+    "recommendationTypes": [
+      "Campaign",
+      "Speaking",
+      "Collaboration",
+      "Content",
+      "Outreach"
+    ]
+  },
+  "aiPack": {
+    "file": "brand-context.md",
+    "requiredSections": [
+      "Identity",
+      "Instructions",
+      "Context",
+      "Examples",
+      "Factual boundaries",
+      "Starter prompts"
+    ],
+    "starterPromptCount": 6
+  },
+  "sections": [
+    "strategy",
+    "identity",
+    "profiles",
+    "plan",
+    "ai"
+  ]
+}
