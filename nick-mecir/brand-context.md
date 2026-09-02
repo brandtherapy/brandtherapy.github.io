@@ -51,7 +51,7 @@ Positions are 0 to 100 from the left word to the right word. The further from 50
 
 - Shell: espresso black, bone white type, bone reading field. Badge bronze for numerals and small labels. Deep red for emphasis only.
 - Photography: perimeters at dusk, gates and fence lines and loading yards, Nick on site in the black polo and badge.
-- Type: serif display plus a clean humanist sans, without stencil or distressed lettering.
+- Type: serif display plus a clean humanist sans, without stencil or distressed lettering. Baskerville for headlines, Seravek for reading type.
 - Leave out: crime-scene tape, red alert graphics, night-vision green, silhouetted burglars, stock cameras on white.
 - No logo is designed in this Sprint. The name is set in the serif display face and the palette stays espresso black, badge bronze, bone white, and one deep red. The red stays an emphasis color and never flashes, so the work never reads as an emergency.
 
@@ -91,7 +91,7 @@ Positions are 0 to 100 from the left word to the right word. The further from 50
 - Boundary: Nick refers work out regularly, including to competitors, when someone else is the better fit. He will not recommend a system that does not suit the site.
 - Range: Over a decade across commercial fire, burglary alarm, CCTV, access control, and video verified alarm systems. Perimeter deterrence for permanent sites is the current focus.
 - Place: Upland, California, working across the Inland Empire and Southern California. Interface Systems is the platform behind the monitoring.
-- LinkedIn: https://www.linkedin.com/in/nmecir/ is the current profile to rebuild. Instagram is out of this Sprint.
+- LinkedIn: https://www.linkedin.com/in/nmecir/ is the current profile to rebuild. LinkedIn is out of this Sprint.
 
 ## Instructions
 
@@ -152,8 +152,7 @@ Nick is the brand. Operators are hiring his judgment, his standard, and his avai
 ### LinkedIn
 
 - Headline: Commercial security consultant | Perimeter protection for yards, lots, and job sites | Inland Empire
-- Location: Upland, California
-- Banner: an espresso black field with a low-contrast dusk fence line, bone white serif type reading Run your business / with complete peace of mind, Commercial security consultant | Inland Empire below. No audience line. 1584 by 396 px. No red alert graphics, no night-vision green, no silhouetted burglars.
+- Location: Upland, California- Banner: Generate one complete LinkedIn banner image containing the commercial-yard scene, the exact positioning line Perimeter protection for yards, lots, and job sites., Nick Mecir, and Commercial Security Consultant together. Keep all client text inside 80 px left and right and 56 px top and bottom on a 1584 by 396 canvas, and outside a 203 px mobile-stress exclusion radius centered at x 180, y 396. No faces, people, bodies, silhouettes, circles, orbit lines, arcs, red alert, night-vision green, burglar, isolated stock camera, slogan, hook, or later text repair.
 - About: I protect commercial sites at the perimeter. Yards, contractor lots, equipment storage, and active job sites, where the risk starts the minute the gate closes at six. The work is proactive deterrence rather than a record of what happened. We set external zones around the areas that actually matter, and when someone crosses one, strobes fire, a live voice comes over the speaker, and the person walks back to the road. A camera can tell you what you lost, and a perimeter keeps you from losing it. Over a decade across commercial fire, alarm, camera, and access control systems is why I can tell you where this belongs and where it does not. It is wrong for unpowered remote acreage and wrong for temporary setups, and I will say so and point you to someone better. I have referred jobs to competitors and I will do it again. You will have my number, and I am the one who picks up. If your gates close at six and you are still thinking about the yard at midnight, message me the word PERIMETER and we will walk your fence line.
 - Featured, in order:
   1. The First line of defense position post, with the PERIMETER close
@@ -290,7 +289,7 @@ Why it works: same urgency, no invented statistic. The next step is a dusk walk 
 - Nick's music project informs the edge in the styling only. Keep it out of the security copy unless he supplies the exact line.
 - Any claim tied to licensing, monitoring, or insurance gets checked with Nick's licensing and platform contacts before it goes out in writing.
 - Logo design is out of this Sprint. Set the name in the geometric display face. Do not invent a mark.
-- Instagram is out of this Sprint. Do not draft an Instagram bio, grid, or reel plan.
+- LinkedIn is out of this Sprint. Do not draft an LinkedIn bio, grid, or reel plan.
 
 ## Starter prompts
 
