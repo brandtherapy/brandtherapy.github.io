@@ -1,0 +1,181 @@
+{
+  "schemaVersion": "brand-therapy-sprint-demo.v1",
+  "status": "client-review",
+  "identity": {
+    "name": "Chris Boudreau",
+    "company": "Chris Boudreau",
+    "category": "Relationship-led business development and strategic partnerships, with cannabis as a key domain",
+    "positioning": "Chris helps progressive operators pursue growth by combining relationship building, market foresight, business planning, and execution, with cannabis as a domain where his network runs deepest.",
+    "distinctiveIdea": "Move the right relationships forward. The right introduction, made at the right time and followed through, is worth more than a hundred casual ones.",
+    "personality": {
+      "line": "Steady, caring, and analytical. Reliable, organized, and decisive when a choice has to be made.",
+      "archetypeMix": {
+        "hero": 40,
+        "caregiver": 26,
+        "sage": 22,
+        "friend": 12
+      },
+      "archetypeSource": "Personality rules-in words (caring, trustworthy, reliable, organized, analytical, selfless) read against the Steady Hero personality line.",
+      "sliders": [
+        {
+          "left": "Classic",
+          "position": 55,
+          "right": "Modern",
+          "defining": false
+        },
+        {
+          "left": "Mature",
+          "position": 30,
+          "right": "Youthful",
+          "defining": true
+        },
+        {
+          "left": "Feminine",
+          "position": 50,
+          "right": "Masculine",
+          "defining": false
+        },
+        {
+          "left": "Playful",
+          "position": 72,
+          "right": "Serious",
+          "defining": true
+        },
+        {
+          "left": "Economical",
+          "position": 48,
+          "right": "Luxurious",
+          "defining": false
+        },
+        {
+          "left": "Abstract",
+          "position": 68,
+          "right": "Literal",
+          "defining": true
+        },
+        {
+          "left": "Geometric",
+          "position": 45,
+          "right": "Organic",
+          "defining": false
+        },
+        {
+          "left": "Calm",
+          "position": 52,
+          "right": "Energetic",
+          "defining": false
+        },
+        {
+          "left": "Rational",
+          "position": 55,
+          "right": "Emotional",
+          "defining": false
+        },
+        {
+          "left": "Mysterious",
+          "position": 75,
+          "right": "Transparent",
+          "defining": true
+        },
+        {
+          "left": "Quiet",
+          "position": 55,
+          "right": "Talkative",
+          "defining": false
+        }
+      ],
+      "leanInto": [
+        "Transparent",
+        "Serious",
+        "Literal",
+        "Mature",
+        "Grounded",
+        "Reliable",
+        "Practical"
+      ],
+      "moveAwayFrom": [
+        "Youthful",
+        "Playful",
+        "Abstract",
+        "Mysterious",
+        "Hype",
+        "Flashy",
+        "Loud"
+      ],
+      "voicePrincipleCount": 4,
+      "visualIdentity": "photo direction only; colors, type, and a logo are not part of this Sprint"
+    }
+  },
+  "focusStar": [
+    {
+      "line": "Product",
+      "decision": "Relationship-Led Growth and Market Development"
+    },
+    {
+      "line": "People",
+      "decision": "Progressive Operators Seeking Smarter Growth",
+      "persona": "The Progressive Growth Operator"
+    },
+    {
+      "line": "Purpose",
+      "decision": "Leave Business Better Than You Found It"
+    },
+    {
+      "line": "Promise",
+      "decision": "Move the Right Relationships Forward",
+      "brandDNA": "Steadfast"
+    },
+    {
+      "line": "Personality",
+      "decision": "Steady Hero"
+    }
+  ],
+  "linkedin": {
+    "platform": "LinkedIn",
+    "headline": "Relationship-led business development and strategic partnerships for progressive operators",
+    "location": "San Diego, California",
+    "banner": "Relationship-led business development for progressive operators.",
+    "bannerCanvas": "1584 x 396 px",
+    "featuredCount": 3
+  },
+  "thirtyDayPlan": {
+    "objective": "Confirm the offer in his own words, rebuild the LinkedIn presence around it, and start ten real conversations with operators who fit the audience.",
+    "primarySignal": "Ten first conversations, in thirty days",
+    "priorityMoves": [
+      "Confirm the offer in his own words and write it down in one paragraph",
+      "Rebuild the LinkedIn headline, banner, about section, and featured items around Move the Right Relationships Forward",
+      "Send ten warm messages to operators who fit the audience or know someone who does"
+    ],
+    "contentTerritories": [
+      "Move the Right Relationships Forward",
+      "Reading the Market Before the Room",
+      "Steady Under Pressure"
+    ],
+    "recommendationTypes": [
+      "Campaign",
+      "PR",
+      "Collaboration",
+      "Pro bono",
+      "Email and outreach"
+    ]
+  },
+  "aiPack": {
+    "file": "brand-context.md",
+    "requiredSections": [
+      "Identity",
+      "Instructions",
+      "Context",
+      "Examples",
+      "Factual boundaries",
+      "Starter prompts"
+    ],
+    "starterPromptCount": 6
+  },
+  "sections": [
+    "strategy",
+    "identity",
+    "profiles",
+    "plan",
+    "ai"
+  ]
+}
