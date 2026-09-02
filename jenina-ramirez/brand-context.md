@@ -1,6 +1,6 @@
 # Jenina Ramirez Brand Context
 
-Use this file as the working context for any AI tool that drafts, edits, or plans content for Jenina Ramirez. It carries the strategy, the identity, the voice, the factual boundaries, and the Instagram and LinkedIn profile decisions from the Brand Therapy Sprint. Paste the whole file before the first prompt of a session.
+Use this file as the working context for any AI tool that drafts, edits, or plans content for Jenina Ramirez. It carries the strategy, the identity, the voice, the factual boundaries, and the LinkedIn profile decisions from the Brand Therapy Sprint. Paste the whole file before the first prompt of a session.
 
 ## Identity
 
@@ -149,31 +149,13 @@ Do not expand this list. If a draft needs a service that is not here, flag it in
 
 Jenina is the brand. She works with a team and carries licenses and agency affiliations that belong in her bio and disclosures. Content speaks as Jenina, one person, sitting with one family. Team, agency, and carrier names appear only where compliance or credit requires them.
 
-### Instagram
-
-- Handle: @jenina.ramirez
-- Name field: Jenina Ramirez | Financial Security for Moms
-- Bio:
-  Put yourself first.
-  Financial security for Latina single moms
-  Life insurance, retirement, living trusts
-  Inland Empire | English y Español
-- Link: the booking page for a first conversation
-- Highlights, in order: Start here, Moms first, Retirement, Living trusts, Workshops
-- Pinned posts, in order:
-  1. Point of view: what "Put yourself first" means for a mom running the household alone
-  2. Why Jenina started this work and what clients can expect in a first conversation
-  3. Five questions every mom running the house alone should be able to answer
-- Call to action: "Message me the word FIRST and I will tell you what to bring."
-
 ### LinkedIn
 
 - Headline: Financial security for Latina single moms | Life insurance with living benefits, retirement plans, living trusts | Inland Empire
-- Location: Inland Empire, California
-- Banner: Create a 1584 by 396 px burgundy LinkedIn banner. Set "Put yourself first. Peace of mind follows." in the cream serif, with the audience line above and the service area below. Keep the lower-left quarter empty for Jenina's profile image. Do not add a stock family photo.
+- Location: Inland Empire, California- Banner: Generate one complete LinkedIn banner image containing the family-planning scene, the exact positioning line Financial security for Latina single moms., Jenina Ramirez, and Family Financial Security Advisor together. Keep all client text inside 80 px left and right and 56 px top and bottom on a 1584 by 396 canvas, and outside a 203 px mobile-stress exclusion radius centered at x 180, y 396. No faces, people, bodies, silhouettes, circles, orbit lines, arcs, stock family image, countdown, warning badge, urgency graphic, slogan, hook, or later text repair.
 - About: I help Latina single moms who run the household alone build financial security and peace of mind for the family, starting with the mom herself. I meet every client in her home or a coffee shop, in English or Spanish, and I stay until the plan is clear. The first conversation explains what the existing coverage does and which questions still need an answer. I also host community workshops across the Inland Empire: first-time homebuyer nights, policy reviews for teachers, and women's finance conversations. If nobody has ever sat with you on the money, message me the word FIRST.
 - Featured, in order:
-  1. The "Put yourself first" position post, in the same words as Instagram
+  1. The "Put yourself first" position post, in the same words as LinkedIn
   2. The five questions checklist as a document
   3. The next workshop: date, place, topic, how to bring someone
 
@@ -307,9 +289,9 @@ Why it works: the question asks about a practical task and gives a clear reply k
 
 ## Starter prompts
 
-### Instagram post
+### LinkedIn post
 
-Using the brand context above, write one Instagram post in Jenina's voice for the Put Yourself First territory. Audience: a Latina single mom who runs the household on one income. Open with her situation, give one plain-language idea, and close with "Message me the word FIRST." Under 120 words, no emoji in the body, at most three hashtags at the end.
+Using the brand context above, write one LinkedIn post in Jenina's voice for the Put Yourself First territory. Audience: a Latina single mom who runs the household on one income. Open with her situation, give one plain-language idea, and close with "Message me the word FIRST." Under 120 words, no emoji in the body, at most three hashtags at the end.
 
 ### Growth opportunity brief
 

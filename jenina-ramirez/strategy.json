@@ -115,31 +115,11 @@
       "decision": "Approachable and caring, with a classic feminine look and restrained presentation"
     }
   ],
-  "profile": {
-    "platform": "Instagram",
-    "handle": "@jenina.ramirez",
-    "nameField": "Jenina Ramirez | Financial Security for Moms",
-    "bioLines": [
-      "Put yourself first.",
-      "Financial security for Latina single moms",
-      "Life insurance, retirement, living trusts",
-      "Inland Empire | English y Español"
-    ],
-    "highlights": [
-      "Start here",
-      "Moms first",
-      "Retirement",
-      "Living trusts",
-      "Workshops"
-    ],
-    "pinnedCount": 3,
-    "callToAction": "Message me the word FIRST and I will tell you what to bring."
-  },
   "linkedin": {
     "platform": "LinkedIn",
     "headline": "Financial security for Latina single moms | Life insurance with living benefits, retirement plans, living trusts | Inland Empire",
     "location": "Inland Empire, California",
-    "banner": "Put yourself first. Peace of mind follows.",
+    "banner": "Financial security for Latina single moms.",
     "bannerCanvas": "1584 x 396 px",
     "featuredCount": 3
   },
@@ -174,8 +154,7 @@
   "sections": [
     "strategy",
     "identity",
-    "instagram",
-    "linkedin",
+    "profiles",
     "ai",
     "growth"
   ]
