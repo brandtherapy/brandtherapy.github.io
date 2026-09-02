@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "brand-therapy-sprint-demo.v1",
+  "status": "client-review",
+  "identity": {
+    "name": "Michael Couper",
+    "company": "Michael Couper",
+    "category": "Cross-disciplinary judgment and public thinking",
+    "positioning": "Michael Couper helps independent thinkers see the whole picture before making a consequential choice, by connecting evidence, systems, art, and civic reality that a single discipline would miss.",
+    "distinctiveIdea": "Follow the question. Inquiry only matters when it changes the decision at the end of it.",
+    "personality": {
+      "line": "A serious, playful polymath: rational, artistic, independent, with a mystical edge",
+      "archetypeMix": {
+        "sage": 42,
+        "creator": 18,
+        "innocent": 8,
+        "explorer": 6,
+        "hero": 5,
+        "friend": 5,
+        "ruler": 5,
+        "outlaw": 4,
+        "magician": 4,
+        "caregiver": 3
+      },
+      "archetypeSource": "Thirteen brand words (analytical, artistic, calm, curious, honest, independent, insightful, knowledgeable, mature, original, serious, thoughtful, trustworthy) read against the strategy.",
+      "sliders": [
+        {
+          "left": "Classic",
+          "position": 74,
+          "right": "Modern",
+          "defining": false
+        },
+        {
+          "left": "Mature",
+          "position": 38,
+          "right": "Youthful",
+          "defining": false
+        },
+        {
+          "left": "Feminine",
+          "position": 86,
+          "right": "Masculine",
+          "defining": true
+        },
+        {
+          "left": "Playful",
+          "position": 58,
+          "right": "Serious",
+          "defining": false
+        },
+        {
+          "left": "Economical",
+          "position": 86,
+          "right": "Luxurious",
+          "defining": true
+        },
+        {
+          "left": "Abstract",
+          "position": 84,
+          "right": "Literal",
+          "defining": true
+        },
+        {
+          "left": "Geometric",
+          "position": 12,
+          "right": "Organic",
+          "defining": true
+        },
+        {
+          "left": "Calm",
+          "position": 40,
+          "right": "Energetic",
+          "defining": false
+        },
+        {
+          "left": "Rational",
+          "position": 0,
+          "right": "Emotional",
+          "defining": true
+        },
+        {
+          "left": "Mysterious",
+          "position": 26,
+          "right": "Transparent",
+          "defining": false
+        },
+        {
+          "left": "Quiet",
+          "position": 12,
+          "right": "Talkative",
+          "defining": true
+        }
+      ],
+      "leanInto": [
+        "Analytical",
+        "Masculine",
+        "Literal",
+        "Geometric",
+        "Quiet",
+        "Exact",
+        "Restrained"
+      ],
+      "moveAwayFrom": [
+        "Automated",
+        "Salesy",
+        "Abstract",
+        "Organic",
+        "Loud",
+        "Flashy",
+        "Theatrical"
+      ],
+      "voicePrincipleCount": 4,
+      "visualIdentity": "photo direction only; existing colors, type, and system stay outside this Sprint"
+    }
+  },
+  "focusStar": [
+    {
+      "line": "Product",
+      "decision": "The context and tools to see the whole picture"
+    },
+    {
+      "line": "People",
+      "decision": "Independent thinkers",
+      "persona": "The Independent Decision-Maker"
+    },
+    {
+      "line": "Purpose",
+      "decision": "To move society forward through better-informed human choices"
+    },
+    {
+      "line": "Promise",
+      "decision": "Follow the question",
+      "brandDNA": "Question First"
+    },
+    {
+      "line": "Personality",
+      "decision": "A serious, playful polymath: rational, artistic, independent, with a mystical edge"
+    }
+  ],
+  "linkedin": {
+    "platform": "LinkedIn",
+    "headline": "Cross-disciplinary judgment for independent thinkers | Follow the question before the answer",
+    "location": "Independent, no fixed location",
+    "banner": "Cross-disciplinary judgment for independent thinkers.",
+    "bannerCanvas": "1584 x 396 px",
+    "featuredCount": 3
+  },
+  "thirtyDayPlan": {
+    "objective": "Establish follow the question as the recognizable frame before the first public collaboration.",
+    "primarySignal": "Replies and shares that engage with the actual question.",
+    "priorityMoves": [
+      "Publish the position once, clearly, before anything else.",
+      "Show the method in public, on a real question.",
+      "Make the two profiles ready before any outreach starts."
+    ],
+    "contentTerritories": [
+      "Cross-disciplinary reads",
+      "The inquiry itself",
+      "Independent judgment"
+    ],
+    "recommendationTypes": [
+      "Campaign",
+      "PR",
+      "Collaboration",
+      "Pro bono",
+      "Email and outreach"
+    ]
+  },
+  "aiPack": {
+    "file": "brand-context.md",
+    "requiredSections": [
+      "Identity",
+      "Instructions",
+      "Context",
+      "Examples",
+      "Factual boundaries",
+      "Starter prompts"
+    ],
+    "starterPromptCount": 6
+  },
+  "sections": [
+    "strategy",
+    "identity",
+    "profiles",
+    "plan",
+    "ai"
+  ]
+}

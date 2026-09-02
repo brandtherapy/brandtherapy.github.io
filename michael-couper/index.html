@@ -2,880 +2,571 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="color-scheme" content="dark">
-  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-  <meta name="description" content="Your private Brand Therapy reveal is ready.">
-  <meta property="og:title" content="Brand Therapy.">
-  <meta property="og:description" content="Your private Brand Therapy reveal is ready.">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Brand Therapy">
-  <meta property="og:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
-  <meta property="og:image:secure_url" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Brand Therapy">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Brand Therapy.">
-  <meta name="twitter:description" content="Your private Brand Therapy reveal is ready.">
-  <meta name="twitter:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
-  <meta name="twitter:image:alt" content="Brand Therapy">
-  <title>Brand Therapy Reveal</title>
-  <link rel="icon" href="data:,">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+  <meta name="description" content="Brand Therapy Sprint for Michael Couper: strategy, identity, LinkedIn profiles, a thirty-day plan, and a portable AI context pack.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%231c2024'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Georgia,serif' font-size='15' fill='%23f4f3f0'%3EMC%3C/text%3E%3C/svg%3E">
+  <title>Michael Couper | Brand Therapy Sprint</title>
+  <meta name="twitter:image" content="https://brandtherapy.florianp.com/michael-couper/og-image.png?v=1">
+  <meta property="og:image" content="https://brandtherapy.florianp.com/michael-couper/og-image.png?v=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
     :root {
-      --ink: #0c0c0f;
-      --paper: #efede7;
-      --muted: #aaa7a0;
-      --line: rgba(239, 237, 231, .18);
-      --accent: #c9c5ba;
-      --ease: cubic-bezier(.16, 1, .3, 1);
-    }
-    * { box-sizing: border-box; }
-    html {
-      scroll-snap-type: y mandatory;
-      scroll-behavior: smooth;
-      background: var(--ink);
-      color: var(--paper);
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-    body { margin: 0; background: var(--ink); overflow-x: hidden; }
-    button { font: inherit; }
-    .scene {
-      min-height: 100svh;
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-      position: relative;
-      display: grid;
-      align-items: center;
-      padding: clamp(76px, 10vh, 120px) clamp(24px, 7vw, 112px) clamp(62px, 8vh, 96px);
-      overflow: hidden;
-      isolation: isolate;
-    }
-    .scene.light { background: var(--paper); color: var(--ink); }
-    .scene.black { background: #070709; }
-    .inner { width: min(1120px, 100%); margin: 0 auto; }
-    .inner.narrow { width: min(820px, 100%); }
-    .kicker {
-      margin: 0 0 22px;
-      font-size: .72rem;
-      line-height: 1;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .framework-definition {
-      max-width: 38ch;
-      margin: -7px 0 22px;
-      font-size: clamp(.9rem, 1.25vw, 1.05rem);
-      line-height: 1.4;
-      color: var(--muted);
-    }
-    h1, h2, h3, p { margin: 0; }
-    .display {
-      max-width: 14ch;
-      font-size: clamp(3.3rem, 10vw, 9.6rem);
-      line-height: .88;
-      letter-spacing: -.065em;
-      font-weight: 500;
-    }
-    .statement {
-      max-width: 20ch;
-      font-size: clamp(2.35rem, 7vw, 7.3rem);
-      line-height: .95;
-      letter-spacing: -.052em;
-      font-weight: 500;
-    }
-    .body {
-      max-width: 48ch;
-      margin-top: 30px;
-      font-size: clamp(1rem, 1.6vw, 1.35rem);
-      line-height: 1.5;
-      color: var(--muted);
-    }
-    .light .body, .light .kicker, .light .framework-definition { color: #605f5a; }
-    .accent { color: var(--accent); }
-    .index {
-      position: absolute;
-      top: max(22px, env(safe-area-inset-top));
-      right: clamp(20px, 3vw, 42px);
-      font-size: .72rem;
-      letter-spacing: .12em;
-      color: var(--muted);
-      z-index: 20;
-    }
-    .meter {
-      position: fixed;
-      z-index: 40;
-      left: 0;
-      right: 0;
-      top: 0;
-      height: 2px;
-      background: rgba(239, 237, 231, .08);
-    }
-    .meter span { display: block; width: 0; height: 100%; background: var(--paper); transition: width 420ms var(--ease); }
-    .wordfield { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 34px; max-width: 900px; }
-    .wordfield span { font-size: clamp(.88rem, 1.6vw, 1.15rem); color: var(--muted); }
-    .sliderline { display: grid; gap: 13px; margin-top: 36px; max-width: 720px; }
-    .sliderline div { display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid var(--line); padding-bottom: 11px; }
-    .sliderline strong { min-width: 92px; color: var(--paper); font-weight: 500; }
-    .sliderline span { color: var(--muted); }
-    .board-scene { padding: 0; background: #08080a; }
-    .board-stage {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-    }
-    .board-scene img {
-      width: 100%;
-      height: 100svh;
-      object-fit: contain;
-      display: block;
-    }
-    .board-actions {
-      position: absolute;
-      z-index: 30;
-      right: clamp(18px, 3vw, 42px);
-      bottom: max(20px, env(safe-area-inset-bottom));
-      display: flex;
-      align-items: stretch;
-      gap: 8px;
-    }
-    .board-action,
-    .variant-switch button {
-      min-height: 46px;
-      border: 1px solid rgba(239, 237, 231, .5);
-      border-radius: 0;
-      background: var(--ink);
-      color: var(--paper);
-      cursor: pointer;
-      transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
-    }
-    .board-action {
-      padding: 12px 17px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, .24);
-      font-size: .76rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-    .board-action:hover,
-    .board-action:focus-visible,
-    .variant-switch button:hover,
-    .variant-switch button:focus-visible,
-    .variant-switch button.is-active {
-      outline: none;
-      background: var(--paper);
-      color: var(--ink);
-      border-color: var(--paper);
-    }
-    .variant-switch {
-      display: flex;
-      padding: 3px;
-      border: 1px solid rgba(239, 237, 231, .5);
-      background: var(--ink);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, .24);
-    }
-    .variant-switch button {
-      min-width: 46px;
-      min-height: 38px;
-      padding: 8px 12px;
-      display: grid;
-      place-items: center;
-      border-color: transparent;
-    }
-    .variant-chip {
-      display: block;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .28);
-    }
-    .chapter-toggle {
-      position: fixed;
-      z-index: 46;
-      left: clamp(14px, 2vw, 28px);
-      top: max(14px, env(safe-area-inset-top));
-      width: 44px;
-      height: 44px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      cursor: pointer;
-      opacity: .34;
-      transition: opacity 200ms ease, visibility 0s linear;
-    }
-    .chapter-toggle span {
-      display: block;
-      width: 16px;
-      height: 1px;
-      background: var(--paper);
-      transition: transform 260ms var(--ease), opacity 160ms ease, background 200ms ease;
-    }
-    body.on-light .chapter-toggle span { background: #3f3e39; }
-    .chapter-toggle:hover,
-    .chapter-toggle:focus-visible { outline: none; opacity: 1; }
-    .chapter-toggle:focus-visible { outline: 1px solid var(--paper); outline-offset: 5px; }
-    body.nav-open .chapter-toggle { opacity: 1; }
-    body.nav-open .chapter-toggle span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
-    body.nav-open .chapter-toggle span:nth-child(2) { opacity: 0; }
-    body.nav-open .chapter-toggle span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
-    body.at-start .chapter-toggle {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 200ms ease, visibility 0s linear 200ms;
-    }
-    .chapter-nav {
-      position: fixed;
-      z-index: 45;
-      left: clamp(14px, 2vw, 28px);
-      top: calc(max(14px, env(safe-area-inset-top)) + 52px);
-      display: grid;
-      grid-template-columns: repeat(4, auto);
-      border: 1px solid rgba(239, 237, 231, .28);
-      background: var(--ink);
-      box-shadow: 0 12px 38px rgba(0, 0, 0, .28);
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transform: translateY(-8px);
-      transition: opacity 200ms ease, transform 320ms var(--ease), visibility 0s linear 200ms;
-    }
-    body.nav-open .chapter-nav {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-      transform: none;
-      transition: opacity 200ms ease, transform 320ms var(--ease), visibility 0s linear;
-    }
-    .chapter-nav button {
-      min-height: 44px;
-      padding: 9px 14px;
-      border: 0;
-      border-right: 1px solid rgba(239, 237, 231, .16);
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      text-align: left;
-      transition: background 180ms ease, color 180ms ease;
-    }
-    .chapter-nav button:last-child { border-right: 0; }
-    .chapter-nav button:hover,
-    .chapter-nav button:focus-visible,
-    .chapter-nav button[aria-current="true"] {
-      outline: none;
-      background: var(--paper);
-      color: var(--ink);
-    }
-    .chapter-nav small {
-      display: block;
-      margin-bottom: 2px;
-      font-size: .58rem;
-      letter-spacing: .1em;
-      opacity: .62;
-    }
-    .chapter-nav span {
-      display: block;
-      font-size: .7rem;
-      letter-spacing: .04em;
-    }
-    body.ack-open .chapter-nav,
-    body.viewer-open .chapter-nav {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transform: translateY(-10px);
-    }
-    body.ack-open .chapter-toggle,
-    body.viewer-open .chapter-toggle {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 200ms ease, visibility 0s linear 200ms;
-    }
-    .stylescape-viewer {
-      width: 100vw;
-      max-width: none;
-      height: 100dvh;
-      max-height: none;
-      margin: 0;
-      padding: 0;
-      border: 0;
-      background: #070709;
-      color: var(--paper);
-      overflow: hidden;
-    }
-    .stylescape-viewer::backdrop { background: #070709; }
-    .viewer-toolbar {
-      position: absolute;
-      z-index: 4;
-      top: 0;
-      left: 0;
-      right: 0;
-      min-height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: max(10px, env(safe-area-inset-top)) clamp(14px, 3vw, 34px) 10px;
-      border-bottom: 1px solid var(--line);
-      background: #070709;
-    }
-    .viewer-title {
-      overflow: hidden;
-      font-size: .76rem;
-      letter-spacing: .1em;
-      text-overflow: ellipsis;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .viewer-toolbar > div { min-width: 0; display: flex; align-items: center; gap: 14px; }
-    .viewer-variants .variant-switch { box-shadow: none; }
-    .viewer-close {
-      min-width: 46px;
-      min-height: 44px;
-      padding: 9px 13px;
-      border: 1px solid var(--line);
-      border-radius: 0;
-      background: transparent;
-      color: var(--paper);
-      cursor: pointer;
-    }
-    .viewer-close:hover,
-    .viewer-close:focus-visible { outline: none; border-color: var(--paper); background: var(--paper); color: var(--ink); }
-    .viewer-stage {
-      position: absolute;
-      inset: 64px 0 70px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      touch-action: none;
-      cursor: zoom-in;
-    }
-    .viewer-stage.is-zoomed { cursor: grab; }
-    .viewer-stage.is-dragging { cursor: grabbing; }
-    .viewer-image {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      transform-origin: center;
-      user-select: none;
-      will-change: transform;
-    }
-    .viewer-footer {
-      position: absolute;
-      z-index: 4;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 10px 18px max(10px, env(safe-area-inset-bottom));
-      border-top: 1px solid var(--line);
-      background: #070709;
-    }
-    .viewer-footer button {
-      min-width: 48px;
-      min-height: 44px;
-      padding: 9px 13px;
-      border: 1px solid var(--line);
-      border-radius: 0;
-      background: transparent;
-      color: var(--paper);
-      cursor: pointer;
-    }
-    .viewer-footer button:hover,
-    .viewer-footer button:focus-visible { outline: none; border-color: var(--paper); background: var(--paper); color: var(--ink); }
-    .direction-intro { background: var(--direction-bg, #101014); }
-    .direction-intro::after {
-      content: "";
-      position: absolute;
-      width: min(46vw, 600px);
-      aspect-ratio: 1;
-      border: 1px solid color-mix(in srgb, var(--direction-accent) 50%, transparent);
-      right: -12vw;
-      bottom: -28vw;
-      transform: rotate(15deg);
-      z-index: -1;
-    }
-    .direction-number { color: var(--direction-accent); }
-    .direction-detail { background: #111115; }
-    .direction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(34px, 7vw, 110px); align-items: start; }
-    .fact { padding: 20px 0; border-top: 1px solid var(--line); }
-    .fact:first-child { border-top: 0; padding-top: 0; }
-    .fact b { display: block; margin-bottom: 8px; font-size: .72rem; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); }
-    .fact span { font-size: clamp(1.15rem, 2vw, 1.65rem); line-height: 1.28; }
-    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 38px; }
-    .compare > div { background: var(--ink); padding: clamp(24px, 4vw, 52px); }
-    .compare h3 { font-size: clamp(1.7rem, 3.4vw, 3rem); font-weight: 500; letter-spacing: -.04em; }
-    .compare p { margin-top: 26px; color: var(--muted); line-height: 1.55; }
-    .choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 40px; }
-    .choice {
-      min-height: 132px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      background: transparent;
-      color: var(--paper);
-      text-align: left;
-      cursor: pointer;
-      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
-    }
-    .choice:hover, .choice:focus-visible { outline: none; background: var(--paper); color: var(--ink); transform: translateY(-2px); }
-    .choice.is-selected { background: var(--paper); color: var(--ink); }
-    .choice small { display: block; margin-bottom: 18px; letter-spacing: .12em; text-transform: uppercase; opacity: .62; }
-    .choice strong { font-size: clamp(1rem, 1.8vw, 1.35rem); font-weight: 500; }
-    .selection { min-height: 1.5em; margin-top: 24px; color: var(--muted); }
-    .response-form {
-      width: min(760px, 100%);
-      margin-top: 30px;
-      padding-top: 28px;
-      border-top: 1px solid var(--line);
-    }
-    .response-form label {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 12px;
-      font-size: .76rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--paper);
-    }
-    .response-form label span { color: var(--muted); }
-    .response-form textarea {
-      display: block;
-      width: 100%;
-      min-height: 126px;
-      resize: vertical;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 0;
-      background: transparent;
-      color: var(--paper);
-      font: inherit;
-      font-size: 1rem;
-      line-height: 1.5;
-      transition: border-color 180ms ease, background 180ms ease;
-    }
-    .response-form textarea::placeholder { color: #77756f; }
-    .response-form textarea:focus { outline: none; border-color: var(--paper); background: rgba(239, 237, 231, .035); }
-    .response-actions { display: grid; grid-template-columns: minmax(190px, 260px) 1fr; gap: 20px; align-items: center; margin-top: 14px; }
-    .response-submit {
-      min-height: 54px;
-      padding: 14px 20px;
-      border: 1px solid var(--paper);
-      border-radius: 0;
-      background: var(--paper);
-      color: var(--ink);
-      cursor: pointer;
-      transition: background 180ms ease, color 180ms ease, opacity 180ms ease;
-    }
-    .response-submit:hover:not(:disabled), .response-submit:focus-visible { background: transparent; color: var(--paper); }
-    .response-submit:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
-    .response-submit:disabled { cursor: default; opacity: .34; }
-    .response-status { min-height: 1.5em; color: var(--muted); line-height: 1.45; }
-    .response-status[data-state="error"] { color: #f1b7ae; }
-    .response-status[data-state="success"] { color: var(--paper); }
-    .likeness-note {
-      width: min(540px, calc(100vw - 40px));
-      padding: 0;
-      border: 1px solid rgba(12, 12, 15, .18);
-      background: var(--paper);
-      color: var(--ink);
-      box-shadow: 0 30px 90px rgba(0, 0, 0, .36);
-    }
-    .likeness-note::backdrop { background: rgba(7, 7, 9, .82); }
-    .likeness-note-inner { padding: clamp(28px, 5vw, 48px); }
-    .likeness-note .kicker { color: #605f5a; }
-    .likeness-note h2 {
-      max-width: 10ch;
-      font-size: clamp(2.4rem, 7vw, 4.5rem);
-      line-height: .94;
-      letter-spacing: -.055em;
-      font-weight: 500;
-    }
-    .likeness-note p:not(.kicker) {
-      max-width: 42ch;
-      margin-top: 24px;
-      color: #605f5a;
-      font-size: clamp(1rem, 1.7vw, 1.18rem);
-      line-height: 1.52;
-    }
-    .likeness-note button {
-      width: 100%;
-      margin-top: 32px;
-      padding: 16px 20px;
-      border: 1px solid var(--ink);
-      background: var(--ink);
-      color: var(--paper);
-      cursor: pointer;
-      transition: background 180ms ease, color 180ms ease;
-    }
-    .likeness-note button:hover {
-      background: transparent;
-      color: var(--ink);
-    }
-    .likeness-note button:focus-visible {
-      outline: 2px solid var(--ink);
-      outline-offset: 3px;
-    }
-    body.ack-open, body.viewer-open { overflow: hidden; }
-    .hint { position: absolute; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translateX(-50%); color: var(--muted); font-size: .7rem; letter-spacing: .13em; text-transform: uppercase; }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 800ms var(--ease), transform 800ms var(--ease); }
-    .scene.is-visible .reveal { opacity: 1; transform: none; }
-    .scene.is-visible .reveal.delay { transition-delay: 120ms; }
-    @media (max-width: 760px) {
-      .scene { padding-left: 24px; padding-right: 24px; }
-      .display { font-size: clamp(3.2rem, 17vw, 5.6rem); }
-      .statement { font-size: clamp(2.55rem, 12vw, 4.7rem); }
-      .direction-grid, .compare, .choices { grid-template-columns: 1fr; }
-      .direction-detail { align-items: start; }
-      .direction-detail .inner { padding-top: 3vh; }
-      .fact { padding: 15px 0; }
-      .choices { margin-top: 28px; }
-      .choice { min-height: 92px; }
-      .response-actions { grid-template-columns: 1fr; gap: 12px; }
-      .response-submit { width: 100%; }
-      .board-scene img { object-fit: contain; }
-      .board-actions { right: 18px; left: 18px; justify-content: flex-end; }
-      .chapter-nav { width: calc(100vw - 48px); grid-template-columns: repeat(4, 1fr); }
-      .chapter-nav button { padding: 8px 7px; text-align: center; }
-      .chapter-nav small { margin-bottom: 1px; }
-      .chapter-nav span { font-size: .62rem; }
-      .viewer-toolbar { min-height: 58px; }
-      .viewer-stage { inset: 58px 0 70px; }
-      .viewer-title { display: none; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .reveal { opacity: 1; transform: none; transition: none; }
+      --ink: #1c2024;
+      --ink-soft: #4f565d;
+      --paper: #f4f3f0;
+      --paper-deep: #e7e4de;
+      --mist: #eae7e0;
+      --mineral: #2b2f34;
+      --water: #5c6570;
+      --clay: #7a5a24;
+      --clay-soft: #c9ab74;
+      --line: #d8d4cc;
+      --white: #fbfaf8;
+      --banner: #2b2f34;
+      --banner-deep: #5c6570;
+      --font: "Archivo", Arial, sans-serif;
+      --font-body: "Archivo", Arial, sans-serif;
+      --font-display: "Archivo Narrow", "Arial Narrow", sans-serif;
     }
   </style>
+  <script src="assets/archetype-chart/archetype-chart.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
-<body class="at-start">
-  <div class="meter" aria-hidden="true"><span></span></div>
-  <button class="chapter-toggle" type="button" aria-label="Open chapters" aria-controls="chapter-nav" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <nav class="chapter-nav" id="chapter-nav" aria-label="Reveal chapters">
-    <button type="button" data-chapter-target="intro" aria-current="true"><small>01</small><span>Start</span></button>
-    <button type="button" data-chapter-target="strategy"><small>02</small><span>Strategy</span></button>
-    <button type="button" data-chapter-target="directions"><small>03</small><span>Directions</span></button>
-    <button type="button" data-chapter-target="decide"><small>04</small><span>Choose</span></button>
-  </nav>
-  <main id="story"></main>
-  <dialog class="likeness-note" id="likeness-note" aria-labelledby="likeness-note-title" aria-describedby="likeness-note-body">
-    <div class="likeness-note-inner">
-      <p class="kicker">Before the visuals</p>
-      <h2 id="likeness-note-title"></h2>
-      <p id="likeness-note-body"></p>
-      <button type="button" id="likeness-note-confirm">Got it</button>
-    </div>
-  </dialog>
-  <dialog class="stylescape-viewer" id="stylescape-viewer" aria-labelledby="viewer-title">
-    <div class="viewer-toolbar">
-      <div>
-        <div class="viewer-title" id="viewer-title">Stylescape</div>
-        <div class="viewer-variants" aria-label="Color version"></div>
+<body>
+  <a class="skip-link" href="#main">Skip to the strategy</a>
+
+  <header class="topbar">
+    <a class="wordmark" href="#top" aria-label="Michael Couper, back to top">
+      <span>MC</span>
+      <strong>Michael Couper</strong>
+    </a>
+    <p>Public inquiry <span>LinkedIn</span></p>
+    <span class="demo-label">August 2026</span>
+  </header>
+
+  <div class="page-shell" id="top">
+    <aside class="rail" aria-label="Deliverable navigation">
+      <div class="rail-intro">
+        <span class="rail-number">01</span>
+        <p>The position, made ready to run on LinkedIn</p>
       </div>
-      <button class="viewer-close" type="button" aria-label="Close zoom view">Close</button>
-    </div>
-    <div class="viewer-stage">
-      <img class="viewer-image" alt="" draggable="false">
-    </div>
-    <div class="viewer-footer" aria-label="Zoom controls">
-      <button type="button" data-viewer-zoom="out" aria-label="Zoom out">−</button>
-      <button type="button" data-viewer-zoom="reset" aria-label="Reset zoom">100%</button>
-      <button type="button" data-viewer-zoom="in" aria-label="Zoom in">+</button>
-    </div>
-  </dialog>
-  <script src="reveal-data.js"></script>
-  <script>
-    const d = window.REVEAL_DATA;
-    const story = document.getElementById('story');
-    const esc = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
-    const frameworkDefinitions = {
-      product: 'What you uniquely offer.',
-      people: 'Who you are here to serve.',
-      purpose: 'Why your work needs to exist.',
-      promise: 'What people can consistently expect from you.',
-      personality: 'How your brand should feel and behave.',
-      archetype: 'The timeless roles your brand naturally embodies.',
-      founderSpectrum: 'How closely your personal identity and business brand should overlap.',
-      brandSliders: 'The creative tensions that calibrate how your brand should feel.'
-    };
-    Object.assign(frameworkDefinitions, d.frameworkDefinitions || {});
-    const scene = (content, cls='black', chapter='intro') => `<section class="scene ${cls}" data-chapter="${esc(chapter)}"><div class="inner">${content}</div></section>`;
-    const line = (kicker, title, body='', cls='black', chapter='intro') => scene(`<p class="kicker reveal">${esc(kicker)}</p><h2 class="statement reveal delay">${esc(title)}</h2>${body ? `<p class="body reveal delay">${esc(body)}</p>` : ''}`, cls, chapter);
-    let html = '';
-    html += scene(`<h1 class="display reveal">Hello,<br>${esc(d.firstName)}.</h1><span class="hint">Scroll to begin</span>`);
-    html += line('Brand Therapy', 'Your Brand Therapy is ready.', `For your approval, before we build your Brand Therapy OS.`);
-    html += line('My read', `Here is what I see in you, ${d.firstName}.`);
-    d.strategy.forEach((item, i) => {
-      const nested = item.nested ? `<p class="body reveal delay">${esc(item.nested.label)}: ${esc(item.nested.value)}</p>` : '';
-      const definition = item.definition || frameworkDefinitions[item.label.toLowerCase()] || '';
-      html += scene(`<p class="kicker reveal">0${i + 1} / ${esc(item.label)}</p>${definition ? `<p class="framework-definition reveal">${esc(definition)}</p>` : ''}<h2 class="statement reveal delay">${esc(item.title)}</h2><p class="body reveal delay">${esc(item.body)}</p>${nested}`, i % 2 ? 'light' : 'black', 'strategy');
-    });
-    html += scene(`<p class="kicker reveal">Brand archetype</p><p class="framework-definition reveal">${esc(frameworkDefinitions.archetype)}</p><h2 class="statement reveal delay">${esc(d.archetype)}</h2><div class="wordfield reveal delay">${d.personalityWords.map(w => `<span>${esc(w)}</span>`).join('')}</div>`, 'black', 'strategy');
-    html += scene(`<p class="kicker reveal">Founder Spectrum</p><p class="framework-definition reveal">${esc(frameworkDefinitions.founderSpectrum)}</p><h2 class="statement reveal delay">${esc(d.spectrum.title)}</h2><p class="body reveal delay">${esc(d.spectrum.body)}</p>`, 'light', 'strategy');
-    html += scene(`<p class="kicker reveal">Brand Sliders</p><p class="framework-definition reveal">${esc(frameworkDefinitions.brandSliders)}</p><h2 class="statement reveal delay">${esc(d.sliders.title)}</h2><div class="sliderline reveal delay">${d.sliders.lines.map(row => `<div><strong>${esc(row[0])}</strong><span>${esc(row[1])}</span></div>`).join('')}</div>`, 'black', 'strategy');
-    html += line('The through-line', d.synthesis.title, d.synthesis.body, 'light', 'strategy');
-    html += line('Creative Direction', 'One strategy. Two possible worlds.', 'Both are true to you. They choose a different way to make that truth visible.', 'black', 'directions');
-    d.directions.forEach((dir, i) => {
-      const variants = Array.isArray(dir.variants) && dir.variants.length ? dir.variants : [{ id: 'default', label: '', image: dir.image }];
-      const activeVariant = variants.find(variant => variant.default) || variants[0];
-      const variantSwitch = variants.length > 1 ? `<div class="variant-switch" role="group" aria-label="${esc(dir.name)} color version">${variants.map(variant => `<button type="button" data-variant-id="${esc(variant.id)}" data-variant-image="${esc(variant.image)}" data-variant-color="${esc(variant.color || '')}" aria-label="${esc(variant.label)} version" aria-pressed="${variant.id === activeVariant.id}" class="${variant.id === activeVariant.id ? 'is-active' : ''}"><span class="variant-chip" style="background:${esc(variant.color || 'currentColor')}"></span></button>`).join('')}</div>` : '';
-      html += `<section class="scene direction-intro" data-chapter="directions" style="--direction-bg:${esc(dir.bg)};--direction-accent:${esc(dir.accent)}"><div class="inner"><p class="kicker reveal direction-number">Direction ${i + 1}</p><h2 class="display reveal delay">${esc(dir.name)}</h2><p class="body reveal delay">${esc(dir.premise)}</p></div></section>`;
-      html += `<section class="scene board-scene" data-chapter="directions" data-board-id="${esc(dir.id)}" data-board-name="${esc(dir.name)}"><div class="board-stage"><img class="board-image" src="${esc(activeVariant.image)}" alt="${esc(dir.name)} creative direction stylescape" draggable="false"><div class="board-actions">${variantSwitch}<button class="board-action" type="button" data-open-viewer>Zoom</button></div></div></section>`;
-      html += `<section class="scene direction-detail" data-chapter="directions"><div class="inner direction-grid"><div><p class="kicker reveal">Direction ${i + 1}</p><h2 class="statement reveal delay">${esc(dir.emotionalRead)}</h2></div><div class="reveal delay"><div class="fact"><b>Signature</b><span>${esc(dir.signature)}</span></div><div class="fact"><b>Outfit</b><span>${esc(dir.outfit)}</span></div><div class="fact"><b>Risk to guard</b><span>${esc(dir.risk)}</span></div></div></div></section>`;
-      if (dir.companion?.image) {
-        html += line('Direction in use', dir.companion.label || 'Material in use', dir.companion.caption || '', 'light', 'directions');
-        html += `<section class="scene board-scene" data-chapter="directions" data-board-id="${esc(dir.id)}-companion" data-board-name="${esc(dir.name)} application companion"><div class="board-stage"><img class="board-image" src="${esc(dir.companion.image)}" alt="${esc(dir.companion.alt || (dir.name + ' application companion'))}" draggable="false"><div class="board-actions"><button class="board-action" type="button" data-open-viewer>Zoom</button></div></div></section>`;
-      }
-    });
-    html += `<section class="scene black" data-chapter="directions"><div class="inner"><p class="kicker reveal">The choice</p><h2 class="statement reveal delay">Which world makes you feel most seen?</h2><div class="compare reveal delay">${d.directions.map(dir => `<div><h3>${esc(dir.name)}</h3><p>${esc(dir.compare)}</p></div>`).join('')}</div></div></section>`;
-    html += `<section class="scene black" data-chapter="decide" id="decision"><div class="inner"><p class="kicker reveal">Your decision</p><h2 class="statement reveal delay">Choose a direction, or revise completely.</h2><div class="choices reveal delay">${d.choices.map((c, i) => `<button type="button" class="choice" data-choice="${esc(c.id)}"><small>0${i + 1}</small><strong>${esc(c.label)}</strong></button>`).join('')}</div><p class="selection reveal delay" role="status"></p><form class="response-form reveal delay" novalidate><label for="response-note">Send with a note <span>Optional</span></label><textarea id="response-note" name="note" maxlength="2000" placeholder="Anything you want Florian to know."></textarea><div class="response-actions"><button class="response-submit" type="submit" disabled>Send response</button><p class="response-status" role="status" aria-live="polite"></p></div></form></div></section>`;
-    story.innerHTML = html;
-    const scenes = [...document.querySelectorAll('.scene')];
-    scenes.forEach((s, i) => s.insertAdjacentHTML('afterbegin', `<span class="index">${String(i + 1).padStart(2,'0')} / ${String(scenes.length).padStart(2,'0')}</span>`));
-    const meter = document.querySelector('.meter span');
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
-      const i = scenes.indexOf(entry.target);
-      meter.style.width = `${((i + 1) / scenes.length) * 100}%`;
-      const chapter = entry.target.dataset.chapter;
-      document.querySelectorAll('.chapter-nav button').forEach(button => button.setAttribute('aria-current', button.dataset.chapterTarget === chapter ? 'true' : 'false'));
-      const atStart = i === 0;
-      document.body.classList.toggle('at-start', atStart);
-      document.body.classList.toggle('on-light', entry.target.classList.contains('light'));
-      if (atStart) setNavOpen(false);
-    }), { threshold: .56 });
-    scenes.forEach(s => observer.observe(s));
-    const chapterToggle = document.querySelector('.chapter-toggle');
-    const setNavOpen = open => {
-      document.body.classList.toggle('nav-open', open);
-      chapterToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      chapterToggle.setAttribute('aria-label', open ? 'Close chapters' : 'Open chapters');
-    };
-    chapterToggle.addEventListener('click', () => setNavOpen(!document.body.classList.contains('nav-open')));
-    document.addEventListener('click', event => {
-      if (!document.body.classList.contains('nav-open')) return;
-      if (event.target.closest('.chapter-nav') || event.target.closest('.chapter-toggle')) return;
-      setNavOpen(false);
-    });
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && document.body.classList.contains('nav-open')) setNavOpen(false);
-    });
-    document.querySelectorAll('.chapter-nav button').forEach(button => button.addEventListener('click', () => {
-      setNavOpen(false);
-      document.querySelector(`.scene[data-chapter="${button.dataset.chapterTarget}"]`)?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-    }));
-    document.querySelectorAll('.board-image').forEach(image => image.addEventListener('contextmenu', event => event.preventDefault()));
-    const viewer = document.getElementById('stylescape-viewer');
-    const viewerImage = viewer.querySelector('.viewer-image');
-    const viewerStage = viewer.querySelector('.viewer-stage');
-    const viewerTitle = viewer.querySelector('.viewer-title');
-    const viewerVariants = viewer.querySelector('.viewer-variants');
-    const viewerPercent = viewer.querySelector('[data-viewer-zoom="reset"]');
-    let activeBoard = null;
-    let zoom = { scale: 1, x: 0, y: 0 };
-    let drag = null;
-    const updateViewer = () => {
-      viewerImage.style.transform = `translate3d(${zoom.x}px, ${zoom.y}px, 0) scale(${zoom.scale})`;
-      viewerPercent.textContent = `${Math.round(zoom.scale * 100)}%`;
-      viewerStage.classList.toggle('is-zoomed', zoom.scale > 1);
-    };
-    const resetViewer = () => { zoom = { scale: 1, x: 0, y: 0 }; updateViewer(); };
-    const setViewerZoom = scale => {
-      zoom.scale = Math.max(1, Math.min(4, scale));
-      if (zoom.scale === 1) { zoom.x = 0; zoom.y = 0; }
-      updateViewer();
-    };
-    const setBoardVariant = (board, id) => {
-      const button = board.querySelector(`[data-variant-id="${id}"]`);
-      if (!button) return;
-      board.querySelector('.board-image').src = button.dataset.variantImage;
-      board.querySelectorAll('[data-variant-id]').forEach(item => {
-        const active = item.dataset.variantId === id;
-        item.classList.toggle('is-active', active);
-        item.setAttribute('aria-pressed', active ? 'true' : 'false');
-      });
-      if (viewer.open && activeBoard === board) {
-        viewerImage.src = button.dataset.variantImage;
-        viewerVariants.querySelectorAll('[data-viewer-variant]').forEach(item => {
-          const active = item.dataset.viewerVariant === id;
-          item.classList.toggle('is-active', active);
-          item.setAttribute('aria-pressed', active ? 'true' : 'false');
-        });
-        resetViewer();
-      }
-    };
-    document.querySelectorAll('.board-scene').forEach(board => {
-      board.querySelectorAll('[data-variant-id]').forEach(button => button.addEventListener('click', () => setBoardVariant(board, button.dataset.variantId)));
-      board.querySelector('[data-open-viewer]').addEventListener('click', () => {
-        activeBoard = board;
-        const boardImage = board.querySelector('.board-image');
-        viewerTitle.textContent = board.dataset.boardName;
-        viewerImage.src = boardImage.getAttribute('src');
-        viewerImage.alt = boardImage.alt;
-        const variants = [...board.querySelectorAll('[data-variant-id]')];
-        viewerVariants.innerHTML = variants.length ? `<div class="variant-switch" role="group" aria-label="Color version">${variants.map(button => `<button type="button" data-viewer-variant="${esc(button.dataset.variantId)}" aria-label="${esc(button.getAttribute('aria-label') || button.dataset.variantId)}" aria-pressed="${button.getAttribute('aria-pressed')}" class="${button.classList.contains('is-active') ? 'is-active' : ''}"><span class="variant-chip" style="background:${esc(button.dataset.variantColor || 'currentColor')}"></span></button>`).join('')}</div>` : '';
-        viewerVariants.querySelectorAll('[data-viewer-variant]').forEach(button => button.addEventListener('click', () => setBoardVariant(board, button.dataset.viewerVariant)));
-        resetViewer();
-        document.body.classList.add('viewer-open');
-        viewer.showModal();
-        viewer.querySelector('.viewer-close').focus();
-      });
-    });
-    viewer.querySelector('.viewer-close').addEventListener('click', () => viewer.close());
-    viewer.addEventListener('close', () => { document.body.classList.remove('viewer-open'); activeBoard = null; resetViewer(); });
-    viewerImage.addEventListener('contextmenu', event => event.preventDefault());
-    viewer.querySelector('[data-viewer-zoom="in"]').addEventListener('click', () => setViewerZoom(zoom.scale + .25));
-    viewer.querySelector('[data-viewer-zoom="out"]').addEventListener('click', () => setViewerZoom(zoom.scale - .25));
-    viewerPercent.addEventListener('click', resetViewer);
-    viewerStage.addEventListener('dblclick', () => setViewerZoom(zoom.scale === 1 ? 2 : 1));
-    viewerStage.addEventListener('wheel', event => { event.preventDefault(); setViewerZoom(zoom.scale + (event.deltaY < 0 ? .25 : -.25)); }, { passive: false });
-    viewerStage.addEventListener('pointerdown', event => {
-      if (zoom.scale === 1) return;
-      drag = { pointerId: event.pointerId, startX: event.clientX, startY: event.clientY, x: zoom.x, y: zoom.y };
-      viewerStage.setPointerCapture(event.pointerId);
-      viewerStage.classList.add('is-dragging');
-    });
-    viewerStage.addEventListener('pointermove', event => {
-      if (!drag || drag.pointerId !== event.pointerId) return;
-      zoom.x = drag.x + event.clientX - drag.startX;
-      zoom.y = drag.y + event.clientY - drag.startY;
-      updateViewer();
-    });
-    const endDrag = event => {
-      if (!drag || drag.pointerId !== event.pointerId) return;
-      drag = null;
-      viewerStage.classList.remove('is-dragging');
-    };
-    viewerStage.addEventListener('pointerup', endDrag);
-    viewerStage.addEventListener('pointercancel', endDrag);
-    const likenessNote = document.getElementById('likeness-note');
-    const likenessConfirm = document.getElementById('likeness-note-confirm');
-    const notice = d.likenessNotice;
-    let likenessAcknowledged = sessionStorage.getItem(`brand-therapy-reveal:${d.slug}:likeness-notice`) === '1';
-    if (notice) {
-      document.getElementById('likeness-note-title').textContent = notice.title;
-      document.getElementById('likeness-note-body').textContent = notice.body;
-      likenessConfirm.textContent = notice.button || 'Got it';
-      likenessNote.addEventListener('cancel', event => event.preventDefault());
-      likenessConfirm.addEventListener('click', () => {
-        likenessAcknowledged = true;
-        sessionStorage.setItem(`brand-therapy-reveal:${d.slug}:likeness-notice`, '1');
-        document.body.classList.remove('ack-open');
-        likenessNote.close();
-      });
-      const firstDirection = document.querySelector('.direction-intro');
-      const noticeObserver = new IntersectionObserver(entries => entries.forEach(entry => {
-        if (!entry.isIntersecting || likenessAcknowledged || likenessNote.open) return;
-        document.body.classList.add('ack-open');
-        likenessNote.showModal();
-        likenessConfirm.focus();
-      }), { threshold: .55 });
-      if (firstDirection) noticeObserver.observe(firstDirection);
-    }
-    const selection = document.querySelector('.selection');
-    const responseForm = document.querySelector('.response-form');
-    const responseNote = document.getElementById('response-note');
-    const responseSubmit = document.querySelector('.response-submit');
-    const responseStatus = document.querySelector('.response-status');
-    let selectedChoice = '';
-    let responseSent = false;
-    const setResponseStatus = (message='', state='') => {
-      responseStatus.textContent = message;
-      if (state) responseStatus.dataset.state = state;
-      else delete responseStatus.dataset.state;
-    };
-    const markResponseChanged = () => {
-      if (!responseSent) return;
-      responseSent = false;
-      responseSubmit.textContent = 'Send updated response';
-      responseSubmit.disabled = !selectedChoice;
-      setResponseStatus('Your change is only recorded when you send again.');
-    };
-    const applyChoice = id => {
-      selectedChoice = id;
-      document.querySelectorAll('.choice').forEach(button => button.classList.toggle('is-selected', button.dataset.choice === id));
-      const item = d.choices.find(c => c.id === id);
-      selection.textContent = item ? `Selected: ${item.label}` : '';
-      responseSubmit.disabled = !item;
-    };
-    const saved = localStorage.getItem(`brand-therapy-reveal:${d.slug}:choice`);
-    if (saved) applyChoice(saved);
-    document.querySelectorAll('.choice').forEach(button => button.addEventListener('click', () => {
-      localStorage.setItem(`brand-therapy-reveal:${d.slug}:choice`, button.dataset.choice);
-      markResponseChanged();
-      applyChoice(button.dataset.choice);
-    }));
-    responseNote.addEventListener('input', markResponseChanged);
-    responseForm.addEventListener('submit', async event => {
-      event.preventDefault();
-      const item = d.choices.find(choice => choice.id === selectedChoice);
-      if (!item) {
-        setResponseStatus('Choose one direction, or revise completely, before sending.', 'error');
-        document.querySelector('.choice')?.focus();
-        return;
-      }
-      responseSubmit.disabled = true;
-      responseSubmit.textContent = 'Sending...';
-      setResponseStatus('Recording your response.');
-      const submissionKey = `brand-therapy-reveal:${d.slug}:submission-id`;
-      let submissionId = localStorage.getItem(submissionKey);
-      if (!submissionId) {
-        submissionId = crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
-        localStorage.setItem(submissionKey, submissionId);
-      }
-      try {
-        const response = await fetch(d.responseEndpoint || 'https://bt-api.florianp.com/api/reveal-response', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            slug: d.slug,
-            client: d.client,
-            version: d.version || '',
-            choice: item.id,
-            choiceLabel: item.label,
-            note: responseNote.value.trim(),
-            submissionId
-          })
-        });
-        const result = await response.json().catch(() => ({}));
-        if (!response.ok || !result.ok) throw new Error(result.error || 'request failed');
-        responseSent = true;
-        responseSubmit.textContent = 'Response sent';
-        setResponseStatus('Received. Florian will review your response before anything moves forward.', 'success');
-      } catch (error) {
-        responseSubmit.disabled = false;
-        responseSubmit.textContent = 'Try sending again';
-        setResponseStatus('That did not reach Florian. Your choice is still saved here. Try again.', 'error');
-      }
-    });
-    document.addEventListener('keydown', event => {
-      if (viewer.open) return;
-      if (event.target.closest?.('.response-form')) return;
-      const current = scenes.findIndex(s => {
-        const r = s.getBoundingClientRect();
-        return r.top <= innerHeight * .45 && r.bottom >= innerHeight * .45;
-      });
-      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') scenes[Math.min(scenes.length - 1, current + 1)]?.scrollIntoView();
-      if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') scenes[Math.max(0, current - 1)]?.scrollIntoView();
-    });
-  </script>
+      <nav>
+        <a href="#strategy" data-nav="strategy" aria-current="true"><span>01</span>Strategy</a>
+        <a href="#identity" data-nav="identity"><span>02</span>Identity</a>
+        <a href="#profiles" data-nav="profiles"><span>03</span>LinkedIn</a>
+        <a href="#plan" data-nav="plan"><span>04</span>30-Day Plan</a>
+        <a href="#ai" data-nav="ai"><span>05</span>Use With AI</a>
+      </nav>
+      <div class="rail-footer">
+        <span>Prepared for</span>
+        <strong>Michael Couper</strong>
+        <small>No fixed base</small>
+      </div>
+    </aside>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Public inquiry</p>
+          <h1 id="hero-title">Follow the question<br><span>Better choices follow</span></h1>
+          <p class="hero-lead">A clear position, finished LinkedIn profiles, and a practical plan for becoming the person independent thinkers turn to when a choice is too consequential to get wrong.</p>
+          <div class="hero-summary" aria-label="Deliverable summary">
+            <span>One position</span>
+            <span>One character</span>
+            <span>Two profiles, ready to paste</span>
+            <span>Thirty days of direction</span>
+            <span>One portable AI pack</span>
+          </div>
+        </div>
+        <figure class="hero-portrait">
+          <img src="assets/michael-couper-hero.jpg" alt="Michael Couper in a dark pinstripe suit and patterned tie, smiling" width="1080" height="1440">
+          <figcaption>
+            <strong>Michael Couper</strong>
+            <span>Cross-disciplinary judgment and public thinking</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="chapter chapter-strategy" id="strategy" data-section="strategy" aria-labelledby="strategy-title">
+        <header class="chapter-heading">
+          <span>01</span>
+          <div>
+            <p>Your Strategy</p>
+            <h2 id="strategy-title">Be the thinker who starts with the question</h2>
+          </div>
+        </header>
+
+        <div class="positioning-block">
+          <div>
+            <p class="section-label">Positioning statement</p>
+            <blockquote>Michael Couper helps independent thinkers see the whole picture before making a consequential choice, by connecting evidence, systems, art, and civic reality that a single discipline would miss.</blockquote>
+          </div>
+          <div class="positioning-detail">
+            <p>Most public thinking picks a lane and stays there: the analyst's answer, the artist's take, the operator's certainty. Michael works across the lanes on purpose, because a consequential choice rarely respects one discipline. His authority comes from following the question until the fuller picture is visible.</p>
+            <dl>
+              <div><dt>Category</dt><dd>Cross-disciplinary judgment and public thinking</dd></div>
+              <div><dt>Distinctive idea</dt><dd>Follow the question</dd></div>
+              <div><dt>Founder role</dt><dd>Michael is the practice. The work he does across other ventures and institutions stays behind him.</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="focus-star" aria-labelledby="focus-star-title">
+          <header>
+            <p class="section-label">The Focus Star</p>
+            <h3 id="focus-star-title">The brand in five lines</h3>
+          </header>
+          <ol>
+            <li>
+              <span>Product</span>
+              <strong>The context and tools to see the whole picture.</strong>
+              <p>The product is the ability to move between disciplines, connect evidence that usually stays separated, and turn a wider field of view into a decision that actually holds.</p>
+            </li>
+            <li>
+              <span>People</span>
+              <strong>Independent thinkers.</strong>
+              <p><strong>Persona:</strong> The Independent Decision-Maker. Someone who resists premature certainty because the cost of a shallow judgment is real.</p>
+            </li>
+            <li>
+              <span>Purpose</span>
+              <strong>To move society forward through better-informed human choices.</strong>
+              <p>Better information matters because choices have consequences. The goal is a fuller understanding that improves what people build, protect, and pass forward.</p>
+            </li>
+            <li>
+              <span>Promise</span>
+              <strong>Follow the question.</strong>
+              <p><strong>Brand DNA:</strong> Question First. Inquiry only matters when it changes the decision at the end of it, so the question gets followed before an answer gets defended.</p>
+            </li>
+            <li>
+              <span>Personality</span>
+              <strong>A serious, playful polymath: rational, artistic, independent, with a mystical edge.</strong>
+              <p><strong>Main Brand Archetype:</strong> Sage. The range is coherent. Analytical rigor, artistic imagination, dry playfulness, and a restrained mystical edge sit together as one character.</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="point-of-view">
+          <p class="section-label">Point of view</p>
+          <p class="pov-line">The question that gets avoided is usually the one that would have changed the decision.</p>
+          <div class="pov-principles">
+            <p><span>01</span>A fuller picture costs more time than a faster answer, and it is the one that holds up later.</p>
+            <p><span>02</span>Independent thinking means resisting certainty until the picture is actually complete.</p>
+            <p><span>03</span>Evidence, inference, intuition, and opinion are different things. Naming which one is in use is part of the honesty.</p>
+          </div>
+        </div>
+
+        <div class="proof-bank">
+          <header>
+            <p class="section-label">Evidence</p>
+            <h3>What backs up the position</h3>
+          </header>
+          <div class="proof-ledger">
+            <article>
+              <span>The range</span>
+              <strong>Multiple disciplines, one method</strong>
+              <p>The value is what becomes visible when evidence from different fields gets connected: technology, art, business, science, philosophy, and civic life read together.</p>
+            </article>
+            <article>
+              <span>The discipline</span>
+              <strong>Question the premise before the answer</strong>
+              <p>Before accepting an answer, the premise gets examined, the missing perspective gets sought, and the evidence gets tested. The inquiry closes when it can support a real decision.</p>
+            </article>
+            <article>
+              <span>The honesty</span>
+              <strong>Evidence, inference, and opinion, named separately</strong>
+              <p>A claim is only as strong as its type. What is sourced fact, what is interpretation, and what is personal judgment stay clearly marked, especially when the distinction changes how much weight the claim should carry.</p>
+            </article>
+            <article>
+              <span>The revision</span>
+              <strong>Willing to be wrong in public</strong>
+              <p>A public position that updates when the evidence changes is inquiry working as intended.</p>
+            </article>
+          </div>
+          <p class="proof-note">None of this replaces expertise. It is what expertise looks like when it stays honest about what it does not yet know.</p>
+        </div>
+
+      </section>
+
+      <section class="chapter chapter-identity" id="identity" data-section="identity" aria-labelledby="identity-title">
+        <header class="chapter-heading">
+          <span>02</span>
+          <div>
+            <p>Your Identity</p>
+            <h2 id="identity-title">Sound exact, look working, stay curious</h2>
+          </div>
+        </header>
+
+        <div class="identity-read">
+          <header>
+            <p class="section-label">Personality</p>
+            <h3>One character across every channel</h3>
+          </header>
+          <p class="identity-statement">A serious, playful polymath: rational, artistic, independent, with a mystical edge</p>
+          <p class="identity-lead">This is the character every post, photo, and answer keeps. Someone should feel that Michael actually took the question seriously, and followed it somewhere.</p>
+          <div class="identity-traits">
+            <article><span>In the room</span><strong>Curious first, certain second</strong><p>He asks the harder question before offering the easier answer. Dry humor and real intellectual generosity, never a lecture.</p></article>
+            <article><span>On the page</span><strong>Exact, then human</strong><p>Evidence first, then what it actually means for the decision. Short, direct sentences, with room for dry wit.</p></article>
+            <article><span>In the picture</span><strong>Working context</strong><p>Caught mid-inquiry at a desk, in conversation, or at the mic, never staged as a guru portrait. Calm presence, exact wardrobe, no performance.</p></article>
+          </div>
+        </div>
+
+        <div class="archetype-block">
+          <header>
+            <p class="section-label">Brand archetype</p>
+            <h3>The sage who follows the question</h3>
+          </header>
+          <div class="archetype-layout">
+            <bt-archetype-chart id="archetypeChart" presentation="compact" animate aria-label="Michael Couper brand archetype mix"></bt-archetype-chart>
+            <div class="archetype-read">
+              <p>Thirteen words define the brand: analytical, artistic, calm, curious, honest, independent, insightful, knowledgeable, mature, original, serious, thoughtful, trustworthy. The mix below follows from them.</p>
+              <ol class="archetype-roles">
+                <li><strong>Sage leads.</strong> Context and evidence before judgment. This is the position itself.</li>
+                <li><strong>Creator carries it.</strong> Frameworks and tools that turn a wider field of evidence into something usable.</li>
+                <li><strong>Innocent supports.</strong> Honesty and clarity that keep the inquiry from turning into spin or shock.</li>
+                <li><strong>Explorer, Friend, Hero, Ruler, Outlaw, Magician, and Caregiver stay traces.</strong> Independence, approachability, resolve, standards, a restrained mystical edge, and generosity, present but never the lead.</li>
+              </ol>
+              <p class="archetype-note">Stay off guru staging, debate-personality framing, and salesman cadence. No borrowed certainty, no contrarianism for attention, no mystical language without a real question behind it.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sliders-block">
+          <header>
+            <p class="section-label">Brand dials</p>
+            <h3>How the brand is tuned</h3>
+          </header>
+          <p class="sliders-lead">Eleven scales that keep every post, photo, and reply in character. The percentage shows how strongly the brand leans to that side. The strongest settings are worth protecting; the middle ones leave room to move.</p>
+          <ol class="slider-list">
+            <li><span class="slider-left">Classic</span><div class="slider-track" aria-hidden="true"><i style="--pos:74"></i></div><span class="slider-right">Modern</span><span class="slider-value">Modern 48%</span></li>
+            <li><span class="slider-left">Mature</span><div class="slider-track" aria-hidden="true"><i style="--pos:38"></i></div><span class="slider-right">Youthful</span><span class="slider-value">Mature 24%</span></li>
+            <li class="defining"><span class="slider-left">Feminine</span><div class="slider-track" aria-hidden="true"><i style="--pos:86"></i></div><span class="slider-right">Masculine</span><span class="slider-value">Masculine 72%</span></li>
+            <li><span class="slider-left">Playful</span><div class="slider-track" aria-hidden="true"><i style="--pos:58"></i></div><span class="slider-right">Serious</span><span class="slider-value">Serious 16%</span></li>
+            <li class="defining"><span class="slider-left">Economical</span><div class="slider-track" aria-hidden="true"><i style="--pos:86"></i></div><span class="slider-right">Luxurious</span><span class="slider-value">Luxurious 72%</span></li>
+            <li class="defining"><span class="slider-left">Abstract</span><div class="slider-track" aria-hidden="true"><i style="--pos:84"></i></div><span class="slider-right">Literal</span><span class="slider-value">Literal 68%</span></li>
+            <li class="defining"><span class="slider-left">Geometric</span><div class="slider-track" aria-hidden="true"><i style="--pos:12"></i></div><span class="slider-right">Organic</span><span class="slider-value">Geometric 76%</span></li>
+            <li><span class="slider-left">Calm</span><div class="slider-track" aria-hidden="true"><i style="--pos:40"></i></div><span class="slider-right">Energetic</span><span class="slider-value">Calm 20%</span></li>
+            <li class="defining"><span class="slider-left">Rational</span><div class="slider-track" aria-hidden="true"><i style="--pos:0"></i></div><span class="slider-right">Emotional</span><span class="slider-value">Rational 100%</span></li>
+            <li><span class="slider-left">Mysterious</span><div class="slider-track" aria-hidden="true"><i style="--pos:26"></i></div><span class="slider-right">Transparent</span><span class="slider-value">Mysterious 48%</span></li>
+            <li class="defining"><span class="slider-left">Quiet</span><div class="slider-track" aria-hidden="true"><i style="--pos:12"></i></div><span class="slider-right">Talkative</span><span class="slider-value">Quiet 76%</span></li>
+          </ol>
+          <div class="slider-keywords">
+            <div><p class="section-label">Lean into</p><ul><li>Analytical</li><li>Masculine</li><li>Literal</li><li>Geometric</li><li>Quiet</li><li>Exact</li><li>Restrained</li></ul></div>
+            <div><p class="section-label">Move away from</p><ul><li>Automated</li><li>Salesy</li><li>Abstract</li><li>Organic</li><li>Loud</li><li>Flashy</li><li>Theatrical</li></ul></div>
+          </div>
+        </div>
+
+        <div class="voice-system">
+          <header>
+            <p class="section-label">Voice principles</p>
+            <h3>Sound like someone who actually followed the question</h3>
+          </header>
+          <div class="voice-rule">
+            <div><span>01</span><h4>Question before conclusion</h4></div>
+            <p>Ask what problem is actually being solved before defending an answer.</p>
+            <blockquote>Before we argue about the answer, what question are we actually trying to solve?</blockquote>
+          </div>
+          <div class="voice-rule">
+            <div><span>02</span><h4>Hold the competing view</h4></div>
+            <p>Bring in the perspective that complicates the easy answer, and keep it in view until the decision is made.</p>
+            <blockquote>The data matters. So does the context the data cannot hold.</blockquote>
+          </div>
+          <div class="voice-rule">
+            <div><span>03</span><h4>Name what kind of claim it is</h4></div>
+            <p>Evidence, inference, intuition, and opinion are not the same thing. Say which one is being used.</p>
+            <blockquote>That part is the evidence. This next part is just my read on it.</blockquote>
+          </div>
+          <div class="voice-rule">
+            <div><span>04</span><h4>Serious does not mean heavy</h4></div>
+            <p>Keep real ideas in plain, direct language, and treat revision as a strength.</p>
+            <blockquote>Changing your mind is not weakness. It is evidence that the inquiry worked.</blockquote>
+          </div>
+        </div>
+
+        <div class="look-block">
+          <header>
+            <p class="section-label">How it looks</p>
+            <h3>Working contexts, exact wardrobe, no performance</h3>
+          </header>
+          <div class="look-rules">
+            <article><span>Presence</span><p>A direct eye line, present and engaged, never performance intensity. Working posture at a desk, teaching, or in conversation, with real evidence visible in frame.</p></article>
+            <article><span>Wardrobe</span><p>A dark fine-gauge turtleneck with an unstructured wool blazer by default. A fitted polo for casual or media settings, a minimalist tuxedo for evening. Exact and quiet, never corporate shine.</p></article>
+            <article><span>Behavior</span><p>Caught in an observable act of inquiry: notes and evidence at a desk, teaching a student, speaking into a mic. Never standing still just to display an outfit.</p></article>
+            <article><span>Not this</span><p>No guru staging, no stage-performer spotlight, no professor costume, no arms-crossed dominance. The existing visual system stays as it is; this Sprint does not touch it.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter chapter-profiles" id="profiles" data-section="profiles" aria-labelledby="profiles-title">
+        <header class="chapter-heading">
+          <span>03</span>
+          <div>
+            <p>Your profiles</p>
+            <h2 id="profiles-title">LinkedIn</h2>
+          </div>
+        </header>
+
+
+        <section class="platform-block platform-linkedin" id="linkedin" aria-labelledby="linkedin-title">
+        <header class="platform-heading">
+          <p class="section-label">LinkedIn</p>
+          <h3 id="linkedin-title">A headline and a method, with no job-title salad</h3>
+        </header>
+
+        <div class="linkedin-application">
+          <div class="linkedin-preview">
+            <div class="linkedin-browser" role="img" aria-label="LinkedIn profile preview for Michael Couper showing the banner, headline, and About summary">
+              <div class="linkedin-toolbar"><b>in</b><span>Search</span><i></i><i></i><i></i></div>
+              <div class="linkedin-banner" role="img" aria-label="LinkedIn banner reading Cross-disciplinary judgment for independent thinkers.">
+                <img class="linkedin-banner-image" src="assets/linkedin-banner-v2.png?v=1" alt="" width="1584" height="396">
+              </div>
+              <div class="linkedin-person">
+                <div class="avatar-fallback" role="img" aria-label="Profile photo placeholder for Michael Couper">MC</div>
+                <div>
+                  <h3>Michael Couper</h3>
+                  <p>Cross-disciplinary judgment for independent thinkers | Follow the question before the answer</p>
+                  <small>Independent, no fixed location</small>
+                </div>
+              </div>
+              <div class="linkedin-actions" aria-hidden="true"><span>Connect</span><span>Message</span><span>More</span></div>
+              <section class="linkedin-about-preview" aria-hidden="true">
+                <h4>About</h4>
+                <p>I follow the question before I defend an answer. Most consequential choices sit across more than one discipline, so I move between technology, art, business, and civic life on purpose, to see what a single lane would miss.</p>
+              </section>
+            </div>
+            <div class="linkedin-downloads" role="group" aria-label="LinkedIn image downloads">
+              <a class="download-action" href="assets/linkedin-banner-v2.png?v=1" download="michael-couper-linkedin-banner-1584x396.png"><span>Download banner</span><small>1584 × 396 PNG</small></a>
+            </div>
+          </div>
+          <div class="banner-spec">
+            <p class="section-label">Banner direction</p>
+            <h3>Cross-disciplinary judgment</h3>
+            <p>A quiet study gives Michael's work an immediate editorial context without using a portrait. His name, role, and plain positioning line identify the territory while one restrained Seam Violet edge connects the banner to Counterpoint.</p>
+            <dl>
+              <div><dt>Canvas</dt><dd>1584 x 396 px</dd></div>
+              <div><dt>Message</dt><dd>Cross-disciplinary judgment for independent thinkers.</dd></div>
+              <div><dt>Visual cue</dt><dd>Quiet study still life, clean bone field, compact positioning line, generous margins, no people</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="profile-copy">
+          <article class="headline-copy">
+            <p class="section-label">Headline</p>
+            <h3>Cross-disciplinary judgment for independent thinkers | Follow the question before the answer</h3>
+            <button class="copy-button" type="button" data-copy-target="headlineText">Copy headline</button>
+            <span id="headlineText" hidden>Cross-disciplinary judgment for independent thinkers | Follow the question before the answer</span>
+          </article>
+
+          <article class="about-copy">
+            <div class="copy-heading">
+              <div><p class="section-label">About</p><h3>Ready to paste</h3></div>
+              <button class="copy-button" type="button" data-copy-target="aboutText">Copy About</button>
+            </div>
+            <div id="aboutText" class="about-text">
+              <p>I follow the question before I defend an answer. Most consequential choices sit across more than one discipline, so I move between technology, art, business, and civic life on purpose, to see what a single lane would miss.</p>
+              <p>The range matters for what becomes visible once evidence from different fields gets connected: the hidden assumption, the competing perspective, the part of the picture a faster answer would have skipped.</p>
+              <p>I name what is evidence, what is inference, and what is just my read on it, and I change my mind in public when the evidence asks for it.</p>
+              <p>If you are facing a choice that the easy answers keep flattening, I would like to hear the actual question underneath it.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="linkedin-support">
+          <div class="featured-plan">
+            <header><p class="section-label">Featured</p><h3>What to feature first</h3></header>
+            <ol>
+              <li><span>01</span><div><strong>Follow the question</strong><p>The core position, stated once, in plain language, pinned to the top of the profile.</p></div><small>Position</small></li>
+              <li><span>02</span><div><strong>The premise nobody checked</strong><p>A short piece walking through how an untested assumption changes once it gets named and examined.</p></div><small>Method</small></li>
+              <li><span>03</span><div><strong>Ask me the hard one</strong><p>An open invitation for the question the reader has not been able to settle, with a direct way to send it.</p></div><small>Invitation</small></li>
+            </ol>
+          </div>
+        </div>
+        </section>
+      </section>
+
+      <section class="chapter chapter-plan" id="plan" data-section="plan" aria-labelledby="plan-title">
+        <header class="chapter-heading">
+          <span>04</span>
+          <div>
+            <p>Your 30-Day Plan</p>
+            <h2 id="plan-title">Thirty days to a position the profiles can carry</h2>
+          </div>
+        </header>
+
+        <div class="objective-strip">
+          <p class="section-label">The objective</p>
+          <strong>Establish follow the question as the recognizable frame before the first public collaboration.</strong>
+          <span>Watch for replies and shares that engage with the actual question raised.</span>
+        </div>
+
+        <div class="priority-moves">
+          <article><span>01</span><div><h3>Say the position first</h3><p>Before anything else goes out, the core idea gets published once, in plain language, without hedging it into a list of interests.</p></div></article>
+          <article><span>02</span><div><h3>Show the method on one question</h3><p>Range proves the point when it is shown working on one real question.</p></div></article>
+          <article><span>03</span><div><h3>Finish the profiles before outreach</h3><p>Both profiles carry the position before the first message goes out, so anyone who checks finds a finished character.</p></div></article>
+        </div>
+
+        <div class="month-map" aria-label="Prioritized thirty day plan">
+          <header><p class="section-label">Four-week sequence</p><h3>Four weeks, in order</h3></header>
+          <ol>
+            <li>
+              <div class="week-number"><span>Week</span><strong>01</strong></div>
+              <div><h4>Say the position</h4><p>Publish the core idea once, in plain language, without hedging it into a subject list.</p></div>
+              <small>Position</small>
+            </li>
+            <li>
+              <div class="week-number"><span>Week</span><strong>02</strong></div>
+              <div><h4>Show the method</h4><p>Take one real, consequential question and walk it across two or three disciplines in public, landing on what actually changes.</p></div>
+              <small>Method</small>
+            </li>
+            <li>
+              <div class="week-number"><span>Week</span><strong>03</strong></div>
+              <div><h4>Invite the disagreement</h4><p>Publish something that names a competing view fairly and shows how it complicates the easy answer.</p></div>
+              <small>Inquiry</small>
+            </li>
+            <li>
+              <div class="week-number"><span>Week</span><strong>04</strong></div>
+              <div><h4>Open the door</h4><p>Give the two profiles a clear, low-pressure call to action and let the first real conversations start.</p></div>
+              <small>Invitation</small>
+            </li>
+          </ol>
+        </div>
+
+        <div class="content-system">
+          <header><p class="section-label">Content territories</p><h3>Three places the questions live</h3></header>
+          <div class="territories">
+            <article>
+              <span>01</span><h4>Cross-disciplinary reads</h4>
+              <ol>
+                <li>A question that looks technical until the human stakes show up</li>
+                <li>Two fields disagreeing, and what the disagreement is actually about</li>
+                <li>A premise everyone accepts, examined once</li>
+              </ol>
+            </article>
+            <article>
+              <span>02</span><h4>The inquiry itself</h4>
+              <ol>
+                <li>What changed between the first guess and the final call</li>
+                <li>The evidence that almost got missed</li>
+                <li>A position held, then revised in public</li>
+              </ol>
+            </article>
+            <article>
+              <span>03</span><h4>Independent judgment</h4>
+              <ol>
+                <li>The question underneath a partisan argument</li>
+                <li>Where automation and human judgment actually diverge</li>
+                <li>A decision that required admitting uncertainty first</li>
+              </ol>
+            </article>
+          </div>
+        </div>
+
+        <div class="activation-briefs">
+          <header><p class="section-label">Recommended plays</p><h3>Five ways to build the first month</h3></header>
+          <article>
+            <div class="brief-type">Campaign</div>
+            <div><h4>Say the position once</h4><p>One clear piece that states the core idea in plain language, pinned everywhere, no hedging.</p></div>
+            <dl><div><dt>Format</dt><dd>Long-form post plus a short video cut</dd></div><div><dt>Effort</dt><dd>One focused week</dd></div><div><dt>Signal</dt><dd>Saves and thoughtful replies</dd></div></dl>
+          </article>
+          <article>
+            <div class="brief-type">Collaboration</div>
+            <div><h4>Cross-disciplinary conversation</h4><p>A public conversation with someone from an adjacent field, built around one real question neither side has fully answered.</p></div>
+            <dl><div><dt>Format</dt><dd>Recorded conversation or live session</dd></div><div><dt>Effort</dt><dd>One partner and one clear question</dd></div><div><dt>Signal</dt><dd>Questions from the audience that extend the thread</dd></div></dl>
+          </article>
+          <article>
+            <div class="brief-type">PR</div>
+            <div><h4>The overlooked premise</h4><p>A piece that names an assumption everyone in a current debate is making and examines it once, fairly.</p></div>
+            <dl><div><dt>Format</dt><dd>Written piece, pitched to one relevant outlet or newsletter</dd></div><div><dt>Effort</dt><dd>One strong argument, well sourced</dd></div><div><dt>Signal</dt><dd>Pickup or citation outside his own channels</dd></div></dl>
+          </article>
+          <article>
+            <div class="brief-type">Pro bono</div>
+            <div><h4>Free framework, real use</h4><p>A short, reusable framework or set of questions that helps someone inspect their own decision, given away without a pitch attached.</p></div>
+            <dl><div><dt>Format</dt><dd>A short guide or worksheet</dd></div><div><dt>Effort</dt><dd>One clear use case</dd></div><div><dt>Signal</dt><dd>People using it and reporting back</dd></div></dl>
+          </article>
+          <article>
+            <div class="brief-type">Email and outreach</div>
+            <div><h4>Warm, direct, one ask</h4><p>A short note to people already in his orbit, pointing at the new position and asking one honest question: does this land.</p></div>
+            <dl><div><dt>Format</dt><dd>Short personal email</dd></div><div><dt>Effort</dt><dd>A list of warm contacts</dd></div><div><dt>Signal</dt><dd>Direct replies</dd></div></dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="chapter chapter-ai" id="ai" data-section="ai" aria-labelledby="ai-title">
+        <header class="chapter-heading">
+          <span>05</span>
+          <div>
+            <p>Use With AI</p>
+            <h2 id="ai-title">One brief, every tool, same person</h2>
+          </div>
+        </header>
+
+        <div class="ai-intro">
+          <div>
+            <p>A portable brief for any AI tool. Paste it in before drafting a post, a talk, or a reply, and the voice, the position, and the boundaries travel with it.</p>
+            <div class="ai-actions">
+              <button class="primary-action" type="button" id="copyAll">Copy full brand context</button>
+              <a class="download-action" href="brand-context.md" download>Download Markdown</a>
+            </div>
+            <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+          </div>
+          <dl>
+            <div><dt>Position</dt><dd>Follow the question</dd></div>
+            <div><dt>Voice</dt><dd>Analytical, direct, dry wit, no performance</dd></div>
+            <div><dt>Never</dt><dd>Company names, invented results, borrowed certainty</dd></div>
+          </dl>
+        </div>
+
+        <div class="context-viewer">
+          <header><span>View the AI context pack</span><small>The same brief, in one paste-ready file.</small></header>
+          <pre id="contextPreview" tabindex="0" aria-label="Michael Couper brand context Markdown">Loading your context pack...</pre>
+        </div>
+
+        <div class="starter-prompts">
+          <header><p class="section-label">Starter prompts</p><h3>Six prompts to start from</h3></header>
+          <div class="prompt-list">
+            <article>
+              <div><span>01</span><h4>LinkedIn post</h4></div>
+              <p id="prompt-post">Write a short post that opens with a real, consequential question. Name the premise most people accept without checking. Show what changes once one more discipline or one more piece of evidence enters the picture. Close with what actually became clearer. First person, direct sentences, dry wit welcome, no listicle format, no company names.</p>
+              <button type="button" data-copy-target="prompt-post">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>02</span><h4>Month plan</h4></div>
+              <p id="prompt-month">Plan four weeks of posts that follow one consequential question from the first uncertain framing to a landed decision. Week 1 states the position. Week 2 shows the method on a real example. Week 3 brings in a competing perspective fairly. Week 4 opens an invitation to talk. No company names, no invented results.</p>
+              <button type="button" data-copy-target="prompt-month">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>03</span><h4>Written framework</h4></div>
+              <p id="prompt-framework">Turn one recurring question into a short, reusable framework: three to five questions someone can ask themselves before a consequential choice. No jargon, no diagrams that require a key. Grounded in the same follow-the-question method, giving the reader the tool rather than the answer.</p>
+              <button type="button" data-copy-target="prompt-framework">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>04</span><h4>Collaboration brief</h4></div>
+              <p id="prompt-collaboration">Draft a short brief for a public conversation with someone from an adjacent field. Name the one real question neither side has fully answered, why it matters now, and what a useful disagreement between the two of them would sound like. No company names, no assumed outcome.</p>
+              <button type="button" data-copy-target="prompt-collaboration">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>05</span><h4>Campaign brief</h4></div>
+              <p id="prompt-campaign">Draft a short campaign brief for saying the core position once, clearly, across formats: one long-form piece, one short video cut, one pinned post. State the one idea the whole campaign stands on in plain language, and the one signal that would show it landed.</p>
+              <button type="button" data-copy-target="prompt-campaign">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>06</span><h4>Warm outreach brief</h4></div>
+              <p id="prompt-outreach">Draft a short, personal note to someone already in his orbit, pointing at the new public position and asking one honest question: does this land, and what would make it more useful. No pricing, no pitch, one clear ask.</p>
+              <button type="button" data-copy-target="prompt-outreach">Copy prompt</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div><span>MC</span><strong>Michael Couper</strong></div>
+        <p>Brand Therapy Sprint, prepared for Michael Couper in August 2026. The position, the profiles, and the plan are his to run.</p>
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
