@@ -2,948 +2,570 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="color-scheme" content="dark">
-  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-  <meta name="description" content="Your private Brand Therapy reveal is ready.">
-  <meta property="og:title" content="Brand Therapy.">
-  <meta property="og:description" content="Your private Brand Therapy reveal is ready.">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Brand Therapy">
-  <meta property="og:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
-  <meta property="og:image:secure_url" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Brand Therapy">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Brand Therapy.">
-  <meta name="twitter:description" content="Your private Brand Therapy reveal is ready.">
-  <meta name="twitter:image" content="https://brandtherapy.florianp.com/brand-therapy-share-v2.png">
-  <meta name="twitter:image:alt" content="Brand Therapy">
-  <title>Brand Therapy Reveal</title>
-  <link rel="icon" href="data:,">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+  <meta name="description" content="Brand Therapy Sprint for Adam Freed: strategy, identity, LinkedIn profile, thirty-day plan, and a portable AI context pack.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%233F4A50'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Georgia,serif' font-size='15' fill='%23EEF0F1'%3EAF%3C/text%3E%3C/svg%3E">
+  <title>Adam Freed | Brand Therapy Sprint</title>
+  <meta name="twitter:image" content="https://brandtherapy.florianp.com/adam-freed/og-image.png?v=1">
+  <meta property="og:image" content="https://brandtherapy.florianp.com/adam-freed/og-image.png?v=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
     :root {
-      --ink: #0c0c0f;
-      --paper: #efede7;
-      --muted: #aaa7a0;
-      --line: rgba(239, 237, 231, .18);
-      --accent: #c9c5ba;
-      --ease: cubic-bezier(.16, 1, .3, 1);
-    }
-    * { box-sizing: border-box; }
-    html {
-      scroll-snap-type: y mandatory;
-      scroll-behavior: smooth;
-      background: var(--ink);
-      color: var(--paper);
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-    body { margin: 0; background: var(--ink); overflow-x: hidden; }
-    button { font: inherit; }
-    .scene {
-      min-height: 100svh;
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-      position: relative;
-      display: grid;
-      align-items: center;
-      padding: clamp(76px, 10vh, 120px) clamp(24px, 7vw, 112px) clamp(62px, 8vh, 96px);
-      overflow: hidden;
-      isolation: isolate;
-    }
-    .scene.light { background: var(--paper); color: var(--ink); }
-    .scene.black { background: #070709; }
-    .inner { width: min(1120px, 100%); margin: 0 auto; }
-    .inner.narrow { width: min(820px, 100%); }
-    .kicker {
-      margin: 0 0 22px;
-      font-size: .72rem;
-      line-height: 1;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .framework-definition {
-      max-width: 38ch;
-      margin: -7px 0 22px;
-      font-size: clamp(.9rem, 1.25vw, 1.05rem);
-      line-height: 1.4;
-      color: var(--muted);
-    }
-    h1, h2, h3, p { margin: 0; }
-    .display {
-      max-width: 14ch;
-      font-size: clamp(3.3rem, 10vw, 9.6rem);
-      line-height: .88;
-      letter-spacing: -.065em;
-      font-weight: 500;
-    }
-    .statement {
-      max-width: 20ch;
-      font-size: clamp(2.35rem, 7vw, 7.3rem);
-      line-height: .95;
-      letter-spacing: -.052em;
-      font-weight: 500;
-    }
-    .body {
-      max-width: 48ch;
-      margin-top: 30px;
-      font-size: clamp(1rem, 1.6vw, 1.35rem);
-      line-height: 1.5;
-      color: var(--muted);
-    }
-    .light .body, .light .kicker, .light .framework-definition { color: #605f5a; }
-    .accent { color: var(--accent); }
-    .index {
-      position: absolute;
-      top: max(22px, env(safe-area-inset-top));
-      right: clamp(20px, 3vw, 42px);
-      font-size: .72rem;
-      letter-spacing: .12em;
-      color: var(--muted);
-      z-index: 20;
-    }
-    .meter {
-      position: fixed;
-      z-index: 40;
-      left: 0;
-      right: 0;
-      top: 0;
-      height: 2px;
-      background: rgba(239, 237, 231, .08);
-    }
-    .meter span { display: block; width: 0; height: 100%; background: var(--paper); transition: width 420ms var(--ease); }
-    .wordfield { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 34px; max-width: 900px; }
-    .wordfield span { font-size: clamp(.88rem, 1.6vw, 1.15rem); color: var(--muted); }
-    .sliderline { display: grid; gap: 13px; margin-top: 36px; max-width: 720px; }
-    .sliderline div { display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid var(--line); padding-bottom: 11px; }
-    .sliderline strong { min-width: 92px; color: var(--paper); font-weight: 500; }
-    .sliderline span { color: var(--muted); }
-    .board-scene { padding: 0; background: #08080a; }
-    .board-stage {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-    }
-    .board-scene img {
-      width: 100%;
-      height: 100svh;
-      object-fit: contain;
-      display: block;
-    }
-    .board-actions {
-      position: absolute;
-      z-index: 30;
-      right: clamp(18px, 3vw, 42px);
-      bottom: max(20px, env(safe-area-inset-bottom));
-      display: flex;
-      align-items: stretch;
-      gap: 8px;
-    }
-    .board-action,
-    .variant-switch button {
-      min-height: 46px;
-      border: 1px solid rgba(239, 237, 231, .5);
-      border-radius: 0;
-      background: var(--ink);
-      color: var(--paper);
-      cursor: pointer;
-      transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
-    }
-    .board-action {
-      padding: 12px 17px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, .24);
-      font-size: .76rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-    .board-action:hover,
-    .board-action:focus-visible,
-    .variant-switch button:hover,
-    .variant-switch button:focus-visible,
-    .variant-switch button.is-active {
-      outline: none;
-      background: var(--paper);
-      color: var(--ink);
-      border-color: var(--paper);
-    }
-    .variant-switch {
-      display: flex;
-      padding: 3px;
-      border: 1px solid rgba(239, 237, 231, .5);
-      background: var(--ink);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, .24);
-    }
-    .variant-switch button {
-      min-width: 54px;
-      min-height: 38px;
-      padding: 8px 12px;
-      border-color: transparent;
-      font-size: .7rem;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-    }
-    .chapter-toggle {
-      position: fixed;
-      z-index: 46;
-      left: clamp(14px, 2vw, 28px);
-      top: max(14px, env(safe-area-inset-top));
-      width: 44px;
-      height: 44px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      cursor: pointer;
-      opacity: .34;
-      transition: opacity 200ms ease, visibility 0s linear;
-    }
-    .chapter-toggle span {
-      display: block;
-      width: 16px;
-      height: 1px;
-      background: var(--paper);
-      transition: transform 260ms var(--ease), opacity 160ms ease, background 200ms ease;
-    }
-    body.on-light .chapter-toggle span { background: #3f3e39; }
-    .chapter-toggle:hover,
-    .chapter-toggle:focus-visible { outline: none; opacity: 1; }
-    .chapter-toggle:focus-visible { outline: 1px solid var(--paper); outline-offset: 5px; }
-    body.nav-open .chapter-toggle { opacity: 1; }
-    body.nav-open .chapter-toggle span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
-    body.nav-open .chapter-toggle span:nth-child(2) { opacity: 0; }
-    body.nav-open .chapter-toggle span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
-    body.at-start .chapter-toggle {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 200ms ease, visibility 0s linear 200ms;
-    }
-    .chapter-nav {
-      position: fixed;
-      z-index: 45;
-      left: clamp(14px, 2vw, 28px);
-      top: calc(max(14px, env(safe-area-inset-top)) + 52px);
-      display: grid;
-      grid-template-columns: repeat(4, auto);
-      border: 1px solid rgba(239, 237, 231, .28);
-      background: var(--ink);
-      box-shadow: 0 12px 38px rgba(0, 0, 0, .28);
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transform: translateY(-8px);
-      transition: opacity 200ms ease, transform 320ms var(--ease), visibility 0s linear 200ms;
-    }
-    body.nav-open .chapter-nav {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-      transform: none;
-      transition: opacity 200ms ease, transform 320ms var(--ease), visibility 0s linear;
-    }
-    .chapter-nav button {
-      min-height: 44px;
-      padding: 9px 14px;
-      border: 0;
-      border-right: 1px solid rgba(239, 237, 231, .16);
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      text-align: left;
-      transition: background 180ms ease, color 180ms ease;
-    }
-    .chapter-nav button:last-child { border-right: 0; }
-    .chapter-nav button:hover,
-    .chapter-nav button:focus-visible,
-    .chapter-nav button[aria-current="true"] {
-      outline: none;
-      background: var(--paper);
-      color: var(--ink);
-    }
-    .chapter-nav small {
-      display: block;
-      margin-bottom: 2px;
-      font-size: .58rem;
-      letter-spacing: .1em;
-      opacity: .62;
-    }
-    .chapter-nav span {
-      display: block;
-      font-size: .7rem;
-      letter-spacing: .04em;
-    }
-    body.ack-open .chapter-nav,
-    body.viewer-open .chapter-nav {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transform: translateY(-10px);
-    }
-    body.ack-open .chapter-toggle,
-    body.viewer-open .chapter-toggle {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 200ms ease, visibility 0s linear 200ms;
-    }
-    .stylescape-viewer {
-      width: 100vw;
-      max-width: none;
-      height: 100dvh;
-      max-height: none;
-      margin: 0;
-      padding: 0;
-      border: 0;
-      background: #070709;
-      color: var(--paper);
-      overflow: hidden;
-    }
-    .stylescape-viewer::backdrop { background: #070709; }
-    .viewer-toolbar {
-      position: absolute;
-      z-index: 4;
-      top: 0;
-      left: 0;
-      right: 0;
-      min-height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: max(10px, env(safe-area-inset-top)) clamp(14px, 3vw, 34px) 10px;
-      border-bottom: 1px solid var(--line);
-      background: #070709;
-    }
-    .viewer-title {
-      overflow: hidden;
-      font-size: .76rem;
-      letter-spacing: .1em;
-      text-overflow: ellipsis;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .viewer-toolbar > div { min-width: 0; display: flex; align-items: center; gap: 14px; }
-    .viewer-variants .variant-switch { box-shadow: none; }
-    .viewer-close {
-      min-width: 46px;
-      min-height: 44px;
-      padding: 9px 13px;
-      border: 1px solid var(--line);
-      border-radius: 0;
-      background: transparent;
-      color: var(--paper);
-      cursor: pointer;
-    }
-    .viewer-close:hover,
-    .viewer-close:focus-visible { outline: none; border-color: var(--paper); background: var(--paper); color: var(--ink); }
-    .viewer-stage {
-      position: absolute;
-      inset: 64px 0 70px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      touch-action: none;
-      cursor: zoom-in;
-    }
-    .viewer-stage.is-zoomed { cursor: grab; }
-    .viewer-stage.is-dragging { cursor: grabbing; }
-    .viewer-image {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      transform-origin: center;
-      user-select: none;
-      will-change: transform;
-    }
-    .viewer-footer {
-      position: absolute;
-      z-index: 4;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 10px 18px max(10px, env(safe-area-inset-bottom));
-      border-top: 1px solid var(--line);
-      background: #070709;
-    }
-    .viewer-footer button {
-      min-width: 48px;
-      min-height: 44px;
-      padding: 9px 13px;
-      border: 1px solid var(--line);
-      border-radius: 0;
-      background: transparent;
-      color: var(--paper);
-      cursor: pointer;
-    }
-    .viewer-footer button:hover,
-    .viewer-footer button:focus-visible { outline: none; border-color: var(--paper); background: var(--paper); color: var(--ink); }
-    .direction-intro {
-      padding: 0;
-      background: var(--direction-bg, #101014);
-      align-items: stretch;
-    }
-    .direction-visual {
-      position: absolute;
-      inset: 0 0 0 46%;
-      width: 54%;
-      height: 100%;
-      object-fit: cover;
-      object-position: var(--portrait-position, center);
-      display: block;
-    }
-    .direction-intro-copy {
-      position: relative;
-      z-index: 2;
-      width: 46%;
-      min-height: 100svh;
-      margin: 0;
-      padding: clamp(78px, 11vh, 124px) clamp(32px, 6vw, 94px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: var(--direction-bg, #101014);
-      border-right: 1px solid color-mix(in srgb, var(--direction-accent) 46%, transparent);
-    }
-    .direction-intro .display { max-width: 7ch; }
-    .direction-intro .body { max-width: 30ch; color: color-mix(in srgb, var(--paper) 68%, transparent); }
-    .direction-number { color: var(--direction-accent); }
-    .direction-detail { background: #111115; }
-    .direction-grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: clamp(34px, 7vw, 110px); align-items: center; }
-    .direction-detail .statement { max-width: 15ch; font-size: clamp(2.35rem, 3.8vw, 3.9rem); }
-    .fact { padding: 20px 0; border-top: 1px solid var(--line); }
-    .fact:first-child { border-top: 0; padding-top: 0; }
-    .fact b { display: block; margin-bottom: 8px; font-size: .72rem; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); }
-    .fact span { font-size: clamp(1rem, 1.45vw, 1.25rem); line-height: 1.38; }
-    .comparison-scene { overflow: visible; background: #070709; }
-    .comparison-scene .inner { width: min(1380px, 100%); max-width: none; }
-    .comparison-scene .statement { max-width: 18ch; font-size: clamp(2.5rem, 4.5vw, 4.8rem); }
-    .stylescape-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 24px); margin-top: clamp(22px, 3vh, 34px); }
-    .stylescape-card { min-width: 0; margin: 0; border: 1px solid var(--line); background: #111115; }
-    .stylescape-card img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #070709; }
-    .stylescape-card figcaption { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px; align-items: start; padding: 16px 18px 18px; }
-    .stylescape-card h3 { font-size: clamp(1rem, 1.5vw, 1.3rem); font-weight: 500; letter-spacing: -.025em; }
-    .stylescape-card p { color: var(--muted); font-size: clamp(.78rem, .9vw, .92rem); line-height: 1.45; }
-    .choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 40px; }
-    .choice {
-      min-height: 132px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      background: transparent;
-      color: var(--paper);
-      text-align: left;
-      cursor: pointer;
-      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
-    }
-    .choice:hover, .choice:focus-visible { outline: none; background: var(--paper); color: var(--ink); transform: translateY(-2px); }
-    .choice.is-selected { background: var(--paper); color: var(--ink); }
-    .choice small { display: block; margin-bottom: 18px; letter-spacing: .12em; text-transform: uppercase; opacity: .62; }
-    .choice strong { font-size: clamp(1rem, 1.8vw, 1.35rem); font-weight: 500; }
-    .selection { min-height: 1.5em; margin-top: 24px; color: var(--muted); }
-    .response-form {
-      width: min(760px, 100%);
-      margin-top: 30px;
-      padding-top: 28px;
-      border-top: 1px solid var(--line);
-    }
-    .response-form label {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 12px;
-      font-size: .76rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--paper);
-    }
-    .response-form label span { color: var(--muted); }
-    .response-form textarea {
-      display: block;
-      width: 100%;
-      min-height: 126px;
-      resize: vertical;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 0;
-      background: transparent;
-      color: var(--paper);
-      font: inherit;
-      font-size: 1rem;
-      line-height: 1.5;
-      transition: border-color 180ms ease, background 180ms ease;
-    }
-    .response-form textarea::placeholder { color: #77756f; }
-    .response-form textarea:focus { outline: none; border-color: var(--paper); background: rgba(239, 237, 231, .035); }
-    .response-actions { display: grid; grid-template-columns: minmax(190px, 260px) 1fr; gap: 20px; align-items: center; margin-top: 14px; }
-    .response-submit {
-      min-height: 54px;
-      padding: 14px 20px;
-      border: 1px solid var(--paper);
-      border-radius: 0;
-      background: var(--paper);
-      color: var(--ink);
-      cursor: pointer;
-      transition: background 180ms ease, color 180ms ease, opacity 180ms ease;
-    }
-    .response-submit:hover:not(:disabled), .response-submit:focus-visible { background: transparent; color: var(--paper); }
-    .response-submit:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
-    .response-submit:disabled { cursor: default; opacity: .34; }
-    .response-status { min-height: 1.5em; color: var(--muted); line-height: 1.45; }
-    .response-status[data-state="error"] { color: #f1b7ae; }
-    .response-status[data-state="success"] { color: var(--paper); }
-    .local-choice-note {
-      margin: 16px 0 0;
-      color: var(--muted);
-      font-size: .86rem;
-      line-height: 1.45;
-    }
-    .likeness-note {
-      width: min(540px, calc(100vw - 40px));
-      padding: 0;
-      border: 1px solid rgba(12, 12, 15, .18);
-      background: var(--paper);
-      color: var(--ink);
-      box-shadow: 0 30px 90px rgba(0, 0, 0, .36);
-    }
-    .likeness-note::backdrop { background: rgba(7, 7, 9, .82); }
-    .likeness-note-inner { padding: clamp(28px, 5vw, 48px); }
-    .likeness-note .kicker { color: #605f5a; }
-    .likeness-note h2 {
-      max-width: 10ch;
-      font-size: clamp(2.4rem, 7vw, 4.5rem);
-      line-height: .94;
-      letter-spacing: -.055em;
-      font-weight: 500;
-    }
-    .likeness-note p:not(.kicker) {
-      max-width: 42ch;
-      margin-top: 24px;
-      color: #605f5a;
-      font-size: clamp(1rem, 1.7vw, 1.18rem);
-      line-height: 1.52;
-    }
-    .likeness-note button {
-      width: 100%;
-      margin-top: 32px;
-      padding: 16px 20px;
-      border: 1px solid var(--ink);
-      background: var(--ink);
-      color: var(--paper);
-      cursor: pointer;
-      transition: background 180ms ease, color 180ms ease;
-    }
-    .likeness-note button:hover {
-      background: transparent;
-      color: var(--ink);
-    }
-    .likeness-note button:focus-visible {
-      outline: 2px solid var(--ink);
-      outline-offset: 3px;
-    }
-    body.ack-open, body.viewer-open { overflow: hidden; }
-    .hint { position: absolute; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translateX(-50%); color: var(--muted); font-size: .7rem; letter-spacing: .13em; text-transform: uppercase; }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 800ms var(--ease), transform 800ms var(--ease); }
-    .scene.is-visible .reveal { opacity: 1; transform: none; }
-    .scene.is-visible .reveal.delay { transition-delay: 120ms; }
-    @media (max-width: 760px) {
-      .scene { padding-left: 24px; padding-right: 24px; }
-      .reveal { opacity: 1; transform: none; transition: none; }
-      .display { font-size: clamp(3.2rem, 17vw, 5.6rem); }
-      .statement { font-size: clamp(2.55rem, 12vw, 4.7rem); }
-      .direction-grid, .stylescape-compare, .choices { grid-template-columns: 1fr; }
-      .direction-detail { align-items: start; }
-      .direction-detail .inner { padding-top: 3vh; }
-      .direction-detail .statement { font-size: clamp(2rem, 9.5vw, 3.35rem); }
-      .fact { padding: 15px 0; }
-      .choices { margin-top: 28px; }
-      .choice { min-height: 92px; }
-      .response-actions { grid-template-columns: 1fr; gap: 12px; }
-      .response-submit { width: 100%; }
-      .board-scene img { object-fit: contain; }
-      .board-actions { right: 18px; left: 18px; justify-content: flex-end; }
-      .chapter-nav { width: calc(100vw - 48px); grid-template-columns: repeat(4, 1fr); }
-      .chapter-nav button { padding: 8px 7px; text-align: center; }
-      .chapter-nav small { margin-bottom: 1px; }
-      .chapter-nav span { font-size: .62rem; }
-      .viewer-toolbar { min-height: 58px; }
-      .viewer-stage { inset: 58px 0 70px; }
-      .viewer-title { display: none; }
-      .direction-visual {
-        inset: 0 0 auto;
-        width: 100%;
-        height: 56%;
-        object-position: var(--portrait-position-mobile, var(--portrait-position, center));
-      }
-      .direction-intro-copy {
-        width: 100%;
-        min-height: 48svh;
-        margin-top: 52svh;
-        padding: 40px 24px 56px;
-        justify-content: flex-start;
-        border-top: 1px solid color-mix(in srgb, var(--direction-accent) 46%, transparent);
-        border-right: 0;
-      }
-      .direction-intro .display { font-size: clamp(3.8rem, 18vw, 6.2rem); }
-      .direction-intro .body { margin-top: 22px; }
-      .comparison-scene {
-        align-items: start;
-        padding-top: 84px;
-        padding-bottom: 84px;
-      }
-      .comparison-scene .statement { font-size: clamp(2.35rem, 10.5vw, 3.55rem); }
-      .stylescape-card figcaption { grid-template-columns: 1fr; gap: 8px; }
-      #decision {
-        align-items: start;
-        overflow: visible;
-        padding-top: 84px;
-        padding-bottom: 84px;
-      }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .reveal { opacity: 1; transform: none; transition: none; }
+      --ink: #21262B;
+      --ink-soft: #545C61;
+      --paper: #EEF0F1;
+      --paper-deep: #E2E5E6;
+      --mist: #C9CFD1;
+      --mineral: #3F4A50;
+      --water: #547078;
+      --clay: #7A5C44;
+      --clay-soft: #D0BAA4;
+      --line: #D6DADA;
+      --white: #FFFFFF;
+      --banner: #3F4A50;
+      --banner-deep: #547078;
+      --font: "Barlow", "Avenir Next", "Helvetica Neue", sans-serif;
+      --font-body: "Barlow", "Avenir Next", "Helvetica Neue", sans-serif;
+      --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
     }
   </style>
+  <script src="assets/archetype-chart/archetype-chart.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
-<body class="at-start">
-  <div class="meter" aria-hidden="true"><span></span></div>
-  <button class="chapter-toggle" type="button" aria-label="Open chapters" aria-controls="chapter-nav" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <nav class="chapter-nav" id="chapter-nav" aria-label="Reveal chapters">
-    <button type="button" data-chapter-target="intro" aria-current="true"><small>01</small><span>Start</span></button>
-    <button type="button" data-chapter-target="strategy"><small>02</small><span>Strategy</span></button>
-    <button type="button" data-chapter-target="directions"><small>03</small><span>Directions</span></button>
-    <button type="button" data-chapter-target="decide"><small>04</small><span>Choose</span></button>
-  </nav>
-  <main id="story"></main>
-  <dialog class="likeness-note" id="likeness-note" aria-labelledby="likeness-note-title" aria-describedby="likeness-note-body">
-    <div class="likeness-note-inner">
-      <p class="kicker">Before the visuals</p>
-      <h2 id="likeness-note-title"></h2>
-      <p id="likeness-note-body"></p>
-      <button type="button" id="likeness-note-confirm">Got it</button>
-    </div>
-  </dialog>
-  <dialog class="stylescape-viewer" id="stylescape-viewer" aria-labelledby="viewer-title">
-    <div class="viewer-toolbar">
-      <div>
-        <div class="viewer-title" id="viewer-title">Stylescape</div>
-        <div class="viewer-variants" aria-label="Color version"></div>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+    <a class="wordmark" href="#top" aria-label="Adam Freed, back to top">
+      <span>AF</span>
+      <strong>Adam Freed</strong>
+    </a>
+    <p>Data integrity <span>LinkedIn</span></p>
+    <span class="demo-label">August 2026</span>
+  </header>
+
+  <div class="page-shell" id="top">
+    <aside class="rail" aria-label="Deliverable navigation">
+      <div class="rail-intro">
+        <span class="rail-number">01</span>
+        <p>Your strategy, made visible on LinkedIn</p>
       </div>
-      <button class="viewer-close" type="button" aria-label="Close zoom view">Close</button>
-    </div>
-    <div class="viewer-stage">
-      <img class="viewer-image" alt="" draggable="false">
-    </div>
-    <div class="viewer-footer" aria-label="Zoom controls">
-      <button type="button" data-viewer-zoom="out" aria-label="Zoom out">−</button>
-      <button type="button" data-viewer-zoom="reset" aria-label="Reset zoom">100%</button>
-      <button type="button" data-viewer-zoom="in" aria-label="Zoom in">+</button>
-    </div>
-  </dialog>
-  <script src="reveal-data.js?v=6838b64fd6b7"></script>
-  <script>
-    const d = window.REVEAL_DATA;
-    const story = document.getElementById('story');
-    const esc = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
-    const frameworkDefinitions = {
-      product: 'What you uniquely offer.',
-      people: 'Who you are here to serve.',
-      purpose: 'Why your work needs to exist.',
-      promise: 'What people can consistently expect from you.',
-      personality: 'How your brand should feel and behave.',
-      archetype: 'The timeless roles your brand naturally embodies.',
-      founderSpectrum: 'How closely your personal identity and business brand should overlap.',
-      brandSliders: 'The creative tensions that calibrate how your brand should feel.'
-    };
-    Object.assign(frameworkDefinitions, d.frameworkDefinitions || {});
-    const scene = (content, cls='black', chapter='intro') => `<section class="scene ${cls}" data-chapter="${esc(chapter)}"><div class="inner">${content}</div></section>`;
-    const line = (kicker, title, body='', cls='black', chapter='intro') => scene(`<p class="kicker reveal">${esc(kicker)}</p><h2 class="statement reveal delay">${esc(title)}</h2>${body ? `<p class="body reveal delay">${esc(body)}</p>` : ''}`, cls, chapter);
-    let html = '';
-    html += scene(`<h1 class="display reveal">Hello,<br>${esc(d.firstName)}.</h1><span class="hint">Scroll to begin</span>`);
-    html += line('Brand Therapy', 'Your Brand Therapy is ready.', `For your approval, before we build your Brand Therapy OS.`);
-    html += line('My read', `Here is what I see in you, ${d.firstName}.`);
-    d.strategy.forEach((item, i) => {
-      const nested = item.nested ? `<p class="body reveal delay">${esc(item.nested.label)}: ${esc(item.nested.value)}</p>` : '';
-      const definition = item.definition || frameworkDefinitions[item.label.toLowerCase()] || '';
-      html += scene(`<p class="kicker reveal">0${i + 1} / ${esc(item.label)}</p>${definition ? `<p class="framework-definition reveal">${esc(definition)}</p>` : ''}<h2 class="statement reveal delay">${esc(item.title)}</h2><p class="body reveal delay">${esc(item.body)}</p>${nested}`, i % 2 ? 'light' : 'black', 'strategy');
-    });
-    html += scene(`<p class="kicker reveal">Brand archetype</p><p class="framework-definition reveal">${esc(frameworkDefinitions.archetype)}</p><h2 class="statement reveal delay">${esc(d.archetype)}</h2><div class="wordfield reveal delay">${d.personalityWords.map(w => `<span>${esc(w)}</span>`).join('')}</div>`, 'black', 'strategy');
-    html += scene(`<p class="kicker reveal">Founder Spectrum</p><p class="framework-definition reveal">${esc(frameworkDefinitions.founderSpectrum)}</p><h2 class="statement reveal delay">${esc(d.spectrum.title)}</h2><p class="body reveal delay">${esc(d.spectrum.body)}</p>`, 'light', 'strategy');
-    html += scene(`<p class="kicker reveal">Brand Sliders</p><p class="framework-definition reveal">${esc(frameworkDefinitions.brandSliders)}</p><h2 class="statement reveal delay">${esc(d.sliders.title)}</h2><div class="sliderline reveal delay">${d.sliders.lines.map(row => `<div><strong>${esc(row[0])}</strong><span>${esc(row[1])}</span></div>`).join('')}</div>`, 'black', 'strategy');
-    html += line('The through-line', d.synthesis.title, d.synthesis.body, 'light', 'strategy');
-    html += line('Creative Direction', 'One strategy. Two possible worlds.', 'Both are true to you. They choose a different way to make that truth visible.', 'black', 'directions');
-    d.directions.forEach((dir, i) => {
-      const directionName = dir.name || `Direction ${i + 1}`;
-      const variants = Array.isArray(dir.variants) && dir.variants.length ? dir.variants : [{ id: 'default', label: '', image: dir.image }];
-      const activeVariant = variants.find(variant => variant.default) || variants[0];
-      const variantSwitch = variants.length > 1 ? `<div class="variant-switch" role="group" aria-label="${esc(directionName)} color version">${variants.map(variant => `<button type="button" data-variant-id="${esc(variant.id)}" data-variant-image="${esc(variant.image)}" aria-pressed="${variant.id === activeVariant.id}" class="${variant.id === activeVariant.id ? 'is-active' : ''}">${esc(variant.label)}</button>`).join('')}</div>` : '';
-      const directionVisual = dir.introImage ? `<img class="direction-visual" src="${esc(dir.introImage)}" alt="${esc(dir.introAlt || `${directionName} visual introduction`)}" draggable="false">` : '';
-      html += `<section class="scene direction-intro" data-chapter="directions" style="--direction-bg:${esc(dir.bg)};--direction-accent:${esc(dir.accent)};--portrait-position:${esc(dir.introPosition || 'center')};--portrait-position-mobile:${esc(dir.introPositionMobile || dir.introPosition || 'center')}">${directionVisual}<div class="direction-intro-copy"><p class="kicker reveal direction-number">Visual direction</p><h2 class="display reveal delay">${esc(directionName)}</h2><p class="body reveal delay">${esc(dir.premise)}</p></div></section>`;
-      html += `<section class="scene board-scene" data-chapter="directions" data-board-id="${esc(dir.id)}" data-board-name="${esc(directionName)}"><div class="board-stage"><img class="board-image" src="${esc(activeVariant.image)}" alt="${esc(directionName)} creative direction stylescape" draggable="false"><div class="board-actions">${variantSwitch}<button class="board-action" type="button" data-open-viewer>Zoom</button></div></div></section>`;
-      html += `<section class="scene direction-detail" data-chapter="directions"><div class="inner direction-grid"><div><p class="kicker reveal">Direction ${i + 1}</p><h2 class="statement reveal delay">${esc(dir.emotionalRead)}</h2></div><div class="reveal delay"><div class="fact"><b>Signature</b><span>${esc(dir.signature)}</span></div><div class="fact"><b>Outfit</b><span>${esc(dir.outfit)}</span></div><div class="fact"><b>Risk to guard</b><span>${esc(dir.risk)}</span></div></div></div></section>`;
-    });
-    const comparisonCards = d.directions.map((dir, i) => {
-      const directionName = dir.name || `Direction ${i + 1}`;
-      const variants = Array.isArray(dir.variants) && dir.variants.length ? dir.variants : [{ image: dir.image }];
-      const activeVariant = variants.find(variant => variant.default) || variants[0];
-      return `<figure class="stylescape-card"><img src="${esc(activeVariant.image)}" alt="${esc(directionName)} creative direction stylescape" data-compare-image-id="${esc(dir.id)}" draggable="false"><figcaption><h3>${esc(directionName)}</h3><p>${esc(dir.compare)}</p></figcaption></figure>`;
-    }).join('');
-    html += `<section class="scene comparison-scene" data-chapter="directions"><div class="inner"><p class="kicker reveal">The choice</p><h2 class="statement reveal delay">Which world makes you feel most seen?</h2><div class="stylescape-compare reveal delay">${comparisonCards}</div></div></section>`;
-    const localPreviewNote = d.localOnly ? `<p class="local-choice-note">Private preview. The form is shown for review, but sending is not connected here.</p>` : '';
-    const responsePanel = `<form class="response-form reveal delay" novalidate><label for="response-note">Send with a note <span>Optional</span></label><textarea id="response-note" name="note" maxlength="2000" placeholder="Anything you want Florian to know."></textarea><div class="response-actions"><button class="response-submit" type="submit" disabled>Send response</button><p class="response-status" role="status" aria-live="polite"></p></div>${localPreviewNote}</form>`;
-    html += `<section class="scene black" data-chapter="decide" id="decision"><div class="inner"><p class="kicker reveal">Your decision</p><h2 class="statement reveal delay">Choose a direction, or revise completely.</h2><div class="choices reveal delay">${d.choices.map((c, i) => `<button type="button" class="choice" data-choice="${esc(c.id)}"><small>0${i + 1}</small><strong>${esc(c.label)}</strong></button>`).join('')}</div><p class="selection reveal delay" role="status"></p>${responsePanel}</div></section>`;
-    story.innerHTML = html;
-    const scenes = [...document.querySelectorAll('.scene')];
-    scenes.forEach((s, i) => s.insertAdjacentHTML('afterbegin', `<span class="index">${String(i + 1).padStart(2,'0')} / ${String(scenes.length).padStart(2,'0')}</span>`));
-    const meter = document.querySelector('.meter span');
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
-      const i = scenes.indexOf(entry.target);
-      meter.style.width = `${((i + 1) / scenes.length) * 100}%`;
-      const chapter = entry.target.dataset.chapter;
-      document.querySelectorAll('.chapter-nav button').forEach(button => button.setAttribute('aria-current', button.dataset.chapterTarget === chapter ? 'true' : 'false'));
-      const atStart = i === 0;
-      document.body.classList.toggle('at-start', atStart);
-      document.body.classList.toggle('on-light', entry.target.classList.contains('light'));
-      if (atStart) setNavOpen(false);
-    }), { threshold: .24 });
-    scenes.forEach(s => observer.observe(s));
-    const chapterToggle = document.querySelector('.chapter-toggle');
-    const setNavOpen = open => {
-      document.body.classList.toggle('nav-open', open);
-      chapterToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      chapterToggle.setAttribute('aria-label', open ? 'Close chapters' : 'Open chapters');
-    };
-    chapterToggle.addEventListener('click', () => setNavOpen(!document.body.classList.contains('nav-open')));
-    document.addEventListener('click', event => {
-      if (!document.body.classList.contains('nav-open')) return;
-      if (event.target.closest('.chapter-nav') || event.target.closest('.chapter-toggle')) return;
-      setNavOpen(false);
-    });
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && document.body.classList.contains('nav-open')) setNavOpen(false);
-    });
-    document.querySelectorAll('.chapter-nav button').forEach(button => button.addEventListener('click', () => {
-      setNavOpen(false);
-      document.querySelector(`.scene[data-chapter="${button.dataset.chapterTarget}"]`)?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-    }));
-    document.querySelectorAll('.board-image').forEach(image => image.addEventListener('contextmenu', event => event.preventDefault()));
-    const viewer = document.getElementById('stylescape-viewer');
-    const viewerImage = viewer.querySelector('.viewer-image');
-    const viewerStage = viewer.querySelector('.viewer-stage');
-    const viewerTitle = viewer.querySelector('.viewer-title');
-    const viewerVariants = viewer.querySelector('.viewer-variants');
-    const viewerPercent = viewer.querySelector('[data-viewer-zoom="reset"]');
-    let activeBoard = null;
-    let zoom = { scale: 1, x: 0, y: 0 };
-    let drag = null;
-    const updateViewer = () => {
-      viewerImage.style.transform = `translate3d(${zoom.x}px, ${zoom.y}px, 0) scale(${zoom.scale})`;
-      viewerPercent.textContent = `${Math.round(zoom.scale * 100)}%`;
-      viewerStage.classList.toggle('is-zoomed', zoom.scale > 1);
-    };
-    const resetViewer = () => { zoom = { scale: 1, x: 0, y: 0 }; updateViewer(); };
-    const setViewerZoom = scale => {
-      zoom.scale = Math.max(1, Math.min(4, scale));
-      if (zoom.scale === 1) { zoom.x = 0; zoom.y = 0; }
-      updateViewer();
-    };
-    const setBoardVariant = (board, id) => {
-      const button = board.querySelector(`[data-variant-id="${id}"]`);
-      if (!button) return;
-      board.querySelector('.board-image').src = button.dataset.variantImage;
-      document.querySelector(`[data-compare-image-id="${board.dataset.boardId}"]`)?.setAttribute('src', button.dataset.variantImage);
-      board.querySelectorAll('[data-variant-id]').forEach(item => {
-        const active = item.dataset.variantId === id;
-        item.classList.toggle('is-active', active);
-        item.setAttribute('aria-pressed', active ? 'true' : 'false');
-      });
-      if (viewer.open && activeBoard === board) {
-        viewerImage.src = button.dataset.variantImage;
-        viewerVariants.querySelectorAll('[data-viewer-variant]').forEach(item => {
-          const active = item.dataset.viewerVariant === id;
-          item.classList.toggle('is-active', active);
-          item.setAttribute('aria-pressed', active ? 'true' : 'false');
-        });
-        resetViewer();
-      }
-    };
-    document.querySelectorAll('.board-scene').forEach(board => {
-      board.querySelectorAll('[data-variant-id]').forEach(button => button.addEventListener('click', () => setBoardVariant(board, button.dataset.variantId)));
-      board.querySelector('[data-open-viewer]').addEventListener('click', () => {
-        activeBoard = board;
-        const boardImage = board.querySelector('.board-image');
-        viewerTitle.textContent = board.dataset.boardName;
-        viewerImage.src = boardImage.getAttribute('src');
-        viewerImage.alt = boardImage.alt;
-        const variants = [...board.querySelectorAll('[data-variant-id]')];
-        viewerVariants.innerHTML = variants.length ? `<div class="variant-switch" role="group" aria-label="Color version">${variants.map(button => `<button type="button" data-viewer-variant="${esc(button.dataset.variantId)}" aria-pressed="${button.getAttribute('aria-pressed')}" class="${button.classList.contains('is-active') ? 'is-active' : ''}">${esc(button.textContent)}</button>`).join('')}</div>` : '';
-        viewerVariants.querySelectorAll('[data-viewer-variant]').forEach(button => button.addEventListener('click', () => setBoardVariant(board, button.dataset.viewerVariant)));
-        resetViewer();
-        document.body.classList.add('viewer-open');
-        viewer.showModal();
-        viewer.querySelector('.viewer-close').focus();
-      });
-    });
-    viewer.querySelector('.viewer-close').addEventListener('click', () => viewer.close());
-    viewer.addEventListener('close', () => { document.body.classList.remove('viewer-open'); activeBoard = null; resetViewer(); });
-    viewerImage.addEventListener('contextmenu', event => event.preventDefault());
-    viewer.querySelector('[data-viewer-zoom="in"]').addEventListener('click', () => setViewerZoom(zoom.scale + .25));
-    viewer.querySelector('[data-viewer-zoom="out"]').addEventListener('click', () => setViewerZoom(zoom.scale - .25));
-    viewerPercent.addEventListener('click', resetViewer);
-    viewerStage.addEventListener('dblclick', () => setViewerZoom(zoom.scale === 1 ? 2 : 1));
-    viewerStage.addEventListener('wheel', event => { event.preventDefault(); setViewerZoom(zoom.scale + (event.deltaY < 0 ? .25 : -.25)); }, { passive: false });
-    viewerStage.addEventListener('pointerdown', event => {
-      if (zoom.scale === 1) return;
-      drag = { pointerId: event.pointerId, startX: event.clientX, startY: event.clientY, x: zoom.x, y: zoom.y };
-      viewerStage.setPointerCapture(event.pointerId);
-      viewerStage.classList.add('is-dragging');
-    });
-    viewerStage.addEventListener('pointermove', event => {
-      if (!drag || drag.pointerId !== event.pointerId) return;
-      zoom.x = drag.x + event.clientX - drag.startX;
-      zoom.y = drag.y + event.clientY - drag.startY;
-      updateViewer();
-    });
-    const endDrag = event => {
-      if (!drag || drag.pointerId !== event.pointerId) return;
-      drag = null;
-      viewerStage.classList.remove('is-dragging');
-    };
-    viewerStage.addEventListener('pointerup', endDrag);
-    viewerStage.addEventListener('pointercancel', endDrag);
-    const likenessNote = document.getElementById('likeness-note');
-    const likenessConfirm = document.getElementById('likeness-note-confirm');
-    const notice = d.likenessNotice;
-    let likenessAcknowledged = sessionStorage.getItem(`brand-therapy-reveal:${d.slug}:likeness-notice`) === '1';
-    if (notice) {
-      document.getElementById('likeness-note-title').textContent = notice.title;
-      document.getElementById('likeness-note-body').textContent = notice.body;
-      likenessConfirm.textContent = notice.button || 'Got it';
-      likenessNote.addEventListener('cancel', event => event.preventDefault());
-      likenessConfirm.addEventListener('click', () => {
-        likenessAcknowledged = true;
-        sessionStorage.setItem(`brand-therapy-reveal:${d.slug}:likeness-notice`, '1');
-        document.body.classList.remove('ack-open');
-        likenessNote.close();
-      });
-      const firstDirection = document.querySelector('.direction-intro');
-      const noticeObserver = new IntersectionObserver(entries => entries.forEach(entry => {
-        if (!entry.isIntersecting || likenessAcknowledged || likenessNote.open) return;
-        document.body.classList.add('ack-open');
-        likenessNote.showModal();
-        likenessConfirm.focus();
-      }), { threshold: .55 });
-      if (firstDirection) noticeObserver.observe(firstDirection);
-    }
-    const selection = document.querySelector('.selection');
-    const responseForm = document.querySelector('.response-form');
-    const responseNote = document.getElementById('response-note');
-    const responseSubmit = document.querySelector('.response-submit');
-    const responseStatus = document.querySelector('.response-status');
-    const submissionsEnabled = !d.localOnly;
-    let selectedChoice = '';
-    let responseSent = false;
-    const setResponseStatus = (message='', state='') => {
-      responseStatus.textContent = message;
-      if (state) responseStatus.dataset.state = state;
-      else delete responseStatus.dataset.state;
-    };
-    const markResponseChanged = () => {
-      if (!responseSent) return;
-      responseSent = false;
-      responseSubmit.textContent = 'Send updated response';
-      responseSubmit.disabled = !selectedChoice || !submissionsEnabled;
-      setResponseStatus('Your change is only recorded when you send again.');
-    };
-    const applyChoice = id => {
-      selectedChoice = id;
-      document.querySelectorAll('.choice').forEach(button => button.classList.toggle('is-selected', button.dataset.choice === id));
-      const item = d.choices.find(c => c.id === id);
-      selection.textContent = item ? `Selected: ${item.label}` : '';
-      responseSubmit.disabled = !item || !submissionsEnabled;
-      if (item && !submissionsEnabled) setResponseStatus('Private preview only. Sending is not connected.');
-    };
-    const saved = localStorage.getItem(`brand-therapy-reveal:${d.slug}:choice`);
-    if (saved) applyChoice(saved);
-    document.querySelectorAll('.choice').forEach(button => button.addEventListener('click', () => {
-      localStorage.setItem(`brand-therapy-reveal:${d.slug}:choice`, button.dataset.choice);
-      markResponseChanged();
-      applyChoice(button.dataset.choice);
-    }));
-    responseNote.addEventListener('input', markResponseChanged);
-    responseForm.addEventListener('submit', async event => {
-      event.preventDefault();
-      if (!submissionsEnabled) {
-        setResponseStatus('Private preview only. Sending is not connected.', 'error');
-        return;
-      }
-      const item = d.choices.find(choice => choice.id === selectedChoice);
-      if (!item) {
-        setResponseStatus('Choose one direction, or revise completely, before sending.', 'error');
-        document.querySelector('.choice')?.focus();
-        return;
-      }
-      responseSubmit.disabled = true;
-      responseSubmit.textContent = 'Sending...';
-      setResponseStatus('Recording your response.');
-      const submissionKey = `brand-therapy-reveal:${d.slug}:submission-id`;
-      let submissionId = localStorage.getItem(submissionKey);
-      if (!submissionId) {
-        submissionId = crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
-        localStorage.setItem(submissionKey, submissionId);
-      }
-      try {
-        const response = await fetch(d.responseEndpoint || 'https://bt-api.florianp.com/api/reveal-response', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            slug: d.slug,
-            client: d.client,
-            version: d.version || '',
-            choice: item.id,
-            choiceLabel: item.label,
-            note: responseNote.value.trim(),
-            submissionId
-          })
-        });
-        const result = await response.json().catch(() => ({}));
-        if (!response.ok || !result.ok) throw new Error(result.error || 'request failed');
-        responseSent = true;
-        responseSubmit.textContent = 'Response sent';
-        setResponseStatus('Received. Florian will review your response before anything moves forward.', 'success');
-      } catch (error) {
-        responseSubmit.disabled = false;
-        responseSubmit.textContent = 'Try sending again';
-        setResponseStatus('That did not reach Florian. Your choice is still saved here. Try again.', 'error');
-      }
-    });
-    document.addEventListener('keydown', event => {
-      if (viewer.open) return;
-      if (event.target.closest?.('.response-form')) return;
-      const current = scenes.findIndex(s => {
-        const r = s.getBoundingClientRect();
-        return r.top <= innerHeight * .45 && r.bottom >= innerHeight * .45;
-      });
-      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') scenes[Math.min(scenes.length - 1, current + 1)]?.scrollIntoView();
-      if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') scenes[Math.max(0, current - 1)]?.scrollIntoView();
-    });
-  </script>
+      <nav>
+        <a href="#strategy" data-nav="strategy" aria-current="true"><span>01</span>Strategy</a>
+        <a href="#identity" data-nav="identity"><span>02</span>Identity</a>
+        <a href="#profiles" data-nav="profiles"><span>03</span>LinkedIn</a>
+        <a href="#plan" data-nav="plan"><span>04</span>30-Day Plan</a>
+        <a href="#ai" data-nav="ai"><span>05</span>Use With AI</a>
+      </nav>
+      <div class="rail-footer">
+        <span>Prepared for</span>
+        <strong>Adam Freed</strong>
+        <small>Independent practice</small>
+      </div>
+    </aside>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Data integrity</p>
+          <h1 id="hero-title">Get your numbers<br><span>on speaking terms</span></h1>
+          <p class="hero-lead">A focused position, a finished LinkedIn profile, and a practical plan for becoming the advisor cannabis founders call when the reports look fine and the data does not agree.</p>
+          <div class="hero-summary" aria-label="Deliverable summary">
+            <span>One position</span>
+            <span>One character</span>
+            <span>One profile, ready to paste</span>
+            <span>Thirty days of direction</span>
+            <span>One portable AI pack</span>
+          </div>
+        </div>
+        <figure class="hero-portrait">
+          <img src="assets/adam-freed-hero.jpg" alt="Adam Freed mid-conversation on a cultivation floor, wearing a flat cap, glasses, and a navy quarter-zip" width="1080" height="1440">
+          <figcaption>
+            <strong>Adam Freed</strong>
+            <span>Independent cannabis data and operations advisor</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="chapter chapter-strategy" id="strategy" data-section="strategy" aria-labelledby="strategy-title">
+        <header class="chapter-heading">
+          <span>01</span>
+          <div>
+            <p>Your Strategy</p>
+            <h2 id="strategy-title">The strategy behind Data Integrity</h2>
+          </div>
+        </header>
+
+        <div class="positioning-block">
+          <div>
+            <p class="section-label">Positioning statement</p>
+            <blockquote>Independent cannabis data and operations advisory for founders and C-suite leaders who need their numbers to agree with each other.</blockquote>
+          </div>
+          <div class="positioning-detail">
+            <p>Adam works across retail, cultivation, and manufacturing, wherever seed-to-sale data has stopped telling one consistent story. He takes no vendor contracts and no platform commissions, so a finding stays his own.</p>
+            <dl>
+              <div><dt>Category</dt><dd>Independent cannabis data and operations advisor</dd></div>
+              <div><dt>Distinctive idea</dt><dd>Data Integrity</dd></div>
+              <div><dt>Founder role</dt><dd>Adam is the brand. There is no agency or company standing behind him.</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="focus-star" aria-labelledby="focus-star-title">
+          <header>
+            <p class="section-label">The Focus Star</p>
+            <h3 id="focus-star-title">The whole brand in five lines</h3>
+          </header>
+          <ol>
+            <li>
+              <span>Product</span>
+              <strong>Independent cannabis data and operations advisory.</strong>
+              <p>The product is not a software platform or a training course. It is Adam's independent judgment, applied to seed-to-sale data that no longer agrees with itself, and his willingness to report what he actually finds.</p>
+            </li>
+            <li>
+              <span>People</span>
+              <strong>Founders and C-suite of small to mid-size cannabis businesses.</strong>
+              <p><strong>Persona:</strong> The operator whose numbers stopped agreeing. Running a multi-site or multi-license operation where the data tools have not kept pace with the business, reports disagree, and audits feel like a threat.</p>
+            </li>
+            <li>
+              <span>Purpose</span>
+              <strong>To build a cannabis industry that earns trust through data integrity.</strong>
+              <p>Legal cannabis promised operators clarity, safety, and accountability. Many are still trapped in half matching reports and dashboards that do not agree. Adam closes that information gap by treating data as a shared source of truth that every team reads the same way.</p>
+            </li>
+            <li>
+              <span>Promise</span>
+              <strong>Data Integrity.</strong>
+              <p><strong>Brand DNA:</strong> Data Integrity. Adam brings data alignment, visibility, and reliability to the point where operators can trust the numbers guiding the business. He will not dress up bad data or bend a finding to a preferred conclusion.</p>
+            </li>
+            <li>
+              <span>Personality</span>
+              <strong>Sage-led authority with a friendly Ruler edge.</strong>
+              <p>Adam leads with a Sage's calm command of the facts, backed by a Ruler's insistence on doing it right and a Friend's willingness to sit across the table. Dry wit shows up as texture, never as the headline.</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="point-of-view">
+          <p class="section-label">Point of view</p>
+          <p class="pov-line">Your numbers should be on speaking terms.</p>
+          <div class="pov-principles">
+            <p><span>01</span>State the finding before the fix. A reader should know what disagreed before they hear what to do about it.</p>
+            <p><span>02</span>Independence is the whole point. No vendor contract or platform commission ever shapes a finding.</p>
+            <p><span>03</span>An honest industry is built one harmonized system at a time, not one campaign at a time.</p>
+          </div>
+        </div>
+
+        <div class="proof-bank">
+          <header>
+            <p class="section-label">Proof</p>
+            <h3>What backs it up</h3>
+          </header>
+          <div class="proof-ledger">
+            <article>
+              <span>Experience</span>
+              <strong>More than 20 years around the plant</strong>
+              <p>Adam's perspective on cannabis operations goes back before legalization, through the legacy market and into the regulated one.</p>
+            </article>
+            <article>
+              <span>Operations</span>
+              <strong>More than 10 years in regulated operations</strong>
+              <p>A decade plus working inside regulated retail, cultivation, and manufacturing, close enough to the data to know where it usually breaks.</p>
+            </article>
+            <article>
+              <span>Independence</span>
+              <strong>No vendor contracts, no platform commissions</strong>
+              <p>Adam is not paid by a software vendor to recommend it. That is what keeps a finding his own instead of someone else's sales pitch.</p>
+            </article>
+            <article>
+              <span>Standard</span>
+              <strong>Findings delivered as found</strong>
+              <p>Adam will not dress up a bad result or bend a finding toward a preferred conclusion, even when that is the harder conversation.</p>
+            </article>
+          </div>
+          <p class="proof-note">No client names, no former employer names, and no public figures appear anywhere in this packet. Every proof point above is a standing fact about Adam, not a story about a specific engagement.</p>
+        </div>
+
+      </section>
+
+      <section class="chapter chapter-identity" id="identity" data-section="identity" aria-labelledby="identity-title">
+        <header class="chapter-heading">
+          <span>02</span>
+          <div>
+            <p>Your Identity</p>
+            <h2 id="identity-title">How the personality reads and how it sounds</h2>
+          </div>
+        </header>
+
+        <div class="identity-read">
+          <header>
+            <p class="section-label">Personality</p>
+            <h3>One character on every channel</h3>
+          </header>
+          <p class="identity-statement">Sage-led authority with a friendly Ruler edge</p>
+          <p class="identity-lead">Ten words hold the personality together: thoughtful, knowledgeable, honest, calm, authoritative, down-to-earth, witty, dependable, insightful, and trustworthy.</p>
+          <div class="identity-traits">
+            <article><span>In the room</span><strong>Calm command of the facts</strong><p>Adam walks into a conversation already knowing where the numbers disagree. He states the finding plainly and lets the evidence carry the weight.</p></article>
+            <article><span>On the page</span><strong>Short, declarative, first person</strong><p>Sentences are short and direct. One idea at a time, no throat clearing, no hedging before the point.</p></article>
+            <article><span>In the picture</span><strong>Approachable and mid-conversation</strong><p>Cap, glasses, beard, a daylight conversation rather than a studio portrait. He looks like someone in the middle of a real conversation.</p></article>
+          </div>
+        </div>
+
+        <div class="archetype-block">
+          <header>
+            <p class="section-label">Brand archetype</p>
+            <h3>The sage who holds the standard</h3>
+          </header>
+          <div class="archetype-layout">
+            <bt-archetype-chart id="archetypeChart" presentation="compact" animate aria-label="Adam Freed brand archetype mix"></bt-archetype-chart>
+            <div class="archetype-read">
+              <p>Ten words define the brand: thoughtful, knowledgeable, honest, calm, authoritative, down-to-earth, witty, dependable, insightful, and trustworthy. The roles below follow from them.</p>
+              <ol class="archetype-roles">
+                <li><strong>Sage.</strong> Leads. Calm authority built on more than 20 years around the plant and more than 10 years in regulated operations.</li>
+                <li><strong>Ruler and Friend.</strong> Balance the Sage. The Ruler insists on doing it right, the Friend keeps the conversation direct and human.</li>
+                <li><strong>Wit.</strong> Stays a trace. Dry humor shows up in the moment. It never becomes the headline.</li>
+              </ol>
+              <p class="archetype-note">What Adam is not: a preacher, a whistleblower, or a hype man. No activist framing, no manufactured outrage, no promise dressed up as certainty.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sliders-block">
+          <header>
+            <p class="section-label">Brand dials</p>
+            <h3>How the brand is tuned</h3>
+          </header>
+          <p class="sliders-lead">Eleven scales that keep every post, comment, and message in character. The percentage is how strongly the brand leans to that side. The strongest settings are the ones to protect; the middle ones leave room.</p>
+          <ol class="slider-list">
+            <li class="defining"><span class="slider-left">Classic</span><div class="slider-track" aria-hidden="true"><i style="--pos:50"></i></div><span class="slider-right">Modern</span><span class="slider-value">Classic 0%</span></li>
+            <li class="defining"><span class="slider-left">Mature</span><div class="slider-track" aria-hidden="true"><i style="--pos:35"></i></div><span class="slider-right">Youthful</span><span class="slider-value">Mature 30%</span></li>
+            <li><span class="slider-left">Feminine</span><div class="slider-track" aria-hidden="true"><i style="--pos:45"></i></div><span class="slider-right">Masculine</span><span class="slider-value">Feminine 10%</span></li>
+            <li class="defining"><span class="slider-left">Playful</span><div class="slider-track" aria-hidden="true"><i style="--pos:60"></i></div><span class="slider-right">Sophisticated</span><span class="slider-value">Sophisticated 20%</span></li>
+            <li class="defining"><span class="slider-left">Economical</span><div class="slider-track" aria-hidden="true"><i style="--pos:80"></i></div><span class="slider-right">Luxurious</span><span class="slider-value">Luxurious 60%</span></li>
+            <li class="defining"><span class="slider-left">Abstract</span><div class="slider-track" aria-hidden="true"><i style="--pos:92"></i></div><span class="slider-right">Literal</span><span class="slider-value">Literal 84%</span></li>
+            <li class="defining"><span class="slider-left">Geometric</span><div class="slider-track" aria-hidden="true"><i style="--pos:35"></i></div><span class="slider-right">Organic</span><span class="slider-value">Geometric 30%</span></li>
+            <li class="defining"><span class="slider-left">Calm</span><div class="slider-track" aria-hidden="true"><i style="--pos:40"></i></div><span class="slider-right">Energetic</span><span class="slider-value">Calm 20%</span></li>
+            <li class="defining"><span class="slider-left">Rational</span><div class="slider-track" aria-hidden="true"><i style="--pos:5"></i></div><span class="slider-right">Emotional</span><span class="slider-value">Rational 90%</span></li>
+            <li class="defining"><span class="slider-left">Mysterious</span><div class="slider-track" aria-hidden="true"><i style="--pos:96"></i></div><span class="slider-right">Transparent</span><span class="slider-value">Transparent 92%</span></li>
+            <li class="defining"><span class="slider-left">Quiet</span><div class="slider-track" aria-hidden="true"><i style="--pos:96"></i></div><span class="slider-right">Talkative</span><span class="slider-value">Talkative 92%</span></li>
+          </ol>
+          <div class="slider-keywords">
+            <div><p class="section-label">Lean into</p><ul><li>Transparent</li><li>Talkative</li><li>Rational</li><li>Literal</li><li>Innovative</li><li>Earthy</li><li>Luxurious</li><li>Connected</li></ul></div>
+            <div><p class="section-label">Move away from</p><ul><li>Mysterious</li><li>Silent</li><li>Abstract</li><li>Emotional-first</li><li>Traditional</li><li>Urban-cold</li><li>Economical-looking</li></ul></div>
+          </div>
+        </div>
+
+        <div class="voice-system">
+          <header>
+            <p class="section-label">Voice principles</p>
+            <h3>How it sounds</h3>
+          </header>
+          <div class="voice-rule">
+            <div><span>01</span><h4>State the problem before the reasoning</h4></div>
+            <p>Every piece names what disagreed before it explains why or what to do about it. The finding comes first, never buried under the fix.</p>
+            <blockquote>The reports look fine. The underlying data does not agree.</blockquote>
+          </div>
+          <div class="voice-rule">
+            <div><span>02</span><h4>Ground every claim in lived experience</h4></div>
+            <p>Every claim traces back to something Adam has personally measured, fixed, or watched go wrong inside regulated operations, not an industry talking point he has not tested himself.</p>
+            <blockquote>I have spent more than 20 years around the plant and more than 10 years inside regulated retail, cultivation, and manufacturing.</blockquote>
+          </div>
+          <div class="voice-rule">
+            <div><span>03</span><h4>Speak like a calm, exact insider</h4></div>
+            <p>The voice is independent and human. Calm and exact carry more weight than urgency ever could.</p>
+            <blockquote>Get the systems talking before you trust the dashboard.</blockquote>
+          </div>
+          <div class="voice-rule">
+            <div><span>04</span><h4>Take the work seriously, not himself</h4></div>
+            <p>Data integrity is serious. Adam holds the standard without holding himself above it. Dry wit shows up as texture in the moment, never as the headline, and never at the expense of the finding.</p>
+            <blockquote>If that is not what you are looking for, I am not the right advisor for this engagement.</blockquote>
+          </div>
+        </div>
+
+        <div class="look-block">
+          <header>
+            <p class="section-label">How it looks</p>
+            <h3>How it looks</h3>
+          </header>
+          <div class="look-rules">
+            <article><span>Settings</span><p>Daylight, real work settings: an office, a warehouse floor, a conversation across a table. Never a studio backdrop.</p></article>
+            <article><span>Wardrobe</span><p>Cap, glasses, beard, everyday clothing. Nothing styled to look like a brand photo shoot.</p></article>
+            <article><span>Expression</span><p>Mid-conversation, engaged, candid. Not a posed, solitary hero portrait.</p></article>
+            <article><span>Not this</span><p>No dashboards, no code on screens, no stock cannabis leaf imagery, no solitary hero portrait. Adam's existing colors, type, and signature stay in place and are not shown here.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter chapter-profiles" id="profiles" data-section="profiles" aria-labelledby="profiles-title">
+        <header class="chapter-heading">
+          <span>03</span>
+          <div>
+            <p>Your profiles</p>
+            <h2 id="profiles-title">LinkedIn</h2>
+          </div>
+        </header>
+
+
+        <section class="platform-block platform-linkedin" id="linkedin" aria-labelledby="linkedin-title">
+        <header class="platform-heading">
+          <p class="section-label">LinkedIn</p>
+          <h3 id="linkedin-title">Say the same thing to every operator who comes looking</h3>
+        </header>
+
+        <div class="linkedin-application">
+          <div class="linkedin-preview">
+            <div class="linkedin-browser" role="img" aria-label="LinkedIn profile preview for Adam Freed showing the banner, headline, and About summary">
+              <div class="linkedin-toolbar"><b>in</b><span>Search</span><i></i><i></i><i></i></div>
+              <div class="linkedin-banner" role="img" aria-label="LinkedIn banner reading Cannabis data and operations advisory for founders and C-suite leaders.">
+                <img class="linkedin-banner-image" src="assets/linkedin-banner-v2.png?v=1" alt="" width="1584" height="396">
+              </div>
+              <div class="linkedin-person">
+                <div class="avatar-fallback" role="img" aria-label="Profile photo placeholder for Adam Freed">AF</div>
+                <div>
+                  <h3>Adam Freed</h3>
+                  <p>Independent cannabis data and operations advisor | Data Integrity</p>
+                  <small>Remote</small>
+                </div>
+              </div>
+              <div class="linkedin-actions" aria-hidden="true"><span>Connect</span><span>Message</span><span>More</span></div>
+              <section class="linkedin-about-preview" aria-hidden="true">
+                <h4>About</h4>
+                <p>I help founder-led and C-suite-led cannabis companies get their numbers on speaking terms. When reports, systems, and handoffs disagree, I map where the break is and help the team build data they can actually trust.</p>
+              </section>
+            </div>
+            <div class="linkedin-downloads" role="group" aria-label="LinkedIn image downloads">
+              <a class="download-action" href="assets/linkedin-banner-v2.png?v=1" download="adam-freed-linkedin-banner-1584x396.png"><span>Download banner</span><small>1584 × 396 PNG</small></a>
+            </div>
+          </div>
+          <div class="banner-spec">
+            <p class="section-label">Banner direction</p>
+            <h3>Cannabis data and operations advisory</h3>
+            <p>Real operational ledgers make Adam's data and operations work tangible without turning it into software UI. His name, role, and plain positioning line identify the audience and category directly.</p>
+            <dl>
+              <div><dt>Canvas</dt><dd>1584 x 396 px</dd></div>
+              <div><dt>Message</dt><dd>Cannabis data and operations advisory for founders and C-suite leaders.</dd></div>
+              <div><dt>Visual cue</dt><dd>Operational ledgers, reconciled reporting sheets, compact positioning line, generous margins, no people</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="profile-copy">
+          <article class="headline-copy">
+            <p class="section-label">Headline</p>
+            <h3>Independent cannabis data and operations advisor | Data Integrity</h3>
+            <button class="copy-button" type="button" data-copy-target="headlineText">Copy headline</button>
+            <span id="headlineText" hidden>Independent cannabis data and operations advisor | Data Integrity</span>
+          </article>
+
+          <article class="about-copy">
+            <div class="copy-heading">
+              <div><p class="section-label">About</p><h3>Ready to paste</h3></div>
+              <button class="copy-button" type="button" data-copy-target="aboutText">Copy About</button>
+            </div>
+            <div id="aboutText" class="about-text">
+              <p>I help founder-led and C-suite-led cannabis companies get their numbers on speaking terms. When reports, systems, and handoffs disagree, I map where the break is and help the team build data they can actually trust.</p>
+              <p>I work independently. No vendor contracts, no platform commissions, no software to sell. That is what keeps a finding honest instead of convenient.</p>
+              <p>My authority comes from more than 20 years around the plant, including the legacy market before legalization, and more than 10 years in regulated retail, cultivation, and manufacturing. I will not dress up bad data or bend a finding to a preferred conclusion.</p>
+              <p>If your reports look fine but the underlying data does not agree, that is the work. Send me a message with the actual question.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="linkedin-support">
+          <div class="featured-plan">
+            <header><p class="section-label">Featured</p><h3>Proof in the order an operator needs it</h3></header>
+            <ol>
+              <li><span>01</span><div><strong>The Data Integrity statement</strong><p>The position post. The first thing an operator or a referral sees.</p></div><small>Position</small></li>
+              <li><span>02</span><div><strong>Where the numbers stopped agreeing</strong><p>One anonymized walkthrough of a report and the underlying data disagreeing, and what closing the gap took.</p></div><small>Proof</small></li>
+              <li><span>03</span><div><strong>Send the actual question</strong><p>The standing invitation to message Adam directly. Replace or repost monthly.</p></div><small>Invitation</small></li>
+            </ol>
+          </div>
+        </div>
+        </section>
+      </section>
+
+      <section class="chapter chapter-plan" id="plan" data-section="plan" aria-labelledby="plan-title">
+        <header class="chapter-heading">
+          <span>04</span>
+          <div>
+            <p>Your 30-Day Plan</p>
+            <h2 id="plan-title">The first 30 days on LinkedIn</h2>
+          </div>
+        </header>
+
+        <div class="objective-strip">
+          <p class="section-label">The objective</p>
+          <strong>Establish Adam's LinkedIn presence as the place operators go for a straight answer on their data.</strong>
+          <span>The signal that matters: an operator sending a direct message with a real data question.</span>
+        </div>
+
+        <div class="priority-moves">
+          <article><span>01</span><div><h3>Post the position once</h3><p>Publish one clear statement of what Data Integrity means and who it is for. Everything else in the 30 days points back to it.</p></div></article>
+          <article><span>02</span><div><h3>Turn the two lines into proof</h3><p>Show one concrete example of a report and the real data disagreeing, without naming the client or the company.</p></div></article>
+          <article><span>03</span><div><h3>Ask for the direct message</h3><p>Close every post with the same simple, low-pressure invitation to send a real question.</p></div></article>
+        </div>
+
+        <div class="month-map" aria-label="Prioritized thirty day plan">
+          <header><p class="section-label">Four-week sequence</p><h3>Four week sequence</h3></header>
+          <ol>
+            <li>
+              <div class="week-number"><span>Week</span><strong>01</strong></div>
+              <div><h4>Establish the position</h4><p>Publish the Data Integrity statement and the founder story: more than 20 years around the plant, more than 10 years in regulated operations.</p></div>
+              <small>Position</small>
+            </li>
+            <li>
+              <div class="week-number"><span>Week</span><strong>02</strong></div>
+              <div><h4>Show the method</h4><p>Walk through how a report and the underlying data can disagree, and what closing that gap actually looks like.</p></div>
+              <small>Proof</small>
+            </li>
+            <li>
+              <div class="week-number"><span>Week</span><strong>03</strong></div>
+              <div><h4>Talk to the room</h4><p>Engage directly in operator conversations and comments. Answer one real question in public, with permission.</p></div>
+              <small>Conversation</small>
+            </li>
+            <li>
+              <div class="week-number"><span>Week</span><strong>04</strong></div>
+              <div><h4>Open the door</h4><p>Publish a direct, low-pressure invitation to message Adam with a real data question.</p></div>
+              <small>Invitation</small>
+            </li>
+          </ol>
+        </div>
+
+        <div class="content-system">
+          <header><p class="section-label">Content territories</p><h3>Where the content comes from</h3></header>
+          <div class="territories">
+            <article>
+              <span>01</span><h4>Data Integrity in practice</h4>
+              <ol>
+                <li>A report and the real data disagreeing, walked through in plain language</li>
+                <li>What a harmonized seed-to-sale system looks like versus a siloed one</li>
+                <li>The one question Adam asks first in every engagement</li>
+              </ol>
+            </article>
+            <article>
+              <span>02</span><h4>Industry legitimacy</h4>
+              <ol>
+                <li>Why legal cannabis still has a trust problem</li>
+                <li>What regulators, investors, and consumers each see differently</li>
+                <li>What an honest operator does differently</li>
+              </ol>
+            </article>
+            <article>
+              <span>03</span><h4>The independent standard</h4>
+              <ol>
+                <li>Why Adam does not take vendor contracts</li>
+                <li>What 'no dressing up bad data' means in a real engagement</li>
+                <li>The difference between passing an audit and fixing the system</li>
+              </ol>
+            </article>
+          </div>
+        </div>
+
+        <div class="activation-briefs">
+          <header><p class="section-label">Plays</p><h3>Five plays to run this month</h3></header>
+          <article>
+            <div class="brief-type">Position</div>
+            <div><h4>The Data Integrity statement</h4><p>One direct post stating what Data Integrity means and who Adam serves. This is the post everything else points back to.</p></div>
+            <dl><div><dt>Format</dt><dd>Text post</dd></div><div><dt>Hook</dt><dd>A report that looks fine is not the same as data that agrees with itself.</dd></div><div><dt>Proof</dt><dd>More than 20 years around the plant, more than 10 years in regulated operations</dd></div></dl>
+          </article>
+          <article>
+            <div class="brief-type">Proof</div>
+            <div><h4>Where the numbers stopped agreeing</h4><p>Walk through one anonymized example of a report and the underlying data disagreeing, and what closing the gap took.</p></div>
+            <dl><div><dt>Format</dt><dd>Document post</dd></div><div><dt>Hook</dt><dd>The reports looked fine. The underlying data did not agree.</dd></div><div><dt>Proof</dt><dd>No client names, no former employer names</dd></div></dl>
+          </article>
+          <article>
+            <div class="brief-type">Industry</div>
+            <div><h4>Why cannabis still has a trust problem</h4><p>Name the legitimacy gap between marketing, budtender stories, and lab results, and what closes it from the inside.</p></div>
+            <dl><div><dt>Format</dt><dd>Text post</dd></div><div><dt>Hook</dt><dd>Consumers hear one story from marketing, another from the budtender, a third from the lab.</dd></div><div><dt>Proof</dt><dd>Purpose: an industry that earns trust through data integrity</dd></div></dl>
+          </article>
+          <article>
+            <div class="brief-type">Method</div>
+            <div><h4>The first question Adam asks</h4><p>Show the single question that starts every engagement: do the numbers tell the truth.</p></div>
+            <dl><div><dt>Format</dt><dd>Short clip or text post</dd></div><div><dt>Hook</dt><dd>Every engagement starts from the same question.</dd></div><div><dt>Proof</dt><dd>Independent advisory, no vendor contracts</dd></div></dl>
+          </article>
+          <article>
+            <div class="brief-type">Invitation</div>
+            <div><h4>Send a real question</h4><p>Close the month with a direct, low-pressure invitation for operators to message Adam with an actual data question.</p></div>
+            <dl><div><dt>Format</dt><dd>Text post</dd></div><div><dt>Hook</dt><dd>Get the systems talking before you trust the dashboard.</dd></div><div><dt>Proof</dt><dd>Direct message as the primary signal</dd></div></dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="chapter chapter-ai" id="ai" data-section="ai" aria-labelledby="ai-title">
+        <header class="chapter-heading">
+          <span>05</span>
+          <div>
+            <p>Use With AI</p>
+            <h2 id="ai-title">One paste-ready file for every AI tool</h2>
+          </div>
+        </header>
+
+        <div class="ai-intro">
+          <div>
+            <p>Paste brand-context.md at the start of any drafting session so the tool writes like Adam from the first line.</p>
+            <div class="ai-actions">
+              <button class="primary-action" type="button" id="copyAll">Copy full brand context</button>
+              <a class="download-action" href="brand-context.md" download>Download Markdown</a>
+            </div>
+            <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+          </div>
+          <dl>
+            <div><dt>Format</dt><dd>Plain Markdown</dd></div>
+            <div><dt>Includes</dt><dd>Identity, instructions, context, examples, boundaries, and prompts</dd></div>
+            <div><dt>Use it for</dt><dd>Posts, comments, direct messages, and any first draft in Adam's voice</dd></div>
+          </dl>
+        </div>
+
+        <div class="context-viewer">
+          <header><span>Full context pack</span><small>Everything in brand-context.md, in one scrollable view</small></header>
+          <pre id="contextPreview" tabindex="0" aria-label="Adam Freed brand context Markdown">Loading your context pack...</pre>
+        </div>
+
+        <div class="starter-prompts">
+          <header><p class="section-label">Starter prompts</p><h3>Six starter prompts</h3></header>
+          <div class="prompt-list">
+            <article>
+              <div><span>01</span><h4>Draft the position post</h4></div>
+              <p id="prompt-position-post">Using the brand context above, draft a LinkedIn post in Adam's voice that states the Data Integrity position in under 150 words. Short declarative sentences. No em dashes. End with a low-pressure invitation to send a real question.</p>
+              <button type="button" data-copy-target="prompt-position-post">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>02</span><h4>Write an anonymized proof story</h4></div>
+              <p id="prompt-proof-story">Using the brand context above, draft a post that walks through one anonymized example of a report and the underlying data disagreeing. No client names, no company names, no invented numbers.</p>
+              <button type="button" data-copy-target="prompt-proof-story">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>03</span><h4>Reply to a comment in Adam's voice</h4></div>
+              <p id="prompt-comment-reply">Using the brand context above, write a short, direct reply to this LinkedIn comment in Adam's voice: [paste the comment]. Calm, exact, first person, no hedging.</p>
+              <button type="button" data-copy-target="prompt-comment-reply">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>04</span><h4>Answer a direct message</h4></div>
+              <p id="prompt-dm-response">Using the brand context above, draft a first reply to this direct message from an operator: [paste the message]. Ask one clarifying question before offering any read on their situation.</p>
+              <button type="button" data-copy-target="prompt-dm-response">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>05</span><h4>Write an industry legitimacy note</h4></div>
+              <p id="prompt-industry-note">Using the brand context above, draft a short post connecting one current cannabis industry data story to Adam's purpose: an industry that earns trust through data integrity. No political advocacy, no activist framing.</p>
+              <button type="button" data-copy-target="prompt-industry-note">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>06</span><h4>Draft a LinkedIn headline variant</h4></div>
+              <p id="prompt-headline-variant">Using the brand context above, draft three alternate LinkedIn headline options under 220 characters that keep Independent cannabis data and operations advisor and Data Integrity, without inventing new taglines.</p>
+              <button type="button" data-copy-target="prompt-headline-variant">Copy prompt</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div><span>AF</span><strong>Adam Freed</strong></div>
+        <p>Brand Therapy Sprint, prepared for Adam Freed in August 2026. The position, the profile, and the plan are his to run.</p>
+      </footer>
+    </main>
+  </div>
 </body>
 </html>

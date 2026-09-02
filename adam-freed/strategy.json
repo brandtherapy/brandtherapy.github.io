@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "brand-therapy-sprint-demo.v1",
+  "status": "client-review",
+  "identity": {
+    "name": "Adam Freed",
+    "company": "Adam Freed, independent. No separate company name.",
+    "category": "Independent cannabis data and operations advisor",
+    "positioning": "Independent cannabis data and operations advisory for founders and C-suite leaders who need their numbers to agree with each other.",
+    "distinctiveIdea": "Adam treats data as a shared source of truth that every team reads the same way. He closes the gap between what the reports say and what the underlying systems actually show, and he reports the finding exactly as he found it.",
+    "personality": {
+      "line": "Sage-led authority with a friendly Ruler edge",
+      "archetypeMix": {
+        "sage": 50,
+        "friend": 25,
+        "ruler": 25
+      },
+      "archetypeSource": "Ten brand words (thoughtful, knowledgeable, honest, calm, authoritative, down-to-earth, witty, dependable, insightful, trustworthy) read against the strategy",
+      "sliders": [
+        {
+          "left": "Classic",
+          "position": 50,
+          "right": "Modern",
+          "defining": true
+        },
+        {
+          "left": "Mature",
+          "position": 35,
+          "right": "Youthful",
+          "defining": true
+        },
+        {
+          "left": "Feminine",
+          "position": 45,
+          "right": "Masculine",
+          "defining": false
+        },
+        {
+          "left": "Playful",
+          "position": 60,
+          "right": "Sophisticated",
+          "defining": true
+        },
+        {
+          "left": "Economical",
+          "position": 80,
+          "right": "Luxurious",
+          "defining": true
+        },
+        {
+          "left": "Abstract",
+          "position": 92,
+          "right": "Literal",
+          "defining": true
+        },
+        {
+          "left": "Geometric",
+          "position": 35,
+          "right": "Organic",
+          "defining": true
+        },
+        {
+          "left": "Calm",
+          "position": 40,
+          "right": "Energetic",
+          "defining": true
+        },
+        {
+          "left": "Rational",
+          "position": 5,
+          "right": "Emotional",
+          "defining": true
+        },
+        {
+          "left": "Mysterious",
+          "position": 96,
+          "right": "Transparent",
+          "defining": true
+        },
+        {
+          "left": "Quiet",
+          "position": 96,
+          "right": "Talkative",
+          "defining": true
+        }
+      ],
+      "leanInto": [
+        "Transparent",
+        "Talkative",
+        "Rational",
+        "Literal",
+        "Innovative",
+        "Earthy",
+        "Luxurious",
+        "Connected"
+      ],
+      "moveAwayFrom": [
+        "Mysterious",
+        "Silent",
+        "Abstract",
+        "Emotional-first",
+        "Traditional",
+        "Urban-cold",
+        "Economical-looking"
+      ],
+      "voicePrincipleCount": 4,
+      "visualIdentity": "Photo direction only. Adam's existing colors, type, and signature stay in place and are not shown in this Sprint."
+    }
+  },
+  "focusStar": [
+    {
+      "line": "Product",
+      "decision": "Independent cannabis data and operations advisory"
+    },
+    {
+      "line": "People",
+      "decision": "Founders and C-suite of small to mid-size cannabis businesses",
+      "persona": "The operator whose numbers stopped agreeing"
+    },
+    {
+      "line": "Purpose",
+      "decision": "To build a cannabis industry that earns trust through data integrity"
+    },
+    {
+      "line": "Promise",
+      "decision": "Data Integrity",
+      "brandDNA": "Data Integrity"
+    },
+    {
+      "line": "Personality",
+      "decision": "Sage-led authority with a friendly Ruler edge"
+    }
+  ],
+  "linkedin": {
+    "platform": "LinkedIn",
+    "headline": "Independent cannabis data and operations advisor | Data Integrity",
+    "location": "Remote",
+    "banner": "Cannabis data and operations advisory for founders and C-suite leaders.",
+    "bannerCanvas": "1584 x 396 px",
+    "featuredCount": 3
+  },
+  "thirtyDayPlan": {
+    "objective": "Establish Adam's LinkedIn presence as the place operators go for a straight answer on their data.",
+    "primarySignal": "A direct message from an operator with a real data question",
+    "priorityMoves": [
+      "Post the position once",
+      "Turn the two lines into proof",
+      "Ask for the direct message"
+    ],
+    "contentTerritories": [
+      "Data Integrity in practice",
+      "Industry legitimacy",
+      "The independent standard"
+    ],
+    "recommendationTypes": [
+      "Text post",
+      "Document post (PDF carousel)",
+      "Comment or reply thread",
+      "Short clip from a conversation"
+    ]
+  },
+  "aiPack": {
+    "file": "brand-context.md",
+    "requiredSections": [
+      "Identity",
+      "Instructions",
+      "Context",
+      "Examples",
+      "Factual boundaries",
+      "Starter prompts"
+    ],
+    "starterPromptCount": 6
+  },
+  "sections": [
+    "strategy",
+    "identity",
+    "profiles",
+    "plan",
+    "ai"
+  ]
+}
