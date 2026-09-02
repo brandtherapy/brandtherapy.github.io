@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "brand-therapy-sprint-demo.v1",
+  "status": "client-review",
+  "identity": {
+    "name": "Joshua Naggar",
+    "company": null,
+    "category": "Strategic counsel for cannabis businesses navigating high-stakes complexity",
+    "positioning": "Strategic counsel for cannabis operators who need the legal read and the business read from the same person.",
+    "distinctiveIdea": "Advantage is the operating method: see the hidden risk, read the room behind the rule, use hard won cannabis experience, and guide serious operators toward the advantage before the obvious risk gets expensive. It is not swagger. It is strategic advantage built through judgment, relationships, timing, and discipline.",
+    "personality": {
+      "line": "Commanding Counsel",
+      "archetypeMix": {
+        "ruler": 32,
+        "hero": 27,
+        "magician": 21,
+        "sage": 12,
+        "caregiver": 6,
+        "jester": 2
+      },
+      "archetypeSource": "Read from the brand archive record and the locked Personality decision.",
+      "sliders": [
+        {
+          "left": "Classic",
+          "position": 35,
+          "right": "Modern",
+          "defining": true
+        },
+        {
+          "left": "Mature",
+          "position": 20,
+          "right": "Youthful",
+          "defining": true
+        },
+        {
+          "left": "Feminine",
+          "position": 60,
+          "right": "Masculine",
+          "defining": false
+        },
+        {
+          "left": "Playful",
+          "position": 85,
+          "right": "Serious",
+          "defining": true
+        },
+        {
+          "left": "Economical",
+          "position": 65,
+          "right": "Luxurious",
+          "defining": false
+        },
+        {
+          "left": "Abstract",
+          "position": 55,
+          "right": "Literal",
+          "defining": false
+        },
+        {
+          "left": "Geometric",
+          "position": 45,
+          "right": "Organic",
+          "defining": false
+        },
+        {
+          "left": "Calm",
+          "position": 45,
+          "right": "Energetic",
+          "defining": false
+        },
+        {
+          "left": "Rational",
+          "position": 62,
+          "right": "Emotional",
+          "defining": false
+        },
+        {
+          "left": "Mysterious",
+          "position": 35,
+          "right": "Transparent",
+          "defining": true
+        },
+        {
+          "left": "Quiet",
+          "position": 58,
+          "right": "Talkative",
+          "defining": false
+        }
+      ],
+      "leanInto": [
+        "Mature",
+        "Strategic",
+        "Serious",
+        "Selective",
+        "Navigational"
+      ],
+      "moveAwayFrom": [
+        "Cannabis-neon",
+        "Casino",
+        "Fantasy-steampunk",
+        "Generic-law-firm",
+        "Rebel-posturing"
+      ],
+      "voicePrincipleCount": 4,
+      "visualIdentity": "The existing identity stays in place for this Sprint. This packet writes the words; it does not redesign the colors, type, or signature already built for Joshua."
+    }
+  },
+  "focusStar": [
+    {
+      "line": "Product",
+      "decision": "Joshua sells strategic counsel for cannabis businesses navigating high-stakes complexity, not a menu of disconnected legal tasks"
+    },
+    {
+      "line": "People",
+      "decision": "Joshua is for cannabis businesses and operators in it for the long run, not quick win opportunists or under resourced information gatherers",
+      "persona": "The Long-Run Operator"
+    },
+    {
+      "line": "Purpose",
+      "decision": "Joshua exists to help serious cannabis businesses navigate chaos without losing their advantage, ethics, or opportunity"
+    },
+    {
+      "line": "Promise",
+      "decision": "Joshua gives clients an advantage through experience, anticipation, relationships, and integrated legal-operational judgment",
+      "brandDNA": "Advantage"
+    },
+    {
+      "line": "Personality",
+      "decision": "Joshua shows up as commanding counsel: commanding, charismatic, deeply competent, principled, and close enough to the stakes to guide the client through pressure"
+    }
+  ],
+  "linkedin": {
+    "platform": "LinkedIn",
+    "headline": "Strategic counsel for cannabis operators | Navigate the chaos, keep the advantage",
+    "location": "",
+    "banner": "Strategic counsel for cannabis operators.",
+    "bannerCanvas": "1584 x 396 px",
+    "featuredCount": 3
+  },
+  "thirtyDayPlan": {
+    "objective": "Turn the strategic position into a working LinkedIn presence and a first set of direct conversations with serious cannabis operators.",
+    "primarySignal": "Direct replies from serious operators, not general engagement",
+    "priorityMoves": [
+      "Publish the three week hidden risk LinkedIn series",
+      "Send one newsletter briefing on a current regulatory pressure point",
+      "Send warm outreach to operators already known to be serious and long-term"
+    ],
+    "contentTerritories": [
+      "See the Hidden Risk",
+      "Navigate the Chaos",
+      "The Advantage, in Practice"
+    ],
+    "recommendationTypes": [
+      "Campaign",
+      "PR",
+      "Collaboration",
+      "Pro bono",
+      "Email and outreach"
+    ]
+  },
+  "aiPack": {
+    "file": "brand-context.md",
+    "requiredSections": [
+      "Identity",
+      "Instructions",
+      "Context",
+      "Examples",
+      "Factual boundaries",
+      "Starter prompts"
+    ],
+    "starterPromptCount": 6
+  },
+  "sections": [
+    "strategy",
+    "identity",
+    "profiles",
+    "plan",
+    "ai"
+  ]
+}
