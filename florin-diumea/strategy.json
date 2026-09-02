@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "brand-therapy-sprint-demo.v1",
+  "status": "client-review",
+  "identity": {
+    "name": "Florin Diumea",
+    "company": "Bright Business",
+    "category": "Founder of a peer business club and accelerator for driven owners and experts",
+    "positioning": "Bright Business is the community of reliable peers and experts Florin wished he had when he started in Romania: a Vistage-serious, club-warm room that grows the business without becoming a lead mill.",
+    "distinctiveIdea": "The peers you wish you'd had. Florin built the community he was missing when he started his own business in Romania, so other driven owners would not have to start alone.",
+    "personality": {
+      "line": "Structured and warm. Professional peer board with a social club's ease. Direct, growth-minded, never transactional.",
+      "archetypeMix": {
+        "sage": 30,
+        "ruler": 20,
+        "hero": 18,
+        "friend": 15,
+        "explorer": 10,
+        "outlaw": 7
+      },
+      "archetypeSource": "The Personality line and the founder's own words, read against the twelve-archetype system.",
+      "sliders": [
+        {
+          "left": "Classic",
+          "position": 78,
+          "right": "Modern",
+          "defining": true
+        },
+        {
+          "left": "Mature",
+          "position": 65,
+          "right": "Youthful",
+          "defining": false
+        },
+        {
+          "left": "Feminine",
+          "position": 73,
+          "right": "Masculine",
+          "defining": true
+        },
+        {
+          "left": "Playful",
+          "position": 66,
+          "right": "Serious",
+          "defining": true
+        },
+        {
+          "left": "Economical",
+          "position": 68,
+          "right": "Luxurious",
+          "defining": false
+        },
+        {
+          "left": "Abstract",
+          "position": 68,
+          "right": "Literal",
+          "defining": false
+        },
+        {
+          "left": "Geometric",
+          "position": 36,
+          "right": "Organic",
+          "defining": false
+        },
+        {
+          "left": "Calm",
+          "position": 36,
+          "right": "Energetic",
+          "defining": false
+        },
+        {
+          "left": "Rational",
+          "position": 35,
+          "right": "Emotional",
+          "defining": true
+        },
+        {
+          "left": "Mysterious",
+          "position": 68,
+          "right": "Transparent",
+          "defining": true
+        },
+        {
+          "left": "Quiet",
+          "position": 63,
+          "right": "Talkative",
+          "defining": true
+        }
+      ],
+      "leanInto": [
+        "Structured",
+        "Direct",
+        "Modern",
+        "Masculine",
+        "Transparent",
+        "Growth-minded",
+        "Warm"
+      ],
+      "moveAwayFrom": [
+        "Corporate-stiff",
+        "Hustle-culture",
+        "Transactional",
+        "Vague",
+        "Secretive",
+        "Ego-centric",
+        "Hyper-casual"
+      ],
+      "voicePrincipleCount": 4,
+      "visualIdentity": "Heading type follows Familjen Grotesk from the live Bright Business site. Palette and a logo stay open. Photo direction carries the look."
+    }
+  },
+  "focusStar": [
+    {
+      "line": "Product",
+      "decision": "Members get a collaborative community of reliable peers and experts that accelerates growth. Growth is the product; valuation and exit readiness follow from it."
+    },
+    {
+      "line": "People",
+      "decision": "The brand is for driven business owners and experts who love their craft, feel professionally isolated, and need a supportive stage among peers.",
+      "persona": "Anna, the isolated expert"
+    },
+    {
+      "line": "Purpose",
+      "decision": "Bright Business exists to build the community of reliable peers and experts Florin wished he had when he started his business in Romania."
+    },
+    {
+      "line": "Promise",
+      "decision": "A friendly environment and supportive collaboration between members must be true every time. Growth without that collaboration is not Bright Business.",
+      "brandDNA": "Growth"
+    },
+    {
+      "line": "Personality",
+      "decision": "The brand behaves as a 50/50 blend: Vistage-like professional peer board and a supportive social club. Relaxed enough to belong, focused enough to work."
+    }
+  ],
+  "linkedin": {
+    "platform": "LinkedIn",
+    "headline": "Florin Diumea | Founder, Bright Business | Peer room for driven owners and experts | San Diego",
+    "location": "San Diego, California",
+    "banner": "A peer business club for driven owners and experts.",
+    "bannerCanvas": "1584 x 396 px",
+    "featuredCount": 3
+  },
+  "thirtyDayPlan": {
+    "objective": "Fill the next three room sessions with driven owners and experts who fit, and turn Instagram and LinkedIn into a clear front door for the room.",
+    "primarySignal": "Ten qualified conversations with prospective members booked from Instagram, LinkedIn, or referrals in thirty days.",
+    "priorityMoves": [
+      "Rebuild the Instagram profile around The Peers You Wish You'd Had and pin three posts",
+      "Fill the next guest session with prospective members who fit the room",
+      "Send ten direct messages to driven owners and experts who fit or know someone who does"
+    ],
+    "contentTerritories": [
+      "The Peers You Wish You'd Had",
+      "Not a Mixer",
+      "Growth Without Doing It Alone"
+    ],
+    "recommendationTypes": [
+      "Campaign",
+      "PR",
+      "Collaboration",
+      "Pro bono",
+      "Email and outreach"
+    ]
+  },
+  "aiPack": {
+    "file": "brand-context.md",
+    "requiredSections": [
+      "Identity",
+      "Instructions",
+      "Context",
+      "Examples",
+      "Factual boundaries",
+      "Starter prompts"
+    ],
+    "starterPromptCount": 6
+  },
+  "sections": [
+    "strategy",
+    "identity",
+    "profiles",
+    "plan",
+    "ai"
+  ]
+}
