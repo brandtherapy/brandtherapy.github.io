@@ -15,8 +15,8 @@ Use this file as the working context for any AI tool that drafts, edits, or plan
 ### Personality
 
 - In one line: Warm, grounded, sharp, and substantial. She gets it, she will not waste the hour, and she will make him think.
-- In the room: warmth with an edge of truth. Genuinely interested, quickly under the surface of the story, willing to challenge. Seen, then asked to move.
-- On the page: one thought, then a way forward. Keep the page uncluttered, without badge walls or buzzwords. Depth without heaviness. The reader leaves knowing the three things that mattered.
+- In the room: warmth with an edge of truth. Genuinely interested, quickly under the surface of the story, willing to challenge. He feels seen, and he leaves with something to do.
+- On the page: one clear idea, and a way forward. Keep the page uncluttered, without badge walls or buzzwords. Depth without heaviness. The reader leaves knowing the three things that mattered.
 - In the picture: a real conversation. Seated across a table, slightly turned, engaged. Architectural rooms with warmth and texture. Bronze used in a few places. Deep ink carries the shell.
 
 ### Brand archetype mix
@@ -53,7 +53,7 @@ Positions are 0 to 100 from the left word to the right word. The further from 50
 
 - Shell: deep ink, ivory type, warm ivory. Bronze in a few places. Deep olive only for conviction.
 - Photography: a real conversation, seated across a table or in an architectural room, never an arms-crossed coach portrait.
-- Type: editorial serif plus a clean sans, without ornate script.
+- Type: editorial serif plus a clean sans, without ornate script. Baskerville for headlines, Seravek for reading type.
 - Leave out: badge walls, six claims, multiple calls to action on the first screen.
 - The existing gold water-drop mark stays. The palette around it moves to deep ink, bronze, warm ivory, and deep olive. This Sprint does not redesign the logo.
 
@@ -64,12 +64,12 @@ Positions are 0 to 100 from the left word to the right word. The further from 50
 2. People: Capable VPs and emerging executives whose responsibilities have outgrown how they currently communicate
    - Persona: The VP whose thinking is stronger than how it lands. Smart, conscientious, promoted for getting things done. The job now asks him to influence other senior leaders with incomplete information. He overexplains, hedges a strong recommendation, or watches someone else say in three sentences what took him ten minutes. He wants to become more fully himself at a higher level of leadership. Stakes: a missed conversation can mean a proposal does not get funded, a team loses resources, or people question whether he is ready. Trigger: a promotion, a larger role under consideration, or the frustration that his expertise is not having the influence it should. Filter: self-aware and coachable. Readiness over resume.
 3. Purpose: Steward influence so one leader's growth multiplies through the people they lead
-   - Detail: Exponential Impact exists so one better conversation, one clearer recommendation, one more intentional leader can move a team, a family, and an organization. Ambition that ends with personal status is the near-miss. Stewardship is the filter.
+   - Detail: Exponential Impact exists because growth in one leader should not stop there. A sharper conversation, a stronger recommendation, more intentional leadership: each changes what a team, a family, or an organization does next. Ambition that ends with personal status is the near-miss. Stewardship is the filter.
 4. Promise: Leading with intention
    - Brand DNA: Leading with intention
    - Detail: Clarity that changes what someone does next. If it only makes someone more polished, impressive, or informed, it is peripheral. You already have influence. Use it on purpose.
 5. Personality: Warm, grounded, sharp, and substantial
-   - Detail: Feelings to create: seen, challenged, clear, capable. Tips, polish, and inspirational theater stay out. The leader leaves more equipped, not more dependent.
+   - Detail: Feelings to create: seen, challenged, clear, capable. Tips, polish, and inspirational theater stay out. The leader leaves more equipped to run the next meeting alone.
 
 ### Point of view
 
@@ -101,7 +101,7 @@ Positions are 0 to 100 from the left word to the right word. The further from 50
 - Write in first person as Heidi. Complete sentences. Direct. One idea at a time.
 - Start with the situation in the room (the meeting, the buried recommendation, the ten-minute explanation) and then name the work.
 - Keep Leading with intention visible even when those exact words are not used.
-- Close with one small next step: one question, one rewrite, one message with the word LAND.
+- Close with one small next step: a question to ask, a line to rewrite, or a message that uses the word LAND.
 - Use executive communication as the category the buyer already knows, then make the judgment distinction in the next sentence.
 - Address the typical buyer as he, matching Heidi's own language for the persona. The work also fits a woman in the same seat.
 
@@ -152,8 +152,7 @@ Heidi is the brand. Buyers are hiring her insight and presence. Exponential Impa
 ### LinkedIn
 
 - Headline: Executive communication for VPs and emerging executives | Exponential Impact
-- Location: Prescott Valley, Arizona
-- Banner: a deep ink field with the line Leading with intention. Make the thinking land. in an editorial serif, the audience above it, Exponential Impact below. 1584 by 396 px. Skip arms-crossed stock coaches.
+- Location: Prescott Valley, Arizona- Banner: a deep ink field with the line Leading with intention. Make the thinking land. in an editorial serif, the audience above it, Exponential Impact below. 1584 by 396 px. Skip arms-crossed stock coaches.
 - About: I help capable VPs and emerging executives close the gap between the quality of their thinking and the impact of their communication. The work is executive communication judgment. We find the real point, lead with what matters, and build the capacity to do that in the room, especially when the stakes are high. I do not sell scripts, slide polish, or a manufactured executive persona. You already have influence. The question is whether you are using it on purpose. If your thinking is stronger than how it currently lands, message me the word LAND.
 - Featured, in order:
   1. The Leading with intention position post, with the LAND close
@@ -199,13 +198,13 @@ Why it works: it names the situation before naming the offer, and it respects th
 
 This is executive communication judgment. We find the headline, decide how much context is enough, and practice what you say when they push back. I am not rehearsing your slides.
 
-Why it works: the category is familiar, the distinction is immediate, the no is clear.
+Why it works: the category is familiar and the distinction lands fast, so the no is clear.
 
 ### Good practical close
 
 Bring the meeting that is still sitting in your chest. We will find the point together. Message me the word LAND.
 
-Why it works: the next step is one conversation, one word, no funnel theater.
+Why it works: the next step is one short message, no funnel theater.
 
 ### Avoid this
 

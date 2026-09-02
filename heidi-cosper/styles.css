@@ -15,6 +15,7 @@
   --shadow: 0 22px 70px color-mix(in oklab, var(--ink) 14%, transparent);
   --gutter: clamp(22px, 4.5vw, 76px);
   --font: "Avenir Next", Avenir, "Gill Sans", "Trebuchet MS", sans-serif;
+  --font-body: var(--font);
   --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
 }
 
@@ -119,12 +120,16 @@ footer div span {
   place-items: center;
   color: var(--ink);
   background: var(--water);
+  font-family: var(--font-display);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.05em;
 }
 
-.wordmark strong {
+.wordmark strong,
+.rail-footer strong,
+footer div strong {
+  font-family: var(--font-display);
   font-size: 15px;
   letter-spacing: -0.01em;
 }
@@ -132,6 +137,7 @@ footer div span {
 .topbar > p {
   margin: 0;
   color: color-mix(in oklab, var(--white) 78%, var(--ink));
+  font-family: var(--font-body);
   font-size: 13px;
 }
 
@@ -142,7 +148,8 @@ footer div span {
 
 .demo-label {
   color: var(--clay-soft);
-  font-size: 11px;
+  font-family: var(--font-body);
+  font-size: 12px;
   font-weight: 750;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -272,20 +279,26 @@ main {
 .hero-copy {
   position: relative;
   z-index: 2;
+  min-width: 0;
 }
 
 .eyebrow,
 .section-label {
   margin: 0 0 15px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
   color: var(--clay);
-  font-size: 11px;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .hero h1 {
-  max-width: 11ch;
+  max-width: min(16ch, 100%);
   margin: 0;
   font-size: clamp(54px, 7.4vw, 116px);
   font-weight: 750;
@@ -298,11 +311,12 @@ main {
 }
 
 .hero-lead {
-  max-width: 60ch;
+  max-width: min(60ch, 100%);
   margin: 35px 0 0;
   color: var(--ink-soft);
   font-size: clamp(17px, 1.5vw, 22px);
   line-height: 1.5;
+  overflow-wrap: break-word;
 }
 
 .hero-summary {
@@ -320,6 +334,20 @@ main {
 }
 
 .hero-summary span:nth-child(even) {
+  padding-left: 16px;
+  border-left: 1px solid var(--line);
+}
+
+.hero:not(:has(.hero-portrait)) .hero-summary {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.hero:not(:has(.hero-portrait)) .hero-summary span:nth-child(even) {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.hero:not(:has(.hero-portrait)) .hero-summary span:not(:nth-child(3n + 1)) {
   padding-left: 16px;
   border-left: 1px solid var(--line);
 }
@@ -477,8 +505,8 @@ dt {
   text-transform: uppercase;
 }
 
-.chapter-linkedin .banner-spec dt,
-.chapter-linkedin dt {
+.platform-linkedin .banner-spec dt,
+.platform-linkedin dt {
   color: var(--water);
 }
 
@@ -522,6 +550,7 @@ dd {
 .month-map ol,
 .featured-plan ol,
 .territories ol {
+  min-width: 0;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -530,7 +559,11 @@ dd {
 .focus-star li {
   position: relative;
   min-height: 185px;
-  padding: 30px 0 32px 92px;
+  padding: 30px 0 32px;
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  column-gap: 28px;
+  align-content: start;
   border-top: 1px solid var(--ink);
 }
 
@@ -540,9 +573,9 @@ dd {
 
 .focus-star li::before {
   content: counter(list-item, decimal-leading-zero);
-  position: absolute;
-  left: 0;
-  top: 24px;
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  align-self: start;
   color: var(--water);
   font-size: 40px;
   font-weight: 750;
@@ -550,6 +583,8 @@ dd {
 }
 
 .focus-star li > span {
+  grid-column: 2;
+  min-width: 0;
   display: block;
   margin-bottom: 8px;
   color: var(--clay);
@@ -560,6 +595,8 @@ dd {
 }
 
 .focus-star li > strong {
+  grid-column: 2;
+  min-width: 0;
   display: block;
   max-width: 37ch;
   font-size: clamp(20px, 2.2vw, 31px);
@@ -568,6 +605,8 @@ dd {
 }
 
 .focus-star li > p {
+  grid-column: 2;
+  min-width: 0;
   max-width: 66ch;
   margin: 12px 0 0;
   color: var(--ink-soft);
@@ -747,17 +786,39 @@ dd {
   line-height: 1.35;
 }
 
-.chapter-profile {
+.chapter-profiles {
   color: var(--white);
   background: var(--ink);
 }
 
-.chapter-profile .chapter-heading h2 {
+.chapter-profiles .chapter-heading h2 {
   max-width: 15ch;
 }
 
-.profile-application {
+.platform-block {
+  min-width: 0;
+}
+
+.platform-instagram {
   margin-top: clamp(65px, 9vw, 120px);
+}
+
+.platform-heading {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.48fr) minmax(0, 1.52fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: end;
+}
+
+.platform-heading h3 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: clamp(32px, 4.6vw, 68px);
+  line-height: 0.98;
+}
+
+.profile-application {
+  margin-top: clamp(44px, 6vw, 84px);
   display: grid;
   grid-template-columns: minmax(300px, 0.9fr) minmax(280px, 1.1fr);
   gap: clamp(38px, 6vw, 84px);
@@ -931,14 +992,19 @@ dd {
   border-radius: 4px;
   color: var(--ink);
   background: var(--white);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 750;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
+.ig-grid-empty span {
+  aspect-ratio: 1;
+  background: color-mix(in oklab, var(--paper-deep) 76%, var(--line));
+}
+
 .banner-spec .section-label,
-.chapter-profile .section-label {
+.chapter-profiles .section-label {
   color: var(--water);
 }
 
@@ -1190,7 +1256,7 @@ dd {
 
 .week-number span {
   color: var(--clay);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -1982,7 +2048,7 @@ footer p {
   }
 
   .demo-label {
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .rail nav {
@@ -2020,6 +2086,11 @@ footer p {
   }
 
   .hero-summary span:nth-child(even) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .hero:not(:has(.hero-portrait)) .hero-summary span:not(:nth-child(3n + 1)) {
     padding-left: 0;
     border-left: 0;
   }
@@ -2073,7 +2144,9 @@ footer p {
 
   .focus-star li {
     min-height: 0;
-    padding-left: 55px;
+    padding-left: 0;
+    grid-template-columns: 38px minmax(0, 1fr);
+    column-gap: 17px;
   }
 
   .focus-star li::before {
@@ -2947,24 +3020,21 @@ bt-archetype-chart {
   font-weight: 500;
 }
 
-/* ---------- v2: LinkedIn chapter ---------- */
+/* ---------- v2: LinkedIn profile inside the shared profiles chapter ---------- */
 
-.chapter-linkedin {
+.platform-linkedin {
+  margin: clamp(90px, 12vw, 168px) calc(var(--gutter) * -1) calc(var(--gutter) * -1);
+  padding: clamp(72px, 9vw, 128px) var(--gutter) clamp(84px, 10vw, 144px);
   color: var(--white);
   background: var(--mineral);
 }
 
-.chapter-linkedin .chapter-heading > span {
-  color: var(--ink);
-  background: var(--water);
-}
-
-.chapter-linkedin .chapter-heading p,
-.chapter-linkedin .section-label {
+.platform-linkedin .platform-heading p,
+.platform-linkedin .section-label {
   color: var(--water);
 }
 
-.chapter-linkedin .chapter-heading h2 {
+.platform-linkedin .platform-heading h3 {
   max-width: 15ch;
 }
 
@@ -3084,7 +3154,8 @@ bt-archetype-chart {
   background: var(--white);
 }
 
-.linkedin-person img {
+.linkedin-person img,
+.linkedin-person .avatar-fallback {
   position: relative;
   z-index: 2;
   width: 98px;
@@ -3093,6 +3164,16 @@ bt-archetype-chart {
   object-fit: cover;
   border: 5px solid var(--white);
   border-radius: 50%;
+}
+
+.linkedin-person .avatar-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  background: var(--ink);
+  font-family: var(--font-display);
+  font-size: 30px;
 }
 
 .linkedin-person > div {
@@ -3196,19 +3277,19 @@ bt-archetype-chart {
   color: var(--ink-soft);
 }
 
-.chapter-linkedin .banner-spec > p:not(.section-label) {
+.platform-linkedin .banner-spec > p:not(.section-label) {
   color: color-mix(in oklab, var(--white) 77%, var(--mineral));
 }
 
-.chapter-linkedin .banner-spec dl div {
+.platform-linkedin .banner-spec dl div {
   border-color: color-mix(in oklab, var(--white) 25%, var(--mineral));
 }
 
-.chapter-linkedin .banner-spec dd {
+.platform-linkedin .banner-spec dd {
   color: color-mix(in oklab, var(--white) 83%, var(--mineral));
 }
 
-.chapter-linkedin .about-text {
+.platform-linkedin .about-text {
   color: color-mix(in oklab, var(--white) 83%, var(--mineral));
 }
 
@@ -3277,6 +3358,7 @@ bt-archetype-chart {
 }
 
 @media (max-width: 820px) {
+  .platform-heading,
   .identity-read > header,
   .archetype-block > header,
   .sliders-block > header,
@@ -3370,11 +3452,16 @@ bt-archetype-chart {
     gap: 10px;
   }
 
-  .linkedin-person img {
+  .linkedin-person img,
+  .linkedin-person .avatar-fallback {
     width: 76px;
     height: 76px;
     margin-top: -23px;
     border-width: 4px;
+  }
+
+  .linkedin-person .avatar-fallback {
+    font-size: 24px;
   }
 
   .linkedin-person h3 {
@@ -3382,7 +3469,7 @@ bt-archetype-chart {
   }
 
   .linkedin-person p {
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .linkedin-actions {
