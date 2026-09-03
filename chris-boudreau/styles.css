@@ -377,7 +377,7 @@ main {
   width: 100%;
   aspect-ratio: 0.84;
   object-fit: cover;
-  object-position: 52% center;
+  object-position: 50% 30%;
   filter: saturate(0.82) contrast(1.02);
   box-shadow: var(--shadow);
 }
@@ -3168,6 +3168,7 @@ bt-archetype-chart {
   height: 98px;
   margin-top: -34px;
   object-fit: cover;
+  object-position: 50% 30%;
   border: 5px solid var(--white);
   border-radius: 50%;
 }
