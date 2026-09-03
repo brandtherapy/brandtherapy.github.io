@@ -2267,7 +2267,9 @@ function cleanPreparedLinkedin(value){
 }
 function preparedInviteFromHash(){
   if(viewAsSid())return null;
-  const raw=(location.hash||'').replace(/^#/,'');
+  const hashRaw=(location.hash||'').replace(/^#/,'');
+  const searchRaw=(location.search||'').replace(/^\?/,'');
+  const raw=(hashRaw.indexOf('=')>=0)?hashRaw:searchRaw;
   if(!raw||raw.indexOf('=')<0)return null;
   let params;
   try{params=new URLSearchParams(raw);}catch(e){return null;}
@@ -2451,8 +2453,16 @@ document.getElementById('cta-start').addEventListener('click',async()=>{
   }
   const p=session.profile||{};
   if(p.name&&p.email){
-    try{await ensureSessionCapability();startRealSession(false);}
-    catch(e){toast('Could not secure this session yet. Please try again.');}
+    try{
+      await ensureSessionCapability();
+      const lead=await fetch(API_BASE+'/api/lead',{method:'POST',headers:writeHeaders(),
+        body:JSON.stringify({
+          name:p.name,email:p.email,linkedin:p.linkedin||'',instagram:p.instagram||'',
+          links:p.links||[],bio:p.bio||'',sid:ensureSid()
+        })});
+      if(!lead.ok)throw new Error('lead '+lead.status);
+      startRealSession(false);
+    }catch(e){toast('Could not secure this session yet. Please try again.');}
     return;
   }
   document.getElementById('lead-err').style.display='none';
