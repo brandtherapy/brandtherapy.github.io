@@ -639,6 +639,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
 #maintenance-overlay h2{font-size:clamp(28px,4vw,40px);margin:10px 0 16px}
 #maintenance-overlay p{font-size:15px;line-height:1.65;color:var(--text)}
 #maintenance-overlay .maint-note{margin-top:18px;font-size:13px;color:var(--muted)}
+#state-landing.is-prepared .hero .lede{max-width:40rem}
 </style>
 </head>
 <body>
@@ -2219,15 +2220,109 @@ document.querySelectorAll('[data-conversation-focus]').forEach(button=>button.ad
 const SESSION_OPENING_MESSAGE="I'm going to ask you questions the way a strategist would in a real session, one at a time. No forms, no dropdowns. Just answer like you're talking to someone who actually wants to know. Some questions will feel obvious. Answer them anyway, the obvious answer is usually where the real one is hiding. This takes 25 to 45 minutes. At the end, Florian reviews what we build together before it becomes anything real. Ready when you are. First, some context so I read everything else right: what kind of brand are we working on? A personal brand around you, a service business you run, a company or product, or something else?";
 const OPENING_SUGGESTIONS=["A personal brand","A service business","A company or product","Something else"];
 
+/* Prepared invite: #name=&email=&linkedin= on the hash. Skip #viewas=. */
+let landingCopy={eyebrow:null,h1:null,lede:null};
+function captureLandingCopy(){
+  if(landingCopy.eyebrow!==null)return;
+  const eyebrow=document.querySelector('#state-landing .hero .eyebrow .code');
+  const h1=document.querySelector('#state-landing .hero h1');
+  const lede=document.querySelector('#state-landing .hero .lede');
+  landingCopy.eyebrow=eyebrow?eyebrow.textContent:'';
+  landingCopy.h1=h1?h1.innerHTML:'';
+  landingCopy.lede=lede?lede.textContent:'';
+}
+function restoreLandingCopy(){
+  const landing=document.getElementById('state-landing');
+  if(landing)landing.classList.remove('is-prepared');
+  const eyebrow=document.querySelector('#state-landing .hero .eyebrow .code');
+  const h1=document.querySelector('#state-landing .hero h1');
+  const lede=document.querySelector('#state-landing .hero .lede');
+  if(eyebrow&&landingCopy.eyebrow!==null)eyebrow.textContent=landingCopy.eyebrow;
+  if(h1&&landingCopy.h1!==null)h1.innerHTML=landingCopy.h1;
+  if(lede&&landingCopy.lede!==null)lede.textContent=landingCopy.lede;
+  const demo=document.getElementById('cta-demo');
+  if(demo)demo.style.display='';
+}
+function firstNameFromProfile(profile){
+  const name=String((profile&&profile.name)||'').trim();
+  if(!name)return '';
+  return name.split(/\s+/)[0];
+}
+function cleanPreparedName(value){
+  return String(value||'').replace(/[\u0000-\u001f<>]/g,'').trim().slice(0,200);
+}
+function cleanPreparedLinkedin(value){
+  const raw=String(value||'').trim();
+  if(!raw)return '';
+  try{
+    const href=/^https?:\/\//i.test(raw)?raw:'https://'+raw;
+    const u=new URL(href);
+    const host=u.hostname.toLowerCase().replace(/^www\./,'');
+    const isLinkedIn=host==='linkedin.com'||host.endsWith('.linkedin.com');
+    const isProfile=/^\/in\/[^/]+\/?$/i.test(u.pathname);
+    if(!isLinkedIn||!isProfile||u.username||u.password||u.port)return '';
+    const path=u.pathname.replace(/\/+$/,'');
+    return 'https://'+u.hostname.toLowerCase()+path;
+  }catch(e){return '';}
+}
+function preparedInviteFromHash(){
+  if(viewAsSid())return null;
+  const raw=(location.hash||'').replace(/^#/,'');
+  if(!raw||raw.indexOf('=')<0)return null;
+  let params;
+  try{params=new URLSearchParams(raw);}catch(e){return null;}
+  if(params.has('viewas'))return null;
+  const name=cleanPreparedName(params.get('name')||'');
+  const email=String(params.get('email')||'').trim().toLowerCase().slice(0,200);
+  const linkedin=cleanPreparedLinkedin(params.get('linkedin')||'');
+  if(email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return null;
+  if(!name&&!email&&!linkedin)return null;
+  return {name,email,linkedin};
+}
+function applyPreparedInvite(){
+  captureLandingCopy();
+  restoreLandingCopy();
+  const invite=preparedInviteFromHash();
+  if(!invite)return false;
+  const existing=Object.assign({name:'',email:'',linkedin:'',instagram:'',links:[],bio:''},session.profile||{});
+  if(session.started&&existing.email&&invite.email&&existing.email.toLowerCase()!==invite.email)return false;
+  if(invite.name)existing.name=invite.name;
+  if(invite.email)existing.email=invite.email;
+  if(invite.linkedin)existing.linkedin=invite.linkedin;
+  session.profile=existing;
+  session.preparedInvite=true;
+  const landing=document.getElementById('state-landing');
+  if(landing)landing.classList.add('is-prepared');
+  const first=firstNameFromProfile(existing);
+  const eyebrow=document.querySelector('#state-landing .hero .eyebrow .code');
+  if(eyebrow&&first)eyebrow.textContent='Prepared for '+first;
+  const h1=document.querySelector('#state-landing .hero h1');
+  if(h1&&first){
+    const period=document.createElement('span');period.className='p';period.textContent='.';
+    h1.replaceChildren(document.createTextNode(first+', Florian set this session up for you'),period);
+  }
+  const lede=document.querySelector('#state-landing .hero .lede');
+  if(lede&&first)lede.textContent='Your name and LinkedIn are already in. Start when you are ready. Same 25 to 45 minutes, in your own words.';
+  const demo=document.getElementById('cta-demo');
+  if(demo)demo.style.display='none';
+  return true;
+}
+function sessionOpeningMessage(){
+  const first=firstNameFromProfile(session.profile);
+  if(!first)return SESSION_OPENING_MESSAGE;
+  return first+', Florian set this session up for you. '+SESSION_OPENING_MESSAGE;
+}
+
 function seedOpeningMessage(){
+  const opening=sessionOpeningMessage();
   session.messages=[
     {role:'user',content:'__START__',at:new Date().toISOString()},
-    {role:'assistant',content:SESSION_OPENING_MESSAGE,suggestions:OPENING_SUGGESTIONS.slice(),at:new Date().toISOString()}
+    {role:'assistant',content:opening,suggestions:OPENING_SUGGESTIONS.slice(),at:new Date().toISOString()}
   ];
   session.star=emptyStar();
   session.started=true;
   chatScroll.innerHTML='';
-  appendMsg('assistant',SESSION_OPENING_MESSAGE);
+  appendMsg('assistant',opening);
   renderSuggestions(OPENING_SUGGESTIONS);
   renderStarFull();
 }
@@ -2337,6 +2432,7 @@ function startOver(){
   cs.classList.add('btn-primary');cs.classList.remove('btn-ghost');
   cs.textContent='Start your session';
   showState('state-landing');
+  applyPreparedInvite();
 }
 
 /* lead gate: name + email before anything else */
@@ -3560,6 +3656,7 @@ checkMaintenance().then((down)=>{
       document.getElementById('cta-start').classList.add('btn-ghost');
       document.getElementById('cta-start').textContent='Start fresh instead';
     }
+    applyPreparedInvite();
   }
 });
 document.getElementById('cta-resume').addEventListener('click',async e=>{
