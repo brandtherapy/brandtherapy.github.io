@@ -159,9 +159,10 @@ Michael is the practice. He runs a digital agency and co-founded a fintech compa
 
 ### LinkedIn
 
-- Headline: Cross-disciplinary judgment for independent thinkers | Follow the question before the answer
-- Location: Independent, no fixed location- Banner: Generate one complete LinkedIn banner image containing a quiet study still life, the exact positioning line Cross-disciplinary judgment for independent thinkers., Michael Couper, and Cross-Disciplinary Thinker together. Keep all client text inside 80 px left and right and 56 px top and bottom on a 1584 by 396 canvas, and outside a 203 px mobile-stress exclusion radius centered at x 180, y 396. No faces, people, bodies, silhouettes, portraits, object collage, mechanical parts, circles, orbit lines, arcs, professor costume, question mark, generic thought-leadership diagram, slogan, hook, or later text repair.
-- About: I follow the question before I defend an answer. Most consequential choices sit across more than one discipline, so I move between technology, art, business, and civic life on purpose, to see what a single lane would miss. The range matters for what becomes visible once evidence from different fields gets connected: the hidden assumption, the competing perspective, the part of the picture a faster answer would have skipped. I name what is evidence, what is inference, and what is just my read on it, and I change my mind in public when the evidence asks for it. If you are facing a choice that the easy answers keep flattening, I would like to hear the actual question underneath it.
+- Headline: Cross-disciplinary judgment and public thinking
+- Location: No fixed location
+- Banner text: The context and tools to see the whole picture.
+- About: I follow the question before I defend an answer. A choice that looks settled in one lane usually is not, so I stay with it until the missing pieces are in view. Range is the method, not the personality. Connecting evidence from different fields is how a hidden assumption becomes visible, and how a faster answer gets tested. I name what is evidence, what is inference, and what is just my read on it, and I change my mind in public when the evidence asks for it. If you are facing a choice that the easy answers keep flattening, I would like to hear the actual question underneath it.
 - Featured, in order:
   1. States the core position: follow the question before defending an answer.
   2. Shows the method on a real example: find the assumption nobody checked.
