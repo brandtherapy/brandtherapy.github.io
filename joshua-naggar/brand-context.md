@@ -152,9 +152,10 @@ Joshua is the product: his judgment, history, and personal counsel, not a firm p
 
 ### LinkedIn
 
-- Headline: Strategic counsel for cannabis operators | Navigate the chaos, keep the advantage
-- Location:- Banner: Generate one complete LinkedIn banner image containing the counsel-table scene, the exact positioning line Strategic counsel for cannabis operators., Joshua Naggar, and Strategic Counsel for Cannabis together. Keep all client text inside 80 px left and right and 56 px top and bottom on a 1584 by 396 canvas, and outside a 203 px mobile-stress exclusion radius centered at x 180, y 396. No faces, people, bodies, silhouettes, circles, orbit lines, arcs, cannabis novelty, gavel, scales, casino cue, slogan, hook, or later text repair.
-- About: I give serious cannabis businesses strategic advantage by navigating legal, operational, and political chaos with counsel that stays inside the decision, not outside it. The work is licenses, investigations, asset sales, acquisitions, cultivation, distribution, and agency navigation, held together with the operational reality and business judgment a single legal task never covers. I work with owners and operators committed to cannabis for the long run, with real complexity and real stakes on the table. This is not a fit for the cheapest task completed. If you are navigating a decision where legal risk and business reality are tangled together, that is the conversation to have before the risk gets expensive.
+- Headline: Cannabis counsel for licenses, investigations, and transactions
+- Location: 
+- Banner text: Strategic counsel for cannabis operators. Strategic counsel for cannabis
+- About: I stay with the legal problem and the operating problem until they are one read. Then I tell you the move while the risk is still cheap to change. The work is licenses, investigations, asset sales, acquisitions, cultivation, distribution, and agency navigation, held together with the operational reality a single filing never covers. I work with owners and operators committed to cannabis for the long run, with real complexity and real stakes on the table. Cheap task work is a poor fit. If a decision has legal risk and business reality tangled together, that is the conversation to have before the cheaper risk becomes the expensive one.
 - Featured, in order:
   1. the hidden risk series: three LinkedIn posts naming a risk pattern before it is obvious, pinned once published
   2. the newsletter briefing: one pressure point and one strategic implication, in the briefing tone
