@@ -1,0 +1,1015 @@
+{
+  "brand": "Bright Business",
+  "scope": "Company. Florin Diumea personal brand remains separate.",
+  "strategy": {
+    "headline": "Decisions and accountability.",
+    "introduction": "The place where owners and experts collaborate on the decisions that move the bottom line.",
+    "positioning": "The place where owners and experts collaborate on the decisions that move the bottom line.",
+    "focus": [
+      {
+        "name": "Product",
+        "line": "A decision-making and accountability system for business owners and experts",
+        "detail": "Bright Business combines a working room, the Bright Business Operating System, the Human-Centred Matrix and continuing accountability. The Club brings the people together. BBOS maps the business. The Matrix structures a decision. Bright Brain supports the work between meetings.",
+        "test": "Each offer makes its role in the system clear.",
+        "rules_in": [
+          "Real business decisions and accountable follow-through.",
+          "Peer advisory, expert judgment and a common operating method."
+        ],
+        "rules_out": [
+          "A collection of talks presented as the whole product.",
+          "Software capabilities without a working demonstration."
+        ]
+      },
+      {
+        "name": "People",
+        "line": "Business owners building growth, value and exit readiness; experts building authority",
+        "detail": "Owners of established businesses, particularly those with $1M or more in revenue, need better decisions as they grow, transition or prepare to exit. Experts contribute one discipline in a room of owners and peers. Useful contribution builds authority, ambassadors and qualified warm introductions.",
+        "test": "Owner and expert invitations make their different value clear.",
+        "rules_in": [
+          "Owners willing to work on a real business challenge.",
+          "Experts contributing specialist judgment, with one seat per discipline."
+        ],
+        "rules_out": [
+          "Guaranteed leads or access to a prospecting list.",
+          "A general audience defined only by wanting success."
+        ]
+      },
+      {
+        "name": "Purpose",
+        "line": "Improve the decision-making process",
+        "detail": "Bright Business exists to help members improve how they make decisions. Its founding belief is: “Businesses don’t fail. Decision-makers do.” That belief puts responsibility for judgment and action at the centre of the brand.",
+        "test": "Every activity improves a decision, its timing or the accountability that follows.",
+        "rules_in": [
+          "Decision-making as a practice that can improve.",
+          "An owner who remains responsible for the decision."
+        ],
+        "rules_out": [
+          "Community, learning or networking replacing the central purpose.",
+          "Activities with no connection to the business decision."
+        ]
+      },
+      {
+        "name": "Promise",
+        "line": "The best decision, at the best time, for the best outcome.",
+        "detail": "Better decisions serve growth, business value and exit readiness for owners. Experts build authority through contribution, then earn ambassadors and qualified warm leads. The promise directs the quality of the work; it does not guarantee a financial outcome.",
+        "test": "The recommendation explains why this decision, why now and what outcome it is intended to serve.",
+        "rules_in": [
+          "Accountability, a scorecard and follow-through.",
+          "Clear reasoning and honest statements of uncertainty."
+        ],
+        "rules_out": [
+          "Guaranteed revenue, valuation or leads.",
+          "An estimate presented as an achieved result."
+        ]
+      },
+      {
+        "name": "Personality",
+        "line": "Direct. Calm. Honest about certainty. On the journey.",
+        "detail": "Name the diagnosis and its cost. Explain why the recommendation fits. State what is known and what still needs testing. Speak as a capable navigator accompanying an owner who makes the decision.",
+        "test": "The reader understands the issue, the reason and the next move.",
+        "rules_in": [
+          "Plain language, specific diagnosis and reasons.",
+          "Human support alongside clear accountability."
+        ],
+        "rules_out": [
+          "Hype, generic praise and theatrical certainty.",
+          "A guru who claims to know the owner’s business better than the owner."
+        ]
+      }
+    ],
+    "recommendation": "Keep decisions and accountability at the centre. Show how the Club, BBOS, the Human-Centred Matrix and Bright Brain work together. Make the owner and expert value clear in their own invitations.",
+    "audiences": [
+      {
+        "name": "Business owners",
+        "need": "The business has outgrown decisions made alone, late or from memory.",
+        "offer": "A working session around a real constraint, with relevant peers and experts.",
+        "action": "Visit a meeting"
+      },
+      {
+        "name": "Experts",
+        "need": "Good expertise needs to become visible through useful contributions.",
+        "offer": "A focused place to teach, diagnose and contribute, with an ongoing role in the room.",
+        "action": "Apply for a seat"
+      }
+    ],
+    "architecture": [
+      {
+        "name": "Bright Business",
+        "role": "The master brand. One connected ecosystem and one shield."
+      },
+      {
+        "name": "Bright Business Club",
+        "role": "The monthly working room with owners, experts and accountability."
+      },
+      {
+        "name": "BBOS",
+        "role": "The business blueprint: dependencies, constraints and the business journey."
+      },
+      {
+        "name": "Bright Brain",
+        "role": "The navigator for decision support and accountability between meetings."
+      },
+      {
+        "name": "2×2 Human-Centred Matrix",
+        "role": "The decision method: current state, future state, how, what and who."
+      },
+      {
+        "name": "Growth-to-Exit Sprint",
+        "role": "A focused owner engagement. The website currently presents a 90-Day Sprint; use the current offer name and terms when promoting a specific program."
+      }
+    ],
+    "relationship": {
+      "company": "Bright Business owns the system, event families, membership experience and reusable assets.",
+      "personal": "Florin Diumea owns his personal perspective, experience and expert reputation. His LinkedIn brand remains a separate source.",
+      "partner": "Florian P. contributes the brand expertise and delivery. Bright Business operates the stage, audience and event logistics."
+    }
+  },
+  "focus_star": {
+    "people": {
+      "persona": {
+        "label": "The established owner at a decision point",
+        "situation": "An owner of an established business facing growth, transition or exit decisions.",
+        "need": "Relevant expertise, a structured decision process and follow-through.",
+        "stakes": "Growth, business value and readiness for the next stage.",
+        "trigger": "A consequential decision needs better judgment and accountability."
+      }
+    },
+    "promise": {
+      "brand_dna": "Accountable decisions"
+    },
+    "personality": {
+      "primary_archetype": {
+        "name": "Sage"
+      }
+    }
+  },
+  "identity": {
+    "direction": {
+      "title": "Creative Direction",
+      "job": "Decisions and accountability, made visible through the Bright Business visual language.",
+      "sections": [
+        {
+          "title": "The visual world",
+          "body": "Paper and charcoal give the argument room. The red flag identifies the brand. Structure makes the decision legible; the Explorer makes the journey human.",
+          "image": "applications/creative-exploration/selection-board.png",
+          "alt": "Bright Business visual language with typography, palette, red flag, Explorer illustration and ten event compositions."
+        },
+        {
+          "title": "Visual registers",
+          "body": "",
+          "rows": [
+            [
+              "Measure",
+              "Geometry, clear type and purposeful data marks.",
+              "Frameworks, scorecards, decks and structured event invitations."
+            ],
+            [
+              "Explain",
+              "Charcoal ink, restrained watercolour and one red-shirt Explorer.",
+              "An idea, a journey or a working session made tangible."
+            ],
+            [
+              "Show",
+              "The actual product screen, placed in a real context.",
+              "Product demonstrations supported by the interface that exists."
+            ]
+          ],
+          "headers": [
+            "Register",
+            "Character",
+            "Use"
+          ]
+        },
+        {
+          "title": "Strategy and visual choices",
+          "body": "",
+          "rows": [
+            [
+              "Decisions",
+              "One dominant argument per surface. The hierarchy holds in grayscale."
+            ],
+            [
+              "Accountability",
+              "Clear owner, action and follow-through in the content."
+            ],
+            [
+              "Direct and calm",
+              "Generous paper, precise type and restrained colour."
+            ],
+            [
+              "On the journey",
+              "The owner is the Explorer. The system provides the vehicle, path, compass, peers and navigator."
+            ]
+          ],
+          "headers": [
+            "Strategic idea",
+            "Design behaviour"
+          ]
+        },
+        {
+          "title": "Character and contrast",
+          "body": "Sage judgment leads the explanation. Structure, action and peer warmth support it. The visual balance changes with the job while the voice stays direct and calm.",
+          "rows": [
+            [
+              "Geometric / organic",
+              "Use geometric structure to measure. Use the organic Explorer register to explain."
+            ],
+            [
+              "Calm / energetic",
+              "Give the argument space. Let a purposeful red mark carry the point of attention."
+            ],
+            [
+              "Rational / emotional",
+              "Explain the reasoning clearly, then make the business journey human."
+            ],
+            [
+              "Transparent / mysterious",
+              "Show the subject, the relationship and the next action. Avoid obscure decorative metaphors."
+            ]
+          ],
+          "headers": [
+            "Balance",
+            "Application"
+          ]
+        },
+        {
+          "title": "Application examples",
+          "body": "Each composition keeps the same identity. The variation is in emphasis and arrangement.",
+          "proofs": [
+            "creative-exploration/01-table-map",
+            "creative-exploration/05-curtain",
+            "creative-exploration/03-coastal-fork"
+          ]
+        }
+      ]
+    },
+    "visual-rules": {
+      "title": "Look and Feel",
+      "job": "A practical specification for colour, type, composition and imagery.",
+      "sections": [
+        {
+          "title": "Colour roles",
+          "body": "",
+          "palette": true
+        },
+        {
+          "title": "Pairings and legibility",
+          "body": "",
+          "rows": [
+            [
+              "Charcoal on paper",
+              "Default for all reading, small labels and numbers."
+            ],
+            [
+              "Paper on charcoal",
+              "Use for a deliberate inverse field with generous spacing."
+            ],
+            [
+              "Red",
+              "Brand flag; a diagnosed constraint; the Explorer’s shirt. Never generic emphasis."
+            ],
+            [
+              "Blue",
+              "The WHO / UX centre of the Human-Centred Matrix only."
+            ],
+            [
+              "Cloud",
+              "The Leverage Move surface only."
+            ],
+            [
+              "Gold",
+              "No active role. Do not introduce it into assets."
+            ]
+          ],
+          "headers": [
+            "Pairing or colour",
+            "Rule"
+          ]
+        },
+        {
+          "title": "Typography",
+          "body": "",
+          "type_specimen": true,
+          "rows": [
+            [
+              "Display",
+              "Familjen Grotesk 700",
+              "Sentence case; tight but open; line height 1.05–1.12."
+            ],
+            [
+              "Labels and interface",
+              "Familjen Grotesk 400 / 700",
+              "Short, legible and precise. Eyebrows uppercase only."
+            ],
+            [
+              "Reading",
+              "Spectral 400",
+              "Longer explanation; line height 1.5–1.65."
+            ],
+            [
+              "Numbers and product",
+              "Familjen Grotesk",
+              "Never Spectral. No decorative number treatment."
+            ]
+          ],
+          "headers": [
+            "Role",
+            "Typeface",
+            "Use"
+          ]
+        },
+        {
+          "title": "Composition",
+          "body": "",
+          "items": [
+            "Start with one topic or decision. Make it the largest readable element.",
+            "Use a clear grid, six percent minimum safe margins and consistent alignment.",
+            "Group location and logistics; reserve a distinct place for partners and speakers.",
+            "Keep the brand mark smaller than the topic. Place it on an uncluttered field.",
+            "Cards may use a 25px radius; pills 40px; data marks remain square. Shadows belong only to cards.",
+            "Artwork has a fixed canvas. Scale it as a whole; never reflow a finished banner."
+          ]
+        },
+        {
+          "title": "Imagery",
+          "body": "",
+          "rows": [
+            [
+              "Explorer illustration",
+              "Charcoal ink, loose pale sky and ground washes, one red-shirt protagonist. One understandable situation."
+            ],
+            [
+              "Real people and venues",
+              "Use verified, suitable source photography. Preserve the person and the place."
+            ],
+            [
+              "Product",
+              "Use an actual rendered screen. Never illustrate a fictional interface or member result."
+            ],
+            [
+              "Avoid",
+              "Stock boardrooms, glossy pseudo-3D, decorative gradients, fabricated people presented as speakers."
+            ]
+          ],
+          "headers": [
+            "Source",
+            "Treatment"
+          ]
+        },
+        {
+          "title": "Do / avoid",
+          "body": "",
+          "image": "identity/visual-rules-board.png",
+          "alt": "Correct use of red flag, colour roles and text hierarchy beside examples of decorative colour and weak hierarchy."
+        },
+        {
+          "title": "Accessible production",
+          "body": "",
+          "items": [
+            "Use charcoal at full strength for small information. Low-opacity charcoal is for rules and nonessential marks.",
+            "Charcoal on paper exceeds 4.5:1. Red on paper is about 4:1, so do not use it for small body text.",
+            "Give interface controls visible keyboard focus and descriptive labels.",
+            "Write useful alt text for finished assets. Put event details in the accompanying text as well.",
+            "Keep text live in source masters; supply fixed PDF and PNG outputs."
+          ]
+        }
+      ]
+    },
+    "logo": {
+      "title": "Logo",
+      "job": "One Bright Business shield across the ecosystem.",
+      "sections": [
+        {
+          "title": "The existing mark",
+          "body": "Use the supplied Bright Business artwork as one intact asset.",
+          "logo": true
+        },
+        {
+          "title": "Placement",
+          "body": "",
+          "items": [
+            "Keep clear space of at least one shield-frame thickness, approximately 15.7% of shield width in the manual construction.",
+            "Preserve the complete aspect ratio and all lettering. Do not redraw, retype, stretch or recolour.",
+            "Use the available charcoal master on paper. On a charcoal composition, place the mark in a normal paper footer.",
+            "Program and location names are typeset labels, not new logos.",
+            "Use a licensed, supplied inverse master if one becomes available. Do not simulate one by filtering the charcoal asset."
+          ]
+        },
+        {
+          "title": "Partners",
+          "body": "Keep sponsor marks subordinate and separate from the Bright Business mark. Until an approved sponsor logo is supplied, typeset the sponsor name with its role. Kiln is the San Diego location sponsor; Serendipity Labs is the Costa Mesa location sponsor."
+        }
+      ]
+    },
+    "signature": {
+      "title": "Brand Signature",
+      "job": "Red flag specifications and usage.",
+      "sections": [
+        {
+          "title": "The BBVL flag",
+          "body": "A red rectangle precedes the uppercase eyebrow. At the manual’s base size it is 30 × 8px, followed by an 11.5px bold label with 1.6px tracking. Scale the entire lockup together.",
+          "signature": true
+        },
+        {
+          "title": "Red flag usage",
+          "body": "",
+          "items": [
+            "Use one flag to introduce the branded subject or series.",
+            "Keep the rectangle solid red and square-edged. No texture, gradient, rounding or animation.",
+            "Do not stretch it into a decorative stripe or repeat it beside every paragraph.",
+            "In the geometric register, additional red identifies a real constraint. In the illustration register, the Explorer’s shirt may carry red.",
+            "Maintain one identity across locations. A city never receives its own colour or mark."
+          ]
+        },
+        {
+          "title": "The Human-Centred Matrix",
+          "body": "This is Bright Business’s decision framework. Its orientation carries meaning.",
+          "matrix": true
+        },
+        {
+          "title": "The decision sequence",
+          "body": "",
+          "items": [
+            "Future State is north. Current State is south. How / PTP is west. What / ATP is east.",
+            "WHO / UX stays in the blue centre. Do not rotate or mirror the matrix.",
+            "Name the Weakest Link, then the Leverage Move. Show the formula last.",
+            "The matrix and the Brand Therapy Focus Star have different jobs. Do not combine their geometry or labels."
+          ]
+        },
+        {
+          "title": "The journey vocabulary",
+          "body": "",
+          "rows": [
+            [
+              "Explorer",
+              "The owner"
+            ],
+            [
+              "Vehicle",
+              "The business and BBOS"
+            ],
+            [
+              "Path",
+              "The business journey"
+            ],
+            [
+              "Compass",
+              "The Human-Centred Matrix"
+            ],
+            [
+              "Peers",
+              "The Club"
+            ],
+            [
+              "Navigator",
+              "Bright Brain"
+            ]
+          ],
+          "headers": [
+            "Image",
+            "Meaning"
+          ]
+        }
+      ]
+    },
+    "voice": {
+      "title": "Voice and Writing",
+      "job": "Direct. Calm. Honest about certainty. On the journey.",
+      "sections": [
+        {
+          "title": "Four principles",
+          "body": "",
+          "rows": [
+            [
+              "Direct",
+              "Name the diagnosis, the cost and the next action. Use plain verbs."
+            ],
+            [
+              "Calm",
+              "Keep the sentence measured. Let the substance carry the urgency."
+            ],
+            [
+              "Honest about certainty",
+              "Distinguish what is known, estimated and still being tested. Explain why this recommendation."
+            ],
+            [
+              "On the journey",
+              "Speak alongside the owner. The owner makes the decision; the room improves it."
+            ]
+          ],
+          "headers": [
+            "Principle",
+            "Writing behaviour"
+          ]
+        },
+        {
+          "title": "The core language",
+          "body": "",
+          "rows": [
+            [
+              "Position",
+              "The place where owners and experts collaborate on the decisions that move the bottom line."
+            ],
+            [
+              "Belief",
+              "Businesses don’t fail. Decision-makers do."
+            ],
+            [
+              "Promise",
+              "The best decision, at the best time, for the best outcome."
+            ],
+            [
+              "Journey",
+              "Business is a journey."
+            ],
+            [
+              "System",
+              "One room. One system. One better decision, then the next."
+            ],
+            [
+              "Distinction",
+              "Not a networking group."
+            ],
+            [
+              "Sign-off",
+              "Stay Bright."
+            ]
+          ],
+          "headers": [
+            "Role",
+            "Line"
+          ]
+        },
+        {
+          "title": "Company description",
+          "body": "Bright Business brings owners and experts together around decisions and accountability. Through the Club, the Bright Business Operating System, the Human-Centred Matrix and Bright Brain, members work on the decisions that support growth, business value and the next stage of their business."
+        },
+        {
+          "title": "Five examples",
+          "body": "",
+          "rows": [
+            [
+              "Diagnosis",
+              "Every decision still comes back to you. That slows the business down. Identify which decisions someone else can own."
+            ],
+            [
+              "Teaching",
+              "Start with the Current State. Define the Future State. Then decide what must change, how it will change and who owns the move."
+            ],
+            [
+              "Proof",
+              "A useful progress review names the original decision, the action taken and what happened."
+            ],
+            [
+              "Invitation",
+              "Bring a business decision to the room. Work it through with owners and experts. Visit a meeting."
+            ],
+            [
+              "Service",
+              "Thanks for the context. The first thing to clarify is who owns this decision. Once that is clear, we can work through the next move."
+            ]
+          ],
+          "headers": [
+            "Situation",
+            "Example"
+          ]
+        },
+        {
+          "title": "Three corrections",
+          "body": "",
+          "rows": [
+            [
+              "Unlock your full potential.",
+              "Work through the decision holding your business back.",
+              "Replace an abstract promise with a concrete task."
+            ],
+            [
+              "Join an amazing network of game-changers.",
+              "Owners and experts collaborating on real business decisions.",
+              "Name who is there and what they do."
+            ],
+            [
+              "Guaranteed leads and 2X growth.",
+              "Build authority through useful contributions to the room.",
+              "Do not turn an intended outcome into a guarantee."
+            ]
+          ],
+          "headers": [
+            "Avoid",
+            "Use",
+            "Reason"
+          ]
+        },
+        {
+          "title": "Terms and rhythm",
+          "body": "",
+          "items": [
+            "Use Owner, Expert, Member and Club consistently. On owner pages, say owner rather than founder.",
+            "Use Weakest Link, Leverage Move, Matrix Movement, Destination and Machine when the underlying framework is relevant. Explain an unfamiliar term on first use.",
+            "Use Visit a meeting or Apply for a seat. Avoid generic join, sign up and register.",
+            "Address the reader as you. Give the diagnosis in one sentence, name its cost, then explain the recommendation.",
+            "Keep “You belong here” and “A society for business explorers” out of new company copy.",
+            "Use Stay Bright in notes from Florin or the Club; it need not close every asset."
+          ]
+        }
+      ]
+    },
+    "personal-branding": {
+      "title": "Personal Branding",
+      "job": "Bright Business is company-led and founder-endorsed.",
+      "sections": [
+        {
+          "title": "The relationship",
+          "body": "Florin Diumea contributes his experience, point of view and reputation. Bright Business owns the system, membership experience and event identity. Club leads and experts can carry that experience without turning every asset into a portrait of Florin."
+        },
+        {
+          "title": "Use the right voice",
+          "body": "",
+          "rows": [
+            [
+              "Bright Business",
+              "The system, member experience, programs, events and accountability."
+            ],
+            [
+              "Florin Diumea",
+              "A personal perspective, author’s explanation or founder’s message."
+            ],
+            [
+              "Guest expert",
+              "A named contribution to a specific session, shown with verified name and role."
+            ]
+          ],
+          "headers": [
+            "Speaker",
+            "Role"
+          ]
+        },
+        {
+          "title": "Character Sheet",
+          "body": "Not in use for this company system. Florin’s portrait, likeness and personal identity remain in his separate personal brand. Company event designs can work fully without a face."
+        }
+      ]
+    }
+  },
+  "colors": {
+    "accent": "#FF0000",
+    "accent_glow": "rgba(255,0,0,0)",
+    "accent_soft": "rgba(66,65,78,.06)",
+    "text": "#42414E",
+    "muted": "#64636E",
+    "border": "rgba(66,65,78,.18)",
+    "light": "#FFFFFF",
+    "white": "#FFFFFF",
+    "dark": "#42414E",
+    "dark_surface": "#42414E",
+    "charcoal": "#42414E",
+    "red": "#FF0000",
+    "blue": "#009CFF",
+    "cloud": "#ECF4FF",
+    "paper": "#FFFFFF"
+  },
+  "typography": {
+    "display": {
+      "family": "Familjen Grotesk",
+      "fallback": "system-ui, sans-serif",
+      "weights": [
+        500,
+        600,
+        700
+      ],
+      "default_weight": 700,
+      "letter_spacing": "-0.02em",
+      "line_height": 1.05
+    },
+    "body": {
+      "family": "Spectral",
+      "fallback": "Georgia, serif",
+      "weights": [
+        400
+      ],
+      "default_weight": 400,
+      "line_height": 1.6
+    }
+  },
+  "applications": {
+    "pages": {
+      "overview": {
+        "title": "Applications",
+        "job": "Brand application across the four event programs.",
+        "sections": [
+          {
+            "title": "Event design concepts",
+            "body": "An illustrated world built around real business decisions, shared expertise and the next move. Each composition gives the Explorer a different role.",
+            "image": "applications/creative-exploration/selection-board.png",
+            "alt": "Ten Bright Business event designs across square, portrait, story and banner formats."
+          },
+          {
+            "title": "One brand across four programs",
+            "body": "San Diego, Costa Mesa and Online share the Bright Business Club identity. The Marketing & Sales Group keeps its own program name within the same brand."
+          },
+          {
+            "title": "Campaign formats",
+            "body": "A square starts the conversation. A story brings the idea closer. A cover identifies the event. A listing turns interest into attendance. Use the same visual idea across these formats, composing each for its setting."
+          },
+          {
+            "title": "From calendar to finished assets",
+            "body": "Confirm the topic, date, time, venue and any speaker or sponsor details. The same identity rules govern the next invitation, the full monthly set and the August–July calendar."
+          },
+          {
+            "title": "How the case study should prove its value",
+            "body": "",
+            "rows": [
+              [
+                "Consistency",
+                "Compare the original banners with the same four events using one identity."
+              ],
+              [
+                "Independence",
+                "Demonstrate a new event produced from its facts, with no manual layout work."
+              ],
+              [
+                "Speed",
+                "Record the time from confirmed brief to checked files. Compare with a real prior baseline."
+              ],
+              [
+                "Business effect",
+                "Track qualified owner and expert inquiries, visits and membership progression over time. Attribute results cautiously."
+              ]
+            ],
+            "headers": [
+              "Question",
+              "Evidence to collect"
+            ]
+          }
+        ]
+      },
+      "events": {
+        "title": "Event design exploration",
+        "job": "Ten illustrated event concepts across four social formats.",
+        "sections": [
+          {
+            "title": "The complete board",
+            "creative_gallery": true
+          },
+          {
+            "title": "In context",
+            "social_contexts": true
+          },
+          {
+            "title": "From design to the next event",
+            "body": "These examples explore the visual direction. Add the confirmed topic, date, time, venue, speaker and sponsor details before using them for a scheduled event. The same idea can become a square post, story, cover and listing."
+          },
+          {
+            "title": "Formats",
+            "headers": [
+              "Use",
+              "Canvas"
+            ],
+            "rows": [
+              [
+                "Square social post",
+                "1080 × 1080px"
+              ],
+              [
+                "Portrait feed post",
+                "1080 × 1350px"
+              ],
+              [
+                "Story",
+                "1080 × 1920px"
+              ],
+              [
+                "Event cover and LinkedIn event",
+                "1600 × 900px (16:9)"
+              ]
+            ]
+          },
+          {
+            "title": "Monthly and annual use",
+            "body": "Once a direction is selected, apply it across the four programs and the confirmed calendar. Each export follows the same brand rules while keeping the format and occasion in mind."
+          }
+        ]
+      }
+    },
+    "creative_exploration": {
+      "status": "in_review",
+      "date": "2026-09-14",
+      "brief": "At least ten new image-led concepts, visibly different and presented together across event promotion formats.",
+      "concepts": [
+        {
+          "id": "01-table-map",
+          "name": "The working table",
+          "format": "square",
+          "width": 1080,
+          "height": 1080,
+          "location": "San Diego",
+          "program": "Bright Business Club",
+          "headline": "One room.\nBetter decisions.",
+          "support": "A working session for owners and experts.",
+          "layout": "overhead",
+          "recommended": false
+        },
+        {
+          "id": "02-missing-step",
+          "name": "The missing step",
+          "format": "story",
+          "width": 1080,
+          "height": 1920,
+          "location": "Costa Mesa",
+          "program": "Bright Business Club",
+          "headline": "Your next\nmove.",
+          "support": "Work through it with owners and experts.",
+          "layout": "staircase",
+          "recommended": false
+        },
+        {
+          "id": "03-coastal-fork",
+          "name": "The coastal fork",
+          "format": "banner",
+          "width": 1600,
+          "height": 900,
+          "location": "San Diego",
+          "program": "Bright Business Club",
+          "headline": "The room makes\nthe decision\nbetter.",
+          "support": "Owners and experts. One working room.",
+          "layout": "panorama",
+          "recommended": true
+        },
+        {
+          "id": "04-open-business",
+          "name": "The open business",
+          "format": "square",
+          "width": 1080,
+          "height": 1080,
+          "location": "Online",
+          "program": "Bright Business Club",
+          "headline": "See the whole\nbusiness.",
+          "support": "One room. One system.",
+          "layout": "cutaway",
+          "recommended": true
+        },
+        {
+          "id": "05-curtain",
+          "name": "The reveal",
+          "format": "portrait",
+          "width": 1080,
+          "height": 1350,
+          "location": "Online",
+          "program": "Marketing & Sales Group",
+          "headline": "Make your\nexpertise\nvisible.",
+          "support": "Build authority through contribution.",
+          "layout": "curtain",
+          "recommended": true
+        },
+        {
+          "id": "06-counterweight",
+          "name": "The leverage move",
+          "format": "story",
+          "width": 1080,
+          "height": 1920,
+          "location": "Online",
+          "program": "Bright Business Club",
+          "headline": "Find your\nLeverage Move.",
+          "support": "One better decision, then the next.",
+          "layout": "lever",
+          "recommended": false
+        },
+        {
+          "id": "07-rowing-room",
+          "name": "The shared direction",
+          "format": "banner",
+          "width": 1600,
+          "height": 900,
+          "location": "Costa Mesa",
+          "program": "Bright Business Club",
+          "headline": "Find your\ndirection.\nTogether.",
+          "support": "Owners and experts working on real decisions.",
+          "layout": "rowing",
+          "recommended": false
+        },
+        {
+          "id": "08-table-bridge",
+          "name": "The room as a bridge",
+          "format": "square",
+          "width": 1080,
+          "height": 1080,
+          "location": "San Diego",
+          "program": "Bright Business Club",
+          "headline": "Bring a\nbusiness decision.",
+          "support": "Work it through with the room.",
+          "layout": "bridge",
+          "recommended": false
+        },
+        {
+          "id": "09-paper-maze",
+          "name": "The fresh perspective",
+          "format": "portrait",
+          "width": 1080,
+          "height": 1350,
+          "location": "Online",
+          "program": "Marketing & Sales Group",
+          "headline": "A fresh\nperspective.",
+          "support": "Owners and experts solving a real problem.",
+          "layout": "maze",
+          "recommended": false
+        },
+        {
+          "id": "10-switchyard",
+          "name": "The next route",
+          "format": "story",
+          "width": 1080,
+          "height": 1920,
+          "location": "Online",
+          "program": "Marketing & Sales Group",
+          "headline": "Decisions.\nDirection.\nAccountability.",
+          "support": "Business is a journey.",
+          "layout": "switchyard",
+          "recommended": false
+        }
+      ],
+      "imagery_source": "images/identity/event-exploration/",
+      "exports": "images/applications/creative-exploration/",
+      "previous_event_examples": "rejected_by_Florian_2026_09_14",
+      "rules": [
+        "Every concept has a distinct original editorial watercolour cartoon.",
+        "Use one red-shirt Explorer; other figures remain grey and charcoal.",
+        "Keep all lettering outside generated imagery. Typeset Familjen Grotesk from the supplied font files.",
+        "Use Spectral only for longer reading. No replacement display face.",
+        "Recompose each channel from the application master. Never stretch the artwork or crop essential type.",
+        "Keep story text clear of the top and bottom platform controls.",
+        "Use confirmed facts for a scheduled event; these concepts carry no invented dates or speakers."
+      ]
+    },
+    "events": [
+      {
+        "id": "san-diego",
+        "name": "Bright Business Club",
+        "location": "San Diego",
+        "headline": "Purpose is the core of the business.",
+        "description": "Why it matters. How to find it.",
+        "sponsor": "Kiln",
+        "width": 1600,
+        "height": 900,
+        "cta": "Visit a meeting",
+        "topicLabel": "OCTOBER · PURPOSE"
+      },
+      {
+        "id": "costa-mesa",
+        "name": "Bright Business Club",
+        "location": "Costa Mesa",
+        "headline": "Purpose is the core of the business.",
+        "description": "Why it matters. How to find it.",
+        "sponsor": "Serendipity Labs",
+        "width": 1600,
+        "height": 900,
+        "cta": "Visit a meeting",
+        "topicLabel": "OCTOBER · PURPOSE"
+      },
+      {
+        "id": "online",
+        "name": "Bright Business Club",
+        "location": "Online",
+        "headline": "Purpose is the core of the business.",
+        "description": "Why it matters. How to find it.",
+        "sponsor": "",
+        "width": 1600,
+        "height": 900,
+        "cta": "Visit a meeting",
+        "topicLabel": "OCTOBER · PURPOSE"
+      },
+      {
+        "id": "marketing-sales",
+        "name": "Bright Business Marketing & Sales Group",
+        "location": "Online",
+        "headline": "The Positioning Gap",
+        "description": "Owners and experts working on a real business challenge.",
+        "sponsor": "",
+        "width": 2400,
+        "height": 1200,
+        "cta": "Apply for a seat",
+        "topicLabel": "WORKING SESSION"
+      }
+    ]
+  },
+  "execution": {
+    "source_priority": [
+      "Current explicit client brief",
+      "Supplied BBVL 0.6.0-alpha manual",
+      "This OS technical adaptation",
+      "Verified current event facts"
+    ],
+    "workflow": [
+      "Read strategy and identity, then the requested application.",
+      "Check required facts; ask only for missing information needed for the final asset.",
+      "Choose the appropriate composition and render the finished files.",
+      "Inspect output for hierarchy, typography, logo, signature, facts and clipping; fix issues and inspect again."
+    ],
+    "never": [
+      "Change strategy to suit a design.",
+      "Invent dates, speakers, testimonials or results.",
+      "Generate a replacement logo or a real-person likeness.",
+      "Turn the deliverable into a client-operated template editor.",
+      "Send or publish without exact final-content approval."
+    ]
+  }
+}
