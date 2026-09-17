@@ -152,8 +152,7 @@ Heidi is the brand. Buyers are hiring her insight and presence. Exponential Impa
 ### LinkedIn
 
 - Headline: Executive communication for VPs and emerging executives | Exponential Impact
-- Location: Prescott Valley, Arizona- Banner: a deep ink field with the line Leading with intention. Make the thinking land. in an editorial serif, the audience above it, Exponential Impact below. 1584 by 396 px. Skip arms-crossed stock coaches.
-- About: I help capable VPs and emerging executives close the gap between the quality of their thinking and the impact of their communication. The work is executive communication judgment. We find the real point, lead with what matters, and build the capacity to do that in the room, especially when the stakes are high. I do not sell scripts, slide polish, or a manufactured executive persona. You already have influence. The question is whether you are using it on purpose. If your thinking is stronger than how it currently lands, message me the word LAND.
+- Location: Prescott Valley, Arizona- Banner text: Leading with intention Make the thinking land- About: I help capable VPs and emerging executives close the gap between the quality of their thinking and the impact of their communication. The work is executive communication judgment. We find the real point, lead with what matters, and build the capacity to do that in the room, especially when the stakes are high. I do not sell scripts, slide polish, or a manufactured executive persona. You already have influence. The question is whether you are using it on purpose. If your thinking is stronger than how it currently lands, message me the word LAND.
 - Featured, in order:
   1. The Leading with intention position post, with the LAND close
   2. One specific meeting where strong thinking did not land
