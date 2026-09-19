@@ -1,0 +1,110 @@
+window.FOCUS_STAR_CONFIG = {
+  "brand": {
+    "name": "Focus Star",
+    "shortName": "Case study"
+  },
+  "visual": {
+    "darkMode": false,
+    "background": "#FFFFFF",
+    "dialBackground": "#FFFFFF",
+    "bgMode": "unified",
+    "hideTitleDot": true,
+    "titleTransform": "uppercase",
+    "titleWeight": 800
+  },
+  "center": "Brand DNA",
+  "pillars": [
+    {
+      "id": "product",
+      "code": "P1",
+      "title": "Product",
+      "eyebrow": "Your offering",
+      "guide": {
+        "desc": "<strong>Product.</strong> What you actually sell, and the standard the offer has to hold.",
+        "impacts": [
+          "Offering architecture",
+          "Pricing",
+          "Deliverables",
+          "Sales conversation",
+          "Client experience",
+          "Proof"
+        ]
+      },
+      "case": {}
+    },
+    {
+      "id": "people",
+      "code": "P2",
+      "title": "People",
+      "eyebrow": "Your tribe",
+      "guide": {
+        "desc": "<strong>People.</strong> The specific people the brand is built to serve. Not everyone.",
+        "impacts": [
+          "Positioning",
+          "Language",
+          "Visibility",
+          "Offer fit",
+          "Content themes",
+          "Sales filtering"
+        ]
+      },
+      "case": {}
+    },
+    {
+      "id": "purpose",
+      "code": "P3",
+      "title": "Purpose",
+      "eyebrow": "Your why",
+      "guide": {
+        "desc": "<strong>Purpose.</strong> The reason the brand exists beyond activity and attention.",
+        "impacts": [
+          "Vision",
+          "Story",
+          "Partnerships",
+          "Recruitment",
+          "Saying no",
+          "Editorial choices"
+        ]
+      },
+      "case": {}
+    },
+    {
+      "id": "promise",
+      "code": "P4",
+      "title": "Promise",
+      "eyebrow": "Your non-negotiable",
+      "guide": {
+        "desc": "<strong>Promise.</strong> The one standard that should hold across every touchpoint.",
+        "impacts": [
+          "Writing",
+          "Visual metaphor",
+          "Discovery",
+          "Decision filter",
+          "Content topics",
+          "Client process"
+        ]
+      },
+      "case": {}
+    },
+    {
+      "id": "personality",
+      "code": "P5",
+      "title": "Personality",
+      "eyebrow": "How you show up",
+      "guide": {
+        "desc": "<strong>Personality.</strong> How the brand sounds, looks, behaves, and is recognized.",
+        "impacts": [
+          "Voice",
+          "Visual language",
+          "Social behavior",
+          "Website tone",
+          "Decks",
+          "Email rhythm"
+        ]
+      },
+      "case": {}
+    }
+  ],
+  "defaultTab": "guide",
+  "clientMode": false
+};
