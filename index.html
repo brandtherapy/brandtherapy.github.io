@@ -23,6 +23,13 @@
 <meta name="twitter:image:alt" content="Brand Therapy">
 <meta name="description" content="Answer questions the way you would in a real strategy session. Your answers fill a live Focus Star in front of you.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='38' fill='%235A5CF9'/%3E%3C/svg%3E">
+<script>
+try{
+  if(/[?&#]access=/.test((location.search||'')+(location.hash||''))){
+    document.documentElement.classList.add('access-boot');
+  }
+}catch(e){}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -56,6 +63,8 @@ button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px soli
 #app{min-height:100vh;position:relative}
 .state{display:none}
 .state.active{display:block}
+html.access-boot #state-landing{display:none!important}
+html.access-boot #state-session{display:block}
 
 /* ============ LANDING ============ */
 #landing-wrap{max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px)}
@@ -3694,8 +3703,8 @@ async function startViewAs(sid){
 buildMiniStar();
 initDock();
 checkMaintenance().then((down)=>{
-  if(down)return;
   if(viewAsSid()){
+    document.documentElement.classList.remove('access-boot');
     showState('state-landing');
     startViewAs(viewAsSid());
     return;
@@ -3706,11 +3715,13 @@ checkMaintenance().then((down)=>{
     showState('state-session');
     showConversation(false);
     openFromAccessToken(accessToken).catch(()=>{
+      document.documentElement.classList.remove('access-boot');
       toast('Could not open this session. Reply to Florian and he will send a new link.');
       showState('state-landing');
     });
     return;
   }
+  if(down)return;
   showState('state-landing');
   loadImages();
   loadBoardFiles();
