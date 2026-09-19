@@ -1,0 +1,157 @@
+{
+  "schemaVersion": "brand-therapy-sprint-demo.v1",
+  "status": "draft",
+  "identity": {
+    "name": "Chris Boudreau",
+    "company": "Chris Boudreau",
+    "category": "Business development and strategic partnerships",
+    "positioning": "Chris helps business operators find partners and plan how to work together. His experience includes cannabis.",
+    "distinctiveIdea": "An introduction is useful when both businesses know why they are meeting.",
+    "personality": {
+      "line": "Calm, direct, attentive, and organized.",
+      "archetypeMix": {
+        "hero": 40,
+        "caregiver": 26,
+        "sage": 22,
+        "friend": 12
+      },
+      "archetypeSource": "Personality rules-in words (caring, trustworthy, reliable, organized, analytical, selfless) read against the Steady Hero personality line.",
+      "sliders": [
+        {
+          "left": "Classic",
+          "position": 55,
+          "right": "Modern",
+          "defining": false
+        },
+        {
+          "left": "Mature",
+          "position": 30,
+          "right": "Youthful",
+          "defining": true
+        },
+        {
+          "left": "Playful",
+          "position": 72,
+          "right": "Serious",
+          "defining": true
+        },
+        {
+          "left": "Abstract",
+          "position": 68,
+          "right": "Literal",
+          "defining": true
+        },
+        {
+          "left": "Calm",
+          "position": 52,
+          "right": "Energetic",
+          "defining": false
+        },
+        {
+          "left": "Rational",
+          "position": 55,
+          "right": "Emotional",
+          "defining": false
+        },
+        {
+          "left": "Mysterious",
+          "position": 75,
+          "right": "Transparent",
+          "defining": true
+        },
+        {
+          "left": "Quiet",
+          "position": 55,
+          "right": "Talkative",
+          "defining": false
+        }
+      ],
+      "leanInto": [
+        "Transparent",
+        "Serious",
+        "Literal",
+        "Mature",
+        "Grounded",
+        "Reliable",
+        "Practical"
+      ],
+      "moveAwayFrom": [
+        "Youthful",
+        "Playful",
+        "Abstract",
+        "Mysterious",
+        "Hype",
+        "Flashy",
+        "Loud"
+      ],
+      "voicePrincipleCount": 4,
+      "visualIdentity": "Warm paper, dark brown text, muted green accents, olive emphasis, and Inter typography."
+    }
+  },
+  "focusStar": [
+    {
+      "line": "Product",
+      "decision": "Relationship-led growth and market development"
+    },
+    {
+      "line": "People",
+      "decision": "Progressive operators seeking smarter growth",
+      "persona": "The Progressive Growth Operator"
+    },
+    {
+      "line": "Purpose",
+      "decision": "Leave business better than you found it"
+    },
+    {
+      "line": "Promise",
+      "decision": "Move the right relationships forward",
+      "brandDNA": "Steadfast"
+    },
+    {
+      "line": "Personality",
+      "decision": "Steady Hero"
+    }
+  ],
+  "linkedin": {
+    "platform": "LinkedIn",
+    "headline": "Helping operators find business partners and plan the work together",
+    "location": "San Diego, California",
+    "banner": "Relationship-led business development for progressive operators. Chris Boudreau",
+    "featuredCount": 3
+  },
+  "growthOpportunities": {
+    "headline": "Five ways to start a partnership conversation",
+    "levers": [
+      "Direct outreach",
+      "Useful content",
+      "Collaboration",
+      "Editorial outreach",
+      "Referrals"
+    ],
+    "opportunityCount": 5,
+    "contentTerritories": [
+      "Evaluating a business partner",
+      "Entering a market",
+      "Working together"
+    ]
+  },
+  "aiPack": {
+    "file": "brand-context.md",
+    "requiredSections": [
+      "Identity",
+      "Instructions",
+      "Context",
+      "Examples",
+      "Factual boundaries",
+      "Starter prompts"
+    ],
+    "starterPromptCount": 6
+  },
+  "sections": [
+    "strategy",
+    "identity",
+    "profiles",
+    "ai",
+    "growth"
+  ]
+}
