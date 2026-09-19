@@ -1105,6 +1105,7 @@ let session={
   demo:false,
   profile:{name:'',email:'',linkedin:'',instagram:'',links:[],bio:''}
 };
+let pendingCoachFeedback=null;
 function isReadOnly(){return !!session.viewas;}
 const LS_IMG_KEY='fp_self_serve_bt_images_v1';
 let profileImages=[]; // [{name,data}] kept out of the main session blob
@@ -1150,6 +1151,53 @@ function writeHeaders(){
   const headers={'Content-Type':'application/json'};
   if(session.writeToken)headers.Authorization='Bearer '+session.writeToken;
   return headers;
+}
+function accessTokenFromLocation(){
+  const search=new URLSearchParams(location.search||'');
+  const hashRaw=(location.hash||'').replace(/^#/,'');
+  let hash;
+  try{hash=new URLSearchParams(hashRaw);}catch(e){hash=new URLSearchParams();}
+  const token=String(search.get('access')||hash.get('access')||'').trim();
+  if(!/^[A-Za-z0-9_-]{32,128}$/.test(token))return '';
+  return token;
+}
+function stripAccessTokenFromLocation(){
+  try{
+    const url=new URL(location.href);
+    url.searchParams.delete('access');
+    const hash=new URLSearchParams((url.hash||'').replace(/^#/,''));
+    if(hash.has('access')){
+      hash.delete('access');
+      url.hash=hash.toString()?('#'+hash.toString()):'';
+    }
+    history.replaceState(null,'',url.pathname+url.search+url.hash);
+  }catch(e){}
+}
+async function openFromAccessToken(token){
+  const res=await fetch(API_BASE+'/api/session-access',{
+    method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({token})
+  });
+  if(!res.ok)throw new Error('session access '+res.status);
+  const data=await res.json();
+  session.demo=false;
+  session.viewas=false;
+  session.sid=data.sid;
+  session.writeToken=data.writeToken;
+  session.profile=Object.assign({name:'',email:'',linkedin:'',instagram:'',links:[],bio:''},data.profile||{});
+  session.exercises=data.exercises||undefined;
+  if(data.coachFeedback&&data.coachFeedback.message)pendingCoachFeedback=data.coachFeedback;
+  if(Array.isArray(data.messages)&&data.messages.length){
+    session.messages=data.messages;
+    session.star=data.star||emptyStar();
+    session.started=true;
+    startRealSession(true);
+  }else{
+    session.messages=[];
+    session.star=null;
+    session.started=false;
+    startRealSession(false);
+  }
 }
 async function currentResumeProof(){
   const lastUser=(session.messages||[]).slice().reverse().find(m=>m&&m.role==='user'&&m.content!=='__START__');
@@ -2379,7 +2427,6 @@ function startRealSession(resumed){
 
 /* T-348: Florian's human feedback. Served only after session verification;
    spliced into the persisted transcript exactly once per feedback id. */
-let pendingCoachFeedback=null;
 function applyCoachFeedback(){
   const fb=pendingCoachFeedback;
   if(!fb||!fb.message||session.coachFeedbackSeenId===fb.id)return;
@@ -3651,23 +3698,34 @@ checkMaintenance().then((down)=>{
   if(viewAsSid()){
     showState('state-landing');
     startViewAs(viewAsSid());
-  }else{
-    showState('state-landing');
-    loadImages();
-    loadBoardFiles();
-    loadTasteFiles();
-    if(loadSession() && session.started && !session.demo){
-      session.profile=Object.assign({name:'',email:'',linkedin:'',instagram:'',links:[],bio:''},session.profile||{});
-      if(session.star){migrateLegacyTaste();if(session.writeToken)saveSession();}
-      const answers=session.messages.filter(m=>m.role==='user'&&m.content!=='__START__').length;
-      document.getElementById('rc-count').textContent=answers;
-      document.getElementById('resume-card').style.display='flex';
-      document.getElementById('cta-start').classList.remove('btn-primary');
-      document.getElementById('cta-start').classList.add('btn-ghost');
-      document.getElementById('cta-start').textContent='Start fresh instead';
-    }
-    applyPreparedInvite();
+    return;
   }
+  const accessToken=accessTokenFromLocation();
+  if(accessToken){
+    stripAccessTokenFromLocation();
+    showState('state-session');
+    showConversation(false);
+    openFromAccessToken(accessToken).catch(()=>{
+      toast('Could not open this session. Reply to Florian and he will send a new link.');
+      showState('state-landing');
+    });
+    return;
+  }
+  showState('state-landing');
+  loadImages();
+  loadBoardFiles();
+  loadTasteFiles();
+  if(loadSession() && session.started && !session.demo){
+    session.profile=Object.assign({name:'',email:'',linkedin:'',instagram:'',links:[],bio:''},session.profile||{});
+    if(session.star){migrateLegacyTaste();if(session.writeToken)saveSession();}
+    const answers=session.messages.filter(m=>m.role==='user'&&m.content!=='__START__').length;
+    document.getElementById('rc-count').textContent=answers;
+    document.getElementById('resume-card').style.display='flex';
+    document.getElementById('cta-start').classList.remove('btn-primary');
+    document.getElementById('cta-start').classList.add('btn-ghost');
+    document.getElementById('cta-start').textContent='Start fresh instead';
+  }
+  applyPreparedInvite();
 });
 document.getElementById('cta-resume').addEventListener('click',async e=>{
   const button=e.currentTarget;button.disabled=true;
