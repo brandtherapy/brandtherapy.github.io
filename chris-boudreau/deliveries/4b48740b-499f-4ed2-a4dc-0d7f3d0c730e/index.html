@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head><script>/* Blocking head script: remove the private fragment before any analytics runs. */
+(() => {
+  const params = new URLSearchParams(location.hash.slice(1));
+  const invitation = params.get('delivery');
+  const launch = params.get('delivery-launch');
+  if (!invitation && !launch) { window.deliverySessionReady = Promise.resolve({ok:true}); return; }
+  history.replaceState(null, '', location.pathname + location.search);
+  window.deliverySessionReady = fetch('/api/delivery/' + (invitation ? 'invite' : 'redeem'), {
+    method:'POST', credentials:'same-origin', cache:'no-store',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(invitation ? {token:invitation} : {code:launch})
+  }).then(async response => {
+    const result = await response.json();
+    return response.ok ? result : {ok:false,error:'This approval link has expired or is no longer active. Please request a new delivery link.'};
+  }).catch(() => ({ok:false,error:'Could not connect to save your response. Please reopen your delivery link.'}));
+})();
+</script><meta name="referrer" content="no-referrer">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+  <meta name="description" content="Chris Boudreau: positioning, LinkedIn profile copy, and five ways to start a board-level conversation.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%232A2622'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Georgia,serif' font-size='15' fill='%23F6F2EA'%3ECB%3C/text%3E%3C/svg%3E">
+  <title>Chris Boudreau | Brand Therapy Sprint</title>
+  <meta name="twitter:image" content="https://brandtherapy.florianp.com/chris-boudreau/deliveries/4b48740b-499f-4ed2-a4dc-0d7f3d0c730e/og-image.png?v=1">
+  <meta property="og:image" content="https://brandtherapy.florianp.com/chris-boudreau/deliveries/4b48740b-499f-4ed2-a4dc-0d7f3d0c730e/og-image.png?v=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --ink: #2A2622;
+      --ink-soft: #5C554C;
+      --paper: #F6F2EA;
+      --paper-deep: #EDE6D8;
+      --mist: #EDE6D8;
+      --mineral: #4A4237;
+      --water: #547660;
+      --clay: #8a6626;
+      --clay-soft: #E8D4B0;
+      --line: #DDD3C0;
+      --white: #FFFDF8;
+      --banner: #4A4237;
+      --banner-deep: #547660;
+      --font: Inter, system-ui, sans-serif;
+      --font-body: Inter, system-ui, sans-serif;
+      --font-display: Inter, system-ui, sans-serif;
+    }
+  </style>
+  <script src="assets/archetype-chart/archetype-chart.js" defer></script>
+  <script src="app.js" defer></script>
+  <!-- Google Tag Manager -->
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'granted',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  </script>
+  <script>(function(w,d,s,l,i){if(w.location.protocol==='file:'||/^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])$/.test(w.location.hostname))return;
+  w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W74ZKP9M');</script>
+  <script>
+  gtag('consent', 'update', {
+    'analytics_storage': 'granted',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  </script>
+  <!-- End Google Tag Manager -->
+<style>html{scroll-padding-top:calc(var(--delivery-bar-height,71px) + 75px)}.topbar,.progress{top:var(--delivery-bar-height,71px)!important}.chapter-toggle{top:calc(var(--delivery-bar-height,71px) + 14px)!important}.chapter-nav{top:calc(var(--delivery-bar-height,71px) + 66px)!important}.rail{top:calc(var(--delivery-bar-height,71px) + 70px)!important;height:calc(100vh - var(--delivery-bar-height,71px) - 70px)}.focus-star header,.month-map>header{top:calc(var(--delivery-bar-height,71px) + 112px)!important}@media(max-width:820px){html{scroll-padding-top:calc(var(--delivery-bar-height,71px) + 118px)}.rail{top:calc(var(--delivery-bar-height,71px) + 60px)!important;height:52px}}</style></head>
+<body><delivery-approval data-name="Chris Boudreau" data-page="sprint" data-deliverable="efd790f1-7692-489d-b2ba-b7113682ccd1" data-release="4b48740b-499f-4ed2-a4dc-0d7f3d0c730e" data-resource="efd790f1-7692-489d-b2ba-b7113682ccd1-sprint" data-reveal="/chris-boudreau/deliveries/4b48740b-499f-4ed2-a4dc-0d7f3d0c730e/reveal/" data-sprint="/chris-boudreau/deliveries/4b48740b-499f-4ed2-a4dc-0d7f3d0c730e/" data-product="Brand Therapy Intro" data-approve-title="Approve your Brand Therapy Intro." data-approve-body="Approve the positioning in this Intro to unlock your LinkedIn Sprint."></delivery-approval><script type="module" src="/chris-boudreau/deliveries/4b48740b-499f-4ed2-a4dc-0d7f3d0c730e/delivery-ui/approval-bar.js"></script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W74ZKP9M" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <a class="skip-link" href="#main">Skip to the strategy</a>
+
+  <header class="topbar">
+    <a class="wordmark" href="#top" aria-label="Chris Boudreau, back to top">
+      <span>CB</span>
+      <strong>Chris Boudreau</strong>
+    </a>
+    <p>LinkedIn Sprint <span>LinkedIn</span></p>
+    <span class="demo-label">September 2026</span>
+  </header>
+
+  <div class="page-shell" id="top">
+    <aside class="rail" aria-label="Deliverable navigation">
+      <div class="rail-intro">
+        <span class="rail-number">01</span>
+        <p>Your positioning and LinkedIn profile</p>
+      </div>
+      <nav>
+        <a href="#strategy" data-nav="strategy" aria-current="true"><span>01</span>Strategy</a>
+        <a href="#identity" data-nav="identity"><span>02</span>Identity</a>
+        <a href="#profiles" data-nav="profiles"><span>03</span>LinkedIn</a>
+        <a href="#ai" data-nav="ai"><span>04</span>Use With AI</a>
+        <a href="#growth" data-nav="growth"><span>05</span>Growth</a>
+      </nav>
+      <div class="rail-footer">
+        <span>Prepared for</span>
+        <strong>Chris Boudreau</strong>
+        <small>San Diego, California</small>
+      </div>
+    </aside>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Chris Boudreau</p>
+          <h1 id="hero-title">Your LinkedIn<br><span>Sprint</span></h1>
+          <p class="hero-lead">Your profile copy, a banner to download, and five ways to start a board-level conversation.</p>
+          <div class="hero-summary" aria-label="Deliverable summary">
+            <span>Positioning</span>
+            <span>Voice and photography</span>
+            <span>LinkedIn profile and banner</span>
+            <span>Ways to start a conversation</span>
+            <span>Brand context to reuse</span>
+          </div>
+        </div>
+        <figure class="hero-portrait">
+          <img src="assets/profile-image.png?v=5" alt="Chris Boudreau speaking into a microphone, wearing a dark blazer and open-collar shirt" width="992" height="1586">
+          <figcaption>
+            <strong>Chris Boudreau</strong>
+            <span>Executive leadership</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="chapter chapter-strategy" id="strategy" data-section="strategy" aria-labelledby="strategy-title">
+        <header class="chapter-heading">
+          <span>01</span>
+          <div>
+            <p>Your Strategy</p>
+            <h2 id="strategy-title">Your positioning</h2>
+          </div>
+        </header>
+
+        <div class="positioning-block">
+          <div>
+            <p class="section-label">Positioning statement</p>
+            <blockquote>Market foresight. Steadfast leadership.</blockquote>
+          </div>
+          <div class="positioning-detail">
+            <p>Chris connects economic and regulatory change with where investment and market demand are heading. He uses that perspective to set direction and build stronger businesses, with a personal commitment to the people and work he takes on.</p>
+            <dl>
+              <div><dt>Category</dt><dd>Executive leadership</dd></div>
+              <div><dt>Distinctive idea</dt><dd>Market foresight. Steadfast leadership.</dd></div>
+              <div><dt>Founder role</dt><dd>Chris brings his own judgment and commitment to the businesses he leads.</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="focus-star" aria-labelledby="focus-star-title">
+          <header>
+            <p class="section-label">The Focus Star</p>
+            <h3 id="focus-star-title">What your brand stands for</h3>
+          </header>
+          <ol>
+            <li>
+              <span>Product</span>
+              <strong>Business leadership that connects economics, regulation, and investment to anticipate market shifts and set long-term direction.</strong>
+              <p>Chris connects changes in the economy, regulation and investment with the opportunities facing a business. His value is the breadth of that judgment and the direction it gives a company.</p>
+            </li>
+            <li>
+              <span>People</span>
+              <strong>Boards, business owners, and progressive operators seeking a leader who sees beyond the company and understands where the market is going.</strong>
+              <p>The audience has responsibility for a company’s future and needs leadership that understands the market around it. The opportunity may be a leadership appointment, expansion or a changing competitive landscape.</p>
+            </li>
+            <li>
+              <span>Purpose</span>
+              <strong>Build stronger businesses, teams, and relationships that can anticipate and shape the future of the market.</strong>
+              <p>Chris builds businesses, teams and relationships that can anticipate market change and help determine what comes next.</p>
+            </li>
+            <li>
+              <span>Promise</span>
+              <strong>Lead with unwavering commitment, take ownership, and follow through on every undertaking.</strong>
+              <p>You stay engaged, accept responsibility and follow through. The people building the business can count on your continued commitment as circumstances change.</p>
+            </li>
+            <li>
+              <span>Personality</span>
+              <strong>Far-sighted, analytical, steadfast, enterprising, and caring.</strong>
+              <p>He considers the wider implications of a decision, looks for opportunity and takes his responsibilities seriously. Care and personal dependability give his executive judgment human credibility.</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="point-of-view">
+          <p class="section-label">Point of view</p>
+          <p class="pov-line">A company’s future depends on understanding the market around it and taking responsibility for what comes next.</p>
+          <div class="pov-principles">
+            <p><span>01</span>Connect economic and regulatory developments to business decisions.</p>
+            <p><span>02</span>Build the teams and relationships the opportunity requires.</p>
+            <p><span>03</span>Remain accountable as circumstances change.</p>
+          </div>
+        </div>
+
+        <div class="proof-bank">
+          <header>
+            <p class="section-label">Business approach</p>
+            <h3>How you lead</h3>
+          </header>
+          <div class="proof-ledger">
+            <article>
+              <span>Perspective</span>
+              <strong>Connect the market forces</strong>
+              <p>Consider how economics, regulation and investment affect the business together.</p>
+            </article>
+            <article>
+              <span>Enterprise</span>
+              <strong>Build for the long term</strong>
+              <p>Develop the business and the people and relationships that support its future.</p>
+            </article>
+            <article>
+              <span>Commitment</span>
+              <strong>Take responsibility</strong>
+              <p>Remain present and follow through on what you undertake.</p>
+            </article>
+          </div>
+          <p class="proof-note"></p>
+        </div>
+
+      </section>
+
+      <section class="chapter chapter-identity" id="identity" data-section="identity" aria-labelledby="identity-title">
+        <header class="chapter-heading">
+          <span>02</span>
+          <div>
+            <p>Your Identity</p>
+            <h2 id="identity-title">Your voice and character</h2>
+          </div>
+        </header>
+
+        <div class="identity-read">
+          <header>
+            <p class="section-label">Personality</p>
+            <h3>How you communicate</h3>
+          </header>
+          <p class="identity-statement">Far-sighted, analytical, steadfast, enterprising, and caring.</p>
+          <p class="identity-lead">Speak with executive perspective. Explain what a market development means for the business and give a considered view of the direction to take.</p>
+          <div class="identity-traits">
+            <article><span>Perspective</span><strong>Connect the market forces</strong><p>Consider how economics, regulation and investment affect the business together.</p></article>
+            <article><span>Enterprise</span><strong>Build for the long term</strong><p>Develop the business and the people and relationships that support its future.</p></article>
+            <article><span>Commitment</span><strong>Take responsibility</strong><p>Remain present and follow through on what you undertake.</p></article>
+          </div>
+        </div>
+
+        <div class="archetype-block">
+          <header>
+            <p class="section-label">Brand archetype</p>
+            <h3>Steady and responsible</h3>
+          </header>
+          <div class="archetype-layout">
+            <bt-archetype-chart id="archetypeChart" presentation="compact" animate aria-label="Chris Boudreau brand archetype mix"></bt-archetype-chart>
+            <div class="archetype-read">
+              <p>You take responsibility and remain involved. Your analytical judgment is balanced by care for the people building the business.</p>
+              <ol class="archetype-roles">
+                <li><strong>Hero leads.</strong> Take responsibility for the work you agree to do.</li>
+                <li><strong>Caregiver and Sage support.</strong> Listen carefully and explain the reasoning behind your advice.</li>
+                <li><strong>Friend adds warmth.</strong> Be approachable and easy to talk to.</li>
+              </ol>
+              <p class="archetype-note">Keep the tone practical. Do not claim that you can predict the market, and do not promise a result.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sliders-block">
+          <header>
+            <p class="section-label">Brand dials</p>
+            <h3>How the brand is tuned</h3>
+          </header>
+          <p class="sliders-lead">The balance is mature, serious, and concrete, with room for warmth in conversation.</p>
+          <ol class="slider-list">
+            <li><span class="slider-left">Classic</span><div class="slider-track" aria-hidden="true"><i style="--pos:55"></i></div><span class="slider-right">Modern</span><span class="slider-value">Modern 10%</span></li>
+            <li class="defining"><span class="slider-left">Mature</span><div class="slider-track" aria-hidden="true"><i style="--pos:30"></i></div><span class="slider-right">Youthful</span><span class="slider-value">Mature 40%</span></li>
+            <li class="defining"><span class="slider-left">Playful</span><div class="slider-track" aria-hidden="true"><i style="--pos:72"></i></div><span class="slider-right">Serious</span><span class="slider-value">Serious 44%</span></li>
+            <li class="defining"><span class="slider-left">Abstract</span><div class="slider-track" aria-hidden="true"><i style="--pos:68"></i></div><span class="slider-right">Literal</span><span class="slider-value">Literal 36%</span></li>
+            <li><span class="slider-left">Calm</span><div class="slider-track" aria-hidden="true"><i style="--pos:52"></i></div><span class="slider-right">Energetic</span><span class="slider-value">Energetic 4%</span></li>
+            <li><span class="slider-left">Rational</span><div class="slider-track" aria-hidden="true"><i style="--pos:55"></i></div><span class="slider-right">Emotional</span><span class="slider-value">Emotional 10%</span></li>
+            <li class="defining"><span class="slider-left">Mysterious</span><div class="slider-track" aria-hidden="true"><i style="--pos:75"></i></div><span class="slider-right">Transparent</span><span class="slider-value">Transparent 50%</span></li>
+            <li><span class="slider-left">Quiet</span><div class="slider-track" aria-hidden="true"><i style="--pos:55"></i></div><span class="slider-right">Talkative</span><span class="slider-value">Talkative 10%</span></li>
+          </ol>
+          <div class="slider-keywords">
+            <div><p class="section-label">Lean into</p><ul><li>Transparent</li><li>Serious</li><li>Literal</li><li>Mature</li><li>Grounded</li><li>Reliable</li><li>Practical</li></ul></div>
+            <div><p class="section-label">Move away from</p><ul><li>Youthful</li><li>Playful</li><li>Abstract</li><li>Mysterious</li><li>Hype</li><li>Flashy</li><li>Loud</li></ul></div>
+          </div>
+        </div>
+
+        <div class="voice-system">
+          <header>
+            <p class="section-label">Voice principles</p>
+            <h3>Executive perspective, clear language</h3>
+          </header>
+          <div class="voice-rule">
+            <div><span>01</span><h4>Explain the implications</h4></div>
+            <p>Connect an external development to a decision facing the business.</p>
+            <blockquote>How would a change in financing costs affect our expansion options?</blockquote>
+          </div>
+          <div class="voice-rule">
+            <div><span>02</span><h4>Make your judgment clear</h4></div>
+            <p>Give a considered view and the reasoning behind it.</p>
+            <blockquote>I would assess the regulatory outlook before committing capital.</blockquote>
+          </div>
+          <div class="voice-rule">
+            <div><span>03</span><h4>Speak with personal accountability</h4></div>
+            <p>Say what you will take responsibility for.</p>
+            <blockquote>I will stay involved and follow through on the commitments we make.</blockquote>
+          </div>
+          <div class="voice-rule">
+            <div><span>04</span><h4>Keep people in the picture</h4></div>
+            <p>Consider what a decision means for the team as well as the business.</p>
+            <blockquote>What will the team need to make this direction work?</blockquote>
+          </div>
+        </div>
+
+        <div class="look-block">
+          <header>
+            <p class="section-label">How it looks</p>
+            <h3>Photography</h3>
+          </header>
+          <div class="look-rules">
+            <article><span>Settings</span><p>Photograph Chris at a meeting table, speaking at an event, or talking with colleagues.</p></article>
+            <article><span>The moment</span><p>Show the conversation or the work in progress. Include enough of the setting to explain what is happening.</p></article>
+            <article><span>Presence</span><p>Use natural expressions and professional clothing.</p></article>
+            <article><span>Avoid</span><p>Avoid staged handshakes, luxury props, and product-plant imagery.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter chapter-profiles" id="profiles" data-section="profiles" aria-labelledby="profiles-title">
+        <header class="chapter-heading">
+          <span>03</span>
+          <div>
+            <p>Your profiles</p>
+            <h2 id="profiles-title">LinkedIn</h2>
+          </div>
+        </header>
+
+
+        <section class="platform-block platform-linkedin" id="linkedin" aria-labelledby="linkedin-title">
+        <header class="platform-heading">
+          <p class="section-label">LinkedIn</p>
+          <h3 id="linkedin-title">Your LinkedIn profile</h3>
+        </header>
+
+        <div class="linkedin-application">
+          <div class="linkedin-preview">
+            <div class="linkedin-browser" role="img" aria-label="LinkedIn profile preview for Chris Boudreau showing the banner, headline, and About summary">
+              <div class="linkedin-toolbar"><b>in</b><span>Search</span><i></i><i></i><i></i></div>
+              <div class="linkedin-banner" role="img" aria-label="LinkedIn banner reading Market foresight. Steadfast commitment.">
+                <img class="linkedin-banner-image" src="assets/linkedin-banner.png?v=7107d51bb574ee218280afcc93af0031338439c86edb11c61b03ac375543a7d0" alt="" width="1584" height="396">
+              </div>
+              <div class="linkedin-person">
+                <img src="assets/profile-image.png?v=5" alt="Chris Boudreau profile photo" width="992" height="1586" style="object-position:50% 0%;object-view-box:inset(2.065% 9.047% 45% 6.326%)">
+                <div>
+                  <h3>Chris Boudreau</h3>
+                  <p>Business leader connecting market insight to long-term growth</p>
+                  <small>San Diego, California</small>
+                </div>
+              </div>
+              <div class="linkedin-actions" aria-hidden="true"><span>Connect</span><span>Message</span><span>More</span></div>
+              <section class="linkedin-about-preview" aria-hidden="true">
+                <h4>About</h4>
+                <p>I look at where the economy, regulation and investment are taking a market, and what that means for the business. That wider perspective shapes how I lead and where I see opportunities to build.</p>
+              </section>
+            </div>
+            <div class="linkedin-downloads" role="group" aria-label="LinkedIn image downloads">
+              <a class="download-action" href="assets/profile-image.png?v=5" download="chris-boudreau-linkedin-profile-photo-992x1586.png"><span>Download profile image</span><small>Upload-ready PNG</small></a>
+              <a class="download-action" href="assets/linkedin-banner.png?v=7107d51bb574ee218280afcc93af0031338439c86edb11c61b03ac375543a7d0" download="chris-boudreau-linkedin-banner-1584x396.png"><span>Download banner</span><small>Upload-ready PNG</small></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-copy">
+          <article class="headline-copy">
+            <p class="section-label">Headline</p>
+            <h3>Business leader connecting market insight to long-term growth</h3>
+            <button class="copy-button" type="button" data-copy-target="headlineText">Copy headline</button>
+            <span id="headlineText" hidden>Business leader connecting market insight to long-term growth</span>
+          </article>
+
+          <article class="about-copy">
+            <div class="copy-heading">
+              <div><p class="section-label">About</p><h3>Ready to paste</h3></div>
+              <button class="copy-button" type="button" data-copy-target="aboutText">Copy About</button>
+            </div>
+            <div id="aboutText" class="about-text">
+              <p>I look at where the economy, regulation and investment are taking a market, and what that means for the business. That wider perspective shapes how I lead and where I see opportunities to build.</p>
+              <p>My background spans commercial banking and entrepreneurship. As a commercial banker, I assessed businesses and the capital behind them. As the founder of RipeMetrics, I brought that perspective into building a company.</p>
+              <p>I care about building a stronger business and the team and relationships that support it. Long-term direction matters because people commit their effort and capital to it. I take that responsibility seriously.</p>
+              <p>My commitment is to remain involved and follow through. I show up for the conversations, take ownership of what I undertake and stay accountable as circumstances change.</p>
+              <p>I welcome conversations with boards, business owners and progressive operators thinking about their next stage of growth.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="linkedin-support">
+          <div class="featured-plan">
+            <header><p class="section-label">Featured</p><h3>Three pieces for your Featured section</h3></header>
+            <ol>
+              <li><span>01</span><div><strong>What a market shift means for your business</strong><p>A regulatory change can alter who can compete. Financing costs can change which investments make sense. Before setting direction, I want to understand how those forces interact and what they mean for the business.</p></div><small>Perspective</small></li>
+              <li><span>02</span><div><strong>Questions before the next investment</strong><p>What is changing in the market? How could regulation affect the opportunity? What does the investment require from the team? What evidence would change our judgment?</p></div><small>Questions</small></li>
+              <li><span>03</span><div><strong>Business leadership and market perspective</strong><p>I bring a commercial banker’s perspective and experience founding RipeMetrics to the question of where a business should go next. My focus is building a stronger company with the people and relationships it needs, and remaining accountable for the work I take on.</p></div><small>Introduction</small></li>
+            </ol>
+          </div>
+        </div>
+        </section>
+      </section>
+
+
+      <section class="chapter chapter-ai" id="ai" data-section="ai" aria-labelledby="ai-title">
+        <header class="chapter-heading">
+          <span>04</span>
+          <div>
+            <p>Use With AI</p>
+            <h2 id="ai-title">Reuse your brand context</h2>
+          </div>
+        </header>
+
+        <div class="ai-intro">
+          <div>
+            <p>Copy this context into your preferred writing tool, then add the task and the facts it needs.</p>
+            <div class="ai-actions">
+              <button class="primary-action" type="button" id="copyAll">Copy full brand context</button>
+              <a class="download-action" href="brand-context.md" download>Download Markdown</a>
+            </div>
+            <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+          </div>
+          <dl>
+            <div><dt>Format</dt><dd>Plain Markdown</dd></div>
+            <div><dt>Works with</dt><dd>ChatGPT, Claude, Gemini, Copilot, and other LLMs</dd></div>
+            <div><dt>Includes</dt><dd>Identity, instructions, context, examples, boundaries, and prompts</dd></div>
+          </dl>
+        </div>
+
+        <div class="context-viewer">
+          <header><span>brand-context.md</span><small>Portable context pack</small></header>
+          <pre id="contextPreview" tabindex="0" aria-label="Chris Boudreau brand context Markdown">Loading your context pack...</pre>
+        </div>
+
+        <div class="starter-prompts">
+          <header><p class="section-label">Starter prompts</p><h3>Prompts for common tasks</h3></header>
+          <div class="prompt-list">
+            <article>
+              <div><span>01</span><h4>Write a LinkedIn post</h4></div>
+              <p id="prompt-post">Using the brand context above, write a LinkedIn post about one supplied economic or regulatory development and its implications for business direction. Under 150 words. Distinguish facts from your interpretation and do not invent forecasts.</p>
+              <button type="button" data-copy-target="prompt-post">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>02</span><h4>Plan a month of posts</h4></div>
+              <p id="prompt-month">Using the brand context above, draft a four-week LinkedIn plan with two to three posts per week. Rotate the three content territories, give each post a one-line angle and a format (text post, short video, or document), and keep every angle inside the factual boundaries.</p>
+              <button type="button" data-copy-target="prompt-month">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>03</span><h4>Draft the offer statement</h4></div>
+              <p id="prompt-offer">Using the brand context above, write a short explanation of Chris's executive work for a board choosing who leads a company. Use the supplied offer and career facts. Do not add services, prices, or outcomes.</p>
+              <button type="button" data-copy-target="prompt-offer">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>04</span><h4>Shape a collaboration</h4></div>
+              <p id="prompt-collaboration">Using the brand context above, write a short message proposing a joint perspective piece with an operator or firm active in a market Chris knows. Explain what Chris brings, what the other side brings, and why it is useful to publish together. Plain, direct, no hard sell.</p>
+              <button type="button" data-copy-target="prompt-collaboration">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>05</span><h4>Build a campaign brief</h4></div>
+              <p id="prompt-campaign">Using the brand context above, draft three LinkedIn posts about market foresight, building stronger businesses and accountable leadership. Use supplied facts only and do not invent client stories.</p>
+              <button type="button" data-copy-target="prompt-campaign">Copy prompt</button>
+            </article>
+            <article>
+              <div><span>06</span><h4>Prepare warm outreach</h4></div>
+              <p id="prompt-outreach">Using the brand context above, write a short message Chris can send to ten people he already knows who fit the audience or know someone who does. Name the opportunity in one sentence, ask one question, and make replying easy. Under 80 words.</p>
+              <button type="button" data-copy-target="prompt-outreach">Copy prompt</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter chapter-growth" id="growth" data-section="growth" aria-labelledby="growth-title">
+        <header class="chapter-heading">
+          <span>05</span>
+          <div>
+            <p>Business development</p>
+            <h2 id="growth-title">Five ways to start a board-level conversation</h2>
+          </div>
+        </header>
+
+        <ol class="growth-list">
+          <li class="growth-card" id="growth-warm-partnership-conversation">
+            <div class="growth-card-meta">
+              <span class="growth-index">01</span>
+              <p class="growth-lever">Direct outreach</p>
+            </div>
+            <div class="growth-card-main">
+              <h3>Ask a business owner which market change matters most</h3>
+              <p class="growth-fit">Your market perspective gives an owner a concrete reason to exchange views.</p>
+
+              <div class="growth-actions">
+                <div>
+                  <h4>Do this now</h4>
+                  <ol>
+                    <li>Contact an owner you know and ask about one external development affecting their next business decision.</li>
+                  </ol>
+                </div>
+                <div class="growth-ready">
+                  <h4>Ready to use</h4>
+                  <dl>
+                    <div><dt>Message</dt><dd>Which economic or regulatory change is having the biggest effect on your plans this year? I would be interested to compare perspectives.</dd></div>
+                  </dl>
+                </div>
+              </div>
+
+              <p class="growth-signal"><strong>Watch for</strong><span>An owner shares a business decision and invites a further conversation.</span></p>
+            </div>
+          </li>
+          <li class="growth-card" id="growth-partner-checklist">
+            <div class="growth-card-meta">
+              <span class="growth-index">02</span>
+              <p class="growth-lever">Useful content</p>
+            </div>
+            <div class="growth-card-main">
+              <h3>Share questions for an investment decision</h3>
+              <p class="growth-fit">Your banking and founder background supports a useful discussion of capital and business direction.</p>
+
+              <div class="growth-actions">
+                <div>
+                  <h4>Do this now</h4>
+                  <ol>
+                    <li>Publish the questions as a LinkedIn post and invite readers to add a question from their experience.</li>
+                  </ol>
+                </div>
+                <div class="growth-ready">
+                  <h4>Ready to use</h4>
+                  <dl>
+                    <div><dt>Checklist</dt><dd>What is changing in the market? How could regulation affect the opportunity? What does the investment require from the team? What evidence would change our judgment?</dd></div>
+                  </dl>
+                </div>
+              </div>
+
+              <p class="growth-signal"><strong>Watch for</strong><span>An owner or director brings a specific investment decision into the conversation.</span></p>
+            </div>
+          </li>
+          <li class="growth-card" id="growth-operator-conversation">
+            <div class="growth-card-meta">
+              <span class="growth-index">03</span>
+              <p class="growth-lever">Collaboration</p>
+            </div>
+            <div class="growth-card-main">
+              <h3>Compare market perspectives with an operator</h3>
+              <p class="growth-fit">An operator’s direct experience can complement your view of economic and regulatory conditions.</p>
+
+              <div class="growth-actions">
+                <div>
+                  <h4>Do this now</h4>
+                  <ol>
+                    <li>Invite an operator you know to discuss one market development and its business implications.</li>
+                  </ol>
+                </div>
+                <div class="growth-ready">
+                  <h4>Ready to use</h4>
+                  <dl>
+                    <div><dt>Invitation</dt><dd>Would you join me for a short LinkedIn conversation about a market change affecting your business? We could compare what you are seeing with its economic and regulatory implications.</dd></div>
+                  </dl>
+                </div>
+              </div>
+
+              <p class="growth-signal"><strong>Watch for</strong><span>An operator agrees to participate and introduces a relevant business contact.</span></p>
+            </div>
+          </li>
+          <li class="growth-card" id="growth-trade-article">
+            <div class="growth-card-meta">
+              <span class="growth-index">04</span>
+              <p class="growth-lever">Editorial outreach</p>
+            </div>
+            <div class="growth-card-main">
+              <h3>Pitch a business perspective on regulatory change</h3>
+              <p class="growth-fit">Your perspective connects an external development to the decisions business leaders face.</p>
+
+              <div class="growth-actions">
+                <div>
+                  <h4>Do this now</h4>
+                  <ol>
+                    <li>Select a regulatory development you can substantiate and propose an article to a business publication you read.</li>
+                  </ol>
+                </div>
+                <div class="growth-ready">
+                  <h4>Ready to use</h4>
+                  <dl>
+                    <div><dt>Article pitch</dt><dd>I would like to contribute an article on how a current regulatory change affects business investment decisions. I can bring a commercial banking and founder perspective. Would that angle be useful to your readers?</dd></div>
+                  </dl>
+                </div>
+              </div>
+
+              <p class="growth-signal"><strong>Watch for</strong><span>An editor requests a specific outline or interview.</span></p>
+            </div>
+          </li>
+          <li class="growth-card" id="growth-referral-explanation">
+            <div class="growth-card-meta">
+              <span class="growth-index">05</span>
+              <p class="growth-lever">Referrals</p>
+            </div>
+            <div class="growth-card-main">
+              <h3>Give contacts a clear leadership introduction</h3>
+              <p class="growth-fit">Your contacts need language that explains your leadership value beyond a job title.</p>
+
+              <div class="growth-actions">
+                <div>
+                  <h4>Do this now</h4>
+                  <ol>
+                    <li>Share this description with a former colleague who knows your work.</li>
+                  </ol>
+                </div>
+                <div class="growth-ready">
+                  <h4>Ready to use</h4>
+                  <dl>
+                    <div><dt>Forwardable introduction</dt><dd>I bring a commercial banker’s perspective and experience founding RipeMetrics to the question of where a business should go next. My focus is building a stronger company with the people and relationships it needs, and remaining accountable for the work I take on.</dd></div>
+                  </dl>
+                </div>
+              </div>
+
+              <p class="growth-signal"><strong>Watch for</strong><span>A contact introduces you to a board, owner or operator considering their next stage.</span></p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <footer>
+        <div><span>CB</span><strong>Chris Boudreau</strong></div>
+        <p>Prepared for Chris Boudreau, September 2026.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

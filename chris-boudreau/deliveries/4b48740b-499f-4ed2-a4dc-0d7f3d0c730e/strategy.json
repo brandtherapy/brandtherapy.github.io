@@ -1,0 +1,157 @@
+{
+  "schemaVersion": "brand-therapy-sprint-demo.v1",
+  "status": "draft",
+  "identity": {
+    "name": "Chris Boudreau",
+    "company": "Chris Boudreau",
+    "category": "Executive leadership",
+    "positioning": "Market foresight. Steadfast leadership.",
+    "distinctiveIdea": "Chris combines a broad view of the forces shaping a market with the personal commitment to lead and build.",
+    "personality": {
+      "line": "Far-sighted, analytical, steadfast, enterprising, and caring.",
+      "archetypeMix": {
+        "hero": 40,
+        "caregiver": 26,
+        "sage": 22,
+        "friend": 12
+      },
+      "archetypeSource": "Approved Personality: far-sighted, analytical, steadfast, enterprising and caring. Main Brand Archetype: Steady Hero.",
+      "sliders": [
+        {
+          "left": "Classic",
+          "position": 55,
+          "right": "Modern",
+          "defining": false
+        },
+        {
+          "left": "Mature",
+          "position": 30,
+          "right": "Youthful",
+          "defining": true
+        },
+        {
+          "left": "Playful",
+          "position": 72,
+          "right": "Serious",
+          "defining": true
+        },
+        {
+          "left": "Abstract",
+          "position": 68,
+          "right": "Literal",
+          "defining": true
+        },
+        {
+          "left": "Calm",
+          "position": 52,
+          "right": "Energetic",
+          "defining": false
+        },
+        {
+          "left": "Rational",
+          "position": 55,
+          "right": "Emotional",
+          "defining": false
+        },
+        {
+          "left": "Mysterious",
+          "position": 75,
+          "right": "Transparent",
+          "defining": true
+        },
+        {
+          "left": "Quiet",
+          "position": 55,
+          "right": "Talkative",
+          "defining": false
+        }
+      ],
+      "leanInto": [
+        "Transparent",
+        "Serious",
+        "Literal",
+        "Mature",
+        "Grounded",
+        "Reliable",
+        "Practical"
+      ],
+      "moveAwayFrom": [
+        "Youthful",
+        "Playful",
+        "Abstract",
+        "Mysterious",
+        "Hype",
+        "Flashy",
+        "Loud"
+      ],
+      "voicePrincipleCount": 4,
+      "visualIdentity": "Warm paper, dark brown text, muted green accents, olive emphasis, and Inter typography."
+    }
+  },
+  "focusStar": [
+    {
+      "line": "Product",
+      "decision": "Business leadership that connects economics, regulation, and investment to anticipate market shifts and set long-term direction."
+    },
+    {
+      "line": "People",
+      "decision": "Boards, business owners, and progressive operators seeking a leader who sees beyond the company and understands where the market is going.",
+      "persona": "The Forward-Looking Business Owner"
+    },
+    {
+      "line": "Purpose",
+      "decision": "Build stronger businesses, teams, and relationships that can anticipate and shape the future of the market."
+    },
+    {
+      "line": "Promise",
+      "decision": "Lead with unwavering commitment, take ownership, and follow through on every undertaking.",
+      "brandDNA": "Steadfast"
+    },
+    {
+      "line": "Personality",
+      "decision": "Far-sighted, analytical, steadfast, enterprising, and caring."
+    }
+  ],
+  "linkedin": {
+    "platform": "LinkedIn",
+    "headline": "Business leader connecting market insight to long-term growth",
+    "location": "San Diego, California",
+    "banner": "Market foresight. Steadfast commitment.",
+    "featuredCount": 3
+  },
+  "growthOpportunities": {
+    "headline": "Five ways to start a board-level conversation",
+    "levers": [
+      "Direct outreach",
+      "Useful content",
+      "Collaboration",
+      "Editorial outreach",
+      "Referrals"
+    ],
+    "opportunityCount": 5,
+    "contentTerritories": [
+      "Market foresight",
+      "Building stronger businesses",
+      "Accountable leadership"
+    ]
+  },
+  "aiPack": {
+    "file": "brand-context.md",
+    "requiredSections": [
+      "Identity",
+      "Instructions",
+      "Context",
+      "Examples",
+      "Factual boundaries",
+      "Starter prompts"
+    ],
+    "starterPromptCount": 6
+  },
+  "sections": [
+    "strategy",
+    "identity",
+    "profiles",
+    "ai",
+    "growth"
+  ]
+}
