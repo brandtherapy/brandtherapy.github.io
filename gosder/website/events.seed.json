@@ -1,0 +1,19 @@
+{
+  "events": [
+    {
+      "id": "2026-07-18-youth-football-clinic",
+      "title": "Gosder Cherilus Youth Football Clinic",
+      "date": "2026-07-18",
+      "start": "08:45",
+      "end": "12:45",
+      "timezone": "America/New_York",
+      "venue": "West Roxbury Education Complex",
+      "city": "West Roxbury, MA",
+      "host": "foundation",
+      "kind": "Youth football clinic",
+      "cost": "Free",
+      "summary": "A free clinic for young athletes of every experience level, with skill development, mentorship, and lunch provided.",
+      "link": "https://gosdercherilus.org/upcoming-events"
+    }
+  ]
+}

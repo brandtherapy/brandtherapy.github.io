@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /gc-desk
+Disallow: /gc-desk/
