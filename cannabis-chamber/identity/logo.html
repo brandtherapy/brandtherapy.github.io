@@ -180,51 +180,73 @@
 .pb-character-pair .pb-character-board { margin: 0; }
 @media (max-width: 980px) { .pb-spectrum-grid, .pb-callout, .pb-spectrum-active-content, .pb-mode-grid { grid-template-columns: 1fr; } .pb-spectrum-active-header, .pb-spectrum-row { grid-template-columns: 44px minmax(0,1fr); } .pb-spectrum-tag, .pb-spectrum-badge { grid-column: 2; text-align: left; justify-self: start; } .pb-spectrum-rail { display: none; } .pb-spectrum-logo { width: 88px; height: 88px; right: 24px; } .pb-character-pair { grid-template-columns: 1fr; } }
 </style>
+<style>
+.logo-diagram { margin: 0 0 36px; }
+.logo-diagram img { display: block; width: 100%; height: auto; }
+.logo-diagram figcaption { margin: 12px 0 0; max-width: 68ch; font-family: var(--ff-b); font-size: 16px; line-height: 1.6; }
+.logo-rules { max-width: 68ch; }
+.logo-rules p { margin: 0 0 12px; font-family: var(--ff-b); font-size: 16px; line-height: 1.6; }
+.logo-downloads { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
+.logo-downloads a { display: inline-block; padding: 8px 12px; border: 1px solid var(--text); color: var(--text); text-decoration: none; font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; }
+.logo-downloads a:hover { background: var(--text); color: var(--light); }
+</style>
+
   <section class="app-hero">
     <div class="eyebrow">Section B · Logo</div>
     <h1>Logo</h1>
-    <p>The locked Three-C mark and the two wordmarks. Color, mono, and inverse. SVG masters.</p>
+    <p>The locked Three-C mark and the two wordmarks. Color, mono, and inverse. SVG masters and PNG files for layout.</p>
   </section>
   
   <section class="app-section" aria-labelledby="app-section-1">
     <div class="app-section-head">
       <div class="app-section-num">01</div>
       <div>
-        <div class="app-section-kicker">Marks</div>
-        <h2 id="app-section-1">The primary identity</h2>
-        <p class="app-section-desc">The core mark and wordmark, in approved forms.</p>
+        <div class="app-section-kicker">Clear space</div>
+        <h2 id="app-section-1">The margin</h2>
+        <p class="app-section-desc">Keep this space empty on every side. The drawing is the measure.</p>
       </div>
     </div>
-    <div class="app-grid"><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-mark.svg" alt="Color mark" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#F1E8D8;"><div style="padding:20px 22px;"><h3>Color mark</h3><p>Forest, teal, and coral modules with the calibrated brass dot. Ivory or white only.</p><p style="margin:12px 0 0;"><a class="app-ref-link" href="../images/logo/ccc-mark.svg" download="ccc-mark.svg">Download SVG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-mark-mono.svg" alt="Mono mark" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#fff;"><div style="padding:20px 22px;"><h3>Mono mark</h3><p>One ink for print, engraving, and embossing.</p><p style="margin:12px 0 0;"><a class="app-ref-link" href="../images/logo/ccc-mark-mono.svg" download="ccc-mark-mono.svg">Download SVG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-mark-inverse.svg" alt="Inverse mark" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#2D432B;"><div style="padding:20px 22px;"><h3>Inverse mark</h3><p>Ivory mark on forest or ink.</p><p style="margin:12px 0 0;"><a class="app-ref-link" href="../images/logo/ccc-mark-inverse.svg" download="ccc-mark-inverse.svg">Download SVG</a></p></div></div></div>
+    <figure class="logo-diagram"><img src="../images/logo/clear-space-mark.svg" alt="Clear space around the mark" loading="lazy"><figcaption>The margin on every side equals the width of one C, the forest form. Nothing else goes in that margin.</figcaption></figure><figure class="logo-diagram"><img src="../images/logo/clear-space-lockup.svg" alt="Clear space around a lockup" loading="lazy"><figcaption>Use the same C around the whole lockup. The space already between the mark and the name belongs to the lockup. Count the clear space outside the whole piece.</figcaption></figure><div class="logo-rules"><p>Measure one C, the forest form at the top of the mark. Its width is the minimum empty margin on the top, bottom, left, and right.</p><p>That margin applies to the mark alone and to every lockup. Type, photography, rules, and other logos stay outside it.</p><p>The PNG margin is only there so the artwork does not sit on the file edge. It is smaller than this rule. Build the full margin in the layout.</p></div>
   </section>
   <section class="app-section" aria-labelledby="app-section-2">
     <div class="app-section-head">
       <div class="app-section-num">02</div>
       <div>
-        <div class="app-section-kicker">Lockups</div>
-        <h2 id="app-section-2">Approved combinations</h2>
-        <p class="app-section-desc">Use these locked relationships; do not re-space or re-scale the parts.</p>
+        <div class="app-section-kicker">Marks</div>
+        <h2 id="app-section-2">The primary identity</h2>
+        <p class="app-section-desc">SVG is the master. PNG includes a small margin so the artwork does not touch the file edge. Add the full clear space in the layout.</p>
       </div>
     </div>
-    <div class="app-grid"><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-horizontal.svg" alt="V7, three lines, ink" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#fff;"><div style="padding:20px 22px;"><h3>V7, three lines, ink</h3><p>Primary horizontal lockup. Cannabis, Chamber Of, Commerce in Outfit 600.</p><p style="margin:12px 0 0;"><a class="app-ref-link" href="../images/logo/ccc-lockup-horizontal.svg" download="ccc-lockup-horizontal.svg">Download SVG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-horizontal-tricolor.svg" alt="V7, three lines, tricolor initials" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#fff;"><div style="padding:20px 22px;"><h3>V7, three lines, tricolor initials</h3><p>The three opening C letters take the module colors. The rest of the name stays ink.</p><p style="margin:12px 0 0;"><a class="app-ref-link" href="../images/logo/ccc-lockup-horizontal-tricolor.svg" download="ccc-lockup-horizontal-tricolor.svg">Download SVG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-horizontal-mono.svg" alt="V7, mono" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#fff;"><div style="padding:20px 22px;"><h3>V7, mono</h3><p style="margin:12px 0 0;"><a class="app-ref-link" href="../images/logo/ccc-lockup-horizontal-mono.svg" download="ccc-lockup-horizontal-mono.svg">Download SVG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-horizontal-inverse.svg" alt="V7, inverse" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#2D432B;"><div style="padding:20px 22px;"><h3>V7, inverse</h3><p style="margin:12px 0 0;"><a class="app-ref-link" href="../images/logo/ccc-lockup-horizontal-inverse.svg" download="ccc-lockup-horizontal-inverse.svg">Download SVG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-v8.svg" alt="V8, two lines, ink" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#fff;"><div style="padding:20px 22px;"><h3>V8, two lines, ink</h3><p>The second locked alignment.</p><p style="margin:12px 0 0;"><a class="app-ref-link" href="../images/logo/ccc-lockup-v8.svg" download="ccc-lockup-v8.svg">Download SVG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-v8-tricolor.svg" alt="V8, two lines, tricolor initials" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#fff;"><div style="padding:20px 22px;"><h3>V8, two lines, tricolor initials</h3><p style="margin:12px 0 0;"><a class="app-ref-link" href="../images/logo/ccc-lockup-v8-tricolor.svg" download="ccc-lockup-v8-tricolor.svg">Download SVG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-v8-mono.svg" alt="V8, mono" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#fff;"><div style="padding:20px 22px;"><h3>V8, mono</h3><p style="margin:12px 0 0;"><a class="app-ref-link" href="../images/logo/ccc-lockup-v8-mono.svg" download="ccc-lockup-v8-mono.svg">Download SVG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-v8-inverse.svg" alt="V8, inverse" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#2D432B;"><div style="padding:20px 22px;"><h3>V8, inverse</h3><p style="margin:12px 0 0;"><a class="app-ref-link" href="../images/logo/ccc-lockup-v8-inverse.svg" download="ccc-lockup-v8-inverse.svg">Download SVG</a></p></div></div></div>
+    <div class="app-grid"><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-mark.svg" alt="Color mark" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#F1E8D8;"><div style="padding:20px 22px;"><h3>Color mark</h3><p>Forest, teal, and coral modules with the calibrated brass dot. Ivory or white only.</p><p class="logo-downloads"><a href="../images/logo/ccc-mark.svg" download="ccc-mark.svg">SVG</a><a href="../images/logo/ccc-mark.png" download="ccc-mark.png">PNG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-mark-mono.svg" alt="Mono mark" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#fff;"><div style="padding:20px 22px;"><h3>Mono mark</h3><p>One ink for print, engraving, and embossing.</p><p class="logo-downloads"><a href="../images/logo/ccc-mark-mono.svg" download="ccc-mark-mono.svg">SVG</a><a href="../images/logo/ccc-mark-mono.png" download="ccc-mark-mono.png">PNG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-mark-inverse.svg" alt="Inverse mark" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#2D432B;"><div style="padding:20px 22px;"><h3>Inverse mark</h3><p>Ivory mark on forest. The PNG is already on forest, with a small margin of the same color.</p><p class="logo-downloads"><a href="../images/logo/ccc-mark-inverse.svg" download="ccc-mark-inverse.svg">SVG</a><a href="../images/logo/ccc-mark-inverse.png" download="ccc-mark-inverse.png">PNG</a></p></div></div></div>
   </section>
   <section class="app-section" aria-labelledby="app-section-3">
     <div class="app-section-head">
       <div class="app-section-num">03</div>
       <div>
-        <div class="app-section-kicker">Clear space</div>
-        <h2 id="app-section-3">Breathing room</h2>
-        <p class="app-section-desc">Keep this minimum space clear on every side of the mark.</p>
+        <div class="app-section-kicker">Lockups</div>
+        <h2 id="app-section-3">Approved combinations</h2>
+        <p class="app-section-desc">Use these locked relationships. Do not re-space or re-scale the parts. The gap between the mark and the name is already in the file. Count clear space outside the whole lockup.</p>
       </div>
     </div>
-    <div class="app-chip-row"><span class="app-chip">One dot diameter on every side of the visible ink.</span><span class="app-chip">Master mark from 32 px. Never below 24 px.</span></div>
+    <div class="app-grid"><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-horizontal.svg" alt="V7, three lines, ink" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#fff;"><div style="padding:20px 22px;"><h3>V7, three lines, ink</h3><p>Primary horizontal lockup. Cannabis, Chamber Of, Commerce in Outfit 600.</p><p class="logo-downloads"><a href="../images/logo/ccc-lockup-horizontal.svg" download="ccc-lockup-horizontal.svg">SVG</a><a href="../images/logo/ccc-lockup-horizontal.png" download="ccc-lockup-horizontal.png">PNG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-horizontal-tricolor.svg" alt="V7, three lines, tricolor initials" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#fff;"><div style="padding:20px 22px;"><h3>V7, three lines, tricolor initials</h3><p>The three opening C letters take the module colors. The rest of the name stays ink.</p><p class="logo-downloads"><a href="../images/logo/ccc-lockup-horizontal-tricolor.svg" download="ccc-lockup-horizontal-tricolor.svg">SVG</a><a href="../images/logo/ccc-lockup-horizontal-tricolor.png" download="ccc-lockup-horizontal-tricolor.png">PNG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-horizontal-mono.svg" alt="V7, mono" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#fff;"><div style="padding:20px 22px;"><h3>V7, mono</h3><p class="logo-downloads"><a href="../images/logo/ccc-lockup-horizontal-mono.svg" download="ccc-lockup-horizontal-mono.svg">SVG</a><a href="../images/logo/ccc-lockup-horizontal-mono.png" download="ccc-lockup-horizontal-mono.png">PNG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-horizontal-inverse.svg" alt="V7, inverse" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#2D432B;"><div style="padding:20px 22px;"><h3>V7, inverse</h3><p class="logo-downloads"><a href="../images/logo/ccc-lockup-horizontal-inverse.svg" download="ccc-lockup-horizontal-inverse.svg">SVG</a><a href="../images/logo/ccc-lockup-horizontal-inverse.png" download="ccc-lockup-horizontal-inverse.png">PNG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-v8.svg" alt="V8, two lines, ink" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#fff;"><div style="padding:20px 22px;"><h3>V8, two lines, ink</h3><p>The second locked alignment.</p><p class="logo-downloads"><a href="../images/logo/ccc-lockup-v8.svg" download="ccc-lockup-v8.svg">SVG</a><a href="../images/logo/ccc-lockup-v8.png" download="ccc-lockup-v8.png">PNG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-v8-tricolor.svg" alt="V8, two lines, tricolor initials" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#fff;"><div style="padding:20px 22px;"><h3>V8, two lines, tricolor initials</h3><p class="logo-downloads"><a href="../images/logo/ccc-lockup-v8-tricolor.svg" download="ccc-lockup-v8-tricolor.svg">SVG</a><a href="../images/logo/ccc-lockup-v8-tricolor.png" download="ccc-lockup-v8-tricolor.png">PNG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-v8-mono.svg" alt="V8, mono" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#fff;"><div style="padding:20px 22px;"><h3>V8, mono</h3><p class="logo-downloads"><a href="../images/logo/ccc-lockup-v8-mono.svg" download="ccc-lockup-v8-mono.svg">SVG</a><a href="../images/logo/ccc-lockup-v8-mono.png" download="ccc-lockup-v8-mono.png">PNG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/logo/ccc-lockup-v8-inverse.svg" alt="V8, inverse" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:#2D432B;"><div style="padding:20px 22px;"><h3>V8, inverse</h3><p class="logo-downloads"><a href="../images/logo/ccc-lockup-v8-inverse.svg" download="ccc-lockup-v8-inverse.svg">SVG</a><a href="../images/logo/ccc-lockup-v8-inverse.png" download="ccc-lockup-v8-inverse.png">PNG</a></p></div></div></div>
   </section>
   <section class="app-section" aria-labelledby="app-section-4">
     <div class="app-section-head">
       <div class="app-section-num">04</div>
       <div>
+        <div class="app-section-kicker">Size</div>
+        <h2 id="app-section-4">Smallest useful size</h2>
+        <p class="app-section-desc">Below this, the mark stops reading as three forms and a dot.</p>
+      </div>
+    </div>
+    <div class="logo-rules"><p>Use the master mark at every size, including the favicon. Do not swap in a redraw.</p><p>Do not render the mark below 24 px. From 32 px up, the three forms and the dot stay distinct.</p><p>Keep lockup type at a cap height of 10 px or more.</p></div>
+  </section>
+  <section class="app-section" aria-labelledby="app-section-5">
+    <div class="app-section-head">
+      <div class="app-section-num">05</div>
+      <div>
         <div class="app-section-kicker">Misuse</div>
-        <h2 id="app-section-4">What breaks the mark</h2>
+        <h2 id="app-section-5">What breaks the mark</h2>
         <p class="app-section-desc">These are the failures that make the mark unrecognizable or off-brand.</p>
       </div>
     </div>
@@ -244,9 +266,9 @@
 <!--
   Brand:        The Cannabis Chamber of Commerce (ccc)
   Version:      1.2.2
-  Built at:     2026-09-24T21:59:08+00:00
-  Git SHA:      b33faf6927f30716233a0bbd60f9e59f153ed588
-  Bundle hash:  sha256:8b4668d09ee2e3a97921af8150874b3a87f102f69136f2c757d43220d803e7f2
+  Built at:     2026-09-24T22:12:16+00:00
+  Git SHA:      6ad684b69e8506b6139099410bea0e34a74fa890
+  Bundle hash:  sha256:f6feb2195667f410242121281c6094c6bb48c2cdf8477f0ce1801bcc46fde567
   Source:       brand-os/brands/cannabis-chamber/DIRECTIONS.md + STRATEGY.md + IDENTITY.md
 -->
 </body>
