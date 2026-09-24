@@ -9,12 +9,12 @@
   },
   "source": {
     "source_slug": "cannabis-chamber",
-    "build_timestamp": "2026-09-24T20:55:58+00:00",
+    "build_timestamp": "2026-09-24T21:09:46+00:00",
     "git_sha": "ad47f2e84a473314b798d39d396888b39d7cc8e5",
-    "bundle_hash": "sha256:b85fe602b8fe94041f3406e4749437bbce8c43d64cf7780d39c517fdb1b3ff37",
+    "bundle_hash": "sha256:cf978900937976156797fddc9cb2e8edf8f5017eb606362c48d738beff4ab145",
     "source_hashes": {
       "STRATEGY.md": "sha256:6022dca9dd8236878eb439798d77893cffddb8c8da03bc79b15d0216d85c7332",
-      "IDENTITY.md": "sha256:bca3a40dea37f2624e5f5987bc478fff185aa7ef76831447d72dc8806f25d7bb",
+      "IDENTITY.md": "sha256:b1109d322f5e5b76d43b6a3ffd983b6dc23b27bde4e1bb3ca6bdf933cf4922a7",
       "SKILL.md": "sha256:87fcb839c8a785f296db68f70c941053354442cb0a4fcf37bce43b80816eda5c",
       "APPLICATION.md": "sha256:c964e6d0d6cabe8f54fafae01d306034fe373a5d2ddbcf184df69d1af8e18016",
       "DIRECTIONS.md": "sha256:b4cec7d4066e2b4705476c5c3f92401f10594cfb00ae1a80611e4e275832cadc",
