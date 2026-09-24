@@ -9,15 +9,15 @@
   },
   "source": {
     "source_slug": "cannabis-chamber",
-    "build_timestamp": "2026-09-24T21:09:46+00:00",
-    "git_sha": "ad47f2e84a473314b798d39d396888b39d7cc8e5",
-    "bundle_hash": "sha256:cf978900937976156797fddc9cb2e8edf8f5017eb606362c48d738beff4ab145",
+    "build_timestamp": "2026-09-24T21:59:08+00:00",
+    "git_sha": "b33faf6927f30716233a0bbd60f9e59f153ed588",
+    "bundle_hash": "sha256:8b4668d09ee2e3a97921af8150874b3a87f102f69136f2c757d43220d803e7f2",
     "source_hashes": {
       "STRATEGY.md": "sha256:6022dca9dd8236878eb439798d77893cffddb8c8da03bc79b15d0216d85c7332",
       "IDENTITY.md": "sha256:b1109d322f5e5b76d43b6a3ffd983b6dc23b27bde4e1bb3ca6bdf933cf4922a7",
       "SKILL.md": "sha256:87fcb839c8a785f296db68f70c941053354442cb0a4fcf37bce43b80816eda5c",
       "APPLICATION.md": "sha256:c964e6d0d6cabe8f54fafae01d306034fe373a5d2ddbcf184df69d1af8e18016",
-      "DIRECTIONS.md": "sha256:b4cec7d4066e2b4705476c5c3f92401f10594cfb00ae1a80611e4e275832cadc",
+      "DIRECTIONS.md": "sha256:891d5e5726b15bed6688af75456065cce78d29c7f4204787712424793e94d87a",
       "QUICKSTART.md": "sha256:e078bf7bbdb4141179ec0fdb322aee701d5a885cf3ced7511fc0708280a45abd",
       "references/logo-spec.md": "sha256:ced8677e58780a917782721fdb0dea12c217da8b569762480c9f5d8a0ca85cad",
       "references/methodology.md": "sha256:eb848f84b2c5b15721762019975ee57f9e24d8e1d92f0c04db630a120a7eb00b",
@@ -1401,17 +1401,63 @@
         "working_name": "The Tribe",
         "system_name": "Common Ground",
         "status": "active_refinement_draft",
+        "presentation": "system",
         "hero_mode": "light",
         "hero_title": "Common Ground",
-        "hero_kicker": "Direction Three · Approved Route",
-        "hero_subtitle": "Where Cannabis Business Connects",
-        "hero_summary": "The approved Common Ground route: D2 center-dot mark, full-name wordmark, connector signature, and membership objects in one bright business system.",
+        "hero_kicker": "Identity",
+        "hero_subtitle": "Where cannabis business connects.",
+        "hero_summary": "Three C forms meet around one brass dot. The public name is Cannabis Chamber Of Commerce. Ivory is the field. Forest carries the type.",
         "hero_visual": "generated-boards/d2-approved/d2-approved-01-isolated-mark.png",
-        "hero_badges": [
-          "D2 shape route",
-          "Common center",
-          "Full-name lockup"
-        ],
+        "system_page": {
+          "kicker": "Identity",
+          "title": "Common Ground",
+          "line": "Where cannabis business connects.",
+          "lead": "Three C forms meet around one brass dot. The public name is Cannabis Chamber Of Commerce. Ivory is the field. Forest carries the type.",
+          "mark_image": "generated-boards/d2-approved/d2-approved-01-isolated-mark.png",
+          "display_sample": "Cannabis\nChamber Of\nCommerce\n",
+          "body_sample": "Outfit carries the name and the headlines. Public Sans carries the words a person has to read.",
+          "boards": [
+            {
+              "image": "generated-boards/tribe-v11-stylescape-d2-mark.png",
+              "title": "In use",
+              "caption": "Mark, wordmark, rooms, cards, and membership objects."
+            },
+            {
+              "image": "generated-boards/tribe-v11-business-cards-d2-mark.png",
+              "title": "Cards",
+              "caption": "The full name on the card. The mark is the signal."
+            },
+            {
+              "image": "generated-boards/tribe-v11-membership-artifacts-d2-mark.png",
+              "title": "Membership",
+              "caption": "Pins, badges, and credentials."
+            },
+            {
+              "image": "generated-boards/tribe-v11-stationery-system-d2-mark.png",
+              "title": "Print",
+              "caption": "Letterhead, envelope, folder, and card."
+            },
+            {
+              "image": "generated-boards/tribe-v11-event-sponsor-kit-d2-mark.png",
+              "title": "Rooms",
+              "caption": "Backdrop, welcome, badges, and the sponsor wall."
+            }
+          ],
+          "rules": [
+            "Use Cannabis Chamber Of Commerce on every public piece.",
+            "Keep ivory or white as the field.",
+            "Use the master mark and the locked wordmarks.",
+            "Let a signature line leave the edge, pass behind a solid shape, or stop on a real divider.",
+            "Photograph people in working rooms."
+          ],
+          "avoid": [
+            "Dark blue pages.",
+            "CCC as a public wordmark.",
+            "Leaf graphics, smoke, and party scenes.",
+            "A redrawn small mark.",
+            "Decorative tribal motifs."
+          ]
+        },
         "source_note": "Direction 3-only restart using Chris and Cortney feedback plus the stricter image-led process. V11 assets preserve the approved Common Ground mood boards and replace the old mark with the D2 center-dot route. Draft execution assets, not approved identity rules.",
         "creative_board": "generated-boards/tribe-v11-stylescape-d2-mark.png",
         "creative_board_label": "Generated stylescape: Direction 3 / Common Ground with D2 mark integration",
