@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noai, noimageai">
+<title>Photography · Cannabis Chamber Of Commerce Brand Therapy OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #2D432B;
+    --accent-glow: rgba(45, 67, 43, 0.22);
+    --accent-soft: rgba(45, 67, 43, 0.06);
+    --text: #1C2420;
+    --muted: #6C6E61;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #D9D1C1;
+    --light: #F1E8D8;
+    --white: #FFFFFF;
+    --dark: #1C2420;
+    --dark-surface: #252E29;
+    --ff-h: "Outfit", system-ui, sans-serif;
+    --ff-b: "Public Sans", system-ui, sans-serif;
+    --ff-accent: "Outfit", system-ui, sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">Cannabis Chamber Of Commerce</div>
+    <div class="meta">Brand Therapy OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand Therapy OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+<a href="../use.html">Use with AI</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="../strategy/index.html">Strategy</a>
+<a href="../strategy/product.html">Product</a>
+<a href="../strategy/people.html">People</a>
+<a href="../strategy/purpose.html">Purpose</a>
+<a href="../strategy/promise.html">Promise</a>
+<a href="../strategy/personality.html">Personality</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="index.html">Common Ground</a>
+<a href="look-and-feel.html">Look &amp; Feel</a>
+<a class="active" href="photography.html">Photography</a>
+<a href="logo.html">Logo</a>
+<a href="voice.html">Voice</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
+<a href="../application/index.html">Images</a>
+<a href="../application/stationery.html">Stationery</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Identity</strong></div>
+    <div class="row"><span>Use</span><strong>Visual + voice</strong></div>
+    <div class="row"><span>Brand DNA</span><strong>Standards</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+
+<style>
+.photo-lead { max-width: 68ch; margin: 0 0 28px; font-family: var(--ff-b); font-size: 17px; line-height: 1.65; }
+.photo-frame { margin: 0 0 48px; }
+.photo-frame img { display: block; width: 100%; height: auto; }
+.photo-frame h2 { margin: 14px 0 6px; font-family: var(--ff-h); font-weight: 600; font-size: 28px; letter-spacing: -0.02em; }
+.photo-frame p { margin: 0; max-width: 68ch; font-family: var(--ff-b); font-size: 16px; line-height: 1.6; }
+.photo-rules { max-width: 72ch; font-family: var(--ff-b); font-size: 16px; line-height: 1.65; }
+.photo-rules h2 { font-family: var(--ff-h); font-weight: 600; font-size: clamp(28px, 3vw, 40px); letter-spacing: -0.02em; margin: 36px 0 12px; }
+.photo-rules ul { padding-left: 18px; }
+.photo-rules li { margin: 0 0 8px; }
+</style>
+<section class="app-hero">
+  <div class="eyebrow">Section B · Photography</div>
+  <h1>Photography</h1>
+  <p class="photo-lead">These ten frames set the look. Match the light, the clothes, the room, and the way the mark sits in the scene. Do not copy a face. No one in these frames is a real member.</p>
+</section>
+<figure class="photo-frame"><img src="../images/generated-boards/common-ground-application-scenarios/s01-social-mixer-announcement.png" alt="Mixer announcement" loading="lazy"><figcaption><h2>Mixer announcement</h2><p>A square for social. The wordmark, the arcs, and the event facts sit on cream. The photograph is not the whole post.</p></figcaption></figure><figure class="photo-frame"><img src="../images/generated-boards/common-ground-application-scenarios/s02-flyer-chapter-workshop.png" alt="Workshop flyer" loading="lazy"><figcaption><h2>Workshop flyer</h2><p>Print keeps a documentary photo of people working, with the mark and the event facts on cream.</p></figcaption></figure><figure class="photo-frame"><img src="../images/generated-boards/common-ground-application-scenarios/s03-conference-keynote.png" alt="Keynote" loading="lazy"><figcaption><h2>Keynote</h2><p>Cream backdrop, full name, speaker in front, audience in the foreground. The room is bright and the clothes are mixed.</p></figcaption></figure><figure class="photo-frame"><img src="../images/generated-boards/common-ground-application-scenarios/s04-networking-mixer.png" alt="Mixer" loading="lazy"><figcaption><h2>Mixer</h2><p>Daylight from the windows. People talking, badges on, one backdrop with the mark. A suit can be in the group. Most people are in mixed clothes.</p></figcaption></figure><figure class="photo-frame"><img src="../images/generated-boards/common-ground-application-scenarios/s05-workshop-session.png" alt="Workshop" loading="lazy"><figcaption><h2>Workshop</h2><p>A white room, one person standing, the others writing. The mark is on the screen and on the mugs. Plants and paper keep the room alive.</p></figcaption></figure><figure class="photo-frame"><img src="../images/generated-boards/common-ground-application-scenarios/s06-webinar-promo.png" alt="Webinar" loading="lazy"><figcaption><h2>Webinar</h2><p>A 16:9 card. Cream field, arcs, a framed speaker, and the event facts. The portrait is one ingredient.</p></figcaption></figure><figure class="photo-frame"><img src="../images/generated-boards/common-ground-application-scenarios/s07-member-recognition.png" alt="Recognition" loading="lazy"><figcaption><h2>Recognition</h2><p>A handoff in warm light. The moment lifts a member. Keep it free of contest staging and trophy poses.</p></figcaption></figure><figure class="photo-frame"><img src="../images/generated-boards/common-ground-application-scenarios/s08-panel-discussion.png" alt="Panel" loading="lazy"><figcaption><h2>Panel</h2><p>The line "Where cannabis business connects." on the backdrop, with the panel and a moderator. Faces are lit. The graphic stays behind them.</p></figcaption></figure><figure class="photo-frame"><img src="../images/generated-boards/common-ground-application-scenarios/s09-member-pin-closeup.png" alt="Pin" loading="lazy"><figcaption><h2>Pin</h2><p>A close crop. The mark is an object on a person: enamel, leopard, gold, a tattoo at the edge. Sun on the cloth.</p></figcaption></figure><figure class="photo-frame"><img src="../images/generated-boards/common-ground-application-scenarios/s10-expo-booth.png" alt="Expo booth" loading="lazy"><figcaption><h2>Expo booth</h2><p>The full name on the backdrop, staff at the counter, pins and print on the table. Wide enough to see the booth and the people.</p></figcaption></figure>
+<div class="photo-rules"><p><strong>Style:</strong> Common Ground business documentary. Bright rooms, real Chamber moments, member-led panels, chapter workshops, conference stages, expo booths, credentials, sponsor walls, and follow-up conversations. The camera should make membership feel practical, active, and human.</p>
+<p><strong>Tone:</strong> People-first and business-serious. Subjects are operators, partners, chapter leaders, speakers, sponsors, and members doing useful work together, not consumers posing around cannabis products. The feeling is warm, successful, professional, and alive without becoming casual party photography.</p>
+<p><strong>Lighting and color:</strong> Light-forward is the default. Use natural daylight, clean event light, or crisp even studio light. Ivory, white, forest, teal, coral, and brass may appear through rooms, wardrobe, graphics, pins, badges, and printed materials. Dark green or ink can anchor contrast, but dark surfaces are moments only. Never use dark blue, navy-first settings, moody nightclub lighting, or a dark-background default.</p>
+<p><strong>Casting:</strong> Business hipsters and hippies. Everyone should be business-oriented and self-aware, but visibly individual: tattoos, braids, dreads, vintage pieces, turquoise, bolo ties, statement glasses, textured jackets, leopard print, and other real-industry signals are welcome when they feel earned. Casual is the default register. Suits are the exception, used only when the role or setting calls for formal business presence.</p>
+<p><strong>Approved registers:</strong></p>
+<ul>
+<li><strong>Daylight Documentary:</strong> candid operators mid-deal in airy rooms. Natural</li>
+</ul>
+<p>window light, 35mm-feeling photojournalism, active conversation, laptops, notebooks, badges, and practical follow-up. The workhorse register for web, decks, event recaps, and newsletters.</p>
+<ul>
+<li><strong>Membership Pride Portrait:</strong> members photographed on ivory or clean warm</li>
+</ul>
+<p>fields with direct gaze and crisp light. Use for board pages, member spotlights, chapter leaders, sponsor recognition, and "faces of the industry" systems.</p>
+<ul>
+<li><strong>Connection Close-up:</strong> hands, handshakes, badges, pins, shared documents,</li>
+</ul>
+<p>business cards, marked-up agendas, and lanyards. The connection is the subject. Use for campaigns, section breaks, social crops, and detail-led storytelling.</p>
+<ul>
+<li><strong>Bright Scale + People:</strong> facilities, expo floors, chapter rooms, sponsor</li>
+</ul>
+<p>areas, and conference environments shot wide and high-key, always with people active in frame. Show business lift and industry legitimacy without heavy industrial gravity.</p>
+<p><strong>Application moments:</strong> Social squares, flyers, keynote stages, networking mixers, workshops, webinar promos, member recognition, panel discussions, member-pin details, and expo booths may all use photography when the scene shows business connection in action. Public-facing assets always carry the full Cannabis Chamber Of Commerce wordmark. "CCC" remains internal shorthand only.</p>
+<p><strong>Forbidden imagery:</strong></p>
+<ul>
+<li>Cannabis-leaf graphics, leaf-as-hero imagery, or plant metaphors as the brand</li>
+</ul>
+<p>signal</p>
+<ul>
+<li>Leaf-shaped personal accessories unless Florian explicitly approves them for</li>
+</ul>
+<p>a specific use</p>
+<ul>
+<li>Consumption cues, smoke, joints, rolling papers, vape pens, edibles as candy,</li>
+</ul>
+<p>dispensary shelf glamour, or product-as-lifestyle imagery</p>
+<ul>
+<li>Stoner, 420, psychedelic, tie-dye, hippie-costume, neon, or haze aesthetics</li>
+<li>Celebrity likenesses or images that read as a real public figure</li>
+<li>Lifestyle party photography, cocktail-forward networking, clinking glasses,</li>
+</ul>
+<p>nightclub lighting, or "deals over drinks" visuals</p>
+<ul>
+<li>Stock-photo group selfies, generic "happy diverse team" cliches, stiff</li>
+</ul>
+<p>corporate handshake stock, or faceless association imagery</p>
+<ul>
+<li>Dark blue, navy default pages, old-money private-club mood, startup hardware</li>
+</ul>
+<p>cues, wellness cannabis, or Verdant-like coral prestige styling</p>
+<p><strong>Color grade:</strong> Keep the picture bright and slightly warm. Cream walls, pale wood, and white rooms do the color work. Shadows stay soft and brown, never blue and never crushed to black. Forest, teal, coral, and brass appear on the backdrop, the badge, the pin, and the printed piece. Skin stays natural. Do not apply an orange-and-teal movie grade, a haze, or a dark vignette.</p>
+<p><strong>Clothes:</strong> People look like they dressed themselves for a work day in this industry. Corduroy, denim, printed shirts, leopard, scarves, statement glasses, turquoise, gold chains, locs, braids, and visible tattoos belong in the frame. A suit can appear when the role calls for it. The rest of the room stays mixed. At a Chamber event, almost everyone wears a badge.</p>
+<p><strong>At an event:</strong> Stand where window light or stage light hits faces. Take three kinds of frame: the room, the conversation, and a close detail of a badge, pin, or notebook. Include the backdrop when it is behind the action. The people stay the subject. On a stage, keep a slice of the audience in frame. In a workshop, show someone standing and others writing. Use the full name Cannabis Chamber Of Commerce on stage graphics and booths.</p>
+<p><strong>For a model:</strong> Attach the locked mark file and one of these frames. Then describe the scene in plain sentences: the room, the action, the light, and the wardrobe mix. The mark is three C forms around a brass dot. The public name is Cannabis Chamber Of Commerce. Ask for bright daylight or clean event light, warm soft shadows, and badges on the people. Leave out smoke, a cannabis leaf as the subject, dark blue light, and a lineup of matching suits.</p></div>
+
+
+  <div class="footer-nav">
+    <span>Section B · Photography · Brand Identity</span>
+    <span><a href="logo.html">Logo →</a></span>
+  </div>
+  <p class="footer-legal">This Brand Therapy OS is for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        The Cannabis Chamber of Commerce (ccc)
+  Version:      1.2.2
+  Built at:     2026-09-24T22:25:46+00:00
+  Git SHA:      e883559c6019854a0439a9ed2174ad364e61f97b
+  Bundle hash:  sha256:cc5ef147d68994b30741db32e1c11e5591005de887a1dc9b3fb5a8f65289884f
+  Source:       brand-os/brands/cannabis-chamber/DIRECTIONS.md + STRATEGY.md + IDENTITY.md
+-->
+</body>
+</html>
