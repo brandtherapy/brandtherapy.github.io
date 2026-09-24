@@ -1,30 +1,52 @@
 <!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noai, noimageai">
-<title>Voice · Cannabis Chamber Of Commerce Brand OS</title>
+<title>Voice · Cannabis Chamber Of Commerce Brand Therapy OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700;800&family=Atkinson+Hyperlegible:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
   :root {
-    --accent: #505A66;
-    --accent-glow: rgba(80, 90, 102, 0.24);
-    --accent-soft: rgba(80, 90, 102, 0.07);
-    --text: #171A1F;
-    --muted: #6E7580;
+    --accent: #2D432B;
+    --accent-glow: rgba(45, 67, 43, 0.22);
+    --accent-soft: rgba(45, 67, 43, 0.06);
+    --text: #1C2420;
+    --muted: #6C6E61;
     --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
-    --border: #D9DEE5;
-    --light: #F3F5F7;
+    --border: #D9D1C1;
+    --light: #F1E8D8;
     --white: #FFFFFF;
-    --dark: #121417;
-    --dark-surface: #1B2026;
-    --ff-h: "Sora", system-ui, sans-serif;
-    --ff-b: "Atkinson Hyperlegible", system-ui, sans-serif;
-    --ff-accent: "Sora", system-ui, sans-serif;
+    --dark: #1C2420;
+    --dark-surface: #252E29;
+    --ff-h: "Outfit", system-ui, sans-serif;
+    --ff-b: "Public Sans", system-ui, sans-serif;
+    --ff-accent: "Outfit", system-ui, sans-serif;
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
     --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
@@ -38,33 +60,34 @@
 <aside class="sidebar">
   <div class="brand-mark">
     <div class="name">Cannabis Chamber Of Commerce</div>
-    <div class="meta">Brand OS</div>
+    <div class="meta">Brand Therapy OS</div>
   </div>
-  <nav class="nav-section" aria-label="Brand OS sections">
+  <nav class="nav-section" aria-label="Brand Therapy OS sections">
     <div class="label">Sections</div>
     <div class="nav-list">
 <a class="" href="../index.html">System Overview</a>
 <a href="../use.html">Use with AI</a>
 </div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
-<a href="../strategy/index.html">Focus Star</a>
+<a href="../strategy/index.html">Strategy</a>
 <a href="../strategy/product.html">Product</a>
 <a href="../strategy/people.html">People</a>
 <a href="../strategy/purpose.html">Purpose</a>
 <a href="../strategy/promise.html">Promise</a>
 <a href="../strategy/personality.html">Personality</a>
 </div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
-<a href="index.html">Direction Three</a>
-<a href="exploration.html">Exploration</a>
+<a href="index.html">Common Ground</a>
 <a href="look-and-feel.html">Look &amp; Feel</a>
-<a class="active" href="voice.html">Voice</a>
 <a href="logo.html">Logo</a>
-<a href="signature.html">Signature</a>
+<a class="active" href="voice.html">Voice</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
+<a href="../application/index.html">Application Overview</a>
+<a href="../application/references.html">Reference Gallery</a>
 </div></details>
   </nav>
   <div class="toolbar-mini">
     <div class="row"><span>Section</span><strong>Identity</strong></div>
     <div class="row"><span>Use</span><strong>Visual + voice</strong></div>
-    <div class="row"><span>Center</span><strong>Standards</strong></div>
+    <div class="row"><span>Brand DNA</span><strong>Standards</strong></div>
   </div>
 </aside>
 
@@ -105,7 +128,7 @@
         <h2 id="voice-1">Voice principles</h2>
       </div>
     </div>
-    <div class="voice-body"><p>Voice is part of brand identity. The strategic decision about Personality (P5) lives in the brand strategy; the operational voice rules live here. See the voice exemplar bank for the full paired set of examples.</p>
+    <div class="voice-body"><p>Voice is part of brand identity. The strategic decision about Personality (P5) lives in STRATEGY.md; the operational voice rules live here. See <code>references/voice-exemplars.md</code> for the full paired exemplar bank.</p>
 <h3>Principles</h3>
 <ul>
 <li>Rational over emotional</li>
@@ -115,11 +138,12 @@
 <li>Authoritative over playful</li>
 <li>Welcoming but selective</li>
 <li>Serious without being cold</li>
-<li>Lead with the standard, then the reason</li>
+<li>Explain the relevant standard and its business purpose</li>
 <li>Plain business language over marketing language</li>
 <li>Concise declarative sentences</li>
-<li>Contrast moves: standards over novelty, movement over reach, leverage over visibility, deals over drinks, insight over impressions</li>
-<li>Operator-led practicality: speak like people responsible for outcomes, not consultants</li>
+<li>Explain the business purpose with concrete facts and actions. A heading should name its subject or the decision the reader needs to make.</li>
+<li>Use connected sentences. Avoid slogan pairs, fragment triplets and manufactured contrasts, including in short headings.</li>
+<li>Operator-led practicality: speak with responsibility for outcomes and explain practical consequences</li>
 </ul>
 <h3>Banned characters</h3>
 <ul>
@@ -146,19 +170,19 @@
 </ul>
 <h3>Signatures (CCC-specific)</h3>
 <ul>
-<li>Long-form openers: state the standard or the contrast in the first sentence</li>
+<li>Long-form openers: state the subject and why it matters to the reader</li>
 <li>Long-form closers: name the action the reader takes (apply, attend, contact)</li>
 <li>The Chamber's institutional voice does not use first-person founder signatures</li>
 </ul>
 <h3>Voice exemplars (brief)</h3>
-<p>For the full exemplar bank, see the voice exemplar bank.</p>
+<p>For the full exemplar bank, see <code>references/voice-exemplars.md</code>.</p>
 <p><strong>On-voice signals:</strong></p>
 <ul>
-<li>"Serious operators do not need more noise. They need the right room, the right context, and the right standard.": direct, declarative, operator-addressed</li>
-<li>"The Chamber exists to move cannabis business forward, not to fill another calendar.": contrast move, business outcomes framed against activity</li>
-<li>"Standards first. Novelty second. Everything else is decoration.": triplet rhythm, blunt closure, sets the operating principle</li>
-<li>"Deals over drinks. Insight over impressions. Movement over reach. That is the business standard the Chamber is here to raise.": contrast triplet + restated standard</li>
+<li>"Meet cannabis business owners and service providers at the next Chamber event.": names the people and the action</li>
+<li>"Review the event details and register through the Chamber website.": gives a specific next step</li>
+<li>"What we need to get started": a heading that identifies the purpose of the section</li>
 </ul>
+<p>These examples illustrate wording. Verify the event, audience and registration route before using them in a campaign. The shared anti-pattern rules apply to these examples and to every new draft.</p>
 <p><strong>Off-voice traps:</strong></p>
 <ul>
 <li>"Join the hottest cannabis networking community and vibe with industry insiders.": consumer hype, generic networking, lifestyle cue</li>
@@ -173,14 +197,14 @@
       <div>
         <div class="voice-section-sub">Exemplar bank</div>
         <h2 id="voice-2">Paired exemplars</h2>
-        <p class="voice-section-desc">On-voice examples and off-voice traps, drawn from the brand's voice exemplar bank. The exemplar bank is the calibration test for any new copy.</p>
+        <p class="voice-section-desc">On-voice examples and off-voice traps, verbatim from references/voice-exemplars.md. The exemplar bank is the calibration test for any new copy.</p>
       </div>
     </div>
     <div class="voice-body"><h2>Voice Exemplars: The Cannabis Chamber of Commerce</h2>
 <p>The paired bank of on-voice and off-voice samples. This file is the calibration test for any new CCC copy. Compare new drafts against the lists here before publishing.</p>
 <h2>1. Voice Center</h2>
-<p><strong>Standards.</strong> The non-negotiable HOW. Every sentence either elevates the standard, creates an opportunity, or corrects a misconception. If it does none of the three, cut it.</p>
-<p>The voice is the visible artifact of CCC's operating principle: standards-first, novelty second. Rational, transparent, operator-led, authoritative, direct, serious, useful, welcoming to people doing real work.</p>
+<p>Explain who the Chamber serves, what it offers and how to participate. Every sentence should help the reader understand the subject or take a relevant action.</p>
+<p>The voice is rational, transparent and direct. Explain the business reason for a position and welcome people who can contribute to the work.</p>
 <h2>2. Voice Traits</h2>
 <table><thead><tr>
 <th>Trait</th>
@@ -200,7 +224,7 @@
 </tr>
 <tr>
 <td>Operator-led practicality</td>
-<td>Speaks like people responsible for outcomes, not consultants selling theory.</td>
+<td>Speaks with responsibility for the outcome and explains practical consequences.</td>
 </tr>
 <tr>
 <td>Serious welcome</td>
@@ -243,11 +267,11 @@
 </tr>
 <tr>
 <td>Convening</td>
-<td>The Chamber's word for events — heavier than "meetup."</td>
+<td>The Chamber's word for events; use the term only when it fits the context.</td>
 </tr>
 <tr>
 <td>Leadership</td>
-<td>Earned, not claimed.</td>
+<td>Demonstrated through conduct and responsibility.</td>
 </tr>
 <tr>
 <td>Advocacy</td>
@@ -273,7 +297,7 @@
 <p><strong>Banned language</strong> (avoid these; they break the voice):</p>
 <ul>
 <li>Stoner culture cues; weed puns; 420 references</li>
-<li>Hype language ("amazing," "next-level," "insane," "game-changing")</li>
+<li>Hype language ("amazing," "next-level," "insane," "game-changing") </li>
 <li>"Disruption" claims without proof</li>
 <li>"Family" as vague community language</li>
 <li>Vibes-first lifestyle copy</li>
@@ -285,97 +309,99 @@
 <h2>4. On-voice examples by channel</h2>
 <h3>LinkedIn / public posts</h3>
 <ul>
-<li>"Serious operators do not need more noise. They need the right room, the right context, and the right standard."</li>
-<li>"The Chamber exists to move cannabis business forward, not to fill another calendar."</li>
-<li>"Standards first. Novelty second. Everything else is decoration."</li>
-<li>"Cannabis does not need more visibility without standards. It needs serious operators in serious rooms, building trust that lasts beyond the next event."</li>
-<li>"Deals over drinks. Insight over impressions. Movement over reach. That is the business standard the Chamber is here to raise."</li>
+<li>"Meet cannabis business owners and service providers at the next Chamber event."</li>
+<li>"See the event agenda and registration details on the Chamber website."</li>
 </ul>
 <h3>Email</h3>
-<p><strong>Subject line example:</strong> "A room built for serious cannabis business"</p>
-<p><strong>Opening paragraph example:</strong> "The next opportunity rarely comes from more noise. It comes from the right room, the right context, and the right standard. That is what the Chamber is built to create."</p>
+<p><strong>Subject line example:</strong> "Registration details for the next Chamber event"</p>
+<p><strong>Opening paragraph example:</strong> "The event page has the agenda and registration details. Please check the date and location before registering."</p>
 <h3>Website / membership copy</h3>
 <ul>
-<li>"The Cannabis Chamber of Commerce connects serious cannabis and hemp leaders through executive networking, strategic advocacy, and industry education. Built for operators who move markets, not people browsing directories."</li>
-<li>"Establish your presence with a serious business community built around standards, access, and opportunity."</li>
-<li>"Be in the rooms where cannabis business relationships actually move."</li>
+<li>"The Chamber brings cannabis professionals together through business networking, education and advocacy."</li>
+<li>"Review the membership options to see which benefits apply to your business."</li>
 </ul>
 <h3>Advocacy briefs</h3>
-<p>The Chamber's advocacy voice frames policy as business standard. Lead with what standard is at stake. Avoid activist framing or partisan language. Cite operators, not consumers.</p>
+<p>Explain the policy question and its consequences for cannabis businesses. Support claims with evidence and distinguish the Chamber's position from reported facts.</p>
 <h3>Sales / member onboarding</h3>
 <ul>
-<li>"Membership is leverage. Not visibility. Operators who join the Chamber qualify on what they bring, not what they want to be seen doing."</li>
-<li>"If you treat the Chamber as a lead list, this is not the room for you. If you're trying to build the next decade of cannabis business, the door is open."</li>
+<li>"Tell us about your business and the region where you work."</li>
+<li>"Check the membership requirements before choosing a tier."</li>
 </ul>
+<p>These are wording examples. Confirm the relevant event, benefits, eligibility and page destinations before using them in live content.</p>
 <h2>5. Off-voice library</h2>
 <p>These are anti-examples. Every line breaks the voice in a specific way. Use them to calibrate what NOT to write.</p>
 <h3>Generic hype / disruption</h3>
 <ul>
-<li>❌ "We're here to disrupt cannabis with next-level events and amazing connections."  </li>
+<li>❌ "We're here to disrupt cannabis with next-level events and amazing connections."   </li>
 </ul>
 <p><em>Breaks: "disruption" without proof; "amazing" as vibes word; generic networking.</em></p>
 <h3>Consumer cannabis / lifestyle</h3>
 <ul>
-<li>❌ "Join the hottest cannabis networking community and vibe with industry insiders."  </li>
+<li>❌ "Join the hottest cannabis networking community and vibe with industry insiders."   </li>
 </ul>
 <p><em>Breaks: "vibe," "hottest," consumer framing, "insiders" as gloss.</em></p>
 <ul>
-<li>❌ "Light up your cannabis business with our exclusive community."  </li>
+<li>❌ "Light up your cannabis business with our exclusive community."   </li>
 </ul>
 <p><em>Breaks: weed pun, cheap exclusivity claim.</em></p>
 <h3>Visibility-first framing</h3>
 <ul>
-<li>❌ "Get seen by everyone in the cannabis space."  </li>
+<li>❌ "Get seen by everyone in the cannabis space."   </li>
 </ul>
 <p><em>Breaks: visibility-first, "everyone" overreach, anti-thesis of the Chamber.</em></p>
 <ul>
-<li>❌ "Stand out from the cannabis crowd and grow your brand."  </li>
+<li>❌ "Stand out from the cannabis crowd and grow your brand."   </li>
 </ul>
 <p><em>Breaks: "stand out" frames brand-as-performance; "the cannabis crowd" reduces audience.</em></p>
 <h3>Generic community / networking</h3>
 <ul>
-<li>❌ "Build your network in cannabis."  </li>
+<li>❌ "Build your network in cannabis."   </li>
 </ul>
 <p><em>Breaks: vague, anyone-could-say-this.</em></p>
 <ul>
-<li>❌ "Connect with industry insiders and unlock your potential."  </li>
+<li>❌ "Connect with industry insiders and unlock your potential."   </li>
 </ul>
 <p><em>Breaks: "unlock potential" is coaching speak; "insiders" is gloss.</em></p>
-<h2>6. Structural patterns</h2>
-<h3>The contrast move</h3>
-<p>Pair what matters with what doesn't:</p>
+<h2>6. Structure</h2>
+<h3>Headings</h3>
+<p>Name the subject or the next decision in familiar language. Use a short descriptive label when the surrounding diagram supplies the detail.</p>
 <ul>
-<li>"Standards over novelty"</li>
-<li>"Movement over reach"</li>
-<li>"Leverage over visibility"</li>
-<li>"Deals over drinks"</li>
-<li>"Insight over impressions"</li>
-<li>"Operators over directory browsers"</li>
+<li>"The shared Chamber workspace"</li>
+<li>"How an event campaign gets made"</li>
+<li>"What we need to get started"</li>
 </ul>
-<p>Use sparingly — one contrast pair per piece keeps it sharp; three or more reads as formula.</p>
-<h3>The triplet</h3>
-<p>Three short declaratives, increasing weight, closing with the standard:</p>
-<ul>
-<li>"Standards first. Novelty second. Everything else is decoration."</li>
-<li>"Deals over drinks. Insight over impressions. Movement over reach."</li>
-</ul>
-<h3>The qualifier</h3>
-<p>Name who the Chamber is for AND who it is not for in the same paragraph:</p>
-<ul>
-<li>"Built for operators who move markets, not people browsing directories."</li>
-<li>"If you treat the Chamber as a lead list, this is not for you."</li>
-</ul>
-<h3>The reason-first lead</h3>
-<p>Lead with what standard is at stake, then explain. Never lead with a feature or event.</p></div>
+<h3>Explanations</h3>
+<p>State the proposal, then explain its purpose or the relevant condition in connected sentences. Preserve useful distinctions when shortening the copy.</p>
+<h3>Actions</h3>
+<p>Say what the reader needs to do and where they can do it. Include dates, eligibility or limitations when they affect that action.</p>
+<p>Do not use slogan pairs, fragment triplets or contrast formulas to make a sentence sound authoritative. The shared anti-pattern rules apply to headings and body copy.</p>
+<h2>7. AI safety note</h2>
+<p>Some on-voice phrases ("standards," "operator-led," "movement," "trust") are vocabulary CCC owns by repetition. Generic LLM output that uses these terms loosely may sound on-voice on first read but reads as cheap when stacked next to authored copy. When AI-generating CCC content:</p>
+<ol>
+<li>Pair the keyword with concrete evidence (named operators, specific outcomes, peer benchmarks)</li>
+<li>Avoid stacking multiple branded keywords in one sentence ("standards-driven operator-led trusted community" reads as buzzword soup)</li>
+<li>Use the descriptive headings and connected explanations above. Read the draft for meaning before judging how concise it sounds.</li>
+</ol>
+<p>If a draft feels generic, run it against the off-voice library. If it could be flipped to off-voice with two-word edits, it's not on-voice enough yet.</p></div>
   </section>
 
 
   <div class="footer-nav">
     <span>Section B · Voice · Brand Identity</span>
-    <span><a href="logo.html">Logo →</a></span>
+    <span><a href="../application/index.html">Brand Application →</a></span>
   </div>
-  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
+  <p class="footer-legal">This Brand Therapy OS is for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
 </div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        The Cannabis Chamber of Commerce (ccc)
+  Version:      1.2.2
+  Built at:     2026-09-24T20:55:58+00:00
+  Git SHA:      ad47f2e84a473314b798d39d396888b39d7cc8e5
+  Bundle hash:  sha256:b85fe602b8fe94041f3406e4749437bbce8c43d64cf7780d39c517fdb1b3ff37
+  Source:       brand-os/brands/cannabis-chamber/DIRECTIONS.md + STRATEGY.md + IDENTITY.md
+-->
 </body>
 </html>

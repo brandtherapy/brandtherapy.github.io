@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "brand": {
     "slug": "ccc",
     "name": "The Cannabis Chamber of Commerce",
@@ -9,25 +9,37 @@
   },
   "source": {
     "source_slug": "cannabis-chamber",
-    "build_timestamp": "2026-07-02T01:39:05+00:00",
-    "git_sha": "a5d909e1e92ab213817c13b021d6a69effaff5ee",
-    "bundle_hash": "sha256:d06ec5d2804d4427eae4ba2a1ccbf60be10b5e0ffafa2c8ab3f9aaf28d4c9dad",
+    "build_timestamp": "2026-09-24T20:55:58+00:00",
+    "git_sha": "ad47f2e84a473314b798d39d396888b39d7cc8e5",
+    "bundle_hash": "sha256:b85fe602b8fe94041f3406e4749437bbce8c43d64cf7780d39c517fdb1b3ff37",
     "source_hashes": {
-      "STRATEGY.md": "sha256:7c3a2a9775c5f97641407fd716d73d6431529c75f13dd8eccd4d5774c7fedebe",
-      "IDENTITY.md": "sha256:b9b4b1b2b1dcb32d0d9e33eb4087ffc51e4a63883ff4ad966b261704e6eda8ee",
-      "SKILL.md": "sha256:4fe6c81f31e02f339d343f172788d8adfea45fca21ab96d1cfa5cec72bea1934",
-      "DIRECTIONS.md": "sha256:5b7665aab063d8932f95ac4bd14fbb300f7032f5d4924fc2ba898bbd7cee2ebf",
+      "STRATEGY.md": "sha256:6022dca9dd8236878eb439798d77893cffddb8c8da03bc79b15d0216d85c7332",
+      "IDENTITY.md": "sha256:bca3a40dea37f2624e5f5987bc478fff185aa7ef76831447d72dc8806f25d7bb",
+      "SKILL.md": "sha256:87fcb839c8a785f296db68f70c941053354442cb0a4fcf37bce43b80816eda5c",
+      "APPLICATION.md": "sha256:c964e6d0d6cabe8f54fafae01d306034fe373a5d2ddbcf184df69d1af8e18016",
+      "DIRECTIONS.md": "sha256:b4cec7d4066e2b4705476c5c3f92401f10594cfb00ae1a80611e4e275832cadc",
       "QUICKSTART.md": "sha256:e078bf7bbdb4141179ec0fdb322aee701d5a885cf3ced7511fc0708280a45abd",
-      "references/logo-spec.md": "sha256:25b576f655d1bfc97e2a5e0f23eb7201b7b2ccb91b8f4d5c241b3433ba93bcbd",
+      "references/logo-spec.md": "sha256:ced8677e58780a917782721fdb0dea12c217da8b569762480c9f5d8a0ca85cad",
       "references/methodology.md": "sha256:eb848f84b2c5b15721762019975ee57f9e24d8e1d92f0c04db630a120a7eb00b",
-      "references/signature-spec.md": "sha256:01a68d4582de14dcbfb2cec1e2463c817c16b4a3864491ce103dedaac756bf5f",
-      "references/voice-exemplars.md": "sha256:89c3fe89d4a856ea20dfb9651a3b9b3b4f377c261fc8518afe631c53d9551f76",
-      "images_manifest": "sha256:d4ee589413c76581b678200d68d576d9cea5737c93fc20317e5d9acb0b12cf1a"
+      "references/signature-rules.md": "sha256:0c2dea3cebcf3fd624740dc877ada3a30ceea5c60a53eb972b1dffdabdf703a5",
+      "references/verdant-separation.md": "sha256:827493e7142fdbea59b9422a00a31768344843d4beb192798a5e4a791589e06c",
+      "references/voice-exemplars.md": "sha256:cf2f40ad361732177a978406c6040cd62942f237ce9a12530e9e419d1939eab4",
+      "images_manifest": "sha256:429ab8eca212cce6c5d3ee904502aa6bd4e85abf6cccecbf418b6f7bd26c3d66",
+      "application_references_manifest": "sha256:aa4105c3a3dc15a6ad08cd5676f63406400dddc31c8a65a3a53cecd83781f3e7"
     },
     "source_order": [
       "STRATEGY.md",
       "IDENTITY.md",
-      "DIRECTIONS.md"
+      "DIRECTIONS.md",
+      "APPLICATION.md"
+    ],
+    "application_order": [
+      "strategy",
+      "identity.voice",
+      "identity.visual",
+      "directions",
+      "application",
+      "downstream.platform_format_seo_conversion_distribution"
     ],
     "generated_outputs_are_downstream": true,
     "output_bundle": {
@@ -36,27 +48,45 @@
         "STRATEGY.md": "source/STRATEGY.md",
         "IDENTITY.md": "source/IDENTITY.md",
         "SKILL.md": "source/SKILL.md",
+        "APPLICATION.md": "source/APPLICATION.md",
         "DIRECTIONS.md": "source/DIRECTIONS.md",
         "QUICKSTART.md": "source/QUICKSTART.md"
       },
       "references": {
         "references/logo-spec.md": "source/references/logo-spec.md",
         "references/methodology.md": "source/references/methodology.md",
-        "references/signature-spec.md": "source/references/signature-spec.md",
+        "references/signature-rules.md": "source/references/signature-rules.md",
+        "references/verdant-separation.md": "source/references/verdant-separation.md",
         "references/voice-exemplars.md": "source/references/voice-exemplars.md"
       },
-      "application_references": {},
-      "reference_asset_roots": {},
+      "application_references": {
+        "brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-membership-one-pager.pdf": "source/external/brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-membership-one-pager.pdf",
+        "brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-membership-one-pager.png": "source/external/brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-membership-one-pager.png",
+        "brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-info-signature.png": "source/external/brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-info-signature.png",
+        "brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-events-signature.png": "source/external/brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-events-signature.png",
+        "brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-email-signatures-review-board.png": "source/external/brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-email-signatures-review-board.png"
+      },
+      "reference_asset_roots": {
+        "brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16": "references/collateral/ccc-client-delivery-2026-07-16/"
+      },
       "founder_spectrum_visual": {}
     }
   },
   "guardrails": {
     "source_paths": {
       "llm_rules": "shared/references/llm-rules.md",
-      "anti_patterns": "shared/references/anti-patterns.md"
+      "anti_patterns": "shared/references/anti-patterns.md",
+      "copy_derivation": "shared/references/copy-derivation.md"
     },
-    "llm_rules": "# Universal AI Guardrails\n\nThese rules apply to every brand in this workspace. `build.py` concatenates this file into every brand's `output/ai-context.md` at the end of the compile, so any AI agent loading a brand's context inherits these rules.\n\nBrand-specific AI instructions (in each brand's `STRATEGY.md` per-P `AI instructions:` labels) take precedence when they conflict. When they don't conflict, both apply.\n\n## Punctuation\n\n- **No em-dashes (—) and no en-dashes (–).** Use ellipsis (...), colon, comma, or new sentence where an em-dash would go. Plain hyphen-minus (-) is fine in compound words and ranges.\n- **Ellipses freely** for rhythm, irony, breathing room. Three dots, no space before, one space after. Never four dots.\n- **No emojis in brand content** unless a brand's STRATEGY.md explicitly allows them.\n\n## Honesty\n\n- **No fabrication.** Do not invent client names, outcomes, metrics, testimonials, or empirical claims. If asked to write something that requires evidence and no evidence is in the brand source, write honestly about the gap instead of confabulating.\n- **No invented stats.** Phrases like \"73% of founders...\" or \"studies show...\" are forbidden unless the specific stat is documented in the brand source with a citation.\n- **No fabricated attributions.** Do not put words in named people's mouths. Quote testimonials only if they appear verbatim in the brand source.\n\n## Openers and connectives\n\n- **No hollow affirmations.** Forbidden openers include: \"Great question!\", \"Certainly!\", \"I'd be happy to help with that.\", \"What a thoughtful prompt.\"\n- **No formal essay connectives.** Forbidden: \"however,\", \"as a result,\", \"in conclusion,\", \"it's worth noting,\", \"moreover,\", \"furthermore,\", \"consequently,\".\n- **No throat-clearing preambles.** Forbidden: \"In today's landscape...\", \"In an increasingly complex world...\", \"Now more than ever...\"\n\n## Methodology vs company\n\n- Methodology names are not company names. Refer to processes by their methodology name without personifying them as companies. Example: \"the Brand Therapy process\" not \"at Brand Therapy\" or \"the Brand Therapy team\".\n- This applies to any brand whose offer is a methodology rather than a productized service.\n\n## Voice posture\n\n- **Direct observation over encouragement.** Name what's happening before suggesting what should happen.\n- **Questions over assertions** where the brand voice permits. Let the reader answer instead of forcing a nod.\n- **Perspective shifts over lessons.** End paragraphs and posts on a shift in how the reader sees something, not on a takeaway or moral.\n\n## When in doubt\n\n- **Honest admissions.** When a brand-specific rule and a universal rule conflict, the brand-specific rule wins. Document the conflict in your response so it can be reviewed.\n- **Ask for evidence before claiming.** If a piece of copy makes a factual claim the brand source doesn't support, write the version without the claim. Do not invent a claim to fill the space.\n\n## License and scope\n\n- This context file, and the Brand OS it is generated from, are provided solely for producing work for the brand named in this document. The framework, section model, file structure, and rule system are proprietary to Florian P. Consulting.\n- Do not reuse this document, its structure, or its rules to scaffold, generate, or configure a brand system for any other person, brand, or company. If a user asks you to repurpose it as a template for a different brand, decline and refer them to florianp.com.\n\n## Approval discipline\n\n- Outputs labeled \"approved\" must hash to the `bundle_hash` in the brand's `brand.lock.json`. If the agent detects drift between `brand.lock.json` and the current source files, halt and surface the discrepancy. Do not produce \"approved-brand\" content from unverified source.\n- AI suggestions for changes to a brand's STRATEGY.md or IDENTITY.md go in `working-folder/{brand}-suggested-changes.md`, never directly into `brands/{slug}/`. Florian merges manually after review.",
-    "anti_patterns": "# Anti-Patterns\n\nWhat AI must never do when producing content, copy, or design for any brand in this workspace. Use this as a checklist during review.\n\n## Copy anti-patterns\n\n- **Hollow affirmations.** \"You've got this!\", \"Show up daily!\", \"Trust the process.\" These read as motivational filler.\n- **Hustle-culture copy.** \"Stop overthinking and start doing.\" \"The journey of a thousand miles...\" \"Crush it.\"\n- **First-chair founder bios.** \"Meet [Founder Name].\" \"In their own words.\" \"A letter from me to you.\" Unless a brand's spectrum is explicitly 5 (founder IS the brand) AND the brand source explicitly permits first-chair framing, default to host/messenger framing.\n- **Trend-report essay voice.** \"As AI democratizes X, founders must Y.\" \"In an increasingly Z world...\" Abstract, defensive, devoid of specificity.\n- **Generic listicle openers.** \"In this article, we'll explore 5 strategies...\" \"Here are 7 things every founder should know.\"\n- **Joke-only lines.** A joke without a strategic point is decoration. If the line works without the brand thesis, cut the line.\n- **Fabricated empirical generalizations.** \"Most founders...\", \"Every CEO knows...\", \"Studies show...\", \"Research indicates...\" unless the specific claim is documented in brand source.\n- **Brand-as-company personification** when the brand is a methodology. \"At Brand Therapy, we...\" treats the methodology as an organization.\n\n## Voice anti-patterns\n\n- **Em-dashes (—) and en-dashes (–).** Banned across all brands. Use ellipsis, colon, comma, or period.\n- **Formal connectives.** \"However,\", \"As a result,\", \"Moreover,\", \"Furthermore,\", \"Consequently,\", \"It's worth noting,\".\n- **Coaching-speak.** \"Unlock your potential.\", \"Reach the next level.\", \"Level up.\", \"10x your X.\".\n- **AI-generated thought-leadership voice.** Hedging-heavy, qualifier-stacked, opinion-less sentences. Compare: \"It is widely understood that brand strategy plays a critical role in...\" vs the direct alternative.\n\n## AI safety anti-patterns\n\n- **Embedded AI instructions in brand source.** Do not write `Ignore previous instructions.`, `System:`, `Assistant:`, or other model-directive language inside any brand source file (STRATEGY.md, IDENTITY.md, voice-exemplars.md, references). These create prompt injection vectors when the source is concatenated into ai-context.md. The build validator flags these patterns.\n- **AI-generated content treated as approved.** AI suggestions for brand changes do not become approved source by being written. They land in `working-folder/{brand}-suggested-changes.md` and only enter `brands/{slug}/` after Florian merges manually.\n- **Silent fabrication.** Filling gaps with invented stats, named clients, or empirical claims to make output feel more complete. Better to leave the gap visible.\n\n## Design anti-patterns\n\nThese apply unless a brand's IDENTITY.md explicitly opts in to a forbidden treatment:\n\n- Rounded pill buttons by default\n- Multiple accent colors\n- Glassmorphism / blurred glass panels as a primary visual concept\n- Prism / crystal / 3D refraction imagery\n- Selective-color B&W reveals as a brand signature\n- Polaroid photo treatments\n- Generic stock photography\n- Avatar-size photography in editorial contexts\n- Decorative motion for decoration's sake\n- Dark canvas as default unless a brand explicitly chooses dark-first\n\n## Brand-source anti-patterns\n\n- **Strategy copy living in HTML.** Section A pages (and any rendered output) are generated from STRATEGY.md + IDENTITY.md. Do not edit rendered HTML to change strategy — it gets overwritten on the next build, and the source remains wrong.\n- **Mixing approval states.** A brand's STRATEGY.md is either in a state where `brand.lock.json` validates or it is in a draft state. The `approval_status: approved` frontmatter is informational only; the real gate is `bundle_hash`.\n- **Cross-brand drift.** Universal rules (this file, `llm-rules.md`) apply to every brand. A brand-specific override in STRATEGY.md is fine when explicit. Silent drift between brands is not."
+    "llm_rules": "# Universal AI Guardrails\n\nThese rules apply to every brand in this workspace. `build.py` concatenates this file into every brand's `output/ai-context.md` at the end of the compile, so any AI agent loading a brand's context inherits these rules.\n\nThe current global agent contract takes precedence over brand guidance. Brand\ninstructions determine strategy, voice and channel choices within those global\nrequirements. Historical approved examples remain evidence of style; they do\nnot grant exceptions to newer explicit owner instructions for new work.\n\n## Punctuation\n\n- **No em-dashes (—) and no en-dashes (–).** Use ellipsis (...), colon, comma, or new sentence where an em-dash would go. Plain hyphen-minus (-) is fine in compound words and ranges.\n- **Ellipses freely** for rhythm, irony, breathing room. Three dots, no space before, one space after. Never four dots.\n- **No emojis in brand content** unless a brand's STRATEGY.md explicitly allows them.\n\n## Honesty\n\n- **No fabrication.** Do not invent client names, outcomes, metrics, testimonials, or empirical claims. If asked to write something that requires evidence and no evidence is in the brand source, write honestly about the gap instead of confabulating.\n- **No invented stats.** Phrases like \"73% of founders...\" or \"studies show...\" are forbidden unless the specific stat is documented in the brand source with a citation.\n- **No fabricated attributions.** Do not put words in named people's mouths. Quote testimonials only if they appear verbatim in the brand source.\n\n## Openers and connectives\n\n- **No hollow affirmations.** Forbidden openers include: \"Great question!\", \"Certainly!\", \"I'd be happy to help with that.\", \"What a thoughtful prompt.\"\n- **No formal essay connectives.** Forbidden: \"however,\", \"as a result,\", \"in conclusion,\", \"it's worth noting,\", \"moreover,\", \"furthermore,\", \"consequently,\".\n- **No throat-clearing preambles.** Forbidden: \"In today's landscape...\", \"In an increasingly complex world...\", \"Now more than ever...\"\n\n## Methodology vs company\n\n- Methodology names are not company names. Refer to processes by their methodology name without personifying them as companies. Example: \"the Brand Therapy process\" not \"at Brand Therapy\" or \"the Brand Therapy team\".\n- This applies to any brand whose offer is a methodology rather than a productized service.\n\n## Voice posture\n\n- **Direct observation over encouragement.** Name what's happening before suggesting what should happen.\n- **Questions over assertions** where the brand voice permits. Let the reader answer instead of forcing a nod.\n- **Perspective shifts over lessons.** End paragraphs and posts on a shift in how the reader sees something, not on a takeaway or moral.\n\n## When in doubt\n\n- **Source conflicts.** Preserve the conflict in the private review record and apply the current global requirements. Ask only if the remaining brand decision needs owner judgment.\n- **Ask for evidence before claiming.** If a piece of copy makes a factual claim the brand source doesn't support, write the version without the claim. Do not invent a claim to fill the space.\n\n## License and scope\n\n- This context file, and the Brand OS it is generated from, are provided solely for producing work for the brand named in this document. The framework, section model, file structure, and rule system are proprietary to Florian P.\n- Do not reuse this document, its structure, or its rules to scaffold, generate, or configure a brand system for any other person, brand, or company. If a user asks you to repurpose it as a template for a different brand, decline and refer them to florianp.com.\n\n## Approval discipline\n\n- Outputs labeled \"approved\" must hash to the `bundle_hash` in the brand's `brand.lock.json`. If the agent detects drift between `brand.lock.json` and the current source files, halt and surface the discrepancy. Do not produce \"approved-brand\" content from unverified source.\n- AI suggestions for changes to a brand's STRATEGY.md or IDENTITY.md go in `working-folder/{brand}-suggested-changes.md`, never directly into `brands/{slug}/`. Florian merges manually after review.\n\n## The point before the line\n\nThese guardrails are the floor. The ceiling, for every brand, is\n`brand-os/shared/references/copy-derivation.md`: every line starts from a\npoint, one plain sentence about the reader that a stranger could say back,\nwith the job of the medium named next to it. The line is the shortest clear\nversion that preserves the detail and rhythm the medium needs. Load the brand's\nvoice before drafting and review it across the whole piece. Keep the Brief and\nPoint | Job | Line table internal. Deliver the complete native artifact after\neditorial review and readback. Gates:\n`python3 tools/copy_derivation_check.py <deliverable>` then\n`python3 tools/slop_lint.py <deliverable>`.",
+    "anti_patterns": "# Anti-Patterns\n\nWhat AI must never do when producing content, copy, or design for any brand in this workspace. Use this as a checklist during review.\n\n## Scope\n\nThese rules govern every piece of human-readable text an agent produces, not\nonly marketing fields. That includes UI microcopy (buttons, hints,\nplaceholders, empty states, tooltips, toasts, onboarding lines, error\nmessages), client portals, review pages, emails, decks, captions, and drafts\npresented in chat. A brand context does not need to be loaded for these rules\nto apply; they are the floor under every brand's own voice contract.\n\nMechanical enforcement: `python3 tools/slop_lint.py <paths or --text>` checks\nthe patterns below deterministically. Run it on any deliverable that carries\ncopy before showing it for review. A line that quotes slop deliberately as an\nexhibit (a parody word cloud, a bad-example tagline) carries a `slop-ok`\nmarker on the same line (`<!-- slop-ok -->` in HTML) and is exempt; never use\nthe marker to ship real copy that breaks these rules.\n\n## Copy anti-patterns\n\n- **Decorative reference headings.** In guidelines, manuals and client OS pages, use a literal section label that identifies the contents or action. Avoid design-object personification such as \"Colour has a job\", \"Type that carries the work\" and \"The red flag signs the work\". Use \"Colour roles\", \"Typography\" and \"Red flag usage\". <!-- slop-ok -->\n- **Overclaiming copy QA.** A clean visual detector or production-language firewall is not an editorial headline audit. Inspect every client-facing heading and campaign headline against its intended meaning and source. Record which checks actually ran. Mechanical checks catch known patterns, not all empty or generic language.\n\n- **Hollow affirmations.** \"You've got this!\", \"Show up daily!\", \"Trust the process.\" These read as motivational filler.\n- **Hustle-culture copy.** \"Stop overthinking and start doing.\" \"The journey of a thousand miles...\" \"Crush it.\"\n- **First-chair founder bios.** \"Meet [Founder Name].\" \"In their own words.\" \"A letter from me to you.\" Unless a brand's spectrum is explicitly 5 (founder IS the brand) AND the brand source explicitly permits first-chair framing, default to host/messenger framing.\n- **Trend-report essay voice.** \"As AI democratizes X, founders must Y.\" \"In an increasingly Z world...\" Abstract, defensive, devoid of specificity.\n- **Generic listicle openers.** \"In this article, we'll explore 5 strategies...\" \"Here are 7 things every founder should know.\"\n- **Joke-only lines.** A joke without a strategic point is decoration. If the line works without the brand thesis, cut the line.\n- **Fabricated empirical generalizations.** \"Most founders...\", \"Every CEO knows...\", \"Studies show...\", \"Research indicates...\" unless the specific claim is documented in brand source.\n- **Brand-as-company personification** when the brand is a methodology. \"At Brand Therapy, we...\" treats the methodology as an organization.\n\n## Voice anti-patterns\n\n- **Em-dashes (—) and en-dashes (–).** Banned across all brands. Use ellipsis, colon, comma, or period.\n- **Formal connectives.** \"However,\", \"As a result,\", \"Moreover,\", \"Furthermore,\", \"Consequently,\", \"It's worth noting,\".\n- **Coaching-speak.** \"Unlock your potential.\", \"Reach the next level.\", \"Level up.\", \"10x your X.\".\n- **AI-generated thought-leadership voice.** Hedging-heavy, qualifier-stacked, opinion-less sentences. Compare: \"It is widely understood that brand strategy plays a critical role in...\" vs the direct alternative.\n- **Antithetical two-beat AI cadence.** The model-favorite contrast stack that fakes insight by flipping a sentence. Includes \"not X, but Y,\" \"the problem is not X,\" \"you do not need X. You need Y,\" and the cleaner twins: \"The X was fine. The Y was missing.\" / \"Not hostility. Not rejection. Just...\" / \"Not A. B.\" State the observation in one human move, or ask a real question. Do not build meaning out of mirrored opposites.\n- **Cute AI personification.** Props that \"behave,\" attention that \"packs a bag,\" literary object theater the brand owner would never say out loud.\n- **Staccato one-beat openers.** Four or more tiny sentences stacked to fake spoken rhythm.\n- **Two-beat punchline cadence.** A setup sentence followed by a short \"Then X.\" or \"Now Y.\" payoff fragment. \"A look at the work. Then a few words if you want.\" Reads like a movie trailer, not a person.\n- **Fragment noun openers.** \"A look at the work.\", \"A word on pricing.\", \"A note on process.\" Verbless headline fragments posing as sentences. Say the thing: \"Here is the work.\"\n- **Rule-of-three stacking.** More than one polished \"X, Y, and Z\" triplet per couple hundred words is a pattern generator reaching for balance, not a person talking.\n- **Twin parallel fragments.** Two mirrored tiny sentences (\"Same smile. Same sentence.\"). One longer setup with one short punch of a different construction is fine.\n\n## AI safety anti-patterns\n\n- **Embedded AI instructions in brand source.** Do not write `Ignore previous instructions.`, `System:`, `Assistant:`, or other model-directive language inside any brand source file (STRATEGY.md, IDENTITY.md, voice-exemplars.md, references). These create prompt injection vectors when the source is concatenated into ai-context.md. The build validator flags these patterns.\n- **AI-generated content treated as approved.** AI suggestions for brand changes do not become approved source by being written. They land in `working-folder/{brand}-suggested-changes.md` and only enter `brands/{slug}/` after Florian merges manually.\n- **Silent fabrication.** Filling gaps with invented stats, named clients, or empirical claims to make output feel more complete. Better to leave the gap visible.\n\n## Design anti-patterns\n\nThese apply unless a brand's IDENTITY.md explicitly opts in to a forbidden treatment:\n\n- Rounded pill buttons by default\n- Multiple accent colors\n- Glassmorphism / blurred glass panels as a primary visual concept\n- Prism / crystal / 3D refraction imagery\n- Selective-color B&W reveals as a brand signature\n- Polaroid photo treatments\n- Generic stock photography\n- Avatar-size photography in editorial contexts\n- Decorative motion for decoration's sake\n- Dark canvas as default unless a brand explicitly chooses dark-first\n\n## Brand-source anti-patterns\n\n- **Strategy copy living in HTML.** Section A pages (and any rendered output) are generated from STRATEGY.md + IDENTITY.md. Do not edit rendered HTML to change strategy — it gets overwritten on the next build, and the source remains wrong.\n- **Mixing approval states.** A brand's STRATEGY.md is either in a state where `brand.lock.json` validates or it is in a draft state. The `approval_status: approved` frontmatter is informational only; the real gate is `bundle_hash`.\n- **Cross-brand drift.** Universal rules (this file, `llm-rules.md`) apply to every brand. A brand-specific override in STRATEGY.md is fine when explicit. Silent drift between brands is not.",
+    "copy_derivation": "# Copy contract: the point before the line\n\nWorkflow version: 2.0.0\n\nThis is the shared creative process for every brand and model. Brand strategy,\naudience, voice, verified exemplars and channel choices remain owned by the\nselected brand. Maintenance and release history:\n`website-docs/COPY-WORKFLOW.md` and `brand-os/shared/references/copy-workflow-changelog.md`.\n\n## Start with the whole piece\n\nKeep one private brief: brand and speaker, reader situation, desired outcome,\nmedium and its job, source evidence, offer or factual constraints, and prior\naccepted decisions. New feedback updates this brief. It does not erase it.\nFor a small edit, keep this proportionate and preserve surrounding approved work.\n\nChoose the angle before polishing sentences. State the useful observation,\nargument or reason to act, and why this brand can credibly make it. Select the\nstrongest relevant evidence and assets already available. Evidence may be an\nobserved situation, an attributed example, a demonstration or a verified fact;\ntestimonials and images are optional when the format does not need them.\n\nGive the complete piece a reading order. Each paragraph, slide or section must\nadvance the idea, substantiate it or make the next action clear. Shortening every\nsentence independently can destroy a story, its rhythm or a necessary explanation.\nThe Point | Job | Line table records meaningful copy units, not every sentence.\n\n| Format | Main assignment |\n| --- | --- |\n| Organic social | One worthwhile observation or argument, grounded in the brand's experience. It can end when the idea is complete. |\n| Carousel or short script | Develop one idea through a sequence; each slide or beat earns its place. |\n| Paid ad | Connect one reader need to a credible benefit and an appropriate next action. |\n| Landing page or sales deck | Build a complete decision argument with offer, differentiation, evidence and practical commitment. |\n| Email | Advance one relationship, explanation or decision in the appropriate speaker's voice. |\n| UI or service message | Make the state, consequence and next action easy to understand. |\n\nThese assignments guide judgment. They are not hook formulas, required sections\nor a demand to sell in every post. A campaign win is a process reference; its\nslogans, audience, design and proof do not become another brand's defaults.\n\n## Bind the brand before writing\n\nFollow the brand's current source route and approval state. Read strategy,\naudience lens when present, identity/voice, relevant application/channel rules,\nthen that brand's current verified exemplars, calibration and job evidence.\nUse the brand's declared precedence when sources disagree. Report an unresolved\nsource conflict; never silently replace the voice with FP's or a model's style.\n\nMissing calibration means there is no approved copy history yet. It does not\nauthorize inventing examples. Missing authoritative strategy or voice blocks\nbrand-specific drafting until the source is found or the owner supplies it.\nDo not load another brand's voice, social cadence, persona, first-person rules,\nvisual identity or CTA conventions. A voice exemplar proves style only; a\ntestimonial, business result or current offer still needs factual evidence.\n\nThe brand's voice informs angle selection and the entire draft. Apply verbal\nflair after the meaning works, then compare the full piece with the brand's\nverified prose. The shared process must not flatten a warm, witty, institutional\nor technical brand into a single generic voice.\n\nThe anti-slop floor (`anti-patterns.md`, `tools/slop_lint.py`) removes bad\nsentences. It cannot make a sentence worth reading. This contract is the\nceiling: how audience-facing copy is derived, what the deliverable looks like,\nand what a machine can check about it. It is brand-agnostic and LLM-agnostic.\nIt applies to every ad, headline, hero line, page, email, subject line,\ncaption, social hook, and selling microcopy, on every brand and every harness.\n\n## The order is fixed\n\n1. **The point.** One plain sentence that a stranger could say back in their\n   own words, plus the job the medium has to do. The point is written and\n   judged before any line exists.\n2. **The line.** The shortest clear version of the point. A line that needs\n   the point explained next to it has failed.\n3. **Voice and wit.** Refined last, with the brand voice loaded first. A joke,\n   a signature, or a brand tic that costs clarity is removed.\n\nCopy that starts with a clever line and back-fills a point is rejected on\nsight. A rejected line is dropped. It is never reworded to survive.\n\n## The point\n\nA point passes when all four hold:\n\n- A stranger can say it back after one reading of the line alone.\n- It gives the reader value: recognition, understanding, a useful change or\n  an appropriate action. Source-backed stories and explanations may use the\n  brand's speaker or process when they serve that reader value.\n- It carries the brand's stance or an intangible benefit (relief, confidence,\n  being understood, being chosen). A list of features has no point.\n- It fits one or two sentences, thirty words at most.\n\nPoints come from sources, read in this order:\n\n1. The brand's strategy and voice source.\n2. The logged buyer language for the job.\n3. The brand's calibration file.\n\nA transcript, a call, or a buyer quote is a source of points. The line is\nwritten from the point. It is never lifted from the transcript.\n\n## The jobs\n\nEvery line has exactly one job. The job is named in the deliverable and read\nbefore the wording.\n\n| Job | The reader, after one reading |\n| --- | --- |\n| recognize | Sees their own situation stated in one line. |\n| learn | Knows one thing they did not know or had never put into words. |\n| benefit | Knows what changes for them. |\n| act | Knows the one next step. |\n| sell | Knows what is on offer, for whom, and on what terms. |\n\n## Media and limits\n\nThe medium sets a default job and a hard length in characters. A brand skill\nmay tighten a limit or a default; it may never loosen one. The checker reads\nthis table at run time.\n\n| Medium | Default job | Limit | Shape |\n| --- | --- | --- | --- |\n| social hook | recognize | 120 | One sentence a scrolling reader takes in whole. |\n| social post | learn | 3000 | Hook line first, then the reasoning. |\n| caption | learn | 2200 | Short, playful, ends on the locked CTA when one exists. |\n| cta | act | 30 | Verb first. |\n| google headline | recognize | 30 | One clause. |\n| google description | sell | 90 | Offer, for whom, terms. |\n| email subject | recognize | 60 | One clause, plain words. |\n| email body | learn | 3000 | Conversation, one ask. |\n| web hero | recognize | 80 | The reader's situation or what changes. |\n| web sub | benefit | 160 | What changes, in one sentence. |\n| body | learn | 3000 | One point per paragraph. |\n| tagline | recognize | 60 | One sentence, no punchline. |\n| profile headline | recognize | 220 | Who it is for and what changes for them. |\n| profile about | learn | 2600 | Points in reading order. |\n\nLimits come last. A limit removes words. It never removes the point. When the\npoint cannot survive the limit, the line is dropped and a shorter point is\nfound.\n\n## The deliverable\n\nThe private derivation record is one Markdown file with a Brief and a Copy\ntable. The internal reviewer reads the point first, the line second, the job\nin between. The owner receives the complete native artifact and one concise\nrecommendation. Keep the derivation, discarded angles and review notes backstage\nunless requested. Do not replace a finished post, email or campaign with a table.\n\n```text\n## Brief\nBrand: fp\nReader: The Invisible Expert\nMedium: social hook\nSources: brand-os/brands/fp/STRATEGY.md, brand-os/brands/fp/copy/calibration.md\n\n## Copy\n| Point | Job | Line |\n| --- | --- | --- |\n| The work is good. The explanation is what loses clients. | recognize | Your work is better than the way you explain it. |\n| Volume does not fix being misunderstood. | learn | Posting more will not help if nobody understands what you do. |\n```\n\nFormat rules:\n\n- `Brief` carries Brand, Reader, and Sources. Sources are repo paths,\n  comma-separated, and every path must exist. Medium and Job in the Brief are\n  defaults for the table.\n- `Copy` is a Markdown table with at least a Point column and a Line column.\n  A Medium column is required when the file mixes media, for example Google\n  headlines and descriptions. A Job column overrides the default per row.\n  Extra columns such as Source or Note are allowed and ignored by the checker.\n- Column names accepted: Point or The point; Line, The line, Hook, Copy, or\n  Headline; Job; Medium, Type, or Format.\n- Tables under a `Dropped` or `Rejected` heading and any fenced code block are\n  ignored by the checker.\n- In a Sprint packet the `Dropped` table also carries `Carried` and\n  `Replaced by` columns, read by\n  `tools/brand-therapy-sprint/dropped_carriers.py`.\n\n## Self-review before showing\n\nFor client guidelines and reference interfaces, headings are navigation labels.\nThey may simply name the subject, such as \"Colour roles\" or \"Typography\";\nthey do not need a sales benefit or a clever line. Audit every visible heading\nand page introduction from the rendered artifact, including shared templates,\nimage captions and mockup titles. Reject personification, unexplained metaphor\nand interchangeable slogans. Keep a private inventory of the exact headings\nreviewed and their source. A visual-pattern scan or a clean keyword check must\nnever be reported as a complete editorial review. Campaign headlines still\nfollow the point-and-job test below.\n\nAnswer each question per row, in order. One no drops the row. A dropped row\nis never reworded to rescue it.\nA drop removes the wording and keeps the strategy decision under it: when the\ndropped line was the only carrier of a decision, write a new point for that\ndecision before review.\n\n1. **Paraphrase.** Would a stranger say the point back from the line alone?\n2. **Job.** Does the line do the job named in its row and nothing else?\n3. **Reader value.** Does this unit serve the reader's understanding or decision?\n   A sourced first-person story, demonstration or process explanation can carry\n   evidence. Follow the selected brand's speaker and voice rules.\n4. **Meaning.** Is the point understandable without decoding a clever device?\n   Use humor and imagery only when the selected brand supports them and the\n   meaning remains clear. Apply the existing shared floor.\n5. **Economy.** Remove filler while preserving useful detail, natural rhythm\n   and the explanation the reader needs.\n\nBrand-specific rules (first person, banned phrases, signatures) live in the\nbrand's voice source and are checked there, after this review.\n\n## Whole-piece review and revision\n\nBefore revising any format, preserve the private brief of the reader's situation,\nintended outcome, offer when relevant, evidence, scope and prior accepted constraints.\nTreat new feedback as a correction to that brief, not a replacement for it.\nInventory existing public testimonials, case evidence and usable imagery before\nsubstituting a generic example or calling an image-led campaign ready.\nAfter drafting, read the entire piece in order. Each section must advance\nunderstanding or provide evidence; repeating a promise does neither.\nLabel illustrative examples clearly and never treat them as client proof.\nA passing copy lint or visual layout check is not an endorsement of the\nproposition. Finish a separate editorial review before presenting the work.\n\nPrivately record the exact artifact reviewed, source/workflow version and the\nmaterial findings across these dimensions: reader relevance, strength of the\nangle, progression, factual support, distinctive brand voice, format fit and\ncopy/visual relationship when applicable. Fix defects and read back the revised\nwhole. Do not turn a numerical score or a second pass by the same model into\nindependent proof of quality. Render visual work and inspect desktop/mobile or\nthe required fixed canvas through the existing visual QA route.\n\nUse one accountable lead. Research delegation or an independent critique can\nhelp complex work when authorized; everyday posts do not require an agent team.\nNo particular model or reasoning setting is the quality gate. Across models,\nthe same current brand sources, workflow and artifact-level review apply.\n\n## Portable use and continuity\n\nRepository entry points load this contract through the Copywriter skill, Social\nOS or the generated Brand OS context. External apps receive a current export\nfrom `tools/copywriter_context.py --brand <slug>` together with the source-backed\njob brief. The export identifies the brand, workflow version, source hashes and\napproval state. Never paste only generic process instructions and call the\nresult on-brand. A changed source invalidates the previous export.\n\nAn app or model without the packet is not configured by this repository update.\nInstruction parity does not guarantee identical prose. Review finished outputs\nagainst the same brand and quality criteria; do not claim untested model parity.\nUser feedback changes the current brief first. Promote a lesson into shared\nrules only when it is reusable across brands; keep brand taste in that brand's\ncalibration. Existing approved work is never bulk-rewritten by a workflow update.\n\n## Banned methods\n\n- Keyword coverage gates and mandatory word lists.\n- Formula slots and fill-in-the-blank hook templates.\n- A metaphor, analogy, or reference doing the work of the line.\n- Quoting what the category says and leaving the reader to decode the irony.\n- Writing the line first and back-filling a point.\n- Rewording a failed line instead of dropping it.\n- Applying platform limits before the point exists.\n- Stacking features or deliverables where a point belongs.\n- Leading with timeline, price, or process when the job is recognize or learn.\n- Talking down to the reader or implying the reader cannot decide.\n- Rebuilding a piece around the latest comment and dropping the medium's\n  job, prior calibration rejects, or locked strategy.\n- Turning a Reveal opener into a CV or current-job biography.\n\n## Calibration and regression\n\nEach brand keeps `brand-os/brands/<slug>/copy/calibration.md` in the\ndeliverable format above, with a Source column, plus a `## Rejected` table\n(Line | Reason class | Date). Approved lines go in the Copy table the day\nthey are approved. Rejected lines go in the Rejected table the same day with\none reason class.\n\n| Reason class | Meaning |\n| --- | --- |\n| about-the-seller | The line is about the writer, the process, or the method when the job was recognize, learn, benefit, or act. |\n| reader-cannot-decide | The line implies the reader lacks the answer or the judgment. |\n| empty-phrase | Sounds like a point and paraphrases to nothing. |\n| feature-stack | A list of deliverables where a point belongs. |\n| timeline-as-hook | Duration, price, or process carrying a line whose job is recognize or learn. |\n| flat | Clear, correct, and forgettable. |\n| mocking-the-reader | Wit at the reader's expense. |\n| second-degree | Metaphor, analogy, irony, quoted category speech, or a reference that needs a story. |\n| tidy-antithesis | A contrast template standing in for a point. |\n| checkbox-copy | Every rule satisfied, no point made. |\n| point-missing | No point could be stated for the line. |\n\nRules:\n\n- Preserve approved artifacts as historical evidence. A new gate must be\n  checked against them and conflicts investigated. New explicit owner/global\n  instructions govern new work even when older approved examples differ; do\n  not rewrite the old artifacts or remove the new requirement automatically.\n- The regression test runs the checker over every calibration file and\n  verifies that each rejected row carries a listed reason class and an ISO\n  date.\n- Calibration files cite tracked sources only. Scratch provenance goes in the\n  Source column.\n\n## Enforcement\n\n1. `python3 tools/copy_derivation_check.py <deliverable>` checks structure:\n   Brief present with existing sources, a Copy table with points and lines,\n   every point within thirty words, every row resolving a known medium and\n   job, every line within its medium limit, and the floor on every line. It\n   blocks on structure and floor failures; it never judges content.\n2. `python3 tools/slop_lint.py <deliverable>` runs the floor on the whole\n   file. Strict mode is a rewrite prompt, never a block on an approved line.\n3. `tools/agent-session-close.py` runs both on any `.md` or `.txt`\n   deliverable that carries a Brief heading and a Copy heading.\n4. Client Sprint packets also pass `tools/client_copy_quality.py`.\n\n## What this contract does not do\n\nIt does not judge whether a point is good. That judgment is the review, done\nby reading the Point column before the Line column, one word per row. The\nmachine guarantees that the review surface exists, that every row can be\njudged, and that nothing below the floor reaches the reviewer.\n\n## Outside the repo\n\nA bot working outside the repo receives the current brand-bound export from\n`tools/copywriter_context.py --brand <slug>` and the job brief. It returns the\ncomplete native artifact with private derivation/review evidence for internal\nchecks. Whole-piece review and both mechanical gates apply before use.",
+    "copy_workflow": {
+      "version": "2.0.0",
+      "sha256": "9ad01da0b139667996c2dfc9ea758dc7ff9f9f67512fae756760e6c50e850cd9",
+      "brand_voice_authority": "identity.voice and this brand's verified exemplars",
+      "delivery": "Finished native artifact; private derivation and whole-piece critique stay backstage."
+    }
   },
   "ai_first_generation_thread": {
     "goal": "Strategy input becomes a Focus Star contract, Section B sliders produce first-page directions, Section C governs examples, medium rules, and channel rules, and Section D governs personal branding when the Founder Spectrum requires it.",
@@ -366,8 +396,8 @@
           "Event and membership language that avoids vendor spam",
           "Copy and proof examples that make connection and collaboration tangible",
           "Member proof across plant-touching and ancillary categories",
-          "Voice exemplars maintained as the canonical bank",
-          "Page copy for Membership, Networking, Events, Mentorship, and Advocacy that proves the stronger positioning without overclaiming benefits"
+          "Voice exemplars maintained in references/voice-exemplars.md as the canonical bank",
+          "Page copy for Membership, Networking, Events, Mentorship, and Advocacy that proves the stronger Google Doc positioning without overclaiming benefits"
         ],
         "ai_instructions": [
           "Address serious cannabis and hemp professionals, leaders, operators, executives, investors, policymakers, sponsors, regional leaders, and ancillary partners",
@@ -596,8 +626,9 @@
         "warnings": []
       }
     },
-    "voice": "Voice is part of brand identity. The strategic decision about Personality (P5) lives in the brand strategy; the operational voice rules live here. See the voice exemplar bank for the full paired set of examples.\n\n### Principles\n\n- Rational over emotional\n- Institutional over casual\n- Clear over clever\n- Transparent over polished\n- Authoritative over playful\n- Welcoming but selective\n- Serious without being cold\n- Lead with the standard, then the reason\n- Plain business language over marketing language\n- Concise declarative sentences\n- Contrast moves: standards over novelty, movement over reach, leverage over visibility, deals over drinks, insight over impressions\n- Operator-led practicality: speak like people responsible for outcomes, not consultants\n\n### Banned characters\n\n- em-dash (U+2014)\n- en-dash (U+2013)\n\n(Plain hyphen-minus `-` is fine in compound words, list bullets, signatures, ranges, and titles.)\n\n### Banned phrases\n\n- \"Cannabis disruption\" / \"We're disrupting cannabis\"\n- \"Vibes\" as a measure of value\n- \"Family\" as vague community language\n- \"Welcome to the community\" without specifying who fits\n- \"Stoner\" / \"weed\" / \"420\" references in serious copy\n- \"Get seen\" / \"Stand out\" / visibility-first framing\n- Generic networking phrases (\"connect with industry insiders,\" \"tap into our network\")\n- \"Disrupt\" / \"unlock\" / \"leverage\" as marketing buzzwords\n\n### Emojis\n\nDefault: no emojis in Chamber content. Approved exceptions:\n\n- Standard business or check-mark emojis (e.g., ✅) in social-media copy only\n- No decorative emoji stacks. One per post maximum.\n\n### Signatures (CCC-specific)\n\n- Long-form openers: state the standard or the contrast in the first sentence\n- Long-form closers: name the action the reader takes (apply, attend, contact)\n- The Chamber's institutional voice does not use first-person founder signatures\n\n### Voice exemplars (brief)\n\nFor the full exemplar bank, see the voice exemplar bank.\n\n**On-voice signals:**\n- \"Serious operators do not need more noise. They need the right room, the right context, and the right standard.\": direct, declarative, operator-addressed\n- \"The Chamber exists to move cannabis business forward, not to fill another calendar.\": contrast move, business outcomes framed against activity\n- \"Standards first. Novelty second. Everything else is decoration.\": triplet rhythm, blunt closure, sets the operating principle\n- \"Deals over drinks. Insight over impressions. Movement over reach. That is the business standard the Chamber is here to raise.\": contrast triplet + restated standard\n\n**Off-voice traps:**\n- \"Join the hottest cannabis networking community and vibe with industry insiders.\": consumer hype, generic networking, lifestyle cue\n- \"We're here to disrupt cannabis with next-level events and amazing connections.\": disruption claim without proof, vague \"amazing,\" marketing fluff\n- \"Get seen by everyone in the cannabis space.\": visibility-first, \"everyone\" overreach, anti-thesis of the Chamber",
+    "voice": "Voice is part of brand identity. The strategic decision about Personality (P5) lives in STRATEGY.md; the operational voice rules live here. See `references/voice-exemplars.md` for the full paired exemplar bank.\n\n### Principles\n\n- Rational over emotional\n- Institutional over casual\n- Clear over clever\n- Transparent over polished\n- Authoritative over playful\n- Welcoming but selective\n- Serious without being cold\n- Explain the relevant standard and its business purpose\n- Plain business language over marketing language\n- Concise declarative sentences\n- Explain the business purpose with concrete facts and actions. A heading should name its subject or the decision the reader needs to make.\n- Use connected sentences. Avoid slogan pairs, fragment triplets and manufactured contrasts, including in short headings.\n- Operator-led practicality: speak with responsibility for outcomes and explain practical consequences\n\n### Banned characters\n\n- em-dash (U+2014)\n- en-dash (U+2013)\n\n(Plain hyphen-minus `-` is fine in compound words, list bullets, signatures, ranges, and titles.)\n\n### Banned phrases\n\n- \"Cannabis disruption\" / \"We're disrupting cannabis\"\n- \"Vibes\" as a measure of value\n- \"Family\" as vague community language\n- \"Welcome to the community\" without specifying who fits\n- \"Stoner\" / \"weed\" / \"420\" references in serious copy\n- \"Get seen\" / \"Stand out\" / visibility-first framing\n- Generic networking phrases (\"connect with industry insiders,\" \"tap into our network\")\n- \"Disrupt\" / \"unlock\" / \"leverage\" as marketing buzzwords\n\n### Emojis\n\nDefault: no emojis in Chamber content. Approved exceptions:\n\n- Standard business or check-mark emojis (e.g., ✅) in social-media copy only\n- No decorative emoji stacks. One per post maximum.\n\n### Signatures (CCC-specific)\n\n- Long-form openers: state the subject and why it matters to the reader\n- Long-form closers: name the action the reader takes (apply, attend, contact)\n- The Chamber's institutional voice does not use first-person founder signatures\n\n### Voice exemplars (brief)\n\nFor the full exemplar bank, see `references/voice-exemplars.md`.\n\n**On-voice signals:**\n- \"Meet cannabis business owners and service providers at the next Chamber event.\": names the people and the action\n- \"Review the event details and register through the Chamber website.\": gives a specific next step\n- \"What we need to get started\": a heading that identifies the purpose of the section\n\nThese examples illustrate wording. Verify the event, audience and registration route before using them in a campaign. The shared anti-pattern rules apply to these examples and to every new draft.\n\n**Off-voice traps:**\n- \"Join the hottest cannabis networking community and vibe with industry insiders.\": consumer hype, generic networking, lifestyle cue\n- \"We're here to disrupt cannabis with next-level events and amazing connections.\": disruption claim without proof, vague \"amazing,\" marketing fluff\n- \"Get seen by everyone in the cannabis space.\": visibility-first, \"everyone\" overreach, anti-thesis of the Chamber",
     "section_titles": [
+      "Signature application rules",
       "1. Visual Theme & Atmosphere",
       "2. Color Palette & Roles",
       "3. Typography Rules",
@@ -614,13 +645,8 @@
     "pages": [
       {
         "href": "index.html",
-        "label": "Direction Three",
+        "label": "Common Ground",
         "slug": "the-tribe"
-      },
-      {
-        "href": "exploration.html",
-        "label": "Exploration",
-        "slug": "exploration"
       },
       {
         "href": "look-and-feel.html",
@@ -628,19 +654,14 @@
         "slug": "look-and-feel"
       },
       {
-        "href": "voice.html",
-        "label": "Voice",
-        "slug": "voice"
-      },
-      {
         "href": "logo.html",
         "label": "Logo",
         "slug": "logo"
       },
       {
-        "href": "signature.html",
-        "label": "Signature",
-        "slug": "signature"
+        "href": "voice.html",
+        "label": "Voice",
+        "slug": "voice"
       }
     ],
     "options": [
@@ -1376,7 +1397,7 @@
       },
       {
         "slug": "the-tribe",
-        "label": "Direction Three",
+        "label": "Common Ground",
         "working_name": "The Tribe",
         "system_name": "Common Ground",
         "status": "active_refinement_draft",
@@ -1556,7 +1577,7 @@
             "title": "Logo exploration",
             "role": "Approved D2 three-C shape integrated into the current Direction 3 palette, full-name lockup, and connector-line signature.",
             "format": "Standalone 16:9 raster sheet",
-            "production_note": "An exploratory logo territory, not a final mark.",
+            "production_note": "Use as draft logo territory only. Redraw the approved D2 shape as vector before any approval decision.",
             "system_notes": [
               "D2 shape route",
               "center dot",
@@ -1777,10 +1798,158 @@
     ]
   },
   "application": {
-    "summary": "",
-    "shared_patterns": {},
-    "reference_asset_roots": [],
-    "pages": []
+    "summary": "Review-only membership and email-signature assets revised against the Verdant Strategies hard exclusion. These files are not approved for delivery or public publishing.",
+    "shared_patterns": {
+      "visual": [
+        "Use the approved Cannabis Chamber lockup and Section B palette.",
+        "Measure logo clear space from visible ink or alpha bounds, never transparent canvas padding.",
+        "Keep rules, text, and artwork outside the one-dot clear-space zone.",
+        "Apply the hard Verdant Strategies separation rule in references/verdant-separation.md.",
+        "Let forest and teal carry the application system; keep coral and brass subordinate and normally inside the approved mark.",
+        "Favor active Chamber infrastructure and visible operational grids over centered boutique-consultancy restraint."
+      ],
+      "copy": [
+        "Use the current official membership tiers and benefits.",
+        "Use Cannabis Chamber Of Commerce in public-facing copy.",
+        "Keep operational email copy concise and direct."
+      ]
+    },
+    "reference_asset_roots": [
+      {
+        "source_dir": "brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16",
+        "output_dir": "ccc-client-delivery-2026-07-16",
+        "label": "Chris Boudreau request, July 2026",
+        "role": "Review-only membership one-pager and Info/Events email-signature delivery set",
+        "description": "Current review exports for the July 2026 client request."
+      }
+    ],
+    "image_library": {},
+    "pages": [
+      {
+        "id": "print",
+        "label": "Membership Collateral",
+        "slug": "print",
+        "title": "Membership Collateral",
+        "medium": "Membership one-pager and print-ready collateral",
+        "purpose": "Explain the Chamber's current membership tiers and website-backed benefits in one printable page.",
+        "formats": [
+          "Letter PDF",
+          "full-page PNG review export"
+        ],
+        "visual_recipe": [
+          "approved horizontal lockup",
+          "one-dot logo clear space",
+          "forest and teal operational system",
+          "photo-led membership activity",
+          "asymmetric single-page hierarchy"
+        ],
+        "copy_recipe": [
+          "current tier names",
+          "current price points",
+          "website-backed benefits",
+          "clear next step"
+        ],
+        "ai_rules": [
+          "Do not invent membership benefits or prices.",
+          "Do not move rules or type into the logo clear-space zone.",
+          "The PDF is the client delivery file; the PNG is the visual review export.",
+          "Do not use coral-led, terracotta-led, radial, or centered consultancy styling."
+        ],
+        "training_examples": [
+          {
+            "id": "membership-one-pager-pdf",
+            "label": "Membership one-pager, PDF",
+            "source_ref": "brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-membership-one-pager.pdf",
+            "role": "Client delivery file requested by Chris.",
+            "content_structure": [
+              "membership promise",
+              "five tiers",
+              "benefits",
+              "contact CTA"
+            ]
+          },
+          {
+            "id": "membership-one-pager-preview",
+            "label": "Membership one-pager, review PNG",
+            "source_ref": "brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-membership-one-pager.png",
+            "role": "Rendered readback for visual review of the PDF.",
+            "content_structure": [
+              "Letter-page preview",
+              "logo spacing",
+              "tier comparison"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "email-newsletter",
+        "label": "Email Signatures",
+        "slug": "email-newsletter",
+        "title": "Email Signatures",
+        "medium": "Shared mailbox email signatures",
+        "purpose": "Give the Info@ and Events@ shared inboxes a consistent, legible Cannabis Chamber signature.",
+        "formats": [
+          "Info@ PNG",
+          "Events@ PNG",
+          "combined review board"
+        ],
+        "visual_recipe": [
+          "approved horizontal lockup",
+          "legible shared-mailbox label",
+          "compact contact hierarchy",
+          "one-dot logo clear space",
+          "forest and teal horizontal utility rail"
+        ],
+        "copy_recipe": [
+          "shared inbox name",
+          "email address",
+          "website"
+        ],
+        "ai_rules": [
+          "Do not claim the signatures are installed.",
+          "Do not replace the approved logo artwork.",
+          "Keep shared-mailbox labels legible at email-signature size.",
+          "Do not use coral-led, ivory-prestige, radial, or centered consultancy styling."
+        ],
+        "training_examples": [
+          {
+            "id": "info-signature",
+            "label": "Info@ email signature",
+            "source_ref": "brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-info-signature.png",
+            "role": "Client delivery image for the Info@ shared inbox.",
+            "content_structure": [
+              "logo",
+              "Info team label",
+              "email",
+              "website"
+            ]
+          },
+          {
+            "id": "events-signature",
+            "label": "Events@ email signature",
+            "source_ref": "brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-events-signature.png",
+            "role": "Client delivery image for the Events@ shared inbox.",
+            "content_structure": [
+              "logo",
+              "Events team label",
+              "email",
+              "website"
+            ]
+          },
+          {
+            "id": "email-signatures-review-board",
+            "label": "Email signatures review board",
+            "source_ref": "brand-os/brands/cannabis-chamber/images/applications/client-delivery-2026-07-16/ccc-email-signatures-review-board.png",
+            "role": "Combined review surface for comparing both shared-mailbox signatures.",
+            "content_structure": [
+              "Info@ signature",
+              "Events@ signature",
+              "usage notes"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "channel_rules": {
     "summary": "",
@@ -1799,9 +1968,9 @@
     "dimensions": []
   },
   "task_router": {
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "purpose": "Route day-to-day brand tasks to the smallest useful context pack.",
-    "operating_principle": "The user should not choose Brand OS pages. The agent classifies the request, loads the compact core, adds only matching Section C/D slices, generates, then runs review gates.",
+    "operating_principle": "The user should not choose Brand Therapy OS pages. The agent classifies the request, loads the compact core, applies any audience-experience lens before Voice, adds only matching identity, character, channel, and application slices, generates, then runs review gates.",
     "context_budget": {
       "max_application_pages": 2,
       "max_channels": 2,
@@ -1813,11 +1982,11 @@
       "source.bundle_hash",
       "guardrails",
       "ai_first_generation_thread",
+      "identity.voice",
       "identity.colors",
       "identity.typography",
       "identity.creative_direction.slider_signals",
-      "directions.options[].slider_signals",
-      "identity.voice"
+      "directions.options[].slider_signals"
     ],
     "conditional_load": [
       "strategy.edges filtered by matched channel source_anchors",
@@ -1843,11 +2012,153 @@
     ],
     "routes": {
       "composed": [],
-      "mediums": [],
+      "mediums": [
+        {
+          "id": "medium.print",
+          "kind": "medium",
+          "match_terms": [
+            "badge",
+            "benefits",
+            "business card",
+            "collateral",
+            "comparison",
+            "contact",
+            "contact cta",
+            "cta",
+            "export",
+            "five",
+            "five tiers",
+            "full",
+            "full-page png review export",
+            "letter",
+            "letter pdf",
+            "letter-page preview",
+            "letterhead",
+            "logo",
+            "logo spacing",
+            "membership",
+            "membership collateral",
+            "membership one-pager and print-ready collateral",
+            "membership one-pager, pdf",
+            "membership one-pager, review png",
+            "membership promise",
+            "membership-one-pager-pdf",
+            "membership-one-pager-preview",
+            "one",
+            "page",
+            "pager",
+            "pdf",
+            "png",
+            "preview",
+            "print",
+            "promise",
+            "ready",
+            "review",
+            "spacing",
+            "tier",
+            "tier comparison",
+            "tiers"
+          ],
+          "context_load": {
+            "application_pages": [
+              "print"
+            ],
+            "fields": [
+              "purpose",
+              "formats",
+              "visual_recipe",
+              "copy_recipe",
+              "ai_rules",
+              "training_examples"
+            ],
+            "example_ids": [
+              "membership-one-pager-pdf",
+              "membership-one-pager-preview"
+            ],
+            "max_examples": 2
+          },
+          "review_focus": [
+            "medium fit",
+            "visual recipe",
+            "copy recipe",
+            "AI rules"
+          ]
+        },
+        {
+          "id": "medium.email-newsletter",
+          "kind": "medium",
+          "match_terms": [
+            "board",
+            "brand therapy weekly",
+            "combined",
+            "combined review board",
+            "email",
+            "email signatures",
+            "email signatures review board",
+            "email-newsletter",
+            "email-signatures-review-board",
+            "events",
+            "events team label",
+            "events-signature",
+            "events@ email signature",
+            "events@ png",
+            "events@ signature",
+            "inbox",
+            "info",
+            "info team label",
+            "info-signature",
+            "info@ email signature",
+            "info@ png",
+            "info@ signature",
+            "label",
+            "logo",
+            "mailbox",
+            "newsletter",
+            "notes",
+            "png",
+            "review",
+            "shared",
+            "shared mailbox email signatures",
+            "signature",
+            "signatures",
+            "subject",
+            "team",
+            "usage",
+            "usage notes",
+            "website"
+          ],
+          "context_load": {
+            "application_pages": [
+              "email-newsletter"
+            ],
+            "fields": [
+              "purpose",
+              "formats",
+              "visual_recipe",
+              "copy_recipe",
+              "ai_rules",
+              "training_examples"
+            ],
+            "example_ids": [
+              "info-signature",
+              "events-signature",
+              "email-signatures-review-board"
+            ],
+            "max_examples": 3
+          },
+          "review_focus": [
+            "medium fit",
+            "visual recipe",
+            "copy recipe",
+            "AI rules"
+          ]
+        }
+      ],
       "channels": [],
       "personal_branding": []
     },
     "review_gates": [
+      "whole-piece copy review: apply guardrails.copy_derivation using this brand's own voice, evidence, reader and format; fix and read back the complete artifact",
       "strategy fit: output serves the matched Focus Star anchors",
       "voice fit: output follows identity voice and channel voice dial",
       "medium fit: output follows visual_recipe, copy_recipe, and ai_rules",
@@ -1884,7 +2195,7 @@
       "Member or sponsor stories showing concrete collaboration, partnership, or business lift",
       "Member proof across plant-touching and ancillary categories",
       "Member stories tied to access, learning, or opportunity",
-      "Page copy for Membership, Networking, Events, Mentorship, and Advocacy that proves the stronger positioning without overclaiming benefits",
+      "Page copy for Membership, Networking, Events, Mentorship, and Advocacy that proves the stronger Google Doc positioning without overclaiming benefits",
       "Proof of executive, investor, policymaker, sponsor, regional leader, and leadership-development participation before over-indexing those claims",
       "Proof of leadership development, mentorship participation, or program mechanics before presenting them as current benefits",
       "Proof that the Chamber provides advocacy, representation, and policy insight without claiming lobbying as the core activity",
@@ -1893,7 +2204,7 @@
       "Regional event participation and sponsor participation",
       "Signals that local value comes from local networking and events",
       "Testimonials from operators and service providers",
-      "Voice exemplars maintained as the canonical bank"
+      "Voice exemplars maintained in references/voice-exemplars.md as the canonical bank"
     ]
   },
   "retrieval_guidance": {

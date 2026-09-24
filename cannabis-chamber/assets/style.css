@@ -1,17 +1,17 @@
 
 
 :root {
-  --accent: #5A5CF9;
-  --accent-glow: rgba(90, 92, 249, 0.35);
-  --accent-soft: rgba(90, 92, 249, 0.06);
-  --dark: #18181B;
-  --dark-surface: #1D1D1D;
-  --light: #F5F5F7;
-  --white: #FFFFFF;
-  --text: #1A1A2E;
-  --muted: #8888A0;
-  --border: #E5E7EB;
-  --border-soft: #F0F0F5;
+  --accent: #5B6168;
+  --accent-glow: rgba(91, 97, 104, 0.24);
+  --accent-soft: rgba(91, 97, 104, 0.06);
+  --dark: #202326;
+  --dark-surface: #292D31;
+  --light: #F4F3F0;
+  --white: #FAF9F6;
+  --text: #202326;
+  --muted: #70767C;
+  --border: #D9DADD;
+  --border-soft: #ECEDEF;
   --ff-h: system-ui, sans-serif;
   --ff-b: system-ui, sans-serif;
 
@@ -80,9 +80,9 @@ main.content {
   width: 100%;
 }
 @media (max-width: 960px) {
-  .shell { grid-template-columns: 1fr; }
-  aside.sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px 28px; }
-  main.content { padding: 64px 28px 96px; }
+  .shell { grid-template-columns: minmax(0, 1fr); width: 100%; }
+  aside.sidebar { position: static; width: 100%; min-width: 0; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px 28px; }
+  main.content { width: 100%; min-width: 0; padding: 64px 28px 96px; }
 }
 
 

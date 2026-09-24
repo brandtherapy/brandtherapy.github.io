@@ -1,0 +1,64 @@
+{
+  "brand": "ccc",
+  "name": "The Cannabis Chamber of Commerce",
+  "version": "1.2.2",
+  "built_at": "2026-09-24T20:55:58+00:00",
+  "git_sha": "ad47f2e84a473314b798d39d396888b39d7cc8e5",
+  "authority": [
+    "IDENTITY.md##Voice",
+    "IDENTITY.md##Voice/on-voice-signals"
+  ],
+  "prerequisites": [],
+  "exemplars_gold_backed": false,
+  "principles": [
+    "Rational over emotional",
+    "Institutional over casual",
+    "Clear over clever",
+    "Transparent over polished",
+    "Authoritative over playful",
+    "Welcoming but selective",
+    "Serious without being cold",
+    "Explain the relevant standard and its business purpose",
+    "Plain business language over marketing language",
+    "Concise declarative sentences",
+    "Explain the business purpose with concrete facts and actions. A heading should name its subject or the decision the reader needs to make.",
+    "Use connected sentences. Avoid slogan pairs, fragment triplets and manufactured contrasts, including in short headings.",
+    "Operator-led practicality: speak with responsibility for outcomes and explain practical consequences"
+  ],
+  "banned_characters": [
+    "em-dash (U+2014)",
+    "en-dash (U+2013)"
+  ],
+  "banned_phrases": [
+    "\"Cannabis disruption\" / \"We're disrupting cannabis\"",
+    "\"Vibes\" as a measure of value",
+    "\"Family\" as vague community language",
+    "\"Welcome to the community\" without specifying who fits",
+    "\"Stoner\" / \"weed\" / \"420\" references in serious copy",
+    "\"Get seen\" / \"Stand out\" / visibility-first framing",
+    "Generic networking phrases (\"connect with industry insiders,\" \"tap into our network\")",
+    "\"Disrupt\" / \"unlock\" / \"leverage\" as marketing buzzwords"
+  ],
+  "signatures": [
+    "Long-form openers: state the subject and why it matters to the reader",
+    "Long-form closers: name the action the reader takes (apply, attend, contact)",
+    "The Chamber's institutional voice does not use first-person founder signatures"
+  ],
+  "exemplars": [
+    "Meet cannabis business owners and service providers at the next Chamber event.",
+    "Review the event details and register through the Chamber website.",
+    "What we need to get started"
+  ],
+  "observable_moves": [],
+  "self_check": [
+    "No em-dash (U+2014) or en-dash (U+2013) in public paragraph copy.",
+    "No antithetical two-beat AI cadence: 'not X, but Y,' 'The X was fine. The Y was missing,' 'Not A. Not B.'",
+    "Distinctive lines must carry this brand's hard rules above; cut decoration that does not.",
+    "Prefer the brand's stated posture over generic encouragement or consultant filler.",
+    "Dinner test: cut cute AI metaphors and lines the brand owner would not say out loud. This screens the thought, never the syntax.",
+    "Do not sand down an earned sharp diagnosis with apologetic hedges.",
+    "Humor is not regulated by type. A funny line passes only if the strategic point dies without it.",
+    "Reproduce an observable move, never transcript wording. Every sentence that ships is syntactically correct writing, not transcribed speech.",
+    "Load this pack for drafting; go to the brand's gold set when calibrating a new channel."
+  ]
+}

@@ -1,30 +1,52 @@
 <!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noai, noimageai">
-<title>Product · Cannabis Chamber Of Commerce Brand OS</title>
+<title>Product · Cannabis Chamber Of Commerce Brand Therapy OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700;800&family=Atkinson+Hyperlegible:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
   :root {
-    --accent: #505A66;
-    --accent-glow: rgba(80, 90, 102, 0.24);
-    --accent-soft: rgba(80, 90, 102, 0.07);
-    --text: #171A1F;
-    --muted: #6E7580;
+    --accent: #2D432B;
+    --accent-glow: rgba(45, 67, 43, 0.22);
+    --accent-soft: rgba(45, 67, 43, 0.06);
+    --text: #1C2420;
+    --muted: #6C6E61;
     --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
-    --border: #D9DEE5;
-    --light: #F3F5F7;
+    --border: #D9D1C1;
+    --light: #F1E8D8;
     --white: #FFFFFF;
-    --dark: #121417;
-    --dark-surface: #1B2026;
-    --ff-h: "Sora", system-ui, sans-serif;
-    --ff-b: "Atkinson Hyperlegible", system-ui, sans-serif;
-    --ff-accent: "Sora", system-ui, sans-serif;
+    --dark: #1C2420;
+    --dark-surface: #252E29;
+    --ff-h: "Outfit", system-ui, sans-serif;
+    --ff-b: "Public Sans", system-ui, sans-serif;
+    --ff-accent: "Outfit", system-ui, sans-serif;
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
     --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
@@ -38,33 +60,34 @@
 <aside class="sidebar">
   <div class="brand-mark">
     <div class="name">Cannabis Chamber Of Commerce</div>
-    <div class="meta">Brand OS</div>
+    <div class="meta">Brand Therapy OS</div>
   </div>
-  <nav class="nav-section" aria-label="Brand OS sections">
+  <nav class="nav-section" aria-label="Brand Therapy OS sections">
     <div class="label">Sections</div>
     <div class="nav-list">
 <a class="" href="../index.html">System Overview</a>
 <a href="../use.html">Use with AI</a>
 </div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
-<a href="index.html">Focus Star</a>
+<a href="index.html">Strategy</a>
 <a class="active" href="product.html">Product</a>
 <a href="people.html">People</a>
 <a href="purpose.html">Purpose</a>
 <a href="promise.html">Promise</a>
 <a href="personality.html">Personality</a>
 </div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
-<a href="../identity/index.html">Direction Three</a>
-<a href="../identity/exploration.html">Exploration</a>
+<a href="../identity/index.html">Common Ground</a>
 <a href="../identity/look-and-feel.html">Look &amp; Feel</a>
-<a href="../identity/voice.html">Voice</a>
 <a href="../identity/logo.html">Logo</a>
-<a href="../identity/signature.html">Signature</a>
+<a href="../identity/voice.html">Voice</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
+<a href="../application/index.html">Application Overview</a>
+<a href="../application/references.html">Reference Gallery</a>
 </div></details>
   </nav>
   <div class="toolbar-mini">
     <div class="row"><span>Section</span><strong>Strategy</strong></div>
     <div class="row"><span>Use</span><strong>AI + creative</strong></div>
-    <div class="row"><span>Center</span><strong>Standards</strong></div>
+    <div class="row"><span>Brand DNA</span><strong>Standards</strong></div>
   </div>
 </aside>
 
@@ -185,8 +208,18 @@
     <span>Section A · P1 · Brand Strategy</span>
     <span><a href="people.html">People →</a></span>
   </div>
-  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
+  <p class="footer-legal">This Brand Therapy OS is for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
 </div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        The Cannabis Chamber of Commerce (ccc)
+  Version:      1.2.2
+  Built at:     2026-09-24T20:55:58+00:00
+  Git SHA:      ad47f2e84a473314b798d39d396888b39d7cc8e5
+  Bundle hash:  sha256:b85fe602b8fe94041f3406e4749437bbce8c43d64cf7780d39c517fdb1b3ff37
+  Source:       brand-os/brands/cannabis-chamber/STRATEGY.md + IDENTITY.md
+-->
 </body>
 </html>

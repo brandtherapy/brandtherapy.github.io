@@ -1,30 +1,52 @@
 <!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noai, noimageai">
-<title>Look & Feel · Cannabis Chamber Of Commerce Brand OS</title>
+<title>Look & Feel · Cannabis Chamber Of Commerce Brand Therapy OS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700;800&family=Atkinson+Hyperlegible:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
   :root {
-    --accent: #505A66;
-    --accent-glow: rgba(80, 90, 102, 0.24);
-    --accent-soft: rgba(80, 90, 102, 0.07);
-    --text: #171A1F;
-    --muted: #6E7580;
+    --accent: #2D432B;
+    --accent-glow: rgba(45, 67, 43, 0.22);
+    --accent-soft: rgba(45, 67, 43, 0.06);
+    --text: #1C2420;
+    --muted: #6C6E61;
     --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
-    --border: #D9DEE5;
-    --light: #F3F5F7;
+    --border: #D9D1C1;
+    --light: #F1E8D8;
     --white: #FFFFFF;
-    --dark: #121417;
-    --dark-surface: #1B2026;
-    --ff-h: "Sora", system-ui, sans-serif;
-    --ff-b: "Atkinson Hyperlegible", system-ui, sans-serif;
-    --ff-accent: "Sora", system-ui, sans-serif;
+    --dark: #1C2420;
+    --dark-surface: #252E29;
+    --ff-h: "Outfit", system-ui, sans-serif;
+    --ff-b: "Public Sans", system-ui, sans-serif;
+    --ff-accent: "Outfit", system-ui, sans-serif;
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
     --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
@@ -38,33 +60,34 @@
 <aside class="sidebar">
   <div class="brand-mark">
     <div class="name">Cannabis Chamber Of Commerce</div>
-    <div class="meta">Brand OS</div>
+    <div class="meta">Brand Therapy OS</div>
   </div>
-  <nav class="nav-section" aria-label="Brand OS sections">
+  <nav class="nav-section" aria-label="Brand Therapy OS sections">
     <div class="label">Sections</div>
     <div class="nav-list">
 <a class="" href="../index.html">System Overview</a>
 <a href="../use.html">Use with AI</a>
 </div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
-<a href="../strategy/index.html">Focus Star</a>
+<a href="../strategy/index.html">Strategy</a>
 <a href="../strategy/product.html">Product</a>
 <a href="../strategy/people.html">People</a>
 <a href="../strategy/purpose.html">Purpose</a>
 <a href="../strategy/promise.html">Promise</a>
 <a href="../strategy/personality.html">Personality</a>
 </div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
-<a href="index.html">Direction Three</a>
-<a href="exploration.html">Exploration</a>
+<a href="index.html">Common Ground</a>
 <a class="active" href="look-and-feel.html">Look &amp; Feel</a>
-<a href="voice.html">Voice</a>
 <a href="logo.html">Logo</a>
-<a href="signature.html">Signature</a>
+<a href="voice.html">Voice</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">C</span><span class="group-label">Brand Application</span></summary><div class="nav-list">
+<a href="../application/index.html">Application Overview</a>
+<a href="../application/references.html">Reference Gallery</a>
 </div></details>
   </nav>
   <div class="toolbar-mini">
     <div class="row"><span>Section</span><strong>Identity</strong></div>
     <div class="row"><span>Use</span><strong>Visual + voice</strong></div>
-    <div class="row"><span>Center</span><strong>Standards</strong></div>
+    <div class="row"><span>Brand DNA</span><strong>Standards</strong></div>
   </div>
 </aside>
 
@@ -79,7 +102,7 @@
 .lf-section-sub { font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
 .lf-section-desc { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 640px; margin: 0; }
 .lf-palette-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 0; border: 1px solid var(--border); margin: 32px 0 0; }
-@media (max-width: 700px) { .lf-palette-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 700px) { .lf-palette-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .lf-swatch { aspect-ratio: 1; position: relative; display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; border-right: 1px solid var(--border); }
 .lf-swatch:last-child { border-right: none; }
 .lf-swatch-label { font-family: var(--ff-b); font-size: 9px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 4px; }
@@ -117,7 +140,7 @@
         <p class="lf-section-desc">Five colors measured from the approved D2 source, plus ink. Forest anchors and is the sole accent; teal and coral exist because the mark's modules carry them; brass belongs to the dot. Ivory is the warm field, white the working canvas.</p>
       </div>
     </div>
-    <div class="lf-palette-grid"><div class="lf-swatch light-text" style="background:#2D432B;" role="img" aria-label="Forest · Anchor &amp; accent color, hex #2D432B"><div class="lf-swatch-label">Forest · Anchor &amp; accent</div><div class="lf-swatch-hex">#2D432B</div></div><div class="lf-swatch light-text" style="background:#2A5D5B;" role="img" aria-label="Teal · Module color color, hex #2A5D5B"><div class="lf-swatch-label">Teal · Module color</div><div class="lf-swatch-hex">#2A5D5B</div></div><div class="lf-swatch light-text" style="background:#D06E53;" role="img" aria-label="Coral · Module color color, hex #D06E53"><div class="lf-swatch-label">Coral · Module color</div><div class="lf-swatch-hex">#D06E53</div></div><div class="lf-swatch dark-text" style="background:#AA8952;" role="img" aria-label="Brass · The dot color, hex #AA8952"><div class="lf-swatch-label">Brass · The dot</div><div class="lf-swatch-hex">#AA8952</div></div><div class="lf-swatch dark-text" style="background:#F1E8D8;" role="img" aria-label="Ivory · Field color, hex #F1E8D8"><div class="lf-swatch-label">Ivory · Field</div><div class="lf-swatch-hex">#F1E8D8</div></div><div class="lf-swatch light-text" style="background:#1C2420;" role="img" aria-label="Ink · Text color, hex #1C2420"><div class="lf-swatch-label">Ink · Text</div><div class="lf-swatch-hex">#1C2420</div></div></div>
+    <div class="lf-palette-grid"><div class="lf-swatch light-text" style="background:#2D432B;" role="img" aria-label="Forest · Anchor &amp; accent color, hex #2D432B"><div class="lf-swatch-label">Forest · Anchor &amp; accent</div><div class="lf-swatch-hex">#2D432B</div></div><div class="lf-swatch light-text" style="background:#2A5D5B;" role="img" aria-label="Teal · Module color color, hex #2A5D5B"><div class="lf-swatch-label">Teal · Module color</div><div class="lf-swatch-hex">#2A5D5B</div></div><div class="lf-swatch light-text" style="background:#D06E53;" role="img" aria-label="Coral · Module color color, hex #D06E53"><div class="lf-swatch-label">Coral · Module color</div><div class="lf-swatch-hex">#D06E53</div></div><div class="lf-swatch dark-text" style="background:#9C7C46;" role="img" aria-label="Brass · The dot color, hex #9C7C46"><div class="lf-swatch-label">Brass · The dot</div><div class="lf-swatch-hex">#9C7C46</div></div><div class="lf-swatch dark-text" style="background:#F1E8D8;" role="img" aria-label="Ivory · Field color, hex #F1E8D8"><div class="lf-swatch-label">Ivory · Field</div><div class="lf-swatch-hex">#F1E8D8</div></div><div class="lf-swatch light-text" style="background:#1C2420;" role="img" aria-label="Ink · Text color, hex #1C2420"><div class="lf-swatch-label">Ink · Text</div><div class="lf-swatch-hex">#1C2420</div></div></div>
   </section>
 
   
@@ -136,6 +159,7 @@
         <div style="font-family:var(--ff-h);font-weight:400;font-size:38px;letter-spacing:0;color:var(--text);margin-bottom:16px;line-height:1;">Outfit</div>
         <p style="font-family:var(--ff-b);font-size:13px;color:var(--muted);line-height:1.6;margin:0;">Use: brand headlines, expressive lines, source-board phrases, footer promise, and warm high-touch moments.</p>
       </div>
+      
       <div style="padding:32px 36px;border-right:1px solid var(--border);">
         <div style="font-family:var(--ff-b);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Editorial echo</div>
         <div style="font-family:var(--ff-accent);font-weight:400;font-size:32px;letter-spacing:0;color:var(--text);margin-bottom:16px;">Outfit</div>
@@ -159,7 +183,30 @@
         <p class="lf-section-desc">Non-negotiable. These rules exist to maintain visual coherence across every touchpoint.</p>
       </div>
     </div>
-    <div class="lf-rules-grid"><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Lead with whitespace on ivory or white</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Use the constructed lockups for every public-facing name treatment</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Hold the master mark down to 32 px; the favicon renders it at 48 / 32 / 24 px (no separate small variant)</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Bold the load-bearing phrases (2-4 per long-form section)</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Use sharp 90-degree corners on every layout element</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Photograph members in serious business settings (boardrooms, conferences, facilities)</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use em-dashes (U+2014) or en-dashes (U+2013) in public paragraph copy</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Round corners or echo the mark's circles as decorative UI bubbles</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Introduce a third typeface</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Recolor, rotate, mirror, or restroke the mark; never rebuild it from a font</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Place the color mark on coral, teal, brass, or photographic backgrounds</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Set "CCC" as a public wordmark or headline brand name</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use cannabis-leaf graphics as a brand signal</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use stoner aesthetics, neon, or hype graphics</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use dark canvas as default</p></div></div>
+    <div class="lf-rules-grid"><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Lead with whitespace on ivory or white</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Use the constructed lockups for every public-facing name treatment</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Swap to the small variant below 32 px; never render below 24 px</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Bold the load-bearing phrases (2-4 per long-form section)</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Use sharp 90-degree corners on every layout element</p></div><div class="lf-rule-cell"><div class="lf-rule-kind">Do</div><p>Photograph members in serious business settings (boardrooms, conferences, facilities)</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use em-dashes (U+2014) or en-dashes (U+2013) in public paragraph copy</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Round corners or echo the mark's circles as decorative UI bubbles</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Introduce a third typeface</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Recolor, rotate, mirror, or restroke the mark; never rebuild it from a font</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Place the color mark on coral, teal, brass, or photographic backgrounds</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Set "CCC" as a public wordmark or headline brand name</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use cannabis-leaf graphics as a brand signal</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use stoner aesthetics, neon, or hype graphics</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use dark canvas as default</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Resemble Verdant Strategies in palette dominance, composition, typography,</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use starbursts, radiating spokes, halos, compass forms, flower forms, or</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use coral or terracotta as the dominant application color</p></div><div class="lf-rule-cell dont"><div class="lf-rule-kind">Don't</div><p>Use centered boutique-consultancy compositions or luxury editorial tracking</p></div></div>
+  </section>
+
+  
+  <section class="lf-section" aria-labelledby="lf-signature">
+    <div class="lf-section-head">
+        <div class="lf-section-num">Rule</div>
+      <div>
+        <div class="lf-section-sub">System · Signature</div>
+        <h2 id="lf-signature">Signature</h2>
+        <p class="lf-section-desc">How signature lines behave on a page, a flyer, or a motion field.</p>
+      </div>
+    </div>
+    <div style="font-family:var(--ff-b);font-size:15px;line-height:1.7;color:var(--text);max-width:760px;"><p>The signature lines are continuous routes. A route must never appear to start or stop in the middle of an uninterrupted background.</p>
+<p>Every route entering or leaving a flyer, a page, or a motion field must meet one of these conditions:</p>
+<ul>
+<li>It continues beyond the visible artboard edge and is cropped there.</li>
+<li>It passes behind an opaque surface with a visibly different color or image, so its disappearance reads as occlusion.</li>
+<li>It reaches a clearly contrasting divider that defines the edge of the signature field.</li>
+</ul>
+<p>A canvas edge, section boundary, or mask on the same background color does not count as a visible edge. Never expose flat line ends against that continuous surface. This applies at the top, bottom, and sides, including where navigation meets a hero, where a sticky field enters or exits, and where adjacent sections share the same background.</p>
+<p>Extend route geometry past the field bounds. Clip the whole field inside its owning section and keep the following surfaces opaque. A sticky or fixed layer must never spill over neighboring copy. Preserve uniform scaling and the approved circular nodes and their separation rings.</p>
+<p>Animated impulses may taper along the continuous guide routes. Their motion envelope does not authorize cutting off the underlying route. The approved node separation rings remain intentional parts of the device.</p>
+<p>Read back every outer edge at desktop and mobile sizes. For motion, inspect entry, the middle, exit, and reverse scrolling. Check both header-to-signature and signature-to-content transitions. Reject any composition where a route looks severed within a continuous background.</p></div>
   </section>
 
   
@@ -172,25 +219,56 @@
         <p class="lf-section-desc">How real photos and AI-generated imagery should look.</p>
       </div>
     </div>
-    <div style="font-family:var(--ff-b);font-size:15px;line-height:1.7;color:var(--text);max-width:760px;"><p><strong>Style:</strong> Industrial minimalism. Boardrooms, conference floors, member-led panel discussions, facility scale, product as artifact (not consumer SKU shots). Editorial photojournalism over staged marketing.</p>
-<p><strong>Tone:</strong> Serious, premium, business-first. Subjects are operators at work, not consumers. Lighting is natural or directional studio; never moody nightclub or warm bar-lit.</p>
-<p><strong>Modes:</strong></p>
+    <div style="font-family:var(--ff-b);font-size:15px;line-height:1.7;color:var(--text);max-width:760px;"><p><strong>Style:</strong> Common Ground business documentary. Bright rooms, real Chamber moments, member-led panels, chapter workshops, conference stages, expo booths, credentials, sponsor walls, and follow-up conversations. The camera should make membership feel practical, active, and human.</p>
+<p><strong>Tone:</strong> People-first and business-serious. Subjects are operators, partners, chapter leaders, speakers, sponsors, and members doing useful work together, not consumers posing around cannabis products. The feeling is warm, successful, professional, and alive without becoming casual party photography.</p>
+<p><strong>Lighting and color:</strong> Light-forward is the default. Use natural daylight, clean event light, or crisp even studio light. Ivory, white, forest, teal, coral, and brass may appear through rooms, wardrobe, graphics, pins, badges, and printed materials. Dark green or ink can anchor contrast, but dark surfaces are moments only. Never use dark blue, navy-first settings, moody nightclub lighting, or a dark-background default.</p>
+<p><strong>Casting:</strong> Business hipsters and hippies. Everyone should be business-oriented and self-aware, but visibly individual: tattoos, braids, dreads, vintage pieces, turquoise, bolo ties, statement glasses, textured jackets, leopard print, and other real-industry signals are welcome when they feel earned. Casual is the default register. Suits are the exception, used only when the role or setting calls for formal business presence.</p>
+<p><strong>Approved registers:</strong></p>
 <ul>
-<li><strong>Convening mode:</strong> people in serious conversation. Conference rooms, panels, two-person dialogues. Hands gesturing toward outcomes.</li>
-<li><strong>Facility mode:</strong> scale, infrastructure, operations. Production floors, distribution centers, regulatory environments.</li>
-<li><strong>Standards mode:</strong> abstract structural imagery: patterns, geometric forms, architectural lines. Used for thematic section breaks.</li>
+<li><strong>Daylight Documentary:</strong> candid operators mid-deal in airy rooms. Natural</li>
 </ul>
+<p>window light, 35mm-feeling photojournalism, active conversation, laptops, notebooks, badges, and practical follow-up. The workhorse register for web, decks, event recaps, and newsletters.</p>
+<ul>
+<li><strong>Membership Pride Portrait:</strong> members photographed on ivory or clean warm</li>
+</ul>
+<p>fields with direct gaze and crisp light. Use for board pages, member spotlights, chapter leaders, sponsor recognition, and "faces of the industry" systems.</p>
+<ul>
+<li><strong>Connection Close-up:</strong> hands, handshakes, badges, pins, shared documents,</li>
+</ul>
+<p>business cards, marked-up agendas, and lanyards. The connection is the subject. Use for campaigns, section breaks, social crops, and detail-led storytelling.</p>
+<ul>
+<li><strong>Bright Scale + People:</strong> facilities, expo floors, chapter rooms, sponsor</li>
+</ul>
+<p>areas, and conference environments shot wide and high-key, always with people active in frame. Show business lift and industry legitimacy without heavy industrial gravity.</p>
+<p><strong>Application moments:</strong> Social squares, flyers, keynote stages, networking mixers, workshops, webinar promos, member recognition, panel discussions, member-pin details, and expo booths may all use photography when the scene shows business connection in action. Public-facing assets always carry the full Cannabis Chamber Of Commerce wordmark. "CCC" remains internal shorthand only.</p>
 <p><strong>Forbidden imagery:</strong></p>
 <ul>
-<li>Cannabis-leaf graphics or imagery as primary visual</li>
-<li>Stoner aesthetic (smoke, hippie cues, tie-dye, hands rolling joints)</li>
-<li>Consumer cannabis product shots (vape pens on display, edibles as candy, etc.)</li>
-<li>Lifestyle/party photography</li>
-<li>Stock-photo group selfies, "happy diverse team" cliches</li>
-<li>Warm gradient backdrops</li>
-<li>"Happy plant" / "growing plant" imagery as visual metaphor</li>
+<li>Cannabis-leaf graphics, leaf-as-hero imagery, or plant metaphors as the brand</li>
 </ul>
-<p><strong>Editorial default:</strong> light color overall, restrained accent, business documentary register.</p></div>
+<p>signal</p>
+<ul>
+<li>Leaf-shaped personal accessories unless Florian explicitly approves them for</li>
+</ul>
+<p>a specific use</p>
+<ul>
+<li>Consumption cues, smoke, joints, rolling papers, vape pens, edibles as candy,</li>
+</ul>
+<p>dispensary shelf glamour, or product-as-lifestyle imagery</p>
+<ul>
+<li>Stoner, 420, psychedelic, tie-dye, hippie-costume, neon, or haze aesthetics</li>
+<li>Celebrity likenesses or images that read as a real public figure</li>
+<li>Lifestyle party photography, cocktail-forward networking, clinking glasses,</li>
+</ul>
+<p>nightclub lighting, or "deals over drinks" visuals</p>
+<ul>
+<li>Stock-photo group selfies, generic "happy diverse team" cliches, stiff</li>
+</ul>
+<p>corporate handshake stock, or faceless association imagery</p>
+<ul>
+<li>Dark blue, navy default pages, old-money private-club mood, startup hardware</li>
+</ul>
+<p>cues, wellness cannabis, or Verdant-like coral prestige styling</p>
+<p><strong>Editorial default:</strong> bright overall, people visible, business action clear, and Chamber standards present through rooms, roles, materials, and full-name brand applications.</p></div>
   </section>
 
   
@@ -203,17 +281,27 @@
         <p class="lf-section-desc">What this brand is visually and categorically NOT, framed as anti-targets for AI image generation, layout work, and brand positioning.</p>
       </div>
     </div>
-    <div class="lf-anti-list"><div class="lf-anti-item"><h3>Consumer cannabis brand aesthetics</h3><p>Bright greens, leaf graphics, smoke effects, party scenes, dispensary product photography. The Chamber serves business operators, not consumers.</p></div><div class="lf-anti-item"><h3>Stoner culture aesthetics</h3><p>Tie-dye, peace signs, hippie typography, smoke iconography, 420 references. The Chamber is institutional, not subcultural.</p></div><div class="lf-anti-item"><h3>Cannabis lobby/advocacy aesthetics (old guard)</h3><p>Earnest activism graphics, hand-drawn protest energy, "legalize" iconography. The Chamber is a business body, not an activism group.</p></div><div class="lf-anti-item"><h3>Networking-event aesthetics</h3><p>Cocktail glasses clinking, neon "MIXER" overlays, "swipe right for cannabis" tropes. The Chamber convenes serious work, not parties.</p></div><div class="lf-anti-item"><h3>Generic trade-association aesthetics</h3><p>Stiff corporate stock photography, gavel-and-flag iconography, "Established 1923" badges. The Chamber is modern and operator-led, not stuffy.</p></div><div class="lf-anti-item"><h3>Wellness/healing cannabis aesthetics</h3><p>Soft pastels, leaf-as-medicine, "your wellness journey." The Chamber is business, not therapy.</p></div></div>
+    <div class="lf-anti-list"><div class="lf-anti-item"><h3>Verdant Strategies</h3><p>This is a named hard exclusion because it is a prior</p></div><div class="lf-anti-item"><h3>Consumer cannabis brand aesthetics</h3><p>Bright greens, leaf graphics, smoke effects, party scenes, dispensary product photography. The Chamber serves business operators, not consumers.</p></div><div class="lf-anti-item"><h3>Stoner culture aesthetics</h3><p>Tie-dye, peace signs, hippie typography, smoke iconography, 420 references. The Chamber is institutional, not subcultural.</p></div><div class="lf-anti-item"><h3>Cannabis lobby/advocacy aesthetics (old guard)</h3><p>Earnest activism graphics, hand-drawn protest energy, "legalize" iconography. The Chamber is a business body, not an activism group.</p></div><div class="lf-anti-item"><h3>Networking-event aesthetics</h3><p>Cocktail glasses clinking, neon "MIXER" overlays, "swipe right for cannabis" tropes. The Chamber convenes serious work, not parties.</p></div><div class="lf-anti-item"><h3>Generic trade-association aesthetics</h3><p>Stiff corporate stock photography, gavel-and-flag iconography, "Established 1923" badges. The Chamber is modern and operator-led, not stuffy.</p></div><div class="lf-anti-item"><h3>Wellness/healing cannabis aesthetics</h3><p>Soft pastels, leaf-as-medicine, "your wellness journey." The Chamber is business, not therapy.</p></div></div>
   </section>
 
 
 
   <div class="footer-nav">
     <span>Section B · Look & Feel · Brand Identity</span>
-    <span><a href="voice.html">Voice →</a></span>
+    <span><a href="logo.html">Logo →</a></span>
   </div>
-  <p class="footer-legal">© 2026 Florian P. Consulting. All rights reserved. This Brand OS is provided for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
+  <p class="footer-legal">This Brand Therapy OS is for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
 </main>
 </div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        The Cannabis Chamber of Commerce (ccc)
+  Version:      1.2.2
+  Built at:     2026-09-24T20:55:58+00:00
+  Git SHA:      ad47f2e84a473314b798d39d396888b39d7cc8e5
+  Bundle hash:  sha256:b85fe602b8fe94041f3406e4749437bbce8c43d64cf7780d39c517fdb1b3ff37
+  Source:       brand-os/brands/cannabis-chamber/DIRECTIONS.md + STRATEGY.md + IDENTITY.md
+-->
 </body>
 </html>

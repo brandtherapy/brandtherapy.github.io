@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "purpose": "Route day-to-day brand tasks to the smallest useful context pack.",
-  "operating_principle": "The user should not choose Brand OS pages. The agent classifies the request, loads the compact core, adds only matching Section C/D slices, generates, then runs review gates.",
+  "operating_principle": "The user should not choose Brand Therapy OS pages. The agent classifies the request, loads the compact core, applies any audience-experience lens before Voice, adds only matching identity, character, channel, and application slices, generates, then runs review gates.",
   "context_budget": {
     "max_application_pages": 2,
     "max_channels": 2,
@@ -13,11 +13,11 @@
     "source.bundle_hash",
     "guardrails",
     "ai_first_generation_thread",
+    "identity.voice",
     "identity.colors",
     "identity.typography",
     "identity.creative_direction.slider_signals",
-    "directions.options[].slider_signals",
-    "identity.voice"
+    "directions.options[].slider_signals"
   ],
   "conditional_load": [
     "strategy.edges filtered by matched channel source_anchors",
@@ -43,11 +43,153 @@
   ],
   "routes": {
     "composed": [],
-    "mediums": [],
+    "mediums": [
+      {
+        "id": "medium.print",
+        "kind": "medium",
+        "match_terms": [
+          "badge",
+          "benefits",
+          "business card",
+          "collateral",
+          "comparison",
+          "contact",
+          "contact cta",
+          "cta",
+          "export",
+          "five",
+          "five tiers",
+          "full",
+          "full-page png review export",
+          "letter",
+          "letter pdf",
+          "letter-page preview",
+          "letterhead",
+          "logo",
+          "logo spacing",
+          "membership",
+          "membership collateral",
+          "membership one-pager and print-ready collateral",
+          "membership one-pager, pdf",
+          "membership one-pager, review png",
+          "membership promise",
+          "membership-one-pager-pdf",
+          "membership-one-pager-preview",
+          "one",
+          "page",
+          "pager",
+          "pdf",
+          "png",
+          "preview",
+          "print",
+          "promise",
+          "ready",
+          "review",
+          "spacing",
+          "tier",
+          "tier comparison",
+          "tiers"
+        ],
+        "context_load": {
+          "application_pages": [
+            "print"
+          ],
+          "fields": [
+            "purpose",
+            "formats",
+            "visual_recipe",
+            "copy_recipe",
+            "ai_rules",
+            "training_examples"
+          ],
+          "example_ids": [
+            "membership-one-pager-pdf",
+            "membership-one-pager-preview"
+          ],
+          "max_examples": 2
+        },
+        "review_focus": [
+          "medium fit",
+          "visual recipe",
+          "copy recipe",
+          "AI rules"
+        ]
+      },
+      {
+        "id": "medium.email-newsletter",
+        "kind": "medium",
+        "match_terms": [
+          "board",
+          "brand therapy weekly",
+          "combined",
+          "combined review board",
+          "email",
+          "email signatures",
+          "email signatures review board",
+          "email-newsletter",
+          "email-signatures-review-board",
+          "events",
+          "events team label",
+          "events-signature",
+          "events@ email signature",
+          "events@ png",
+          "events@ signature",
+          "inbox",
+          "info",
+          "info team label",
+          "info-signature",
+          "info@ email signature",
+          "info@ png",
+          "info@ signature",
+          "label",
+          "logo",
+          "mailbox",
+          "newsletter",
+          "notes",
+          "png",
+          "review",
+          "shared",
+          "shared mailbox email signatures",
+          "signature",
+          "signatures",
+          "subject",
+          "team",
+          "usage",
+          "usage notes",
+          "website"
+        ],
+        "context_load": {
+          "application_pages": [
+            "email-newsletter"
+          ],
+          "fields": [
+            "purpose",
+            "formats",
+            "visual_recipe",
+            "copy_recipe",
+            "ai_rules",
+            "training_examples"
+          ],
+          "example_ids": [
+            "info-signature",
+            "events-signature",
+            "email-signatures-review-board"
+          ],
+          "max_examples": 3
+        },
+        "review_focus": [
+          "medium fit",
+          "visual recipe",
+          "copy recipe",
+          "AI rules"
+        ]
+      }
+    ],
     "channels": [],
     "personal_branding": []
   },
   "review_gates": [
+    "whole-piece copy review: apply guardrails.copy_derivation using this brand's own voice, evidence, reader and format; fix and read back the complete artifact",
     "strategy fit: output serves the matched Focus Star anchors",
     "voice fit: output follows identity voice and channel voice dial",
     "medium fit: output follows visual_recipe, copy_recipe, and ai_rules",
