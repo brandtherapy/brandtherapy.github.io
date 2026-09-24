@@ -9,9 +9,9 @@
   },
   "source": {
     "source_slug": "cannabis-chamber",
-    "build_timestamp": "2026-09-24T23:07:33+00:00",
-    "git_sha": "caeb241ff797fec49d0b9b517241be66622bb05d",
-    "bundle_hash": "sha256:17fcb8c5e9b8cd441f418f68e57fc7377b3d2ff82b50f0401dfa63f16e27097d",
+    "build_timestamp": "2026-09-24T23:12:36+00:00",
+    "git_sha": "7ef7e6ebc98d44c3f2437162aba838b5436df6fe",
+    "bundle_hash": "sha256:81adaa52386eccccab1cdd7be935531d8326a64b7dcdc3af900d2b00d1017c0d",
     "source_hashes": {
       "STRATEGY.md": "sha256:6022dca9dd8236878eb439798d77893cffddb8c8da03bc79b15d0216d85c7332",
       "IDENTITY.md": "sha256:6580b2e7ed49b5ba240add590d7b43a031d09f4a4f09501d18aea79180cd6b28",
@@ -24,7 +24,7 @@
       "references/signature-rules.md": "sha256:0c2dea3cebcf3fd624740dc877ada3a30ceea5c60a53eb972b1dffdabdf703a5",
       "references/verdant-separation.md": "sha256:827493e7142fdbea59b9422a00a31768344843d4beb192798a5e4a791589e06c",
       "references/voice-exemplars.md": "sha256:cf2f40ad361732177a978406c6040cd62942f237ce9a12530e9e419d1939eab4",
-      "images_manifest": "sha256:099701c342c65989b9b9125b2134e7ef5cf8991d4b2cdfe04611301e85a760b3",
+      "images_manifest": "sha256:0eef4f955a6720a36bd36e0bc9a7cfe9eca41a5d7b30c60e7d0ce130ab7d7a98",
       "application_references_manifest": "sha256:7403385041b538bf309677bc105d1fbc0308da975438612a3efb3b8219479d35"
     },
     "source_order": [
