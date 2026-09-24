@@ -2,8 +2,8 @@
   "brand": "ccc",
   "name": "The Cannabis Chamber of Commerce",
   "version": "1.2.2",
-  "built_at": "2026-09-24T23:12:36+00:00",
-  "git_sha": "7ef7e6ebc98d44c3f2437162aba838b5436df6fe",
+  "built_at": "2026-09-24T23:20:33+00:00",
+  "git_sha": "754a225b8f65572caf0365c2c392402e1a708058",
   "authority": [
     "IDENTITY.md##Voice",
     "IDENTITY.md##Voice/on-voice-signals"
