@@ -577,7 +577,7 @@ logo_marks:
       png: images/logo/ccc-mark-mono.png
       background: white
     - label: Inverse mark
-      note: Ivory mark on forest. The PNG is already on forest, with a small margin of the same color.
+      note: Ivory mark for forest backgrounds. The green behind it is only for the preview. The PNG and SVG downloads are transparent.
       image: images/logo/ccc-mark-inverse.svg
       png: images/logo/ccc-mark-inverse.png
       background: forest
