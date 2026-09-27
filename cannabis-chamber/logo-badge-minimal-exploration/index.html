@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cannabis Chamber Minimal Badge Logo Exploration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #153923;
+      --muted: #657268;
+      --paper: #fbfaf4;
+      --white: #ffffff;
+      --line: #d9dfd5;
+      --soft: #eef1ea;
+      --green: #16482e;
+      --teal: #176a68;
+      --coral: #c96d4d;
+      --gold: #bd9638;
+      --charcoal: #171915;
+      font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+    }
+
+    main {
+      width: min(1560px, calc(100vw - 36px));
+      margin: 0 auto;
+      padding: 42px 0 84px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: end;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 28px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Sora", system-ui, sans-serif;
+      letter-spacing: 0;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 76px);
+      line-height: .95;
+      max-width: 980px;
+    }
+
+    h2 {
+      font-size: clamp(24px, 3vw, 42px);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    strong { color: var(--ink); }
+
+    .meta {
+      display: grid;
+      justify-items: end;
+      gap: 6px;
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: right;
+      letter-spacing: 0;
+    }
+
+    .meta strong {
+      color: var(--green);
+    }
+
+    .summary,
+    .read-grid,
+    .board-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .summary {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-bottom: 34px;
+    }
+
+    .summary-item,
+    .read-card,
+    .board-card,
+    .reference-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .summary-item {
+      min-height: 128px;
+      padding: 16px;
+    }
+
+    .summary-item b,
+    .read-card b,
+    .board-card b {
+      display: block;
+      color: var(--gold);
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      letter-spacing: 0;
+    }
+
+    .section {
+      margin-top: 42px;
+    }
+
+    .reference-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, .62fr);
+      gap: 16px;
+      padding: 12px;
+      align-items: stretch;
+    }
+
+    .reference-card img,
+    .board-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .reference-copy {
+      display: grid;
+      align-content: start;
+      gap: 12px;
+      padding: 18px;
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .reference-copy h3,
+    .reference-copy p {
+      color: var(--white);
+    }
+
+    .reference-copy ul,
+    .read-card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .reference-copy li {
+      padding: 10px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .18);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .board-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .board-card {
+      padding: 12px;
+    }
+
+    .board-copy {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, .45fr);
+      gap: 18px;
+      padding: 12px 2px 2px;
+      align-items: start;
+    }
+
+    .read-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .read-card {
+      padding: 16px;
+      min-height: 188px;
+    }
+
+    .read-card li {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .read-card li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      position: absolute;
+      left: 0;
+      top: .55em;
+      border-radius: 99px;
+      background: var(--gold);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chip {
+      display: inline-flex;
+      min-height: 24px;
+      align-items: center;
+      padding: 4px 7px;
+      border: 1px solid var(--line);
+      color: var(--green);
+      background: var(--paper);
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .warning {
+      border-color: rgba(201, 109, 77, .45);
+      background: #fff8f4;
+    }
+
+    .warning b {
+      color: var(--coral);
+    }
+
+    .path {
+      display: inline-flex;
+      margin-top: 10px;
+      padding: 6px 8px;
+      max-width: 100%;
+      background: var(--soft);
+      color: var(--green);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11px;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 1120px) {
+      header,
+      .summary,
+      .reference-card,
+      .board-copy,
+      .read-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .meta {
+        justify-items: start;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Minimal Badge Logo Exploration</h1>
+      <div class="meta">
+        <span><strong>Status</strong> Separate Branch</span>
+        <span><strong>D2</strong> Protected</span>
+        <span><strong>Mode</strong> Flat Raster Boards</span>
+      </div>
+    </header>
+
+    <div class="summary" aria-label="Exploration boundary summary">
+      <div class="summary-item">
+        <b>Source Lock</b>
+        <p>D2 is still the only approved route. This page explores a different badge path and does not replace it.</p>
+      </div>
+      <div class="summary-item">
+        <b>D2 Feedback</b>
+        <p>The approved source works because one C endpoint at a time resolves against the center dot.</p>
+      </div>
+      <div class="summary-item">
+        <b>New Prompt</b>
+        <p>Three same-direction C forms, nested or progressively smaller, with optional subtle leaf space.</p>
+      </div>
+      <div class="summary-item">
+        <b>Method</b>
+        <p>Black and white first, then restrained flat color. No texture, no pins, no stationery in this pass.</p>
+      </div>
+    </div>
+
+    <section class="section" aria-label="Protected D2 reference">
+      <h2>Protected D2 Reference</h2>
+      <div class="reference-card">
+        <img src="../images/generated-boards/tribe-v9-logo-ignition-pin-system.png" alt="Approved D2 source board">
+        <div class="reference-copy">
+          <h3>Do Not Spoil This Route</h3>
+          <p>The active D2 source remains the approved visual reference. The fresh replication test is not source.</p>
+          <ul>
+            <li>Keep the gold dot as the connection point and catalyst.</li>
+            <li>One C endpoint should relate to the dot at a time.</li>
+            <li>The C endpoint curve should feel tangent to the dot's circle.</li>
+            <li>Do not aim every C toward the center unless selected as a new construction idea.</li>
+            <li>Do not use this D2 asset as a dumping ground for new exploration.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Generated boards">
+      <h2>New Badge Branch</h2>
+      <div class="board-grid">
+        <figure class="board-card">
+          <img src="../images/generated-boards/badge-minimal-exploration/badge-minimal-bw-contrast-sheet-2026-06-05.png" alt="Black and white minimal badge contrast sheet">
+          <figcaption class="board-copy">
+            <div>
+              <b>Board 1: Contrast Control</b>
+              <p>Useful for pure black-and-white read, but too many cells lean target, radar, or signal icon. This is a control sheet, not the lead direction.</p>
+              <span class="path">images/generated-boards/badge-minimal-exploration/badge-minimal-bw-contrast-sheet-2026-06-05.png</span>
+            </div>
+            <div class="chips">
+              <span class="chip">B/W First</span>
+              <span class="chip">Flat</span>
+              <span class="chip">Watch Target Read</span>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="board-card">
+          <img src="../images/generated-boards/badge-minimal-exploration/badge-minimal-three-c-badge-sheet-2026-06-05.png" alt="Three C same direction minimal badge sheet">
+          <figcaption class="board-copy">
+            <div>
+              <b>Board 2: Strongest Badge Branch</b>
+              <p>This is the closest to the new ask. A1, A2, A3, C1, C4, and C5 are the best candidates to inspect. B2 and C3 make the leaf too explicit.</p>
+              <span class="path">images/generated-boards/badge-minimal-exploration/badge-minimal-three-c-badge-sheet-2026-06-05.png</span>
+            </div>
+            <div class="chips">
+              <span class="chip">Same Direction C</span>
+              <span class="chip">Nested Scale</span>
+              <span class="chip">Badge Logic</span>
+              <span class="chip">Best Sheet</span>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="board-card">
+          <img src="../images/generated-boards/badge-minimal-exploration/badge-minimal-flat-color-sheet-2026-06-05.png" alt="Flat color minimal badge exploration sheet">
+          <figcaption class="board-copy">
+            <div>
+              <b>Board 3: Restrained Color Read</b>
+              <p>Useful for palette behavior. E1, F1, F3, G2, and F4 have the best next-round potential. Watch label order, target read, and overly visible leaf hints.</p>
+              <span class="path">images/generated-boards/badge-minimal-exploration/badge-minimal-flat-color-sheet-2026-06-05.png</span>
+            </div>
+            <div class="chips">
+              <span class="chip">Forest</span>
+              <span class="chip">Teal</span>
+              <span class="chip">Gold Dot</span>
+              <span class="chip">Coral Restraint</span>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Current read">
+      <h2>Current Read</h2>
+      <div class="read-grid">
+        <div class="read-card">
+          <b>Carry Forward</b>
+          <ul>
+            <li>Board 2 A1, A2, A3, C1, C4, and C5.</li>
+            <li>Board 3 E1, F1, F3, G2, and F4.</li>
+            <li>Nested three-C badge logic with flat black-and-white discipline.</li>
+          </ul>
+        </div>
+        <div class="read-card warning">
+          <b>Reject Or Watch</b>
+          <ul>
+            <li>Target, radar, Wi-Fi, and generic signal reads.</li>
+            <li>Literal leaf forms in Board 2 B2, Board 2 C3, Board 3 F3, and Board 3 G4.</li>
+            <li>Any mark that becomes a single C instead of three C components.</li>
+          </ul>
+        </div>
+        <div class="read-card">
+          <b>Next Round Prompt</b>
+          <ul>
+            <li>Refine only the strongest nested badge candidates.</li>
+            <li>Keep Cs same-direction, component-like, and vector-friendly.</li>
+            <li>Make the leaf cue negative-space only, never the first read.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CCC Logo D2 - Construction Review (Gate 1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#505A66; --text:#171A1F; --muted:#6E7580; --border:#D9DEE5;
+    --light:#F3F5F7; --dark:#121417; --ivory:#F1E8D8;
+    --forest:#2D432B; --teal:#2A5D5B; --coral:#D06E53; --brass:#AA8952;
+  }
+  *{box-sizing:border-box; border-radius:0 !important;}
+  body{margin:0; background:#fff; color:var(--text);
+    font-family:"Atkinson Hyperlegible",system-ui,sans-serif; font-size:17px; line-height:1.7;}
+  .wrap{max-width:1200px; margin:0 auto; padding:clamp(24px,5vw,64px);}
+  h1,h2{font-family:Sora,system-ui,sans-serif; font-weight:800; line-height:1.05; margin:0;}
+  h1{font-size:clamp(34px,5vw,56px);}
+  h2{font-size:clamp(22px,3vw,30px);}
+  .eyebrow{font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:18px;}
+  .section{border-top:1px solid var(--text); margin-top:90px; padding-top:28px;
+    display:grid; grid-template-columns:140px 1fr; gap:24px;}
+  .section .num{font-family:Sora; font-weight:600; color:var(--accent); font-size:14px; letter-spacing:.1em;}
+  @media(max-width:760px){.section{grid-template-columns:1fr;}}
+  .decision{background:var(--light); border:1px solid var(--border); padding:28px 32px; margin-top:36px;}
+  .decision strong{font-family:Sora; font-weight:600;}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:24px;}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr;}}
+  .panel{border:1px solid var(--border); padding:0;}
+  .panel .art{background:var(--ivory); display:flex; align-items:center; justify-content:center; padding:24px;}
+  .panel .art img{max-width:100%; height:auto; display:block;}
+  .panel .cap{padding:12px 16px; font-size:14px; color:var(--muted); border-top:1px solid var(--border);}
+  table{border-collapse:collapse; width:100%; margin-top:20px; font-size:15px;}
+  th,td{border:1px solid var(--border); padding:9px 12px; text-align:left; vertical-align:top;}
+  th{font-family:Sora; font-weight:600; font-size:13px; letter-spacing:.04em; background:var(--light);}
+  td.num,th.num{text-align:right; font-variant-numeric:tabular-nums;}
+  .stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; margin-top:24px;}
+  .stat{border:1px solid var(--border); padding:20px;}
+  .stat .v{font-family:Sora; font-weight:800; font-size:30px;}
+  .stat .l{font-size:13.5px; color:var(--muted); margin-top:6px; line-height:1.45;}
+  .scales{display:flex; align-items:flex-end; gap:28px; flex-wrap:wrap; padding:28px; border:1px solid var(--border);}
+  .scales.darkbg{background:var(--dark);}
+  .scales figure{margin:0; text-align:center;}
+  .scales figcaption{font-size:12px; color:var(--muted); margin-top:8px;}
+  .swatches{display:flex; gap:0; margin-top:20px; border:1px solid var(--border);}
+  .sw{flex:1; padding:18px 12px 12px; color:#fff; font-size:13px; font-family:Sora; font-weight:600;}
+  .note{font-size:15px; color:var(--muted);}
+  .flag{border-left:3px solid var(--coral); background:var(--light); padding:14px 18px; margin-top:18px; font-size:15px;}
+  ul{padding-left:20px;} li{margin-bottom:6px;}
+  .footer{margin-top:100px; border-top:1px solid var(--border); padding-top:24px;
+    font-size:12px; letter-spacing:.14em; color:var(--muted); text-transform:uppercase;}
+  code{background:var(--light); padding:1px 6px; font-size:14px;}
+  b.k{font-family:Sora; font-weight:600;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Cannabis Chamber of Commerce &nbsp;/&nbsp; Logo D2 &nbsp;/&nbsp; Construction review, gate 1 &nbsp;/&nbsp; 2026-06-12 &nbsp;/&nbsp; T-225</div>
+  <h1>One C, three times.<br>Now exact.</h1>
+
+  <div class="decision">
+    <strong>The decision on this page:</strong> approve the constructed geometry of the D2 mark.
+    One master C module, duplicated by computed rotation at exact 120 degree spacing around a centered brass dot.
+    Approval here locks the geometry and unlocks gate 2: production files and the wordmark lockup.
+    This page does not ask you to approve final color calibration, the small-size variant, or any application use.
+    <br><br><strong>Revision 2, 2026-06-12:</strong> the active terminal face of each C is now cut concentric with the dot,
+    so the end face follows the dot's curvature at a constant gap. Requested by Florian after the first staging.
+  </div>
+
+  <div class="section"><div class="num">01</div><div>
+    <h2>Approved reference vs. constructed mark</h2>
+    <p>The left image is the approved D2 source. It is a generated raster: its three Cs differ in size, stroke, and spacing.
+    The right image is the constructed vector. Every curve is a native circular arc. The three modules are one shape, rotated.</p>
+    <div class="grid2">
+      <div class="panel"><div class="art"><img src="../../images/generated-boards/d2-approved/d2-approved-01-isolated-mark.png" alt="Approved D2 reference"></div>
+        <div class="cap">Approved D2 reference (raster, untouched)</div></div>
+      <div class="panel"><div class="art"><img src="ccc-mark.svg" alt="Constructed mark" style="width:78%"></div>
+        <div class="cap">Constructed mark, ccc-mark.svg (18 anchors, no transforms, no strokes)</div></div>
+    </div>
+    <div class="panel" style="margin-top:24px"><div class="art" style="background:#fff"><img src="dot-closeup.png" alt="Dot close-up" style="max-width:420px"></div>
+      <div class="cap">Center detail: each active terminal face is an arc concentric with the dot, holding a constant 27 unit gap and wrapping 66&deg; around it</div></div>
+  </div>
+
+  <div class="section"><div class="num">02</div><div>
+    <h2>Proof of exactness</h2>
+    <div class="stats">
+      <div class="stat"><div class="v">120.00&deg;</div><div class="l">module spacing, identical by computed rotation. The source measured 122.4 / 111.1 / 126.5.</div></div>
+      <div class="stat"><div class="v">0.982</div><div class="l">raster self-overlap of the constructed mark rotated 120&deg; and 240&deg;. The remaining 1.8% is pixel resampling at the edges, not geometry. The approved raster scores 0.640 on the same test.</div></div>
+      <div class="stat"><div class="v">27 &times; 3</div><div class="l">constant-width gap between each active terminal face and the dot edge. The face is an arc concentric with the dot, wrapping 66&deg; around it. Independent raster check at 999px: 27.17 / 27.20 / 27.17 px.</div></div>
+      <div class="stat"><div class="v">18</div><div class="l">total anchor points. All curves are exact SVG circle arcs, passive terminals are flat radial cuts, active faces are dot-concentric arcs, all coordinates baked.</div></div>
+    </div>
+  </div>
+
+  <div class="section"><div class="num">03</div><div>
+    <h2>Overlay against the approved source</h2>
+    <p>Constructed mark at 50% opacity over the reference, and the agreement map.
+    Green is agreement. Red is reference-only, blue is constructed-only: together they show exactly what the idealization removed,
+    the coral module repositioned by 8.2 degrees, the dot recentered by 16.5px, and the three modules equalized to one master shape.</p>
+    <div class="grid2">
+      <div class="panel"><div class="art" style="background:#fff"><img src="overlay.png" alt="Overlay"></div><div class="cap">50% overlay</div></div>
+      <div class="panel"><div class="art" style="background:#fff"><img src="diff.png" alt="Agreement map"></div><div class="cap">Agreement map: green agree, red reference only, blue constructed only</div></div>
+    </div>
+    <table>
+      <tr><th>Element</th><th class="num">Overlap with source (IoU)</th><th>Reading</th></tr>
+      <tr><td>Forest C</td><td class="num">0.786</td><td>close; source module was 1.7&deg; off position</td></tr>
+      <tr><td>Teal C</td><td class="num">0.799</td><td>closest module in the source</td></tr>
+      <tr><td>Coral C</td><td class="num">0.610</td><td>source coral sat 8.2&deg; off and thicker; corrected to the master module</td></tr>
+      <tr><td>Brass dot</td><td class="num">0.391</td><td>source dot sat 16.5px below center; the geometry lock requires a shared center</td></tr>
+    </table>
+    <p class="note">These overlaps are deliberately not 1.0. The construction keeps the approved composition and removes the generator's drift. Perfect overlap would mean copying the asymmetry.</p>
+  </div>
+
+  <div class="section"><div class="num">04</div><div>
+    <h2>Construction parameters</h2>
+    <p>Measured from the approved raster, then snapped to the construction rule. All values on a 1000 unit canvas, center 500,500.</p>
+    <table>
+      <tr><th>Parameter</th><th class="num">Measured</th><th class="num">Constructed</th><th>Rule</th></tr>
+      <tr><td>Outer radius R</td><td class="num">97.61px</td><td class="num">250</td><td>scale anchor, 1px = 2.561 units</td></tr>
+      <tr><td>Inner radius</td><td class="num">0.622 &times; R</td><td class="num">154.51 = R / &phi;</td><td>golden ratio annulus, measured ratio sits on 1/&phi; = 0.618</td></tr>
+      <tr><td>Module orbit</td><td class="num">0.834 &times; R</td><td class="num">208.33 = R &times; 5/6</td><td>matches measurement to 0.07%</td></tr>
+      <tr><td>Opening gap</td><td class="num">119 / 130 / 140.5&deg;</td><td class="num">130&deg;</td><td>one master value, source mean 129.8&deg;</td></tr>
+      <tr><td>Opening direction</td><td class="num">138 / 131 / 152&deg;</td><td class="num">140&deg; from position</td><td>openings rotate around the dot, never point straight at it (D2 endpoint rule)</td></tr>
+      <tr><td>Module positions</td><td class="num">268.3 / 30.8 / 141.8&deg;</td><td class="num">270 / 30 / 150&deg;</td><td>exact thirds, forest up</td></tr>
+      <tr><td>Dot radius</td><td class="num">23.89px = 0.245 &times; R</td><td class="num">61</td><td>0.244 &times; R</td></tr>
+      <tr><td>Dot position</td><td class="num">16.5px below center</td><td class="num">dead center</td><td>geometry lock: shared center dot</td></tr>
+      <tr><td>Passive terminal</td><td class="num">flat, near radial</td><td class="num">flat radial cut</td><td>sharp edges, no rounded caps</td></tr>
+      <tr><td>Active face</td><td class="num">flat in source</td><td class="num">arc concentric with dot, R 88</td><td>dot 61 + constant 27 unit gap; face follows the dot's curvature (revision 2)</td></tr>
+    </table>
+    <p><b class="k">Color, measured medians from the approved source.</b> Proposed as working values; print and screen calibration is a gate 2 decision.</p>
+    <div class="swatches">
+      <div class="sw" style="background:#2D432B">forest<br>#2D432B</div>
+      <div class="sw" style="background:#2A5D5B">teal<br>#2A5D5B</div>
+      <div class="sw" style="background:#D06E53">coral<br>#D06E53</div>
+      <div class="sw" style="background:#AA8952">brass<br>#AA8952</div>
+      <div class="sw" style="background:#F1E8D8; color:#171A1F">ivory<br>#F1E8D8</div>
+    </div>
+  </div>
+
+  <div class="section"><div class="num">05</div><div>
+    <h2>Scale behavior</h2>
+    <p>Actual raster renders at 200, 64, 32 and 16 pixels.</p>
+    <div class="scales">
+      <figure><img src="scale-200.png" width="200" height="200" alt=""><figcaption>200px</figcaption></figure>
+      <figure><img src="scale-64.png" width="64" height="64" alt=""><figcaption>64px</figcaption></figure>
+      <figure><img src="scale-32.png" width="32" height="32" alt=""><figcaption>32px</figcaption></figure>
+      <figure><img src="scale-16.png" width="16" height="16" alt=""><figcaption>16px</figcaption></figure>
+    </div>
+    <div class="scales darkbg" style="margin-top:16px">
+      <figure><img src="scale-inv-200.png" width="200" height="200" alt=""><figcaption>200px inverse</figcaption></figure>
+      <figure><img src="scale-inv-64.png" width="64" height="64" alt=""><figcaption>64px</figcaption></figure>
+      <figure><img src="scale-inv-32.png" width="32" height="32" alt=""><figcaption>32px</figcaption></figure>
+      <figure><img src="scale-inv-16.png" width="16" height="16" alt=""><figcaption>16px</figcaption></figure>
+    </div>
+    <div class="flag"><b class="k">Known limit, named honestly:</b> the mark holds at 32px and above. At 16px the dot and its clearances merge.
+    The approved composition has a 27 unit counter, below the 125 unit favicon minimum. Recommendation for gate 2: a dedicated small-size variant
+    (larger dot, wider clearances) for 24px and below. The master geometry on this page stays faithful to the approved mark.</div>
+  </div>
+
+  <div class="section"><div class="num">06</div><div>
+    <h2>Construction sheet</h2>
+    <p>The full grid: orbit circle, module circles, radial cuts, dot circle, mark at 30%. This drawing is the recipe; any designer or agent can rebuild the mark from it.</p>
+    <div class="panel"><div class="art" style="padding:0"><img src="ccc-mark-construction.svg" alt="Construction grid"></div>
+      <div class="cap">ccc-mark-construction.svg, regenerate with logo-construction/build_mark.py</div></div>
+    <p class="note" style="margin-top:18px">Files: <code>ccc-mark.svg</code> (color), <code>ccc-mark-mono.svg</code> (ink), <code>ccc-mark-inverse.svg</code> (ivory on dark).
+    Geometry: <code>logo-construction/geometry.json</code>. Verification: <code>logo-construction/verify.json</code>.
+    Deliberate deviation from the logo skill: coordinates carry 2 decimals, because exact 120 degree rotation does not produce integers. Everything else passes the skill checklist.</p>
+  </div>
+
+  <div class="footer">#Cannabis Chamber &nbsp;/&nbsp; Gate 1 construction review &nbsp;/&nbsp; built from the approved D2 source, source image untouched</div>
+</div>
+</body>
+</html>

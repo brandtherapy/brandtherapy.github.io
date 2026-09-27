@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cannabis Chamber D2 Approved Logo Route</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #153923;
+      --muted: #657268;
+      --paper: #fbfaf4;
+      --white: #ffffff;
+      --line: #d9dfd5;
+      --soft: #eef1ea;
+      --green: #16482e;
+      --teal: #176a68;
+      --coral: #c96d4d;
+      --gold: #bd9638;
+      --graph: #99a398;
+      font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+    }
+
+    main {
+      width: min(1560px, calc(100vw - 36px));
+      margin: 0 auto;
+      padding: 42px 0 84px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: end;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 28px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Sora", system-ui, sans-serif;
+      letter-spacing: 0;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 76px);
+      line-height: .95;
+      max-width: 980px;
+    }
+
+    h2 {
+      font-size: clamp(24px, 3vw, 42px);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .meta {
+      display: grid;
+      justify-items: end;
+      gap: 6px;
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: right;
+      letter-spacing: 0;
+    }
+
+    .meta strong {
+      color: var(--green);
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 34px;
+    }
+
+    .summary-item,
+    .panel,
+    .metric,
+    .mockup {
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .summary-item {
+      min-height: 118px;
+      padding: 16px;
+    }
+
+    .summary-item b {
+      display: block;
+      color: var(--gold);
+      font-family: "Sora", system-ui, sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      letter-spacing: 0;
+    }
+
+    .section {
+      margin-top: 42px;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .panel {
+      padding: 12px;
+      box-shadow: 0 18px 60px rgba(21, 57, 35, .08);
+    }
+
+    .panel img,
+    .mockup img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .panel p,
+    .mockup p {
+      padding-top: 12px;
+      font-size: 13px;
+    }
+
+    .lock-list {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+      padding: 18px;
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .lock-list h3,
+    .lock-list p {
+      color: var(--white);
+    }
+
+    .lock-list ul {
+      margin: 6px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .lock-list li {
+      padding: 10px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .18);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .mockup-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .mockup {
+      padding: 10px;
+    }
+
+    .mockup img {
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+
+    .metrics-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .graph {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 16px;
+    }
+
+    .graph svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      background:
+        linear-gradient(var(--soft) 1px, transparent 1px),
+        linear-gradient(90deg, var(--soft) 1px, transparent 1px),
+        var(--white);
+      background-size: 32px 32px;
+      border: 1px solid var(--line);
+    }
+
+    .metric-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 14px;
+    }
+
+    .metric b {
+      display: block;
+      font-family: "Sora", system-ui, sans-serif;
+      color: var(--gold);
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      letter-spacing: 0;
+    }
+
+    .metric code {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--green);
+      background: var(--soft);
+      padding: 4px 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+    }
+
+    .c-path {
+      fill: none;
+      stroke-width: 34;
+      stroke-linecap: butt;
+    }
+
+    .green-path { stroke: var(--green); }
+    .teal-path { stroke: var(--teal); }
+    .coral-path { stroke: var(--coral); }
+
+    .guide {
+      fill: none;
+      stroke: var(--graph);
+      stroke-width: 1.5;
+      stroke-dasharray: 8 8;
+    }
+
+    .measure {
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 2;
+      marker-start: url(#arrow);
+      marker-end: url(#arrow);
+    }
+
+    .center-line {
+      stroke: var(--graph);
+      stroke-width: 1;
+      stroke-dasharray: 4 8;
+    }
+
+    .label {
+      fill: var(--ink);
+      font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+      font-size: 15px;
+    }
+
+    .label-small {
+      fill: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 1120px) {
+      header,
+      .summary,
+      .source-grid,
+      .mockup-grid,
+      .metrics-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .meta {
+        justify-items: start;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>D2 Approved Logo Route</h1>
+      <div class="meta">
+        <span><strong>Status</strong> Route Approved</span>
+        <span><strong>Scope</strong> D2 Only</span>
+        <span><strong>Geometry</strong> Not Final Vector</span>
+      </div>
+    </header>
+
+    <div class="summary" aria-label="D2 approval summary">
+      <div class="summary-item">
+        <b>Approved</b>
+        <p>D2 is the only approved route from the comparison board. Everything here protects that route.</p>
+      </div>
+      <div class="summary-item">
+        <b>Do Not Drift</b>
+        <p>No new C proportions, no all-Cs-aim-inward logic, no obvious leaf, no generic seal, no dark tech look.</p>
+      </div>
+      <div class="summary-item">
+        <b>Still Needed</b>
+        <p>One master C component duplicated three times with exact rotations and fixed spacing.</p>
+      </div>
+      <div class="summary-item">
+        <b>Graph Rule</b>
+        <p>The metric graph is a construction guide only. The approved source image remains the lead reference.</p>
+      </div>
+    </div>
+
+    <section class="section" aria-label="Approved D2 source">
+      <h2>Approved Source</h2>
+      <div class="source-grid">
+        <figure class="panel">
+          <img src="../images/generated-boards/tribe-v9-logo-ignition-pin-system.png" alt="Approved D2 ignition pin logo board">
+          <p>This is the protected D2 source board. It should not be overwritten or used as a dumping ground for new exploration.</p>
+        </figure>
+        <div class="lock-list">
+          <h3>D2 Lock</h3>
+          <p>The approved route is a premium membership mark with three C modules and a brass center dot.</p>
+          <ul>
+            <li>Three equal C modules, not three different letters.</li>
+            <li>One active C endpoint at a time relates to the center dot.</li>
+            <li>The C edge should resolve against the dot's circular edge.</li>
+            <li>Center dot reads as catalyst and shared access point.</li>
+            <li>Best physical expression is enamel pin plus credential.</li>
+            <li>Final logo must work flat before material effects are added.</li>
+            <li>Alternative concepts must live in a separate exploration lane.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Exact D2 panel extracts">
+      <h2>Exact D2 Mockup Extracts</h2>
+      <div class="mockup-grid">
+        <figure class="mockup">
+          <img src="../images/generated-boards/d2-approved/d2-approved-01-isolated-mark.png" alt="D2 isolated mark crop">
+          <p><strong>01. Isolated mark.</strong> This is the flat read to protect during construction.</p>
+        </figure>
+        <figure class="mockup">
+          <img src="../images/generated-boards/d2-approved/d2-approved-02-enamel-pin.png" alt="D2 enamel pin crop">
+          <p><strong>02. Enamel pin.</strong> This is the strongest premium member object.</p>
+        </figure>
+        <figure class="mockup">
+          <img src="../images/generated-boards/d2-approved/d2-approved-03-gold-foil-stamp.png" alt="D2 gold foil stamp crop">
+          <p><strong>03. Gold stamp.</strong> This proves the route can become ceremonial and official.</p>
+        </figure>
+        <figure class="mockup">
+          <img src="../images/generated-boards/d2-approved/d2-approved-04-member-credential.png" alt="D2 member credential crop">
+          <p><strong>04. Credential.</strong> This is the badge and access use case to preserve.</p>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-label="D2 logo metrics">
+      <h2>Metric Graph</h2>
+      <div class="metrics-layout">
+        <div class="graph">
+          <svg viewBox="0 0 720 720" role="img" aria-label="D2 logo metric construction graph">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#bd9638"></path>
+              </marker>
+            </defs>
+            <rect x="116" y="116" width="488" height="488" class="guide"></rect>
+            <circle cx="360" cy="360" r="180" class="guide"></circle>
+            <circle cx="360" cy="360" r="22" fill="#bd9638"></circle>
+            <line x1="360" y1="82" x2="360" y2="638" class="center-line"></line>
+            <line x1="82" y1="360" x2="638" y2="360" class="center-line"></line>
+            <g id="metric-mark"></g>
+            <line x1="360" y1="360" x2="360" y2="222" class="measure"></line>
+            <line x1="360" y1="360" x2="484" y2="430" class="measure"></line>
+            <line x1="360" y1="360" x2="236" y2="430" class="measure"></line>
+            <text x="378" y="296" class="label">D2 center</text>
+            <text x="378" y="316" class="label-small">dot = shared access point</text>
+            <text x="468" y="172" class="label">C module x3</text>
+            <text x="468" y="192" class="label-small">same radius, stroke, terminal</text>
+            <text x="126" y="640" class="label">Clearspace</text>
+            <text x="126" y="660" class="label-small">minimum 0.75 module radius</text>
+            <text x="480" y="530" class="label">120 degree rotation</text>
+            <text x="480" y="550" class="label-small">duplicate one master C</text>
+          </svg>
+        </div>
+        <div class="metric-list">
+          <div class="metric">
+            <b>Module Unit</b>
+            <p>Define one C as the master component. Every C instance must be duplicated from it.</p>
+            <code>C = same path, same radius, same stroke</code>
+          </div>
+          <div class="metric">
+            <b>Rotation</b>
+            <p>Place the three C modules around the center at equal 120 degree intervals.</p>
+            <code>theta = 90, 210, 330</code>
+          </div>
+          <div class="metric">
+            <b>Center Dot</b>
+            <p>The dot should be visually smaller than the C stroke, but large enough to read on a pin.</p>
+            <code>dot diameter = 1.25S to 1.4S</code>
+          </div>
+          <div class="metric">
+            <b>White Space</b>
+            <p>The open space between C terminals and the dot must stay intentional, not accidental.</p>
+            <code>center gap = 0.55S to 0.75S</code>
+          </div>
+          <div class="metric">
+            <b>Terminal Rule</b>
+            <p>Use one terminal treatment across all Cs. Do not allow one C to have a different cut angle.</p>
+            <code>terminal angle = matched across all instances</code>
+          </div>
+          <div class="metric">
+            <b>Leaf Rule</b>
+            <p>If negative space hints at a leaf, it must be secondary. The first read stays CCC access.</p>
+            <code>leaf cue = optional, never first read</code>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const ns = "http://www.w3.org/2000/svg";
+    const group = document.getElementById("metric-mark");
+    const center = { x: 360, y: 360 };
+    const moduleDistance = 138;
+    const moduleRadius = 82;
+    const openAngle = 92;
+    const modules = [
+      { angle: -90, className: "green-path" },
+      { angle: 30, className: "teal-path" },
+      { angle: 150, className: "coral-path" }
+    ];
+
+    function polar(cx, cy, radius, angle) {
+      const rad = (angle - 90) * Math.PI / 180;
+      return {
+        x: cx + radius * Math.cos(rad),
+        y: cy + radius * Math.sin(rad)
+      };
+    }
+
+    function arcPath(cx, cy, radius, startAngle, endAngle) {
+      const start = polar(cx, cy, radius, endAngle);
+      const end = polar(cx, cy, radius, startAngle);
+      const largeArcFlag = Math.abs(endAngle - startAngle) <= 180 ? "0" : "1";
+      return `M ${start.x.toFixed(2)} ${start.y.toFixed(2)} A ${radius} ${radius} 0 ${largeArcFlag} 0 ${end.x.toFixed(2)} ${end.y.toFixed(2)}`;
+    }
+
+    modules.forEach((module) => {
+      const cCenter = polar(center.x, center.y, moduleDistance, module.angle + 180);
+      const opening = module.angle;
+      const start = opening + openAngle / 2;
+      const end = opening + 360 - openAngle / 2;
+      const path = document.createElementNS(ns, "path");
+      path.setAttribute("d", arcPath(cCenter.x, cCenter.y, moduleRadius, start, end));
+      path.setAttribute("class", `c-path ${module.className}`);
+      group.appendChild(path);
+
+      const orbit = document.createElementNS(ns, "circle");
+      orbit.setAttribute("cx", cCenter.x);
+      orbit.setAttribute("cy", cCenter.y);
+      orbit.setAttribute("r", moduleRadius);
+      orbit.setAttribute("class", "guide");
+      group.insertBefore(orbit, path);
+    });
+  </script>
+</body>
+</html>
