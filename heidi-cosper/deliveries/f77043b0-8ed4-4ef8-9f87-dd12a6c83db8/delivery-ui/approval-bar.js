@@ -68,7 +68,7 @@ class DeliveryApproval extends HTMLElement {
     const items = [];
     const gatedSprint = this.data?.resources?.some(item => item.kind === 'sprint' && item.requiresAcceptance === true);
     const sprintUnlocked = !gatedSprint || this.data?.acceptance?.state === 'approved' || this.dataset.page === 'sprint';
-    if (this.dataset.reveal) items.push({page: 'reveal', href: this.dataset.reveal, label: gatedSprint ? 'Intro' : 'Reveal'});
+    if (this.dataset.reveal) items.push({page: 'reveal', href: this.dataset.reveal, label: 'Intro'});
     if (this.dataset.sprint && sprintUnlocked) items.push({page: 'sprint', href: this.dataset.sprint, label: 'Sprint'});
     if (this.dataset.website) items.push({page: 'website', href: this.dataset.website, label: 'Website'});
     return items;
@@ -78,7 +78,7 @@ class DeliveryApproval extends HTMLElement {
   }
   pageLabel() {
     return this.pages().find(item => item.page === this.dataset.page)?.label
-      || (this.dataset.page === 'reveal' ? 'Reveal' : 'Sprint');
+      || (this.dataset.page === 'reveal' ? 'Intro' : 'Sprint');
   }
   renderTerminal() {
     const target = document.getElementById('delivery-review-end');
@@ -127,7 +127,7 @@ class DeliveryApproval extends HTMLElement {
     const product = this.productLabel();
     const pageLabel = this.pageLabel();
     const approveTitle = this.dataset.approveTitle || 'Approve your LinkedIn Sprint.';
-    const approveBody = this.dataset.approveBody || 'Your approval covers the positioning in your Reveal and the complete LinkedIn Sprint in this version.';
+    const approveBody = this.dataset.approveBody || 'Your approval covers the positioning in your Intro and the complete LinkedIn Sprint in this version.';
     const nav = this.pages().map(item => `<a href="${e(item.href)}" aria-current="${this.dataset.page === item.page ? 'page' : 'false'}">${e(item.label)}</a>`).join('');
     let decision = '';
     if (state === 'approved') decision = `<h2>${introFirst ? 'Your Intro is approved.' : 'Your delivery is approved.'}</h2><p>${e(d.statement.text)}</p><p class="receipt">Recorded ${e(date)} · Version ${d.revision}</p>`;
