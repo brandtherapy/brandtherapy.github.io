@@ -95,7 +95,7 @@ class DeliveryApproval extends HTMLElement {
 #delivery-review-end .primary{background:#5a5cf9;border-color:#5a5cf9;color:#fff}
 #delivery-review-end button:hover,#delivery-review-end a:hover{transform:translateY(-2px)}
 @media(max-width:620px){#delivery-review-end .delivery-decision-actions{flex-direction:column}#delivery-review-end button,#delivery-review-end a{width:100%}}
-</style><div class="delivery-decision"><p class="delivery-decision-status">${approved ? 'Intro approved' : changed ? 'Feedback sent' : 'Your decision'}</p><div class="delivery-decision-actions">${!this.data && this.error ? '<a class="primary" href="'+e(MY_BRAND_URL)+'">Go to My Brand</a><a href="'+e(REVIEW_SESSION_URL)+'" target="_blank" rel="noopener">Schedule session</a>' : approved ? '<button data-terminal-view class="primary">View confirmation</button>' : changed ? '<button data-terminal-view class="primary">View your feedback</button>' : '<button data-terminal-approve class="primary">Approve Intro</button><button data-terminal-feedback>Give feedback</button><a href="'+e(REVIEW_SESSION_URL)+'" target="_blank" rel="noopener">Schedule session</a>'}</div></div>`;
+</style><div class="delivery-decision"><p class="delivery-decision-status">${approved ? 'Intro approved' : changed ? 'Feedback sent' : 'Your decision'}</p><div class="delivery-decision-actions">${approved ? '<button data-terminal-view class="primary">View confirmation</button>' : changed ? '<button data-terminal-view class="primary">View your feedback</button>' : '<button data-terminal-approve class="primary">Approve Intro</button><button data-terminal-feedback>Give feedback</button><a href="'+e(REVIEW_SESSION_URL)+'" target="_blank" rel="noopener">Schedule session</a>'}</div></div>`;
     target.querySelector('[data-terminal-approve]')?.addEventListener('click', () => { this.open = true; this.mode = 'confirm'; this.render(); });
     target.querySelector('[data-terminal-feedback]')?.addEventListener('click', () => { this.open = true; this.mode = 'changes'; this.render(); });
     target.querySelector('[data-terminal-view]')?.addEventListener('click', () => { this.open = true; this.mode = 'choose'; this.render(); });
@@ -122,7 +122,7 @@ class DeliveryApproval extends HTMLElement {
     const d = this.data, state = d?.acceptance.state;
     const date = d?.acceptance.respondedAt ? new Date(d.acceptance.respondedAt).toLocaleDateString(undefined, {month:'short', day:'numeric', year:'numeric'}) : '';
     const introFirst = this.dataset.product === 'Brand Therapy Intro' || d?.resources?.some(item => item.kind === 'sprint' && item.requiresAcceptance === true);
-    const status = state === 'approved' ? (introFirst ? 'Intro approved · ' : 'Approved · ') + date : state === 'changes_requested' ? 'Feedback sent · ' + date : d ? (introFirst ? 'Intro awaiting review' : 'Awaiting your approval') : this.error ? 'Approval unavailable' : 'Loading approval';
+    const status = state === 'approved' ? (introFirst ? 'Intro approved · ' : 'Approved · ') + date : state === 'changes_requested' ? 'Feedback sent · ' + date : introFirst ? 'Intro awaiting review' : 'Awaiting your approval';
     const action = state === 'approved' ? 'View confirmation' : state === 'changes_requested' ? 'View your feedback' : introFirst ? 'Review Intro' : 'Review & respond';
     const product = this.productLabel();
     const pageLabel = this.pageLabel();
