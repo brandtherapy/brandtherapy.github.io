@@ -753,6 +753,7 @@ footer.landing-foot{border-top:1px solid var(--border);padding:34px 0 50px;font-
           <div class="brand-lockup">
             <div class="wm">Brand Therapy<b>.</b></div>
             <div class="save-meta" id="conversation-save-state">Saved as you go</div>
+            <div class="save-meta" id="conversation-brand-name" style="max-width:240px;overflow-wrap:anywhere" hidden></div>
           </div>
           <div class="actions">
             <div class="setup-launcher" id="setup-launcher">
@@ -2388,6 +2389,10 @@ function seedOpeningMessage(){
 
 function startRealSession(resumed){
   session.demo=false;
+  const brandLabel=document.getElementById('conversation-brand-name');
+  const fullBrandName=String((session.profile||{}).name||'').trim();
+  brandLabel.textContent=fullBrandName;
+  brandLabel.hidden=!fullBrandName;
   document.getElementById('state-session').classList.remove('has-session-banner','viewas-mode','is-readonly');
   document.getElementById('demo-banner').style.display='none';
   document.getElementById('btn-start-over').textContent='Start over';
