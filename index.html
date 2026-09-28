@@ -1194,6 +1194,7 @@ async function openFromAccessToken(token){
   session.viewas=false;
   session.sid=data.sid;
   session.writeToken=data.writeToken;
+  session.preparedInvite=true;
   session.profile=Object.assign({name:'',email:'',linkedin:'',instagram:'',links:[],bio:''},data.profile||{});
   session.exercises=data.exercises||undefined;
   if(data.coachFeedback&&data.coachFeedback.message)pendingCoachFeedback=data.coachFeedback;
@@ -2275,7 +2276,8 @@ document.querySelectorAll('[data-conversation-focus]').forEach(button=>button.ad
    ========================================================================= */
 /* Static opening from data/conversation-spec.json. Never wait on /api/chat
    for the first assistant turn: that call only exists for real client answers. */
-const SESSION_OPENING_MESSAGE="I'm going to ask you questions the way a strategist would in a real session, one at a time. No forms, no dropdowns. Just answer like you're talking to someone who actually wants to know. Some questions will feel obvious. Answer them anyway, the obvious answer is usually where the real one is hiding. This takes 25 to 45 minutes. At the end, Florian reviews what we build together before it becomes anything real. Ready when you are. First, some context so I read everything else right: what kind of brand are we working on? A personal brand around you, a service business you run, a company or product, or something else?";
+const LEGACY_SESSION_OPENING_MESSAGE="I'm going to ask you questions the way a strategist would in a real session, one at a time. No forms, no dropdowns. Just answer like you're talking to someone who actually wants to know. Some questions will feel obvious. Answer them anyway, the obvious answer is usually where the real one is hiding. This takes 25 to 45 minutes. At the end, Florian reviews what we build together before it becomes anything real. Ready when you are. First, some context so I read everything else right: what kind of brand are we working on? A personal brand around you, a service business you run, a company or product, or something else?";
+const SESSION_OPENING_MESSAGE="**Welcome to your Brand Therapy session. 👋**\n\nThis conversation will help you explain what makes your brand different and who it matters to.\n\n- **Talk it through.** I'll ask one question at a time about your work and the people you want to reach. Answer in your own words, with real examples.\n- **Shape the personality.** Complete the two exercises in **Checklist**. You can explore your developing strategy in **Your Brand** as you go.\n- **Send it to Florian.** At the end, review your answers and submit the session. Florian personally reviews it and works through anything that needs a closer look.\n\n**Allow 25 to 45 minutes.** Your progress saves as you go, so you can take a break and return.\n\n**First, what kind of brand are we working on?**";
 const OPENING_SUGGESTIONS=["A personal brand","A service business","A company or product","Something else"];
 
 /* Prepared invite: #name=&email=&linkedin= on the hash. Skip #viewas=. */
@@ -2368,9 +2370,14 @@ function applyPreparedInvite(){
   return true;
 }
 function sessionOpeningMessage(){
-  const first=firstNameFromProfile(session.profile);
-  if(!first)return SESSION_OPENING_MESSAGE;
-  return first+', Florian set this session up for you. '+SESSION_OPENING_MESSAGE;
+  if(!session.preparedInvite)return SESSION_OPENING_MESSAGE;
+  return SESSION_OPENING_MESSAGE.replace('\n\n','\n\nFlorian set this session up for you.\n\n');
+}
+function isSessionOpeningMessage(message){
+  if(message.role!=='assistant')return false;
+  const content=String(message.content||'');
+  return content.endsWith(LEGACY_SESSION_OPENING_MESSAGE)||content===SESSION_OPENING_MESSAGE||
+    content===SESSION_OPENING_MESSAGE.replace('\n\n','\n\nFlorian set this session up for you.\n\n');
 }
 
 function seedOpeningMessage(){
@@ -2384,6 +2391,7 @@ function seedOpeningMessage(){
   chatScroll.innerHTML='';
   appendMsg('assistant',opening);
   renderSuggestions(OPENING_SUGGESTIONS);
+  chatScroll.scrollTop=0;
   renderStarFull();
 }
 
@@ -2432,6 +2440,7 @@ function startRealSession(resumed){
     if(last&&last.role==='assistant'&&!last.cta&&Array.isArray(last.suggestions)&&!session.closeCtaAttached){
       renderSuggestions(last.suggestions);
     }
+    if(!hasSessionAnswers())chatScroll.scrollTop=0;
     return;
   }
 
@@ -2467,7 +2476,9 @@ function visibleSessionMessages(){
     if(!answered||tasteNoticeSeen)return false;
     tasteNoticeSeen=true;
     return true;
-  });
+  }).map(message=>!answered&&isSessionOpeningMessage(message)
+    ?Object.assign({},message,{content:sessionOpeningMessage(),suggestions:OPENING_SUGGESTIONS.slice()})
+    :message);
 }
 function addTasteResumePrompt(){
   if(!hasSessionAnswers()||isReadOnly())return;
