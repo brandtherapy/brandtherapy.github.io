@@ -2409,7 +2409,8 @@ function startRealSession(resumed){
 
   if(resumed){
     chatScroll.innerHTML='';
-    session.messages.forEach(m=>{
+    const visibleMessages=visibleSessionMessages();
+    visibleMessages.forEach(m=>{
       if(m.content==='__START__')return;
       if(m.role==='assistant'&&m.cta==='email-optin'){appendEmailOptInCard(m.content);return;}
       if(m.role==='assistant'&&m.cta==='email-optin-ack'){appendMsg('assistant',m.content);return;}
@@ -2427,7 +2428,7 @@ function startRealSession(resumed){
     offerEmailFollowup();
     // Re-offer chips only when the question they belong to is still the last
     // thing on screen; resume prompts above push newer messages past it.
-    const last=session.messages[session.messages.length-1];
+    const last=visibleSessionMessages().at(-1);
     if(last&&last.role==='assistant'&&!last.cta&&Array.isArray(last.suggestions)&&!session.closeCtaAttached){
       renderSuggestions(last.suggestions);
     }
@@ -2450,10 +2451,33 @@ function applyCoachFeedback(){
   saveSession('coach_feedback',true);
 }
 
+// Legacy migration notices are system bookkeeping, never a new-session opener.
+const TASTE_RESUME_PREFIX='One thing changed while you were away: Taste now happens here in the conversation instead of in a separate exercise. ';
+function isTasteResumeNotice(message){
+  return message.role==='assistant'&&String(message.content||'').startsWith(TASTE_RESUME_PREFIX);
+}
+function hasSessionAnswers(){
+  return (session.messages||[]).some(m=>m.role==='user'&&m.content!=='__START__'&&String(m.content||'').trim());
+}
+function visibleSessionMessages(){
+  const answered=hasSessionAnswers();
+  let tasteNoticeSeen=false;
+  return (session.messages||[]).filter(message=>{
+    if(!isTasteResumeNotice(message))return true;
+    if(!answered||tasteNoticeSeen)return false;
+    tasteNoticeSeen=true;
+    return true;
+  });
+}
 function addTasteResumePrompt(){
+  if(!hasSessionAnswers()||isReadOnly())return;
+  // Cloud restores carry the transcript, but do not carry local notice flags.
+  if((session.messages||[]).some(isTasteResumeNotice))return;
+  const legacy=(session.exercises||{}).taste;
+  if(!legacy||!(legacy.done||legacy.updated||(legacy.refs||[]).some(v=>String(v||'').trim())||String(legacy.nos||'').trim()))return;
   if(!session.star||tasteProgress(session.star)===3||session.tasteResumeNoticeShown)return;
   const t=ensureTasteState(session.star);
-  let content='One thing changed while you were away: Taste now happens here in the conversation instead of in a separate exercise. ';
+  let content=TASTE_RESUME_PREFIX;
   if(!t.coverage.references)content+='Whose look do you keep coming back to, a person, brand, site, object, or image?';
   else if(!t.coverage.specifics)content+='What specifically pulls you in about the visual reference you named?';
   else content+='What should never show up in your brand visually, even if your industry loves it?';
@@ -3693,7 +3717,7 @@ async function startViewAs(sid){
   ensureExercises();
   renderExDock();
   renderStarFull();
-  msgs.forEach(m=>appendMsg(m.role,m.content));
+  visibleSessionMessages().forEach(m=>appendMsg(m.role,m.content));
   chatInput.disabled=true;
   sendBtn.disabled=true;
   chatInput.placeholder='Read-only view';
