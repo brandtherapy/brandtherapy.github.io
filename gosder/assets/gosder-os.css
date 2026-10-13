@@ -2033,6 +2033,14 @@ body {
   text-transform: uppercase;
 }
 
+.asset-gallery-caption small {
+  flex: 0 0 auto;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.61rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .asset-gallery-caption strong {
   overflow: hidden;
   font-size: 0.78rem;
