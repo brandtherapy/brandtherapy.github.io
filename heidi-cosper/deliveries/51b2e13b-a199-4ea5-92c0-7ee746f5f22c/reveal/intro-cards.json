@@ -1,0 +1,19 @@
+{
+  "cards": [
+    {
+      "id": "intro-card-1",
+      "label": "Complete profile",
+      "file": "assets/intro-cards/option-1.jpg"
+    },
+    {
+      "id": "intro-card-2",
+      "label": "Situations",
+      "file": "assets/intro-cards/option-2.jpg"
+    },
+    {
+      "id": "intro-card-3",
+      "label": "At a glance",
+      "file": "assets/intro-cards/option-3.jpg"
+    }
+  ]
+}
