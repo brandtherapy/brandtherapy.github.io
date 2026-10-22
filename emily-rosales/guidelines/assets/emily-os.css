@@ -1,0 +1,232 @@
+/* Emily Rosales Client Core packaging.
+   IDENTITY.md is the authority. This file only sets tokens on the shared
+   Brand Therapy OS shell and styles the fixed-canvas mockup boards.
+
+   Scene: a consultant reading her brand system on a laptop in daylight.
+   Strategy: Restrained. Ivory field, navy text, sea-glass for one
+   meaningful detail. The shared light sidebar stays; no dark rail override. */
+
+:root {
+  --navy: #142939;
+  --navy-surface: #1d3948;
+  --ivory: #f5f0e6;
+  --sand: #d9cdbb;
+  --glass: #91aea6;
+  --white-warm: #fffcf5;
+
+  --ink: var(--navy);
+  --ink-soft: oklch(0.33 0.04 235);
+  --muted: oklch(0.47 0.015 225);
+  --quiet: oklch(0.55 0.012 225);
+  --line: oklch(0.87 0.018 80);
+  --line-strong: oklch(0.76 0.025 80);
+  --paper: oklch(0.968 0.012 85);
+  --surface: oklch(0.985 0.008 85);
+  --panel: oklch(0.94 0.016 82);
+  --panel-strong: oklch(0.9 0.022 80);
+  --accent: var(--navy);
+  --accent-strong: oklch(0.2 0.04 235);
+  --accent-soft: oklch(0.93 0.02 175);
+  --inverse: var(--navy);
+  --inverse-text: var(--ivory);
+  --inverse-muted: oklch(0.8 0.02 175);
+  --type-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --type-body: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--type-body);
+}
+
+h1,
+h2,
+.section-headline h2,
+.page-header h1,
+.display-sample,
+.product-lockup strong,
+.not-in-use-message h2,
+.focus-detail-hero h2 {
+  font-family: var(--type-display);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.nav-home[aria-current="page"]::before,
+.nav-group a[aria-current="page"]::before {
+  background: var(--glass);
+}
+
+.reflection-sample {
+  font-family: var(--type-body);
+}
+
+/* Fixed-canvas mockup boards. Each board keeps its artboard geometry and
+   scales uniformly with its frame: every length is a multiple of --u, one
+   artboard pixel expressed in container width. */
+.board-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  align-items: flex-start;
+  margin-top: var(--space-5);
+}
+
+.board-figure {
+  margin: 0;
+  flex: 1 1 18rem;
+  max-width: 100%;
+}
+
+.board-figure figcaption {
+  margin-top: var(--space-3);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.board-frame {
+  container-type: inline-size;
+  position: relative;
+  width: min(100%, 26rem);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--ivory);
+  box-shadow: 0 0.75rem 2.5rem rgba(20, 41, 57, 0.11);
+}
+
+.board {
+  --u: calc(100cqw / 1080);
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--ivory);
+  color: var(--navy);
+}
+
+.board--navy {
+  background: var(--navy);
+  color: var(--ivory);
+}
+
+.board__micro {
+  position: absolute;
+  left: 8%;
+  top: 7%;
+  font: 500 calc(var(--u) * 24) var(--type-body);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.board__headline {
+  position: absolute;
+  left: 8%;
+  top: 22%;
+  width: 70%;
+  font: 500 calc(var(--u) * 100) / 0.98 var(--type-display);
+  letter-spacing: -0.03em;
+}
+
+.board__copy {
+  position: absolute;
+  left: 8%;
+  top: 69%;
+  width: 66%;
+  font: 400 calc(var(--u) * 31) / 1.38 var(--type-body);
+  opacity: 0.84;
+}
+
+.board__signature {
+  position: absolute;
+  width: 72%;
+  right: -20%;
+  top: -2%;
+  height: 112%;
+  object-fit: cover;
+  opacity: 0.8;
+  mix-blend-mode: screen;
+}
+
+.board--navy .board__signature {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  mix-blend-mode: normal;
+}
+
+.board__portrait {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 54%;
+  height: 83%;
+  object-fit: cover;
+  object-position: center 25%;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 22%);
+}
+
+.board__rule {
+  position: absolute;
+  left: 8%;
+  bottom: 8%;
+  width: 25%;
+  height: calc(var(--u) * 5);
+  background: var(--glass);
+}
+
+.board-frame--web { width: min(100%, 42rem); aspect-ratio: 16 / 10; }
+.board-frame--web .board { --u: calc(100cqw / 1600); }
+.board-frame--web .board__headline { top: 25%; width: 60%; font-size: calc(var(--u) * 104); }
+.board-frame--web .board__copy { top: 67%; width: 55%; font-size: calc(var(--u) * 30); }
+.board-frame--web .board__portrait { width: 42%; height: 100%; object-position: center 30%; mask-image: linear-gradient(90deg, transparent 0%, #000 30%); }
+
+.board-frame--email { width: min(100%, 38rem); aspect-ratio: 1.25; }
+.board-frame--email .board { --u: calc(100cqw / 1500); }
+.board-frame--email .board__headline { top: 30%; width: 76%; font-size: calc(var(--u) * 76); }
+.board-frame--email .board__copy { top: 49%; width: 78%; font-size: calc(var(--u) * 28); }
+
+.board-frame--slide { width: min(100%, 42rem); aspect-ratio: 16 / 9; }
+.board-frame--slide .board { --u: calc(100cqw / 1600); }
+.board-frame--slide .board__headline { top: 26%; width: 72%; font-size: calc(var(--u) * 93); }
+.board-frame--slide .board__copy { top: 62%; width: 64%; font-size: calc(var(--u) * 28); }
+
+.board-frame--reel { width: min(100%, 21rem); aspect-ratio: 9 / 16; }
+
+.board-frame--speaker .board__headline { top: 18%; width: 79%; font-size: calc(var(--u) * 84); }
+.board-frame--speaker .board__copy { top: 66%; width: 70%; font-size: calc(var(--u) * 27); }
+
+.board-frame--print { width: min(100%, 32rem); aspect-ratio: 1.75; }
+.board-frame--print .board { --u: calc(100cqw / 1400); }
+.board-frame--print .board__micro { top: 12%; }
+.board-frame--print .board__headline { top: 27%; width: 82%; font-size: calc(var(--u) * 73); }
+.board-frame--print .board__copy { top: 57%; width: 82%; font-size: calc(var(--u) * 25); }
+
+.carousel-steps {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: slide;
+}
+
+.carousel-steps li {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--line);
+  counter-increment: slide;
+}
+
+.carousel-steps li::before {
+  content: counter(slide, decimal-leading-zero);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding-top: 0.2rem;
+}
+
+.example-card figcaption {
+  padding: 0.9rem 1rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem;
+}

@@ -4,7 +4,7 @@ Every application helps an established expert explain what has changed in the bu
 
 ## Social and video
 
-Use one thought per post. Share a useful observation, explain a strategy idea, or offer a reflective personal note. Covers stay literal and readable. Use a real portrait when Emily's presence matters. Keep captions accessible and avoid urgency tropes.
+Use one thought per post. Share a useful observation, explain a strategy idea, or offer a reflective personal note. Covers stay literal and readable. Use a genuine photograph when Emily appears. Keep captions accessible and avoid urgency tropes.
 
 ## Website and email
 

@@ -20,7 +20,7 @@ Personality: quiet confidence and honest guidance. Warm, polished, direct, calm,
 - Sea-glass #91AEA6 is a restrained accent.
 - Fraunces headlines, Roboto body and utility type.
 - The Clear Edge is a broad luminous diagonal translucent ivory plane across navy, resolving a focused area. Use the supplied raster asset. It can bleed off-canvas. Keep it away from faces and important text.
-- Portraits should feel natural, composed, softly lit, and recognizably Emily. Use real portrait sources when identity matters.
+- Portraits should feel natural, composed, softly lit, and recognizably Emily. Use genuine photographs of Emily.
 
 ## Writing and applications
 
