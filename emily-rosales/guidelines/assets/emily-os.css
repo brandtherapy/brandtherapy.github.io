@@ -270,3 +270,170 @@ h2,
   color: var(--muted);
   font-size: 0.78rem;
 }
+
+/* How the brand is tuned: one spectrum per line, dot marks the position. */
+.tune-list {
+  display: grid;
+  gap: var(--space-4);
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 44rem;
+}
+
+.tune-row {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr 7.5rem;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.tune-end {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.tune-end--right {
+  text-align: right;
+}
+
+.tune-track {
+  position: relative;
+  height: 2px;
+  background: var(--line-strong);
+}
+
+.tune-dot {
+  position: absolute;
+  top: 50%;
+  left: var(--pos);
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 50%;
+  background: var(--navy);
+  box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px var(--glass);
+  transform: translate(-50%, -50%);
+}
+
+.tune-open {
+  margin-top: var(--space-5);
+  color: var(--quiet);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 40rem) {
+  .tune-list {
+    gap: var(--space-5);
+  }
+  .tune-row {
+    grid-template-columns: 1fr 1fr;
+    row-gap: var(--space-3);
+  }
+  .tune-track {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+/* Brand personality: three leading archetypes, then the supporting mix. */
+.arch-leads {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+  max-width: 52rem;
+}
+
+.arch-lead {
+  margin: 0;
+}
+
+.arch-lead img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 22%;
+  background: var(--panel);
+}
+
+.arch-lead figcaption {
+  display: grid;
+  gap: 0.15rem;
+  padding-top: var(--space-3);
+}
+
+.arch-lead b {
+  font: 500 1.9rem / 1 var(--type-display);
+}
+
+.arch-lead strong {
+  font-weight: 500;
+}
+
+.arch-lead span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.arch-rest {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 32rem;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.arch-rest li {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr 2.5rem;
+  gap: var(--space-3);
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.arch-rest b {
+  font-weight: 500;
+  text-align: right;
+}
+
+.arch-bar {
+  height: 6px;
+  background: linear-gradient(90deg, var(--glass) var(--w), var(--panel) var(--w));
+}
+
+.arch-words-title {
+  margin-top: var(--space-7, 3rem);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.arch-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2, 0.5rem);
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.arch-words li {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 40rem) {
+  .arch-leads {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+  }
+  .arch-lead b {
+    font-size: 1.4rem;
+  }
+  .arch-lead span {
+    display: none;
+  }
+}
