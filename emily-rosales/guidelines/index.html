@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="color-scheme" content="light">
+  <title>Emily Rosales | Brand Therapy OS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#142939;--navy2:#203d4d;--ivory:#f5f0e6;--white:#fffcf5;--sand:#d9cdbb;--glass:#91aea6;--muted:#617078;--line:rgba(20,41,57,.16);--display:'Fraunces',Georgia,serif;--body:'Roboto',Arial,sans-serif;--sidebar:250px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--ivory);color:var(--navy);font-family:var(--body);font-size:15px;line-height:1.65}a{color:inherit}img{display:block;max-width:100%}button{font:inherit}
+    .progress{position:fixed;z-index:20;inset:0 0 auto;height:3px;background:transparent}.progress span{display:block;width:0;height:100%;background:var(--glass)}
+    .rail{position:fixed;inset:0 auto 0 0;width:var(--sidebar);padding:32px 22px;background:var(--navy);color:var(--ivory);display:flex;flex-direction:column;z-index:12}.brand{font-family:var(--display);font-size:25px;line-height:1.05;text-decoration:none;max-width:160px}.brand small{display:block;margin-top:10px;font:500 9px/1.3 var(--body);letter-spacing:.17em;text-transform:uppercase;color:var(--glass)}.rail-intro{margin:35px 0 18px;color:rgba(245,240,230,.62);font-size:10px;letter-spacing:.16em;text-transform:uppercase}.rail nav{display:grid;min-height:0;overflow-y:auto;gap:3px}.rail nav a{padding:8px 10px;border-left:1px solid rgba(245,240,230,.2);color:rgba(245,240,230,.68);font-size:12px;text-decoration:none;transition:.2s}.rail nav a:hover,.rail nav a.active{border-left:2px solid var(--glass);color:var(--ivory);background:rgba(255,255,255,.045)}.rail-footer{margin-top:auto;padding-top:22px;border-top:1px solid rgba(245,240,230,.18);color:rgba(245,240,230,.55);font-size:10px;line-height:1.6}.rail-footer a{color:var(--ivory);text-decoration:none}
+    main{margin-left:var(--sidebar);overflow:hidden}.wrap{width:min(1120px,calc(100% - 96px));margin:0 auto}.kicker{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:#718078;font-weight:600}.display{font-family:var(--display);font-weight:400;letter-spacing:-.035em;line-height:.98}.hero{position:relative;min-height:650px;padding:80px 0;background:var(--navy);color:var(--ivory);display:flex;align-items:center;overflow:hidden}.hero-signature{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.82;pointer-events:none}.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr .82fr;align-items:center;gap:50px}.hero h1{font-size:clamp(58px,7.3vw,106px);max-width:8ch;margin:22px 0 20px}.hero .lede{font-size:17px;line-height:1.5;color:rgba(245,240,230,.78);max-width:39ch}.hero .portrait{height:450px;overflow:hidden;position:relative;background:var(--navy2)}.hero .portrait img{width:100%;height:100%;object-fit:cover;object-position:center 34%}.hero .caption{margin-top:10px;font-size:10px;color:rgba(245,240,230,.63);letter-spacing:.08em;text-transform:uppercase}
+    .hero-meta{display:flex;gap:26px;margin-top:42px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,240,230,.6)}.hero-meta span:before{content:"";display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--glass)}
+    section{padding:105px 0;border-bottom:1px solid var(--line)}section.dark{background:var(--navy);color:var(--ivory)}section.sand{background:#e9dfd0}section .wrap>header{display:grid;grid-template-columns:160px 1fr;gap:30px;margin-bottom:48px}.section-num{font-family:var(--display);font-size:28px;color:var(--glass)}h2{font:400 clamp(38px,5.4vw,66px)/1.05 var(--display);letter-spacing:-.03em;max-width:17ch;margin:0}h3{font:500 22px/1.25 var(--display);margin:0 0 12px}.intro{max-width:660px;font-size:17px;line-height:1.6;color:var(--muted)}.dark .intro{color:rgba(245,240,230,.7)}.eyebrow{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:#74817c;font-weight:600}.dark .eyebrow{color:var(--glass)}
+    .star{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.star article{padding:23px 18px 25px 0}.star article+article{border-left:1px solid var(--line);padding-left:18px}.star b{display:block;margin-bottom:13px;color:#7d8781;font-size:9px;letter-spacing:.16em;text-transform:uppercase}.star p{font:500 19px/1.28 var(--display)}.star .small{display:block;margin-top:14px;font-size:11px;line-height:1.5;color:var(--muted)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}.split img{width:100%;height:490px;object-fit:cover;object-position:center 28%}.copy-stack{display:grid;gap:28px}.copy-stack p{color:var(--muted);max-width:50ch}.pullquote{font:400 clamp(28px,4vw,48px)/1.12 var(--display);max-width:14ch}.pullquote em{color:#567a73;font-style:normal}.pill-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:21px}.pill{border:1px solid var(--line);padding:7px 12px;border-radius:99px;font-size:10px;letter-spacing:.04em}
+    .palette{display:grid;grid-template-columns:1.4fr 1.4fr 1fr 1fr;gap:10px;margin-top:35px}.swatch{min-height:160px;padding:16px;display:flex;flex-direction:column;justify-content:space-between}.swatch strong{font:400 19px var(--display)}.swatch span{font-size:10px;opacity:.76}.swatch.navy{background:var(--navy);color:var(--ivory)}.swatch.ivory{background:var(--ivory)}.swatch.sand{background:var(--sand)}.swatch.glass{background:var(--glass);color:var(--navy)}.type-spec{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}.type-card{padding:26px;background:rgba(255,255,255,.46);border-top:1px solid var(--line)}.type-card .sample{font-size:42px;margin:16px 0 10px}.type-card.serif .sample{font-family:var(--display);line-height:1}.type-card p{margin:0;color:var(--muted);font-size:12px}
+    .edge-image{width:100%;aspect-ratio:16/9;object-fit:cover;margin-top:28px;background:#142939}.rules{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-top:30px}.rules ul{padding-left:19px;color:var(--muted)}.rules li{padding:4px 0}
+    .voice-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px}.voice-big{font:400 clamp(34px,5vw,64px)/1.08 var(--display);max-width:12ch}.voice-lines{display:grid;gap:0}.voice-lines article{padding:20px 0;border-top:1px solid rgba(245,240,230,.22)}.voice-lines p{color:rgba(245,240,230,.69);max-width:56ch;margin:6px 0 0}.voice-lines h3{font-size:18px;margin:0}
+    .app-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px;align-items:start}.application{display:grid;gap:15px}.application .desc{font-size:13px;color:var(--muted);max-width:50ch}.application .label{display:flex;justify-content:space-between;gap:15px;align-items:baseline}.application .label span{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#718078}
+    .board-frame{position:relative;width:min(100%,425px);aspect-ratio:4/5;overflow:hidden;background:var(--ivory);box-shadow:0 12px 40px rgba(20,41,57,.11);margin:0 auto}.board{position:absolute;inset:0 auto auto 0;width:1080px;height:1350px;transform-origin:top left;overflow:hidden;background:var(--ivory);color:var(--navy)}.board.navy{background:var(--navy);color:var(--ivory)}.board .micro{position:absolute;left:8%;top:7%;font:600 24px var(--body);letter-spacing:.18em;text-transform:uppercase;opacity:.8}.board .headline{position:absolute;left:8%;top:22%;width:70%;font:500 100px/.98 var(--display);letter-spacing:-.03em}.board .smallcopy{position:absolute;left:8%;top:69%;width:66%;font:400 31px/1.38 var(--body);opacity:.84}.board .signature{position:absolute;width:72%;right:-20%;top:-2%;height:112%;object-fit:cover;opacity:.8;mix-blend-mode:screen}.board .portrait{position:absolute;right:0;bottom:0;width:54%;height:83%;object-fit:cover;object-position:center 25%;mask-image:linear-gradient(90deg,transparent 0%,#000 22%)}.board .rule{position:absolute;left:8%;bottom:8%;width:25%;height:5px;background:var(--glass)}
+    .web-frame{width:min(100%,680px);aspect-ratio:16/10}.web-frame .board{width:1600px;height:1000px}.web-frame .board .headline{top:25%;font-size:104px;width:60%}.web-frame .board .smallcopy{top:67%;width:55%;font-size:30px}.web-frame .board .portrait{height:100%;width:42%;object-position:center 30%;mask-image:linear-gradient(90deg,transparent 0%,#000 30%)}
+    .email-frame{width:min(100%,610px);aspect-ratio:1.25}.email-frame .board{width:1500px;height:1200px}.email-frame .board .headline{top:30%;font-size:76px;width:76%}.email-frame .board .smallcopy{top:49%;font-size:28px;width:78%}.email-frame .board .rule{bottom:17%}
+    .slide-frame{width:min(100%,680px);aspect-ratio:16/9}.slide-frame .board{width:1600px;height:900px}.slide-frame .board .headline{top:26%;font-size:93px;width:72%}.slide-frame .board .smallcopy{top:62%;font-size:28px;width:64%}
+    .reel-frame{width:min(100%,340px);aspect-ratio:9/16}.reel-frame .board{width:1080px;height:1920px}
++    .speaker-frame{width:min(100%,425px);aspect-ratio:4/5}.speaker-frame .board .headline{top:18%;font-size:84px;width:79%}.speaker-frame .board .smallcopy{top:66%;font-size:27px;width:70%}
+    .print-frame{width:min(100%,510px);aspect-ratio:1.75}.print-frame .board{width:1400px;height:800px}.print-frame .board .headline{top:27%;font-size:73px;width:82%}.print-frame .board .smallcopy{top:57%;font-size:25px;width:82%}.print-frame .board .micro{top:12%}
+    .quote-example{padding:32px;border-left:2px solid var(--glass);background:rgba(255,255,255,.45);font:400 24px/1.32 var(--display)}.quote-example small{display:block;margin-top:14px;font:500 10px var(--body);letter-spacing:.14em;text-transform:uppercase;color:#718078}
+    .downloads{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.downloads a{padding:10px 13px;border:1px solid currentColor;text-decoration:none;font-size:11px}.downloads a:hover{background:var(--navy);color:var(--ivory)}.dark .downloads a:hover{background:var(--ivory);color:var(--navy)}
+    footer{padding:50px 0;background:var(--navy);color:var(--ivory)}footer p{font:400 26px/1.25 var(--display);max-width:20ch}footer small{display:block;margin-top:22px;color:rgba(245,240,230,.55);font-size:10px}
+    @media(max-width:1000px){:root{--sidebar:210px}.wrap{width:min(100% - 56px,820px)}.hero .wrap{grid-template-columns:1fr .75fr;gap:30px}.hero .portrait{height:365px}.star{grid-template-columns:repeat(2,1fr)}.star article:nth-child(odd){border-left:0;padding-left:0}.star article:nth-child(n+3){border-top:1px solid var(--line)}.star article:last-child{grid-column:span 2}.section .wrap>header,section .wrap>header{grid-template-columns:100px 1fr}}
+    @media(max-width:720px){:root{--sidebar:0px}.rail{position:sticky;inset:0 0 auto;width:100%;height:auto;padding:12px 16px;display:flex;flex-direction:row;align-items:center;justify-content:space-between}.brand{flex:0 1 auto;font-size:16px;max-width:none;white-space:nowrap}.brand small{display:block;margin:2px 0 0;font-size:7px;letter-spacing:.12em}.rail-intro,.rail-footer{display:none}.rail nav{display:flex;flex:1;min-width:0;justify-content:flex-end;gap:2px;max-width:none;margin-left:14px;overflow-x:auto;overflow-y:hidden}.rail nav a{white-space:nowrap;padding:7px 8px;font-size:10px;border-left:0;border-bottom:1px solid rgba(245,240,230,.25)}.rail nav a.active{border-left:0;border-bottom:2px solid var(--glass)}main{margin-left:0}.wrap{width:calc(100% - 40px)}.hero{min-height:600px;padding:55px 0}.hero .wrap{grid-template-columns:1fr;gap:25px}.hero h1{font-size:clamp(54px,15vw,86px);max-width:8ch}.hero .portrait{height:300px;max-width:520px}.hero-signature{object-position:center}.hero-meta{gap:13px;flex-wrap:wrap;margin-top:26px}section{padding:72px 0}section .wrap>header{grid-template-columns:42px 1fr;gap:10px;margin-bottom:32px}.section-num{font-size:22px}h2{font-size:42px}.split,.voice-grid{grid-template-columns:1fr;gap:30px}.split img{height:330px}.star{grid-template-columns:1fr}.star article,.star article+article{border-left:0;border-top:1px solid var(--line);padding:17px 0}.star article:first-child{border-top:0}.star article:last-child{grid-column:auto}.palette{grid-template-columns:1fr 1fr}.swatch{min-height:120px}.type-spec,.app-grid,.rules{grid-template-columns:1fr;gap:28px}.board-frame{width:min(100%,390px)}.web-frame,.slide-frame{width:100%}.application .label{align-items:flex-start}.rail nav{scrollbar-width:none}.rail nav::-webkit-scrollbar{display:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+  <aside class="rail" aria-label="Brand Therapy OS navigation">
+    <a class="brand" href="#top">Emily Rosales<small>Brand Therapy OS</small></a>
+    <div class="rail-intro">The system</div>
+    <nav>
+      <a href="#strategy">Strategy</a><a href="#foundation">Look &amp; feel</a><a href="#logo">Logo</a><a href="#signature">Signature</a><a href="#voice">Voice</a><a href="#personal">Presence</a><a href="#social">Social</a><a href="#video">Video</a><a href="#website">Website</a><a href="#email">Email</a><a href="#slides">Slides</a><a href="#speaking">Speaking</a><a href="#print">Print</a><a href="#sources">Files</a>
+    </nav>
+    <div class="rail-footer">Built around one principle<br><a href="#strategy">Clarity before visibility</a></div>
+  </aside>
+  <main id="top">
+    <header class="hero">
+      <img class="hero-signature" src="source/assets/signature.png" alt="" aria-hidden="true">
+      <div class="wrap">
+        <div>
+          <div class="kicker" style="color:var(--glass)">Strategy · Identity · Applications</div>
+          <h1 class="display">Clarity before visibility</h1>
+          <p class="lede">A brand system for Emily Rosales, built around the value established experts bring and the words that help the right people understand it.</p>
+          <div class="hero-meta"><span>Quiet confidence</span><span>Honest guidance</span></div>
+        </div>
+        <div>
+          <div class="portrait"><img src="source/assets/portrait-studio.png" alt="Emily Rosales in a softly lit editorial portrait" onerror="this.onerror=null;this.src='source/assets/real-portrait.jpg'"></div>
+          <div class="caption">A thoughtful presence, with room for the reader</div>
+        </div>
+      </div>
+    </header>
+    <section id="strategy">
+      <div class="wrap">
+        <header><div class="section-num">A</div><div><div class="eyebrow">Strategy</div><h2>Make the value easier to understand</h2></div></header>
+        <p class="intro">Experienced consultants and advisors can outgrow the positioning that once described their work. The strategy starts by naming the value clearly, then aligns the message and the places where people encounter it.</p>
+        <div class="star" style="margin-top:45px">
+          <article><b>Product</b><p>Positioning and messaging strategy for an aligned digital presence.</p></article>
+          <article><b>People</b><p>Established consultants and advisors whose positioning has gone stale.</p><span class="small">Excellent at the work, often referral-led, with a public message that still describes an earlier business.</span></article>
+          <article><b>Purpose</b><p>Help the right clients understand, trust, and choose them.</p></article>
+          <article><b>Promise</b><p>Clarity before visibility.</p></article>
+          <article><b>Personality</b><p>Quiet confidence and honest guidance.</p></article>
+        </div>
+        <div class="split" style="margin-top:65px">
+          <div class="copy-stack"><div><div class="eyebrow">The sequence</div><h3 style="font-size:34px;margin-top:12px">Foundation, Visibility, Optimization</h3><p>Start by clarifying who the business serves, what it wants to be known for, and how to communicate its value. Bring that position into priority touchpoints. Then review what is resonating and refine the strategy.</p></div><p>Emily's current site describes this sequence as the way strategic clarity becomes more useful across a business. The visual system follows the same order: establish the field, bring one idea into focus, then let it travel across channels.</p><a href="https://simplyme-coaching.com/" target="_blank" rel="noreferrer">Visit Simply.Me Coaching ↗</a></div>
+          <div class="quote-example">“Your expertise doesn't position itself.”<small>Current website headline</small></div>
+        </div>
+      </div>
+    </section>
+    <section id="foundation" class="sand">
+      <div class="wrap">
+        <header><div class="section-num">B</div><div><div class="eyebrow">Look and feel</div><h2>A composed identity with a clear focal point</h2></div></header>
+        <p class="intro">A coastal editorial world shaped by Emily's stated taste for calm confidence, deep navy, warm ivory, elegant serif headlines, and portrait-led presence.</p>
+        <img class="edge-image" src="source/assets/stylescape.png" alt="Emily Rosales stylescape with deep navy, warm ivory, coastal imagery, and a luminous diagonal plane">
+        <div class="palette">
+          <div class="swatch navy"><strong>Deep navy</strong><span>#142939 · depth and focus</span></div><div class="swatch ivory"><strong>Warm ivory</strong><span>#F5F0E6 · open canvas</span></div><div class="swatch sand"><strong>Warm sand</strong><span>secondary surface</span></div><div class="swatch glass"><strong>Sea-glass</strong><span>#91AEA6 · restrained cue</span></div>
+        </div>
+        <div class="type-spec"><article class="type-card serif"><div class="eyebrow">Headlines · Fraunces</div><div class="sample">Value, made clear</div><p>Thoughtful display with warmth. Sentence case, spacious leading, no ornamental excess.</p></article><article class="type-card"><div class="eyebrow">Body · Roboto</div><div class="sample" style="font-weight:500">Easy to understand</div><p>Clean reading rhythm for explanations, captions, details, and practical next steps.</p></article></div>
+      </div>
+    </section>
+    <section id="logo">
+      <div class="wrap">
+        <header><div class="section-num">B</div><div><div class="eyebrow">Logo and name</div><h2>Let the name carry the signature</h2></div></header>
+        <div class="split">
+          <div class="copy-stack"><div><div class="eyebrow">Name treatment</div><h3>Emily Rosales</h3><p>Set the name in Fraunces with a calm editorial scale. Use the same typographic treatment across the website, speaker page, email header, and print. Keep it legible against navy or ivory. No separate symbol is added.</p></div><div><div class="eyebrow">Look and feel</div><p>Navy grounds the composition. Ivory opens it. Warm sand softens transitions, while sea-glass appears sparingly. Keep layouts spacious and keep one idea in focus.</p></div><div class="pill-row"><span class="pill">Editorial</span><span class="pill">Warm</span><span class="pill">Precise</span><span class="pill">Quiet</span></div></div>
+          <div class="board-frame"><div class="board navy"><img class="signature" src="source/assets/signature.png" alt="" onerror="this.onerror=null;this.src='source/assets/stylescape.png'"><div class="micro">Emily Rosales</div><div class="headline">Clarity<br>before<br>visibility</div><div class="smallcopy">Positioning and messaging for established experts.</div><div class="rule"></div></div></div>
+        </div>
+      </div>
+    </section>
+    <section id="signature" class="dark">
+      <div class="wrap">
+        <header><div class="section-num">B</div><div><div class="eyebrow">Brand signature</div><h2>The Clear Edge</h2></div></header>
+        <p class="intro">A broad luminous diagonal plane crosses a diffuse navy field and resolves one focused area. It carries the idea of clarity through light, contrast, and composition.</p>
+        <img class="edge-image" src="source/assets/signature.png" alt="The Clear Edge, a luminous ivory plane moving diagonally through a deep navy field" onerror="this.onerror=null;this.src='source/assets/stylescape.png'">
+        <div class="rules"><div><div class="eyebrow">Use it for</div><ul><li>Section openers and title fields</li><li>Portrait and editorial image transitions</li><li>Occasional social covers and presentation dividers</li></ul></div><div><div class="eyebrow">Keep it clear</div><ul><li>Let the plane crop beyond the canvas</li><li>Keep the subject and message unobstructed</li><li>Do not turn it into an outline, icon, or drawn logo</li></ul></div></div>
+      </div>
+    </section>
+    <section id="voice">
+      <div class="wrap">
+        <header><div class="section-num">B</div><div><div class="eyebrow">Voice and writing</div><h2>Say what matters with warmth and precision</h2></div></header>
+        <div class="voice-grid"><div><div class="voice-big">A thoughtful guide, speaking plainly.</div><div class="pill-row"><span class="pill">Warm</span><span class="pill">Polished</span><span class="pill">Direct</span><span class="pill">Honest</span></div></div><div class="voice-lines"><article><h3>Start with the reader's situation</h3><p>Name what may feel out of date, unclear, or difficult to explain before describing a method.</p></article><article><h3>Make one useful point</h3><p>Connect an observation to a practical choice. Keep the explanation calm and complete.</p></article><article><h3>Keep confidence grounded</h3><p>Use specific language and verified facts. Avoid inflated claims, constant urgency, and high-energy performance.</p></article><article><h3>Let Emily be present</h3><p>Use first-person reflection when it adds perspective. Keep the client's business and decision in focus.</p></article></div></div>
+        <div class="quote-example" style="margin-top:44px">“Visibility should support your business, not become another job.”<small>Instagram reel, October 20, 2026</small></div>
+      </div>
+    </section>
+    <section id="personal" class="sand">
+      <div class="wrap">
+        <header><div class="section-num">B</div><div><div class="eyebrow">Personal presence</div><h2>Emily's presence makes the guidance human</h2></div></header>
+        <div class="split"><img src="source/assets/portrait-working.png" alt="Emily Rosales in a natural working portrait" onerror="this.onerror=null;this.src='source/assets/real-candid.jpg'"><div class="copy-stack"><p class="pullquote">Present, observant, and at ease.</p><p>Use portraits to bring warmth and recognition to strategy-led materials. A natural smile or attentive expression supports the calm, thoughtful character Emily describes.</p><p>Soft daylight, an uncluttered background, and a composed crop leave space for useful ideas. Wardrobe should feel polished and comfortable in navy, cream, muted blue, or natural neutrals.</p><p>Use a working portrait when the subject is listening, reading, writing, or considering a message. Avoid staged pointing, status props, heavy retouching, and text over the face.</p></div></div>
+      </div>
+    </section>
+    <section id="social">
+      <div class="wrap">
+        <header><div class="section-num">C</div><div><div class="eyebrow">Social</div><h2>Give the reader one clear idea to keep</h2></div></header>
+        <div class="app-grid">
+          <article class="application"><div class="label"><h3>Positioning can fall behind</h3><span>Social cover · 4:5</span></div><div class="board-frame"><div class="board navy"><img class="signature" src="source/assets/signature.png" alt=""><div class="micro">A clearer position</div><div class="headline">Your business has changed.</div><div class="smallcopy">Does the way you describe it still fit?</div><div class="rule"></div></div></div><p class="desc">One reader situation, one question, and a quiet visual cue. Keep subsequent carousel pages focused on the explanation.</p></article>
+          <article class="application"><div class="label"><h3>Strategy-led content</h3><span>Social post · 4:5</span></div><div class="board-frame"><div class="board"><div class="micro">Simply.Me</div><div class="headline" style="top:24%;font-size:86px;width:78%">Being seen is one part.</div><div class="smallcopy" style="top:61%;width:78%">Make it easier for the right people to understand why your work matters.</div><div class="rule"></div></div></div><p class="desc">Use a natural portrait or a simple typographic cover. A post can end when the point is complete; every idea does not need a sales prompt.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="video" class="sand">
+      <div class="wrap">
+        <header><div class="section-num">C</div><div><div class="eyebrow">Video</div><h2>Make the subject clear before the cover</h2></div></header>
+        <div class="app-grid"><article class="application"><div class="label"><h3>Short-form cover</h3><span>9:16</span></div><div class="board-frame reel-frame"><div class="board navy"><img class="portrait" src="source/assets/portrait-coastal.png" alt="" onerror="this.onerror=null;this.src='source/assets/real-portrait.jpg'"><img class="signature" src="source/assets/signature.png" alt=""><div class="micro">Business visibility</div><div class="headline" style="top:28%;font-size:84px;width:80%">Expertise needs clear words.</div><div class="smallcopy" style="top:74%;font-size:24px">One idea, spoken calmly.</div><div class="rule"></div></div></div><p class="desc">Use a short, literal title in the safe area. The real portrait stays recognizable; the luminous plane remains behind the face and text.</p></article><article class="application"><div class="label"><h3>Speaking frame</h3><span>Video title · 16:9</span></div><div class="board-frame slide-frame"><div class="board navy"><img class="signature" src="source/assets/signature.png" alt=""><div class="micro">A practical perspective</div><div class="headline">Clarity makes visibility useful.</div><div class="smallcopy">Emily Rosales · Positioning and messaging</div><div class="rule"></div></div></div><p class="desc">A recognizable title card for talks or recorded explanations. Avoid motion that distracts from the idea.</p></article></div>
+      </div>
+    </section>
+    <section id="website">
+      <div class="wrap">
+        <header><div class="section-num">C</div><div><div class="eyebrow">Website</div><h2>Show what the visitor needs to understand</h2></div></header>
+        <article class="application"><div class="label"><h3>Home page opening</h3><span>Desktop · 16:10</span></div><div class="board-frame web-frame"><div class="board"><img class="portrait" src="source/assets/portrait-studio.png" alt="" onerror="this.onerror=null;this.src='source/assets/real-portrait.jpg'"><img class="signature" src="source/assets/signature.png" alt=""><div class="micro">Emily Rosales</div><div class="headline">Your expertise doesn't position itself.</div><div class="smallcopy">Brand strategy for service businesses whose expertise has outgrown their message.</div><div class="rule"></div></div></div><p class="desc">A clear audience, service, and next step. This example carries current website language into the visual system.</p></article>
+      </div>
+    </section>
+    <section id="email" class="dark">
+      <div class="wrap">
+        <header><div class="section-num">C</div><div><div class="eyebrow">Email</div><h2>A quiet, readable presence in the inbox</h2></div></header>
+        <div class="app-grid"><article class="application"><div class="label"><h3>Newsletter masthead</h3><span>Responsive email</span></div><div class="board-frame email-frame"><div class="board"><div class="micro">Simply.Me · Notes on positioning</div><div class="headline">A clear message travels further.</div><div class="smallcopy">A short observation, one practical idea, and a useful next step.</div><div class="rule"></div></div></div><p class="desc">Use a plain subject, short paragraphs, descriptive links, and a readable text-only version. Email artwork stays light and resilient in dark mode.</p></article><article class="application"><div class="label"><h3>Personal follow-up</h3><span>Message structure</span></div><div class="quote-example" style="margin:auto 0">A question for established experts<br><br>Does your message describe the business you run today?<br><br>A clear answer makes the next decision easier.<small>Newsletter note · one useful question</small></div></article></div>
+      </div>
+    </section>
+    <section id="slides">
+      <div class="wrap">
+        <header><div class="section-num">C</div><div><div class="eyebrow">Slides</div><h2>One idea on each screen</h2></div></header>
+        <div class="app-grid"><article class="application"><div class="label"><h3>Presentation title</h3><span>16:9</span></div><div class="board-frame slide-frame"><div class="board"><img class="signature" src="source/assets/signature.png" alt=""><div class="micro">Positioning &amp; messaging</div><div class="headline">What has changed in your business?</div><div class="smallcopy">Begin with the work as it is today.</div><div class="rule"></div></div></div><p class="desc">Large Fraunces title and one clear prompt. Keep the composition fixed at presentation dimensions.</p></article><article class="application"><div class="label"><h3>Teaching slide</h3><span>16:9</span></div><div class="board-frame slide-frame"><div class="board navy"><div class="micro">Start with the foundation</div><div class="headline" style="font-size:88px">Positioning gives visibility direction.</div><div class="smallcopy">Audience · value · message · priority touchpoints</div><div class="rule"></div></div></div><p class="desc">Use a short sequence or diagram to explain the relationship. Any research or client example needs a source.</p></article></div>
+      </div>
+    </section>
+    <section id="speaking" class="sand">
+      <div class="wrap">
+        <header><div class="section-num">C</div><div><div class="eyebrow">Speaking</div><h2>Frame the audience takeaway clearly</h2></div></header>
+        <div class="app-grid"><article class="application"><div class="label"><h3>Speaker one-sheet</h3><span>Portrait page</span></div><div class="board-frame speaker-frame"><div class="board"><img class="portrait" src="source/assets/portrait-working.png" alt="" onerror="this.onerror=null;this.src='source/assets/real-candid.jpg'"><div class="micro">Emily Rosales</div><div class="headline">Make your expertise easier to understand.</div><div class="smallcopy">Positioning and messaging for established service professionals.</div><div class="rule"></div></div></div><p class="desc">The portrait page prioritizes a useful topic and a clear audience benefit.</p></article><article class="application"><div class="label"><h3>Event screen</h3><span>Wide format</span></div><div class="board-frame slide-frame"><div class="board navy"><img class="signature" src="source/assets/signature.png" alt=""><div class="micro">A conversation with Emily Rosales</div><div class="headline">Clarity before visibility</div><div class="smallcopy">Positioning · messaging · digital presence</div><div class="rule"></div></div></div><p class="desc">The Clear Edge opens the room. A host logo, date, or venue belongs only when confirmed.</p></article></div>
+      </div>
+    </section>
+    <section id="print">
+      <div class="wrap">
+        <header><div class="section-num">C</div><div><div class="eyebrow">Print</div><h2>Let good materials stay simple</h2></div></header>
+        <div class="app-grid"><article class="application"><div class="label"><h3>Contact card</h3><span>Landscape · fixed canvas</span></div><div class="board-frame print-frame"><div class="board"><div class="micro">Emily Rosales</div><div class="headline">Positioning and messaging</div><div class="smallcopy">Simply.Me Coaching<br>simplyme-coaching.com</div><div class="rule"></div></div></div><p class="desc">A name, clear descriptor, and simple contact path. The typography and materials stay quiet.</p></article><article class="application"><div class="label"><h3>Letterhead</h3><span>Document system</span></div><div class="quote-example" style="min-height:260px;background:var(--ivory);box-shadow:0 12px 40px rgba(20,41,57,.08)"><span style="font:500 24px var(--display)">Emily Rosales</span><br><span style="font-size:11px;color:#617078">Positioning and messaging</span><hr style="border:0;border-top:1px solid var(--sand);margin:28px 0"><span style="font:400 18px var(--display)">A considered note, with room to read.</span><small>Warm paper · navy ink · restrained sea-glass detail</small></div></article></div>
+      </div>
+    </section>
+    <section id="sources" class="sand">
+      <div class="wrap">
+        <header><div class="section-num">↗</div><div><div class="eyebrow">Keep the system useful</div><h2>Source files and working context</h2></div></header>
+        <p class="intro">The strategy, identity, applications, and channel rules are available as readable files. They give future work the context to carry the same decisions into new formats.</p>
+        <div class="downloads"><a href="../strategy-intro/index.html">Read the original strategy introduction</a><a href="downloads/strategy.md" download>Strategy</a><a href="downloads/identity.md" download>Identity</a><a href="downloads/applications.md" download>Applications</a><a href="downloads/channels.md" download>Channel guide</a><a href="downloads/brand-context.md" download>Brand context for AI</a></div>
+        <div class="downloads"><a href="source/assets/stylescape.png" download>Stylescape</a><a href="source/assets/signature.png" download>Clear Edge image</a></div>
+        <h3 style="margin-top:48px">Photography collection</h3>
+        <div class="app-grid" style="margin-top:44px">
+          <figure class="application"><img src="source/assets/portrait-studio.png" alt="Emily Rosales, studio portrait" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="desc"><a href="source/assets/portrait-studio.png" download>Studio portrait</a></figcaption></figure>
+          <figure class="application"><img src="source/assets/portrait-working.png" alt="Emily Rosales in a working moment" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="desc"><a href="source/assets/portrait-working.png" download>Working portrait</a></figcaption></figure>
+          <figure class="application"><img src="source/assets/portrait-coastal.png" alt="Emily Rosales in a coastal setting" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="desc"><a href="source/assets/portrait-coastal.png" download>Coastal portrait</a></figcaption></figure>
+          <figure class="application"><img src="source/assets/real-portrait.jpg" alt="Emily Rosales portrait" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="desc"><a href="source/assets/real-portrait.jpg" download>Portrait</a></figcaption></figure>
+          <figure class="application"><img src="source/assets/real-candid.jpg" alt="Emily Rosales in a candid moment" style="width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption class="desc"><a href="source/assets/real-candid.jpg" download>Candid portrait</a></figcaption></figure>
+        </div>
+        <p style="margin-top:25px;font-size:12px;color:var(--muted)">Download the strategy and visual rules to carry the same decisions into future work.</p>
+      </div>
+    </section>
+    <footer><div class="wrap"><p>Clear thinking first. A consistent presence follows.</p><small>Emily Rosales · Simply.Me Coaching · Brand Therapy OS</small></div></footer>
+  </main>
+  <script>
+    (()=>{const boards=[...document.querySelectorAll('.board')];function scaleBoards(){boards.forEach(b=>{const f=b.parentElement;const w=b.classList.contains('board')?parseFloat(getComputedStyle(b).width):1080;const s=f.clientWidth/w;b.style.transform=`scale(${s})`})}const sections=[...document.querySelectorAll('main section[id],main header.hero')],links=[...document.querySelectorAll('.rail nav a')];function update(){const max=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(max?scrollY/max*100:0)+'%';let current='';for(const s of sections){if(s.getBoundingClientRect().top<innerHeight*.48)current=s.id}links.forEach(a=>a.classList.toggle('active',a.hash==='#'+current))}window.addEventListener('resize',scaleBoards);window.addEventListener('scroll',update,{passive:true});document.fonts?.ready.then(scaleBoards);scaleBoards();update()})();
+  </script>
+</body>
+</html>
