@@ -1,3 +1,210 @@
+/* Brand Therapy archetype block. Verbatim extract of the archetype layout
+   rules in tools/brand-therapy-sprint/shared/styles.css (the Sprint packet
+   is the source). tools/shared_components.py fails when the two drift.
+   Tokens consumed: --ink, --ink-soft, --line, --white, --clay. */
+
+.archetype-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  gap: clamp(36px, 5vw, 72px);
+  align-items: center;
+  padding-top: clamp(28px, 4vw, 48px);
+}
+
+bt-archetype-chart {
+  display: block;
+  min-width: 0;
+  --bt-chart-ink: var(--ink);
+  --bt-chart-muted: var(--ink-soft);
+  --bt-chart-line: var(--line);
+  --bt-chart-paper: var(--white);
+  --bt-chart-accent: var(--clay);
+  --bt-chart-accent-soft: color-mix(in srgb, var(--clay) 18%, transparent);
+  --bt-chart-focus: var(--clay);
+}
+
+.archetype-read > p {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.archetype-roles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.archetype-roles li {
+  padding: 13px 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.archetype-roles strong {
+  color: var(--ink);
+  font-weight: 680;
+}
+
+.archetype-note {
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+@media (max-width: 1120px) {
+  .archetype-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Brand Therapy brand sliders. Verbatim extract of the slider rules in
+   tools/brand-therapy-sprint/shared/styles.css (the Sprint packet is the
+   source). tools/shared_components.py fails when the two drift.
+   Tokens consumed: --ink, --ink-soft, --line, --white, --clay. */
+
+.sliders-lead {
+  max-width: 54ch;
+  margin: clamp(24px, 3vw, 36px) 0 0;
+  color: var(--ink-soft);
+  font-size: 16px;
+}
+
+.slider-list {
+  margin: clamp(20px, 3vw, 32px) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(32px, 5vw, 72px);
+}
+
+.slider-list li {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr) 88px max-content;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.slider-list li.defining {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.slider-left {
+  text-align: right;
+}
+
+.slider-track {
+  position: relative;
+  height: 2px;
+  background: var(--line);
+}
+
+.slider-track::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -5px;
+  width: 1px;
+  height: 12px;
+  background: var(--line);
+}
+
+.slider-track i {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--pos) * 1%);
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  background: var(--ink-soft);
+  box-shadow: 0 0 0 1px var(--ink-soft);
+  transform: translate(-50%, -50%);
+}
+
+.slider-list li.defining .slider-track i {
+  background: var(--clay);
+  box-shadow: 0 0 0 1px var(--clay);
+}
+
+.slider-value {
+  color: var(--ink-soft);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.slider-list li.defining .slider-value {
+  color: var(--clay);
+}
+
+.slider-keywords {
+  margin-top: clamp(28px, 4vw, 44px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 56px);
+}
+
+.slider-keywords ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.slider-keywords li {
+  padding: 7px 13px;
+  border: 1px solid var(--clay);
+  border-radius: 999px;
+  color: var(--clay);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.slider-keywords > div + div li {
+  border: 1px dashed var(--line);
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+@media (max-width: 1120px) {
+  .slider-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .slider-list li {
+    grid-template-columns: 72px minmax(0, 1fr) 72px;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .slider-value {
+    grid-column: 1 / -1;
+    justify-self: end;
+    margin-top: -6px;
+  }
+
+  .slider-keywords {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Emily Rosales Client Core packaging.
    IDENTITY.md is the authority. This file only sets tokens on the shared
    Brand Therapy OS shell and styles the fixed-canvas mockup boards.
@@ -13,6 +220,10 @@
   --sand: #d9cdbb;
   --glass: #91aea6;
   --white-warm: #fffcf5;
+
+  /* Tokens the shared archetype-block and brand-sliders components read. */
+  --white: var(--white-warm);
+  --clay: oklch(0.46 0.045 182);
 
   --ink: var(--navy);
   --ink-soft: oklch(0.33 0.04 235);
@@ -269,171 +480,4 @@ h2,
   padding: 0.9rem 1rem;
   color: var(--muted);
   font-size: 0.78rem;
-}
-
-/* How the brand is tuned: one spectrum per line, dot marks the position. */
-.tune-list {
-  display: grid;
-  gap: var(--space-4);
-  margin: var(--space-5) 0 0;
-  padding: 0;
-  list-style: none;
-  max-width: 44rem;
-}
-
-.tune-row {
-  display: grid;
-  grid-template-columns: 7.5rem 1fr 7.5rem;
-  gap: var(--space-4);
-  align-items: center;
-}
-
-.tune-end {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.tune-end--right {
-  text-align: right;
-}
-
-.tune-track {
-  position: relative;
-  height: 2px;
-  background: var(--line-strong);
-}
-
-.tune-dot {
-  position: absolute;
-  top: 50%;
-  left: var(--pos);
-  width: 0.95rem;
-  height: 0.95rem;
-  border-radius: 50%;
-  background: var(--navy);
-  box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px var(--glass);
-  transform: translate(-50%, -50%);
-}
-
-.tune-open {
-  margin-top: var(--space-5);
-  color: var(--quiet);
-  font-size: 0.85rem;
-}
-
-@media (max-width: 40rem) {
-  .tune-list {
-    gap: var(--space-5);
-  }
-  .tune-row {
-    grid-template-columns: 1fr 1fr;
-    row-gap: var(--space-3);
-  }
-  .tune-track {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-}
-
-/* Brand personality: three leading archetypes, then the supporting mix. */
-.arch-leads {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-4);
-  margin-top: var(--space-5);
-  max-width: 52rem;
-}
-
-.arch-lead {
-  margin: 0;
-}
-
-.arch-lead img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 22%;
-  background: var(--panel);
-}
-
-.arch-lead figcaption {
-  display: grid;
-  gap: 0.15rem;
-  padding-top: var(--space-3);
-}
-
-.arch-lead b {
-  font: 500 1.9rem / 1 var(--type-display);
-}
-
-.arch-lead strong {
-  font-weight: 500;
-}
-
-.arch-lead span {
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-.arch-rest {
-  display: grid;
-  gap: var(--space-3);
-  max-width: 32rem;
-  margin: var(--space-6) 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.arch-rest li {
-  display: grid;
-  grid-template-columns: 6.5rem 1fr 2.5rem;
-  gap: var(--space-3);
-  align-items: center;
-  font-size: 0.9rem;
-}
-
-.arch-rest b {
-  font-weight: 500;
-  text-align: right;
-}
-
-.arch-bar {
-  height: 6px;
-  background: linear-gradient(90deg, var(--glass) var(--w), var(--panel) var(--w));
-}
-
-.arch-words-title {
-  margin-top: var(--space-7, 3rem);
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.arch-words {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2, 0.5rem);
-  margin: var(--space-4) 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.arch-words li {
-  padding: 0.4rem 0.8rem;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  font-size: 0.88rem;
-}
-
-@media (max-width: 40rem) {
-  .arch-leads {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-3);
-  }
-  .arch-lead b {
-    font-size: 1.4rem;
-  }
-  .arch-lead span {
-    display: none;
-  }
 }
