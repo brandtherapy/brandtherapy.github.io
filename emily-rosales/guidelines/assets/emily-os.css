@@ -4,7 +4,7 @@
 
    Scene: a consultant reading her brand system on a laptop in daylight.
    Strategy: Restrained. Ivory field, navy text, sea-glass for one
-   meaningful detail. The shared light sidebar stays; no dark rail override. */
+   meaningful detail. Navy rail, ivory reading field. */
 
 :root {
   --navy: #142939;
@@ -48,9 +48,51 @@ h2,
   letter-spacing: -0.015em;
 }
 
+.sidebar {
+  color: var(--ivory);
+  background: var(--navy);
+  border-right: 0;
+}
+
+.product-lockup strong,
+.nav-group summary,
+.nav-section-name {
+  color: var(--ivory);
+}
+
+.product-lockup span,
+.sidebar .mobile-context span,
+.sidebar-footer,
+.nav-section-code,
+.nav-group summary::after,
+.nav-optional {
+  color: oklch(0.86 0.02 175 / 0.6);
+}
+
+.nav-home,
+.nav-group a {
+  color: oklch(0.93 0.015 85 / 0.8);
+}
+
+.nav-home:hover,
+.nav-group a:hover {
+  color: var(--ivory);
+  background: oklch(0.95 0.01 85 / 0.07);
+}
+
+.nav-home[aria-current="page"],
+.nav-group a[aria-current="page"] {
+  color: var(--ivory);
+  background: oklch(0.95 0.01 85 / 0.11);
+}
+
 .nav-home[aria-current="page"]::before,
 .nav-group a[aria-current="page"]::before {
   background: var(--glass);
+}
+
+.overview-hero-copy strong {
+  font-family: var(--type-display);
 }
 
 .reflection-sample {
@@ -212,7 +254,6 @@ h2,
   grid-template-columns: 2.5rem 1fr;
   gap: var(--space-3);
   padding: var(--space-3) 0;
-  border-top: 1px solid var(--line);
   counter-increment: slide;
 }
 
@@ -227,6 +268,5 @@ h2,
 .example-card figcaption {
   padding: 0.9rem 1rem;
   color: var(--muted);
-  border-top: 1px solid var(--line);
   font-size: 0.78rem;
 }

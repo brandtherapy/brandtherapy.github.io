@@ -4,12 +4,13 @@
   "status": "published",
   "brand": "emily-rosales",
   "generated": "2026-10-22",
-  "templateVersion": "0.5.1",
+  "templateVersion": "0.6.0",
   "templateReleaseStatus": "review_pending",
-  "templateReleaseSha256": "2c7ec7324535a8eceae6289ca18a591a24584f7d93e7eb22e1dcecc7d0b76b85",
+  "templateReleaseSha256": "f559191661da167ec90e862e9a23043d4560b99196702165c22d17154c9d5a4e",
   "routes": [
     "index.html",
     "use.html",
+    "library.html",
     "strategy/index.html",
     "strategy/product.html",
     "strategy/people.html",
@@ -31,5 +32,5 @@
     "application/events.html",
     "application/print.html"
   ],
-  "routeCount": 22
+  "routeCount": 23
 }
