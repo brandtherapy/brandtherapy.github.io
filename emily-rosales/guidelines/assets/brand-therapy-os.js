@@ -97,10 +97,10 @@
 
   function osCopyPrefix() {
     const osUrl = (body.dataset.osUrl || "").trim();
-    const contextUrl = (body.dataset.contextUrl || "").trim();
     if (!osUrl) return "";
-    const context = contextUrl || (osUrl.endsWith("/") ? osUrl + "ai-context.md" : osUrl + "/ai-context.md");
-    return "Brand Therapy OS: " + osUrl + "\nAI context: " + context + "\n\n";
+    const root = osUrl.endsWith("/") ? osUrl : osUrl + "/";
+    return "Brand Therapy OS: " + root + "\nStart here: " + root + "use.html\n" +
+      "Read only the pages it lists for this request, in order: Strategy, then Identity, then the matching Application page.\n\n";
   }
 
   function withOsCopyPrefix(text, includeOs) {

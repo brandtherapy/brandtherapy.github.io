@@ -323,6 +323,19 @@ a {
   padding: var(--space-7) clamp(1.5rem, 4vw, 3.5rem) var(--space-8);
 }
 
+.ai-route-note {
+  max-width: 70ch;
+  margin: 0 0 var(--space-5);
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.ai-route-note a {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .page-header {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
