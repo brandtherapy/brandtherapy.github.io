@@ -586,8 +586,8 @@
     },
     {
       "path": "approved-photo-library/photo-library.css",
-      "bytes": 8498,
-      "sha256": "b8973df5b0d35cec9dc7c347ac2e0e1b58d34c3eaa7643c74cdd0322aeccebe8"
+      "bytes": 10045,
+      "sha256": "0133db47ad806e5f0b5a43b5454cc2872812d6b98a6a92972b65b52cf806a6ed"
     },
     {
       "path": "approved-photo-library/photo-library.js",
@@ -596,8 +596,8 @@
     },
     {
       "path": "images.html",
-      "bytes": 84110,
-      "sha256": "d0ddadf599a23a1694840cbecef4be438235b235416578cf719a37a8484800c8"
+      "bytes": 84553,
+      "sha256": "302d4c0a6f7a0a1c3663afb7759425b8bc2783f68908cdc04789d8d34fb32f4f"
     }
   ]
 }
