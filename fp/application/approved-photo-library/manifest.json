@@ -1,64 +1,21 @@
 {
   "schema_version": 1,
-  "release_id": "e1e2cde9d578",
+  "release_id": "7542cade5817",
   "brand": {
     "slug": "fp",
     "name": "Florian P."
   },
   "library": {
-    "version": "0.3.0-tagged",
+    "version": "0.2.0-review",
     "mode": "approved_public_photo_snapshot",
     "application_consumption": "approved_only",
-    "approved_count": 36,
+    "approved_count": 25,
     "origin_counts": {
-      "authentic": 19,
-      "ai_generated": 17
+      "authentic": 13,
+      "ai_generated": 12
     }
   },
   "assets": [
-    {
-      "id": "fp-ai-004",
-      "title": "Editorial lens portrait",
-      "origin_class": "ai_generated",
-      "ai_involvement": "full_generation",
-      "origin_label": "AI-generated",
-      "ai_label": "Fully AI-generated",
-      "asset_type": "editorial",
-      "setting": "black-and-white studio",
-      "mood": "conceptual, precise, provocative",
-      "orientation": "square",
-      "dimensions": "2400x2400",
-      "context_tags": [
-        "focus",
-        "perspective",
-        "editorial",
-        "brand_therapy"
-      ],
-      "intended_uses": [
-        "social_feed",
-        "website",
-        "presentation",
-        "layout_reference"
-      ],
-      "prohibited_uses": [
-        "pr",
-        "media_kit",
-        "documentary_claim"
-      ],
-      "alt_text": "Editorial lens portrait. black-and-white studio. conceptual, precise, provocative.",
-      "image": {
-        "small": "/fp/application/approved-photo-library/images/fp-ai-004-9bd1f90e82cf-small.webp",
-        "display": "/fp/application/approved-photo-library/images/fp-ai-004-9bd1f90e82cf-display.webp",
-        "full": "/fp/application/approved-photo-library/images/fp-ai-004-9bd1f90e82cf-full.webp",
-        "small_width": 700,
-        "small_height": 700,
-        "display_width": 1400,
-        "display_height": 1400,
-        "full_width": 2400,
-        "full_height": 2400,
-        "format": "webp"
-      }
-    },
     {
       "id": "fp-auth-001",
       "title": "Dinner laugh",
@@ -700,7 +657,7 @@
       "setting": "sunlit cafe",
       "mood": "observed, casual, reflective",
       "orientation": "landscape",
-      "dimensions": "2304x1576",
+      "dimensions": "2400x1642",
       "context_tags": [
         "coffee",
         "thinking",
@@ -719,15 +676,15 @@
       ],
       "alt_text": "Cafe coffee moment. sunlit cafe. observed, casual, reflective.",
       "image": {
-        "small": "/fp/application/approved-photo-library/images/fp-ai-006-a3476819f4e6-small.webp",
-        "display": "/fp/application/approved-photo-library/images/fp-ai-006-a3476819f4e6-display.webp",
-        "full": "/fp/application/approved-photo-library/images/fp-ai-006-a3476819f4e6-full.webp",
+        "small": "/fp/application/approved-photo-library/images/fp-ai-006-1a0c9ca01583-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-ai-006-1a0c9ca01583-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-ai-006-1a0c9ca01583-full.webp",
         "small_width": 700,
         "small_height": 479,
         "display_width": 1400,
         "display_height": 958,
-        "full_width": 2304,
-        "full_height": 1576,
+        "full_width": 2400,
+        "full_height": 1642,
         "format": "webp"
       }
     },
@@ -742,7 +699,7 @@
       "setting": "warm meeting table",
       "mood": "strategic, collaborative, cinematic",
       "orientation": "landscape",
-      "dimensions": "2328x1746",
+      "dimensions": "2400x1800",
       "context_tags": [
         "strategy",
         "working",
@@ -760,15 +717,15 @@
       ],
       "alt_text": "Warm strategy table. warm meeting table. strategic, collaborative, cinematic.",
       "image": {
-        "small": "/fp/application/approved-photo-library/images/fp-ai-008-6c9cd765b17a-small.webp",
-        "display": "/fp/application/approved-photo-library/images/fp-ai-008-6c9cd765b17a-display.webp",
-        "full": "/fp/application/approved-photo-library/images/fp-ai-008-6c9cd765b17a-full.webp",
+        "small": "/fp/application/approved-photo-library/images/fp-ai-008-a855e45b5ba4-small.webp",
+        "display": "/fp/application/approved-photo-library/images/fp-ai-008-a855e45b5ba4-display.webp",
+        "full": "/fp/application/approved-photo-library/images/fp-ai-008-a855e45b5ba4-full.webp",
         "small_width": 700,
         "small_height": 525,
         "display_width": 1400,
         "display_height": 1050,
-        "full_width": 2328,
-        "full_height": 1746,
+        "full_width": 2400,
+        "full_height": 1800,
         "format": "webp"
       }
     },
@@ -1098,363 +1055,6 @@
         "display_height": 1400,
         "full_width": 2048,
         "full_height": 2048,
-        "format": "webp"
-      }
-    },
-    {
-      "id": "fp-demo-20260908-untangling-the-idea",
-      "title": "Untangling the idea",
-      "origin_class": "ai_generated",
-      "ai_involvement": "full_generation",
-      "origin_label": "AI-generated",
-      "ai_label": "Fully AI-generated",
-      "asset_type": "photo",
-      "setting": "surreal white studio",
-      "mood": "playful, curious",
-      "orientation": "portrait",
-      "dimensions": "1122x1402",
-      "context_tags": [],
-      "intended_uses": [
-        "social_feed"
-      ],
-      "prohibited_uses": [
-        "documentary_claim"
-      ],
-      "alt_text": "Untangling the idea. surreal white studio. playful, curious.",
-      "image": {
-        "small": "/fp/application/approved-photo-library/images/fp-demo-20260908-untangling-the-idea-2121f3d2c247-small.webp",
-        "display": "/fp/application/approved-photo-library/images/fp-demo-20260908-untangling-the-idea-2121f3d2c247-display.webp",
-        "full": "/fp/application/approved-photo-library/images/fp-demo-20260908-untangling-the-idea-2121f3d2c247-full.webp",
-        "small_width": 560,
-        "small_height": 700,
-        "display_width": 1120,
-        "display_height": 1400,
-        "full_width": 1122,
-        "full_height": 1402,
-        "format": "webp"
-      }
-    },
-    {
-      "id": "fp-bd-20261015-02",
-      "title": "Choosing colors before strategy",
-      "origin_class": "ai_generated",
-      "ai_involvement": "full_generation",
-      "origin_label": "AI-generated",
-      "ai_label": "Fully AI-generated",
-      "asset_type": "photo",
-      "setting": "fictional observed business scene",
-      "mood": "review candidate",
-      "orientation": "square",
-      "dimensions": "1254x1254",
-      "context_tags": [],
-      "intended_uses": [],
-      "prohibited_uses": [],
-      "alt_text": "Choosing colors before strategy. fictional observed business scene. review candidate.",
-      "image": {
-        "small": "/fp/application/approved-photo-library/images/fp-bd-20261015-02-a526eb594567-small.webp",
-        "display": "/fp/application/approved-photo-library/images/fp-bd-20261015-02-a526eb594567-display.webp",
-        "full": "/fp/application/approved-photo-library/images/fp-bd-20261015-02-a526eb594567-full.webp",
-        "small_width": 700,
-        "small_height": 700,
-        "display_width": 1254,
-        "display_height": 1254,
-        "full_width": 1254,
-        "full_height": 1254,
-        "format": "webp"
-      }
-    },
-    {
-      "id": "fp-bd-20261015-candid-01",
-      "title": "Candid working photo for BD01",
-      "origin_class": "ai_generated",
-      "ai_involvement": "full_generation",
-      "origin_label": "AI-generated",
-      "ai_label": "Fully AI-generated",
-      "asset_type": "photo",
-      "setting": "candid work scene, generated review candidate",
-      "mood": "natural, observant, in the middle of work",
-      "orientation": "square",
-      "dimensions": "1254x1254",
-      "context_tags": [
-        "work",
-        "candid",
-        "bd01"
-      ],
-      "intended_uses": [
-        "social image review"
-      ],
-      "prohibited_uses": [
-        "documentary evidence",
-        "unapproved public use"
-      ],
-      "alt_text": "Candid working photo for BD01. candid work scene, generated review candidate. natural, observant, in the middle of work.",
-      "image": {
-        "small": "/fp/application/approved-photo-library/images/fp-bd-20261015-candid-01-2f65d259a16a-small.webp",
-        "display": "/fp/application/approved-photo-library/images/fp-bd-20261015-candid-01-2f65d259a16a-display.webp",
-        "full": "/fp/application/approved-photo-library/images/fp-bd-20261015-candid-01-2f65d259a16a-full.webp",
-        "small_width": 700,
-        "small_height": 700,
-        "display_width": 1254,
-        "display_height": 1254,
-        "full_width": 1254,
-        "full_height": 1254,
-        "format": "webp"
-      }
-    },
-    {
-      "id": "fp-bd-20261015-candid-04",
-      "title": "Candid working photo for BD04",
-      "origin_class": "ai_generated",
-      "ai_involvement": "full_generation",
-      "origin_label": "AI-generated",
-      "ai_label": "Fully AI-generated",
-      "asset_type": "photo",
-      "setting": "candid work scene, generated review candidate",
-      "mood": "natural, observant, in the middle of work",
-      "orientation": "square",
-      "dimensions": "1254x1254",
-      "context_tags": [
-        "work",
-        "candid",
-        "bd04"
-      ],
-      "intended_uses": [
-        "social image review"
-      ],
-      "prohibited_uses": [
-        "documentary evidence",
-        "unapproved public use"
-      ],
-      "alt_text": "Candid working photo for BD04. candid work scene, generated review candidate. natural, observant, in the middle of work.",
-      "image": {
-        "small": "/fp/application/approved-photo-library/images/fp-bd-20261015-candid-04-b600aa4d4d0b-small.webp",
-        "display": "/fp/application/approved-photo-library/images/fp-bd-20261015-candid-04-b600aa4d4d0b-display.webp",
-        "full": "/fp/application/approved-photo-library/images/fp-bd-20261015-candid-04-b600aa4d4d0b-full.webp",
-        "small_width": 700,
-        "small_height": 700,
-        "display_width": 1254,
-        "display_height": 1254,
-        "full_width": 1254,
-        "full_height": 1254,
-        "format": "webp"
-      }
-    },
-    {
-      "id": "fp-natural-20261015-01",
-      "title": "Natural Florian photo candidate 01",
-      "origin_class": "authentic",
-      "ai_involvement": "enhancement_only",
-      "origin_label": "Authentic",
-      "ai_label": "AI-enhanced",
-      "asset_type": "photo",
-      "setting": "airport",
-      "mood": "natural, candid",
-      "orientation": "portrait",
-      "dimensions": "941x1672",
-      "context_tags": [
-        "airport",
-        "natural"
-      ],
-      "intended_uses": [
-        "photo selection review"
-      ],
-      "prohibited_uses": [
-        "unapproved public use"
-      ],
-      "alt_text": "Natural Florian photo candidate 01. airport. natural, candid.",
-      "image": {
-        "small": "/fp/application/approved-photo-library/images/fp-natural-20261015-01-328bebb745ef-small.webp",
-        "display": "/fp/application/approved-photo-library/images/fp-natural-20261015-01-328bebb745ef-display.webp",
-        "full": "/fp/application/approved-photo-library/images/fp-natural-20261015-01-328bebb745ef-full.webp",
-        "small_width": 394,
-        "small_height": 700,
-        "display_width": 788,
-        "display_height": 1400,
-        "full_width": 941,
-        "full_height": 1672,
-        "format": "webp"
-      }
-    },
-    {
-      "id": "fp-natural-20261015-03",
-      "title": "Natural Florian photo candidate 03",
-      "origin_class": "authentic",
-      "ai_involvement": "enhancement_only",
-      "origin_label": "Authentic",
-      "ai_label": "AI-enhanced",
-      "asset_type": "photo",
-      "setting": "city window",
-      "mood": "natural, candid",
-      "orientation": "portrait",
-      "dimensions": "1087x1447",
-      "context_tags": [
-        "city window",
-        "natural"
-      ],
-      "intended_uses": [
-        "photo selection review"
-      ],
-      "prohibited_uses": [
-        "unapproved public use"
-      ],
-      "alt_text": "Natural Florian photo candidate 03. city window. natural, candid.",
-      "image": {
-        "small": "/fp/application/approved-photo-library/images/fp-natural-20261015-03-484d5584298e-small.webp",
-        "display": "/fp/application/approved-photo-library/images/fp-natural-20261015-03-484d5584298e-display.webp",
-        "full": "/fp/application/approved-photo-library/images/fp-natural-20261015-03-484d5584298e-full.webp",
-        "small_width": 526,
-        "small_height": 700,
-        "display_width": 1052,
-        "display_height": 1400,
-        "full_width": 1087,
-        "full_height": 1447,
-        "format": "webp"
-      }
-    },
-    {
-      "id": "fp-natural-20261015-05",
-      "title": "Natural Florian photo candidate 05",
-      "origin_class": "authentic",
-      "ai_involvement": "enhancement_only",
-      "origin_label": "Authentic",
-      "ai_label": "AI-enhanced",
-      "asset_type": "photo",
-      "setting": "woodland path",
-      "mood": "natural, candid",
-      "orientation": "portrait",
-      "dimensions": "1086x1448",
-      "context_tags": [
-        "woodland path",
-        "natural"
-      ],
-      "intended_uses": [
-        "photo selection review"
-      ],
-      "prohibited_uses": [
-        "unapproved public use"
-      ],
-      "alt_text": "Natural Florian photo candidate 05. woodland path. natural, candid.",
-      "image": {
-        "small": "/fp/application/approved-photo-library/images/fp-natural-20261015-05-245db7e6a912-small.webp",
-        "display": "/fp/application/approved-photo-library/images/fp-natural-20261015-05-245db7e6a912-display.webp",
-        "full": "/fp/application/approved-photo-library/images/fp-natural-20261015-05-245db7e6a912-full.webp",
-        "small_width": 525,
-        "small_height": 700,
-        "display_width": 1050,
-        "display_height": 1400,
-        "full_width": 1086,
-        "full_height": 1448,
-        "format": "webp"
-      }
-    },
-    {
-      "id": "fp-natural-20261015-06",
-      "title": "Natural Florian photo candidate 06",
-      "origin_class": "authentic",
-      "ai_involvement": "enhancement_only",
-      "origin_label": "Authentic",
-      "ai_label": "AI-enhanced",
-      "asset_type": "photo",
-      "setting": "restaurant",
-      "mood": "natural, candid",
-      "orientation": "portrait",
-      "dimensions": "1086x1448",
-      "context_tags": [
-        "restaurant",
-        "natural"
-      ],
-      "intended_uses": [
-        "photo selection review"
-      ],
-      "prohibited_uses": [
-        "unapproved public use",
-        "documentary evidence"
-      ],
-      "alt_text": "Natural Florian photo candidate 06. restaurant. natural, candid.",
-      "image": {
-        "small": "/fp/application/approved-photo-library/images/fp-natural-20261015-06-9391c0cbf910-small.webp",
-        "display": "/fp/application/approved-photo-library/images/fp-natural-20261015-06-9391c0cbf910-display.webp",
-        "full": "/fp/application/approved-photo-library/images/fp-natural-20261015-06-9391c0cbf910-full.webp",
-        "small_width": 525,
-        "small_height": 700,
-        "display_width": 1050,
-        "display_height": 1400,
-        "full_width": 1086,
-        "full_height": 1448,
-        "format": "webp"
-      }
-    },
-    {
-      "id": "fp-natural-20261015-09",
-      "title": "Natural Florian photo candidate 09",
-      "origin_class": "authentic",
-      "ai_involvement": "enhancement_only",
-      "origin_label": "Authentic",
-      "ai_label": "AI-enhanced",
-      "asset_type": "photo",
-      "setting": "creative office",
-      "mood": "natural, candid",
-      "orientation": "landscape",
-      "dimensions": "1550x1015",
-      "context_tags": [
-        "creative office",
-        "natural"
-      ],
-      "intended_uses": [
-        "photo selection review"
-      ],
-      "prohibited_uses": [
-        "unapproved public use",
-        "documentary evidence"
-      ],
-      "alt_text": "Natural Florian photo candidate 09. creative office. natural, candid.",
-      "image": {
-        "small": "/fp/application/approved-photo-library/images/fp-natural-20261015-09-43b2e8d01d55-small.webp",
-        "display": "/fp/application/approved-photo-library/images/fp-natural-20261015-09-43b2e8d01d55-display.webp",
-        "full": "/fp/application/approved-photo-library/images/fp-natural-20261015-09-43b2e8d01d55-full.webp",
-        "small_width": 700,
-        "small_height": 458,
-        "display_width": 1400,
-        "display_height": 917,
-        "full_width": 1550,
-        "full_height": 1015,
-        "format": "webp"
-      }
-    },
-    {
-      "id": "fp-natural-20261015-10",
-      "title": "Natural Florian photo candidate 10",
-      "origin_class": "authentic",
-      "ai_involvement": "enhancement_only",
-      "origin_label": "Authentic",
-      "ai_label": "AI-enhanced",
-      "asset_type": "photo",
-      "setting": "cafe",
-      "mood": "natural, candid",
-      "orientation": "portrait",
-      "dimensions": "1086x1448",
-      "context_tags": [
-        "cafe",
-        "natural"
-      ],
-      "intended_uses": [
-        "photo selection review"
-      ],
-      "prohibited_uses": [
-        "unapproved public use",
-        "documentary evidence"
-      ],
-      "alt_text": "Natural Florian photo candidate 10. cafe. natural, candid.",
-      "image": {
-        "small": "/fp/application/approved-photo-library/images/fp-natural-20261015-10-1cc1695eb3d4-small.webp",
-        "display": "/fp/application/approved-photo-library/images/fp-natural-20261015-10-1cc1695eb3d4-display.webp",
-        "full": "/fp/application/approved-photo-library/images/fp-natural-20261015-10-1cc1695eb3d4-full.webp",
-        "small_width": 525,
-        "small_height": 700,
-        "display_width": 1050,
-        "display_height": 1400,
-        "full_width": 1086,
-        "full_height": 1448,
         "format": "webp"
       }
     }
