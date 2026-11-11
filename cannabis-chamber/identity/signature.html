@@ -153,17 +153,17 @@
       <div class="sig-section-num">01</div>
       <div>
         <div class="sig-section-sub">Motion</div>
-        <h2 id="sig-1">The field</h2>
+        <h2 id="sig-1">The field<span class="dot">.</span></h2>
         <p class="sig-section-desc">Routes run past the frame. Gold nodes hold their centers.</p>
       </div>
     </div>
     <figure class="sig-motion">
-      <canvas id="signature-motion-field" style="aspect-ratio:1672 / 941" aria-label="Signature in motion"></canvas>
+      <canvas id="signature-motion-field" style="aspect-ratio:1672 / 941" aria-label="The Chamber Lines in motion"></canvas>
     </figure>
     <script>
 (function () {
-  const data = {"width":1672.0,"height":941.0,"background":"#f0e7d6","gold":"#b48e4b","nodes":[{"cx":1254.5,"cy":152.5,"r":23.0,"outerR":31.976553910638962},{"cx":469.0,"cy":191.5,"r":23.0,"outerR":31.698100557729553},{"cx":84.0,"cy":381.0,"r":39.5,"outerR":49.51767361255979},{"cx":1581.0,"cy":479.5,"r":40.0,"outerR":49.51009997970111},{"cx":1137.0,"cy":670.5,"r":23.0,"outerR":31.80015723231569},{"cx":222.0,"cy":681.5,"r":24.0,"outerR":32.72995569810628}],"routes":[{"d":"M 88 -100 C 12 100, 20 235, 84 381 C 128 507, 138 571, 222 681.5 C 307 793, 440 889, 548 1035","color":"#2D432B","direction":1},{"d":"M 1150 -100 C 1150 25, 1167 90, 1254.5 152.5 C 1370 234, 1515 317, 1581 479.5 C 1646 640, 1680 810, 1700 1040","color":"#2D432B","direction":-1},{"d":"M 345 -100 C 356 120, 252 267, 84 381 C 27 420, -28 451, -110 489","color":"#2A5D5B","direction":-1},{"d":"M 1780 354 C 1708 389, 1636 433, 1581 479.5 C 1440 599, 1310 745, 1364 1040","color":"#2A5D5B","direction":1},{"d":"M 600 -100 C 580 26, 538 121, 469 191.5 C 352 310, 223 373, 84 381 C 12 385, -59 365, -110 354","color":"#D06E53","direction":1},{"d":"M 980 1040 C 1004 881, 1038 778, 1137 670.5 C 1259 538, 1400 478, 1581 479.5 C 1650 480, 1718 489, 1780 508","color":"#D06E53","direction":-1}]};
-  const settings = {"length":12.0,"weight":28.0,"speed":1.65,"guides":0.4,"body":0.6,"gap":1860.0};
+  const data = {"width":1672.0,"height":941.0,"background":"#F1E8D8","gold":"#9C7C46","nodes":[{"cx":1254.5,"cy":152.5,"r":23.0,"outerR":31.976553910638962},{"cx":469.0,"cy":191.5,"r":23.0,"outerR":31.698100557729553},{"cx":84.0,"cy":381.0,"r":39.5,"outerR":49.51767361255979},{"cx":1581.0,"cy":479.5,"r":40.0,"outerR":49.51009997970111},{"cx":1137.0,"cy":670.5,"r":23.0,"outerR":31.80015723231569},{"cx":222.0,"cy":681.5,"r":24.0,"outerR":32.72995569810628}],"routes":[{"d":"M 84 -100 C 84 52.4, 84 204.9, 84 357.3 C 84 372.5, 90 387, 100.8 397.8 C 132.4 429.4, 164.1 461.1, 195.7 492.7 C 212.5 509.5, 222 532.4, 222 556.2 C 222 593.1, 222 630.1, 222 667.1 C 222 676.3, 225.7 685.2, 232.2 691.7 C 334.5 794, 436.9 896.4, 539.2 998.7 C 544.9 1004.4, 548 1012, 548 1019.9 C 548 1024.9, 548 1030, 548 1035","color":"#2D432B","direction":1},{"d":"M 1150 -100 C 1171.6 -78.4, 1193.3 -56.7, 1214.9 -35.1 C 1240.3 -9.7, 1254.5 24.6, 1254.5 60.5 C 1254.5 86.6, 1254.5 112.6, 1254.5 138.7 C 1254.5 147.5, 1258 156, 1264.3 162.3 C 1369.8 268, 1475.4 373.7, 1581 479.5 C 1618.7 517.2, 1656.4 554.9, 1694.1 592.6 C 1697.9 596.4, 1700 601.5, 1700 606.8 C 1700 751.2, 1700 895.6, 1700 1040","color":"#2D432B","direction":-1},{"d":"M 345 -100 C 345 -51.5, 345 -3, 345 45.4 C 345 93.2, 326 139, 292.3 172.7 C 222.9 242.1, 153.4 311.6, 84 381 C 57.1 407.9, 30.2 434.8, 3.4 461.6 C -14.2 479.2, -37.9 489, -62.7 489 C -78.5 489, -94.2 489, -110 489","color":"#2A5D5B","direction":-1},{"d":"M 1780 354 C 1746 388, 1711.9 422.1, 1677.9 456.1 C 1662.9 471.1, 1642.6 479.5, 1621.4 479.5 C 1616 479.5, 1610.5 479.5, 1605 479.5 C 1591.7 479.5, 1581 490.2, 1581 503.5 C 1581 585.1, 1581 666.8, 1581 748.4 C 1581 796.2, 1562 842, 1528.3 875.7 C 1473.5 930.5, 1418.8 985.2, 1364 1040","color":"#2A5D5B","direction":1},{"d":"M 600 -100 C 600 -70.6, 600 -41.2, 600 -11.7 C 600 34.5, 581.6 78.9, 548.9 111.6 C 522.3 138.2, 495.6 164.9, 469 191.5 C 414.7 245.8, 360.3 300.2, 306 354.5 C 289 371.5, 266 381, 242 381 C 189.3 381, 136.7 381, 84 381 C 19.3 381, -45.3 381, -110 381","color":"#D06E53","direction":1},{"d":"M 980 1040 C 980 938.5, 980 837, 980 735.5 C 980 699.6, 1009.1 670.5, 1045 670.5 C 1075.7 670.5, 1106.3 670.5, 1137 670.5 C 1196.5 670.5, 1256 670.5, 1315.4 670.5 C 1363.2 670.5, 1409 651.5, 1442.7 617.8 C 1483.2 577.3, 1523.6 536.9, 1564 496.5 C 1574.9 485.6, 1589.6 479.5, 1605 479.5 C 1663.3 479.5, 1721.7 479.5, 1780 479.5","color":"#D06E53","direction":-1}]};
+  const settings = {"length":5.5,"weight":24.0,"speed":0.65,"guides":0.0,"body":0.8,"gap":2960.0,"lines":0.65,"dots":0.65,"back":"bullet","front":"nose","cup":0.5};
   const canvas = document.getElementById("signature-motion-field");
   if (!canvas || !canvas.getContext) return;
   const ctx = canvas.getContext("2d");
@@ -202,10 +202,28 @@
     const a = r.points[lo], b = r.points[hi], t = (s - a.s) / (b.s - a.s || 1);
     return {x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t};
   }
-  function profile(t, body) {
-    if (body === 0) return {width: Math.pow(t, 0.7) * Math.min(1, (1 - t) / 0.11), alpha: Math.pow(t, 0.6) * Math.min(1, (1 - t) / 0.06)};
+  // "taper" thins and fades that end of a streak; every other shape keeps full width and draws a cap.
+  function profile(t, body, back, front) {
+    const cb = back !== "taper", cf = front !== "taper";
+    if (body === 0) return {width: (cb ? 1 : Math.pow(t, 0.7)) * (cf ? 1 : Math.min(1, (1 - t) / 0.11)), alpha: (cb ? 1 : Math.pow(t, 0.6)) * (cf ? 1 : Math.min(1, (1 - t) / 0.06))};
     const tail = (1 - body) * 0.8, head = (1 - body) * 0.2;
-    return {width: Math.min(1, Math.pow(t / tail, 0.7), (1 - t) / head), alpha: Math.min(1, Math.pow(t / tail, 0.6), (1 - t) / (head * 0.55))};
+    return {width: Math.min(1, cb ? 1 : Math.pow(t / tail, 0.7), cf ? 1 : (1 - t) / head), alpha: Math.min(1, cb ? 1 : Math.pow(t / tail, 0.6), cf ? 1 : (1 - t) / (head * 0.55))};
+  }
+  // One end of a streak at (x, y); (ux, uy) points out of the streak.
+  function cap(shape, x, y, ux, uy, w, cup) {
+    const h = w / 2;
+    if (shape === "round") {
+      lc.beginPath(); lc.arc(x, y, h, 0, Math.PI * 2); lc.fill();
+    } else if (shape === "nose" || shape === "bullet") {
+      lc.save(); lc.translate(x, y); lc.rotate(Math.atan2(uy, ux)); lc.beginPath();
+      if (shape === "bullet") { lc.moveTo(-1, -h); lc.ellipse(0, 0, h * 1.6, h, 0, -Math.PI / 2, Math.PI / 2); lc.lineTo(-1, h); }
+      else { const k = h * 0.6; lc.moveTo(-1, -h); lc.arcTo(k, -h, k, h, k); lc.arcTo(k, h, -1, h, k); lc.lineTo(-1, h); }
+      lc.closePath(); lc.fill(); lc.restore();
+    } else if (shape === "cup") {
+      const d = h * cup, c = (h * h - d * d) / (2 * d);
+      lc.save(); lc.globalCompositeOperation = "destination-out";
+      lc.beginPath(); lc.arc(x + ux * c, y + uy * c, c + d, 0, Math.PI * 2); lc.fill(); lc.restore();
+    }
   }
   function draw() {
     const w = canvas.width, h = canvas.height;
@@ -239,38 +257,58 @@
           const start = head + lap * travel - trail;
           const first = Math.max(0, Math.floor(-start / trail * samples));
           const end = Math.min(samples, Math.ceil((r.total - start) / trail * samples));
+          let p0 = null, p1 = null, last = null, prev = null;
           for (let j = first; j < end; j++) {
             const t0 = j / samples, t1 = (j + 1) / samples, t = (t0 + t1) / 2;
             const a = start + t0 * trail, b = start + t1 * trail;
             const p = at(r, r.direction === 1 ? a : r.total - a);
             const q = at(r, r.direction === 1 ? b : r.total - b);
-            const e = profile(t, settings.body);
+            const e = profile(t, settings.body, settings.back, settings.front);
             lc.lineWidth = settings.weight * e.width;
             lc.globalAlpha = e.alpha;
             lc.beginPath();
             lc.moveTo(p.x, p.y);
             lc.lineTo(q.x, q.y);
             lc.stroke();
+            if (j === first) { p0 = p; p1 = q; }
+            prev = p; last = q;
           }
+          lc.globalAlpha = 1;
+          lc.fillStyle = r.color;
+          let ul;
+          if (last && end === samples && (ul = Math.hypot(last.x - prev.x, last.y - prev.y))) cap(settings.front, last.x, last.y, (last.x - prev.x) / ul, (last.y - prev.y) / ul, settings.weight, settings.cup);
+          if (p0 && first === 0 && (ul = Math.hypot(p1.x - p0.x, p1.y - p0.y))) cap(settings.back, p0.x, p0.y, (p0.x - p1.x) / ul, (p0.y - p1.y) / ul, settings.weight, settings.cup);
         }
         ctx.save();
         ctx.setTransform(1, 0, 0, 1, 0, 0);
-        ctx.globalAlpha = [0.78, 0.30, 0.12][exposure];
+        ctx.globalAlpha = [0.78, 0.30, 0.12][exposure] * settings.lines;
         ctx.drawImage(layer, 0, 0);
         ctx.restore();
       }
     });
-    ctx.globalAlpha = 1;
+    // The ring stays solid so lines never show through, and the dot is one opaque color:
+    // the gold pre-mixed into the background at the dot opacity, never a translucent fill.
+    function mixHex(a, b, t) {
+      var x = parseInt(a.slice(1), 16), y = parseInt(b.slice(1), 16), out = "#";
+      for (var k = 16; k >= 0; k -= 8) {
+        var c = Math.round(((x >> k) & 255) * (1 - t) + ((y >> k) & 255) * t);
+        out += (c < 16 ? "0" : "") + c.toString(16);
+      }
+      return out;
+    }
+    var dotColor = mixHex(data.background, data.gold, settings.dots);
     data.nodes.forEach(function (n) {
+      ctx.globalAlpha = 1;
       ctx.fillStyle = data.background;
       ctx.beginPath();
       ctx.arc(n.cx, n.cy, n.outerR, 0, Math.PI * 2);
       ctx.fill();
-      ctx.fillStyle = data.gold;
+      ctx.fillStyle = dotColor;
       ctx.beginPath();
       ctx.arc(n.cx, n.cy, n.r, 0, Math.PI * 2);
       ctx.fill();
     });
+    ctx.globalAlpha = 1;
   }
   function size() {
     const css = canvas.clientWidth;
