@@ -76,6 +76,7 @@
 </div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
 <a href="index.html">Creative Direction</a>
 <a href="look-and-feel.html">Look &amp; Feel</a>
+<a class="active" href="logo.html">Logo</a>
 <a href="voice.html">Voice</a>
 <a href="signature.html">Signature</a>
 </div></details>
@@ -194,6 +195,18 @@
 .logo-downloads { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
 .logo-downloads a { display: inline-block; padding: 8px 12px; border: 1px solid var(--text); color: var(--text); text-decoration: none; font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; }
 .logo-downloads a:hover { background: var(--text); color: var(--light); }
+.logo-package { margin: 0 0 22px; }
+.logo-package a { display: inline-block; padding: 14px 22px; background: var(--text); color: var(--light); text-decoration: none; font-family: var(--ff-b); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.logo-files { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+.logo-file { display: grid; grid-template-columns: 112px 1fr auto; gap: 16px; align-items: center; padding: 12px; border: 1px solid var(--border); background: var(--white); }
+.logo-file-thumb { width: 112px; height: 76px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); }
+.logo-file-thumb img { max-width: 88px; max-height: 56px; width: auto; height: auto; display: block; }
+.logo-file-meta { display: flex; flex-direction: column; gap: 3px; min-width: 0; font-family: var(--ff-b); font-size: 13px; line-height: 1.4; color: var(--text); }
+.logo-file-meta span { color: var(--muted); font-size: 12px; }
+.logo-file-meta code { font-size: 11px; color: var(--muted); overflow-wrap: anywhere; }
+.logo-file-dl { padding: 8px 12px; border: 1px solid var(--text); color: var(--text); text-decoration: none; font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; }
+.logo-file-dl:hover { background: var(--text); color: var(--light); }
+@media (max-width: 520px) { .logo-file { grid-template-columns: 80px 1fr; } .logo-file-thumb { width: 80px; height: 60px; } .logo-file-thumb img { max-width: 60px; max-height: 44px; } .logo-file-dl { grid-column: 1 / -1; text-align: center; } }
 @media (max-width: 800px) {
   .logo-space, .logo-motion { grid-template-columns: 1fr; }
   .logo-stage { min-height: 320px; }
@@ -255,8 +268,19 @@
     <div class="app-section-head">
       <div class="app-section-num">05</div>
       <div>
+        <div class="app-section-kicker">Files</div>
+        <h2 id="app-section-5">Every logo file</h2>
+        <p class="app-section-desc">Sixteen PNG files. Solid files carry their own Ivory or Harbor Navy field. Transparent files sit on any approved field.</p>
+      </div>
+    </div>
+    <p class="logo-package"><a href="../images/identity/logo/bastion-logo-files.zip" download="bastion-logo-files.zip">Download all files</a></p><div class="logo-files"><div class="logo-file"><div class="logo-file-thumb" style="background:var(--light);"><img src="../images/identity/logo/bastion-logo-primary.png" alt="Primary horizontal" loading="lazy"></div><div class="logo-file-meta"><strong>Primary horizontal</strong><span>Ivory field, 5744 x 2183</span><code>bastion-logo-primary.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-logo-primary.png" download="bastion-logo-primary.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:var(--light);"><img src="../images/identity/logo/bastion-logo-primary-transparent.png" alt="Primary horizontal" loading="lazy"></div><div class="logo-file-meta"><strong>Primary horizontal</strong><span>No field, for Ivory and light grounds</span><code>bastion-logo-primary-transparent.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-logo-primary-transparent.png" download="bastion-logo-primary-transparent.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:var(--dark);"><img src="../images/identity/logo/bastion-logo-reversed.png" alt="Reversed horizontal" loading="lazy"></div><div class="logo-file-meta"><strong>Reversed horizontal</strong><span>Harbor Navy field, 5744 x 2183</span><code>bastion-logo-reversed.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-logo-reversed.png" download="bastion-logo-reversed.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:var(--dark);"><img src="../images/identity/logo/bastion-logo-reversed-transparent.png" alt="Reversed horizontal" loading="lazy"></div><div class="logo-file-meta"><strong>Reversed horizontal</strong><span>No field, for Harbor Navy grounds</span><code>bastion-logo-reversed-transparent.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-logo-reversed-transparent.png" download="bastion-logo-reversed-transparent.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:var(--light);"><img src="../images/identity/logo/bastion-logo-stacked.png" alt="Stacked" loading="lazy"></div><div class="logo-file-meta"><strong>Stacked</strong><span>Ivory field, 2100 x 2887</span><code>bastion-logo-stacked.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-logo-stacked.png" download="bastion-logo-stacked.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:var(--light);"><img src="../images/identity/logo/bastion-logo-stacked-transparent.png" alt="Stacked" loading="lazy"></div><div class="logo-file-meta"><strong>Stacked</strong><span>No field, for Ivory and light grounds</span><code>bastion-logo-stacked-transparent.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-logo-stacked-transparent.png" download="bastion-logo-stacked-transparent.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:var(--dark);"><img src="../images/identity/logo/bastion-logo-stacked-reversed.png" alt="Stacked reversed" loading="lazy"></div><div class="logo-file-meta"><strong>Stacked reversed</strong><span>Harbor Navy field, 2100 x 2887</span><code>bastion-logo-stacked-reversed.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-logo-stacked-reversed.png" download="bastion-logo-stacked-reversed.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:#fff;"><img src="../images/identity/logo/bastion-logo-black.png" alt="One color black" loading="lazy"></div><div class="logo-file-meta"><strong>One color black</strong><span>Single ink on white</span><code>bastion-logo-black.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-logo-black.png" download="bastion-logo-black.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:#000;"><img src="../images/identity/logo/bastion-logo-white.png" alt="One color white" loading="lazy"></div><div class="logo-file-meta"><strong>One color white</strong><span>Single ink, white on a black field</span><code>bastion-logo-white.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-logo-white.png" download="bastion-logo-white.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:var(--light);"><img src="../images/identity/logo/bastion-mark.png" alt="BC monogram" loading="lazy"></div><div class="logo-file-meta"><strong>BC monogram</strong><span>Ivory field, 2100 x 2183</span><code>bastion-mark.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-mark.png" download="bastion-mark.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:var(--light);"><img src="../images/identity/logo/bastion-mark-transparent.png" alt="BC monogram" loading="lazy"></div><div class="logo-file-meta"><strong>BC monogram</strong><span>No field, for Ivory and light grounds</span><code>bastion-mark-transparent.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-mark-transparent.png" download="bastion-mark-transparent.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:var(--dark);"><img src="../images/identity/logo/bastion-mark-on-navy.png" alt="BC monogram on navy" loading="lazy"></div><div class="logo-file-meta"><strong>BC monogram on navy</strong><span>Harbor Navy field, 2100 x 2183</span><code>bastion-mark-on-navy.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-mark-on-navy.png" download="bastion-mark-on-navy.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:var(--light);"><img src="../images/identity/logo/bastion-mark-512.png" alt="Monogram 512 px" loading="lazy"></div><div class="logo-file-meta"><strong>Monogram 512 px</strong><span>App icon and social avatar</span><code>bastion-mark-512.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-mark-512.png" download="bastion-mark-512.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:var(--light);"><img src="../images/identity/logo/bastion-mark-180.png" alt="Monogram 180 px" loading="lazy"></div><div class="logo-file-meta"><strong>Monogram 180 px</strong><span>Apple touch icon</span><code>bastion-mark-180.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-mark-180.png" download="bastion-mark-180.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:var(--light);"><img src="../images/identity/logo/bastion-mark-32.png" alt="Monogram 32 px" loading="lazy"></div><div class="logo-file-meta"><strong>Monogram 32 px</strong><span>Browser tab icon</span><code>bastion-mark-32.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-mark-32.png" download="bastion-mark-32.png">Download</a></div><div class="logo-file"><div class="logo-file-thumb" style="background:var(--light);"><img src="../images/identity/logo/bastion-mark-16.png" alt="Monogram 16 px" loading="lazy"></div><div class="logo-file-meta"><strong>Monogram 16 px</strong><span>Smallest browser tab icon</span><code>bastion-mark-16.png</code></div><a class="logo-file-dl" href="../images/identity/logo/bastion-mark-16.png" download="bastion-mark-16.png">Download</a></div></div>
+  </section>
+  <section class="app-section" aria-labelledby="app-section-6">
+    <div class="app-section-head">
+      <div class="app-section-num">06</div>
+      <div>
         <div class="app-section-kicker">Misuse</div>
-        <h2 id="app-section-5">What breaks the mark</h2>
+        <h2 id="app-section-6">What breaks the mark</h2>
         <p class="app-section-desc">These are the failures that make the mark unrecognizable or off-brand.</p>
       </div>
     </div>
@@ -276,9 +300,9 @@
 <!--
   Brand:        Bastion Companies (bastion)
   Version:      0.1.0
-  Built at:     2026-11-11T22:49:06+00:00
-  Git SHA:      28975a5275aacfcfb96365083b0e8c19f1fa36ec
-  Bundle hash:  sha256:3f34c6e094f7beadede9d4c73e548727e00e470e8f5d4565f14b42df7d05b7aa
+  Built at:     2026-11-11T23:16:23+00:00
+  Git SHA:      c3ae6a196025c06080a0678d67b7f107465fab9e
+  Bundle hash:  sha256:2e533d109c672d97ec4babd5b7f6e90f6997914db1b5746cbbe492d000e0d9bd
   Source:       brand-os/brands/bastion/IDENTITY.md + STRATEGY.md
 -->
 </body>
