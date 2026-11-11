@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noai, noimageai">
+<title>Signature · Bastion Brand Therapy OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #9B2D23;
+    --accent-glow: rgba(155, 45, 35, 0.18);
+    --accent-soft: rgba(155, 45, 35, 0.08);
+    --text: #111D2E;
+    --muted: #5E636A;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #CFCBC3;
+    --light: #ECE7DE;
+    --white: #F6F3EE;
+    --dark: #111D2E;
+    --dark-surface: #18263A;
+    --ff-h: "Fjalla One", Arial Narrow, sans-serif;
+    --ff-b: "Public Sans", Helvetica Neue, Arial, sans-serif;
+    --ff-accent: "Fjalla One", Arial Narrow, sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">Bastion</div>
+    <div class="meta">Brand Therapy OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand Therapy OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="../strategy/index.html">Focus Star</a>
+<a href="../strategy/product.html">Product</a>
+<a href="../strategy/people.html">People</a>
+<a href="../strategy/purpose.html">Purpose</a>
+<a href="../strategy/promise.html">Promise</a>
+<a href="../strategy/personality.html">Personality</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="index.html">Creative Direction</a>
+<a href="look-and-feel.html">Look &amp; Feel</a>
+<a href="voice.html">Voice</a>
+<a class="active" href="signature.html">Signature</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Identity</strong></div>
+    <div class="row"><span>Use</span><strong>Visual + voice</strong></div>
+    <div class="row"><span>Brand DNA</span><strong>Built in</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+<style>
+.sig-section { margin: 0 0 96px; }
+.sig-section-head { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; padding-top: 20px; border-top: 1px solid var(--text); margin-bottom: 40px; }
+.sig-section-num { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--accent); padding-top: 12px; }
+.sig-section-head h2 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.02; letter-spacing: -0.025em; color: var(--text); margin: 0 0 8px; }
+.sig-section-head h2 .dot { color: var(--accent); }
+.sig-section-sub { font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.sig-section-desc { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 640px; margin: 0; }
+.sig-variants { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 32px 0 48px; }
+@media (max-width: 900px) { .sig-variants { grid-template-columns: 1fr; } }
+.sig-variant { background: var(--white); border: 1px solid var(--border); padding: 24px; }
+.sig-variant .sig-label { font-family: var(--ff-b); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.sig-variant h3 { font-family: var(--ff-h); font-weight: 800; font-size: 22px; letter-spacing: -0.01em; color: var(--text); margin: 0 0 8px; }
+
+.vf-demo-frame, .sig-frame { position: relative; aspect-ratio: 4/3; overflow: hidden; container-type: inline-size; background: var(--light); }
+.vf-demo-frame.vf-hero, .sig-frame.vf-hero { --top: 16%; --right: 12%; --bottom: 18%; --left: 14%; --vf-thick: clamp(4px, 1.25cqi, 8px); --vf-blur: 8px; --vf-bright: 0.45; }
+.vf-demo-frame.vf-image, .sig-frame.vf-image { --vf-thick: clamp(4px, 1cqi, 7px); overflow: visible; }
+.vf-demo-frame.vf-hero img, .sig-frame.vf-hero img { margin: 0; }
+.vf-type-demo { display: grid; place-items: center; padding: 28px; }
+.vf-heading-lockup { position: relative; padding: 32px 0 0 32px; font-family: var(--ff-h); font-weight: 800; font-size: clamp(28px, 12cqi, 56px); line-height: 0.96; color: var(--text); }
+.vf-heading-lockup::before { content: ""; position: absolute; top: 0; left: 0; width: 28px; height: 10px; border-top: 4px solid var(--accent); border-left: 4px solid var(--accent); }
+
+	.sig-variant .sig-frame { margin: 16px 0; }
+	.sig-variant .sig-frame.vf-image { margin: calc(var(--vf-thick) * 2) 0; }
+.sig-variant p { font-family: var(--ff-b); font-size: 13px; color: var(--muted); line-height: 1.6; margin: 16px 0 0; }
+.sig-raster-board { border: 1px solid var(--border); background: var(--white); padding: 14px; margin: 32px 0 28px; }
+.sig-raster-board img { display: block; width: 100%; height: auto; max-height: 820px; object-fit: contain; background: var(--white); }
+.sig-raster-board figcaption { font-family: var(--ff-b); font-size: 11px; line-height: 1.5; color: var(--muted); margin-top: 10px; }
+.sig-variant-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 24px 0 48px; }
+@media (max-width: 900px) { .sig-variant-notes { grid-template-columns: 1fr; } }
+.sig-variant-note { background: var(--white); border: 1px solid var(--border); padding: 24px; }
+.sig-variant-note .sig-label { font-family: var(--ff-b); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.sig-variant-note h3 { font-family: var(--ff-h); font-weight: 800; font-size: 22px; letter-spacing: -0.01em; color: var(--text); margin: 0 0 8px; }
+.sig-variant-note p { font-family: var(--ff-b); font-size: 13px; color: var(--muted); line-height: 1.6; margin: 16px 0 0; }
+.sig-recognition { background: var(--dark); color: var(--white); padding: 48px clamp(32px, 5vw, 64px); margin: 48px 0; }
+.sig-recognition .sig-recognition-label { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.sig-recognition p { font-family: var(--ff-h); font-weight: 400; font-size: clamp(20px, 2.4vw, 28px); line-height: 1.4; color: var(--white); margin: 0; max-width: 760px; }
+.sig-spec-body { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 800px; }
+.sig-spec-body h2 { font-family: var(--ff-h); font-weight: 800; font-size: 24px; letter-spacing: -0.01em; color: var(--text); margin: 32px 0 12px; }
+.sig-spec-body h3 { font-family: var(--ff-h); font-weight: 800; font-size: 18px; letter-spacing: -0.01em; color: var(--text); margin: 24px 0 8px; }
+.sig-spec-body h4 { font-family: var(--ff-b); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin: 20px 0 6px; }
+.sig-spec-body p { margin: 0 0 12px; }
+.sig-spec-body ul { padding-left: 24px; margin: 0 0 12px; }
+.sig-spec-body li { margin: 4px 0; }
+.sig-spec-body code { background: var(--accent-soft); padding: 2px 6px; font-family: ui-monospace, monospace; font-size: 13px; }
+.sig-spec-body strong { font-weight: 700; color: var(--text); }
+.sig-motion { margin: 0; border: 1px solid var(--text); background: #f0e7d6; line-height: 0; overflow: hidden; }
+.sig-motion canvas { display: block; width: 100%; height: auto; }
+	</style>
+  <span class="eyebrow" style="font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);">Section B · Brand Identity · Signature</span>
+  <h1 style="font-family:var(--ff-h);font-weight:800;font-size:clamp(56px,8vw,112px);line-height:0.92;letter-spacing:-0.04em;color:var(--text);margin:16px 0 24px;">The Cornerstone</h1>
+  <p style="font-family:var(--ff-b);font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:var(--text);max-width:640px;margin:0 0 64px;">The brand's most recognizable visual element. Used consistently across every surface. Never decorative.</p>
+
+  <section class="sig-section" aria-labelledby="sig-1">
+    <div class="sig-section-head">
+      <div class="sig-section-num">01</div>
+      <div>
+        <div class="sig-section-sub">Reference</div>
+        <h2 id="sig-1">The device</h2>
+        <p class="sig-section-desc">The device has a single version: the Harbor Navy wall with its Brick Red cornerstone.</p>
+      </div>
+    </div>
+    <figure class="sig-raster-board"><img src="../images/signature/device-field-color.png" alt="The Cornerstone signature device"><figcaption>The Cornerstone on Ivory: a Harbor Navy wall enters from the left edge and holds one Brick Red square in its cut.</figcaption></figure><div class="sig-variant-notes"><article class="sig-variant-note"><img src="../images/signature/device-field-color.png" alt="The Cornerstone" loading="lazy" style="display:block;width:100%;height:auto;margin:0 0 16px;"><div class="sig-label">The Cornerstone · The signature</div><h3>The Cornerstone</h3><p>Harbor Navy wall with the Brick Red cornerstone on an Ivory ground. It always bleeds off the edge it enters from.</p></article></div>
+  </section>
+
+  
+  <div class="sig-recognition">
+    <div class="sig-recognition-label">Recognition test</div>
+    <p>Cover the logo. A Harbor Navy wall entering from one edge with a single Brick Red square set flush in its cut should still read as Bastion before any name appears.</p>
+  </div>
+  <section class="sig-section" aria-labelledby="sig-2">
+    <div class="sig-section-head">
+      <div class="sig-section-num">02</div>
+      <div>
+        <div class="sig-section-sub">Construction · Spec</div>
+        <h2 id="sig-2">Build rules</h2>
+        <p class="sig-section-desc">The construction reference. How to draw it, weight it, place it.</p>
+      </div>
+    </div>
+    <div class="sig-spec-body"><h2>Bastion signature: The Cornerstone</h2>
+<h2>Grammar</h2>
+<p>A heavy Harbor Navy wall enters from one edge of the frame and bleeds off the three edges behind it. One solid Brick Red square sits flush inside a cut at the wall's open face, like the first stone laid in a building. Hard corners, flat matte color, faint paper grain. It reads as Bastion without the monogram and stands for the Promise: built in from day one.</p>
+<h2>Rules</h2>
+<ul>
+<li>The device always bleeds off the edge it enters from. It never floats mid-frame.</li>
+<li>One cornerstone per surface. Never repeat the square as a pattern.</li>
+<li>The wall never appears without its Brick Red cornerstone. There is no reversed or single-ink version.</li>
+<li>Never use the device next to the BC mark at the same size. The logo names the brand; the Cornerstone is the surface device.</li>
+</ul></div>
+  </section>
+
+
+  <div class="footer-nav">
+    <span>Section B · SG · Brand Identity</span>
+    <span><a href="../strategy/index.html">Brand Strategy →</a></span>
+  </div>
+  <p class="footer-legal">This Brand Therapy OS is for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        Bastion Companies (bastion)
+  Version:      0.1.0
+  Built at:     2026-11-11T22:49:06+00:00
+  Git SHA:      28975a5275aacfcfb96365083b0e8c19f1fa36ec
+  Bundle hash:  sha256:3f34c6e094f7beadede9d4c73e548727e00e470e8f5d4565f14b42df7d05b7aa
+  Source:       brand-os/brands/bastion/IDENTITY.md + STRATEGY.md
+-->
+</body>
+</html>

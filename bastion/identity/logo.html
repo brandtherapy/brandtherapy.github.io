@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noai, noimageai">
+<title>Logo · Bastion Brand Therapy OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #9B2D23;
+    --accent-glow: rgba(155, 45, 35, 0.18);
+    --accent-soft: rgba(155, 45, 35, 0.08);
+    --text: #111D2E;
+    --muted: #5E636A;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #CFCBC3;
+    --light: #ECE7DE;
+    --white: #F6F3EE;
+    --dark: #111D2E;
+    --dark-surface: #18263A;
+    --ff-h: "Fjalla One", Arial Narrow, sans-serif;
+    --ff-b: "Public Sans", Helvetica Neue, Arial, sans-serif;
+    --ff-accent: "Fjalla One", Arial Narrow, sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">Bastion</div>
+    <div class="meta">Brand Therapy OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand Therapy OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="../strategy/index.html">Focus Star</a>
+<a href="../strategy/product.html">Product</a>
+<a href="../strategy/people.html">People</a>
+<a href="../strategy/purpose.html">Purpose</a>
+<a href="../strategy/promise.html">Promise</a>
+<a href="../strategy/personality.html">Personality</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="index.html">Creative Direction</a>
+<a href="look-and-feel.html">Look &amp; Feel</a>
+<a href="voice.html">Voice</a>
+<a href="signature.html">Signature</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Identity</strong></div>
+    <div class="row"><span>Use</span><strong>Visual + voice</strong></div>
+    <div class="row"><span>Brand DNA</span><strong>Built in</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+<style>
+.app-hero { margin: 0 0 72px; padding: 64px 0 40px; border-bottom: 1px solid var(--border); }
+.app-hero .eyebrow { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+.app-hero h1 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(52px, 8vw, 104px); line-height: 0.92; letter-spacing: -0.04em; color: var(--text); margin: 0 0 24px; }
+.app-hero h1 .dot { color: var(--accent); }
+.app-hero p { font-family: var(--ff-b); font-size: clamp(16px, 1.5vw, 19px); line-height: 1.65; color: var(--text); max-width: 760px; margin: 0; }
+.app-section { margin: 0 0 88px; }
+.app-section-head { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; padding-top: 20px; border-top: 1px solid var(--text); margin-bottom: 36px; }
+.app-section-num { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--accent); padding-top: 12px; }
+.app-section-kicker { font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.app-section h2 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.02; letter-spacing: -0.025em; color: var(--text); margin: 0 0 10px; }
+.app-section h2 .dot { color: var(--accent); }
+.app-section-desc { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 680px; margin: 0; }
+.app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0; border-left: 1px solid var(--border); border-top: 1px solid var(--border); }
+.app-card { display: flex; flex-direction: column; min-height: 220px; padding: 28px 24px 24px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--white); color: var(--text); text-decoration: none; }
+.app-card:hover { background: var(--accent-soft); }
+.app-card .code, .app-example .code { font-family: var(--ff-b); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.app-card h3 { font-family: var(--ff-h); font-weight: 800; font-size: 22px; line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 12px; color: var(--text); }
+.app-card p, .app-example p, .app-rule p { font-family: var(--ff-b); font-size: 13px; line-height: 1.6; color: var(--muted); margin: 0; }
+.app-chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.app-chip { font-family: var(--ff-b); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); border: 1px solid var(--border); padding: 6px 10px; background: var(--white); }
+.app-example-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+.app-example, .app-rule { padding: 28px 24px; border: 1px solid var(--border); background: var(--white); }
+.app-example h3, .app-rule h3 { font-family: var(--ff-h); font-weight: 800; font-size: 20px; line-height: 1.15; color: var(--text); margin: 0 0 10px; }
+.app-example-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 18px; }
+.app-ref-link { display: inline-flex; align-items: center; min-height: 34px; padding: 8px 12px; border: 1px solid var(--text); color: var(--text); text-decoration: none; font-family: var(--ff-b); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.app-ref-link:hover { background: var(--text); color: var(--white); }
+.app-ref-source { font-family: var(--ff-b); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.app-ref-preview { margin-top: 22px; border: 1px solid var(--border); background: var(--light); height: clamp(340px, 54vw, 620px); overflow: hidden; }
+.app-ref-preview iframe { width: 100%; height: 100%; border: 0; background: var(--white); }
+.app-ref-preview.image { height: auto; background: var(--white); }
+.app-ref-preview.image img { display: block; width: 100%; max-height: 620px; object-fit: contain; background: var(--white); }
+.app-rule-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border-left: 1px solid var(--border); border-top: 1px solid var(--border); }
+.app-rule-list .app-rule { border-left: 0; border-top: 0; }
+.app-note { padding: 28px 32px; border: 1px solid var(--border); background: var(--light); font-family: var(--ff-b); font-size: 14px; line-height: 1.7; color: var(--text); }
+.pb-spectrum-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-left: 1px solid var(--border); border-top: 1px solid var(--border); }
+.pb-spectrum-card { min-height: 240px; padding: 24px 18px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--white); }
+.pb-spectrum-card.active { background: var(--accent-soft); box-shadow: inset 0 0 0 2px var(--accent); }
+.pb-spectrum-card .num { font-family: var(--ff-b); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent); margin-bottom: 12px; }
+.pb-spectrum-card h3 { font-family: var(--ff-h); font-size: 18px; line-height: 1.1; margin: 0 0 10px; color: var(--text); }
+.pb-spectrum-card p { font-family: var(--ff-b); font-size: 12px; line-height: 1.6; color: var(--muted); margin: 0; }
+.pb-spectrum-stack { width: 100%; max-width: 860px; border-top: 1px solid var(--text); }
+.pb-spectrum-row { display: grid; grid-template-columns: 56px minmax(0,1fr) minmax(150px,220px); gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--border); position: relative; }
+.pb-spectrum-num { font-family: var(--ff-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; color: var(--muted); }
+.pb-spectrum-title { font-family: var(--ff-h); font-weight: 700; font-size: 15px; color: var(--muted); letter-spacing: -0.01em; }
+.pb-spectrum-tag { font-family: var(--ff-b); font-size: 10px; font-weight: 500; letter-spacing: 0.08em; color: var(--muted); text-align: right; opacity: 0.65; }
+.pb-spectrum-row.passed .pb-spectrum-num { color: var(--accent); opacity: 0.55; }
+.pb-spectrum-row.passed .pb-spectrum-title { color: var(--text); opacity: 0.48; }
+.pb-spectrum-row.future .pb-spectrum-num, .pb-spectrum-row.future .pb-spectrum-title, .pb-spectrum-row.future .pb-spectrum-tag { opacity: 0.35; }
+.pb-spectrum-row.active { display: block; padding: 0; background: var(--white); overflow: hidden; }
+.pb-spectrum-active-header { display: grid; grid-template-columns: 56px minmax(0,1fr) auto; gap: 20px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--border-soft); position: relative; z-index: 1; }
+.pb-spectrum-active-header .pb-spectrum-num { color: var(--accent); font-size: 11px; }
+.pb-spectrum-active-header .pb-spectrum-title { color: var(--text); font-size: 18px; font-weight: 800; }
+.pb-spectrum-badge { font-family: var(--ff-b); font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 5px 12px; border: 1px solid var(--accent); }
+.pb-spectrum-active-content { display: grid; grid-template-columns: 56px minmax(0,1fr) minmax(240px,340px); gap: 20px; padding: 28px 0 36px; position: relative; z-index: 1; }
+.pb-spectrum-rail { width: 2px; min-height: 140px; background: linear-gradient(180deg, var(--accent) 0%, transparent 100%); margin: 4px auto 0; }
+.pb-spectrum-detail p { font-family: var(--ff-b); font-size: 13.5px; line-height: 1.65; color: var(--text); max-width: 380px; margin: 0 0 24px; }
+.pb-spectrum-insight { font-family: var(--ff-b); font-size: 11px !important; color: var(--muted) !important; line-height: 1.55 !important; padding-left: 16px; border-left: 2px solid var(--accent); max-width: 330px !important; }
+.pb-spectrum-visual { position: relative; display: flex; align-items: flex-end; justify-content: center; min-height: 250px; }
+.pb-spectrum-person { position: relative; z-index: 1; max-height: 270px; width: auto; display: block; filter: drop-shadow(0 4px 20px rgba(0,0,0,0.08)); }
+.pb-spectrum-logo { position: absolute; right: 0; top: 48%; transform: translateY(-50%); z-index: 2; width: 106px; height: 106px; background: var(--white); padding: 8px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+.pb-spectrum-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.pb-vf-corner { position: absolute; width: 24px; height: 24px; pointer-events: none; z-index: 2; }
+.pb-vf-corner.tl { top: -1px; left: -16px; border-top: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+.pb-vf-corner.br { bottom: -1px; right: -16px; border-bottom: 2px solid var(--accent); border-right: 2px solid var(--accent); }
+.pb-callout { padding: 32px; border: 1px solid var(--text); background: var(--white); display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; }
+.pb-callout h3 { font-family: var(--ff-h); font-size: 28px; line-height: 1.05; margin: 0 0 14px; color: var(--text); }
+.pb-callout p { font-family: var(--ff-b); font-size: 14px; line-height: 1.7; color: var(--text); margin: 0 0 12px; }
+.pb-mode-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-left: 1px solid var(--border); border-top: 1px solid var(--border); }
+.pb-mode { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--white); }
+.pb-mode h3 { font-family: var(--ff-h); font-size: 24px; line-height: 1.05; margin: 0 0 10px; padding: 24px 22px 0; color: var(--text); }
+.pb-mode p { font-family: var(--ff-b); font-size: 13px; line-height: 1.6; color: var(--muted); margin: 0; padding: 0 22px 20px; }
+.pb-mode-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(92px, 1fr)); gap: 0; border-top: 1px solid var(--border); }
+.pb-mode-images img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: var(--light); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.pb-mode-images img:last-child { border-right: 0; }
+.pb-asset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+.pb-asset-card { border: 1px solid var(--border); background: var(--white); overflow: hidden; }
+.pb-asset-card img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: var(--light); }
+.pb-asset-card span { display: block; padding: 10px 12px; font-family: var(--ff-b); font-size: 10px; line-height: 1.4; color: var(--muted); overflow-wrap: anywhere; }
+.pb-character-board { margin: 0 0 28px; border: 1px solid var(--border); background: var(--light); overflow: hidden; }
+.pb-character-board img { display: block; width: 100%; height: auto; object-fit: contain; background: var(--light); }
+.pb-character-board figcaption { padding: 12px 16px; border-top: 1px solid var(--border); font-family: var(--ff-b); font-size: 13px; line-height: 1.45; color: var(--text); }
+.pb-character-board figcaption span { display: block; margin-top: 4px; font-size: 12px; color: var(--muted); }
+.pb-character-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0 0 28px; }
+.pb-character-pair .pb-character-board { margin: 0; }
+@media (max-width: 980px) { .pb-spectrum-grid, .pb-callout, .pb-spectrum-active-content, .pb-mode-grid { grid-template-columns: 1fr; } .pb-spectrum-active-header, .pb-spectrum-row { grid-template-columns: 44px minmax(0,1fr); } .pb-spectrum-tag, .pb-spectrum-badge { grid-column: 2; text-align: left; justify-self: start; } .pb-spectrum-rail { display: none; } .pb-spectrum-logo { width: 88px; height: 88px; right: 24px; } .pb-character-pair { grid-template-columns: 1fr; } }
+</style>
+<style>
+.logo-stage { display: flex; align-items: center; justify-content: center; min-height: 460px; margin: 8px 0 72px; background: var(--light); }
+.logo-stage img { width: min(240px, 42vw); height: auto; }
+.logo-space { display: grid; grid-template-columns: minmax(220px, 380px) minmax(240px, 1fr); gap: 40px; align-items: center; margin: 0 0 28px; }
+.logo-diagram { margin: 0; }
+.logo-diagram img { display: block; width: 100%; max-width: 380px; height: auto; }
+.logo-space + .logo-diagram { margin-top: 28px; }
+.logo-space + .logo-diagram img { max-width: 920px; }
+.logo-diagram figcaption { margin: 12px 0 0; max-width: 68ch; font-family: var(--ff-b); font-size: 16px; line-height: 1.6; }
+.logo-key { display: block; width: 88px; height: auto; margin: 0 0 16px; }
+.logo-rules { max-width: 68ch; }
+.logo-motion { display: grid; grid-template-columns: minmax(220px, 380px) minmax(240px, 1fr); gap: 40px; align-items: center; margin: 0 0 28px; }
+.logo-motion-stage { background: var(--light); padding: 48px; }
+.logo-motion-stage iframe { display: block; width: 100%; aspect-ratio: 1; border: 0; background: transparent; }
+.logo-rules p { margin: 0 0 12px; font-family: var(--ff-b); font-size: 16px; line-height: 1.6; }
+.logo-downloads { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
+.logo-downloads a { display: inline-block; padding: 8px 12px; border: 1px solid var(--text); color: var(--text); text-decoration: none; font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; }
+.logo-downloads a:hover { background: var(--text); color: var(--light); }
+@media (max-width: 800px) {
+  .logo-space, .logo-motion { grid-template-columns: 1fr; }
+  .logo-stage { min-height: 320px; }
+}
+</style>
+
+  <section class="app-hero">
+    <div class="eyebrow">Section B · Logo</div>
+    <h1>Logo</h1>
+    <p>The brand mark, wordmark, and approved lockups, with the rules that keep them recognizable.</p>
+  </section>
+  <div class="logo-stage"><img src="../images/identity/logo/bastion-mark.png" alt="BC monogram"></div>
+  
+  <section class="app-section" aria-labelledby="app-section-1">
+    <div class="app-section-head">
+      <div class="app-section-num">01</div>
+      <div>
+        <div class="app-section-kicker">Marks</div>
+        <h2 id="app-section-1">The primary identity</h2>
+        <p class="app-section-desc">The BC monogram with its Brick Red seat. Use the supplied files as they are.</p>
+      </div>
+    </div>
+    <div class="app-grid"><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/identity/logo/bastion-mark.png" alt="BC monogram" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:var(--light);"><div style="padding:20px 22px;"><h3>BC monogram</h3><p>Favicon, avatar and small spaces where the name already appears nearby.</p><p class="logo-downloads"><a href="../images/identity/logo/bastion-mark.png" download="bastion-mark.png">PNG</a></p></div></div></div>
+  </section>
+  <section class="app-section" aria-labelledby="app-section-2">
+    <div class="app-section-head">
+      <div class="app-section-num">02</div>
+      <div>
+        <div class="app-section-kicker">Lockups</div>
+        <h2 id="app-section-2">Approved combinations</h2>
+        <p class="app-section-desc">Use these locked relationships. Do not re-space or re-scale the parts. The gap between the mark and the name is already in the file. Count clear space outside the whole lockup.</p>
+      </div>
+    </div>
+    <div class="app-grid"><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/identity/logo/bastion-logo-primary.png" alt="Primary horizontal" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:var(--light);"><div style="padding:20px 22px;"><h3>Primary horizontal</h3><p>Default on Ivory. Harbor Navy ink, Brick Red seat.</p><p class="logo-downloads"><a href="../images/identity/logo/bastion-logo-primary.png" download="bastion-logo-primary.png">PNG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/identity/logo/bastion-logo-reversed.png" alt="Reversed horizontal" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:var(--dark);"><div style="padding:20px 22px;"><h3>Reversed horizontal</h3><p>On Harbor Navy. Ivory ink, Brick Red Light seat.</p><p class="logo-downloads"><a href="../images/identity/logo/bastion-logo-reversed.png" download="bastion-logo-reversed.png">PNG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/identity/logo/bastion-logo-stacked.png" alt="Stacked" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:var(--light);"><div style="padding:20px 22px;"><h3>Stacked</h3><p>Square and tall formats such as profile images, signage and the business card back.</p><p class="logo-downloads"><a href="../images/identity/logo/bastion-logo-stacked.png" download="bastion-logo-stacked.png">PNG</a></p></div></div><div class="app-card" style="padding:0;overflow:hidden;"><img src="../images/identity/logo/bastion-logo-black.png" alt="One color" loading="lazy" style="display:block;width:100%;height:auto;padding:28px;box-sizing:border-box;background:var(--light);"><div style="padding:20px 22px;"><h3>One color</h3><p>Fax, stamps, single-ink print. The seat drops to the same ink.</p><p class="logo-downloads"><a href="../images/identity/logo/bastion-logo-black.png" download="bastion-logo-black.png">PNG</a></p></div></div></div>
+  </section>
+  <section class="app-section" aria-labelledby="app-section-3">
+    <div class="app-section-head">
+      <div class="app-section-num">03</div>
+      <div>
+        <div class="app-section-kicker">Clear space</div>
+        <h2 id="app-section-3">One seat of room on every side</h2>
+        <p class="app-section-desc">Keep an empty margin as tall as the seat square around the logo. Nothing else enters it.</p>
+      </div>
+    </div>
+    <div class="logo-space"><div class="logo-rules"><p>The margin equals the height of the seat square on every side.</p><p>In the horizontal file that margin is already built in around the artwork.</p></div></div>
+  </section>
+  <section class="app-section" aria-labelledby="app-section-4">
+    <div class="app-section-head">
+      <div class="app-section-num">04</div>
+      <div>
+        <div class="app-section-kicker">Size</div>
+        <h2 id="app-section-4">Smallest useful size</h2>
+        <p class="app-section-desc">Below these sizes the open C and the seat stop reading clearly.</p>
+      </div>
+    </div>
+    <div class="logo-rules"><p>Horizontal logo in print: 38 mm wide.</p><p>Horizontal logo on screen: 160 px wide.</p><p>Mark on screen: 16 px, using the 16 px file.</p></div>
+  </section>
+  <section class="app-section" aria-labelledby="app-section-5">
+    <div class="app-section-head">
+      <div class="app-section-num">05</div>
+      <div>
+        <div class="app-section-kicker">Misuse</div>
+        <h2 id="app-section-5">What breaks the mark</h2>
+        <p class="app-section-desc">These are the failures that make the mark unrecognizable or off-brand.</p>
+      </div>
+    </div>
+    <div class="app-rule-list"><div class="app-rule"><h3>Never</h3><div class="app-chip-row"><span class="app-chip">Never recolor the seat outside Brick Red on light and Brick Red Light on dark.</span><span class="app-chip">Never separate the seat from the C or animate it out of the letter.</span><span class="app-chip">Never set BASTION COMPANIES in a font other than Fjalla One.</span><span class="app-chip">Never place the logo on a photograph without a solid Harbor Navy or Ivory field behind it.</span><span class="app-chip">Never stretch, outline, shadow or rotate the lockups.</span></div></div></div>
+  </section>
+
+
+  <div class="footer-nav">
+    <span>Section B · LG · Brand Identity</span>
+    <span><a href="voice.html">Voice →</a></span>
+  </div>
+  <p class="footer-legal">This Brand Therapy OS is for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        Bastion Companies (bastion)
+  Version:      0.1.0
+  Built at:     2026-11-11T22:49:06+00:00
+  Git SHA:      28975a5275aacfcfb96365083b0e8c19f1fa36ec
+  Bundle hash:  sha256:3f34c6e094f7beadede9d4c73e548727e00e470e8f5d4565f14b42df7d05b7aa
+  Source:       brand-os/brands/bastion/IDENTITY.md + STRATEGY.md
+-->
+</body>
+</html>

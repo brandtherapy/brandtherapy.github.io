@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noai, noimageai">
+<title>Voice · Bastion Brand Therapy OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #9B2D23;
+    --accent-glow: rgba(155, 45, 35, 0.18);
+    --accent-soft: rgba(155, 45, 35, 0.08);
+    --text: #111D2E;
+    --muted: #5E636A;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #CFCBC3;
+    --light: #ECE7DE;
+    --white: #F6F3EE;
+    --dark: #111D2E;
+    --dark-surface: #18263A;
+    --ff-h: "Fjalla One", Arial Narrow, sans-serif;
+    --ff-b: "Public Sans", Helvetica Neue, Arial, sans-serif;
+    --ff-accent: "Fjalla One", Arial Narrow, sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">Bastion</div>
+    <div class="meta">Brand Therapy OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand Therapy OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="../strategy/index.html">Focus Star</a>
+<a href="../strategy/product.html">Product</a>
+<a href="../strategy/people.html">People</a>
+<a href="../strategy/purpose.html">Purpose</a>
+<a href="../strategy/promise.html">Promise</a>
+<a href="../strategy/personality.html">Personality</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="index.html">Creative Direction</a>
+<a href="look-and-feel.html">Look &amp; Feel</a>
+<a class="active" href="voice.html">Voice</a>
+<a href="signature.html">Signature</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Identity</strong></div>
+    <div class="row"><span>Use</span><strong>Visual + voice</strong></div>
+    <div class="row"><span>Brand DNA</span><strong>Built in</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+<style>
+.voice-section { margin: 0 0 96px; }
+.voice-section-head { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; padding-top: 20px; border-top: 1px solid var(--text); margin-bottom: 40px; }
+.voice-section-num { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--accent); padding-top: 12px; }
+.voice-section-head h2 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.02; letter-spacing: -0.025em; color: var(--text); margin: 0 0 8px; }
+.voice-section-head h2 .dot { color: var(--accent); }
+.voice-section-sub { font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.voice-section-desc { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 640px; margin: 0; }
+.voice-body { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 800px; }
+.voice-body h2 { font-family: var(--ff-h); font-weight: 800; font-size: 28px; letter-spacing: -0.02em; color: var(--text); margin: 48px 0 16px; }
+.voice-body h3 { font-family: var(--ff-h); font-weight: 800; font-size: 20px; letter-spacing: -0.01em; color: var(--text); margin: 32px 0 12px; }
+.voice-body h4 { font-family: var(--ff-b); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin: 24px 0 8px; }
+.voice-body p { margin: 0 0 16px; }
+.voice-body ul, .voice-body ol { padding-left: 24px; margin: 0 0 16px; }
+.voice-body li { margin: 4px 0; }
+.voice-body code { background: var(--accent-soft); padding: 2px 6px; font-family: ui-monospace, monospace; font-size: 13px; }
+.voice-body blockquote { border: 1px solid var(--border); padding: 16px 18px; margin: 16px 0; color: var(--muted); font-style: normal; background: color-mix(in srgb, var(--light) 34%, var(--white)); }
+.voice-body strong { font-weight: 700; color: var(--text); }
+.voice-body table { border-collapse: collapse; width: 100%; margin: 24px 0; font-size: 14px; }
+.voice-body th, .voice-body td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; vertical-align: top; }
+.voice-body th { font-family: var(--ff-b); font-weight: 700; letter-spacing: 0.04em; background: var(--light); color: var(--text); }
+.voice-body td { color: var(--text); }
+</style>
+  <span class="eyebrow" style="font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);">Section B · Brand Identity · Voice</span>
+  <h1 style="font-family:var(--ff-h);font-weight:800;font-size:clamp(56px,8vw,112px);line-height:0.92;letter-spacing:-0.04em;color:var(--text);margin:16px 0 24px;">Voice</h1>
+  <p style="font-family:var(--ff-b);font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:var(--text);max-width:640px;margin:0 0 64px;">How the brand speaks. Principles first, then what's banned, then exemplars.</p>
+
+  <section class="voice-section" aria-labelledby="voice-1">
+    <div class="voice-section-head">
+      <div class="voice-section-num">01</div>
+      <div>
+        <div class="voice-section-sub">Operating rules</div>
+        <h2 id="voice-1">Voice principles</h2>
+      </div>
+    </div>
+    <div class="voice-body"><p>See STRATEGY.md Voice. State the role, the number and the source.</p>
+<h3>Principles</h3>
+<ul>
+<li>State the role, the number and the source.</li>
+<li>Short declarative sentences in a civic register.</li>
+<li>Credit partners by name.</li>
+</ul>
+<h3>On-voice examples</h3>
+<ul>
+<li>"A seat at the table." It names the purpose in five plain words.</li>
+<li>"Built in from day one." It states the Promise as a fact about the deal.</li>
+<li>"Partners on every project." It credits the people Bastion brings in.</li>
+</ul>
+<h3>Off-voice traps</h3>
+<ul>
+<li>"We're changing the game." It imports a football metaphor and promises nothing specific.</li>
+<li>"Giving back to the community." It frames ownership as charity.</li>
+</ul></div>
+  </section>
+
+  <section class="voice-section" aria-labelledby="voice-2">
+    <div class="voice-section-head">
+      <div class="voice-section-num">02</div>
+      <div>
+        <div class="voice-section-sub">Exemplar bank</div>
+        <h2 id="voice-2">Paired exemplars</h2>
+        <p class="voice-section-desc">On-voice examples and off-voice traps, verbatim from references/voice-exemplars.md. The exemplar bank is the calibration test for any new copy.</p>
+      </div>
+    </div>
+    <div class="voice-body"><p>No voice exemplars found.</p></div>
+  </section>
+
+
+  <div class="footer-nav">
+    <span>Section B · VO · Brand Identity</span>
+    <span><a href="signature.html">Signature →</a></span>
+  </div>
+  <p class="footer-legal">This Brand Therapy OS is for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        Bastion Companies (bastion)
+  Version:      0.1.0
+  Built at:     2026-11-11T22:49:06+00:00
+  Git SHA:      28975a5275aacfcfb96365083b0e8c19f1fa36ec
+  Bundle hash:  sha256:3f34c6e094f7beadede9d4c73e548727e00e470e8f5d4565f14b42df7d05b7aa
+  Source:       brand-os/brands/bastion/IDENTITY.md + STRATEGY.md
+-->
+</body>
+</html>

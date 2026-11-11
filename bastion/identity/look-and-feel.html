@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--
+  section-a-shell.html
+  ====================
+  Editorial HTML chrome shared across brands. Preserves the existing brand-os/os/
+  visual design (sidebar nav, editorial typography, brand-specific treatment, footer).
+
+  build.py substitutes Jinja2-style {{ tokens }} at render time. Available tokens
+  are documented in shared/templates/README.md (section: "Template token syntax
+  in section-a-shell.html").
+
+  This shell is brand-agnostic in structure. Per-brand values (name, accent color,
+  fonts, nav contents) are injected. The CSS at assets/style.css carries the
+  shared visual system; per-brand color and typography overrides come through
+  the CSS custom-property block in the inline <style> below.
+
+  When opening this file in a browser directly (without build.py running),
+  the {{ tokens }} display as literals. That's expected. The shell is a
+  template, not a standalone page. Visual parity check happens against the
+  rendered output, not the shell file.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noai, noimageai">
+<title>Look & Feel · Bastion Brand Therapy OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* Per-brand color and typography token overrides.
+     Injected by build.py from IDENTITY.md frontmatter. */
+  :root {
+    --accent: #9B2D23;
+    --accent-glow: rgba(155, 45, 35, 0.18);
+    --accent-soft: rgba(155, 45, 35, 0.08);
+    --text: #111D2E;
+    --muted: #5E636A;
+    --muted-readable: color-mix(in srgb, var(--muted) 70%, var(--text));
+    --border: #CFCBC3;
+    --light: #ECE7DE;
+    --white: #F6F3EE;
+    --dark: #111D2E;
+    --dark-surface: #18263A;
+    --ff-h: "Fjalla One", Arial Narrow, sans-serif;
+    --ff-b: "Public Sans", Helvetica Neue, Arial, sans-serif;
+    --ff-accent: "Fjalla One", Arial Narrow, sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+</style>
+</head>
+<body class="grain">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="brand-mark">
+    <div class="name">Bastion</div>
+    <div class="meta">Brand Therapy OS</div>
+  </div>
+  <nav class="nav-section" aria-label="Brand Therapy OS sections">
+    <div class="label">Sections</div>
+    <div class="nav-list">
+<a class="" href="../index.html">System Overview</a>
+</div><details class="nav-group" open><summary><span class="group-letter">A</span><span class="group-label">Brand Strategy</span></summary><div class="nav-list">
+<a href="../strategy/index.html">Focus Star</a>
+<a href="../strategy/product.html">Product</a>
+<a href="../strategy/people.html">People</a>
+<a href="../strategy/purpose.html">Purpose</a>
+<a href="../strategy/promise.html">Promise</a>
+<a href="../strategy/personality.html">Personality</a>
+</div></details><details class="nav-group" open><summary><span class="group-letter">B</span><span class="group-label">Brand Identity</span></summary><div class="nav-list">
+<a href="index.html">Creative Direction</a>
+<a class="active" href="look-and-feel.html">Look &amp; Feel</a>
+<a href="voice.html">Voice</a>
+<a href="signature.html">Signature</a>
+</div></details>
+  </nav>
+  <div class="toolbar-mini">
+    <div class="row"><span>Section</span><strong>Identity</strong></div>
+    <div class="row"><span>Use</span><strong>Visual + voice</strong></div>
+    <div class="row"><span>Brand DNA</span><strong>Built in</strong></div>
+  </div>
+</aside>
+
+<main class="content">
+
+<style>
+.lf-section { margin: 0 0 96px; }
+.lf-section-head { display: grid; grid-template-columns: 72px 1fr; gap: 24px; align-items: start; padding-top: 20px; border-top: 1px solid var(--text); margin-bottom: 40px; }
+.lf-section-num { font-family: var(--ff-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--accent); padding-top: 12px; }
+.lf-section-head h2 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.02; letter-spacing: -0.025em; color: var(--text); margin: 0 0 8px; }
+.lf-section-head h2 .dot { color: var(--accent); }
+.lf-section-sub { font-family: var(--ff-b); font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.lf-section-desc { font-family: var(--ff-b); font-size: 15px; line-height: 1.7; color: var(--text); max-width: 640px; margin: 0; }
+.lf-palette-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 0; border: 1px solid var(--border); margin: 32px 0 0; }
+@media (max-width: 700px) { .lf-palette-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.lf-swatch { aspect-ratio: 1; position: relative; display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; border-right: 1px solid var(--border); }
+.lf-swatch:last-child { border-right: none; }
+.lf-swatch-label { font-family: var(--ff-b); font-size: 9px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 4px; }
+.lf-swatch-hex { font-family: var(--ff-b); font-size: 11px; font-weight: 500; letter-spacing: 0.04em; }
+.lf-swatch.dark-text .lf-swatch-label, .lf-swatch.dark-text .lf-swatch-hex { color: var(--text); }
+.lf-swatch.light-text .lf-swatch-label, .lf-swatch.light-text .lf-swatch-hex { color: var(--white); }
+.lf-rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--border); border-left: 1px solid var(--border); margin: 32px 0 48px; }
+.lf-rule-cell { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 32px 28px; background: var(--white); }
+.lf-rule-cell.dont { background: var(--light); }
+.lf-rule-cell .lf-rule-kind { font-family: var(--ff-b); font-size: 10px; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 12px; }
+.lf-rule-cell.dont .lf-rule-kind { color: var(--text); }
+.lf-rule-cell p { font-family: var(--ff-b); font-size: 14px; color: var(--text); line-height: 1.6; margin: 0; }
+@media (max-width: 720px) { .lf-rules-grid { grid-template-columns: 1fr; } }
+.lf-photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 32px 0 48px; }
+@media (max-width: 720px) { .lf-photo-grid { grid-template-columns: 1fr; } }
+.lf-photo-card { background: var(--white); border: 1px solid var(--border); padding: 24px; }
+.lf-photo-card h3 { font-family: var(--ff-h); font-weight: 800; font-size: 20px; letter-spacing: -0.01em; color: var(--text); margin: 0 0 12px; }
+.lf-photo-card p { font-family: var(--ff-b); font-size: 14px; line-height: 1.6; color: var(--text); margin: 0 0 12px; }
+.lf-anti-list { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--border); }
+.lf-anti-item { padding: 20px 0; border-bottom: 1px solid var(--border); }
+.lf-anti-item h3 { font-family: var(--ff-h); font-weight: 800; font-size: 18px; letter-spacing: -0.01em; color: var(--text); margin: 0 0 6px; }
+.lf-anti-item p { font-family: var(--ff-b); font-size: 14px; line-height: 1.6; color: var(--muted); margin: 0; }
+</style>
+  <span class="eyebrow" style="font-family:var(--ff-b);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);">Section B · Brand Identity · Look &amp; Feel</span>
+  <h1 style="font-family:var(--ff-h);font-weight:800;font-size:clamp(56px,8vw,112px);line-height:0.92;letter-spacing:-0.04em;color:var(--text);margin:16px 0 24px;">Look &amp; Feel</h1>
+  <p style="font-family:var(--ff-b);font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:var(--text);max-width:640px;margin:0 0 64px;">The operational layer of the visual identity. Color, typography, layout, photography, and the categories the brand refuses to look like.</p>
+
+  
+  <section class="lf-section" aria-labelledby="lf-1">
+    <div class="lf-section-head">
+      <div class="lf-section-num">01</div>
+      <div>
+        <div class="lf-section-sub">Color system</div>
+        <h2 id="lf-1">Palette</h2>
+        <p class="lf-section-desc">One accent. A small set of neutrals. The accent carries all brand energy; everything else stays quiet.</p>
+      </div>
+    </div>
+    <div class="lf-palette-grid"><div class="lf-swatch light-text" style="background:#111D2E;" role="img" aria-label="Harbor Navy color, hex #111D2E"><div class="lf-swatch-label">Harbor Navy</div><div class="lf-swatch-hex">#111D2E</div></div><div class="lf-swatch dark-text" style="background:#ECE7DE;" role="img" aria-label="Ivory color, hex #ECE7DE"><div class="lf-swatch-label">Ivory</div><div class="lf-swatch-hex">#ECE7DE</div></div><div class="lf-swatch light-text" style="background:#9B2D23;" role="img" aria-label="Brick Red color, hex #9B2D23"><div class="lf-swatch-label">Brick Red</div><div class="lf-swatch-hex">#9B2D23</div></div><div class="lf-swatch light-text" style="background:#B23A2E;" role="img" aria-label="Brick Red Light color, hex #B23A2E"><div class="lf-swatch-label">Brick Red Light</div><div class="lf-swatch-hex">#B23A2E</div></div><div class="lf-swatch light-text" style="background:#5E636A;" role="img" aria-label="Granite color, hex #5E636A"><div class="lf-swatch-label">Granite</div><div class="lf-swatch-hex">#5E636A</div></div><div class="lf-swatch dark-text" style="background:#CFCBC3;" role="img" aria-label="Concrete color, hex #CFCBC3"><div class="lf-swatch-label">Concrete</div><div class="lf-swatch-hex">#CFCBC3</div></div></div>
+  </section>
+
+  
+  <section class="lf-section" aria-labelledby="lf-2">
+    <div class="lf-section-head">
+      <div class="lf-section-num">02</div>
+      <div>
+        <div class="lf-section-sub">Type system</div>
+        <h2 id="lf-2">Typography</h2>
+        <p class="lf-section-desc">Bastion type system: Fjalla One carries editorial warmth and major brand headlines; Public Sans carries navigation, body text, labels, forms, and practical service detail. The renderer must not fall back to FP typography.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border:1px solid var(--border);background:var(--white);">
+      <div style="padding:32px 36px;border-right:1px solid var(--border);">
+        <div style="font-family:var(--ff-b);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Editorial display</div>
+        <div style="font-family:var(--ff-h);font-weight:400;font-size:38px;letter-spacing:0;color:var(--text);margin-bottom:16px;line-height:1;">Fjalla One</div>
+        <p style="font-family:var(--ff-b);font-size:13px;color:var(--muted);line-height:1.6;margin:0;">Use: brand headlines, expressive lines, source-board phrases, footer promise, and warm high-touch moments.</p>
+      </div>
+      
+      <div style="padding:32px 36px;border-right:1px solid var(--border);">
+        <div style="font-family:var(--ff-b);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Editorial echo</div>
+        <div style="font-family:var(--ff-accent);font-weight:400;font-size:32px;letter-spacing:0;color:var(--text);margin-bottom:16px;">Fjalla One</div>
+        <p style="font-family:var(--ff-b);font-size:13px;color:var(--muted);line-height:1.6;margin:0;">Use: mixed-headline emphasis and large pull moments. Keep it elegant and spacious, not ornate.</p>
+      </div>
+      <div style="padding:32px 36px;">
+        <div style="font-family:var(--ff-b);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Functional sans</div>
+        <div style="font-family:var(--ff-b);font-weight:400;font-size:32px;letter-spacing:-0.01em;color:var(--text);margin-bottom:16px;">Public Sans</div>
+        <p style="font-family:var(--ff-b);font-size:13px;color:var(--muted);line-height:1.6;margin:0;">Use: body text, form fields, small proof lines, and practical advisory copy. Keep it plain, legible, and human.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="lf-section" aria-labelledby="lf-3">
+    <div class="lf-section-head">
+      <div class="lf-section-num">03</div>
+      <div>
+        <div class="lf-section-sub">System · Rules</div>
+        <h2 id="lf-3">Do &amp; Don't</h2>
+        <p class="lf-section-desc">Non-negotiable. These rules exist to maintain visual coherence across every touchpoint.</p>
+      </div>
+    </div>
+    <div class="lf-rules-grid"></div>
+  </section>
+
+  
+  
+  <section class="lf-section" aria-labelledby="lf-4">
+    <div class="lf-section-head">
+      <div class="lf-section-num">04</div>
+      <div>
+        <div class="lf-section-sub">Imagery · Photography</div>
+        <h2 id="lf-4">Photography</h2>
+        <p class="lf-section-desc">How real photos and AI-generated imagery should look.</p>
+      </div>
+    </div>
+    <div style="font-family:var(--ff-b);font-size:15px;line-height:1.7;color:var(--text);max-width:760px;"><p>Real project and site photography only, credited. D &amp; E Street stays labeled as the 2023 proposal. No generated people.</p></div>
+  </section>
+
+  
+  <section class="lf-section" aria-labelledby="lf-5">
+    <div class="lf-section-head">
+      <div class="lf-section-num">05</div>
+      <div>
+        <div class="lf-section-sub">Categories the brand refuses</div>
+        <h2 id="lf-5">Anti-references</h2>
+        <p class="lf-section-desc">What this brand is visually and categorically NOT, framed as anti-targets for AI image generation, layout work, and brand positioning.</p>
+      </div>
+    </div>
+    <div class="lf-anti-list"></div>
+  </section>
+
+
+
+  <div class="footer-nav">
+    <span>Section B · LF · Brand Identity</span>
+    <span><a href="logo.html">Logo →</a></span>
+  </div>
+  <p class="footer-legal">This Brand Therapy OS is for the named brand's own use. No license is granted to reproduce, adapt, or implement its framework, structure, or methods for any other brand, product, or service. Assets on this site may not be used to train AI models or to generate synthetic media of any person shown.</p>
+</main>
+</div>
+
+<!-- Build metadata. Lets any reviewer trace this page to its source. -->
+<!--
+  Brand:        Bastion Companies (bastion)
+  Version:      0.1.0
+  Built at:     2026-11-11T22:49:06+00:00
+  Git SHA:      28975a5275aacfcfb96365083b0e8c19f1fa36ec
+  Bundle hash:  sha256:3f34c6e094f7beadede9d4c73e548727e00e470e8f5d4565f14b42df7d05b7aa
+  Source:       brand-os/brands/bastion/IDENTITY.md + STRATEGY.md
+-->
+</body>
+</html>
