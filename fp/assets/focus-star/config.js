@@ -1,6 +1,6 @@
 window.FOCUS_STAR_CONFIG = {
   "brand": {
-    "name": "Florian P. Consulting",
+    "name": "Florian P.",
     "shortName": "FP",
     "tagline": "Brand Therapy practice. Brand strategy and creative direction for founders, brands, and companies.",
     "description": "Brand Therapy practice. Brand strategy and creative direction for founders, brands, and companies.",
@@ -321,7 +321,8 @@ window.FOCUS_STAR_CONFIG = {
           "AI rule": [
             "Frame purpose as selection, not inspiration",
             "Avoid generic \"be authentic\" language; show the specific decision that creates authenticity",
-            "When tempted to write \"make every brand unique\" as a tagline, find the operational implication instead"
+            "When tempted to write \"make every brand unique\" as a tagline, find the operational implication instead",
+            "For content that sells, name the audience defined in P2 People and state the offer plainly. Apply the current FP Voice contract. Use dated samples for calibration."
           ],
           "Image signal": [
             "Purpose: structural clarity, the architecture of a specific brand"

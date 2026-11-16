@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "Florian P. Consulting",
+    "name": "Florian P.",
     "shortName": "FP",
     "tagline": "Brand Therapy practice. Brand strategy and creative direction for founders, brands, and companies.",
     "description": "Brand Therapy practice. Brand strategy and creative direction for founders, brands, and companies.",
@@ -143,8 +143,8 @@
         ]
       },
       "case": {
-        "desc": "Brand Therapy is for The Invisible Expert: someone with real taste, standards, and expertise whose public brand has not caught up to the quality of the work.",
-        "apply": "The People decision is a persona test, not a demographic segment: the work fits when the person wants to be understood without being turned into a performance.",
+        "desc": "Brand Therapy is for former corporate leaders building a business of their own who need a clearer way to explain its value to prospective customers.",
+        "apply": "These founders want the business they lead to live up to what they know they can achieve. Positioning becomes urgent when the early response shows that the offer is hard to understand or choose.",
         "impacts": [
           "Positioning",
           "Language",
@@ -155,79 +155,79 @@
         ],
         "focus": {
           "label": "Decision",
-          "headline": "The Invisible Expert",
-          "support": "The Invisible Expert. Work is meaningful, but the brand makes them look easier to compare than they should be.",
+          "headline": "The Former Executive",
+          "support": "The Former Executive is several months into building a solo business. Prospective customers still struggle to understand why they should choose the offer.",
           "chips": []
         },
         "cards": [
           {
             "label": "Rules in",
             "items": [
-              "Brands whose work is stronger than the way it is explained. The word \"brand\" covers individuals (founders, experts, consultants, creatives, operators, service-business owners) AND companies whose brand is founder-led or otherwise needs the same strategic clarity work.",
-              "Founders who want a company brand, not only a personal one. Brand Therapy applies to the company brand strategy too. Many founders need both: a founder-led personal brand and a company brand that can stand on its own.",
-              "Brands built around judgment, taste, method, or point of view"
+              "Former corporate leaders who have spent at least three months building a solo business and have put an offer in front of prospective customers",
+              "Consultancies, agencies, and product companies, including software, operating under the founder's name or a company name",
+              "Founders who can see that their message is too vague to convey the value of what they have built"
             ],
             "tone": "in"
           },
           {
             "label": "Rules out",
             "items": [
-              "Logo shoppers looking for a surface refresh",
-              "Hustle-culture personal branders optimizing for attention",
-              "Social media management seekers"
+              "Leaders staying in a company or seeking another salaried role",
+              "Buyers looking only for a visual refresh or outsourced social media"
             ],
             "tone": "out"
           },
           {
             "label": "Proof required",
             "items": [
-              "Examples where a messy personal or founder-led brand became easier to explain",
-              "Before-and-after language showing the shift from vague value to clear point of view",
-              "Testimonials that mention feeling understood, clearer, more specific, or less stuck"
+              "Examples that show what a buyer misunderstood and how a clearer position changed the explanation",
+              "Relevant client work that shows how a strategic choice carried through to how the business presents itself",
+              "Evidence of commercial outcomes tied to the work when verified"
             ],
             "tone": "proof"
           }
         ],
         "details": {
           "Strategic position": [
-            "Brand Therapy is for The Invisible Expert: someone with real taste, standards, and expertise whose public brand has not caught up to the quality of the work."
+            "Brand Therapy is for former corporate leaders building a business of their own who need a clearer way to explain its value to prospective customers."
           ],
           "Compass": [
-            "The Invisible Expert. Work is meaningful, but the brand makes them look easier to compare than they should be."
+            "The Former Executive is several months into building a solo business. Prospective customers still struggle to understand why they should choose the offer."
           ],
           "Rules in": [
-            "Brands whose work is stronger than the way it is explained. The word \"brand\" covers individuals (founders, experts, consultants, creatives, operators, service-business owners) AND companies whose brand is founder-led or otherwise needs the same strategic clarity work.",
-            "Founders who want a company brand, not only a personal one. Brand Therapy applies to the company brand strategy too. Many founders need both: a founder-led personal brand and a company brand that can stand on its own.",
-            "Brands built around judgment, taste, method, or point of view",
-            "Brands at an inflection point: new offer, new audience, public moment, website rebuild, repositioning, or next chapter",
-            "Brands that have tried to tweak the surface and can feel the real issue is clarity",
-            "Brands that want to become easier to understand without becoming louder, flatter, or fake"
+            "Former corporate leaders who have spent at least three months building a solo business and have put an offer in front of prospective customers",
+            "Consultancies, agencies, and product companies, including software, operating under the founder's name or a company name",
+            "Founders who can see that their message is too vague to convey the value of what they have built"
           ],
           "Rules out": [
-            "Logo shoppers looking for a surface refresh",
-            "Hustle-culture personal branders optimizing for attention",
-            "Social media management seekers",
-            "Brands that want a content costume instead of a clearer point of view",
-            "Brands that want to copy someone louder instead of becoming more specific"
+            "Leaders staying in a company or seeking another salaried role",
+            "Buyers looking only for a visual refresh or outsourced social media"
           ],
           "Proof required": [
-            "Examples where a messy personal or founder-led brand became easier to explain",
-            "Before-and-after language showing the shift from vague value to clear point of view",
-            "Testimonials that mention feeling understood, clearer, more specific, or less stuck",
-            "Visual examples that show the person as thoughtful and real, not staged as a guru"
+            "Examples that show what a buyer misunderstood and how a clearer position changed the explanation",
+            "Relevant client work that shows how a strategic choice carried through to how the business presents itself",
+            "Evidence of commercial outcomes tied to the work when verified"
           ],
           "AI rule": [
-            "Use \"brand\" or \"your brand\" as the default address (covers both individuals and companies)",
-            "Write to The Invisible Expert as a capable peer with taste, not as a beginner or a corporate buyer",
-            "Do not describe them as insecure, broken, behind, or naive",
-            "Make the pain about translation, not talent: the work is not the problem; the public read is. The transformation is from being misunderstood to feeling clarity both internally and externally.",
-            "Use persona language before offer language: mirror their situation before explaining Brand Therapy",
-            "Keep the emotional language precise and adult: relief, recognition, confidence, permission to stop tweaking",
-            "Never use generic segment labels. Name the human situation instead"
+            "Use the full ideal client profile below for content and asset work.",
+            "Lead with the founder's current business and what prospective customers are seeing.",
+            "Keep the former corporate role as career context.",
+            "Treat a dated first-person account as a signal to investigate and preserve uncertainty about intent.",
+            "Use plain language and address the founder as an accomplished peer."
           ],
           "Image signal": [
-            "Persona: The Invisible Expert, quiet authority observed mid-thought"
+            "Persona: The Former Executive, quiet authority observed mid-thought"
           ]
+        },
+        "persona": {
+          "role": "The Former Executive",
+          "context": "A former corporate leader building a solo business whose offer is already in the market.",
+          "quote": "A former corporate leader building a solo business whose offer is already in the market.",
+          "need": "A clear position that gives prospective customers a reason to trust and choose the business.",
+          "tags": [],
+          "rationalMotivation": "Building a profitable business that lives up to their abilities and gives them a sense of accomplishment.",
+          "painPoint": "Building a profitable business that lives up to their abilities and gives them a sense of accomplishment.",
+          "decisionTrigger": "Prospects keep misunderstanding the offer or passing on it, and the founder wants to address why."
         }
       }
     },
@@ -321,7 +321,8 @@
           "AI rule": [
             "Frame purpose as selection, not inspiration",
             "Avoid generic \"be authentic\" language; show the specific decision that creates authenticity",
-            "When tempted to write \"make every brand unique\" as a tagline, find the operational implication instead"
+            "When tempted to write \"make every brand unique\" as a tagline, find the operational implication instead",
+            "For content that sells, name the audience defined in P2 People and state the offer plainly. Apply the current FP Voice contract. Use dated samples for calibration."
           ],
           "Image signal": [
             "Purpose: structural clarity, the architecture of a specific brand"

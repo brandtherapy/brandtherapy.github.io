@@ -977,6 +977,6 @@
     "founder-role check: use the selected Founder Spectrum position before writing any personal-branding guidance",
     "source hierarchy check: do not let the generated output rewrite Section A or B"
   ],
-  "people_authority": "Use P2 People and its complete ideal client profile for audience and persona decisions. Older audience labels elsewhere in this context describe prior positioning.",
+  "people_authority": "P2 People and its complete ideal client profile define the FP audience and persona for every content and application decision.",
   "people_context_path": "strategy.edges.p2.ideal_client_profile"
 }

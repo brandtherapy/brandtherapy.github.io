@@ -1,28 +1,32 @@
 {
   "schema": "fp-standalone-ai.v1",
   "approval": {
-    "approval": "T-132: November 15, 2026 approval of the complete FP People profile",
+    "approval": "T-132: Approved FP People profile and downstream audience alignment",
     "base_commit": "01243b5d772ab153456b4c10be2b42a213fc40d5",
     "base_bundle": "sha256:413ce1f6d6bc5da16d9f2f043ee0b01d8c4613dc7ee19237d13a655beae36409",
-    "people_commit": "f990b9bdf44752e10ef696e26cd5b0cf34643df6",
+    "people_commit": "4f444145c961e73ea56bfc8895d044d70bb25dad",
     "changes": {
-      "STRATEGY.md": "sha256:184323e9c7da40374fe0009db1b9e04b03ef656924ab134d1c8baefc8c151745"
+      "STRATEGY.md": "sha256:c69ea412648a80339d57fec7aab1b78e957cb2cda944f53b7e7e5c858c3568f8",
+      "APPLICATION.md": "sha256:a2d8997fc3e7f70998e2e1fe37c51ebc1ab386d00c90972f15c6ac29efab9cb9",
+      "CHANNELS.md": "sha256:ec6afd0688d2b27b42ece02f75287ca0bcf3d749d056fbde592d925a6bf37185",
+      "DIFFERENTIATION.md": "sha256:b9e96ce9ca9cd34f5d92a3999637701d10d1be4cba0a5fe65891c3788e9730aa",
+      "IDENTITY.md": "sha256:004d8f044a16c890ccfcb96c536375ad2bd77e0c9a53eaecad70fbb6ed49d5bf"
     }
   },
   "source_hashes": {
-    "STRATEGY.md": "sha256:184323e9c7da40374fe0009db1b9e04b03ef656924ab134d1c8baefc8c151745",
-    "IDENTITY.md": "sha256:edbedcf244bc9a3669b7e3033d5bd971dd928266cbe9f7d61df1d578d83cf343",
+    "APPLICATION.md": "sha256:a2d8997fc3e7f70998e2e1fe37c51ebc1ab386d00c90972f15c6ac29efab9cb9",
     "BRAND_LENS.md": "sha256:b1ffcc4d508adae0005efb38d3a627633b87898ccb17c16aa43ca434eb1cbc3a",
-    "APPLICATION.md": "sha256:cdabb33086b7f82919ca0eb85bf40c81c6828a8c45ee77856621fff69a514a0c",
-    "CHANNELS.md": "sha256:157cd16e574d83681ffe72e4c62047ea91aa8ba37c9e95fa4e1e78480c062dbc",
+    "CHANNELS.md": "sha256:ec6afd0688d2b27b42ece02f75287ca0bcf3d749d056fbde592d925a6bf37185",
+    "DIFFERENTIATION.md": "sha256:b9e96ce9ca9cd34f5d92a3999637701d10d1be4cba0a5fe65891c3788e9730aa",
+    "IDENTITY.md": "sha256:9160a93cb0d703bd94658530bf079cc4e47a476cd14f574cc9e2cc32dc6c916f",
     "PERSONAL_BRANDING.md": "sha256:e55d8fa61e40ffb3b521b85d073e3d36494da2f89da418f2179b59f3fe3958d4",
-    "DIFFERENTIATION.md": "sha256:e1372ecf5e3bdd25371aa0a1bcc755f4a1c8ee77fe79c2cbabcdb6df084dce8c",
+    "STRATEGY.md": "sha256:c69ea412648a80339d57fec7aab1b78e957cb2cda944f53b7e7e5c858c3568f8",
     "references/viewfinder.md": "sha256:b6fc802e8b9db94f18d589daaa96d565f026a3f3c32e02cd77f8565ab6b9b54a"
   },
-  "bundle_hash": "sha256:a96a35d79018f34759caa05a48f86247b570e2b32ee8f82572a78e03909f7061",
+  "bundle_hash": "sha256:6728b3b618cb6b17d30a7d2f4113ab85e19884d5f34f1628c797ae144f8dd0bd",
   "outputs": {
-    "ai-context.md": "207252127e3234904d6049b65f5e82dd5cdfe072d7176909d2e4a536c2f02baa",
-    "ai-context.json": "11b2f16c6d5728b2d4149141515000f6f79e5c570faba68c1e120c71a0ee2557",
-    "ai-task-router.json": "5c7c81d29778c62a26cd27b5b01a080e0bfc6eec075a9c557a7eca51ce968f69"
+    "ai-context.md": "3a87349820f288b5704a3f37049691f9cc993243847f819840ddd810a3951f31",
+    "ai-context.json": "05ab227ae8603c0c2cbb86c9cf2f853b2f430f2d5fd815049fb85fbcaf60de61",
+    "ai-task-router.json": "e878632385ad6659e8298b3a1f54b526a9681827b0a7f9166ba23b00acdf8195"
   }
 }

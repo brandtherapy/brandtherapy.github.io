@@ -19,9 +19,10 @@
       "id": "people",
       "code": "P2",
       "title": "People",
-      "offer_name": "The Invisible Expert",
-      "position": "Brand Therapy is for The Invisible Expert: someone with real taste, standards, and expertise whose public brand has not caught up to the quality of the work.",
-      "compass": "The Invisible Expert. Work is meaningful, but the brand makes them look easier to compare than they should be.",
+      "statement": "The Former Executive",
+      "offer_name": "The Former Executive",
+      "position": "Brand Therapy is for former corporate leaders building a business of their own who need a clearer way to explain its value to prospective customers.",
+      "compass": "The Former Executive is several months into building a solo business. Prospective customers still struggle to understand why they should choose the offer.",
       "image": "images/persona.png"
     },
     {
