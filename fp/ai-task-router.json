@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "purpose": "Route day-to-day brand tasks to the smallest useful context pack.",
-  "operating_principle": "The user should not choose Brand OS pages. The agent classifies the request, loads the compact core, adds only matching Section C/D slices, generates, then runs review gates.",
+  "operating_principle": "The user should not choose Brand Therapy OS pages. The agent classifies the request, loads the compact core, applies any audience-experience lens before Voice, adds only matching identity, character, channel, and application slices, generates, then runs review gates.",
   "context_budget": {
     "max_application_pages": 2,
     "max_channels": 2,
@@ -13,14 +13,16 @@
     "source.bundle_hash",
     "guardrails",
     "ai_first_generation_thread",
+    "brand_lens",
+    "identity.voice",
     "identity.colors",
     "identity.typography",
     "identity.creative_direction.slider_signals",
-    "directions.options[].slider_signals",
-    "identity.voice"
+    "directions.options[].slider_signals"
   ],
   "conditional_load": [
     "strategy.edges filtered by matched channel source_anchors",
+    "identity signature, logo, and visual rules when the request matches identity.visual-production",
     "application.pages matched by requested medium",
     "channel_rules.channels matched by requested distribution surface",
     "personal_branding when the request touches founder role, leadership presence, bio/about copy, portraits, speaker profile, or Founder Spectrum",
@@ -102,14 +104,14 @@
             "training_examples"
           ],
           "reference_paths": [
-            "brands/fp/references/voice-exemplars.md",
             "brands/fp/references/viewfinder.md",
-            "source/source.yaml#visual.viewfinder.spec",
-            "source/btw_image_treatment.py"
+            "tools/fp_signature.py",
+            "brand-os/source/btw_image_treatment.py"
           ],
           "image_constraints": [
-            "Subject-mode BTW images must use source/source.yaml visual.viewfinder.spec or generated viewfinder tokens; do not retype bracket weight, arm length, blur, brightness, or color.",
-            "Use the existing FP mark asset or an approved reference crop; do not redraw FP. and then add a second purple dot."
+            "Image-mode uses the active brands/fp/references/viewfinder.md construction through tools/fp_signature.py; preserve its no-crop image behavior.",
+            "Subject-mode retains the BTW helper for subject treatment values such as blur and brightness. Keep subject/focal treatment distinct from image-mode geometry.",
+            "Use the existing FP mark asset or an approved reference crop. Do not redraw the FP mark or add another purple dot."
           ],
           "max_examples_total": 5,
           "strategy_anchor_policy": "Use Email P3/P4/P5 anchors first; add Social P2/P5 only for related post or card output."
@@ -662,7 +664,6 @@
             "ai_instructions"
           ],
           "approval_gate": [
-            "voice check",
             "claim check",
             "format fit"
           ]
@@ -722,7 +723,6 @@
             "ai_instructions"
           ],
           "approval_gate": [
-            "voice check",
             "fact check",
             "CTA clarity"
           ]
@@ -853,6 +853,9 @@
           "founder portrait"
         ],
         "context_load": {
+          "personal_branding": [
+            "personal_social_image_policy"
+          ],
           "personal_branding_dimensions": [
             "presence",
             "wardrobe",
@@ -899,6 +902,9 @@
         ],
         "context_load": {
           "reference_asset_roots": [],
+          "personal_branding": [
+            "personal_social_image_policy"
+          ],
           "personal_branding_dimensions": [
             "aesthetic",
             "presentation"
@@ -920,9 +926,49 @@
           "forbidden imagery"
         ]
       }
+    ],
+    "visual": [
+      {
+        "id": "identity.visual-production",
+        "kind": "identity-visual",
+        "match_terms": [
+          "banner",
+          "flyer",
+          "poster",
+          "cover",
+          "thumbnail",
+          "graphic",
+          "social card",
+          "visual design",
+          "creative asset",
+          "brand visual",
+          "visual identity",
+          "layout",
+          "art direction",
+          "image treatment"
+        ],
+        "context_load": {
+          "identity_fields": [
+            "signature_device",
+            "logo",
+            "logo_showcase",
+            "visual_rules.sections",
+            "signature_construction.content"
+          ],
+          "reference_paths": [
+            "identity.signature_device.construction_ref"
+          ]
+        },
+        "review_focus": [
+          "selected brand's own signature device and construction",
+          "logo rules and clear space",
+          "visual rules from the selected brand's identity source"
+        ]
+      }
     ]
   },
   "review_gates": [
+    "whole-piece copy review: apply guardrails.copy_derivation using this brand's own voice, evidence, reader and format; fix and read back the complete artifact",
     "strategy fit: output serves the matched Focus Star anchors",
     "voice fit: output follows identity voice and channel voice dial",
     "medium fit: output follows visual_recipe, copy_recipe, and ai_rules",
@@ -930,5 +976,7 @@
     "proof check: claims use approved proof only or are marked for human review",
     "founder-role check: use the selected Founder Spectrum position before writing any personal-branding guidance",
     "source hierarchy check: do not let the generated output rewrite Section A or B"
-  ]
+  ],
+  "people_authority": "Use P2 People and its complete ideal client profile for audience and persona decisions. Older audience labels elsewhere in this context describe prior positioning.",
+  "people_context_path": "strategy.edges.p2.ideal_client_profile"
 }
